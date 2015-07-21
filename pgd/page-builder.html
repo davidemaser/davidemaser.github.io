@@ -1,0 +1,735 @@
+<html>
+<head>
+    <title>The Last Hunt - Page Builder</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=.|Montserrat:light,normal,bold|Montserrat:light,normal,bold|Montserrat:light,normal,bold|Lato:light,normal,bold"
+          rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="assets/css/app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="assets/js/app.js"></script>
+</head>
+<body>
+<div class="see_help_overlay">
+    <div class="r_blocker">
+        <div class="well well-lg"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+
+            <div class="help_message_holder"></div>
+        </div>
+    </div>
+</div>
+<div class="see_cleaner_overlay">
+    <div class="r_blocker">
+        <div class="well well-lg"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            <textarea class="form-control" id="unclosed-tag-finder-input" placeholder="Paste your code here"></textarea>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                        aria-expanded="false">
+                    Actions <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#" id="unclosed-tag-finder-button">Run Code Cleaner</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" id="unclosed-tag-merge-button">Merge/Update Code to Designer Form</a></li>
+                </ul>
+            </div>
+            <div id="results-alert">
+            <h3>Results</h3>
+<pre id="unclosed-tag-finder-results"></pre>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="see_overlay">
+    <div class="r_blocker">
+        <div class="well well-lg"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            <textarea class="form-control" id="content_value"></textarea>
+
+            <div class="preview" id="html-view"></div>
+            <div class="btn-group dropup">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                        aria-expanded="false">
+                    Preview <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#" id="preview_page_hero_EN">Hero English</a></li>
+                    <li><a href="#" id="preview_page_hero_FR">Hero French</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" id="preview_page_EN">Block English</a></li>
+                    <li><a href="#" id="preview_page_FR">Block French</a></li>
+                    <li><a href="#" id="preview_page_BOTH">Side By Side</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" id="timer_preview_page">Toggle Countdown Timer</a></li>
+                    <li><a href="#" id="toggle_line_breaks">Toggle Line Breaks</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" id="close_preview_page">Close Preview</a></li>
+                </ul>
+            </div>
+            <div class="error_log">
+                <div class="error_message label label-danger"></div>
+                <div class="warning_message label label-warning"></div>
+                <div class="error_bubble"></div>
+                <div class="warning_bubble"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="global">
+    <form name="pageBuilder" id="pageBuilder" action="">
+        <div class="page-header panel-body">
+            <h1>TLH Page Builder</h1>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body top_level_bt">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-success dropdown-toggle action_utilities"
+                            data-toggle="dropdown" aria-expanded="false">
+                        Actions <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#" class="cleaner_open">Open Code Utilities</a></li>
+                        <li><a href="#" class="generate_page">Generate Page HTML</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" class="reset_page">Reset Errors</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" class="app_info_toggle">About this app</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="alert alert-info" role="alert">Page Content<span aria-hidden="true"
+                                                                         class="glyphicon glyphicon-file add_icon"></span>
+            </div>
+            <div class="panel-body">
+                <div class="split-half">
+                    <div class="panel-heading"><span class="label label-default">Start Date</span></div>
+                    <div class="panel-body input-group"><input type="text" class="form-control" name="start_date"
+                                                               id="start_date" placeholder="April 24, 2015 11:00:00"/>
+                        <span class="glyphicon glyphicon-eye-open sparta" title="Toggle date manager"></span>
+                        <span class="input-group-addon date_starts" id="basic-addon2">Strict date format</span>
+
+                        <div class="autosuggest starting">
+                            <select class="months">
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+                            </select>
+                            <select class="days w_minor">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+
+                            <select class="years">
+                                <option value="2015">2015</option>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                            </select>
+                            <select class="hours w_minor">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                            </select>
+
+                            <select class="minutes w_minor">
+                                <option value="00">00</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                                <option value="32">32</option>
+                                <option value="33">33</option>
+                                <option value="34">34</option>
+                                <option value="35">35</option>
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                                <option value="44">44</option>
+                                <option value="45">45</option>
+                                <option value="46">46</option>
+                                <option value="47">47</option>
+                                <option value="48">48</option>
+                                <option value="49">49</option>
+                                <option value="50">50</option>
+                                <option value="51">51</option>
+                                <option value="52">52</option>
+                                <option value="53">53</option>
+                                <option value="54">54</option>
+                                <option value="55">55</option>
+                                <option value="56">56</option>
+                                <option value="57">57</option>
+                                <option value="58">58</option>
+                                <option value="59">59</option>
+                            </select>
+
+                            <select class="seconds w_minor">
+                                <option value="00">00</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                                <option value="32">32</option>
+                                <option value="33">33</option>
+                                <option value="34">34</option>
+                                <option value="35">35</option>
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                                <option value="44">44</option>
+                                <option value="45">45</option>
+                                <option value="46">46</option>
+                                <option value="47">47</option>
+                                <option value="48">48</option>
+                                <option value="49">49</option>
+                                <option value="50">50</option>
+                                <option value="51">51</option>
+                                <option value="52">52</option>
+                                <option value="53">53</option>
+                                <option value="54">54</option>
+                                <option value="55">55</option>
+                                <option value="56">56</option>
+                                <option value="57">57</option>
+                                <option value="58">58</option>
+                                <option value="59">59</option>
+                            </select>
+                            <input type="hidden" id="sta_dt"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="split-half">
+                    <div class="panel-heading"><span class="label label-default">End Date</span></div>
+                    <div class="panel-body input-group"><input type="text" class="form-control" name="end_date"
+                                                               id="end_date" placeholder="April 24, 2015 11:00:00"/>
+                        <span class="glyphicon glyphicon-eye-open athena" title="Toggle date manager"></span>
+                        <span class="input-group-addon date_ends" id="basic-addon2">Strict date format</span>
+
+                        <div class="autosuggest ending">
+                            <select class="months">
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+                            </select>
+                            <select class="days w_minor">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+                            <select class="years">
+                                <option value="2015">2015</option>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                            </select>
+                            <select class="hours w_minor">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                            </select>
+                            <select class="minutes w_minor">
+                                <option value="00">00</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                                <option value="32">32</option>
+                                <option value="33">33</option>
+                                <option value="34">34</option>
+                                <option value="35">35</option>
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                                <option value="44">44</option>
+                                <option value="45">45</option>
+                                <option value="46">46</option>
+                                <option value="47">47</option>
+                                <option value="48">48</option>
+                                <option value="49">49</option>
+                                <option value="50">50</option>
+                                <option value="51">51</option>
+                                <option value="52">52</option>
+                                <option value="53">53</option>
+                                <option value="54">54</option>
+                                <option value="55">55</option>
+                                <option value="56">56</option>
+                                <option value="57">57</option>
+                                <option value="58">58</option>
+                                <option value="59">59</option>
+                            </select>
+                            <select class="seconds w_minor">
+                                <option value="00">00</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                                <option value="32">32</option>
+                                <option value="33">33</option>
+                                <option value="34">34</option>
+                                <option value="35">35</option>
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                                <option value="44">44</option>
+                                <option value="45">45</option>
+                                <option value="46">46</option>
+                                <option value="47">47</option>
+                                <option value="48">48</option>
+                                <option value="49">49</option>
+                                <option value="50">50</option>
+                                <option value="51">51</option>
+                                <option value="52">52</option>
+                                <option value="53">53</option>
+                                <option value="54">54</option>
+                                <option value="55">55</option>
+                                <option value="56">56</option>
+                                <option value="57">57</option>
+                                <option value="58">58</option>
+                                <option value="59">59</option>
+                            </select>
+                            <input type="hidden" id="end_dt"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="split-half">
+                    <div class="panel-heading"><span class="label label-default">Title EN</span></div>
+                    <div class="panel-body input-group">
+                        <input type="text" class="form-control" name="title_en" id="title_en"/><span
+                            class="input-group-addon en_title_count" id="basic-addon2">30 characters max</span></div>
+                </div>
+                <div class="split-half">
+                    <div class="panel-heading"><span class="label label-default">Title FR</span></div>
+                    <div class="panel-body input-group">
+                        <input type="text" class="form-control" name="title_fr" id="title_fr"/><span
+                            class="input-group-addon fr_title_count" id="basic-addon2">30 characters max</span></div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="panel-heading"><span class="label label-default">Title Color</span></div>
+                <div class="panel-body"><select id="title_color" class="form-control" name="title_color">
+                    <option value="#fff" selected="selected">White (default)</option>
+                    <option value="#000">Black</option>
+                    <option value="#ee3600">TLH Red</option>
+                    <option value="#9bd000">TLH Green</option>
+                </select>
+
+                    <div class="color-blocks">
+                        <div class="selector-color white glyphicon glyphicon-ok"></div>
+                        <div class="selector-color black"></div>
+                        <div class="selector-color red"></div>
+                        <div class="selector-color green"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="split-half">
+                    <div class="panel-heading"><span class="label label-default">Subtitle EN</span></div>
+                    <div class="panel-body input-group"><input type="text" class="form-control" name="subtitle_en"
+                                                               id="subtitle_en"/><span
+                            class="input-group-addon en_subtitle_count" id="basic-addon2">30 characters max</span></div>
+                </div>
+                <div class="split-half">
+                    <div class="panel-heading"><span class="label label-default">Subtitle FR</span></div>
+                    <div class="panel-body input-group"><input type="text" class="form-control" name="subtitle_fr"
+                                                               id="subtitle_fr"/><span
+                            class="input-group-addon fr_subtitle_count" id="basic-addon2">30 characters max</span></div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="panel-heading"><span class="label label-default">Image Link</span></div>
+                <div class="panel-body input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-expanded="false">Action <span class="caret"></span></button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            <li><a href="#" id="check_image">Validate Image</a></li>
+                            <li><a href="#" id="clear_image">Clear Field</a></li>
+                            <li class="divider"></li>
+                            <li><a href="https://lasthunt.myshopify.com/admin/settings/files" target="_blank">Open
+                                Shopify File Browser</a></li>
+                        </ul>
+                    </div>
+                    <input type="text" class="form-control" name="image_gl" id="image_gl"
+                           placeholder="https://cdn.shopify.com..."/><span class="input-group-addon image_count"
+                                                                           id="basic-addon2">Shopify CDN</span></div>
+            </div>
+
+<div class="panel-body">
+                <div class="panel-heading"><span class="label label-default">Alternate Image Link</span></div>
+                <div class="panel-body input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-expanded="false">Action <span class="caret"></span></button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            <li><a href="#" id="alt_check_image">Validate Image</a></li>
+                            <li><a href="#" id="alt_clear_image">Clear Field</a></li>
+                            <li class="divider"></li>
+                            <li><a href="https://lasthunt.myshopify.com/admin/settings/files" target="_blank">Open
+                                Shopify File Browser</a></li>
+                        </ul>
+                    </div>
+                    <input type="text" class="form-control" name="alt_image_gl" id="alt_image_gl"
+                           placeholder="https://cdn.shopify.com..."/><span class="input-group-addon alt_image_count"
+                                                                           id="basic-addon2">Shopify CDN</span></div>
+            </div>
+
+            <div class="panel-body">
+                <div class="split-half">
+                    <div class="panel-heading"><span class="label label-default">Button Label EN</span></div>
+                    <div class="panel-body input-group"><input type="text" class="form-control" name="button_label_en"
+                                                               id="button_label_en"/><span
+                            class="input-group-addon en_btlabel_count" id="basic-addon2">18 chars max</span></div>
+                </div>
+                <div class="split-half">
+                    <div class="panel-heading"><span class="label label-default">Button Label FR</span></div>
+                    <div class="panel-body input-group"><input type="text" class="form-control" name="button_label_fr"
+                                                               id="button_label_fr"/><span
+                            class="input-group-addon fr_btlabel_count" id="basic-addon2">18 chars max</span></div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="panel-heading"><span class="label label-default">Button Link</span></div>
+                <div class="panel-body input-group"><input type="text" class="form-control" name="button_link_gl"
+                                                           id="button_link_gl"
+                                                           placeholder="/collections/pants/link+more"/><span
+                        class="input-group-addon" id="basic-addon2">Relative Link</span></div>
+            </div>
+            <div class="alert alert-info" role="alert">Display Options<span class="glyphicon glyphicon-cog add_icon"
+                                                                            aria-hidden="true"></span></div>
+            <div class="panel-body">
+                <div class="split-half">
+                    <div class="panel-heading"><span class="label label-default">Open Link In A Popup ?</span></div>
+                    <div class="panel-body input-group"><select class="form-control" id="pop_up_link"
+                                                                name="pop_up_link">
+                        <option value="true">Yes</option>
+                        <option value="false" selected="selected">No</option>
+                    </select><span class="input-group-addon need_help top_1" id="basic-addon2">What's This ?</span>
+                    </div>
+                </div>
+                <div class="split-half">
+                    <div class="panel-heading"><span class="label label-default">Link To Which ID ?</span></div>
+                    <div class="panel-body input-group"><select class="form-control" id="pop_up_ID" name="pop_up_ID">
+                        <option value="popup-1">Popup 1</option>
+                        <option value="popup-2">Popup 2</option>
+                    </select><span class="input-group-addon need_help top_2" id="basic-addon2">What's This ?</span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="split-half">
+                    <div class="panel-heading"><span class="label label-default">Show Countdown Timer ?</span></div>
+                    <div class="panel-body input-group"><select class="form-control" id="show_counter"
+                                                                name="show_counter">
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select><span class="input-group-addon need_help top_3" id="basic-addon2">What's This ?</span>
+                    </div>
+                </div>
+                <div class="split-half">
+                    <div class="panel-heading"><span class="label label-default">Is This An Ongoing Event ?</span></div>
+                    <div class="panel-body input-group"><select class="form-control" id="sis_ongoing" name="is_ongoing">
+                        <option value="true">Yes</option>
+                        <option value="false" selected="selected">No</option>
+                    </select><span class="input-group-addon need_help top_4" id="basic-addon2">What's This ?</span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="split-half">
+                    <div class="panel-heading"><span class="label label-default">Show Hero Title</span></div>
+                    <div class="panel-body input-group"><select class="form-control" id="show_title" name="show_title">
+                        <option value="true" selected="selected">Yes</option>
+                        <option value="false">No</option>
+                    </select><span class="input-group-addon" id="basic-addon2">Yes / No</span></div>
+                </div>
+                <div class="split-half">
+                    <div class="panel-heading"><span class="label label-default">Show Hero SubTitle</span></div>
+                    <div class="panel-body input-group"><select class="form-control" id="show_subtitle"
+                                                                name="show_subtitle">
+                        <option value="true" selected="selected">Yes</option>
+                        <option value="false">No</option>
+                    </select><span class="input-group-addon" id="basic-addon2">Yes / No</span></div>
+                </div>
+            </div>
+            <!------------------------------------
+            #--------new promote ongoing---------#
+            #---------herobanner feature---------#
+            ------------------------------------->
+            <div class="panel-body">
+                <div class="panel-heading"><span class="label label-default">Promote Ongoing Hero</span></div>
+                <div class="panel-body input-group"><select class="form-control" id="promote_hero" name="promote_hero">
+                        <option value="true">Yes</option>
+                        <option value="false" selected="selected">No</option>
+                    </select>
+                    <span class="input-group-addon" id="basic-addon2">Yes/No</span></div>
+            </div>
+
+            <!-- end -->
+            <div class="panel-body">
+                <div class="btn-group dropup">
+                    <button type="button" class="btn btn-success dropdown-toggle action_utilities"
+                            data-toggle="dropdown" aria-expanded="false">
+                        Actions <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#" class="cleaner_open">Open Code Utilities</a></li>
+                        <li><a href="#" class="generate_page">Generate Page HTML</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" class="reset_page">Reset Errors</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" class="app_info_toggle">About this app</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</div>
+</html>
+

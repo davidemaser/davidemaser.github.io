@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var a = code.split('|-|')[0];
+    var a1 = a.split('src="')[1];
+    var img = a1.split('" /')[0];
+    var a2 = a.split('<p class="headline">')[1];
+    var h1 = a2.split('</p>')[0];
+    var a3 = a.split('<p class="subtitle">')[1];
+    var sub = a3.split('</p>')[0];
+    var a4 = a.split('href=">')[1];
+    var link = a4.split('" class="action_button">')[0];
+    var a5 = a.split('class="action_button">')[1];
+    var cta = a4.split('</a>')[0];
+    var ht = '<div data-str="'+img+'"';
+    ht += 'id="slide-4" class="hero fwidth root-4">';
+    ht += '<div class="bcg skrollable skrollable-between" data-center="background-position: 50% 0px;"';
+    ht += ' data-top-bottom="background-position: 50% -200px;" data-anchor-target="#slide-4"';
+    ht += ' style="background-image: url('+img+'); background-position: 50% -55.2631578947369px;">';
+    ht += '<div class="hsContainer">';
+    ht += '<div class="hsContent center skrollable skrollable-before" data-100-top="opacity: 1"';
+    ht += ' data-25-top="opacity: 0" data-anchor-target="#slide-4 .animated" style="opacity: 1;">';
+    ht += '<div class="animated fadeIn delay-025s hero_head">';
+    ht += '<p class="subtitle timedown is-countdown" id="countdown4" style="opacity:0.9"><span>ends in  <b>1<span class="force_lower"> day</span>20:50:10</b> </span></p>';
+    ht += '<h1 class="headline herobanner">'+h1+'</h1>';
+    ht += '<p class="subtitle herobanner">'+sub+'</p>';
+    ht += '<a id="" href="'+link+'" class="action_button hero">'+cta+'</a>';
+    ht += '</div></div></div></div></div>';
+    console.log(ht);
+</script>
+</body>
+</html>

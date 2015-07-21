@@ -1,0 +1,437 @@
+{
+  "project":{
+    "name":"Page Builder",
+    "version":"1.7",
+    "revision":"1",
+    "downloadlink":"https://drive.google.com/file/d/0B4onXKnKkE6AY0JiVlZ3bG9scmM/view?usp=sharing",
+    "semantic":{
+      "build":50,
+      "language":["js","jquery","json","css","html"],
+      "externals":["jquery","bootstrap","custom font","versioning file"],
+      "minified":true
+    },
+    "latest":"major",
+    "errors":[
+      {
+        "file":"app.js",
+        "line":184,
+        "issue":"function else not closed",
+        "fix":{
+          "solution":"basic find and close",
+          "applied":true
+        }
+      },{
+        "file":"app.css",
+        "line":384,
+        "issue":"Unclosed CSS feature",
+        "fix":{
+          "solution":"basic find and close",
+          "applied":true
+        }
+      },{
+        "file":"app.js",
+        "line":402,
+        "issue":"JSON format mismatch",
+        "fix":{
+          "solution":"Declare string",
+          "applied":true
+        }
+      },{
+        "file":"app.js",
+        "line":808,
+        "issue":"Date variable error",
+        "fix":{
+          "solution":"Provide UTF-8 value",
+          "applied":true
+        }
+      }
+    ],
+    "updates":[
+      {
+        "line":42,
+        "file":"app.js",
+        "structure":"add",
+        "utility":"Show line breaks",
+        "appstatus":{
+          "scoped":true,
+          "version":1.2,
+          "candidate":1.4,
+          "request":false
+        }
+      },
+      {
+        "line":766,
+        "file":"app.js",
+        "structure":"add",
+        "utility":"initialize date function",
+        "appstatus":{
+          "scoped":true,
+          "version":1.4,
+          "candidate":1.5,
+          "request":false
+        }
+      },
+      {
+        "line":1000,
+        "file":"app.js",
+        "structure":"add",
+        "utility":"keydown generate trigger",
+        "appstatus":{
+          "scoped":true,
+          "version":1.6,
+          "candidate":1.6,
+          "request":false
+        }
+      },
+        {
+        "line":562,
+        "file":"app.js",
+        "structure":"add",
+        "utility":"live preview alternate image",
+        "appstatus":{
+          "scoped":true,
+          "version":1.6,
+          "candidate":1.6,
+          "request":false
+        }
+      }
+      ,
+        {
+        "line":427,
+        "file":"app.js",
+        "structure":"add",
+        "utility":"get alt image values",
+        "appstatus":{
+          "scoped":true,
+          "version":1.6,
+          "candidate":1.6,
+          "request":false
+        }
+      }
+    ],
+    "history":[
+      {
+        "version":0.4,
+        "date":"28/03/2015",
+        "failsafe":"major",
+        "author":"David Maser",
+        "codeblocks":[
+          {
+            "item":"Initial release",
+            "revision":"major",
+            "impact":"global",
+            "codestatus":"working"
+          }
+        ]
+      },
+      {
+        "version":0.5,
+        "date":"30/03/2015",
+        "failsafe":"major",
+        "author":"David Maser",
+        "codeblocks":[
+          {
+            "item":"Added error handling",
+            "revision":"major",
+            "impact":"global",
+            "codestatus":"working"
+          },
+          {
+            "item":"Added block callbacks",
+            "revision":"major",
+            "impact":"global",
+            "codestatus":"working"
+          },
+          {
+            "item":"Removed delta functions",
+            "revision":"minor",
+            "impact":"global",
+            "codestatus":"working"
+          }
+        ]
+      },
+      {
+        "version":0.6,
+        "date":"02/04/2015",
+        "failsafe":"major",
+        "author":"David Maser",
+        "codeblocks":[
+          {
+            "item":"Added color range alerts",
+            "revision":"minor",
+            "impact":"global",
+            "codestatus":"working"
+          },
+          {
+            "item":"Added charting verification",
+            "revision":"minor",
+            "impact":"global",
+            "codestatus":"working"
+          },
+          {
+            "item":"Added code cleaner",
+            "revision":"major",
+            "impact":"global",
+            "codestatus":"working"
+          },
+          {
+            "item":"Added Title Color Option",
+            "revision":"minor",
+            "impact":"local",
+            "codestatus":"working"
+          }
+        ]
+      },
+      {
+        "version":0.7,
+        "date":"04/04/2015",
+        "failsafe":"minor",
+        "author":"David Maser",
+        "codeblocks":[
+          {
+            "item":"Added bootstrap",
+            "revision":"minor",
+            "impact":"global",
+            "codestatus":"working"
+          },
+          {
+            "item":"Added error reporting",
+            "revision":"major",
+            "impact":"global",
+            "codestatus":"working"
+          },
+          {
+            "item":"Added shopify api support",
+            "revision":"major",
+            "impact":"global",
+            "codestatus":"removed"
+          },
+          {
+            "item":"Added Pop Up integration",
+            "revision":"minor",
+            "impact":"global",
+            "codestatus":"working"
+          }
+        ]
+      },
+      {
+        "version":0.8,
+        "date":"07/04/2015",
+        "failsafe":"minor",
+        "author":"David Maser",
+        "codeblocks":[
+          {
+            "item":"Added detection function",
+            "revision":"minor",
+            "impact":"global",
+            "codestatus":"working"
+          },
+          {
+            "item":"Added regex comparison",
+            "revision":"minor",
+            "impact":"global",
+            "codestatus":"working"
+          }
+        ]
+      },
+      {
+        "version":0.9,
+        "date":"10/04/2015",
+        "failsafe":"minor",
+        "author":"David Maser",
+        "codeblocks":[
+          {
+            "item":"Added visual error logging",
+            "revision":"minor",
+            "impact":"global",
+            "codestatus":"working"
+          },
+          {
+            "item":"Code cleaner rewrite",
+            "revision":"minor",
+            "impact":"local",
+            "codestatus":"working"
+          }
+        ]
+      },
+      {
+        "version":1.0,
+        "date":"20/04/2015",
+        "failsafe":"major",
+        "author":"David Maser",
+        "codeblocks":[
+          {
+            "item":"Added paste to builder function",
+            "revision":"major",
+            "impact":"global",
+            "codestatus":"working"
+          },
+          {
+            "item":"Added input detection scripts",
+            "revision":"minor",
+            "impact":"local",
+            "codestatus":"working"
+          },
+          {
+            "item":"Added try/catch handlers",
+            "revision":"minor",
+            "impact":"local",
+            "codestatus":"working"
+          }
+        ]
+      },
+      {
+        "version":1.1,
+        "date":"29/04/2015",
+        "failsafe":"minor",
+        "author":"David Maser",
+        "codeblocks":[
+          {
+            "item":"Rescripted paste to builder",
+            "revision":"major",
+            "impact":"global",
+            "codestatus":"working"
+          },
+          {
+            "item":"Added input detection masks",
+            "revision":"minor",
+            "impact":"local",
+            "codestatus":"working"
+          },
+          {
+            "item":"Added ongoing event feature",
+            "revision":"major",
+            "impact":"global",
+            "codestatus":"working"
+          }
+        ]
+      },
+      {
+        "version":1.2,
+        "date":"29/04/2015",
+        "failsafe":"minor",
+        "author":"David Maser",
+        "codeblocks":[
+          {
+            "item":"Minified js commons",
+            "revision":"major",
+            "impact":"global",
+            "codestatus":"working"
+          },
+          {
+            "item":"Added strip html batch",
+            "revision":"minor",
+            "impact":"local",
+            "codestatus":"working"
+          }
+        ]
+      },
+      {
+        "version":1.3,
+        "date":"12/05/2015",
+        "failsafe":"major",
+        "author":"David Maser",
+        "codeblocks":[
+          {
+            "item":"Added helper companions",
+            "revision":"major",
+            "impact":"global",
+            "codestatus":"working"
+          },
+          {
+            "item":"Added preview generator",
+            "revision":"major",
+            "impact":"global",
+            "codestatus":"working"
+          },
+          {
+            "item":"Added image detector",
+            "revision":"major",
+            "impact":"global",
+            "codestatus":"working"
+          },
+          {
+            "item":"Added server file detection",
+            "revision":"major",
+            "impact":"global",
+            "codestatus":"working"
+          }
+        ]
+      },
+      {
+        "version":1.4,
+        "date":"27/05/2015",
+        "failsafe":"minor",
+        "author":"David Maser",
+        "codeblocks":[
+          {
+            "item":"Added date assistant",
+            "revision":"minor",
+            "impact":"global",
+            "codestatus":"working"
+          },
+          {
+            "item":"Added error reset feature",
+            "revision":"minor",
+            "impact":"global",
+            "codestatus":"working"
+          },
+          {
+            "item":"Added show/hide title feature",
+            "revision":"minor",
+            "impact":"global",
+            "codestatus":"working"
+          },
+          {
+            "item":"Added show/hide subtitle feature",
+            "revision":"minor",
+            "impact":"global",
+            "codestatus":"working"
+          }
+        ]
+      },
+      {
+        "version":1.5,
+        "date":"08/06/2015",
+        "failsafe":"minor",
+        "author":"David Maser",
+        "codeblocks":[
+          {
+            "item":"Minor performance tweaks",
+            "revision":"minor",
+            "impact":"global",
+            "codestatus":"working"
+          }
+        ]
+      },
+      {
+        "version":1.6,
+        "date":"22/06/2015",
+        "failsafe":"minor",
+        "author":"David Maser",
+        "codeblocks":[
+          {
+            "item":"Added alternate image functionality",
+            "revision":"minor",
+            "impact":"global",
+            "codestatus":"working"
+          }
+        ]
+      },
+      {
+        "version":1.7,
+        "date":"8/07/2015",
+        "failsafe":"minor",
+        "author":"David Maser",
+        "codeblocks":[
+          {
+            "item":"Added promote ongoing hero functionality",
+            "revision":"minor",
+            "impact":"global",
+            "codestatus":"working"
+          }
+        ]
+      }
+    ]
+  }
+}
