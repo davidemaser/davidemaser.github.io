@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Page Structure Builder</title>
+    <link href="assets/css/globals.css" rel="stylesheet"/>
+    <link href="assets/css/app.css" rel="stylesheet"/>
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="assets/js/altitude.min.js"></script>
+    <script src="assets/js/controler.js"></script>
+    <script>
+        loadJSON();
+</script>
+</head>
+<body>
+<header class="tab-bar tab-bar--top tab-bar--top-border">
+    <label class="tab-bar__item tab-bar--top-border__item ld-js" data-json="intro">
+        <input type="radio" name="top-tab-bar-b" checked="checked">
+        <button class="tab-bar__button tab-bar--top-border__button">
+            Overview
+        </button>
+    </label>
+
+    <label class="tab-bar__item tab-bar--top-border__item ld-js" data-json="blocks">
+        <input type="radio" name="top-tab-bar-b">
+        <button class="tab-bar__button tab-bar--top-border__button ld-js">
+            Blocks
+        </button>
+    </label>
+
+    <label class="tab-bar__item tab-bar--top-border__item ld-js" data-json="settings">
+    <input type="radio" name="top-tab-bar-b">
+    <button class="tab-bar__button tab-bar--top-border__button ld-js">
+        Settings
+    </button>
+    </label>
+
+        <label class="tab-bar__item tab-bar--top-border__item ld-js" data-json="mobile">
+            <input type="radio" name="top-tab-bar-b">
+            <button class="tab-bar__button tab-bar--top-border__button">
+                Mobile
+            </button>
+        </label>
+
+        <label class="tab-bar__item tab-bar--top-border__item ld-js" data-json="page">
+            <input type="radio" name="top-tab-bar-b">
+            <button class="tab-bar__button tab-bar--top-border__button">
+                Page Templates
+            </button>
+        </label>
+
+    <label class="tab-bar__item tab-bar--top-border__item ld-js" data-json="language">
+        <input type="radio" name="top-tab-bar-b">
+        <button class="tab-bar__button tab-bar--top-border__button">
+            Language Parameters
+        </button>
+    </label>
+
+    <label class="tab-bar__item tab-bar--top-border__item ld-js" data-json="new">
+        <input type="radio" name="top-tab-bar-b">
+        <button class="tab-bar__button tab-bar--top-border__button">
+            New Functionnalities
+        </button>
+    </label>
+
+</header>
+
+<div class="_size-1 pad_20_full" id="data-zone" data-page="">
+</div>
+<div class="search-zone">
+    <div class="popover popover--down bks-history">
+        <span class="ion-ios-trash-outline popover-flush"></span>
+        <span class="ion-ios-close popover-close"></span>
+        <div class="popover__bottom-arrow"></div>
+        <div class="popover__content search">
+            <div class="bks-history-am"></div>
+        </div>
+    </div>
+    <span class="ion-ios-reload" data-pack="ios" data-tags="renew, reset" title="Reset Word Search"></span>
+    <input id="keywords" type="text" class="fluid-input" data-var="search" placeholder="Enter search term">
+    <span class="ion-ios-bookmarks-outline bookmarker" data-pack="ios" data-tags="favorite" title="Recent Searches"></span>
+</div>
+<div class="tutorial-zone">
+    <div class="popover popover--down bks-tutorial">
+        <span class="ion-ios-close popover-tutorials-close"></span>
+        <div class="popover__bottom-arrow"></div>
+        <div class="popover__content tutorials">
+            <div class="bks-tutorials-am"></div>
+        </div>
+    </div>
+    </div>
+<div class="tab-bar" style="position:fixed!important;">
+
+    <label class="tab-bar__item goto-admin" title="Access The Last Hunt Admin">
+        <input type="radio" name="tab-bar-b">
+        <button class="tab-bar__button">
+            <i class="tab-bar__icon ion-ios-world-outline"></i>
+        </button>
+    </label>
+
+    <label class="tab-bar__item tutorials" title="Tutorials">
+        <input type="radio" name="tab-bar-b">
+        <button class="tab-bar__button">
+            <i class="tab-bar__icon ion-ios-book-outline"></i>
+        </button>
+    </label>
+
+    <label class="tab-bar__item history-back" title="Back">
+        <input type="radio" name="tab-bar-b">
+        <button class="tab-bar__button">
+            <i class="tab-bar__icon ion-ios-undo-outline"></i>
+        </button>
+    </label>
+
+    <label class="tab-bar__item history-search" title="Search for text in this page">
+        <input type="radio" name="tab-bar-b">
+        <button class="tab-bar__button">
+            <i class="tab-bar__icon ion-ios-search"></i>
+        </button>
+    </label>
+
+    <label class="tab-bar__item wizard" title="Launch the Page Designer Wizard">
+        <input type="radio" name="tab-bar-b">
+        <button class="tab-bar__button">
+            <i class="tab-bar__icon ion-ios-color-wand-outline"></i>
+        </button>
+    </label>
+
+</div>
+
+</body>
+</html>

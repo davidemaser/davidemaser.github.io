@@ -1,0 +1,272 @@
+ol {
+    list-style: lower-alpha;
+    margin: 0 50px 20px;
+}
+ul {
+    list-style: circle;
+    margin: 0 50px 20px;
+}
+.underline{
+    text-decoration: underline;
+}
+div#data-zone {
+    margin-bottom: 50px;
+}
+#data-zone h1 {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 120%;
+}
+
+table {
+    margin: 20px 20px 40px 0;
+    display: table;
+    border: 1px solid #ccc;
+    background-color: #eee;
+    width: 70%;
+}
+
+td {
+    padding: 10px;
+    display: table-cell;
+}
+
+td:not(:last-child) {
+    border-right: 1px dotted #ccc;}
+tr:not(:last-child) {
+    border-bottom: 1px dashed #ddd;
+}
+
+li {
+    margin: 10px;
+}
+
+tr {
+    min-height: 20px;
+    display: table-row;
+}
+.bold{
+    font-weight: bold;
+}
+pre {
+    white-space: pre ; unicode-bidi: embed
+font-size: 85%;
+    margin: 20px;
+    font-style: italic;
+    font-family: code;
+    background-color: #eee;
+    display: inline-block;
+    padding: 20px;
+    border: 1px dashed #aaa;
+}
+.warning {
+    border-right: 2px solid red;
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
+    border-left: 10px solid red;
+    padding: 10px;
+    margin: 20px 0;
+    background-color: rgba(0, 0, 0, 0.06);
+    display: inline-block;
+}
+.info {
+    border-right: 2px solid green;
+    border-top: 2px solid green;
+    border-bottom: 2px solid green;
+    border-left: 10px solid green;
+    padding: 10px;
+    margin: 20px 0;
+    background-color: rgba(0, 0, 0, 0.06);
+    display: inline-block;
+}
+.note {
+    border-right: 2px solid lightskyblue;
+    border-top: 2px solid lightskyblue;
+    border-bottom: 2px solid lightskyblue;
+    border-left: 10px solid lightskyblue;
+    padding: 10px;
+    margin: 20px 0;
+    background-color: rgba(0, 0, 0, 0.06);
+    display: inline-block;
+}
+.search_results {
+    position: absolute;
+    bottom: 50px;
+    right: 21%;
+    width: 400px;
+    /* background-color: #ddd; */
+    height: 300px;
+}
+
+.ganache {
+    display: none;
+    position: absolute;
+    bottom: 65px;
+    right: 24%;
+}
+.search-zone {
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    width: 100%;
+    background-color: #444;
+    padding: 20px;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.37);
+}
+
+.fluid-input {
+    width: 100%;
+    padding: 10px 10px 10px 50px;
+    font-size: 20px;
+}
+span.ttip {
+    background-color: rgb(213, 219, 224);
+    cursor:pointer;
+}
+span.ion-ios-reload {
+    position: absolute;
+    top: 28px;
+    font-size: 30px;
+    left: 30px;
+    cursor: pointer;
+}
+span.ion-ios-bookmarks-outline {
+    position: absolute;
+    top: 28px;
+    font-size: 30px;
+    right: 30px;
+    cursor: pointer;
+}
+span.ion-ios-close-outline {
+    color: red;
+    font-size: 38px;
+    margin-right: 20px;
+}
+p.deprecated:before {content: "DEPRECATED : "}
+p.deprecated{
+    text-decoration: line-through;
+    background-color: rgba(255, 0, 0, 0.3)!important;
+}
+.deprecated-table {
+    background-color: rgba(255, 0, 0, 0.3)!important;
+}
+.deprecated-table td:before{
+    content:"Deprecated:";
+    opacity:0.3
+
+}
+.bks-history {
+    display: none;
+    position: absolute;
+    right: 10px;
+    width: 450px;
+    height: auto;
+    bottom: 78px;
+    padding: 10px;
+}
+.bks-tutorial {
+    display: none;
+    position: absolute;
+    left: 170px;
+    width: 450px;
+    height: auto;
+    bottom: 60px;
+    padding: 10px;
+}
+.popover__bottom-arrow{
+    bottom:10px!important;
+    right: 40px!important;
+    left: auto!important;
+}
+.bks-history-am {
+//text-align: center;
+    opacity: 0.4;
+    margin: 20px;
+}
+.popover__content.search:before {
+    content: "Search History";
+    display: block;
+    width: 100%;
+    padding-top: 20px;
+    text-align:center
+}
+.popover__content.tutorials:before {
+    content: "Tutorials";
+    display: block;
+    width: 100%;
+    padding-top: 20px;
+    text-align:center
+}
+.popover__content{
+    box-shadow: 5px 5px 16px rgba(0,0,0,0.5)!important;
+}
+.search-tab {
+    margin-right: 10px;
+}
+.bm-tab:not(:last-child) {
+    margin-bottom: 10px;
+}
+.popover-close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 140%;
+    opacity: 0.5;
+    cursor: pointer;
+}
+.popover-tutorials-close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 140%;
+    opacity: 0.5;
+    cursor: pointer;
+}
+.popover-flush {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 140%;
+    cursor: pointer;
+}
+.hover-tip {
+    position: absolute;
+    display: block;
+    padding: 15px;
+    background-color: #7abfff;
+    box-shadow: 2px 2px 10px rgba(161, 161, 161, 0.2);
+    max-width: 300px;
+    height: auto;
+}
+.sticky{
+    position: fixed;
+    opacity: 0.85;
+    box-shadow: 0px 0px 20px #000;
+}
+.tut-pins {
+    margin:10px 5px;
+}
+.tut-pins:before {
+    display: inline-block;
+    font-family: "Ionicons";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-rendering: auto;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f469";
+    margin-right:10px;
+}
+.tut-pins a:hover {
+    color: #7abfff;
+    text-decoration: none;
+}
+.tut-pins a {
+    color: #2494FC;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px #aaa;
+}
