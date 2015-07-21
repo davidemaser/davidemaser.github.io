@@ -1,0 +1,25 @@
+{
+  "type":"project",
+  "case":"tut-collection",
+  "content":{
+    "title":"Creating A Collection",
+    "format":true,
+    "content":[
+      {
+        "id":1,
+        "type":"header",
+        "paragraph":"Creating A Collection"
+      },
+      {
+        "id":2,
+        "type":"text",
+        "paragraph":"Shopify collections are a group of products that can be manually or automatically generated based on product parameters or tags. This allows you to create collections that contain cherry-picked products or one that groups all products that share a tag or parameter (i.e. all products that have brand X)."
+      },
+      {
+        "id":3,
+        "type":"info",
+        "paragraph":"Always preview your collection before publishing it as automatically generated collections can not be modified manually"
+      }
+    ]
+  }
+}

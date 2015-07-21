@@ -1,0 +1,21 @@
+{
+  "type":"project",
+  "case":"tutorials",
+  "content":{
+    "title":"Tutorials",
+    "format":true,
+    "content":[
+      {
+        "id":1,
+        "type":"cta",
+        "paragraph":"Creating A Collection",
+        "link":"tut-collection"
+      },{
+        "id":2,
+        "type":"cta",
+        "paragraph":"Creating Discounts",
+        "link":"tut-discounts"
+      }
+    ]
+  }
+}

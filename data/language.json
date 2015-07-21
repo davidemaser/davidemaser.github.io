@@ -1,0 +1,391 @@
+{
+  "type":"project",
+  "case":"language",
+  "content":{
+    "title":"Language Parameters",
+    "format":true,
+    "content":[
+      {
+        "id":1,
+        "type":"text",
+        "paragraph":"The core of this theme has been reworked to accept multilingual display. Languages are handled and displayed in different manners depending on the data source, the snippet or the usage. For example: static data is translated differently than data served from the database."
+      },
+      {
+        "id":2,
+        "type":"header",
+        "paragraph":"Multilingual Display"
+      },
+      {
+        "id":3,
+        "type":"text",
+        "paragraph":"Each page, component and snippet has been re-scripted to display multilingual data. All content has a corresponding translation or is entered in both languages. Instead of just outputting a data field and displaying the content of the page, the script will check for a specific separator string in the data and split the data into two chunks, before and after the separator string. The first chunk is english and the second chunk is french. If no separator string is found, the script will just display the data without splitting it as it assumes there is no translation. However, if the separator string is found and the language parameters are set, the page will output the chunk that corresponds to the global language variable."
+      },
+      {
+        "id":4,
+        "type":"header",
+        "paragraph":"Multilingual Language Switcher"
+      },
+      {
+        "id":5,
+        "type":"text",
+        "paragraph":"Three files are required to display and switch the language parameters."
+      },
+      {
+        "id":5,
+        "type":"ol",
+        "paragraph":[
+          {
+            "item":"lang_global"
+          },
+          {
+            "item":"lang_handler"
+          },
+          {
+            "item":"lang_switcher"
+          }
+        ]
+      },
+      {
+        "id":6,
+        "type":"text",
+        "paragraph":"The lang_global file is the basic function that is included in the header of all page templates. It's role is to read and set the languageGlobal variable. The data for this variable is pulled from the cart session variable."
+      },
+      {
+        "id":7,
+        "type":"text",
+        "paragraph":"The lang_handler file is the powerhouse behind the translation and switching functionality. It is a mixed-javascript (<span class=\"ttip\" data-attribute=\"vanilla\">vanilla</span> and <span class=\"ttip\" data-attribute=\"jq\">jquery</span>), multi-function application that also communicates with the shopify <span class=\"ttip\" data-attribute=\"api\">api</span>. It's core functions are as follows."
+      },
+      {
+        "id":8,
+        "type":"ol",
+        "paragraph":[
+          {
+            "item":"Load cookies – minor implementation"
+          },
+          {
+            "item":"Get the domain url"
+          },
+          {
+            "item":"Write to cart session via <span class=\"ttip\" data-attribute=\"api\">api</span>"
+          },
+          {
+            "item":"Reload page"
+          },
+          {
+            "item":"Load javascript translator"
+          },
+          {
+            "item":"Translate cart"
+          }
+        ]
+      },
+      {
+        "id":9,
+        "type":"header",
+        "paragraph":"Schema"
+      },
+      {
+        "id":10,
+        "type":"table",
+        "paragraph":[
+          {
+            "row": [
+              {
+                "column": "Page loads"
+              },
+              {
+                "column": "-> Check domain"
+              },
+              {
+                "column": null
+              }
+            ]
+          },{
+            "row":[
+              {
+                "column":"Domain is"
+              },
+              {
+                "column":"-> thelasthunt.com"
+              },
+              {
+                "column":"-> define language english"
+              }
+            ]
+          },{
+            "row":[
+              {
+                "column":"\"\""
+              },
+              {
+                "column":"-> ladernierechasse.com"
+              },
+              {
+                "column":"-> define language frenc"
+              }
+            ]
+          },{
+            "row":[
+              {
+                "column":"Set cookie"
+              },
+              {
+                "column":"-> tlh_site"
+              },
+              {
+                "column":"-> en or fr"
+              }
+            ]
+          },{
+            "row":[
+              {
+                "column":"Cart session"
+              },
+              {
+                "column":"-> does not exist"
+              },
+              {
+                "column":"-> add.js (en or fr)"
+              }
+            ]
+          },{
+            "row":[
+              {
+                "column":"\"\""
+              },
+              {
+                "column":"-> does exist"
+              },
+              {
+                "column":"-> modify.js (en or fr)"
+              }
+            ]
+          },{
+            "row":[
+              {
+                "column":"Language changed"
+              },
+              {
+                "column":"-> yes"
+              },
+              {
+                "column":"-> reset page"
+              }
+            ]
+          },{
+            "row":[
+              {
+                "column":"Load translator"
+              },
+              {
+                "column":null
+              },
+              {
+                "column":null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id":11,
+        "type":"header",
+        "paragraph":"Functions – <span class=\"ttip\" data-attribute=\"vanilla\">Vanilla Javascript</span>"
+      },
+      {
+        "id":12,
+        "type":"bold-header",
+        "paragraph":"getDomain"
+      },
+      {
+        "id":13,
+        "type":"ul",
+        "paragraph":[
+          {
+            "item":"get's domain and <span class=\"ttip\" data-attribute=\"tld\">tld</span>"
+          },
+          {
+            "item":"requires one attribute : dom to get domain or tld to get <span class=\"ttip\" data-attribute=\"tld\">tld</span>"
+          },
+          {
+            "item":"returns boolean true or false"
+          }
+        ]
+      },
+      {
+        "id":12,
+        "type":"bold-header",
+        "paragraph":"restDomain"
+      },
+      {
+        "id":13,
+        "type":"ul",
+        "paragraph":[
+          {
+            "item":"calls getDomain"
+          },
+          {
+            "item":"if true stays on page"
+          },
+          {
+            "item":"if false resets page"
+          },
+          {
+            "item":"calls setCookieVal"
+          },
+          {
+            "item":"sets translator language"
+          },
+          {
+            "item":"writes cart.attributes[“language”] via <span class=\"ttip\" data-attribute=\"api\">api</span>"
+          },
+          {
+            "item":"requires no attributes"
+          }
+        ]
+      },
+      {
+        "id":14,
+        "type":"bold-header",
+        "paragraph":"setCookieVal"
+      },
+      {
+        "id":15,
+        "type":"ul",
+        "paragraph":[
+          {
+            "item":"sets 'tlh_site' cookie"
+          },
+          {
+            "item":"reloads page if necessary"
+          },
+          {
+            "item":"requires two attributes : language and reset"
+          }
+        ]
+      },
+      {
+        "id":16,
+        "type":"header",
+        "paragraph":"Functions – jQuery"
+      },
+      {
+        "id":17,
+        "type":"underline-header",
+        "paragraph":"Document ready"
+      },
+      {
+        "id":18,
+        "type":"ul",
+        "paragraph":[
+          {
+            "item":"loads translator"
+          },
+          {
+            "item":"Reposts language to <span class=\"ttip\" data-attribute=\"api\">API</span>"
+          },
+          {
+            "item":"Registers click handlers for language switcher"
+          }
+        ]
+      },
+      {
+        "id":19,
+        "type":"underline-header",
+        "paragraph":"Document loaded"
+      },
+      {
+        "id":20,
+        "type":"ul",
+        "paragraph":[
+          {
+            "item":"Translates cart"
+          },
+          {
+            "item":"Updates <span class=\"ttip\" data-attribute=\"dom\">dom</span> elements with translation settings"
+          }
+        ]
+      },
+      {
+        "id":21,
+        "type":"text",
+        "paragraph":"The lang_switcher file contains two buttons (EN or FR) with class toggleLang. Buttons display based on languageGlobal variable. Click handler is registered in lang_handler on document ready."
+      },
+      {
+        "id":22,
+        "type":"header",
+        "paragraph":"Data formatting"
+      },
+      {
+        "id":23,
+        "type":"text",
+        "paragraph":"All data is formatted using a defined separator string. All data is structured as such. The separator string used for the site is a bar-slash-bar ( |-| ). The reason for using this character combination is that:"
+      },
+      {
+        "id":24,
+        "type":"ol",
+        "paragraph":[
+          {
+            "item":"it does not include liquid parsing characters"
+          },
+          {
+            "item":"it does not interfere with javascript functions"
+          },
+          {
+            "item":"it is far less obtrusive than <!--hey switch language here-->"
+          }
+        ]
+      },
+      {
+        "id":25,
+        "type":"text",
+        "paragraph":"The following text “hello|-|bonjour”, after being split, contains an english chunk and a french chunk. The liquid code will check the language and if, for example, we are in english, will display chunk[1]. For a catalog product, title would contain “an english title|-|a french title|-|” and the product description would respect the same kind of formatting."
+      },
+      {
+        "id":26,
+        "type":"header",
+        "paragraph":"Javascript Dictionary"
+      },
+      {
+        "id":27,
+        "type":"text",
+        "paragraph":"In order to further optimize the translation process and scope, a translation function has been added that allows for the translation of 'static' text."
+      },
+      {
+        "id":28,
+        "type":"text",
+        "paragraph":"The dictionary function loads an array of translations from the dictionary.js.liquid file that can be found in the assets folder. The function then checks the page for span tags that contain the class trn. If the function finds the corresponding span tags, it will check if the text exists in the dictionary and if a translation exists, it will replace the text with the current language value."
+      },
+      {
+        "id":29,
+        "type":"text",
+        "paragraph":"To add a new language item to the dictionary, find the second last curly brace and add the following code :"
+      },
+      {
+        "id":30,
+        "type":"pre",
+        "paragraph":",\"my new word\": {<br />&nbsp;&nbsp;&nbsp;&nbsp;en: \"Text In English\",<br />&nbsp;&nbsp;&nbsp;&nbsp;fr: \"Texte En Francais\"<br />}"
+      },
+      {
+        "id":31,
+        "type":"text",
+        "paragraph":"Repeat to add as many translation as you need. Note that the word to translate (my new word) should always be entered in lowercase. The en and fr values are not case sensitive."
+      },
+      {
+        "id":32,
+        "type":"italic",
+        "paragraph":"To add a new translatable item in a page, wrap the text item with &lt;span class=\"trn\"&gt;&lt;/span&gt;."
+      },
+      {
+        "id":33,
+        "type":"text",
+        "paragraph":"The javascript dictionary function is also linked to the lang_handler functionalities and loads the dictionary that corresponds to the selected language or the current domain."
+      },
+      {
+        "id":34,
+        "type":"note",
+        "paragraph":"Translation settings for certain common theme elements can be set in the theme settings -> translations. To add more translations, edit the settings.html file in the Configs folder."
+      }
+    ]
+  }
+}

@@ -1,0 +1,217 @@
+{
+  "type":"project",
+  "case":"page",
+  "content":{
+    "title":"Page Specific Templates",
+    "format":true,
+    "content":[
+      {
+        "id":1,
+        "type":"text",
+        "paragraph":"Certain specific pages don't rely on a block template layout but rather use their own specific page template with nested blocks to render the page. These pages always use the global theme file to present the general page architecture. <span class=\"ttip\" data-attribute=\"Liquid\">Liquid</span> identifies page templates using the following code : {% if template contains \"...\" %}. This allows us to create a custom layout template and reference it in the global theme file."
+      },
+      {
+        "id":2,
+        "type":"subsection",
+        "paragraph":"Index Page"
+      },
+      {
+        "id":3,
+        "type":"text",
+        "paragraph":"As the title suggests, this template displays the index page structure. It contains specific blocks that are displayed only on the index (although the blocks can be called from any page)."
+      },
+      {
+        "id":4,
+        "type":"header",
+        "paragraph":"Structure"
+      },
+      {
+        "id":5,
+        "type":"ul",
+        "paragraph":[
+          {
+            "item":"Section blocks assigned numeric values. Allows for blocks to be reordered."
+          },
+          {
+            "item":"Basic HTML content. Served via snippet includes or hard-coded."
+          },
+          {
+            "item":"Ltypes : String variable. Can be 'hero' or 'block'."
+          },
+          {
+            "item":"oneShotOn : Boolean variable. Can be 'true' or 'false'. Applies specific conditions and styling to one shot sale items."
+          }
+        ]
+      },
+      {
+        "id":6,
+        "type":"header",
+        "paragraph":"Configuration"
+      },
+      {
+        "id":7,
+        "type":"text",
+        "paragraph":"The index page is highly configurable via the theme settings. Most index page settings can be modified or tweaked via the Home Page tab of the theme editor."
+      },
+      {
+        "id":8,
+        "type":"text",
+        "paragraph":"Some elements have an assigned position on the index page. They will not change position no matter what position value you set them to. In order to modify their position on the index page you will have to manually displace the html block. Elements that are “static” can be identified by the following comment tags. <!--no assigned position-->...<!--end no assigned position-->"
+      },
+      {
+        "id":9,
+        "type":"header",
+        "paragraph":"Blocks"
+      },
+      {
+        "id":10,
+        "type":"text",
+        "paragraph":"The index page relies on the following snippet blocks :"
+      },
+      {
+        "id":11,
+        "type":"ol",
+        "paragraph":[
+          {
+            "item":"page-loop : loops through page content defined in a linklist"
+          },
+          {
+            "item":"product-full-variant : a customized full product display block used for one shot deals"
+          },
+          {
+            "item":"product-full-upcoming : a customized full product display block used for displaying upcoming deals"
+          },
+          {
+            "item":"sidebar : displays the navigation sidebar"
+          },
+          {
+            "item":"collection-loop : loops through collections, displaying their title and either default image, or first product image"
+          },
+          {
+            "item":"product-loop-alternate : a modified product grid display block that displays images in a 4 row configuration."
+          },
+          {
+            "item":"product-full : large block that displays a full product with minimial description in full page width."
+          }
+        ]
+      },
+      {
+        "id":12,
+        "type":"warning",
+        "paragraph":"Most blocks can display the sidebar. Ensure that only one sidebar is displayed by turning off Homepage Sidebar in the settings or removing all sidebar includes ({% include '...' with settings.homepage_sidebar %}) from the code."
+      },
+      {
+        "id":13,
+        "type":"subsection",
+        "paragraph":"Collection Page"
+      },
+      {
+        "id":14,
+        "type":"text",
+        "paragraph":"Collection pages are in essence a simple product loop page. They contain the same basic architecture as other pages (header, nav, footer) but also can display a shopify native sidebar menu or our custom filter menu or a filtered drop down list menu."
+      },
+      {
+        "id":15,
+        "type":"text",
+        "paragraph":"The theme has been customized to show a parallax image as a header. The image used is the image defined as the cover image for the collection. If no cover image is defined, the generic title will display. The parallax image code block begins with &lt;div id=&quot;slide-collection&quot;&gt;. It is also wrapped in a settings condition block : {% if settings.collection_parallax_image == true %}. This setting allows you to turn off parallax image display in collections pages via the theme settings. It is a best practice to turn off the parallax header image function if you are not using collection images."
+      },
+      {
+        "id":16,
+        "type":"header",
+        "paragraph":"Configuration"
+      },
+      {
+        "id":17,
+        "type":"text",
+        "paragraph":"Collection page specific configuration can be done via the theme settings -> Collection Page."
+      },
+      {
+        "id":18,
+        "type":"header",
+        "paragraph":"Blocks"
+      },
+      {
+        "id":19,
+        "type":"text",
+        "paragraph":"The collection page relies on the following snippet blocks :"
+      },
+      {
+        "id": 20,
+        "type": "ol",
+        "paragraph": [
+          {
+            "item": "lang_global : the global language configuration file"
+          },
+          {
+            "item": "sidebar_filtered : the filtered sidebar navigation file"
+          },
+          {
+            "item": "product_loop : the core product display file"
+          },
+          {
+            "item": "pagination : adds pagination functionality"
+          }
+        ]
+      },
+      {
+        "id":21,
+        "type":"note",
+        "paragraph":"The lang_global file only contains a short script that reads and assigns the languageGlobal variable based on the language attribute stored in the cart session. See the “language parameters” section of this document for language specific information."
+      },
+      {
+        "id":22,
+        "type":"subsection",
+        "paragraph":"Product Page"
+      },
+      {
+        "id":23,
+        "type":"text",
+        "paragraph":"The product page template is a more complex code layout as it requires many external snippets as well as core functionalities such as product variants, images and cart mathematics. This page also contains added value components that may be disabled at launch time. The product page contains some custom components such as a sale percentage display, a countdown sale element (for one shot sales) and product variant image carousel."
+      },
+      {
+        "id":24,
+        "type":"header",
+        "paragraph":"Configuration"
+      },
+      {
+        "id":25,
+        "type":"text",
+        "paragraph":"Product page specific configuration can be done via the theme settings -> Product Page. Language specific configuration is done in the page code."
+      },
+      {
+        "id":26,
+        "type":"header",
+        "paragraph":"Blocks"
+      },
+      {
+        "id":27,
+        "type":"text",
+        "paragraph":"The product page relies on the following snippet blocks :"
+      },
+      {
+        "id": 28,
+        "type": "ol",
+        "paragraph": [
+          {
+            "item": "lang_global : the global language configuration file"
+          },
+          {
+            "item": "sidebar : invisible but used for breadcrumbs fitering"
+          },
+          {
+            "item": "product-notify-me : a core functionality that allows users to enter their e.mail to be advised when an out of stock product is available. This functionality is currently disabled."
+          },
+          {
+            "item": "product-form : the core “add to cart” form containing variants and product parameters (i.e. size, color...)"
+          },
+          {
+            "item": "product-loop : the actual product information."
+          },
+          {
+            "item": "Product-images : the snippet that handles product and product variant images as well as discount and sale labels."
+          }
+        ]
+      }
+    ]
+  }
+}

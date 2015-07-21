@@ -1,0 +1,25 @@
+{
+  "type":"project",
+  "case":"settings",
+  "content":{
+    "title":"Theme Settings File",
+    "format":true,
+    "content":[
+      {
+        "id":1,
+        "type":"text",
+        "paragraph":"The theme settings file has been greatly modified in order to allow personalization of core features and native shopify elements. The settings file can be found in the Configs root. The theme file exports to a .json file that contains core and settings features loaded during the liquid parsing."
+      },
+      {
+        "id":2,
+        "type":"warning",
+        "paragraph":"Do not modify the settings_data.json file. This will most likely cause errors or corrupt data linkages."
+      },
+      {
+        "id":3,
+        "type":"text",
+        "paragraph":"In order to add more settings and customized elements to the site, modify the settings.html file in the Configs root. New data elements will write to the .json file. To add a new settings element to the site, add the following snippet to a .liquid page {{settings.my_new_setting}}."
+      }
+    ]
+  }
+}

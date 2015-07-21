@@ -1,0 +1,96 @@
+{
+  "type":"project",
+  "case":"mobile",
+  "content":{
+    "title":"Mobile Specifics",
+    "format":true,
+    "content":[
+      {
+        "id":1,
+        "type":"text",
+        "paragraph":"The mobile version of this site is displayed using conventional <span class=\"ttip\" data-attribute=\"mq\">media queries</span> and dynamic-size specific attributes. Many features of the mobile site are re-drawn in the <span class=\"ttip\" data-attribute=\"dom\">dom</span> using <span class=\"ttip\" data-attribute=\"vanilla\">vanilla js</span> or <span class=\"ttip\" data-attribute=\"jq\">jquery</span>. The two major JavaScript function libraries are found in the app.js (app_en or app_fr) or davesFunctions.js. For speed and mobile <span class=\"ttip\" data-attribute=\"dom\">dom</span> specific compliance reasons, some code is executed after the page has loaded. Also, in order to avoid <span class=\"ttip\" data-attribute=\"dom\">dom</span> suffocation and garbage collection handling, unused elements are removed from the <span class=\"ttip\" data-attribute=\"dom\">dom</span> after the page load. This can affect debugging when searching for a code snippet or line number in mobile view."
+      },
+      {
+        "id":2,
+        "type":"header",
+        "paragraph":"Overrides"
+      },
+      {
+        "id":3,
+        "type":"text",
+        "paragraph":"Some jquery plugins used by shopify and the theme are overly obtrusive, disabling function calls or chaining. In order to avoid this, some custom code (found in davesFunctions.js) calls functions using a top level event handler. These can be identified by their document tier handler. i.e. $( document ).on( \"click\", \":element\", function...). To access these elements in the <span class=\"ttip\" data-attribute=\"dom\">dom</span>, chain events or functions within the initial event handler. Any command outside this event handler will be ignored."
+      },
+      {
+        "id":4,
+        "type":"header",
+        "paragraph":"Dynamic Code Output"
+      },
+      {
+        "id":5,
+        "type":"text",
+        "paragraph":"Liquid code is compiled and parsed server side making it readable by JavaScript but not writeable by JavaScript (with the exception or relying on many <span class=\"ttip\" data-attribute=\"api\">api</span> calls). In order to circumvent this shortcoming, some pages and functionalities rely on dynamic output functions to render a page or component. DCO elements can be easily identified by the global variable data_render = true placed at the beginning of the function or instruction (i.e. function doPercent(origP,newP,showMode,lang){data_render = true....)"
+      },
+      {
+        "id":6,
+        "type":"text",
+        "paragraph":"As most DCO elements rely on page specific data, the JavaScript code is placed and executed in the snippet itself. DCOs also use vanilla JavaScript’s document.write method instead of jQuery's append to <span class=\"ttip\" data-attribute=\"dom\">dom</span> methods in order to better handle recursive events"
+      },
+      {
+        "id":7,
+        "type":"header",
+        "paragraph":"Chained Functions"
+      },
+      {
+        "id":8,
+        "type":"text",
+        "paragraph":"In order to respect an <span class=\"ttip\" data-attribute=\"mvc\">MVC</span> architecture, functions have been simplified and chained in order to accomplish redundant tasks. Fore example : Some JavaScript functions will verify liquid variables before firing other events. This method will also lighten the load on mobile UI garbage collectors."
+      },
+      {
+        "id":9,
+        "type":"header",
+        "paragraph":"Duplicate Suppressors"
+      },
+      {
+        "id":10,
+        "type":"text",
+        "paragraph":"Since liquid will always render before JavaScript starts executing, some outputs will inexorably present duplicate's or false positives. A suppressor function called avoidDups has been created that will remove from the <span class=\"ttip\" data-attribute=\"dom\">dom</span> all duplicate elements. This function also keeps variables from overriding each other and causing false positives by creating a collection array."
+      },
+      {
+        "id":11,
+        "type":"table",
+        "paragraph":[
+          {
+            "row": [
+              {
+                "column": "Before : var a = true<br />var b = true<br />var c = false"
+              },
+              {
+                "column": "Result"
+              },
+              {
+                "column": "a, b and c will always be false as last value overwrites."
+              }
+            ]
+          },{
+            "row":[
+              {
+                "column":"After : [a,b,c] = [true,true,false]"
+              },
+              {
+                "column":"Result"
+              },
+              {
+                "column":"Variable definition array has a corresponding variable value array."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id":12,
+        "type":"text",
+        "paragraph":"Recursive functions also use global variables to store liquid data."
+      }
+    ]
+  }
+}

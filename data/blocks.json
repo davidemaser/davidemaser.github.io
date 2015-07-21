@@ -1,0 +1,95 @@
+{
+  "type":"project",
+  "case":"blocks",
+  "content":{
+    "title":"Block Structure",
+    "format":true,
+    "content":[
+      {
+        "id":1,
+        "type":"text",
+        "paragraph":"The theme page is comprised of multiple blocks, each containing a specific functionality or design feature. "
+      },
+      {
+        "id":2,
+        "type":"text",
+        "paragraph":"Some blocks have their own scripts included in the page source. These scripts are required at the moment the <span class=\"ttip\" data-attribute=\"Liquid\">liquid</span> code is parsed."
+      },
+      {
+        "id":3,
+        "type":"warning",
+        "paragraph":"Do not move in-line or script snippet code from a block to a main collection javascript file. If the code is in the block, there's a good reason for that."
+      },
+      {
+        "id":4,
+        "type":"text",
+        "paragraph":"It is important to note that all blocks have their own style constraints. When designing new blocks, refer to the parents' style constraints."
+      },
+      {
+        "id":5,
+        "type":"text",
+        "paragraph":"Below is a tree view of blocks found in the theme page."
+      },
+      {
+        "id":6,
+        "type":"ul",
+        "paragraph":[
+          {
+            "item":"THEME PARENT"
+          },
+          {
+            "item":"Language custom function - NEW"
+          },
+          {
+            "item":"Social meta info"
+          },
+          {
+            "item":"Global JS and CSS files"
+          },
+          {
+            "item":"Page definition (index, collection, product...)"
+          },
+          {
+            "item":"Hello banner – multilingual linklist - NEW"
+          },
+          {
+            "item":"Navigation"
+          },
+          {
+            "item":"Layered Nav – multilingual - NEW"
+          },
+          {
+            "item":"Currencies switcher – disabled"
+          },
+          {
+            "item":"Language switcher – custom JS - NEW"
+          },
+          {
+            "item":"Help Section – multilingual"
+          },
+          {
+            "item":"Search button"
+          },
+          {
+            "item":"Cart button and counter"
+          },
+          {
+            "item":"Page content – multilingual – template"
+          },
+          {
+            "item":"Pre-footer – multilingual – template"
+          },
+          {
+            "item":"Newsletter – multilingual – template"
+          },
+          {
+            "item":"Newsletter popup – multilingual – page"
+          },
+          {
+            "item":"Currencies – disabled."
+          }
+        ]
+      }
+    ]
+  }
+}

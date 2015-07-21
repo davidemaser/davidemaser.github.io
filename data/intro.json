@@ -1,0 +1,25 @@
+{
+  "type":"project",
+  "case":"intro",
+  "content":{
+    "title":"General Theme Overview",
+    "format":true,
+    "content":[
+      {
+        "id":1,
+        "type":"text",
+        "paragraph":"The global theme architecture and asset includes is defined in the <span class=\"ttip\" data-attribute=\"Liquid file format\">theme.liquid</span> file, found at the root of the shopify directory. This file defines the page architecture and includes the necessary scripts, stylesheets, meta information and external data. Apart from adding new JavaScript or css files, most modifications should be made to top level page templates (i.e. collection, product...) as any modification to the theme file will apply site wide, on desktop and mobile versions. It is a best practice to include a new functionality on the theme page by creating this new functionality in a separate <span class=\"ttip\" data-attribute=\"Liquid\">liquid</span> “snippet” and including it in the theme page code."
+      },
+      {
+        "id":2,
+        "type":"warning",
+        "paragraph":"Some <span class=\"ttip\" data-attribute=\"js\">JS</span> files are sensitive to the order in which they are called. If adding a new <span class=\"ttip\" data-attribute=\"jq\">jquery</span> plugin, start by adding it after all current <span class=\"ttip\" data-attribute=\"js\">JS</span> includes. If this causes a bug, move it right after the initial jquery script call or defer it's launch by moving it to right before the closing </body> tag."
+      },
+      {
+        "id":3,
+        "type":"info",
+        "paragraph":"Add all new JavaScript functions to the <span class=\"ttip\" data-attribute=\"Liquid file format\">davesFunctions.js.liquid</span> file (found in the assets folder."
+      }
+    ]
+  }
+}

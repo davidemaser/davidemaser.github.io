@@ -1,0 +1,722 @@
+{
+  "type":"project",
+  "case":"new",
+  "content":{
+    "title":"New functionalities",
+    "format":true,
+    "content":[
+      {
+        "id":1,
+        "type":"text",
+        "paragraph":"The new TLH theme requires many new functionalities to display specific features as well as integrate new design flow elements. This part of the document will specify and define each new functionality, identify the snippet blocks and explain the scripted functions associated with them."
+      },
+      {
+        "id":2,
+        "type":"underline-header",
+        "paragraph":"Hello Banner"
+      },
+      {
+        "id":3,
+        "type":"text",
+        "paragraph":"The new hello banner allows for messages to be displayed between specific dates by adding metafield values. The hello banner content is organized into a linklist whose content is fed from basic shopify pages. It can contain short text and links. The linklist is called HelloBar and can be found in the navigation sub menu of shopify admin. To add a new item, create a new page with your custom content and then add that page to the linklist. The Hello Banner is a multilingual element so to separate the English and French text, use the bar-slash-bar separator string. Example :"
+      },
+      {
+        "id":4,
+        "type":"pre",
+        "paragraph":"Get your fill of sale items while they last. &lt;a href=&quot;collections/all&quot; title=&quot;All collections&quot;&gt;Click here&lt;/a&gt;.|-|Faites le plein d&apos;articles en solde avant qu&apos;ils ne disparaisent. &lt;a href=&quot;collections/all&quot; title=&quot;All collections&quot;&gt;Cliquez ici&lt;/a&gt;"
+      },
+      {
+        "id":5,
+        "type":"warning",
+        "paragraph":"Liquid and javascript don't handle apostrophes in the same manner. In order to avoid errors, add a forward slash ( \\ ) before any apostrophe."
+      },
+      {
+        "id":6,
+        "type":"underline-header",
+        "paragraph":"Navigation Menu"
+      },
+      {
+        "id":7,
+        "type":"text",
+        "paragraph":"The navigation menu is perhaps the most sensitive new functionality as it does not use the native shopify index features (a part from the brands tab) to create a hierarchical menu. Instead, the navigation menu reads data from an external <span class=\"ttip\" data-attribute=\"json\">.json</span> file that contains a category, child and grandchild hierarchy. This <span class=\"ttip\" data-attribute=\"json\">.json</span> file is also used to build and filter the left nav filter feature. The nav.json file is loaded via an <span class=\"ttip\" data-attribute=\"ajax\">ajax</span> call and the menu is built by looping through parent, child and grandchild data. Example of a .json node:"
+      },
+      {
+        "id":8,
+        "type":"pre",
+        "paragraph":"{<br /> &quot;navitems&quot;: [<br /> {<br /> &quot;name_en&quot;: &quot;Men's&quot;,<br /> &quot;name_fr&quot;: &quot;Hommes&quot;,<br /> &quot;href&quot;: &quot;mens&quot;,<br /> &quot;level1&quot;: [<br /> {<br /> &quot;name_en&quot;: &quot;Jackets and vests&quot;,<br /> &quot;name_fr&quot;: &quot;Manteaux &amp; Vestes&quot;,<br /> &quot;href&quot;: &quot;jackets&quot;,<br /> &quot;visible&quot;: true,<br /> &quot;level2&quot;: [<br /> {<br /> &quot;name_en&quot;: &quot;Insulated&quot;,<br /> &quot;name_fr&quot;: &quot;Isol&eacute;s&quot;,<br /> &quot;href&quot;: &quot;insulated&quot;,<br /> &quot;visible&quot;: true }<br /> }]<br /> }]<br /> }"
+      },
+      {
+        "id":9,
+        "type":"text",
+        "paragraph":"In the example above, the script that populates the navigation bar reads and loops through each level. The code snippet above (for simplicity reasons) only has one parent array, one child array and one granchild array. The code will output a hierarchical menu with the parent, MEN'S, a child, JACKETS AND VESTS and a grandchild INSULATED. The parent item's link will be mens. The child item will take the parents link and append it's own href value (and seperator) to create a child link: mens/jackets. The grandchild element takes the child link and appends it's own href value (and seperator) to create a child link: mens/jackets+insulated."
+      },
+      {
+        "id":10,
+        "type":"text",
+        "paragraph":"The script loops through all the values in the nav.json file to build a complete hierarchical menu with functional, tag based links."
+      },
+      {
+        "id":11,
+        "type":"underline-header",
+        "paragraph":"Language Switcher"
+      },
+      {
+        "id":12,
+        "type":"text",
+        "paragraph":"See the language parameters section of this document for an overview of this functionality."
+      },
+      {
+        "id":13,
+        "type":"underline-header",
+        "paragraph":"Sale Labels"
+      },
+      {
+        "id":14,
+        "type":"text",
+        "paragraph":"Each product now has a sale, sold out or special sale label displayed over it's picture. Depending on the product status and it's stock, the correct label will display."
+      },
+      {
+        "id":15,
+        "type":"underline-header",
+        "paragraph":"Filtered Left Menu"
+      },
+      {
+        "id":16,
+        "type":"text",
+        "paragraph":"The filtered menu is the most complex new feature. Eight custom functions and 452 lines of code are required to create a functional filter menu. The filter menu displays on all collection and search result pages and allows users to filter within an existing parent or child category and add query parameters (such as brands) to refine the results. A general overview of the function's structure is below."
+      },
+      {
+        "id":17,
+        "type":"table",
+        "paragraph":[
+          {
+            "row": [
+              {
+                "column": "init"
+              },
+              {
+                "column": null
+              },
+              {
+                "column": null
+              }
+            ]
+          },{
+            "row":[
+              {
+                "column":"buildFilter"
+              },
+              {
+                "column":"<span class=\"ttip\" data-attribute=\"ajax\">Ajax</span> call to nav.json. Builds filter structure and links"
+              },
+              {
+                "column":"Runs 3 times to cover each level."
+              }
+            ]
+          },{
+            "row":[
+              {
+                "column":"getURIfilter"
+              },
+              {
+                "column":"Breaks tags into links and adds the tag as a class to each element div."
+              },
+              {
+                "column":"Called within buildFilter function."
+              }
+            ]
+          },{
+            "row":[
+              {
+                "column":"buildLink"
+              },
+              {
+                "column":"Appends the brand links to each level link."
+              },
+              {
+                "column":null
+              }
+            ]
+          },{
+            "row":[
+              {
+                "column":"rebuildVendors"
+              },
+              {
+                "column":"Resets the vendor links to the new tag format"
+              },
+              {
+                "column":null
+              }
+            ]
+          },{
+            "row":[
+              {
+                "column":"stateLink"
+              },
+              {
+                "column":"Checks the pages current link status."
+              },
+              {
+                "column":"Called within buildLink and rebuildVendors"
+              }
+            ]
+          },{
+            "row":[
+              {
+                "column":"getCount"
+              },
+              {
+                "column":"Gets selected level's product count and appends it to the active link."
+              },
+              {
+                "column":"Called on <span class=\"ttip\" data-attribute=\"dom\">dom</span> loaded"
+              }
+            ]
+          },{
+            "row":[
+              {
+                "column":"makeSpace"
+              },
+              {
+                "column":"Reduces the number of children shown and adds a show more/less function. Registers click function on more/less buttons"
+              },
+              {
+                "column":"Current limit is 15 items"
+              }
+            ]
+          },{
+            "row":[
+              {
+                "column":"resetLinks"
+              },
+              {
+                "column":"Shows currently active item and adds visibility classes. Hides duplicate items if they exist."
+              },
+              {
+                "column":"Runs four times. One for each level plus brands."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id":18,
+        "type":"text",
+        "paragraph":"The code and page structure are located in sidebar_filtered.liquid. This file also reads the current language to extract the proper data from the nav.json file and reset certain language parameters. Apart from the buildFilter function, all other functions (unless called from within buildFilter) fire on page load in order to avoid conflicts with other scripts and display features. Because of the complexity of the filter menu functions, error collectors and try...catch instructions are used throughout."
+      },
+      {
+        "id":19,
+        "type":"underline-header",
+        "paragraph":"Compartmentalized Pre Footer"
+      },
+      {
+        "id":20,
+        "type":"text",
+        "paragraph":"The pre-footer (need help, keep in touch, social) bar has been re-scripted to enable a snippet based display. This allows some features to be turned off or blocks to be re-ordered. This also enables the mobile site to display each element as a separate component."
+      },
+      {
+        "id":21,
+        "type":"underline-header",
+        "paragraph":"Hero Banners"
+      },
+      {
+        "id":22,
+        "type":"text",
+        "paragraph":"The hero banners are the full screen image(s) found on the index page that contains sale event information. The masthead itself, similar to the hello bar, extracts it's information from a linklist whose content is fed from basic shopify pages. The masthead displays information for both the desktop and mobile versions of the site."
+      },
+      {
+        "id":23,
+        "type":"text",
+        "paragraph":"The linklist that contains the hero banners is called HeroBanners and can be found in the Navigation sub menu of shopify admin. The hero banner pages are basic page templates with a specific code (see below) and some meta fields that contain the module data."
+      },
+      {
+        "id":24,
+        "type":"text",
+        "paragraph":"Hero banners are multilingual so languages have to be separated with the bar-slash-bar ( |-| ) string."
+      },
+      {
+        "id":25,
+        "type":"pre",
+        "paragraph":"Code<br /><br /> &lt;div style=\"display: none;\"&gt;<br /> &lt;div id=\"start_date\"&gt;July 1, 2015 00:00:00&lt;/div&gt;<br /> &lt;div id=\"end_date\"&gt;July 4, 2015 00:00:00&lt;/div&gt;<br /> &lt;div id=\"show_count\"&gt;true&lt;/div&gt;<br /> &lt;div id=\"ongoing_event\"&gt;true&lt;/div&gt;<br /> &lt;div id=\"promote_hero\"&gt;false&lt;/div&gt;<br /> &lt;div id=\"popup_link\"&gt;false&lt;/div&gt;<br /> &lt;div id=\"show_title\"&gt;true&lt;/div&gt;<br /> &lt;div id=\"show_subtitle\"&gt;false&lt;/div&gt;<br /> &lt;/div&gt;<br /> &lt;div id=\"event-active-today\"&gt;<br /> &lt;div class=\"event-active-bg\"&gt;&lt;img src=\"...\" /&gt;&lt;/div&gt;<br /> &lt;div class=\"event-active-content\"&gt;<br /> &lt;p class=\"headline\"&gt;TITLE&lt;/p&gt;<br /> &lt;p class=\"subtitle\"&gt;Subtitle (Optional)&lt;/p&gt;<br /> &lt;/div&gt;<br /> &lt;div class=\"event-active-cta\"&gt;&lt;a href=\"link\" class=\"action_button\"&gt; CTA &lt;/a&gt;&lt;/div&gt;<br /> &lt;/div&gt;<br /> |-|<br /> &lt;div id=\"event-active-today\"&gt;<br /> &lt;div class=\"event-active-bg\"&gt;&lt;img src=\"...\" /&gt;&lt;/div&gt;<br /> &lt;div class=\"event-active-content\"&gt;<br /> &lt;p class=\"headline\"&gt;TITLE&lt;/p&gt;<br /> &lt;p class=\"subtitle\"&gt;Subtitle (Optional)&lt;/p&gt;<br /> &lt;/div&gt;<br /> &lt;div class=\"event-active-cta\"&gt;&lt;a href=\"link\" class=\"action_button\"&gt; CTA &lt;/a&gt;&lt;/div&gt;<br /> &lt;/div&gt;<br />"
+      },
+      {
+        "id":26,
+        "type":"deprecated-text",
+        "paragraph":"The hero banner also requires some metafields as the large banner share's the same content as the upcoming events box. The metafield values can be copied from the HTML page. You can add and edit metafields via the ShopifyFD plugin for Google chrome. A list of these required metafields is below."
+      },
+      {
+        "id":26,
+        "type":"note",
+        "paragraph":"Use the page builder app to construct the hero banner content by clicking the wizard icon below."
+      },
+
+      {
+        "id":27,
+        "type":"deprecated-table",
+        "paragraph":[
+          {
+            "row": [
+              {
+                "column": "global.button_link"
+              },
+              {
+                "column": "Contains the link for the CTA button"
+              }
+            ]
+          },{
+            "row":[
+              {
+                "column":"global.button_text"
+              },
+              {
+                "column":"Contains the text for the CTA button"
+              }
+            ]
+          },{
+            "row":[
+              {
+                "column":"global.end_date"
+              },
+              {
+                "column":"Event end date in full date format :<br/>March 15, 2015 11:00:00"
+              }
+            ]
+          },{
+            "row":[
+              {
+                "column":"global.start_date"
+              },
+              {
+                "column":"Event start date in full date format :<br/>March 13, 2015 11:00:00"
+              }
+            ]
+          },{
+            "row":[
+              {
+                "column":"global.subtitle"
+              },
+              {
+                "column":"Contains the text for the subtitle"
+              }
+            ]
+          },{
+            "row":[
+              {
+                "column":"global.title"
+              },
+              {
+                "column":"Contains the text for the title"
+              }
+            ]
+          },{
+            "row":[
+              {
+                "column":"Helpers.images"
+              },
+              {
+                "column":"Contains the image's CDN source."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id":28,
+        "type":"underline-header",
+        "paragraph":"Easy Shot"
+      },
+      {
+        "id":29,
+        "type":"text",
+        "paragraph":"The easy shot component is a hybrid external app - internal custom code component. It uses a bold app function to set sales server-side and an internal custom code to loop through sale products, display product specific information and powers the countdown timer. The countdown timer itself is a separate code feature, scripted as a jquery plugin to enable it's use multiple times on the same page without causing a conflict between elements."
+      },
+      {
+        "id":30,
+        "type":"note",
+        "paragraph":"The countdown date format can be changed in the function call's parameters. All time elements can be configured to display a specific date-time format and/or show different separators."
+      },
+      {
+        "id":31,
+        "type":"underline-header",
+        "paragraph":"Upcoming Events"
+      },
+      {
+        "id":32,
+        "type":"text",
+        "paragraph":"The upcoming events feature is identical to the hero banners feature. It's content and functionality is the same. The only difference is that the upcoming events boxes extracts it's data from the page html rather than the metafields. The upcoming event's timer counts up to the sale date."
+      },
+      {
+        "id":33,
+        "type":"header",
+        "paragraph":"Associated Blocks"
+      },
+      {
+        "id":34,
+        "type":"text",
+        "paragraph":"Below is a chart that identifies the snippet blocks used by each of the new functionalities and components identified above."
+      },
+      {
+        "id":35,
+        "type":"table",
+        "paragraph":[
+            {
+              "row": [
+                {"column": "<b>Component</b>"},
+                {"column": "<b>Block</b>"},
+                {"column": "<b>Parent Template</b>"}
+              ]
+            },
+            {
+              "row": [
+                {"column": " Hello Banner "},
+                {"column": " Hello-banner-linklist.liquid "},
+                {"column": " theme.liquid "}
+              ]
+            },
+            {
+              "row": [
+                {"column": " Navigation Menu "},
+                {"column": " layered-nav_en.liquid "},
+                {"column": " theme.liquid "}
+              ]
+            },
+            {
+              "row": [
+                {"column": null},
+                {"column": " layered-nav_fr.liquid "},
+                {"column": null}
+              ]
+            },
+            {
+              "row": [
+                {"column": null},
+                {"column": " Assets/nav.json "},
+                {"column": " none "}
+              ]
+            },
+            {
+              "row": [
+                {"column": " Language Switcher "},
+                {"column": " lang_switcher.liquid "},
+                {"column": " theme.liquid "}
+              ]
+            },
+            {
+              "row": [
+                {"column": null},
+                {"column": " lang_handler.liquid "},
+                {"column": " none "}
+              ]
+            },
+            {
+              "row": [
+                {"column": " Sale Labels "},
+                {"column": " product_thumbnail.liquid "},
+                {"column": " collections.liquid "}
+              ]
+            },
+            {
+              "row": [
+                {"column": " Filtered Left Menu "},
+                {"column": " sidebar_filtered.liquid "},
+                {"column": " collections.liquid "}
+              ]
+            },
+            {
+              "row": [
+                {"column": null},
+                {"column": " Assets/nav.json "},
+                {"column": " None "}
+              ]
+            },
+            {
+              "row": [
+                {"column": " Pre-Footer "},
+                {"column": " pre-footer.liquid "},
+                {"column": " theme.liquid "}
+              ]
+            },
+            {
+              "row": [
+                {"column": null},
+                {"column": " pre-footer_help.liquid "},
+                {"column": null}
+              ]
+            },
+            {
+              "row": [
+                {"column": " <br> "},
+                {"column": " pre-footer_news.liquid "},
+                {"column": null}
+              ]
+            },
+            {
+              "row": [
+                {"column": " <br> "},
+                {"column": " pre-footer_social.liquid "},
+                {"column": null}
+              ]
+            },
+            {
+              "row": [
+                {"column": " Hero Banners "},
+                {"column": " index.liquid "},
+                {"column": " theme.liquid "}
+              ]
+            },
+            {
+              "row": [
+                {"column": null},
+                {"column": " page_loop.liquid "},
+                {"column": " index.liquid "}
+              ]
+            },
+            {
+              "row": [
+                {"column": " Easy Shot "},
+                {"column": " index.liquid "},
+                {"column": " theme.liquid "}
+              ]
+            },
+            {
+              "row": [
+                {"column": null},
+                {"column": " product-full-variant.liquid "},
+                {"column": " index.liquid "}
+              ]
+            },
+            {
+              "row": [
+                {"column": " Upcoming Events "},
+                {"column": " index.liquid "},
+                {"column": " theme.liquid "}
+              ]
+            },
+            {
+              "row": [
+                {"column": null},
+                {"column": " page_loop.liquid "},
+                {"column": " index.liquid "}
+              ]
+            }
+          ]
+
+      },
+      {
+        "id":36,
+        "type":"header",
+        "paragraph":"Reusable Scripted Functions"
+      },
+      {
+        "id":37,
+        "type":"text",
+        "paragraph":"In order to streamline function execution and extend features site-wide, a library of functions has been created allowing for the execution of redundant or core tasks as well as the implementation of new standards. All of these functions are vanilla javascript and are either executed in page or executed via a jquery event handler. All of these function can be executed in the console for testing purposes."
+      },
+      {
+        "id":38,
+        "type":"text",
+        "paragraph":"Below is a list of functions, the task they achieve, the parameters they require and the data they return."
+      },
+      {
+        "id":36,
+        "type":"table",
+        "paragraph":[
+          {
+            "row": [
+              {"column": " capitalize "},
+              {"column": " String prototype function capitalizes string "},
+              {"column": " No Parameters "},
+              {"column": " Returns string "}
+            ]
+          },
+          {
+            "row": [
+              {"column": " animate_elems "},
+              {"column": " Uses css3 elements to animate html objects "},
+              {"column": " No Parameters "},
+              {"column": " Returns nothing "}
+            ]
+          },
+          {
+            "row": [
+              {"column": " makeModal "},
+              {"column": " Creates a modal instance on the page "},
+              {"column": " Greet: top message<br>Close: show or hide close button (true or false)<br>Message: modal message<br>Buttons: buttons to show (yes, no or yes/no)<br>btMessages: Button labels<br>saidYes: js function launched when user clicks yes<br>saidNo: js function launched when user clicks no "},
+              {"column": " Returns HTML string "}
+            ]
+          },
+          {
+            "row": [
+              {"column": " mobileWait "},
+              {"column": " Shows spinner on mobile site "},
+              {"column": " Mode : can be true or false. False hides spinner "},
+              {"column": " Returns nothing "}
+            ]
+          },
+          {
+            "row": [
+              {"column": " prepTitle "},
+              {"column": " Creates a json translation instance and passes URI information to wordTranslate function. "},
+              {"column": " No Parameters "},
+              {"column": " Returns nothing "}
+            ]
+          },
+          {
+            "row": [
+              {"column": " wordTranslate "},
+              {"column": " Translates the category hierarchy based on URI parameted. "},
+              {"column": " Top:Top level category word:word in URL string to translate (can be null)<br>second: second category (can be null)<br>lang:current language setting<br>brand: brand parameter (can be null) "},
+              {"column": " Returns HTML string "}
+            ]
+          },
+          {
+            "row": [
+              {"column": " reposFilters "},
+              {"column": " Repositions the filter panel for mobile use "},
+              {"column": " No Parameters "},
+              {"column": " Returns nothing "}
+            ]
+          },
+          {
+            "row": [
+              {"column": " hideRelatedProds "},
+              {"column": " Hide the related products section if it is empty "},
+              {"column": " Check: product variables<br>Hide: html node "},
+              {"column": " Returns nothing "}
+            ]
+          },
+          {
+            "row": [
+              {"column": " mobileTabManager "},
+              {"column": " Adds active tab functionality for mobile "},
+              {"column": " No Parameters "},
+              {"column": " Returns nothing "}
+            ]
+          },
+          {
+            "row": [
+              {"column": " lsTest "},
+              {"column": " Tests if the client's browser accepts HTML5 Local Storage "},
+              {"column": " No Parameters "},
+              {"column": " Returns true or false "}
+            ]
+          },
+          {
+            "row": [
+              {"column": " setLs "},
+              {"column": " Calls lsTest and if lsTest returns true it sets a Local Storage item. "},
+              {"column": " name: The name of the Local Storage item. val: The value of the local storage item. "},
+              {"column": " Returns nothing "}
+            ]
+          },
+          {
+            "row": [
+              {"column": " indexNav "},
+              {"column": " Creates a top level index image using the nav.json file. "},
+              {"column": " No Parameters "},
+              {"column": " Returns HTML string "}
+            ]
+          },
+          {
+            "row": [
+              {"column": " regExReplace "},
+              {"column": " Performs a regex search and replace "},
+              {"column": " element: the element to replace replacer: the element to replace with "},
+              {"column": " Returns string "}
+            ]
+          },
+          {
+            "row": [
+              {"column": " siteIsOpen "},
+              {"column": " Checks the settings parameter site_access_available and redirects to maintenance page if false. "},
+              {"column": " No Parameters "},
+              {"column": " Returns true or false "}
+            ]
+          },
+          {
+            "row": [
+              {"column": " setCart "},
+              {"column": " Sets the shopify cart URL with the locale value. "},
+              {"column": " No Parameters "},
+              {"column": " Returns HTML string "}
+            ]
+          },
+          {
+            "row": [
+              {"column": " itemListSet "},
+              {"column": " Sets the toggle button of nav menu children. "},
+              {"column": " No Parameters "},
+              {"column": " Returns nothing "}
+            ]
+          },
+          {
+            "row": [
+              {"column": " pageHeightSet "},
+              {"column": " Gets the height of the page after load and sets the body css attribute to correct any style issues "},
+              {"column": " No Parameters "},
+              {"column": " Returns nothing "}
+            ]
+          },
+          {
+            "row": [
+              {"column": " doPercent "},
+              {"column": " Calculates the percentage value of two monetary values. "},
+              {"column": " origP: original price newP: new price showMode: extended or concise lang: en or fr "},
+              {"column": " Returns HTML string "}
+            ]
+          },
+          {
+            "row": [
+              {"column": " splitSubmenu "},
+              {"column": " Splits the top nav menu into columns. "},
+              {"column": " maxNumItems: maxinum lines per row. "},
+              {"column": " Returns nothing "}
+            ]
+          },
+          {
+            "row": [
+              {"column": " slideMotion "},
+              {"column": " Animation a page element in a defined direction. "},
+              {"column": " dir: the direction of the slide animation "},
+              {"column": " Returns nothing "}
+            ]
+          },
+          {
+            "row": [
+              {"column": " allProds "},
+              {"column": " Show a “see all products” link. "},
+              {"column": " lang: en or fr "},
+              {"column": " Returns HTML string "}
+            ]
+          },
+          {
+            "row": [
+              {"column": " testLang "},
+              {"column": " Checks if the languageGlobal variable has been set. "},
+              {"column": " No Parameters "},
+              {"column": " Returns console message <br> "}
+            ]
+          },
+          {
+            "row": [
+              {"column": " dimSoldOut "},
+              {"column": " Dims all sold out products to a specified value "},
+              {"column": " val: the alpha opacity value (0-1) "},
+              {"column": " Returns nothing "}
+            ]
+          },
+          {
+            "row": [
+              {"column": " orderChildren "},
+              {"column": " orders categories in the left nav menu into a hierarchical format "},
+              {"column": " No Parameters "},
+              {"column": " Returns nothing "}
+            ]
+          }
+        ]
+      }
+
+    ]
+  }
+}
