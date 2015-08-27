@@ -498,8 +498,8 @@ function getContent(){
             $('#show_count').val(d_ob3);
             $('#sis_ongoing').val(d_ob4);
             $('#promote_hero').val(d_ob44);
-            $('#image_gl').val(e_ob1).replace('https:','').replace('http:','');
-		$('#alt_image_gl').val(d_ob66).replace('https:','').replace('http:','');
+            $('#image_gl').val(e_ob1);
+		$('#alt_image_gl').val(d_ob66);
             $('#title_en').val(e_ob2);
             $('#title_fr').val(e_fr_ob2);
             $('#subtitle_en').val(e_ob3);
@@ -658,7 +658,7 @@ function codeOutput(scan){
         is_subtitle_show = 'false';
     }
     if(image_gl.indexOf('_1024x1024') > -1 || image_gl.indexOf('_2048x2048') > -1 || image_gl.indexOf('_600x600') > -1 || image_gl.indexOf('_480x480') > -1 || image_gl.indexOf('_large') > -1 || image_gl.indexOf('_medium') > -1 || image_gl.indexOf('_grande') > -1 || image_gl.indexOf('_compact') > -1){
-        var dnkIm = image_gl;
+        var dnkIm = image_gl.replace('https:','').replace('http:','');
 
     }else{
         if(is_ongoing !== 'true'){
@@ -670,17 +670,17 @@ function codeOutput(scan){
             var altIm = image_gl.split('.jpg')[0],
             altForm = '.jpg',
             altSize = '_2048x2048',
-            dnkIm = altIm+altSize+altForm;
+            dnkIm = altIm.replace('https:','').replace('http:','')+altSize+altForm;
         }else if(image_gl.indexOf('.png') > -1){
             var altIm = image_gl.split('.png')[0],
             altForm = '.png',
             altSize = '_2048x2048',
-            dnkIm = altIm+altSize+altForm;
+            dnkIm = altIm.replace('https:','').replace('http:','')+altSize+altForm;
         }else if(image_gl.indexOf('.gif') > -1){
             var altIm = image_gl.split('.gif')[0],
             altForm = '.gif',
             altSize = '_2048x2048',
-            dnkIm = altIm+altSize+altForm;
+            dnkIm = altIm.replace('https:','').replace('http:','')+altSize+altForm;
         }
 
     }
@@ -699,7 +699,7 @@ if(alt_image_gl !== ''){
     page_model += '</div>';
     page_model += '<div id="event-active-today">';
     page_model += '<div class="event-active-bg">';
-    page_model += '<img src="'+dnkIm.replace('https:','').replace('http:','')+'" />';
+    page_model += '<img src="'+dnkIm+'" />';
     page_model += '</div>';
     page_model += '<div class="event-active-content">';
     page_model += '<p class="headline"';
@@ -730,7 +730,7 @@ if(alt_image_gl !== ''){
     page_model += '|-|';
     page_model += '<div id="event-active-today">';
     page_model += '<div class="event-active-bg">';
-    page_model += '<img src="'+dnkIm.replace('https:','').replace('http:','')+'" />';
+    page_model += '<img src="'+dnkIm+'" />';
     page_model += '</div>';
     page_model += '<div class="event-active-content">';
     page_model += '<p class="headline"';
