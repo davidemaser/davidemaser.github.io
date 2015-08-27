@@ -498,8 +498,8 @@ function getContent(){
             $('#show_count').val(d_ob3);
             $('#sis_ongoing').val(d_ob4);
             $('#promote_hero').val(d_ob44);
-            $('#image_gl').val(e_ob1);
-		$('#alt_image_gl').val(d_ob66);
+            $('#image_gl').val(e_ob1).replace('https:','').replace('http:','');
+		$('#alt_image_gl').val(d_ob66).replace('https:','').replace('http:','');
             $('#title_en').val(e_ob2);
             $('#title_fr').val(e_fr_ob2);
             $('#subtitle_en').val(e_ob3);
