@@ -699,7 +699,7 @@ if(alt_image_gl !== ''){
     page_model += '</div>';
     page_model += '<div id="event-active-today">';
     page_model += '<div class="event-active-bg">';
-    page_model += '<img src="'+dnkIm+'" />';
+    page_model += '<img src="'+dnkIm.replace('https:','').replace('http:','')+'" />';
     page_model += '</div>';
     page_model += '<div class="event-active-content">';
     page_model += '<p class="headline"';
@@ -730,7 +730,7 @@ if(alt_image_gl !== ''){
     page_model += '|-|';
     page_model += '<div id="event-active-today">';
     page_model += '<div class="event-active-bg">';
-    page_model += '<img src="'+dnkIm+'" />';
+    page_model += '<img src="'+dnkIm.replace('https:','').replace('http:','')+'" />';
     page_model += '</div>';
     page_model += '<div class="event-active-content">';
     page_model += '<p class="headline"';
