@@ -6,7 +6,7 @@
 function urlExists(testUrl) {
     var http = jQuery.ajax({
         type:"HEAD",
-        url: testUrl,
+        url: 'https:' + testUrl,
         async: false
     });
     return http.status;
