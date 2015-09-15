@@ -107,6 +107,18 @@
           "candidate":1.6,
           "request":false
         }
+      },
+      {
+        "line":1128,
+        "file":"version.js",
+        "structure":"modify",
+        "utility":"change url schema",
+        "appstatus":{
+          "scoped":true,
+          "version":1.7,
+          "candidate":1.8,
+          "request":false
+        }
       }
     ],
     "history":[
