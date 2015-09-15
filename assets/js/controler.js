@@ -235,7 +235,7 @@ $(document).ready(function(){
         OpenInNewTab('https://lasthunt.myshopify.com/admin/auth/login');
     });
     $('.wizard').click(function(){
-        OpenInNewTab('https://www.googledrive.com/host/0B4onXKnKkE6AeWxCYndEckpHTm8');
+        OpenInNewTab('pgd/page-builder.html');
     });
     $('.bookmarker').click(function(){
         if(searchFREE.length) {

@@ -6,7 +6,7 @@
 function urlExists(testUrl) {
     var http = jQuery.ajax({
         type:"HEAD",
-        url: testUrl,
+        url: 'https:' + testUrl,
         async: false
     });
     return http.status;
@@ -658,7 +658,7 @@ function codeOutput(scan){
         is_subtitle_show = 'false';
     }
     if(image_gl.indexOf('_1024x1024') > -1 || image_gl.indexOf('_2048x2048') > -1 || image_gl.indexOf('_600x600') > -1 || image_gl.indexOf('_480x480') > -1 || image_gl.indexOf('_large') > -1 || image_gl.indexOf('_medium') > -1 || image_gl.indexOf('_grande') > -1 || image_gl.indexOf('_compact') > -1){
-        var dnkIm = image_gl;
+        var dnkIm = image_gl.replace('https:','').replace('http:','');
 
     }else{
         if(is_ongoing !== 'true'){
@@ -670,17 +670,17 @@ function codeOutput(scan){
             var altIm = image_gl.split('.jpg')[0],
             altForm = '.jpg',
             altSize = '_2048x2048',
-            dnkIm = altIm+altSize+altForm;
+            dnkIm = altIm.replace('https:','').replace('http:','')+altSize+altForm;
         }else if(image_gl.indexOf('.png') > -1){
             var altIm = image_gl.split('.png')[0],
             altForm = '.png',
             altSize = '_2048x2048',
-            dnkIm = altIm+altSize+altForm;
+            dnkIm = altIm.replace('https:','').replace('http:','')+altSize+altForm;
         }else if(image_gl.indexOf('.gif') > -1){
             var altIm = image_gl.split('.gif')[0],
             altForm = '.gif',
             altSize = '_2048x2048',
-            dnkIm = altIm+altSize+altForm;
+            dnkIm = altIm.replace('https:','').replace('http:','')+altSize+altForm;
         }
 
     }
@@ -1234,7 +1234,7 @@ if($(this).hasClass('dope')) {
         /**
          *use url https://www.googledrive.com/host/0B4onXKnKkE6AWGNaYTZuRl9MRGs when on google drive
          */
-        window.open("https://www.googledrive.com/host/0B4onXKnKkE6AWGNaYTZuRl9MRGs ", "_blank","scrollbars=no,resizable=no,height=600, width=800, status=yes, toolbar=no, menubar=no, location=no");
+        window.open("http://davidemaser.github.io/pgd/release.html", "_blank","scrollbars=no,resizable=no,height=600, width=800, status=yes, toolbar=no, menubar=no, location=no");
     })
 });
 

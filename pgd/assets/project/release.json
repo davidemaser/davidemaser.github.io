@@ -1,7 +1,7 @@
 {
   "project":{
     "name":"Page Builder",
-    "version":"1.7",
+    "version":"1.8",
     "revision":"1",
     "downloadlink":"https://drive.google.com/file/d/0B4onXKnKkE6AY0JiVlZ3bG9scmM/view?usp=sharing",
     "semantic":{
@@ -426,6 +426,20 @@
         "codeblocks":[
           {
             "item":"Added promote ongoing hero functionality",
+            "revision":"minor",
+            "impact":"global",
+            "codestatus":"working"
+          }
+        ]
+      },
+      {
+        "version":1.8,
+        "date":"9/15/2015",
+        "failsafe":"minor",
+        "author":"David Maser",
+        "codeblocks":[
+          {
+            "item":"Modified http, https prefix to adhere to new shopify standards",
             "revision":"minor",
             "impact":"global",
             "codestatus":"working"
