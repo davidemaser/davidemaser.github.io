@@ -44,6 +44,15 @@
           "solution":"Provide UTF-8 value",
           "applied":true
         }
+      },
+      {
+        "file":"version.js",
+        "line":548,
+        "issue":"url schema included",
+        "fix":{
+          "solution":"remove url schema",
+          "applied":true
+        }
       }
     ],
     "updates":[
