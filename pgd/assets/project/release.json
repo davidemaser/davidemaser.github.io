@@ -2,10 +2,10 @@
   "project":{
     "name":"Page Builder",
     "version":"1.8",
-    "revision":"1",
+    "revision":"8",
     "downloadlink":"https://drive.google.com/file/d/0B4onXKnKkE6AY0JiVlZ3bG9scmM/view?usp=sharing",
     "semantic":{
-      "build":50,
+      "build":26,
       "language":["js","jquery","json","css","html"],
       "externals":["jquery","bootstrap","custom font","versioning file"],
       "minified":true
