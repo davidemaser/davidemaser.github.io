@@ -1234,7 +1234,7 @@ if($(this).hasClass('dope')) {
         /**
          *use url https://www.googledrive.com/host/0B4onXKnKkE6AWGNaYTZuRl9MRGs when on google drive
          */
-        window.open("https://www.googledrive.com/host/0B4onXKnKkE6AWGNaYTZuRl9MRGs ", "_blank","scrollbars=no,resizable=no,height=600, width=800, status=yes, toolbar=no, menubar=no, location=no");
+        window.open("http://davidemaser.github.io/pgd/release.html", "_blank","scrollbars=no,resizable=no,height=600, width=800, status=yes, toolbar=no, menubar=no, location=no");
     })
 });
 
