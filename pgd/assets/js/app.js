@@ -619,7 +619,7 @@ function livePreview(mode,lang,code){
         }
     }
 }
-function codeOutput(scan){
+function codeOutput(scan,codeType){
     var ctvobj = '#content_value',
     a = $('#pageBuilder').serializeArray(),
         start_dr = a[0].value,
@@ -684,75 +684,107 @@ function codeOutput(scan){
         }
 
     }
-    var page_model='<div style="display: none;">';
-    page_model += '<div id="start_date">'+start_dr+'</div>';
-    page_model += '<div id="end_date">'+end_dr+'</div>';
-    page_model += '<div id="show_count">'+show_counter+'</div>';
-    page_model += '<div id="ongoing_event">'+is_ongoing+'</div>';
-    page_model += '<div id="promote_hero">'+promote_hero+'</div>';
-    page_model += '<div id="popup_link">'+pop_up_link+'</div>';
-    page_model += '<div id="show_title">'+is_title_show+'</div>';
-    page_model += '<div id="show_subtitle">'+is_subtitle_show+'</div>';
-if(alt_image_gl !== ''){
-	page_model += '<div id="alt_image">'+alt_image_gl+'</div>';
-}
-    page_model += '</div>';
-    page_model += '<div id="event-active-today">';
-    page_model += '<div class="event-active-bg">';
-    page_model += '<img src="'+dnkIm+'" />';
-    page_model += '</div>';
-    page_model += '<div class="event-active-content">';
-    page_model += '<p class="headline"';
-    if(title_color !== '#fff'){
-        page_model += ' style="color:'+title_color+';"';
-    }
-    page_model += '>'+title_en+'</p>';
-    page_model += '<p class="subtitle">'+subtitle_en+'</p>';
-    page_model += '</div>';
-    page_model += '<div class="event-active-cta"><a';
-    if(pop_up_link == 'true'){
-        page_model += ' id="'+pop_up_ID+'"';
-    }
-    page_model += ' href="';
-    if(button_link_gl.charAt(0) == '/'){
-        if(button_link_gl.length == 1){
+    if(codeType == 'json'){
+        var page_model='{"hero": [{';
+        page_model += '"hero-id": "herschel1",';
+        page_model += '"active": true,';
+        page_model += '"showCountdown": '+show_counter+',';
+        page_model += '"date": {';
+        page_model += '"start": "'+start_dr+'",';
+        page_model += '"end": "'+end_dr+'"';
+        page_model += '},';
+        page_model += '"title": {';
+        page_model += '"en": "'+title_en+'",';
+        page_model += '"fr": "'+title_fr+'",';
+        page_model += '"color": "'+title_color+'"';
+        page_model += '},';
+        page_model += '"text": {';
+        page_model += '"en": "'+subtitle_en+'",';
+        page_model += '"fr": "'+subtitle_fr+'"';
+        page_model += '},';
+        page_model += '"promote": '+promote_hero+',';
+        page_model += '"button": {';
+        page_model += '"label": {';
+        page_model += '"en": "'+button_label_en+'",';
+        page_model += '"fr": "'+button_label_fr+'"';
+        page_model += '},';
+        page_model += '"url": "'+button_link_gl+'"';
+        page_model += '},';
+        page_model += '"image": {';
+        page_model += '"url": "'+dnkIm+'",';
+        page_model += '"alt-url": "'+alt_image_gl+'"';
+        page_model += '}]}';
+    }else if(codeType == 'html') {
+        var page_model = '<div style="display: none;">';
+        page_model += '<div id="start_date">' + start_dr + '</div>';
+        page_model += '<div id="end_date">' + end_dr + '</div>';
+        page_model += '<div id="show_count">' + show_counter + '</div>';
+        page_model += '<div id="ongoing_event">' + is_ongoing + '</div>';
+        page_model += '<div id="promote_hero">' + promote_hero + '</div>';
+        page_model += '<div id="popup_link">' + pop_up_link + '</div>';
+        page_model += '<div id="show_title">' + is_title_show + '</div>';
+        page_model += '<div id="show_subtitle">' + is_subtitle_show + '</div>';
+        if (alt_image_gl !== '') {
+            page_model += '<div id="alt_image">' + alt_image_gl + '</div>';
+        }
+        page_model += '</div>';
+        page_model += '<div id="event-active-today">';
+        page_model += '<div class="event-active-bg">';
+        page_model += '<img src="' + dnkIm + '" />';
+        page_model += '</div>';
+        page_model += '<div class="event-active-content">';
+        page_model += '<p class="headline"';
+        if (title_color !== '#fff') {
+            page_model += ' style="color:' + title_color + ';"';
+        }
+        page_model += '>' + title_en + '</p>';
+        page_model += '<p class="subtitle">' + subtitle_en + '</p>';
+        page_model += '</div>';
+        page_model += '<div class="event-active-cta"><a';
+        if (pop_up_link == 'true') {
+            page_model += ' id="' + pop_up_ID + '"';
+        }
+        page_model += ' href="';
+        if (button_link_gl.charAt(0) == '/') {
+            if (button_link_gl.length == 1) {
+                button_link_gl = '';
+            }
+        } else if (button_link_gl == '') {
             button_link_gl = '';
+        } else {
+            if (button_link_gl !== '#' || button_link_gl !== '') {
+                page_model += '/';
+            }
         }
-    }else if(button_link_gl == ''){
-        button_link_gl = '';
-    }else{
-        if(button_link_gl !== '#' || button_link_gl !== '') {
-            page_model += '/';
+        page_model += button_link_gl + '" class="action_button"> ' + button_label_en + ' </a></div>';
+        page_model += '</div>';
+        page_model += '|-|';
+        page_model += '<div id="event-active-today">';
+        page_model += '<div class="event-active-bg">';
+        page_model += '<img src="' + dnkIm + '" />';
+        page_model += '</div>';
+        page_model += '<div class="event-active-content">';
+        page_model += '<p class="headline"';
+        if (title_color !== '#fff') {
+            page_model += ' style="color:' + title_color + ';"';
         }
-    }
-    page_model += button_link_gl+'" class="action_button"> '+button_label_en+' </a></div>';
-    page_model += '</div>';
-    page_model += '|-|';
-    page_model += '<div id="event-active-today">';
-    page_model += '<div class="event-active-bg">';
-    page_model += '<img src="'+dnkIm+'" />';
-    page_model += '</div>';
-    page_model += '<div class="event-active-content">';
-    page_model += '<p class="headline"';
-    if(title_color !== '#fff'){
-        page_model += ' style="color:'+title_color+';"';
-    }
-    page_model += '>'+title_fr+'</p>';
-    page_model += '<p class="subtitle">'+subtitle_fr+'</p>';
-    page_model += '</div>';
-    page_model += '<div class="event-active-cta"><a'
-    if(pop_up_link == 'true'){
-        page_model += ' id="'+pop_up_ID+'"';
-    }
-    page_model += ' href="';
-    if(button_link_gl.charAt(0) == '/'){
-    }else{
-        if(button_link_gl !== '#' || button_link_gl !== '') {
-            page_model += '/';
+        page_model += '>' + title_fr + '</p>';
+        page_model += '<p class="subtitle">' + subtitle_fr + '</p>';
+        page_model += '</div>';
+        page_model += '<div class="event-active-cta"><a'
+        if (pop_up_link == 'true') {
+            page_model += ' id="' + pop_up_ID + '"';
         }
+        page_model += ' href="';
+        if (button_link_gl.charAt(0) == '/') {
+        } else {
+            if (button_link_gl !== '#' || button_link_gl !== '') {
+                page_model += '/';
+            }
+        }
+        page_model += button_link_gl + '" class="action_button"> ' + button_label_fr + ' </a></div>';
+        page_model += '</div>';
     }
-    page_model += button_link_gl+'" class="action_button"> '+button_label_fr+' </a></div>';
-    page_model += '</div>';
     if(scan == true){
         $("html, body").animate({ scrollTop: 0 }, "slow");
     }
@@ -1005,7 +1037,7 @@ var target = document.querySelector('#image_gl');
         $('#html-view').html('');
         $('#content_value').attr('style','');
         $('.well.well-lg').attr('style','');
-        codeOutput(true);
+        codeOutput(true,'json');
         checkOngoing();
         errorViewer();
     });
@@ -1027,7 +1059,7 @@ var target = document.querySelector('#image_gl');
         codeCleaner();
         getContent();
         $('.see_cleaner_overlay').hide(250);
-        codeOutput(false);
+        codeOutput(false,'json');
         checkOngoing();
         errorViewer();
         $('li').attr('style','');
@@ -1096,7 +1128,7 @@ $('#close_preview_page').click(function(){
     $('.well.well-lg').attr('style','');
 });
     $('.find_errors').click(function(){
-        codeOutput(false);
+        codeOutput(false,'json');
         checkOngoing();
         errorViewer();
     });
