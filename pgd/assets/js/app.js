@@ -1037,6 +1037,16 @@ var target = document.querySelector('#image_gl');
         $('#html-view').html('');
         $('#content_value').attr('style','');
         $('.well.well-lg').attr('style','');
+        codeOutput(true,'html');
+        checkOngoing();
+        errorViewer();
+    });
+    $('.generate_page_json').click(function(){
+        $('.hepa').remove();
+        $('.hepaT').remove();
+        $('#html-view').html('');
+        $('#content_value').attr('style','');
+        $('.well.well-lg').attr('style','');
         codeOutput(true,'json');
         checkOngoing();
         errorViewer();
