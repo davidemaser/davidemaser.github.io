@@ -685,13 +685,13 @@ function codeOutput(scan,codeType){
 
     }
     if(codeType == 'json'){
-        var page_model='{"hero": [{';
-        page_model += '"hero-id": "herschel1",';
-        page_model += '"active": true,';
-        page_model += '"showCountdown": '+show_counter+',';
-        page_model += '"date": {';
-        page_model += '"start": "'+start_dr+'",';
-        page_model += '"end": "'+end_dr+'"';
+        var page_model='{\n"hero": [{\n';
+        page_model += '"hero-id": "herschel1",\n';
+        page_model += '"active": true,\n';
+        page_model += '"showCountdown": '+show_counter+',\n';
+        page_model += '"date": {\n';
+        page_model += '"start": "'+start_dr+'",\n';
+        page_model += '"end": "'+end_dr+'"\n';
         page_model += '},';
         page_model += '"title": {';
         page_model += '"en": "'+title_en+'",';
