@@ -689,6 +689,7 @@ function codeOutput(scan,codeType){
         page_model += '\n        "hero-id": "herschel1",';
         page_model += '\n        "active": true,';
         page_model += '\n        "showCountdown": '+show_counter+',';
+        page_model += '\n        "popUpLink": ' + pop_up_link + ',';
         page_model += '\n        "date": {';
         page_model += '\n          "start": "'+start_dr+'",';
         page_model += '\n          "end": "'+end_dr+'"';
@@ -708,7 +709,8 @@ function codeOutput(scan,codeType){
         page_model += '\n            "en": "'+button_label_en+'",';
         page_model += '\n            "fr": "'+button_label_fr+'"';
         page_model += '\n          },';
-        page_model += '\n        "url": "'+button_link_gl+'"';
+        page_model += '\n        "url": "'+button_link_gl+'",';
+        page_model += '\n        "popUpLinkID": ' + pop_up_link;
         page_model += '\n        },';
         page_model += '\n        "image": {';
         page_model += '\n          "url": "'+dnkIm+'",';
