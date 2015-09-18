@@ -619,6 +619,19 @@ function livePreview(mode,lang,code){
         }
     }
 }
+function validateJSON(){
+    try{
+    var a = $('#content_value').val(),
+        b = JSON.parse(a);
+        alert('Your JSON looks great');
+    }catch(e){
+        alert('Your JSON has an error')
+    }
+}
+function isolateJSON(){
+    var a = $('#content_value').val().replace('"hero": [','').substring(1).slice(0, - 3);
+    $('#content_value').val(a);
+}
 function codeOutput(scan,codeType){
     var ctvobj = '#content_value',
     a = $('#pageBuilder').serializeArray(),
@@ -685,6 +698,7 @@ function codeOutput(scan,codeType){
 
     }
     if(codeType == 'json'){
+        $('#html-view').attr('data-lang','json').next().css('display','none').next().css('display','block');
         var page_model='{\n    "hero": [\n        {';
         page_model += '\n        "hero-id": "herschel1",';
         page_model += '\n        "active": true,';
@@ -717,6 +731,7 @@ function codeOutput(scan,codeType){
         page_model += '\n          "alt-url": "'+alt_image_gl+'"';
         page_model += '\n        }\n      }\n   ]\n}';
     }else if(codeType == 'html') {
+        $('#html-view').attr('data-lang','html').next().css('display','block').next().css('display','none');;
         var page_model = '<div style="display: none;">';
         page_model += '<div id="start_date">' + start_dr + '</div>';
         page_model += '<div id="end_date">' + end_dr + '</div>';
@@ -816,6 +831,12 @@ function codeOutput(scan,codeType){
             livePreview('small','all',page_model);
             $('.hepa').remove();
             $(this).append('<span class="glyphicon glyphicon-ok hepa"></span>');
+        });
+        $('#validate_json_code').click(function() {
+            validateJSON();
+        });
+        $('#isolate_json_node').click(function() {
+            isolateJSON();
         });
         $(ctvobj).css('background-color','#fff');
         if(scan == true) {
