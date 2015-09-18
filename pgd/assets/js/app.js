@@ -710,7 +710,7 @@ function codeOutput(scan,codeType){
         page_model += '\n            "fr": "'+button_label_fr+'"';
         page_model += '\n          },';
         page_model += '\n        "url": "'+button_link_gl+'",';
-        page_model += '\n        "popUpLinkID": ' + pop_up_link;
+        page_model += '\n        "popUpLinkID": "' + pop_up_ID+'"';
         page_model += '\n        },';
         page_model += '\n        "image": {';
         page_model += '\n          "url": "'+dnkIm+'",';
