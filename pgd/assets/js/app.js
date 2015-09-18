@@ -23,7 +23,7 @@ function shoppifyCreatePage(){
 }
 function validateImage(type){
 if(type == 'main'){
-    var a = $('#image_gl').val();
+    var a = $('#image_gl').val().replace('https:','').replace('http:','');
     if(a !== '') {
         	var b = urlExists(a);
         if (b !== 200) {
@@ -37,7 +37,7 @@ if(type == 'main'){
         }
     }
 }else if(type == 'alt'){
-    var a = $('#alt_image_gl').val();
+    var a = $('#alt_image_gl').val().replace('https:','').replace('http:','');
     if(a !== '') {
         var b = urlExists(a);
         if (b !== 200) {
