@@ -715,7 +715,7 @@ function codeOutput(scan,codeType){
         page_model += '\n        "image": {';
         page_model += '\n          "url": "'+dnkIm+'",';
         page_model += '\n          "alt-url": "'+alt_image_gl+'"';
-        page_model += '\n        }\n    ]\n}';
+        page_model += '\n        }\n      }\n   ]\n}';
     }else if(codeType == 'html') {
         var page_model = '<div style="display: none;">';
         page_model += '<div id="start_date">' + start_dr + '</div>';
