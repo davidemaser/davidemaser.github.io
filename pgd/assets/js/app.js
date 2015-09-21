@@ -30,6 +30,7 @@ function switchTargetLang(lng){
         $('.ongoing').hide();
         $('#start_date, #end_date').prop('placeholder','01/01/2015 00:00');
         $('.date_starts,.date_ends').html('Short Date Format');
+        $('.versiontype').html('JSON Version');
     }else if(lng == 'html'){
         $('#start_date, #end_date').data("DateTimePicker").destroy();
         $('#start_date, #end_date').prop('placeholder','January 1, 2015 10:10:10');
@@ -37,6 +38,7 @@ function switchTargetLang(lng){
         $('.ongoing').show();
         $('#start_date,#end_date').val('');
         $('.date_starts,.date_ends').html('Strict date format');
+        $('.versiontype').html('HTML Version');
     }
 }
 function validateImage(type){

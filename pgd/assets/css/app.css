@@ -563,3 +563,7 @@ div#html-view {
 .snapright {
     float: right;
 }
+h1 .label-default {
+    font-size: 12px;
+    margin-left: 10px;
+}
