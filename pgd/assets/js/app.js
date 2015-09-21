@@ -620,13 +620,16 @@ function livePreview(mode,lang,code){
     }
 }
 function validateJSON(){
-    try{
-    var a = $('#content_value').val(),
-        b = JSON.parse(a);
-        alert('Your JSON looks great');
-    }catch(e){
-        alert('Your JSON has an error')
-    }
+    $("#content_value").validateJSON({
+        compress: false,
+        reformat: true,
+        onSuccess: function (json) {
+            //alert("Your JSON is correctly formatted");
+        },
+        onError: function (error) {
+            alert("A JSON error has been encountered. The line on which the error has occured is highlighted.");
+        }
+    })
 }
 function isolateJSON(){
     var a = $('#content_value').val().replace('"hero": [','').substring(1).slice(0, - 3);
