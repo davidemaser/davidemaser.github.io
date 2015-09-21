@@ -624,9 +624,10 @@ function validateJSON(){
         compress: false,
         reformat: true,
         onSuccess: function (json) {
-            //alert("Your JSON is correctly formatted");
+            $('#content_value').css('background-color','rgba(12, 150, 24, 0.25)');
         },
         onError: function (error) {
+            $('#content_value').css('background-color','rgba(216, 82, 82, 0.25)');
             alert("A JSON error has been encountered. The line on which the error has occured is highlighted.");
         }
     })
