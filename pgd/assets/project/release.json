@@ -1,11 +1,11 @@
 {
   "project":{
     "name":"Page Builder",
-    "version":"1.8",
-    "revision":"8",
+    "version":"2",
+    "revision":"12",
     "downloadlink":"https://drive.google.com/file/d/0B4onXKnKkE6AY0JiVlZ3bG9scmM/view?usp=sharing",
     "semantic":{
-      "build":26,
+      "build":3,
       "language":["js","jquery","json","css","html"],
       "externals":["jquery","bootstrap","custom font","versioning file"],
       "minified":true
@@ -127,6 +127,18 @@
           "version":1.7,
           "candidate":1.8,
           "request":false
+        }
+      },
+      {
+        "line":"multi",
+        "file":"app.js",
+        "structure":"add",
+        "utility":"JSON Export",
+        "appstatus":{
+          "scoped":true,
+          "version":1.8,
+          "candidate":2,
+          "request":true
         }
       }
     ],
@@ -462,6 +474,20 @@
           {
             "item":"Modified http, https prefix to adhere to new shopify standards",
             "revision":"minor",
+            "impact":"global",
+            "codestatus":"working"
+          }
+        ]
+      },
+      {
+        "version":2,
+        "date":"9/21/2015",
+        "failsafe":"major",
+        "author":"David Maser",
+        "codeblocks":[
+          {
+            "item":"Added JSON export feature as well as JSON formatter and code validator",
+            "revision":"major",
             "impact":"global",
             "codestatus":"working"
           }
