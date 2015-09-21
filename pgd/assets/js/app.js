@@ -21,6 +21,24 @@ function shoppifyCreatePage(){
             }
         });
 }
+function switchTargetLang(lng){
+    if(lng == 'json'){
+        $('.sparta,.athena').hide();
+        $(function () {
+            $('#start_date, #end_date').datetimepicker({format: 'DD/MM/YYYY HH:mm'});
+        });
+        $('.ongoing').hide();
+        $('#start_date, #end_date').prop('placeholder','01/01/2015 00:00');
+        $('.date_starts,.date_ends').html('Short Date Format');
+    }else if(lng == 'html'){
+        $('#start_date, #end_date').data("DateTimePicker").destroy();
+        $('#start_date, #end_date').prop('placeholder','January 1, 2015 10:10:10');
+        $('.sparta,.athena').show();
+        $('.ongoing').show();
+        $('#start_date,#end_date').val('');
+        $('.date_starts,.date_ends').html('Strict date format');
+    }
+}
 function validateImage(type){
 if(type == 'main'){
     var a = $('#image_gl').val().replace('https:','').replace('http:','');
@@ -74,198 +92,199 @@ function resetErrors(){
     $('.image_count').html('Shopify CDN');
 }
 function errorViewer(){
-    var pg = '#pageBuilder',
-        ctobj = '#content_value',
-        erobj = '.error_message',
-        waobj = '.warning_message';
-    $(pg).find('span.label').removeClass('label-danger').addClass('label-default');
-    $(pg).find('span.label').removeClass('label-warning').addClass('label-default');
-    $('.label-info').remove();
-    $('span.badge').remove();
-    var err = [],
-    warn = [],
-    log = [],
-    wog = [],
-    ct = $(ctobj).val(),
-    ctEN = $(ctobj).val().split('|-|')[0],
-    ctFR = $(ctobj).val().split('|-|')[1],
-    eK1 = ct.split('<div id="start_date">')[1],
-    e1 = eK1.split('</div>')[0].length,
-    eK2 = ct.split('<div id="end_date">')[1],
-    e2 = eK2.split('</div>')[0].length;
-    if(ctEN.indexOf('#ee3600;') > -1){
-        var eK3 = ctEN.split('<p class="headline" style="color:#ee3600;">')[1];
-        var e3 = eK3.split('</p>')[0].length;
-    }else if(ctEN.indexOf('#000;') > -1){
+    try {
+        var pg = '#pageBuilder',
+            ctobj = '#content_value',
+            erobj = '.error_message',
+            waobj = '.warning_message';
+        $(pg).find('span.label').removeClass('label-danger').addClass('label-default');
+        $(pg).find('span.label').removeClass('label-warning').addClass('label-default');
+        $('.label-info').remove();
+        $('span.badge').remove();
+        var err = [],
+            warn = [],
+            log = [],
+            wog = [],
+            ct = $(ctobj).val(),
+            ctEN = $(ctobj).val().split('|-|')[0],
+            ctFR = $(ctobj).val().split('|-|')[1],
+            eK1 = ct.split('<div id="start_date">')[1],
+            e1 = eK1.split('</div>')[0].length,
+            eK2 = ct.split('<div id="end_date">')[1],
+            e2 = eK2.split('</div>')[0].length;
+        if (ctEN.indexOf('#ee3600;') > -1) {
+            var eK3 = ctEN.split('<p class="headline" style="color:#ee3600;">')[1];
+            var e3 = eK3.split('</p>')[0].length;
+        } else if (ctEN.indexOf('#000;') > -1) {
             eK3 = ctEN.split('<p class="headline" style="color:#000;">')[1];
             e3 = eK3.split('</p>')[0].length;
-    }else if(ctEN.indexOf('#9bd000;') > -1){
-            eK3 =ctEN.split('<p class="headline" style="color:#9bd000;">')[1];
+        } else if (ctEN.indexOf('#9bd000;') > -1) {
+            eK3 = ctEN.split('<p class="headline" style="color:#9bd000;">')[1];
             e3 = eK3.split('</p>')[0].length;
-    }else if(ctEN.indexOf('#fff;') > -1){
-        eK3 = ctEN.split('<p class="headline">')[1];
-        e3 = eK3.split('</p>')[0].length;
-    }else {
-        eK3 = ctEN.split('<p class="headline">')[1];
-        e3 = eK3.split('</p>')[0].length;
-    }
-    var eK4 = ctEN.split('<p class="subtitle">')[1],
-    e4 = eK4.split('</p>')[0].length,
-    eK5 = ctEN.split('<img src="')[1],
-    e5 = eK5.split('" />')[0].length,
-    e5L = eK5.split('" />')[0],
-    eK6 = ctEN.split('href="')[1],
-    e6 = eK6.split('"')[0].length,
-    eK7 = ctEN.split('class="action_button">')[1],
-    e7 = eK7.split('</a>')[0].length;
-    if(ctFR.indexOf('#ee3600;') > -1){
-        var fK3 = ctFR.split('<p class="headline" style="color:#ee3600;">')[1];
-        var f3 = fK3.split('</p>')[0].length;
-    }else if(ctFR.indexOf('#000;') > -1){
-        fK3 = ctFR.split('<p class="headline" style="color:#000;">')[1];
-        f3 = fK3.split('</p>')[0].length;
-    }else if(ctFR.indexOf('#9bd000;') > -1){
-        fK3 =ctFR.split('<p class="headline" style="color:#9bd000;">')[1];
-        f3 = fK3.split('</p>')[0].length;
-    }else if(ctFR.indexOf('#fff;') > -1){
-        fK3 = ctFR.split('<p class="headline">')[1];
-        f3 = fK3.split('</p>')[0].length;
-    }else {
-        fK3 = ctFR.split('<p class="headline">')[1];
-        f3 = fK3.split('</p>')[0].length;
-    }
-    var fK4 = ctFR.split('<p class="subtitle">')[1],
-    f4 = fK4.split('</p>')[0].length,
-    fK7 = ctFR.split('class="action_button">')[1],
-    f7 = fK7.split('</a>')[0].length;
-    if(e1 == 0){
-        err.push('No Start Date');
-        log.push('start_date');
-    }
-    if(e2 == 0){
-        err.push('No End Date');
-        log.push('end_date');
-    }
-    if(e3 == 0){
-        warn.push('No English Title');
-        wog.push('title_en');
-    }
-    if(e3 > 30){
-        warn.push('English Title is too long');
-        wog.push('title_en');
-    }
-    if(f3 == 0){
-        warn.push('No French Title');
-        wog.push('title_fr');
-    }
-    if(f3 > 30){
-        warn.push('French Title is too long');
-        wog.push('title_fr');
-    }
-    if(e4 == 0){
-        warn.push('No English Subtitle');
-        wog.push('subtitle_en');
-    }
-    if(e4 > 30){
-        warn.push('English Subtitle is too long');
-        wog.push('subtitle_en');
-    }
-    if(f4 == 0){
-        warn.push('No French Subtitle');
-        wog.push('subtitle_fr');
-    }
-    if(f4 > 30){
-        warn.push('French Subtitle is too long');
-        wog.push('subtitle_fr');
-    }
-    if(e5 == 0 || e5L == 'undefined'){
-        err.push('Image is missing');
-        log.push('image_gl');
-    }
-    if(e6 == 0){
-        warn.push('Button link is missing');
-        wog.push('button_link_gl');
-    }
-    if(e7 < 3){
-        err.push('English button label is missing');
-        log.push('button_label_en');
-    }
-    if(e7 > 18){
-        warn.push('English button label is too long');
-        wog.push('button_label_en');
-    }
-    if(f7 < 3){
-        err.push('French button label is missing');
-        log.push('button_label_fr');
-    }
-    if(f7 > 18){
-        warn.push('French button label is too long');
-        wog.push('button_label_fr');
-    }
-    if(err.length == 0){
-        $('.error_message').css('opacity','0');
-        $('.error_bubble').empty();
-    }else{
-        $('<span class="badge">'+err.length+'</span>&nbsp;&nbsp;').insertBefore($('.action_utilities').find('span'));
-        $(erobj).mouseover(function(){
-            $('.error_bubble').show();
-        });
-        $(erobj).mouseout(function(){
-            $('.error_bubble').hide();
-        });
-        if(err.length > 1){
-            var er_show = '';
-            for(i=0;i<err.length;i++){
-                er_show += err[i]+'<br />';
+        } else if (ctEN.indexOf('#fff;') > -1) {
+            eK3 = ctEN.split('<p class="headline">')[1];
+            e3 = eK3.split('</p>')[0].length;
+        } else {
+            eK3 = ctEN.split('<p class="headline">')[1];
+            e3 = eK3.split('</p>')[0].length;
+        }
+        var eK4 = ctEN.split('<p class="subtitle">')[1],
+            e4 = eK4.split('</p>')[0].length,
+            eK5 = ctEN.split('<img src="')[1],
+            e5 = eK5.split('" />')[0].length,
+            e5L = eK5.split('" />')[0],
+            eK6 = ctEN.split('href="')[1],
+            e6 = eK6.split('"')[0].length,
+            eK7 = ctEN.split('class="action_button">')[1],
+            e7 = eK7.split('</a>')[0].length;
+        if (ctFR.indexOf('#ee3600;') > -1) {
+            var fK3 = ctFR.split('<p class="headline" style="color:#ee3600;">')[1];
+            var f3 = fK3.split('</p>')[0].length;
+        } else if (ctFR.indexOf('#000;') > -1) {
+            fK3 = ctFR.split('<p class="headline" style="color:#000;">')[1];
+            f3 = fK3.split('</p>')[0].length;
+        } else if (ctFR.indexOf('#9bd000;') > -1) {
+            fK3 = ctFR.split('<p class="headline" style="color:#9bd000;">')[1];
+            f3 = fK3.split('</p>')[0].length;
+        } else if (ctFR.indexOf('#fff;') > -1) {
+            fK3 = ctFR.split('<p class="headline">')[1];
+            f3 = fK3.split('</p>')[0].length;
+        } else {
+            fK3 = ctFR.split('<p class="headline">')[1];
+            f3 = fK3.split('</p>')[0].length;
+        }
+        var fK4 = ctFR.split('<p class="subtitle">')[1],
+            f4 = fK4.split('</p>')[0].length,
+            fK7 = ctFR.split('class="action_button">')[1],
+            f7 = fK7.split('</a>')[0].length;
+        if (e1 == 0) {
+            err.push('No Start Date');
+            log.push('start_date');
+        }
+        if (e2 == 0) {
+            err.push('No End Date');
+            log.push('end_date');
+        }
+        if (e3 == 0) {
+            warn.push('No English Title');
+            wog.push('title_en');
+        }
+        if (e3 > 30) {
+            warn.push('English Title is too long');
+            wog.push('title_en');
+        }
+        if (f3 == 0) {
+            warn.push('No French Title');
+            wog.push('title_fr');
+        }
+        if (f3 > 30) {
+            warn.push('French Title is too long');
+            wog.push('title_fr');
+        }
+        if (e4 == 0) {
+            warn.push('No English Subtitle');
+            wog.push('subtitle_en');
+        }
+        if (e4 > 30) {
+            warn.push('English Subtitle is too long');
+            wog.push('subtitle_en');
+        }
+        if (f4 == 0) {
+            warn.push('No French Subtitle');
+            wog.push('subtitle_fr');
+        }
+        if (f4 > 30) {
+            warn.push('French Subtitle is too long');
+            wog.push('subtitle_fr');
+        }
+        if (e5 == 0 || e5L == 'undefined') {
+            err.push('Image is missing');
+            log.push('image_gl');
+        }
+        if (e6 == 0) {
+            warn.push('Button link is missing');
+            wog.push('button_link_gl');
+        }
+        if (e7 < 3) {
+            err.push('English button label is missing');
+            log.push('button_label_en');
+        }
+        if (e7 > 18) {
+            warn.push('English button label is too long');
+            wog.push('button_label_en');
+        }
+        if (f7 < 3) {
+            err.push('French button label is missing');
+            log.push('button_label_fr');
+        }
+        if (f7 > 18) {
+            warn.push('French button label is too long');
+            wog.push('button_label_fr');
+        }
+        if (err.length == 0) {
+            $('.error_message').css('opacity', '0');
+            $('.error_bubble').empty();
+        } else {
+            $('<span class="badge">' + err.length + '</span>&nbsp;&nbsp;').insertBefore($('.action_utilities').find('span'));
+            $(erobj).mouseover(function () {
+                $('.error_bubble').show();
+            });
+            $(erobj).mouseout(function () {
+                $('.error_bubble').hide();
+            });
+            if (err.length > 1) {
+                var er_show = '';
+                for (i = 0; i < err.length; i++) {
+                    er_show += err[i] + '<br />';
+                }
+                $('.error_bubble').html(er_show);
+            } else {
+                $('.error_bubble').html(err);
             }
-            $('.error_bubble').html(er_show);
-        }else{
-            $('.error_bubble').html(err);
-        }
-        $(erobj).css('opacity','1');
-        var err_mess = '<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>';
-        err_mess += err.length+' error';
-        if(err.length > 1) {
-            err_mess += 's';
-        }
-        $(erobj).html(err_mess);
-    }
-    if(warn.length == 0){
-        $('.warning_message').css('opacity','0');
-        $('.warning_bubble').empty();
-    }else{
-        $(waobj).mouseover(function(){
-            $('.warning_bubble').show();
-        });
-        $(waobj).mouseout(function(){
-            $('.warning_bubble').hide();
-        });
-        if(warn.length > 1){
-            var warn_show = '';
-            for(i=0;i<warn.length;i++){
-                warn_show += warn[i]+'<br />';
+            $(erobj).css('opacity', '1');
+            var err_mess = '<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>';
+            err_mess += err.length + ' error';
+            if (err.length > 1) {
+                err_mess += 's';
             }
-            $('.warning_bubble').html(warn_show);
-        }else{
-            $('.warning_bubble').html(warn);
+            $(erobj).html(err_mess);
         }
-        $(waobj).css('opacity','1');
-        var warn_mess = '<span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>';
-        warn_mess += warn.length+' warning';
-        if(warn.length > 1) {
-            warn_mess += 's';
+        if (warn.length == 0) {
+            $('.warning_message').css('opacity', '0');
+            $('.warning_bubble').empty();
+        } else {
+            $(waobj).mouseover(function () {
+                $('.warning_bubble').show();
+            });
+            $(waobj).mouseout(function () {
+                $('.warning_bubble').hide();
+            });
+            if (warn.length > 1) {
+                var warn_show = '';
+                for (i = 0; i < warn.length; i++) {
+                    warn_show += warn[i] + '<br />';
+                }
+                $('.warning_bubble').html(warn_show);
+            } else {
+                $('.warning_bubble').html(warn);
+            }
+            $(waobj).css('opacity', '1');
+            var warn_mess = '<span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>';
+            warn_mess += warn.length + ' warning';
+            if (warn.length > 1) {
+                warn_mess += 's';
+            }
+            $(waobj).html(warn_mess);
         }
-        $(waobj).html(warn_mess);
-    }
-    for(i=0;i<log.length;i++){
-        $('#'+log[i]).parent().parent().find('.label').removeClass('label-default').addClass('label-danger');
-        $('<span class="label label-info" title="'+err[i]+'"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></span>').insertAfter($('#'+log[i]).parent().parent().find('.label').first());
-    }
-    for(i=0;i<wog.length;i++){
-        $('#'+wog[i]).parent().parent().find('.label').removeClass('label-default').addClass('label-warning');
-        //$('<span class="label label-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></span>').insertAfter($('#'+log[i]).parent().parent().find('.label').first());
-    }
-
+        for (i = 0; i < log.length; i++) {
+            $('#' + log[i]).parent().parent().find('.label').removeClass('label-default').addClass('label-danger');
+            $('<span class="label label-info" title="' + err[i] + '"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></span>').insertAfter($('#' + log[i]).parent().parent().find('.label').first());
+        }
+        for (i = 0; i < wog.length; i++) {
+            $('#' + wog[i]).parent().parent().find('.label').removeClass('label-default').addClass('label-warning');
+            //$('<span class="label label-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></span>').insertAfter($('#'+log[i]).parent().parent().find('.label').first());
+        }
+    }catch(e){}
 }
 function appendTimer(mode) {
     var a = $('.subtitle.timedown.is-countdown').length;
@@ -1103,6 +1122,10 @@ var target = document.querySelector('#image_gl');
     });
     $('#unclosed-tag-finder-input').click(function() {
         $(this).select();
+    });
+    $('.switch-lang').click(function(){
+        var vl = $(this).data('lang');
+        switchTargetLang(vl);
     });
     $('.see_overlay .glyphicon-remove').click(function() {
         $('.see_overlay').hide();

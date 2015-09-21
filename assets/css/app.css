@@ -270,3 +270,6 @@ p.deprecated{
     text-decoration: none;
     text-shadow: 1px 1px 1px #aaa;
 }
+.snapright {
+    float: right;
+}

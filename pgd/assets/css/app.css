@@ -560,3 +560,6 @@ div#html-view {
 }
 #results-alert{display: none;}
 .partridge{float:right;}
+.snapright {
+    float: right;
+}

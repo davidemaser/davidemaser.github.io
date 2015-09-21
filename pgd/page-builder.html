@@ -5,8 +5,11 @@
     <link href="https://fonts.googleapis.com/css?family=.|Montserrat:light,normal,bold|Montserrat:light,normal,bold|Montserrat:light,normal,bold|Lato:light,normal,bold"
           rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="../bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="../bower_components/moment/min/moment.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
     <script src="assets/js/app.js"></script>
     <script src="assets/js/validate-json.js"></script>
 </head>
@@ -108,6 +111,17 @@
                         <li><a href="#" class="reset_page">Reset Errors</a></li>
                         <li class="divider"></li>
                         <li><a href="#" class="app_info_toggle">About this app</a></li>
+
+                    </ul>
+                </div>
+                <div class="btn-group snapright">
+                    <button type="button" class="btn dropdown-toggle action_utilities" data-toggle="dropdown" aria-expanded="false">
+                        Language <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#" data-lang="json" class="switch-lang">JSON</a></li>
+                        <li><a href="#" data-lang="html" class="switch-lang">HTML</a></li>
+
 
                     </ul>
                 </div>
@@ -685,7 +699,7 @@
                     </select><span class="input-group-addon need_help top_3" id="basic-addon2">What's This ?</span>
                     </div>
                 </div>
-                <div class="split-half">
+                <div class="split-half ongoing">
                     <div class="panel-heading"><span class="label label-default">Is This An Ongoing Event ?</span></div>
                     <div class="panel-body input-group"><select class="form-control" id="sis_ongoing" name="is_ongoing">
                         <option value="true">Yes</option>
@@ -745,6 +759,9 @@
             </div>
         </div>
     </form>
+    <script type="text/javascript">
+
+    </script>
 </body>
 </div>
 </html>
