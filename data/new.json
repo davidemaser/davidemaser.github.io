@@ -221,13 +221,18 @@
         "paragraph":"Hero Banners"
       },
       {
+        "id":26,
+        "type":"note",
+        "paragraph":"Hero Banners are switching to a JSON format. Use the Page Builder app to create your code. "
+      },
+      {
         "id":22,
         "type":"text",
         "paragraph":"The hero banners are the full screen image(s) found on the index page that contains sale event information. The masthead itself, similar to the hello bar, extracts it's information from a linklist whose content is fed from basic shopify pages. The masthead displays information for both the desktop and mobile versions of the site."
       },
       {
         "id":23,
-        "type":"text",
+        "type":"deprecated-text",
         "paragraph":"The linklist that contains the hero banners is called HeroBanners and can be found in the Navigation sub menu of shopify admin. The hero banner pages are basic page templates with a specific code (see below) and some meta fields that contain the module data."
       },
       {
@@ -238,7 +243,12 @@
       {
         "id":25,
         "type":"pre",
-        "paragraph":"Code<br /><br /> &lt;div style=\"display: none;\"&gt;<br /> &lt;div id=\"start_date\"&gt;July 1, 2015 00:00:00&lt;/div&gt;<br /> &lt;div id=\"end_date\"&gt;July 4, 2015 00:00:00&lt;/div&gt;<br /> &lt;div id=\"show_count\"&gt;true&lt;/div&gt;<br /> &lt;div id=\"ongoing_event\"&gt;true&lt;/div&gt;<br /> &lt;div id=\"promote_hero\"&gt;false&lt;/div&gt;<br /> &lt;div id=\"popup_link\"&gt;false&lt;/div&gt;<br /> &lt;div id=\"show_title\"&gt;true&lt;/div&gt;<br /> &lt;div id=\"show_subtitle\"&gt;false&lt;/div&gt;<br /> &lt;/div&gt;<br /> &lt;div id=\"event-active-today\"&gt;<br /> &lt;div class=\"event-active-bg\"&gt;&lt;img src=\"...\" /&gt;&lt;/div&gt;<br /> &lt;div class=\"event-active-content\"&gt;<br /> &lt;p class=\"headline\"&gt;TITLE&lt;/p&gt;<br /> &lt;p class=\"subtitle\"&gt;Subtitle (Optional)&lt;/p&gt;<br /> &lt;/div&gt;<br /> &lt;div class=\"event-active-cta\"&gt;&lt;a href=\"link\" class=\"action_button\"&gt; CTA &lt;/a&gt;&lt;/div&gt;<br /> &lt;/div&gt;<br /> |-|<br /> &lt;div id=\"event-active-today\"&gt;<br /> &lt;div class=\"event-active-bg\"&gt;&lt;img src=\"...\" /&gt;&lt;/div&gt;<br /> &lt;div class=\"event-active-content\"&gt;<br /> &lt;p class=\"headline\"&gt;TITLE&lt;/p&gt;<br /> &lt;p class=\"subtitle\"&gt;Subtitle (Optional)&lt;/p&gt;<br /> &lt;/div&gt;<br /> &lt;div class=\"event-active-cta\"&gt;&lt;a href=\"link\" class=\"action_button\"&gt; CTA &lt;/a&gt;&lt;/div&gt;<br /> &lt;/div&gt;<br />"
+        "paragraph":"Code HTML (deprecated)<br /><br /> &lt;div style=\"display: none;\"&gt;<br /> &lt;div id=\"start_date\"&gt;July 1, 2015 00:00:00&lt;/div&gt;<br /> &lt;div id=\"end_date\"&gt;July 4, 2015 00:00:00&lt;/div&gt;<br /> &lt;div id=\"show_count\"&gt;true&lt;/div&gt;<br /> &lt;div id=\"ongoing_event\"&gt;true&lt;/div&gt;<br /> &lt;div id=\"promote_hero\"&gt;false&lt;/div&gt;<br /> &lt;div id=\"popup_link\"&gt;false&lt;/div&gt;<br /> &lt;div id=\"show_title\"&gt;true&lt;/div&gt;<br /> &lt;div id=\"show_subtitle\"&gt;false&lt;/div&gt;<br /> &lt;/div&gt;<br /> &lt;div id=\"event-active-today\"&gt;<br /> &lt;div class=\"event-active-bg\"&gt;&lt;img src=\"...\" /&gt;&lt;/div&gt;<br /> &lt;div class=\"event-active-content\"&gt;<br /> &lt;p class=\"headline\"&gt;TITLE&lt;/p&gt;<br /> &lt;p class=\"subtitle\"&gt;Subtitle (Optional)&lt;/p&gt;<br /> &lt;/div&gt;<br /> &lt;div class=\"event-active-cta\"&gt;&lt;a href=\"link\" class=\"action_button\"&gt; CTA &lt;/a&gt;&lt;/div&gt;<br /> &lt;/div&gt;<br /> |-|<br /> &lt;div id=\"event-active-today\"&gt;<br /> &lt;div class=\"event-active-bg\"&gt;&lt;img src=\"...\" /&gt;&lt;/div&gt;<br /> &lt;div class=\"event-active-content\"&gt;<br /> &lt;p class=\"headline\"&gt;TITLE&lt;/p&gt;<br /> &lt;p class=\"subtitle\"&gt;Subtitle (Optional)&lt;/p&gt;<br /> &lt;/div&gt;<br /> &lt;div class=\"event-active-cta\"&gt;&lt;a href=\"link\" class=\"action_button\"&gt; CTA &lt;/a&gt;&lt;/div&gt;<br /> &lt;/div&gt;<br />"
+      },
+      {
+        "id":25,
+        "type":"pre",
+        "paragraph":"Code JSON<br /><br />{<br />\"hero\": [<br /> {<br /> \"hero-id\": \"herschel1\",<br /> \"active\": true,<br /> \"showCountdown\": true,<br /> \"popUpLink\": false,<br /> \"date\": {<br /> \"start\": \"22/09/2015 00:00\",<br /> \"end\": \"23/09/2015 00:00\"<br /> },<br /> \"title\": {<br /> \"en\": \"Extra 10% Off Insulated Apparel\",<br /> \"fr\": \"Extra -10% sur vêtements isolés\",<br /> \"color\": \"#fff\"<br /> },<br /> \"text\": {<br /> \"en\": \"With code: WARM\",<br /> \"fr\": \"Avec le code: CHAUD\"<br /> },<br /> \"promote\": false,<br /> \"button\": {<br /> \"label\": {<br /> \"en\": \"Shop now >\",<br /> \"fr\": \"Magasinez >\"<br /> },<br /> \"url\": \"/collections/insulated\",<br /> \"popUpLinkID\": \"popup-1\"<br /> },<br /> \"image\": {<br /> \"url\": \"//cdn.shopify.com/s/files/1/0050/3522/files/BG_mtn_2048x2048.jpg\",<br /> \"altUrl\": \"\"<br /> }<br /> }<br /> ]<br /> }<br />"
       },
       {
         "id":26,
