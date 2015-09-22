@@ -4,11 +4,6 @@
 // The validateJSON plugin depends on the caret plugin, the JSON lint parser,
 // and the JSON lint formatter from jsonlint.com.
 (function($) {
-    /**
-     * Helper Function for Caret positioning
-     * Gratefully borrowed from the Masked Input Plugin by Josh Bush
-     * http://digitalbush.com/projects/masked-input-plugin
-     **/
     if (typeof $.fn.caret === "undefined") {
         $.fn.caret = function(begin, end) {
             if (this.length === 0) {

@@ -31,6 +31,7 @@ function switchTargetLang(lng){
         $('#start_date, #end_date').prop('placeholder','01/01/2015 00:00');
         $('.date_starts,.date_ends').html('Short Date Format');
         $('.versiontype').html('JSON Version');
+        $('html').attr('data-lang','json');
     }else if(lng == 'html'){
         $('#start_date, #end_date').data("DateTimePicker").destroy();
         $('#start_date, #end_date').prop('placeholder','January 1, 2015 10:10:10');
@@ -39,6 +40,7 @@ function switchTargetLang(lng){
         $('#start_date,#end_date').val('');
         $('.date_starts,.date_ends').html('Strict date format');
         $('.versiontype').html('HTML Version');
+        $('html').attr('data-lang','html');
     }
 }
 function validateImage(type){
@@ -410,152 +412,184 @@ function txtLengthCounter(){
         }
         $('.fr_btlabel_count').attr('style','').html(fr_l_limit-fr_l + ' '+trailing+' remaining');
     }
-
 }
-function getContent(){
-    try{
-        if($('#unclosed-tag-finder-input').val() !== ''){
-            var a = $('#unclosed-tag-finder-input').val(),
-            a_clean = a.replace(/(\r\n|\n|\r)/gm,"").replace(/&amp;/g,'&').replace(/&gt;/g,'>').replace(/&apos;/g,"\'"),
-            b_EN = a_clean.split('|-|')[0],
-            b_FR = a_clean.split('|-|')[1],
-            c = b_EN,
-            d = c.split('<div id="event-active-today">')[0],
-            d_str1 = d.split('<div id="start_date">')[1],
-            d_ob1 = d_str1.split('</div>')[0],
-            d_str2 = d.split('<div id="end_date">')[1],
-            d_ob2 = d_str2.split('</div>')[0],
-            d_str3 = d.split('<div id="show_count">')[1],
-            d_ob3 = d_str3.split('</div>')[0],
-            d_str4 = d.split('<div id="ongoing_event">')[1],
-            d_ob4 = d_str4.split('</div>')[0];
-            if(d_ob4 == ''){
-                d_ob4 = 'false';
-            }
-            d_str44 = d.split('<div id="promote_hero">')[1],
-            d_ob44 = d_str44.split('</div>')[0];
-            if(d_ob44 == ''){
-                d_ob44 = 'false';
-            }
-            var d_str5 = d.split('<div id="popup_link">')[1];
-            var d_ob5 = d_str5.split('</div>')[0];
+function parseJsonCode(){
+    var a = $('#unclosed-tag-finder-input').val(),
+        b = JSON.parse(a);
+    return b;
+}
+function getContent(lang){
+    if(lang == 'json'){
+        var dataObject = parseJsonCode();
+        $('#start_date').val(dataObject.date.start);
+        $('#end_date').val(dataObject.date.end);
+        $('#show_count').val(dataObject.showCountdown);
+        //$('#sis_ongoing').val(dataObject.);
+        //$('#promote_hero').val(dataObject.promote);
+        if(dataObject.promote == true){
+            $('#promote_hero').val('true');
+        }else if(dataObject.promote == false){
+            $('#promote_hero').val('false');
+        }
+        $('#image_gl').val(dataObject.image.url);
+        $('#alt_image_gl').val(dataObject.image.altUrl);
+        $('#title_en').val(dataObject.title.en);
+        $('#title_fr').val(dataObject.title.fr);
+        $('#subtitle_en').val(dataObject.text.en);
+        $('#subtitle_fr').val(dataObject.text.fr);
+        $('#button_label_en').val(dataObject.button.label.en);
+        $('#button_label_fr').val(dataObject.button.label.fr);
+        $('#button_link_gl').val(dataObject.button.url);
+        $('#pop_up_ID').val(dataObject.button.popUpLinkID);
+        $('#title_color').val(dataObject.title.color);
+        $('#show_title').val('true');
+        $('#show_subtitle').val('true');
+    }else {
+        try {
+            if ($('#unclosed-tag-finder-input').val() !== '') {
+                var a = $('#unclosed-tag-finder-input').val(),
+                    a_clean = a.replace(/(\r\n|\n|\r)/gm, "").replace(/&amp;/g, '&').replace(/&gt;/g, '>').replace(/&apos;/g, "\'"),
+                    b_EN = a_clean.split('|-|')[0],
+                    b_FR = a_clean.split('|-|')[1],
+                    c = b_EN,
+                    d = c.split('<div id="event-active-today">')[0],
+                    d_str1 = d.split('<div id="start_date">')[1],
+                    d_ob1 = d_str1.split('</div>')[0],
+                    d_str2 = d.split('<div id="end_date">')[1],
+                    d_ob2 = d_str2.split('</div>')[0],
+                    d_str3 = d.split('<div id="show_count">')[1],
+                    d_ob3 = d_str3.split('</div>')[0],
+                    d_str4 = d.split('<div id="ongoing_event">')[1],
+                    d_ob4 = d_str4.split('</div>')[0];
+                if (d_ob4 == '') {
+                    d_ob4 = 'false';
+                }
+                d_str44 = d.split('<div id="promote_hero">')[1],
+                    d_ob44 = d_str44.split('</div>')[0];
+                if (d_ob44 == '') {
+                    d_ob44 = 'false';
+                }
+                var d_str5 = d.split('<div id="popup_link">')[1];
+                var d_ob5 = d_str5.split('</div>')[0];
 
-            if(d.indexOf('<div id="show_title">') > -1) {
-                var d_str6 = d.split('<div id="show_title">')[1];
-                var d_ob6 = d_str6.split('</div>')[0];
-                if (d_ob6 == '') {
+                if (d.indexOf('<div id="show_title">') > -1) {
+                    var d_str6 = d.split('<div id="show_title">')[1];
+                    var d_ob6 = d_str6.split('</div>')[0];
+                    if (d_ob6 == '') {
+                        d_ob6 = 'true';
+                    }
+                } else {
                     d_ob6 = 'true';
                 }
-            }else{
-                d_ob6 = 'true';
-            }
 
- if(d.indexOf('<div id="alt_image">') > -1) {
-                var d_str66 = d.split('<div id="alt_image">')[1];
-                var d_ob66 = d_str66.split('</div>')[0];
-            }else{
-                d_ob66 = '';
-            }
+                if (d.indexOf('<div id="alt_image">') > -1) {
+                    var d_str66 = d.split('<div id="alt_image">')[1];
+                    var d_ob66 = d_str66.split('</div>')[0];
+                } else {
+                    d_ob66 = '';
+                }
 
-            if(d.indexOf('<div id="show_subtitle">') > -1) {
-                var d_str7 = d.split('<div id="show_subtitle">')[1];
-                var d_ob7 = d_str7.split('</div>')[0];
-                if (d_ob7 == '') {
+                if (d.indexOf('<div id="show_subtitle">') > -1) {
+                    var d_str7 = d.split('<div id="show_subtitle">')[1];
+                    var d_ob7 = d_str7.split('</div>')[0];
+                    if (d_ob7 == '') {
+                        d_ob7 = 'true';
+                    }
+                } else {
                     d_ob7 = 'true';
                 }
-            }else{
-                d_ob7 = 'true';
-            }
 
-            var e = c.split('<div id="event-active-today">')[1],
-            e_str1 = e.split('<div class="event-active-bg"><img src="')[1],
-            e_ob1 = e_str1.split('" /></div>')[0],
-            e_str2 = e.split('<p class="headline')[1],
-            e_str3 = e_str2.split('">')[1],
-            e_ob2 = e_str3.split('</p>')[0].replace(/<(?:.|\n)*?>/gm, '').replace('<span style="color: #000000;">','').replace('<span style="color:#000000;">','').replace('<span style="color: #000;">','').replace('<span style="color:#000;">','').replace('<span style="color: #ffffff;">','').replace('<span style="color:#ffffff;">','').replace('<span style="color: #fff;">','').replace('<span style="color:#fff;">','').replace('</span>','');
-            if(e.indexOf('style="color:') > -1) {
-                var e_ob4 = e.split('style="color:')[1];
-                var e_str4 = e_ob4.split(';">')[0].replace(' ','').replace('#000000','#000').replace('#ffffff','#fff').replace('#FFFFFF','#FFF');
-            }else{
-                var e_str4 = '#fff';
+                var e = c.split('<div id="event-active-today">')[1],
+                    e_str1 = e.split('<div class="event-active-bg"><img src="')[1],
+                    e_ob1 = e_str1.split('" /></div>')[0],
+                    e_str2 = e.split('<p class="headline')[1],
+                    e_str3 = e_str2.split('">')[1],
+                    e_ob2 = e_str3.split('</p>')[0].replace(/<(?:.|\n)*?>/gm, '').replace('<span style="color: #000000;">', '').replace('<span style="color:#000000;">', '').replace('<span style="color: #000;">', '').replace('<span style="color:#000;">', '').replace('<span style="color: #ffffff;">', '').replace('<span style="color:#ffffff;">', '').replace('<span style="color: #fff;">', '').replace('<span style="color:#fff;">', '').replace('</span>', '');
+                if (e.indexOf('style="color:') > -1) {
+                    var e_ob4 = e.split('style="color:')[1];
+                    var e_str4 = e_ob4.split(';">')[0].replace(' ', '').replace('#000000', '#000').replace('#ffffff', '#fff').replace('#FFFFFF', '#FFF');
+                } else {
+                    var e_str4 = '#fff';
+                }
+                var e_str3 = e.split('<p class="subtitle">')[1],
+                    e_ob3 = e_str3.split('</p>')[0].replace(/<(?:.|\n)*?>/gm, ''),
+                    f = e.split('<div class="event-active-cta">')[1],
+                    g = f.split('</div>')[0];
+                if (g.indexOf('id="') > -1) {
+                    var g_str1 = g.split('<a id="')[1];
+                    var g_ob1 = g_str1.split('"')[0];
+                    $('#pop_up_ID').css('opacity', 1);
+                } else {
+                    var g_ob1 = 'popup-1';
+                }
+                var h_str1 = g.split('class="action_button">')[1],
+                    h_ob1 = h_str1.split('</a>')[0].trim().replace(/<(?:.|\n)*?>/gm, '');
+                if (g.indexOf('href=""') > -1 || g.indexOf('href=" "') > -1) {
+                    var i_ob1 = '#';
+                } else if (g.indexOf('href="/"') > -1 || g.indexOf('href="/ "') > -1) {
+                    var i_ob1 = '';
+                } else {
+                    var i_str1 = g.split('href="')[1];
+                    var i_ob1 = i_str1.split('" class="action_button">')[0].replace('http://www.ladernierechasse.com', '').replace('http://www.thelasthunt.com', '');
+                }
+                //french
+                var c_fr = b_FR,
+                    e_fr = c_fr.split('<div id="event-active-today">')[1],
+                    e_fr_str1 = e_fr.split('<div class="event-active-bg"><img src="')[1],
+                    e_fr_ob1 = e_fr_str1.split('" /></div>')[0],
+                    e_fr_str2 = e_fr.split('<p class="headline')[1],
+                    e_fr_str3 = e_fr_str2.split('">')[1],
+                    e_fr_ob2 = e_fr_str3.split('</p>')[0].replace(/<(?:.|\n)*?>/gm, '').replace('<span style="color: #000000;">', '').replace('<span style="color:#000000;">', '').replace('<span style="color: #000;">', '').replace('<span style="color:#000;">', '').replace('<span style="color: #ffffff;">', '').replace('<span style="color:#ffffff;">', '').replace('<span style="color: #fff;">', '').replace('<span style="color:#fff;">', '').replace('</span>', ''),
+                    e_fr_str3 = e_fr.split('<p class="subtitle">')[1],
+                    e_fr_ob3 = e_fr_str3.split('</p>')[0].replace(/<(?:.|\n)*?>/gm, ''),
+                    f_fr = e_fr.split('<div class="event-active-cta">')[1],
+                    g_fr = f_fr.split('</div>')[0],
+                    h_fr_str1 = g_fr.split('class="action_button">')[1],
+                    h_fr_ob1 = h_fr_str1.split('</a>')[0].trim().replace(/<(?:.|\n)*?>/gm, '');
+                $('#start_date').val(d_ob1);
+                $('#end_date').val(d_ob2);
+                $('#show_count').val(d_ob3);
+                $('#sis_ongoing').val(d_ob4);
+                $('#promote_hero').val(d_ob44);
+                $('#image_gl').val(e_ob1);
+                $('#alt_image_gl').val(d_ob66);
+                $('#title_en').val(e_ob2);
+                $('#title_fr').val(e_fr_ob2);
+                $('#subtitle_en').val(e_ob3);
+                $('#subtitle_fr').val(e_fr_ob3);
+                $('#button_label_en').val(h_ob1);
+                $('#button_label_fr').val(h_fr_ob1);
+                $('#button_link_gl').val(i_ob1);
+                $('#pop_up_ID').val(g_ob1);
+                $('#pop_up_link').val(d_ob5);
+                $('#title_color').val(e_str4);
+                $('#show_title').val(d_ob6);
+                $('#show_subtitle').val(d_ob7);
+                switch (e_str4) {
+                    case '#fff':
+                        var b = 'white';
+                        break;
+                    case '#000':
+                        var b = 'black';
+                        break;
+                    case '#9bd000':
+                        var b = 'green';
+                        break;
+                    case '#ee3600':
+                        var b = 'red';
+                        break;
+                    default:
+                        var b = 'white'
+                }
+                $('.selector-color:not(.' + b + ')').removeClass('glyphicon glyphicon-ok')
+                $('.selector-color.' + b).addClass('glyphicon glyphicon-ok')
+            } else {
+                alert('You haven\'t entered any content. I\'m going to close now!!!');
             }
-            var e_str3 = e.split('<p class="subtitle">')[1],
-            e_ob3 = e_str3.split('</p>')[0].replace(/<(?:.|\n)*?>/gm, ''),
-            f = e.split('<div class="event-active-cta">')[1],
-            g = f.split('</div>')[0];
-            if(g.indexOf('id="') > -1){
-                var g_str1 = g.split('<a id="')[1];
-                var g_ob1 = g_str1.split('"')[0];
-                $('#pop_up_ID').css('opacity',1);
-            }else{
-                var g_ob1 = 'popup-1';
-            }
-            var h_str1 = g.split('class="action_button">')[1],
-            h_ob1 = h_str1.split('</a>')[0].trim().replace(/<(?:.|\n)*?>/gm, '');
-            if(g.indexOf('href=""') > -1 || g.indexOf('href=" "') > -1){
-                var i_ob1 = '#';
-            }else if(g.indexOf('href="/"') > -1 || g.indexOf('href="/ "') > -1){
-                var i_ob1 = '';
-            }else {
-                var i_str1 = g.split('href="')[1];
-                var i_ob1 = i_str1.split('" class="action_button">')[0].replace('http://www.ladernierechasse.com', '').replace('http://www.thelasthunt.com', '');
-            }
-            //french
-            var c_fr = b_FR,
-            e_fr = c_fr.split('<div id="event-active-today">')[1],
-            e_fr_str1 = e_fr.split('<div class="event-active-bg"><img src="')[1],
-            e_fr_ob1 = e_fr_str1.split('" /></div>')[0],
-            e_fr_str2 = e_fr.split('<p class="headline')[1],
-            e_fr_str3 = e_fr_str2.split('">')[1],
-            e_fr_ob2 = e_fr_str3.split('</p>')[0].replace(/<(?:.|\n)*?>/gm, '').replace('<span style="color: #000000;">','').replace('<span style="color:#000000;">','').replace('<span style="color: #000;">','').replace('<span style="color:#000;">','').replace('<span style="color: #ffffff;">','').replace('<span style="color:#ffffff;">','').replace('<span style="color: #fff;">','').replace('<span style="color:#fff;">','').replace('</span>',''),
-            e_fr_str3 = e_fr.split('<p class="subtitle">')[1],
-            e_fr_ob3 = e_fr_str3.split('</p>')[0].replace(/<(?:.|\n)*?>/gm, ''),
-            f_fr = e_fr.split('<div class="event-active-cta">')[1],
-            g_fr = f_fr.split('</div>')[0],
-            h_fr_str1 = g_fr.split('class="action_button">')[1],
-            h_fr_ob1 = h_fr_str1.split('</a>')[0].trim().replace(/<(?:.|\n)*?>/gm, '');
-            $('#start_date').val(d_ob1);
-            $('#end_date').val(d_ob2);
-            $('#show_count').val(d_ob3);
-            $('#sis_ongoing').val(d_ob4);
-            $('#promote_hero').val(d_ob44);
-            $('#image_gl').val(e_ob1);
-		$('#alt_image_gl').val(d_ob66);
-            $('#title_en').val(e_ob2);
-            $('#title_fr').val(e_fr_ob2);
-            $('#subtitle_en').val(e_ob3);
-            $('#subtitle_fr').val(e_fr_ob3);
-            $('#button_label_en').val(h_ob1);
-            $('#button_label_fr').val(h_fr_ob1);
-            $('#button_link_gl').val(i_ob1);
-            $('#pop_up_ID').val(g_ob1);
-            $('#pop_up_link').val(d_ob5);
-            $('#title_color').val(e_str4);
-            $('#show_title').val(d_ob6);
-            $('#show_subtitle').val(d_ob7);
-            switch(e_str4) {
-                case '#fff':
-                    var b = 'white';
-                    break;
-                case '#000':
-                    var b = 'black';
-                    break;
-                case '#9bd000':
-                    var b = 'green';
-                    break;
-                case '#ee3600':
-                    var b = 'red';
-                    break;
-                default: var b = 'white'
-            }
-            $('.selector-color:not(.'+b+')').removeClass('glyphicon glyphicon-ok')
-            $('.selector-color.'+b).addClass('glyphicon glyphicon-ok')
-        }else{
-            alert('You haven\'t entered any content. I\'m going to close now!!!');
+            txtLengthCounter();
+        } catch (e) {
+            alert('Something went wrong. Your code can\'t be translated to the Page Builder form.\n\nTry creating your page from scratch or running the code cleaner utility first.');
         }
-        txtLengthCounter();
-    }catch(e){
-        alert('Something went wrong. Your code can\'t be translated to the Page Builder form.\n\nTry creating your page from scratch or running the code cleaner utility first.');
     }
 }
 function livePreview(mode,lang,code){
@@ -657,6 +691,13 @@ function isolateJSON(){
     var a = $('#content_value').val().replace('"hero": [','').substring(1).slice(0, - 3);
     $('#content_value').val(a);
 }
+function duplicateFormEntry(){
+    var num = $('.pg_form_item:last').data('unit'),
+        a = $('.pg_form_item:last').clone(),
+        newNum = num+1;
+    $(a).attr('data-unit',newNum).attr('data-placer',newNum);
+    $(a).insertAfter('.pg_form_item:last')
+}
 function codeOutput(scan,codeType){
     var ctvobj = '#content_value',
     a = $('#pageBuilder').serializeArray(),
@@ -675,12 +716,12 @@ function codeOutput(scan,codeType){
         pop_up_link = a[12].value,
         pop_up_ID= a[13].value,
         show_counter = a[14].value;
-    if(a[15].value !== '') {
+    if(a[15].value !== '' || a[15].value !== 'undefined' || a[15].value !== undefined || a[15].value !== null) {
         is_ongoing = a[15].value;
     }else{
         is_ongoing = 'false';
     }
-    if(a[18].value !== '') {
+    if(a[18].value !== ''  || a[18].value !== 'undefined' || a[18].value !== undefined || a[18].value !== null) {
         promote_hero = a[18].value;
     }else{
         promote_hero = 'false';
@@ -753,7 +794,7 @@ function codeOutput(scan,codeType){
         page_model += '\n        },';
         page_model += '\n        "image": {';
         page_model += '\n          "url": "'+dnkIm+'",';
-        page_model += '\n          "alt-url": "'+alt_image_gl+'"';
+        page_model += '\n          "altUrl": "'+alt_image_gl+'"';
         page_model += '\n        }\n      }\n   ]\n}';
     }else if(codeType == 'html') {
         $('#html-view').attr('data-lang','html').next().css('display','block').next().css('display','none');;
@@ -869,12 +910,11 @@ function codeOutput(scan,codeType){
         }
     }else{
         $(ctvobj).css('background-color','rgba(255, 0, 0, 0.2)');
-        $(ctvobj).html('Unable to generate HTML\n\nREASON : Image does not exist!\n\nMake sure the image you have selected exists and try again');
+        $(ctvobj).html('Unable to generate code\n\nREASON : Image does not exist!\n\nMake sure the image you have selected exists and try again');
         $('.see_overlay').show();
         //alert('the image file you entered does not exist');
     }
 }
-
 function codeCleaner(){
     var uctobj = '#unclosed-tag-finder-input',
     ucbobj = '#unclosed-tag-finder-button',
@@ -888,31 +928,31 @@ function codeCleaner(){
 
 function initDates(){
     var monthNames = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"],
-    d = new Date(),
-    m = monthNames[d.getMonth()],
-    da = d.getDate(),
-    ye = d.getFullYear(),
-    ho = ('0' + d.getHours()).slice(-2),
-    mi = ('0' + d.getMinutes()).slice(-2),
-    se = ('0' + d.getSeconds()).slice(-2);
+        d = new Date(),
+        m = monthNames[d.getMonth()],
+        da = d.getDate(),
+        ye = d.getFullYear(),
+        ho = ('0' + d.getHours()).slice(-2),
+        mi = ('0' + d.getMinutes()).slice(-2),
+        se = ('0' + d.getSeconds()).slice(-2);
     $('.months').val(m);
     $('.days').val(da);
     $('.years').val(ye);
     $('.hours').val(ho);
     $('.minutes').val(mi);
     $('.seconds').val(se);
-    xpmo = m;
-    xrmo = m;
-    xpda = da;
-    xrda = da;
-    xpye = ye;
-    xrye = ye;
-    xpho = ho;
-    xrho = ho;
-    xpmi = mi;
-    xrmi = mi;
-    xpse = se;
-    xrse = se;
+        xpmo = m,
+        xrmo = m,
+        xpda = da,
+        xrda = da,
+        xpye = ye,
+        xrye = ye,
+        xpho = ho,
+        xrho = ho,
+        xpmi = mi,
+        xrmi = mi,
+        xpse = se,
+        xrse = se;
     $('#start_date').attr('placeholder',xpmo+' '+xpda+', '+xpye+' '+xpho+':'+xpmi+':'+xpse);
     $('#end_date').attr('placeholder',xpmo+' '+xpda+', '+xpye+' '+xpho+':'+xpmi+':'+xpse);
 }
@@ -1114,8 +1154,11 @@ var target = document.querySelector('#image_gl');
         $(this).select();
     });
     $('#unclosed-tag-merge-button').click(function () {
-        codeCleaner();
-        getContent();
+        var tp = $('html').data('lang');
+        if(tp !== 'json') {
+            codeCleaner();
+        }
+        getContent(tp);
         $('.see_cleaner_overlay').hide(250);
         codeOutput(false,'json');
         checkOngoing();
