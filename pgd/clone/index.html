@@ -100,6 +100,10 @@
           font-size: 22px;
           margin-left: 5px;
       }
+      .nopad{
+          padding:0!important;
+          background-color: transparent;
+      }
       #attribution {
         font-size:12px;
         color:#999;
@@ -236,7 +240,18 @@
             <!-- Text input-->
             <div class="form-group">
                 <label class="label_ln control-label" for="image_main">Image Link</label>
-                <input id="image_main" name="image_main" type="text" placeholder="" class="input_ln form-control">
+                <div class="panel-body input-group nopad"><div class="input-group-btn">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
+                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                        <li><a href="javascript:;" id="check_image" class="check_image" data-handler="1">Validate Image</a></li>
+                        <li class="divider"></li>
+                        <li><a href="https://lasthunt.myshopify.com/admin/settings/files" target="_blank">Open Shopify File Browser</a></li>
+                    </ul>
+                </div>
+
+                <input id="image_main" name="image_main" type="text" placeholder="" class="input_ln form-control main_image" data-item="1">
+                    <span class="input-group-addon image_count" id="basic-addon2">Shopify CDN</span>
+                    </div>
             </div>
             <!-- Text input-->
             <div class="form-group">

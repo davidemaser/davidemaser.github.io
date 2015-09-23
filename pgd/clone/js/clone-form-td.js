@@ -72,6 +72,7 @@ $(function () {
         // Twitter handle (for Bootstrap demo) - append and text
         newElem.find('.label_twt').attr('for', 'ID' + newNum + '_twitter_handle');
         newElem.find('.input_twt').attr('id', 'ID' + newNum + '_twitter_handle').attr('name', 'ID' + newNum + '_twitter_handle').val('');
+        newElem.find('.check_image').attr('data-handler', newNum);
 
         // Insert the new element after the last "duplicatable" input field
         $('#entry' + num).after(newElem);
@@ -129,6 +130,9 @@ $(function () {
         }, 500);
     }).on('click','.about_app',function (e){
         window.open("http://davidemaser.github.io/pgd/release.html", "_blank","scrollbars=no,resizable=no,height=600, width=800, status=yes, toolbar=no, menubar=no, location=no");
+    }).on('click','.check_image',function(){
+        var a = $(this).data('handler');
+        validateImage('main',a);
     });
 
     function traverseJSON(){
@@ -220,6 +224,46 @@ $(function () {
         $('#output').css('display','block');
         $('#output textarea').val(page_model);
         $("html, body").animate({ scrollTop: 0 }, 500).css('overflow','hidden');
+    }
+    function urlExists(testUrl) {
+        var http = jQuery.ajax({
+            type:"HEAD",
+            url: 'https:' + testUrl,
+            async: false
+        });
+        return http.status;
+        // this will return 200 on success, and 0 or negative value on error
+    }
+    function validateImage(type,handler){
+        if(type == 'main'){
+            var a = $('.check_image[data-handler="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.main_image').val();
+            var aa = $('.check_image[data-handler="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.main_image');
+            console.log(a);
+            if(a !== '') {
+                var b = urlExists(a);
+                if (b !== 200) {
+                    $(aa).next().css('background-color', '#ff3300').css('font-weight', 'bold').css('color', '#fff').html('Image does not exist');
+                } else if (b == 200) {
+                    $(aa).next().attr('style', '').css('background-color', 'rgb(82, 197, 82)').html('Image validated');
+                } else {
+                    $(aa).next().attr('style', '').html('Shopify CDN');
+                }
+            }
+        }else if(type == 'alt'){
+            var a = $('#alt_image_gl').val().replace('https:','').replace('http:','');
+            if(a !== '') {
+                var b = urlExists(a);
+                if (b !== 200) {
+                    $('#alt_image_gl').css('background-color', 'rgba(255, 51, 0, 0.2)');
+                    $('.alt_image_count').css('background-color', '#ff3300').css('font-weight', 'bold').css('color', '#fff').html('Image does not exist');
+                } else if (b == 200) {
+                    $('.alt_image_count').attr('style', '').css('background-color', 'rgb(82, 197, 82)').html('Image validated');
+                    $('#alt_image_gl').attr('style', '');
+                } else {
+                    $('.alt_image_count').attr('style', '').html('Shopify CDN');
+                }
+            }
+        }
     }
 
     $('.btnDel').click(function () {
