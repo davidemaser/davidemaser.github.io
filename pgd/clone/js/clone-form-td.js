@@ -29,9 +29,7 @@ THE SOFTWARE.
 */
 $(function () {
     $('body').on('click','#btnAdd',function () {
-        $(function () {
-            $('.date_obj').datetimepicker({format: 'DD/MM/YYYY HH:mm'});
-        });
+
         var num     = $('.clonedInput').length, // Checks to see how many "duplicatable" input fields we currently have
             newNum  = new Number(num + 1),      // The numeric ID of the new input field being added, increasing by 1 each time
             newElem = $('#entry' + num).clone().attr('id', 'entry' + newNum).fadeIn('slow'); // create the new element via clone(), and manipulate it's ID using newNum value
@@ -82,7 +80,8 @@ $(function () {
 
     // Right now you can only add 4 sections, for a total of 5. Change '5' below to the max number of sections you want to allow.
         if (newNum == 5)
-        $('#btnAdd').attr('disabled', true).prop('value', "You've reached the limit"); // value here updates the text in the 'add' button when the limit is reached 
+        $('#btnAdd').attr('disabled', true).prop('value', "You've reached the limit"); // value here updates the text in the 'add' button when the limit is reached
+        $('.date_obj').datetimepicker({format: 'DD/MM/YYYY HH:mm'});
     });
 
     $('#btnDel').click(function () {
@@ -99,6 +98,15 @@ $(function () {
                 $('#btnAdd').attr('disabled', false).prop('value', "add section");});
             }
         return false; // Removes the last section you added
+    });
+    $('#submit_button').click(function (){
+        var c = [];
+        var len = $('.clonedInput form').length;
+        for(var i=0;i<len;i++){
+            var a = $('#entry'+(i+1)+' form').serializeArray();
+            c.push(a);
+        }
+        console.log(c);
     });
     // Enable the "add" button
     $('#btnAdd').attr('disabled', false);

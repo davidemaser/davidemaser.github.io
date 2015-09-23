@@ -84,24 +84,23 @@
 
 <body>
     <div id="wrapper">
-      <form action="#" method="post" id="sign-up_area" role="form">
+
         <div id="entry1" class="clonedInput">
+            <form action="#" method="post" id="sign-up_area" role="form">
           <h2 id="reference" name="reference" class="heading-reference">Entry #1</h2>
           <fieldset>
-
-
-
-        <!-- Text input-->
+      <!-- Text input-->
         <div class="form-group">
-          <div class="half_span">
-          <label class="label_ln control-label" for="end_date">End Date</label>
-          <input id="end_date" name="end_date" type="text" placeholder="" class="input_ln form-control date_obj">
-          <p class="help-block">This field is required.</p>
-          </div>
+
           <div class="half_span">
           <label class="label_fn control-label" for="start_date">Start Date</label>
           <input id="start_date" name="start_date" type="text" placeholder="" class="input_fn form-control date_obj" required="">
           <p class="help-block">This field is required.</p>
+            </div>
+            <div class="half_span">
+                <label class="label_ln control-label" for="end_date">End Date</label>
+                <input id="end_date" name="end_date" type="text" placeholder="" class="input_ln form-control date_obj">
+                <p class="help-block">This field is required.</p>
             </div>
         </div>
 
@@ -234,7 +233,7 @@
                 <option value="false">No</option>
               </select> <!-- end .select_ttl -->
             </div>
-
+            </form>
         </div><!-- end #entry1 -->
         <!-- Button (Double) -->
         <p>
@@ -243,11 +242,12 @@
         </p>
         <!-- Button -->
         <p>
-          <button id="submit_button" name="submit_button" class="btn btn-primary">Submit</button>
+          <button id="submit_button" name="submit_button" class="btn btn-primary">Publish</button>
+            <button id="generate_button" name="generate_button" class="btn btn-primary">Generate JSON</button>
         </p>
 
         </fieldset>
-        </form>
+
     </div> <!-- end wrapper -->
 </body>
 </html>
