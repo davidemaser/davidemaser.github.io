@@ -160,7 +160,7 @@ $(function () {
             page_model += '\n          "altUrl": "'+aCode[i][8].value+'"';
             page_model += '\n        }';
             if(i<lastItem){
-                page_model += ',\n';
+                page_model += '\n},\n';
             }
         }
         page_model += '\n      }\n   ]\n}';
