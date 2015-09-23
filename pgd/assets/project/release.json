@@ -1,11 +1,11 @@
 {
   "project":{
     "name":"Page Builder",
-    "version":"2",
-    "revision":"12",
+    "version":"3",
+    "revision":"0",
     "downloadlink":"https://drive.google.com/file/d/0B4onXKnKkE6AY0JiVlZ3bG9scmM/view?usp=sharing",
     "semantic":{
-      "build":3,
+      "build":64,
       "language":["js","jquery","json","css","html"],
       "externals":["jquery","bootstrap","custom font","versioning file"],
       "minified":true
@@ -487,6 +487,20 @@
         "codeblocks":[
           {
             "item":"Added JSON export feature as well as JSON formatter and code validator",
+            "revision":"major",
+            "impact":"global",
+            "codestatus":"working"
+          }
+        ]
+      },
+      {
+        "version":3,
+        "date":"9/23/2015",
+        "failsafe":"major",
+        "author":"David Maser",
+        "codeblocks":[
+          {
+            "item":"Recoded PageBuilder to export and translate JSON from multiple form instances. App base source changed to pgd/clone/index.html",
             "revision":"major",
             "impact":"global",
             "codestatus":"working"
