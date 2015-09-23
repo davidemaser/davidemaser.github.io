@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dynamically Duplicating a form, by Tristan Denyer</title>
+  <link rel="stylesheet" href="../../bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="text/javascript" src="../../bower_components/moment/min/moment.min.js"></script>
+  <script type="text/javascript" src="../../bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+  <script type="text/javascript" src="js/clone-form-td.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> <!-- only added as a smoke test for js conflicts -->
+    <style>
+      /* ==========================================================================
+          Demo using Bootstrap 3.3.4 and jQuery 1.11.2
+          You don't need any of the following styles for the form to work properly, 
+          these are just helpers for the demo/test page.
+        ========================================================================== */
+
+      #wrapper { 
+        width:980px;
+        margin:0 auto;
+      }
+      .form-group{
+        position: relative;
+      }
+      .half_span {
+        width: 48%;
+        display: inline-block;
+        margin-right: 1%;
+      }
+      legend {
+        margin-top: 20px;
+      }
+      #attribution {
+        font-size:12px;
+        color:#999;
+        padding:20px;
+        margin:20px 0;
+        border-top:1px solid #ccc;
+      }
+      #O_o { 
+        text-align: center; 
+        background: #33577b;
+        color: #b4c9dd;
+        border-bottom: 1px solid #294663;
+      }
+      #O_o a:link, #O_o a:visited {
+        color: #b4c9dd;
+        border-bottom: #b4c9dd;
+        display: block;
+        padding: 8px;
+        text-decoration: none;
+      }
+      #O_o a:hover, #O_o a:active {
+        color: #fff;
+        border-bottom: #fff;
+        text-decoration: none;
+      }
+      @media only screen and (max-width: 620px), only screen and (max-device-width: 620px) {
+        #wrapper {
+          width: 90%;
+        }
+        legend {
+          font-size: 24px;
+          font-weight: 500;
+        }
+      }
+      </style>
+
+
+    <script type="text/javascript">
+    // if Google is down, it looks to local file...
+    if (typeof jQuery == 'undefined') {
+      document.write(unescape("%3Cscript src='js/jquery-1.11.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+    }
+    $(function () {
+      $('.date_obj').datetimepicker({format: 'DD/MM/YYYY HH:mm'});
+    });
+    </script>
+
+</head>
+
+<body>
+    <div id="wrapper">
+      <form action="#" method="post" id="sign-up_area" role="form">
+        <div id="entry1" class="clonedInput">
+          <h2 id="reference" name="reference" class="heading-reference">Entry #1</h2>
+          <fieldset>
+
+
+
+        <!-- Text input-->
+        <div class="form-group">
+          <div class="half_span">
+          <label class="label_ln control-label" for="end_date">End Date</label>
+          <input id="end_date" name="end_date" type="text" placeholder="" class="input_ln form-control date_obj">
+          <p class="help-block">This field is required.</p>
+          </div>
+          <div class="half_span">
+          <label class="label_fn control-label" for="start_date">Start Date</label>
+          <input id="start_date" name="start_date" type="text" placeholder="" class="input_fn form-control date_obj" required="">
+          <p class="help-block">This field is required.</p>
+            </div>
+        </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <div class="half_span">
+              <label class="label_ln control-label" for="title_en">Title EN</label>
+              <input id="title_en" name="title_en" type="text" placeholder="" class="input_ln form-control">
+                </div>
+              <div class="half_span">
+              <label class="label_ln control-label" for="title_fr">Title FR</label>
+              <input id="title_fr" name="title_fr" type="text" placeholder="" class="input_ln form-control">
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+            <label class="label_ttl control-label" for="title_color">Title Color</label>
+            <div class="form-group">
+              <select class="select_ttl form-control" name="title_color" id="title_color">
+                <option value="" selected="selected" disabled="disabled">Select a color</option>
+                <option value="#fff">White</option>
+                <option value="#000">Black</option>
+                <option value="#ee3600">Red</option>
+                <option value="#9bd000">Green</option>
+              </select> <!-- end .select_ttl -->
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+              <div class="half_span">
+                <label class="label_ln control-label" for="text_en">Text EN</label>
+                <input id="text_en" name="text_en" type="text" placeholder="" class="input_ln form-control">
+              </div>
+              <div class="half_span">
+                <label class="label_ln control-label" for="text_fr">Text FR</label>
+                <input id="text_fr" name="text_fr" type="text" placeholder="" class="input_ln form-control">
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="label_ln control-label" for="image_main">Image Link</label>
+                <input id="image_main" name="image_main" type="text" placeholder="" class="input_ln form-control">
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="label_ln control-label" for="image_alt">Alternative Image Link</label>
+              <input id="image_alt" name="image_alt" type="text" placeholder="" class="input_ln form-control">
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+              <div class="half_span">
+                <label class="label_ln control-label" for="button_label_en">Button Label EN</label>
+                <input id="button_label_en" name="button_label_en" type="text" placeholder="" class="input_ln form-control">
+              </div>
+              <div class="half_span">
+                <label class="label_ln control-label" for="button_label_fr">Button Label FR</label>
+                <input id="button_label_fr" name="button_label_fr" type="text" placeholder="" class="input_ln form-control">
+              </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+
+              <label class="label_ln control-label" for="button_link">Button Link</label>
+              <input id="button_link" name="button_link" type="text" placeholder="" class="input_ln form-control">
+
+            </div>
+
+            <!-- Select Basic -->
+            <div class="half_span">
+            <label class="label_ttl control-label" for="options_popup">Open Link In A Popup ?</label>
+            <div class="form-group">
+              <select class="select_ttl form-control" name="options_popup" id="options_popup">
+                <option value="" selected="selected" disabled="disabled">Select</option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+              </select> <!-- end .select_ttl -->
+            </div>
+              </div>
+            <!-- Select Basic -->
+            <div class="half_span">
+              <label class="label_ttl control-label" for="options_popup_id">Link To Which ID</label>
+              <div class="form-group">
+                <select class="select_ttl form-control" name="options_popup_id" id="options_popup_id">
+                  <option value="" selected="selected" disabled="disabled">Select</option>
+                  <option value="popup-1">Popup 1</option>
+                  <option value="popup-2">Popup 2</option>
+                </select> <!-- end .select_ttl -->
+              </div>
+            </div>
+            <!-- Select Basic -->
+
+              <label class="label_ttl control-label" for="options_countdown">Show Countdown Timer</label>
+              <div class="form-group">
+                <select class="select_ttl form-control" name="options_countdown" id="options_countdown">
+                  <option value="" selected="selected" disabled="disabled">Select</option>
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
+                </select> <!-- end .select_ttl -->
+              </div>
+
+            <!-- Select Basic -->
+            <div class="half_span">
+              <label class="label_ttl control-label" for="options_hero_title">Show Hero Title</label>
+              <div class="form-group">
+                <select class="select_ttl form-control" name="options_hero_title" id="options_hero_title">
+                  <option value="" selected="selected" disabled="disabled">Select</option>
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
+                </select> <!-- end .select_ttl -->
+              </div>
+            </div>
+            <!-- Select Basic -->
+            <div class="half_span">
+              <label class="label_ttl control-label" for="options_hero_subtitle">Show Hero Subtitle</label>
+              <div class="form-group">
+                <select class="select_ttl form-control" name="options_hero_subtitle" id="options_hero_subtitle">
+                  <option value="" selected="selected" disabled="disabled">Select</option>
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
+                </select> <!-- end .select_ttl -->
+              </div>
+            </div>
+            <!-- Select Basic -->
+
+            <label class="label_ttl control-label" for="options_promote">Promote Hero</label>
+            <div class="form-group">
+              <select class="select_ttl form-control" name="options_promote" id="options_promote">
+                <option value="" selected="selected" disabled="disabled">Select</option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+              </select> <!-- end .select_ttl -->
+            </div>
+
+        </div><!-- end #entry1 -->
+        <!-- Button (Double) -->
+        <p>
+        <button type="button" id="btnAdd" name="btnAdd" class="btn btn-info">add section</button>
+          <button type="button" id="btnDel" name="btnDel" class="btn btn-danger">remove section above</button>
+        </p>
+        <!-- Button -->
+        <p>
+          <button id="submit_button" name="submit_button" class="btn btn-primary">Submit</button>
+        </p>
+
+        </fieldset>
+        </form>
+    </div> <!-- end wrapper -->
+</body>
+</html>

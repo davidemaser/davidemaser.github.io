@@ -25,7 +25,7 @@ function switchTargetLang(lng){
     if(lng == 'json'){
         $('.sparta,.athena').hide();
         $(function () {
-            $('#start_date, #end_date').datetimepicker({format: 'DD/MM/YYYY HH:mm'});
+            $('#start_date, #end_date').datetimepicker({format: 'MM/DD/YYYY HH:mm'});
         });
         $('.ongoing').hide();
         $('#start_date, #end_date').prop('placeholder','01/01/2015 00:00');
