@@ -83,6 +83,79 @@ $(function () {
         $('#btnAdd').attr('disabled', true).prop('value', "You've reached the limit"); // value here updates the text in the 'add' button when the limit is reached
         $('.date_obj').datetimepicker({format: 'DD/MM/YYYY HH:mm'});
     });
+    $('body').on('click','.overlay_close',function(){
+        $(this).parent().parent().hide();
+    }).on('click','.select_content',function() {
+        var $this = $('.blackify_overlay textarea');
+        $this.select();
+
+        // Work around Chrome's little problem
+        $this.mouseup(function() {
+            // Prevent further mouseup intervention
+            $this.unbind("mouseup");
+            return false;
+        });
+    });
+    function outputJson(aCode){
+        var nodes = aCode.length;
+        var lastItem = nodes-1;
+        var page_model='{\n    "hero": [\n';
+        for(var i=0;i<nodes;i++){
+            //mapping
+            if(aCode[i][14].value == '' || aCode[i][14].value == null || aCode[i][14].value == undefined){
+                var elemA = true;
+            }else{
+                elemA = aCode[i][14].value;
+            }
+            if(aCode[i][12].value == '' || aCode[i][12].value == null || aCode[i][12].value == undefined){
+                var elemB = false;
+            }else{
+                elemB = aCode[i][12].value;
+            }
+            if(aCode[i][17].value == '' || aCode[i][17].value == null || aCode[i][17].value == undefined){
+                var elemC = false;
+            }else{
+                elemC = aCode[i][17].value;
+            }
+            page_model += '{\n        "hero-id": "hero-elem'+i+'",';
+            page_model += '\n        "active": true,';
+            page_model += '\n        "showCountdown": '+elemA+',';
+            page_model += '\n        "popUpLink": '+elemB+',';
+            page_model += '\n        "date": {';
+            page_model += '\n          "start": "'+aCode[i][0].value+'",';
+            page_model += '\n          "end": "'+aCode[i][1].value+'"';
+            page_model += '\n        },';
+            page_model += '\n        "title": {';
+            page_model += '\n          "en": "'+aCode[i][2].value+'",';
+            page_model += '\n          "fr": "'+aCode[i][3].value+'",';
+            page_model += '\n          "color": "'+aCode[i][4].value+'"';
+            page_model += '\n        },';
+            page_model += '\n        "text": {';
+            page_model += '\n          "en": "'+aCode[i][5].value+'",';
+            page_model += '\n          "fr": "'+aCode[i][6].value+'"';
+            page_model += '\n        },';
+            page_model += '\n        "promote": '+elemC+',';
+            page_model += '\n        "button": {';
+            page_model += '\n          "label": {';
+            page_model += '\n            "en": "'+aCode[i][9].value+'",';
+            page_model += '\n            "fr": "'+aCode[i][10].value+'"';
+            page_model += '\n          },';
+            page_model += '\n        "url": "'+aCode[i][11].value+'",';
+            page_model += '\n        "popUpLinkID": "'+aCode[i][13].value+'"';
+            page_model += '\n        },';
+            page_model += '\n        "image": {';
+            page_model += '\n          "url": "'+aCode[i][7].value+'",';
+            page_model += '\n          "altUrl": "'+aCode[i][8].value+'"';
+            page_model += '\n        }';
+            if(i<lastItem){
+                page_model += ',\n';
+            }
+        }
+        page_model += '\n      }\n   ]\n}';
+        $('#output').css('display','block');
+        $('#output textarea').val(page_model);
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+    }
 
     $('#btnDel').click(function () {
     // Confirmation dialog box. Works on all desktop browsers and iPhone.
@@ -106,7 +179,7 @@ $(function () {
             var a = $('#entry'+(i+1)+' form').serializeArray();
             c.push(a);
         }
-        console.log(c);
+        outputJson(c);
     });
     // Enable the "add" button
     $('#btnAdd').attr('disabled', false);

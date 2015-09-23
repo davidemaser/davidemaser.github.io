@@ -26,6 +26,42 @@
         display: inline-block;
         margin-right: 1%;
       }
+      #output {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: none;
+      }
+
+      .blackify {
+          background-color: rgba(0, 0, 0, 0.5);
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+      }
+
+      .blackify_overlay {
+          position: relative;
+          width: 75%;
+          height: 100%;
+          margin: 0 auto;
+          padding: 50px;
+          background-color: #eee;
+      }
+
+      .blackify_overlay textarea {
+          width: 100%!important;
+          height: 85%!important;
+      }
+      span.overlay_close,span.select_content {
+          padding: 20px;
+          float: right;
+          cursor: pointer;
+      }
       legend {
         margin-top: 20px;
       }
@@ -120,8 +156,7 @@
             <label class="label_ttl control-label" for="title_color">Title Color</label>
             <div class="form-group">
               <select class="select_ttl form-control" name="title_color" id="title_color">
-                <option value="" selected="selected" disabled="disabled">Select a color</option>
-                <option value="#fff">White</option>
+                <option value="#fff" selected="selected">White (Default)</option>
                 <option value="#000">Black</option>
                 <option value="#ee3600">Red</option>
                 <option value="#9bd000">Green</option>
@@ -173,9 +208,8 @@
             <label class="label_ttl control-label" for="options_popup">Open Link In A Popup ?</label>
             <div class="form-group">
               <select class="select_ttl form-control" name="options_popup" id="options_popup">
-                <option value="" selected="selected" disabled="disabled">Select</option>
                 <option value="true">Yes</option>
-                <option value="false">No</option>
+                <option value="false" selected="selected">No</option>
               </select> <!-- end .select_ttl -->
             </div>
               </div>
@@ -184,7 +218,7 @@
               <label class="label_ttl control-label" for="options_popup_id">Link To Which ID</label>
               <div class="form-group">
                 <select class="select_ttl form-control" name="options_popup_id" id="options_popup_id">
-                  <option value="" selected="selected" disabled="disabled">Select</option>
+                  <option value="null" selected="selected">Select</option>
                   <option value="popup-1">Popup 1</option>
                   <option value="popup-2">Popup 2</option>
                 </select> <!-- end .select_ttl -->
@@ -195,8 +229,7 @@
               <label class="label_ttl control-label" for="options_countdown">Show Countdown Timer</label>
               <div class="form-group">
                 <select class="select_ttl form-control" name="options_countdown" id="options_countdown">
-                  <option value="" selected="selected" disabled="disabled">Select</option>
-                  <option value="true">Yes</option>
+                  <option value="true" selected="selected">Yes</option>
                   <option value="false">No</option>
                 </select> <!-- end .select_ttl -->
               </div>
@@ -206,8 +239,7 @@
               <label class="label_ttl control-label" for="options_hero_title">Show Hero Title</label>
               <div class="form-group">
                 <select class="select_ttl form-control" name="options_hero_title" id="options_hero_title">
-                  <option value="" selected="selected" disabled="disabled">Select</option>
-                  <option value="true">Yes</option>
+                  <option value="true" selected="selected">Yes</option>
                   <option value="false">No</option>
                 </select> <!-- end .select_ttl -->
               </div>
@@ -217,8 +249,7 @@
               <label class="label_ttl control-label" for="options_hero_subtitle">Show Hero Subtitle</label>
               <div class="form-group">
                 <select class="select_ttl form-control" name="options_hero_subtitle" id="options_hero_subtitle">
-                  <option value="" selected="selected" disabled="disabled">Select</option>
-                  <option value="true">Yes</option>
+                  <option value="true" selected="selected">Yes</option>
                   <option value="false">No</option>
                 </select> <!-- end .select_ttl -->
               </div>
@@ -228,8 +259,7 @@
             <label class="label_ttl control-label" for="options_promote">Promote Hero</label>
             <div class="form-group">
               <select class="select_ttl form-control" name="options_promote" id="options_promote">
-                <option value="" selected="selected" disabled="disabled">Select</option>
-                <option value="true">Yes</option>
+                <option value="true" selected="selected">Yes</option>
                 <option value="false">No</option>
               </select> <!-- end .select_ttl -->
             </div>
@@ -242,12 +272,11 @@
         </p>
         <!-- Button -->
         <p>
-          <button id="submit_button" name="submit_button" class="btn btn-primary">Publish</button>
-            <button id="generate_button" name="generate_button" class="btn btn-primary">Generate JSON</button>
+          <button id="submit_button" name="submit_button" class="btn btn-primary">Generate JSON</button>
         </p>
 
         </fieldset>
-
+        <div id="output"><div class="blackify"></div><div class="blackify_overlay"><span class="overlay_close">close</span><span class="select_content">select all</span><textarea></textarea></div></div>
     </div> <!-- end wrapper -->
 </body>
 </html>
