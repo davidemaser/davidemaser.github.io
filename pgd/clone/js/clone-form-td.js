@@ -84,7 +84,7 @@ $(function () {
         $('.date_obj').datetimepicker({format: 'DD/MM/YYYY HH:mm'});
         $('html, body').animate({
             scrollTop: $('#entry' + newNum).offset().top
-        }, 2000);
+        }, 500);
     });
     $('body').on('click','.overlay_close',function(){
         $(this).parent().parent().hide();
@@ -120,8 +120,17 @@ $(function () {
             }else{
                 elemC = aCode[i][17].value;
             }
+            if(aCode[i][18] !== undefined) {
+                if (aCode[i][18].value == '' || aCode[i][18].value == null || aCode[i][18].value == undefined) {
+                    var elemD = true;
+                } else {
+                    elemD = aCode[i][18].value;
+                }
+            }else{
+                elemD = true;
+            }
             page_model += '{\n        "hero-id": "hero-elem'+i+'",';
-            page_model += '\n        "active": '+aCode[i][18].value+',';
+            page_model += '\n        "active": '+elemD+',';
             page_model += '\n        "showCountdown": '+elemA+',';
             page_model += '\n        "popUpLink": '+elemB+',';
             page_model += '\n        "date": {';
@@ -157,7 +166,7 @@ $(function () {
         page_model += '\n      }\n   ]\n}';
         $('#output').css('display','block');
         $('#output textarea').val(page_model);
-        $("html, body").animate({ scrollTop: 0 }, "slow");
+        $("html, body").animate({ scrollTop: 0 }, 500);
     }
 
     $('.btnDel').click(function () {
