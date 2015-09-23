@@ -99,6 +99,19 @@ $(function () {
             return false;
         });
     });
+    function traverseJSON(){
+        if($('.blackify_overlay textarea').val() !== '') {
+            var ctc = $('.blackify_overlay textarea').val(),
+                traverse = JSON.parse(ctc),
+                obj = traverse.hero,
+                len = obj.length;
+            for (var i = 0; i < len; i++) {
+                console.log(obj[i]);
+            }
+        }else{
+            alert('Please generate or paste JSON before using this function')
+        }
+    }
     function outputJson(aCode){
         var nodes = aCode.length;
         var lastItem = nodes-1;
@@ -192,6 +205,9 @@ $(function () {
             c.push(a);
         }
         outputJson(c);
+    });
+    $('.translate_json').click(function (){
+        traverseJSON();
     });
     // Enable the "add" button
     $('.btnAdd').attr('disabled', false);
