@@ -29,6 +29,9 @@ THE SOFTWARE.
 */
 $(function () {
     function addItems(){
+        if($('#output').css('display') == 'block'){
+            $('#output').css('display','none');
+        }
         var num     = $('.clonedInput').length, // Checks to see how many "duplicatable" input fields we currently have
             newNum  = new Number(num + 1),      // The numeric ID of the new input field being added, increasing by 1 each time
             newElem = $('#entry' + num).clone().attr('id', 'entry' + newNum); // create the new element via clone(), and manipulate it's ID using newNum value
@@ -81,26 +84,53 @@ $(function () {
         if (newNum == 10)
             $('.btnAdd').attr('disabled', true).prop('value', "You've reached the limit"); // value here updates the text in the 'add' button when the limit is reached
         $('.date_obj').datetimepicker({format: 'DD/MM/YYYY HH:mm'});
+        $('.snapTo').append('<li><a href="#" class="gotoItem" data-item="'+newNum+'">Hero Item '+newNum+'</a></li>');
         $('html, body').animate({
-            scrollTop: $('#entry' + newNum).offset().top
+            scrollTop: $('#entry' + newNum).offset().top-60
         }, 500);
+    }
+    function deleteItems(){
+        if($('#output').css('display') == 'block'){
+            $('#output').css('display','none');
+        }
+        // Confirmation dialog box. Works on all desktop browsers and iPhone.
+        if (confirm("Are you sure you wish to remove this section? This cannot be undone."))
+        {
+            var num = $('.clonedInput').length;
+            // how many "duplicatable" input fields we currently have
+            $('#entry' + num).slideUp('slow', function () {$(this).remove();
+                // if only one element remains, disable the "remove" button
+                if (num -1 === 1)
+                    $('.btnDel').attr('disabled', true);
+                // enable the "add" button
+                $('.btnAdd').attr('disabled', false).prop('value', "add section");});
+            $('.snapTo').find('.gotoItem:last').remove()
+        }
+        return false; // Removes the last section you added
     }
     $('body').on('click','.btnAdd',function () {
         addItems();
-    });
-    $('body').on('click','.overlay_close',function(){
+    }).on('click','.overlay_close',function(){
         $(this).parent().parent().hide();
+        $('html,body').css('overflow','auto');
     }).on('click','.select_content',function() {
         var $this = $('.blackify_overlay textarea');
         $this.select();
-
         // Work around Chrome's little problem
         $this.mouseup(function() {
             // Prevent further mouseup intervention
             $this.unbind("mouseup");
             return false;
         });
+    }).on('click','.gotoItem',function (){
+        var a = $(this).data('item');
+        $('html, body').animate({
+            scrollTop: $('#entry' + a).offset().top-60
+        }, 500);
+    }).on('click','.about_app',function (e){
+        window.open("http://davidemaser.github.io/pgd/release.html", "_blank","scrollbars=no,resizable=no,height=600, width=800, status=yes, toolbar=no, menubar=no, location=no");
     });
+
     function traverseJSON(){
         if($('.blackify_overlay textarea').val() !== '') {
             var ctc = $('.blackify_overlay textarea').val(),
@@ -189,23 +219,11 @@ $(function () {
         page_model += '\n      }\n   ]\n}';
         $('#output').css('display','block');
         $('#output textarea').val(page_model);
-        $("html, body").animate({ scrollTop: 0 }, 500);
+        $("html, body").animate({ scrollTop: 0 }, 500).css('overflow','hidden');
     }
 
     $('.btnDel').click(function () {
-    // Confirmation dialog box. Works on all desktop browsers and iPhone.
-        if (confirm("Are you sure you wish to remove this section? This cannot be undone."))
-            {
-                var num = $('.clonedInput').length;
-                // how many "duplicatable" input fields we currently have
-                $('#entry' + num).slideUp('slow', function () {$(this).remove();
-                // if only one element remains, disable the "remove" button
-                    if (num -1 === 1)
-                $('.btnDel').attr('disabled', true);
-                // enable the "add" button
-                $('.btnAdd').attr('disabled', false).prop('value', "add section");});
-            }
-        return false; // Removes the last section you added
+        deleteItems();
     });
     $('.submit_json').click(function (){
         var c = [];

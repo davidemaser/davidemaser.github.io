@@ -16,19 +16,21 @@
     <style>
       #wrapper {
         width:980px;
-        margin:0 auto;
+          margin: 70px auto 0 auto;
       }
       .form-group{
         position: relative;
       }
       .half_span {
-        width: 48%;
-        display: inline-block;
-        margin-right: 1%;
+          width: 50%;
+          float: left;
+      }
+      .half_span.lItem {
+          padding-right: 20px;
       }
       #output {
           position: absolute;
-          top: 0;
+          top: 30px;
           left: 0;
           width: 100%;
           height: 100%;
@@ -56,11 +58,14 @@
       .blackify_overlay textarea {
           width: 100%!important;
           height: 85%!important;
+          font-family: monospace;
+          font-size: 12px;
       }
       span.overlay_close,span.select_content {
           padding: 20px;
           float: right;
           cursor: pointer;
+          margin: 0 0 10px 10px;
       }
       legend {
         margin-top: 20px;
@@ -74,6 +79,23 @@
       }
       .panel-body {
           background-color: #efefef;
+      }
+      .panel-body.top_level_bt {
+          position: fixed;
+          width: 100%;
+          top: 0;
+          z-index: 99;
+          box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+      }
+      .sub {
+          width: 980px;
+          margin: 0 auto;
+      }
+      .info-group {
+          position: relative;   display: inline-block;   float: right;
+          vertical-align: middle;
+          font-size: 22px;
+          margin-left: 5px;
       }
       #attribution {
         font-size:12px;
@@ -125,8 +147,9 @@
 </head>
 
 <body>
-    <div id="wrapper">
-        <div class="panel-body top_level_bt"><div class="btn-group">
+<div class="panel-body top_level_bt">
+    <div class="sub">
+        <div class="btn-group">
             <button type="button" class="btn btn-success dropdown-toggle action_utilities" data-toggle="dropdown" aria-expanded="false">
                 Actions <span class="caret"></span>
             </button>
@@ -136,9 +159,24 @@
                 <li class="divider"></li>
                 <li><a href="#" class="app_info_toggle submit_json" id="submit_button">Generate JSON</a></li>
                 <li><a href="#" class="app_info_toggle translate_json" id="translate_json">Translate JSON</a></li>
-
+                <li class="divider"></li>
+                <li><a href="#" class="app_info_toggle about_app">About this app</a></li>
             </ul>
-        </div></div>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-success dropdown-toggle action_utilities" data-toggle="dropdown" aria-expanded="false">
+                Go To <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu snapTo" role="menu">
+                <li><a href="#" class="gotoItem" data-item="1">Hero Item 1</a></li>
+            </ul>
+        </div>
+        <div class="info-group"><span class="label label-default">JSON</span></div>
+        <div class="info-group"><span class="label label-warning">3.0</span></div>
+    </div>
+</div>
+    <div id="wrapper">
+
         <div id="entry1" class="clonedInput">
             <form action="#" method="post" id="sign-up_area" role="form">
           <h2 id="reference" name="reference" class="heading-reference"><span class="label label-default">HERO ITEM 1</span></h2>
@@ -146,7 +184,7 @@
       <!-- Text input-->
         <div class="form-group">
 
-          <div class="half_span">
+          <div class="half_span lItem">
           <label class="label_fn control-label" for="start_date">Start Date</label>
           <input id="start_date" name="start_date" type="text" placeholder="" class="input_fn form-control date_obj" required="">
           <p class="help-block">This field is required.</p>
@@ -160,7 +198,7 @@
 
             <!-- Text input-->
             <div class="form-group">
-              <div class="half_span">
+              <div class="half_span lItem">
               <label class="label_ln control-label" for="title_en">Title EN</label>
               <input id="title_en" name="title_en" type="text" placeholder="" class="input_ln form-control">
                 </div>
@@ -182,7 +220,7 @@
             </div>
             <!-- Text input-->
             <div class="form-group">
-              <div class="half_span">
+              <div class="half_span lItem">
                 <label class="label_ln control-label" for="text_en">Text EN</label>
                 <input id="text_en" name="text_en" type="text" placeholder="" class="input_ln form-control">
               </div>
@@ -204,7 +242,7 @@
             </div>
             <!-- Text input-->
             <div class="form-group">
-              <div class="half_span">
+              <div class="half_span lItem">
                 <label class="label_ln control-label" for="button_label_en">Button Label EN</label>
                 <input id="button_label_en" name="button_label_en" type="text" placeholder="" class="input_ln form-control">
               </div>
@@ -222,7 +260,7 @@
             </div>
 
             <!-- Select Basic -->
-            <div class="half_span">
+            <div class="half_span lItem">
             <label class="label_ttl control-label" for="options_popup">Open Link In A Popup ?</label>
             <div class="form-group">
               <select class="select_ttl form-control" name="options_popup" id="options_popup">
@@ -253,7 +291,7 @@
               </div>
 
             <!-- Select Basic -->
-            <div class="half_span">
+            <div class="half_span lItem">
               <label class="label_ttl control-label" for="options_hero_title">Show Hero Title</label>
               <div class="form-group">
                 <select class="select_ttl form-control" name="options_hero_title" id="options_hero_title">
@@ -299,20 +337,8 @@
         </div><!-- end #entry1 -->
         <!-- Button (Double) -->
                 </fieldset>
-        <div class="panel-body top_level_bt"><div class="btn-group dropup">
-        <button type="button" class="btn btn-success dropdown-toggle action_utilities" data-toggle="dropdown" aria-expanded="false">
-            Actions <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" role="menu">
-            <li><a href="#" class="cleaner_open btnAdd" id="btnAdd">Add Hero Item</a></li>
-            <li><a href="#" class="generate_page btnDel" id="btnDel">Remove Last Hero Item</a></li>
-            <li class="divider"></li>
-            <li><a href="#" class="app_info_toggle submit_json" id="submit_button">Generate JSON</a></li>
-            <li><a href="#" class="app_info_toggle translate_json" id="translate_json">Translate JSON</a></li>
 
-        </ul>
-    </div></div>
-        <div id="output"><div class="blackify"></div><div class="blackify_overlay"><span class="overlay_close">close</span><span class="select_content">select all</span><textarea></textarea></div></div>
+        <div id="output"><div class="blackify"></div><div class="blackify_overlay"><span class="overlay_close label label-danger">close</span><span class="select_content label label-primary">select all</span><textarea></textarea></div></div>
     </div> <!-- end wrapper -->
 </body>
 </html>
