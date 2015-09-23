@@ -73,7 +73,9 @@
           padding-left: 50px;
           border-left: 6px solid #68B81F;
       }
-
+      .panel-body {
+          background-color: #efefef;
+      }
       #attribution {
         font-size:12px;
         color:#999;
@@ -125,7 +127,18 @@
 
 <body>
     <div id="wrapper">
+        <div class="panel-body top_level_bt"><div class="btn-group">
+            <button type="button" class="btn btn-success dropdown-toggle action_utilities" data-toggle="dropdown" aria-expanded="false">
+                Actions <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="#" class="cleaner_open btnAdd" id="btnAdd">Add Section</a></li>
+                <li><a href="#" class="generate_page btnDel" id="btnDel">Remove Last Section</a></li>
+                <li class="divider"></li>
+                <li><a href="#" class="app_info_toggle submit_json" id="submit_button">Generate JSON</a></li>
 
+            </ul>
+        </div></div>
         <div id="entry1" class="clonedInput">
             <form action="#" method="post" id="sign-up_area" role="form">
           <h2 id="reference" name="reference" class="heading-reference">Entry #1</h2>
@@ -284,16 +297,19 @@
             </form>
         </div><!-- end #entry1 -->
         <!-- Button (Double) -->
-        <p>
-        <button type="button" id="btnAdd" name="btnAdd" class="btn btn-info">add section</button>
-          <button type="button" id="btnDel" name="btnDel" class="btn btn-danger">remove section above</button>
-        </p>
-        <!-- Button -->
-        <p>
-          <button id="submit_button" name="submit_button" class="btn btn-primary">Generate JSON</button>
-        </p>
+                </fieldset>
+        <div class="panel-body top_level_bt"><div class="btn-group dropup">
+        <button type="button" class="btn btn-success dropdown-toggle action_utilities" data-toggle="dropdown" aria-expanded="false">
+            Actions <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="#" class="cleaner_open btnAdd" id="btnAdd">Add Section</a></li>
+            <li><a href="#" class="generate_page btnDel" id="btnDel">Remove Last Section</a></li>
+            <li class="divider"></li>
+            <li><a href="#" class="app_info_toggle submit_json" id="submit_button">Generate JSON</a></li>
 
-        </fieldset>
+        </ul>
+    </div></div>
         <div id="output"><div class="blackify"></div><div class="blackify_overlay"><span class="overlay_close">close</span><span class="select_content">select all</span><textarea></textarea></div></div>
     </div> <!-- end wrapper -->
 </body>
