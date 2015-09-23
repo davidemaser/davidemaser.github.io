@@ -41,7 +41,7 @@ $(function () {
         Keep in mind that the .val() method is what clears the element when it gets cloned. Radio and checkboxes need .val([]) instead of .val('').
     */
         // H2 - section
-        newElem.find('.heading-reference').attr('id', 'ID' + newNum + '_reference').attr('name', 'ID' + newNum + '_reference').html('Entry #' + newNum);
+        newElem.find('.heading-reference').attr('id', 'ID' + newNum + '_reference').attr('name', 'ID' + newNum + '_reference').html('<span class="label label-default">HERO ITEM ' + newNum+'</span>');
 
         // Title - select
         newElem.find('.label_ttl').attr('for', 'ID' + newNum + '_title');
@@ -79,9 +79,12 @@ $(function () {
         $('#btnDel').attr('disabled', false);
 
     // Right now you can only add 4 sections, for a total of 5. Change '5' below to the max number of sections you want to allow.
-        if (newNum == 5)
+        if (newNum == 10)
         $('.btnAdd').attr('disabled', true).prop('value', "You've reached the limit"); // value here updates the text in the 'add' button when the limit is reached
         $('.date_obj').datetimepicker({format: 'DD/MM/YYYY HH:mm'});
+        $('html, body').animate({
+            scrollTop: $('#entry' + newNum).offset().top
+        }, 2000);
     });
     $('body').on('click','.overlay_close',function(){
         $(this).parent().parent().hide();
