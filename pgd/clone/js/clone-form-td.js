@@ -118,7 +118,7 @@ $(function () {
                 elemC = aCode[i][17].value;
             }
             page_model += '{\n        "hero-id": "hero-elem'+i+'",';
-            page_model += '\n        "active": true,';
+            page_model += '\n        "active": '+aCode[i][18].value+',';
             page_model += '\n        "showCountdown": '+elemA+',';
             page_model += '\n        "popUpLink": '+elemB+',';
             page_model += '\n        "date": {';

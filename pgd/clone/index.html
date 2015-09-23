@@ -69,6 +69,11 @@
         background-color: #d9edf7;
         padding: 10px;
       }
+      .mod-radio {
+          padding-left: 50px;
+          border-left: 6px solid #68B81F;
+      }
+
       #attribution {
         font-size:12px;
         color:#999;
@@ -263,6 +268,19 @@
                 <option value="false">No</option>
               </select> <!-- end .select_ttl -->
             </div>
+
+              <!-- Multiple Radios -->
+              <label class="label_radio control-label" for="radioitem">Activate Hero</label>
+              <div class="input-group form-group mod-radio">
+                  <label class="radio" for="radioitem-0">
+                      <input class="input_radio" type="radio" name="radioitem" id="radioitem-0" value="true" checked checked="checked">
+                      Yes
+                  </label>
+                  <label class="radio" for="radioitem-1">
+                      <input class="input_radio" type="radio" name="radioitem" id="radioitem-1" value="false">
+                      No
+                  </label>
+              </div>
             </form>
         </div><!-- end #entry1 -->
         <!-- Button (Double) -->
