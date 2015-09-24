@@ -65,7 +65,7 @@
           font-family: monospace;
           font-size: 12px;
       }
-      span.overlay_close,span.select_content,span.overlay_validate {
+      span.overlay_close,span.select_content,span.overlay_validate,span.overlay_translate {
           padding: 20px;
           float: right;
           cursor: pointer;
@@ -114,6 +114,29 @@
       .nopad{
           padding:0!important;
           background-color: transparent;
+      }
+      #output[data-reason="output"] .overlay_translate {
+          display: none;
+      }
+      #output[data-reason="output"] .select_content {
+          display: inline;
+      }
+      #output[data-reason="translate"] .overlay_translate {
+          display: inline;
+      }
+      #output[data-reason="translate"] .select_content {
+          display: none;
+      }
+      .copy-zone {
+          position: fixed;
+          bottom: 0;
+          right: 0;
+          padding: 20px;
+          background-color: rgba(221, 221, 221, 0.5);
+          display: none;
+          text-transform: uppercase;
+          font-weight: bold;
+          cursor:pointer;
       }
       #attribution {
         font-size:12px;
@@ -204,12 +227,12 @@
 
           <div class="half_span lItem">
           <label class="label_fn control-label" for="start_date">Start Date</label>
-          <input id="start_date" name="start_date" type="text" placeholder="" class="input_fn form-control date_obj" required="">
+          <input id="start_date" name="start_date" type="text" placeholder="" class="input_fn form-control date_obj objStart" required="">
           <p class="help-block">This field is required.</p>
             </div>
             <div class="half_span">
                 <label class="label_ln control-label" for="end_date">End Date</label>
-                <input id="end_date" name="end_date" type="text" placeholder="" class="input_ln form-control date_obj">
+                <input id="end_date" name="end_date" type="text" placeholder="" class="input_ln form-control date_obj objEnd">
                 <p class="help-block">This field is required.</p>
             </div>
         </div>
@@ -218,18 +241,18 @@
             <div class="form-group">
               <div class="half_span lItem">
               <label class="label_ln control-label" for="title_en">Title EN</label>
-              <input id="title_en" name="title_en" type="text" placeholder="" class="input_ln form-control">
+              <input id="title_en" name="title_en" type="text" placeholder="" class="input_ln form-control objTitleEN">
                 </div>
               <div class="half_span">
               <label class="label_ln control-label" for="title_fr">Title FR</label>
-              <input id="title_fr" name="title_fr" type="text" placeholder="" class="input_ln form-control">
+              <input id="title_fr" name="title_fr" type="text" placeholder="" class="input_ln form-control objTitleFR">
                 </div>
             </div>
 
             <!-- Select Basic -->
             <label class="label_ttl control-label" for="title_color">Title Color</label>
             <div class="form-group">
-              <select class="select_ttl form-control" name="title_color" id="title_color">
+              <select class="select_ttl form-control" name="title_color" id="title_color objTitleCol">
                 <option value="#fff" selected="selected">White (Default)</option>
                 <option value="#000">Black</option>
                 <option value="#ee3600">Red</option>
@@ -240,11 +263,11 @@
             <div class="form-group">
               <div class="half_span lItem">
                 <label class="label_ln control-label" for="text_en">Text EN</label>
-                <input id="text_en" name="text_en" type="text" placeholder="" class="input_ln form-control">
+                <input id="text_en" name="text_en" type="text" placeholder="" class="input_ln form-control objTextEN">
               </div>
               <div class="half_span">
                 <label class="label_ln control-label" for="text_fr">Text FR</label>
-                <input id="text_fr" name="text_fr" type="text" placeholder="" class="input_ln form-control">
+                <input id="text_fr" name="text_fr" type="text" placeholder="" class="input_ln form-control objTextFR">
               </div>
             </div>
 
@@ -262,7 +285,7 @@
                 </div>
 
 
-                <input id="image_main" name="image_main" type="text" placeholder="" class="input_ln form-control main_image" data-item="1">
+                <input id="image_main" name="image_main" type="text" placeholder="" class="input_ln form-control main_image objImageMain" data-item="1">
                     <span class="input-group-addon image_count" id="basic-addon2">Shopify CDN</span>
 
             </div></div>
@@ -278,7 +301,7 @@
                             <li><a href="https://lasthunt.myshopify.com/admin/settings/files" target="_blank">Open Shopify File Browser</a></li>
                         </ul>
                     </div>
-              <input id="image_alt" name="image_alt" type="text" placeholder="" class="input_ln form-control alt_image">
+              <input id="image_alt" name="image_alt" type="text" placeholder="" class="input_ln form-control alt_image objImageAlt">
                     <span class="input-group-addon image_count" id="basic-addon3">Shopify CDN</span>
             </div>
             </div>
@@ -286,18 +309,18 @@
             <div class="form-group">
               <div class="half_span lItem">
                 <label class="label_ln control-label" for="button_label_en">Button Label EN</label>
-                <input id="button_label_en" name="button_label_en" type="text" placeholder="" class="input_ln form-control">
+                <input id="button_label_en" name="button_label_en" type="text" placeholder="" class="input_ln form-control objButtonEN">
               </div>
               <div class="half_span">
                 <label class="label_ln control-label" for="button_label_fr">Button Label FR</label>
-                <input id="button_label_fr" name="button_label_fr" type="text" placeholder="" class="input_ln form-control">
+                <input id="button_label_fr" name="button_label_fr" type="text" placeholder="" class="input_ln form-control objButtonFR">
               </div>
             </div>
             <!-- Text input-->
             <div class="form-group">
 
               <label class="label_ln control-label" for="button_link">Button Link</label>
-              <input id="button_link" name="button_link" type="text" placeholder="" class="input_ln form-control">
+              <input id="button_link" name="button_link" type="text" placeholder="" class="input_ln form-control objButtonLink">
 
             </div>
 
@@ -306,14 +329,14 @@
                   <div class="half_span lItem">
             <label class="label_ttl control-label" for="options_popup">Open Link In A Popup ?</label>
 
-              <select class="select_ttl form-control" name="options_popup" id="options_popup">
+              <select class="select_ttl form-control objButtonPopup" name="options_popup" id="options_popup">
                   <option value="false" selected="selected">No</option>
                 <option value="true">Yes</option>
               </select> <!-- end .select_ttl -->
             </div>
                   <div class="half_span">
                     <label class="label_ttl control-label" for="options_popup_id">Link To Which ID</label>
-                    <select class="select_ttl form-control" name="options_popup_id" id="options_popup_id">
+                    <select class="select_ttl form-control objButtonPopupLink" name="options_popup_id" id="options_popup_id">
                       <option value="null" selected="selected">Select</option>
                       <option value="popup-1">Popup 1</option>
                       <option value="popup-2">Popup 2</option>
@@ -323,7 +346,7 @@
             <!-- Select Basic -->
 
               <div class="form-group"><label class="label_ttl control-label" for="options_countdown">Show Countdown Timer</label>
-                <select class="select_ttl form-control" name="options_countdown" id="options_countdown">
+                <select class="select_ttl form-control objCountdownShow" name="options_countdown" id="options_countdown">
                   <option value="true" selected="selected">Yes</option>
                   <option value="false">No</option>
                 </select> <!-- end .select_ttl -->
@@ -333,7 +356,7 @@
               <div class="form-group">
                   <div class="half_span lItem">
               <label class="label_ttl control-label" for="options_hero_title">Show Hero Title</label>
-                <select class="select_ttl form-control" name="options_hero_title" id="options_hero_title">
+                <select class="select_ttl form-control objHeroTitleShow" name="options_hero_title" id="options_hero_title">
                   <option value="true" selected="selected">Yes</option>
                   <option value="false">No</option>
                 </select> <!-- end .select_ttl -->
@@ -342,7 +365,7 @@
             <div class="half_span">
               <label class="label_ttl control-label" for="options_hero_subtitle">Show Hero Subtitle</label>
 
-                <select class="select_ttl form-control" name="options_hero_subtitle" id="options_hero_subtitle">
+                <select class="select_ttl form-control objHeroSubtitleShow" name="options_hero_subtitle" id="options_hero_subtitle">
                   <option value="true" selected="selected">Yes</option>
                   <option value="false">No</option>
                 </select> <!-- end .select_ttl -->
@@ -352,7 +375,7 @@
 
             <label class="label_ttl control-label" for="options_promote">Promote Hero</label>
             <div class="form-group">
-              <select class="select_ttl form-control" name="options_promote" id="options_promote">
+              <select class="select_ttl form-control objHeroPromote" name="options_promote" id="options_promote">
                   <option value="false" selected="selected">No</option>
                   <option value="true">Yes</option>
 
@@ -376,7 +399,8 @@
         <!-- Button (Double) -->
                 </fieldset>
 
-        <div id="output"><div class="blackify"></div><div class="blackify_overlay"><span class="overlay_message"></span><span class="overlay_close label label-danger">close</span><span class="select_content label label-primary">select all</span><span class="overlay_validate label label-default">validate JSON</span><textarea id="output_code"></textarea></div></div>
+        <div id="output" data-reason=""><div class="blackify"></div><div class="blackify_overlay"><span class="overlay_message"></span><span class="overlay_close label label-danger">close</span><span class="select_content label label-primary">select all</span><span class="overlay_validate label label-default">validate JSON</span><span class="overlay_translate label label-info">translate JSON</span><textarea id="output_code"></textarea></div></div>
     </div> <!-- end wrapper -->
+<div class="copy-zone">&copy; David Maser</div>
 </body>
 </html>

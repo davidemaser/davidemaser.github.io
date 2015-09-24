@@ -28,6 +28,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 $(function () {
+    function OpenInNewTab(url) {
+        var win = window.open(url, '_blank');
+        win.focus();
+    }
     function addItems(){
         if($('#output').css('display') == 'block'){
             $('#output').css('display','none');
@@ -164,6 +168,23 @@ $(function () {
         }else{
             $(this).parent().parent().css('border-left','6px solid #FD0000')
         }
+    }).on('click','.copy-zone',function(){
+        OpenInNewTab('https://github.com/davidemaser/');
+    }).on('click','.btnDel',function () {
+        deleteItems();
+    }).on('click','.submit_json',function (){
+        var c = [];
+        var len = $('.clonedInput form').length;
+        for(var i=0;i<len;i++){
+            var a = $('#entry'+(i+1)+' form').serializeArray();
+            c.push(a);
+        }
+        outputJson(c);
+    }).on('click','.translate_json',function (){
+        $("html, body").animate({ scrollTop: 0 }, 500).css('overflow','hidden');
+        $('#output').attr('data-reason','translate').css('display','block').find('#output_code').attr('placeholder','Paste you code here');
+    }).on('click','.overlay_translate',function (){
+        traverseJSON();
     });
     function traverseJSON(){
         if($('.blackify_overlay textarea').val() !== '') {
@@ -171,7 +192,8 @@ $(function () {
                 prs = JSON.parse(ctc),
                 obj = prs.hero,
                 len = obj.length,
-                formItems = $('.clonedInput').length;
+                formItems = $('.clonedInput').length,
+                formArray = [];
             if(formItems < len){
                 var build = true,
                     bItems = len-formItems;
@@ -180,10 +202,39 @@ $(function () {
                 addItems();
             }
             for (var i = 0; i < len; i++) {
-                console.log(obj[i]);
+                formArray.push(obj[i]);
             }
+            jsonToForm(formArray);
         }else{
             alert('Please generate or paste JSON before using this function')
+        }
+    }
+    function jsonToForm(aCode){
+        var jsLen = aCode.length;
+        for(var i = 0;i<jsLen;i++){
+            var jsForm = 'entry'+(i+1);
+            $this = '#'+jsForm;
+            $($this).find('.objStart').val(aCode[i].date.start);
+            $($this).find('.objEnd').val(aCode[i].date.end);
+            $($this).find('.objTitleEN').val(aCode[i].title.en);
+            $($this).find('.objTitleFR').val(aCode[i].title.fr);
+            $($this).find('.objTitleCol').val(aCode[i].title.color);
+            $($this).find('.objTextEN').val(aCode[i].text.en);
+            $($this).find('.objTextFR').val(aCode[i].text.fr);
+            $($this).find('.objImageMain').val(aCode[i].image.url);
+            $($this).find('.objImageAlt').val(aCode[i].image.altUrl);
+            $($this).find('.objButtonEN').val(aCode[i].button.label.en);
+            $($this).find('.objButtonFR').val(aCode[i].button.label.fr);
+            $($this).find('.objButtonLink').val(aCode[i].button.url);
+            $($this).find('.objButtonPopup option[value="'+aCode[i].popUpLink+'"]').attr('selected',true);
+            $($this).find('.objButtonPopupLink option[value="'+aCode[i].button.popUpLinkID+'"]').attr('selected',true);
+            $($this).find('.objCountdownShow option[value="'+aCode[i].showCountdown+'"]').attr('selected',true);
+            //$($this).find('.objHeroTitleShow').val(aCode[i].showTitle);
+            //$($this).find('.objHeroSubtitleShow').val(aCode[i].showSubTitle);
+            $($this).find('.objHeroPromote option[value="'+aCode[i].promote+'"]').attr('selected',true);
+            if($('#output').css('display') == 'block'){
+                $('#output').hide();
+            }
         }
     }
     function outputJson(aCode){
@@ -251,6 +302,7 @@ $(function () {
             }
         }
         page_model += '\n      }\n   ]\n}';
+        $('#output').attr('data-reason','output');
         $('#output').css('display','block');
         $('#output textarea').val(page_model);
         $("html, body").animate({ scrollTop: 0 }, 500).css('overflow','hidden');
@@ -296,23 +348,16 @@ $(function () {
         }
     }
 
-    $('.btnDel').click(function () {
-        deleteItems();
-    });
-    $('.submit_json').click(function (){
-        var c = [];
-        var len = $('.clonedInput form').length;
-        for(var i=0;i<len;i++){
-            var a = $('#entry'+(i+1)+' form').serializeArray();
-            c.push(a);
-        }
-        outputJson(c);
-    });
-    $('.translate_json').click(function (){
-        traverseJSON();
-    });
+
     // Enable the "add" button
     $('.btnAdd').attr('disabled', false);
     // Disable the "remove" button
     $('.btnDel').attr('disabled', true);
+    $(window).scroll(function() {
+        if($(window).scrollTop() + $(window).height() == $(document).height()) {
+            $('.copy-zone').fadeIn(500);
+        }else{
+            $('.copy-zone').fadeOut(500);
+        }
+    });
 });
