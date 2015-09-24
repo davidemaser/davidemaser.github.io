@@ -182,7 +182,7 @@ $(function () {
         outputJson(c);
     }).on('click','.translate_json',function (){
         $("html, body").animate({ scrollTop: 0 }, 500).css('overflow','hidden');
-        $('#output').attr('data-reason','translate').css('display','block').find('#output_code').attr('placeholder','Paste you code here');
+        $('#output').attr('data-reason','translate').css('display','block').find('#output_code').val('').attr('placeholder','Paste you code here');
     }).on('click','.overlay_translate',function (){
         traverseJSON();
     });
