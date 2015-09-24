@@ -62,7 +62,7 @@ $(function () {
         newElem.find('.input_checkboxitem').attr('id', 'ID' + newNum + '_checkboxitem').attr('name', 'ID' + newNum + '_checkboxitem').val([]);
 
         // Skate - radio
-        newElem.find('.label_radio').attr('for', 'ID' + newNum + '_radioitem');
+        newElem.find('.radio').attr('for', 'ID' + newNum + '_radioitem');
         newElem.find('.input_radio').attr('id', 'ID' + newNum + '_radioitem').attr('name', 'ID' + newNum + '_radioitem').val([]);
 
         // Email - text
@@ -73,6 +73,9 @@ $(function () {
         newElem.find('.label_twt').attr('for', 'ID' + newNum + '_twitter_handle');
         newElem.find('.input_twt').attr('id', 'ID' + newNum + '_twitter_handle').attr('name', 'ID' + newNum + '_twitter_handle').val('');
         newElem.find('.check_image').attr('data-handler', newNum);
+        newElem.find('.check_alt_image').attr('data-handler', newNum);
+        newElem.find('.input-group-addon.image_count').attr('style','').html('Shopify CDN');
+        newElem.find('.mod-radio').attr('style','');
 
         // Insert the new element after the last "duplicatable" input field
         $('#entry' + num).after(newElem);
@@ -150,10 +153,18 @@ $(function () {
     }).on('click','.check_image',function(){
         var a = $(this).data('handler');
         validateImage('main',a);
+    }).on('click','.check_alt_image',function(){
+        var a = $(this).data('handler');
+        validateImage('alt',a);
     }).on('click','.overlay_validate',function(){
         validateJSON();
+    }).on('change','.input_radio',function(){
+        if($(this).val()=='true'){
+            $(this).parent().parent().css('border-left','6px solid #68B81F')
+        }else{
+            $(this).parent().parent().css('border-left','6px solid #FD0000')
+        }
     });
-
     function traverseJSON(){
         if($('.blackify_overlay textarea').val() !== '') {
             var ctc = $('.blackify_overlay textarea').val(),
@@ -269,17 +280,17 @@ $(function () {
                 }
             }
         }else if(type == 'alt'){
-            var a = $('#alt_image_gl').val().replace('https:','').replace('http:','');
+            var a = $('.check_alt_image[data-handler="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.alt_image').val();
+            var aa = $('.check_alt_image[data-handler="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.alt_image');
+            console.log(a);
             if(a !== '') {
                 var b = urlExists(a);
                 if (b !== 200) {
-                    $('#alt_image_gl').css('background-color', 'rgba(255, 51, 0, 0.2)');
-                    $('.alt_image_count').css('background-color', '#ff3300').css('font-weight', 'bold').css('color', '#fff').html('Image does not exist');
+                    $(aa).next().css('background-color', '#ff3300').css('font-weight', 'bold').css('color', '#fff').html('Image does not exist');
                 } else if (b == 200) {
-                    $('.alt_image_count').attr('style', '').css('background-color', 'rgb(82, 197, 82)').html('Image validated');
-                    $('#alt_image_gl').attr('style', '');
+                    $(aa).next().attr('style', '').css('background-color', 'rgb(82, 197, 82)').html('Image validated');
                 } else {
-                    $('.alt_image_count').attr('style', '').html('Shopify CDN');
+                    $(aa).next().attr('style', '').html('Shopify CDN');
                 }
             }
         }

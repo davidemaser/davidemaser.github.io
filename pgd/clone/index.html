@@ -21,6 +21,8 @@
       }
       .form-group{
         position: relative;
+          display: table;
+          width: 100%;
       }
       .half_span {
           width: 50%;
@@ -194,7 +196,7 @@
     <div id="wrapper">
 
         <div id="entry1" class="clonedInput">
-            <form action="#" method="post" id="sign-up_area" role="form">
+            <form action="#" method="post" id="json-data-creator" role="form">
           <h2 id="reference" name="reference" class="heading-reference"><span class="label label-default">HERO ITEM 1</span></h2>
           <fieldset>
       <!-- Text input-->
@@ -249,7 +251,8 @@
             <!-- Text input-->
             <div class="form-group">
                 <label class="label_ln control-label" for="image_main">Image Link</label>
-                <div class="panel-body input-group nopad"><div class="input-group-btn">
+                <div class="panel-body input-group nopad">
+                    <div class="input-group-btn">
                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
                     <ul class="dropdown-menu dropdown-menu-right" role="menu">
                         <li><a href="javascript:;" id="check_image" class="check_image" data-handler="1">Validate Image</a></li>
@@ -258,14 +261,26 @@
                     </ul>
                 </div>
 
+
                 <input id="image_main" name="image_main" type="text" placeholder="" class="input_ln form-control main_image" data-item="1">
                     <span class="input-group-addon image_count" id="basic-addon2">Shopify CDN</span>
-                    </div>
-            </div>
+
+            </div></div>
             <!-- Text input-->
             <div class="form-group">
               <label class="label_ln control-label" for="image_alt">Alternative Image Link</label>
-              <input id="image_alt" name="image_alt" type="text" placeholder="" class="input_ln form-control">
+                <div class="panel-body input-group nopad">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            <li><a href="javascript:;" id="check_alt_image" class="check_alt_image" data-handler="1">Validate Image</a></li>
+                            <li class="divider"></li>
+                            <li><a href="https://lasthunt.myshopify.com/admin/settings/files" target="_blank">Open Shopify File Browser</a></li>
+                        </ul>
+                    </div>
+              <input id="image_alt" name="image_alt" type="text" placeholder="" class="input_ln form-control alt_image">
+                    <span class="input-group-addon image_count" id="basic-addon3">Shopify CDN</span>
+            </div>
             </div>
             <!-- Text input-->
             <div class="form-group">
@@ -287,30 +302,27 @@
             </div>
 
             <!-- Select Basic -->
-            <div class="half_span lItem">
+              <div class="form-group">
+                  <div class="half_span lItem">
             <label class="label_ttl control-label" for="options_popup">Open Link In A Popup ?</label>
-            <div class="form-group">
+
               <select class="select_ttl form-control" name="options_popup" id="options_popup">
                   <option value="false" selected="selected">No</option>
                 <option value="true">Yes</option>
               </select> <!-- end .select_ttl -->
             </div>
-              </div>
-            <!-- Select Basic -->
-            <div class="half_span">
-              <label class="label_ttl control-label" for="options_popup_id">Link To Which ID</label>
-              <div class="form-group">
-                <select class="select_ttl form-control" name="options_popup_id" id="options_popup_id">
-                  <option value="null" selected="selected">Select</option>
-                  <option value="popup-1">Popup 1</option>
-                  <option value="popup-2">Popup 2</option>
-                </select> <!-- end .select_ttl -->
+                  <div class="half_span">
+                    <label class="label_ttl control-label" for="options_popup_id">Link To Which ID</label>
+                    <select class="select_ttl form-control" name="options_popup_id" id="options_popup_id">
+                      <option value="null" selected="selected">Select</option>
+                      <option value="popup-1">Popup 1</option>
+                      <option value="popup-2">Popup 2</option>
+                    </select> <!-- end .select_ttl -->
               </div>
             </div>
             <!-- Select Basic -->
 
-              <label class="label_ttl control-label" for="options_countdown">Show Countdown Timer</label>
-              <div class="form-group">
+              <div class="form-group"><label class="label_ttl control-label" for="options_countdown">Show Countdown Timer</label>
                 <select class="select_ttl form-control" name="options_countdown" id="options_countdown">
                   <option value="true" selected="selected">Yes</option>
                   <option value="false">No</option>
@@ -318,19 +330,18 @@
               </div>
 
             <!-- Select Basic -->
-            <div class="half_span lItem">
-              <label class="label_ttl control-label" for="options_hero_title">Show Hero Title</label>
               <div class="form-group">
+                  <div class="half_span lItem">
+              <label class="label_ttl control-label" for="options_hero_title">Show Hero Title</label>
                 <select class="select_ttl form-control" name="options_hero_title" id="options_hero_title">
                   <option value="true" selected="selected">Yes</option>
                   <option value="false">No</option>
                 </select> <!-- end .select_ttl -->
               </div>
-            </div>
             <!-- Select Basic -->
             <div class="half_span">
               <label class="label_ttl control-label" for="options_hero_subtitle">Show Hero Subtitle</label>
-              <div class="form-group">
+
                 <select class="select_ttl form-control" name="options_hero_subtitle" id="options_hero_subtitle">
                   <option value="true" selected="selected">Yes</option>
                   <option value="false">No</option>
