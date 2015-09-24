@@ -200,57 +200,54 @@ $(document).ready(function(){
         $('.hover-tip').css({'top':mouseY,'left':mouseX});
 
     });
-    $('body').on("mouseout",".ttip",function(){
+    $('body').on('mouseout','.ttip',function(){
         $('.hover-tip').remove();
 
-    });
-        $('.ld-js').on('click',function(){
+    }).on('click','.ld-js',function(){
         var a = $(this).attr('data-json');
         loadJSON(a);
         historyPush(a,'f');
             $("html, body").animate({ scrollTop: 0 }, "slow");
-    });
-    $('.tutorials').on('click',function(){
+    }).on('click','.tutorials',function(){
         $('.bks-tutorial').show();
         $('.search-zone').hide();
-    });
-    $('.history-back').on('click',function(){
+        $('.pgbuilder-zone').hide();
+    }).on('click','.history-back',function(){
         history.back();
         historyPush(null,'r');
-    });
-    $('.history-search').on('click',function(){
+    }).on('click','.history-search',function(){
         $('.search-zone').toggle();
         $('.bks-tutorial').hide();
-    });
-    $('.popover-close').click(function(){
+        $('.pgbuilder-zone').hide();
+    }).on('click','.popover-close',function(){
         $('.bks-history').hide();
-    });
-    $('.popover-tutorials-close').click(function(){
+    }).on('click','.popover-tutorials-close',function(){
         $('.bks-tutorial').hide();
-    });
-    $('.popover-flush').click(function(){
+    }).on('click','.popover-pgbuilder-zone-close',function(){
+        $('.pgbuilder-zone').hide();
+    }).on('click','.popover-flush',function(){
         freshMarks('flush');
-    });
-    $('.goto-admin').click(function(){
+    }).on('click','.goto-admin',function(){
         OpenInNewTab('https://lasthunt.myshopify.com/admin/auth/login');
-    });
-    $('.wizard').click(function(){
-        OpenInNewTab('pgd/page-builder.html');
-    });
-    $('.bookmarker').click(function(){
+    }).on('click','.wizard',function(){
+        $('.bks-tutorial').hide();
+        $('.search-zone').hide();
+        $('.pgbuilder-zone').toggle();
+       }).on('click','.pgb-cta',function(){
+        var a = $(this).data('load');
+        OpenInNewTab(a);
+    }).on('click','.bookmarker',function(){
         if(searchFREE.length) {
             $('.bks-history').show();
         }else{
-            $('.bks-history-am').html('Empty');;
+            $('.bks-history-am').html('Empty');
             $('.bks-history').show();
         }
-    });
-    $('body').on("click",".tut-cta",function(){
+    }).on('click','.tut-cta',function(){
         var a = $(this).attr('data-load');
         console.log(a);
         loadJSON(a);
     });
-
 });
 $(window).on('hashchange', function(e){
     var a = window.location.href.slice(window.location.href.indexOf('#') + 1);

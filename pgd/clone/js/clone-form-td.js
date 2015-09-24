@@ -216,7 +216,7 @@ $(function () {
             }else{
                 elemD = true;
             }
-            page_model += '{\n        "hero-id": "hero-elem'+i+'",';
+            page_model += '{\n        "heroId": "hero-elem'+i+'",';
             page_model += '\n        "active": '+elemD+',';
             page_model += '\n        "showCountdown": '+elemA+',';
             page_model += '\n        "popUpLink": '+elemB+',';
