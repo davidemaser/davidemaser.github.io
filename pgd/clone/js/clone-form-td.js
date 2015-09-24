@@ -234,6 +234,7 @@ $(function () {
             $($this).find('.objHeroPromote option[value="'+aCode[i].promote+'"]').attr('selected',true);
             if($('#output').css('display') == 'block'){
                 $('#output').hide();
+                $('html,body').css('overflow','auto');
             }
         }
     }
