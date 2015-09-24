@@ -1,0 +1,157 @@
+#wrapper {
+    width:980px;
+    margin: 70px auto 0 auto;
+}
+.form-group{
+    position: relative;
+    display: table;
+    width: 100%;
+}
+.half_span {
+    width: 50%;
+    float: left;
+}
+.half_span.lItem {
+    padding-right: 20px;
+}
+#output {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index:10;
+}
+
+.blackify {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.blackify_overlay {
+    position: relative;
+    width: 75%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: #eee;
+}
+
+.blackify_overlay textarea {
+    width: 100%!important;
+    height: 85%!important;
+    font-family: monospace;
+    font-size: 12px;
+}
+span.overlay_close,span.select_content,span.overlay_validate,span.overlay_translate {
+    padding: 20px;
+    float: right;
+    cursor: pointer;
+    margin: 0 0 10px 10px;
+}
+span.overlay_message {
+    padding: 20px 20px 20px 0;
+    float: left;
+    cursor: pointer;
+    margin: 0 0 10px 0;
+}
+legend {
+    margin-top: 20px;
+}
+label {
+    margin-top: 10px;
+}
+h2.heading-reference {
+    padding: 10px 0;
+}
+.mod-radio {
+    padding-left: 50px;
+    border-left: 6px solid #68B81F;
+}
+.panel-body {
+    background-color: #efefef;
+}
+.panel-body.top_level_bt {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+}
+.sub {
+    width: 980px;
+    margin: 0 auto;
+}
+.info-group {
+    position: relative;   display: inline-block;   float: right;
+    vertical-align: middle;
+    font-size: 22px;
+    margin-left: 5px;
+    cursor:pointer;
+}
+.nopad{
+    padding:0!important;
+    background-color: transparent;
+}
+#output[data-reason="output"] .overlay_translate {
+    display: none;
+}
+#output[data-reason="output"] .select_content {
+    display: inline;
+}
+#output[data-reason="translate"] .overlay_translate {
+    display: inline;
+}
+#output[data-reason="translate"] .select_content {
+    display: none;
+}
+.copy-zone {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    background-color: rgba(221, 221, 221, 0.5);
+    display: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor:pointer;
+}
+#attribution {
+    font-size:12px;
+    color:#999;
+    padding:20px;
+    margin:20px 0;
+    border-top:1px solid #ccc;
+}
+#O_o {
+    text-align: center;
+    background: #33577b;
+    color: #b4c9dd;
+    border-bottom: 1px solid #294663;
+}
+#O_o a:link, #O_o a:visited {
+    color: #b4c9dd;
+    border-bottom: #b4c9dd;
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+}
+#O_o a:hover, #O_o a:active {
+    color: #fff;
+    border-bottom: #fff;
+    text-decoration: none;
+}
+@media only screen and (max-width: 620px), only screen and (max-device-width: 620px) {
+    #wrapper {
+        width: 90%;
+    }
+    legend {
+        font-size: 24px;
+        font-weight: 500;
+    }
+}
