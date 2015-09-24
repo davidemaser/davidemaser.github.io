@@ -91,23 +91,28 @@ $(function () {
         }, 500);
     }
     function deleteItems(){
-        if($('#output').css('display') == 'block'){
-            $('#output').css('display','none');
+        if($('.clonedInput').length > 1) {
+            if ($('#output').css('display') == 'block') {
+                $('#output').css('display', 'none');
+            }
+            // Confirmation dialog box. Works on all desktop browsers and iPhone.
+            if (confirm("Are you sure you wish to remove this section? This cannot be undone.")) {
+                var num = $('.clonedInput').length;
+                // how many "duplicatable" input fields we currently have
+                $('#entry' + num).slideUp('slow', function () {
+                    $(this).remove();
+                    // if only one element remains, disable the "remove" button
+                    if (num - 1 === 1)
+                        $('.btnDel').attr('disabled', true);
+                    // enable the "add" button
+                    $('.btnAdd').attr('disabled', false).prop('value', "add section");
+                });
+                $('.snapTo').find('.gotoItem:last').remove()
+            }
+            return false; // Removes the last section you added
+        }else{
+            alert('You cannot remove the first Hero Item.')
         }
-        // Confirmation dialog box. Works on all desktop browsers and iPhone.
-        if (confirm("Are you sure you wish to remove this section? This cannot be undone."))
-        {
-            var num = $('.clonedInput').length;
-            // how many "duplicatable" input fields we currently have
-            $('#entry' + num).slideUp('slow', function () {$(this).remove();
-                // if only one element remains, disable the "remove" button
-                if (num -1 === 1)
-                    $('.btnDel').attr('disabled', true);
-                // enable the "add" button
-                $('.btnAdd').attr('disabled', false).prop('value', "add section");});
-            $('.snapTo').find('.gotoItem:last').remove()
-        }
-        return false; // Removes the last section you added
     }
     $('body').on('click','.btnAdd',function () {
         addItems();
