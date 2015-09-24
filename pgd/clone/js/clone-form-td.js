@@ -109,6 +109,18 @@ $(function () {
         }
         return false; // Removes the last section you added
     }
+    function validateJSON(){
+        $("#output_code").validateJSON({
+            compress: false,
+            reformat: true,
+            onSuccess: function (json) {
+                $('.overlay_message').html('JSON Code is valid');
+            },
+            onError: function (error) {
+                $('.overlay_message').html('A JSON error has been encountered. The line on which the error has occured is highlighted.');
+            }
+        })
+    }
     $('body').on('click','.btnAdd',function () {
         addItems();
     }).on('click','.overlay_close',function(){
@@ -133,6 +145,8 @@ $(function () {
     }).on('click','.check_image',function(){
         var a = $(this).data('handler');
         validateImage('main',a);
+    }).on('click','.overlay_validate',function(){
+        validateJSON();
     });
 
     function traverseJSON(){

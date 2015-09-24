@@ -13,6 +13,7 @@
   <script type="text/javascript" src="../../bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
   <script type="text/javascript" src="js/clone-form-td.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> <!-- only added as a smoke test for js conflicts -->
+    <script src="../assets/js/validate-json.js"></script>
     <style>
       #wrapper {
         width:980px;
@@ -62,11 +63,17 @@
           font-family: monospace;
           font-size: 12px;
       }
-      span.overlay_close,span.select_content {
+      span.overlay_close,span.select_content,span.overlay_validate {
           padding: 20px;
           float: right;
           cursor: pointer;
           margin: 0 0 10px 10px;
+      }
+      span.overlay_message {
+          padding: 20px 20px 20px 0;
+          float: left;
+          cursor: pointer;
+          margin: 0 0 10px 0;
       }
       legend {
         margin-top: 20px;
@@ -358,7 +365,7 @@
         <!-- Button (Double) -->
                 </fieldset>
 
-        <div id="output"><div class="blackify"></div><div class="blackify_overlay"><span class="overlay_close label label-danger">close</span><span class="select_content label label-primary">select all</span><textarea></textarea></div></div>
+        <div id="output"><div class="blackify"></div><div class="blackify_overlay"><span class="overlay_message"></span><span class="overlay_close label label-danger">close</span><span class="select_content label label-primary">select all</span><span class="overlay_validate label label-default">validate JSON</span><textarea id="output_code"></textarea></div></div>
     </div> <!-- end wrapper -->
 </body>
 </html>
