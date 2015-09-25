@@ -124,6 +124,13 @@ h2.heading-reference {
 .errorList {
     display: none;
 }
+.numerrors {
+    margin-left: 10px;
+}
+.redout {
+    background-color: rgba(255, 0, 0, 0.10);
+    border-left: 3px solid red;
+}
 #attribution {
     font-size:12px;
     color:#999;

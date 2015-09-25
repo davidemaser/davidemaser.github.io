@@ -111,12 +111,12 @@ $(function () {
             b = a.length,
             c = 0;
         for(var i =0;i<b;i++){
-            if(a[i].date.end == ''){
-                errorLog.push({form:(i+1),obj:"End Date",prob:"No Value",elem:"objEnd"});
-                c++;
-            }
             if(a[i].date.start == ''){
                 errorLog.push({form:(i+1),obj:"Start Date",prob:"No Value",elem:"objStart"});
+                c++;
+            }
+            if(a[i].date.end == ''){
+                errorLog.push({form:(i+1),obj:"End Date",prob:"No Value",elem:"objEnd"});
             }
             if(a[i].title.en == ''){
                 errorLog.push({form:(i+1),obj:"English Title",prob:"No Value",elem:"objTitleEN"});
@@ -150,15 +150,19 @@ $(function () {
                 $('.errorListing').prepend('<li><a href="javascript:;" class="errorItem" data-item="'+j+'">Hero Item ' + errorLog[j].form + ' : ' + errorLog[j].obj + ' : ' + errorLog[j].prob + '</a></li>');
                 registerErrorButtons(errorLog[j].form,errorLog[j].elem,j);
             }
+            $('.errorList').find('button').html('Warnings<span class="label label-default numerrors">'+errorLog.length+'</span><span class="caret"></span>');
         }else{
             $('.errorList').css('display','none');
         }
     }
     function registerErrorButtons(num,elem,item){
         $('body').on('click','.errorItem[data-item="'+item+'"]',function(){
-            $('#entry'+num).find('.'+elem).css('background-color','rgba(255,0,0,0.25');
+            $('#entry'+num).find('.'+elem).css('background-color','rgba(238, 162, 54, 0.3)');
             $('#output').hide();
             $('html,body').css('overflow','auto');
+            $('html, body').animate({
+                scrollTop: $('#entry' + num+' .'+elem).offset().top-100
+            }, 500);
         });
     }
     function traverseJSON(){
@@ -211,6 +215,7 @@ $(function () {
                 $('#output').hide();
                 $('html,body').css('overflow','auto');
             }
+            $('html,body').css('overflow','auto');
         }
     }
     function outputJson(aCode){
@@ -357,10 +362,16 @@ $(function () {
     }).on('click','.overlay_validate',function(){
         validateJSON();
     }).on('change','.input_radio',function(){
+        var a = $(this).parent().parent().parent().parent().parent().attr('id').replace('entry','');
+        console.log(a);
         if($(this).val()=='true'){
-            $(this).parent().parent().css('border-left','6px solid #68B81F')
+            $(this).parent().parent().css('border-left','6px solid #68B81F');
+            $(this).parent().parent().parent().parent().find('h2').find('span').removeClass('label-danger').addClass('label-default');
+            $('.gotoItem[data-item="'+a+'"]').removeClass('redout').attr('title','');
         }else{
-            $(this).parent().parent().css('border-left','6px solid #FD0000')
+            $(this).parent().parent().css('border-left','6px solid #FD0000');
+            $(this).parent().parent().parent().parent().find('h2').find('span').removeClass('label-default').addClass('label-danger');
+            $('.gotoItem[data-item="'+a+'"]').addClass('redout').attr('title','This Hero entry is not activated');
         }
     }).on('click','.copy-zone',function(){
         OpenInNewTab('https://github.com/davidemaser/');
@@ -384,6 +395,8 @@ $(function () {
         $('input,select').attr('style','');
         $('.errorList').css('display','none');
         $('html,body').css('overflow','auto');
+    }).on('click','input,select',function(){
+        $(this).attr('style','')
     });
     $(window).scroll(function() {
         if($(window).scrollTop() + $(window).height() == $(document).height()) {
