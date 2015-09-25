@@ -62,7 +62,8 @@ $(function () {
         // Right now you can only add 4 sections, for a total of 5. Change '5' below to the max number of sections you want to allow.
         if (newNum == 10)
             $('.btnAdd').attr('disabled', true).prop('value', "You've reached the limit"); // value here updates the text in the 'add' button when the limit is reached
-        $('.date_obj').datetimepicker({format: 'DD/MM/YYYY HH:mm'});
+        var dateNow = new Date();
+        $('.date_obj').datetimepicker({format: 'DD/MM/YYYY HH:mm',useCurrent:true});
         $('.snapTo').append('<li><a href="#" class="gotoItem" data-item="'+newNum+'">Hero Item '+newNum+'</a></li>');
         $('html, body').animate({
             scrollTop: $('#entry' + newNum).offset().top-60
@@ -104,60 +105,62 @@ $(function () {
             }
         })
     }
-    $('body').on('click','.btnAdd',function () {
-        addItems();
-    }).on('click','.overlay_close',function(){
-        $(this).parent().parent().hide();
-        $('html,body').css('overflow','auto');
-    }).on('click','.select_content',function() {
-        var $this = $('.blackify_overlay textarea');
-        $this.select();
-        // Work around Chrome's little problem
-        $this.mouseup(function() {
-            // Prevent further mouseup intervention
-            $this.unbind("mouseup");
-            return false;
-        });
-    }).on('click','.gotoItem',function (){
-        var a = $(this).data('item');
-        $('html, body').animate({
-            scrollTop: $('#entry' + a).offset().top-60
-        }, 500);
-    }).on('click','.about_app',function (e){
-        window.open("http://davidemaser.github.io/pgd/release.html", "_blank","scrollbars=no,resizable=no,height=600, width=800, status=yes, toolbar=no, menubar=no, location=no");
-    }).on('click','.check_image',function(){
-        var a = $(this).data('handler');
-        validateImage('main',a);
-    }).on('click','.check_alt_image',function(){
-        var a = $(this).data('handler');
-        validateImage('alt',a);
-    }).on('click','.overlay_validate',function(){
-        validateJSON();
-    }).on('change','.input_radio',function(){
-        if($(this).val()=='true'){
-            $(this).parent().parent().css('border-left','6px solid #68B81F')
+    function errorHandler(){
+        var errorLog = [],
+            a = JSON.parse($('#output[data-reason="output"]').find('textarea').val()).hero,
+            b = a.length,
+            c = 0;
+        for(var i =0;i<b;i++){
+            if(a[i].date.end == ''){
+                errorLog.push({form:(i+1),obj:"End Date",prob:"No Value",elem:"objEnd"});
+                c++;
+            }
+            if(a[i].date.start == ''){
+                errorLog.push({form:(i+1),obj:"Start Date",prob:"No Value",elem:"objStart"});
+            }
+            if(a[i].title.en == ''){
+                errorLog.push({form:(i+1),obj:"English Title",prob:"No Value",elem:"objTitleEN"});
+            }
+            if(a[i].title.fr == ''){
+                errorLog.push({form:(i+1),obj:"French Title",prob:"No Value",elem:"objTitleFR"});
+            }
+            if(a[i].text.en == ''){
+                errorLog.push({form:(i+1),obj:"English Text",prob:"No Value",elem:"objTitleEN"});
+            }
+            if(a[i].text.fr == ''){
+                errorLog.push({form:(i+1),obj:"French Text",prob:"No Value",elem:"objTitleFR"});
+            }
+            if(a[i].button.label.en == ''){
+                errorLog.push({form:(i+1),obj:"English Button Label",prob:"No Value",elem:"objButtonEN"});
+            }
+            if(a[i].button.label.fr == ''){
+                errorLog.push({form:(i+1),obj:"French Button Label",prob:"No Value",elem:"objButtonFR"});
+            }
+            if(a[i].button.url == ''){
+                errorLog.push({form:(i+1),obj:"Button URL",prob:"No Value",elem:"objButtonLink"});
+            }
+            if(a[i].image.url == ''){
+                errorLog.push({form:(i+1),obj:"Image URL",prob:"No Value",elem:"objImageMain"});
+            }
+        }
+        if(c > 0) {
+            $('.errorList').css('display','inline-block');
+            $('.errorListing').empty();
+            for (var j = 0; j < errorLog.length; j++) {
+                $('.errorListing').prepend('<li><a href="javascript:;" class="errorItem" data-item="'+j+'">Hero Item ' + errorLog[j].form + ' : ' + errorLog[j].obj + ' : ' + errorLog[j].prob + '</a></li>');
+                registerErrorButtons(errorLog[j].form,errorLog[j].elem,j);
+            }
         }else{
-            $(this).parent().parent().css('border-left','6px solid #FD0000')
+            $('.errorList').css('display','none');
         }
-    }).on('click','.copy-zone',function(){
-        OpenInNewTab('https://github.com/davidemaser/');
-    }).on('click','.btnDel',function () {
-        deleteItems();
-    }).on('click','.submit_json',function (){
-        var c = [];
-        var len = $('.clonedInput form').length;
-        for(var i=0;i<len;i++){
-            var a = $('#entry'+(i+1)+' form').serializeArray();
-            c.push(a);
-        }
-        outputJson(c);
-    }).on('click','.translate_json',function (){
-        $('.overlay_message').html('');
-        $("html, body").animate({ scrollTop: 0 }, 500).css('overflow','hidden');
-        $('#output').attr('data-reason','translate').css('display','block').find('#output_code').val('').attr('placeholder','Paste you code here');
-    }).on('click','.overlay_translate',function (){
-        traverseJSON();
-    });
+    }
+    function registerErrorButtons(num,elem,item){
+        $('body').on('click','.errorItem[data-item="'+item+'"]',function(){
+            $('#entry'+num).find('.'+elem).css('background-color','rgba(255,0,0,0.25');
+            $('#output').hide();
+            $('html,body').css('overflow','auto');
+        });
+    }
     function traverseJSON(){
         if($('.blackify_overlay textarea').val() !== '') {
             var ctc = $('.blackify_overlay textarea').val(),
@@ -279,6 +282,7 @@ $(function () {
         $('#output').css('display','block');
         $('#output textarea').val(page_model);
         $("html, body").animate({ scrollTop: 0 }, 500).css('overflow','hidden');
+        errorHandler()
     }
     function urlExists(testUrl) {
         var http = jQuery.ajax({
@@ -323,6 +327,64 @@ $(function () {
     $('.btnAdd').attr('disabled', false);
     // Disable the "remove" button
     $('.btnDel').attr('disabled', true);
+    $('body').on('click','.btnAdd',function () {
+        addItems();
+    }).on('click','.overlay_close',function(){
+        $(this).parent().parent().hide();
+        $('html,body').css('overflow','auto');
+    }).on('click','.select_content',function() {
+        var $this = $('.blackify_overlay textarea');
+        $this.select();
+        // Work around Chrome's little problem
+        $this.mouseup(function() {
+            // Prevent further mouseup intervention
+            $this.unbind("mouseup");
+            return false;
+        });
+    }).on('click','.gotoItem',function (){
+        var a = $(this).data('item');
+        $('html, body').animate({
+            scrollTop: $('#entry' + a).offset().top-60
+        }, 500);
+    }).on('click','.about_app',function (e){
+        window.open("http://davidemaser.github.io/pgd/release.html", "_blank","scrollbars=no,resizable=no,height=600, width=800, status=yes, toolbar=no, menubar=no, location=no");
+    }).on('click','.check_image',function(){
+        var a = $(this).data('handler');
+        validateImage('main',a);
+    }).on('click','.check_alt_image',function(){
+        var a = $(this).data('handler');
+        validateImage('alt',a);
+    }).on('click','.overlay_validate',function(){
+        validateJSON();
+    }).on('change','.input_radio',function(){
+        if($(this).val()=='true'){
+            $(this).parent().parent().css('border-left','6px solid #68B81F')
+        }else{
+            $(this).parent().parent().css('border-left','6px solid #FD0000')
+        }
+    }).on('click','.copy-zone',function(){
+        OpenInNewTab('https://github.com/davidemaser/');
+    }).on('click','.btnDel',function () {
+        deleteItems();
+    }).on('click','.submit_json',function (){
+        var c = [];
+        var len = $('.clonedInput form').length;
+        for(var i=0;i<len;i++){
+            var a = $('#entry'+(i+1)+' form').serializeArray();
+            c.push(a);
+        }
+        outputJson(c);
+    }).on('click','.translate_json',function (){
+        $('.overlay_message').html('');
+        $("html, body").animate({ scrollTop: 0 }, 500).css('overflow','hidden');
+        $('#output').attr('data-reason','translate').css('display','block').find('#output_code').val('').attr('placeholder','Paste you code here');
+    }).on('click','.overlay_translate',function (){
+        traverseJSON();
+    }).on('click','.errors_reset',function (){
+        $('input,select').attr('style','');
+        $('.errorList').css('display','none');
+        $('html,body').css('overflow','auto');
+    });
     $(window).scroll(function() {
         if($(window).scrollTop() + $(window).height() == $(document).height()) {
             $('.copy-zone').fadeIn(500);

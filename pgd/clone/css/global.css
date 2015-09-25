@@ -121,6 +121,9 @@ h2.heading-reference {
     font-weight: bold;
     cursor:pointer;
 }
+.errorList {
+    display: none;
+}
 #attribution {
     font-size:12px;
     color:#999;
