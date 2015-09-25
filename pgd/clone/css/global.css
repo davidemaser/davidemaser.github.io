@@ -32,14 +32,21 @@
     width: 100%;
     height: 100%;
 }
-
-.blackify_overlay {
+html[data-theme="light"] .blackify_overlay {
     position: relative;
     width: 100%;
     height: 100%;
     margin: 0 auto;
     padding: 50px;
     background-color: rgba(0, 0, 0, 0.5);
+}
+html[data-theme="dark"] .blackify_overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: rgba(333, 333, 333, 0.6);
 }
 
 .blackify_overlay textarea {
@@ -84,8 +91,23 @@ h2.heading-reference {
     padding-left: 50px;
     border-left: 6px solid #68B81F;
 }
-.panel-body {
+html[data-theme="light"] .panel-body:not(.input-group) {
     background-color: #efefef;
+}
+html[data-theme="dark"] .panel-body:not(.input-group) {
+    background-color: #000;
+}
+html[data-theme="light"] body {
+    background-color:#fff;
+}
+html[data-theme="light"] label {
+    color:#000;
+}
+html[data-theme="dark"] body {
+    background-color:#666;
+}
+html[data-theme="dark"] label {
+    color: #fff;
 }
 .panel-body.top_level_bt {
     position: fixed;
