@@ -94,6 +94,9 @@ h2.heading-reference {
     margin-left: 5px;
     cursor:pointer;
 }
+.clonedInput {
+    box-shadow: 0 16px 40px -20px rgba(0, 0, 0, 0.6);
+}
 .nopad{
     padding:0!important;
     background-color: transparent;
