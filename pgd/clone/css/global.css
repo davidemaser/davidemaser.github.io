@@ -35,11 +35,11 @@
 
 .blackify_overlay {
     position: relative;
-    width: 75%;
+    width: 100%;
     height: 100%;
     margin: 0 auto;
     padding: 50px;
-    background-color: #eee;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .blackify_overlay textarea {
@@ -55,10 +55,12 @@ span.overlay_close,span.select_content,span.overlay_validate,span.overlay_transl
     margin: 0 0 10px 10px;
 }
 span.overlay_message {
-    padding: 20px 20px 20px 0;
+    padding: 20px 20px 20px 20px;
     float: left;
     cursor: pointer;
     margin: 0 0 10px 0;
+    background-color: #fff;
+    display: none;
 }
 legend {
     margin-top: 20px;

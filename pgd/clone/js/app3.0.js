@@ -99,10 +99,10 @@ $(function () {
             compress: false,
             reformat: true,
             onSuccess: function (json) {
-                $('.overlay_message').html('JSON Code is valid');
+                $('.overlay_message').css('display','inline-block').html('JSON Code is valid');
             },
             onError: function (error) {
-                $('.overlay_message').html('A JSON error has been encountered. The line on which the error has occured is highlighted.');
+                $('.overlay_message').css('display','inline-block').html('A JSON error has been encountered. The line on which the error has occured is highlighted.');
             }
         })
     }
@@ -338,6 +338,7 @@ $(function () {
     }).on('click','.overlay_close',function(){
         $(this).parent().parent().hide();
         $('html,body').css('overflow','auto');
+        $('.overlay_message').css('display','none')
     }).on('click','.select_content',function() {
         var $this = $('.blackify_overlay textarea');
         $this.select();
@@ -352,6 +353,10 @@ $(function () {
         $('html, body').animate({
             scrollTop: $('#entry' + a).offset().top-60
         }, 500);
+        if($('#output').css('display')=='block'){
+            $('html,body').css('overflow','auto');
+            $('#output').css('display','none')
+        }
     }).on('click','.about_app',function (e){
         window.open("http://davidemaser.github.io/pgd/release.html", "_blank","scrollbars=no,resizable=no,height=600, width=800, status=yes, toolbar=no, menubar=no, location=no");
     }).on('click','.check_image',function(){
