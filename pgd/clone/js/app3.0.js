@@ -1,5 +1,11 @@
 $(function () {
     $('.date_obj').datetimepicker({format: 'MM/DD/YYYY HH:mm'});
+    if(window.localStorage) {
+        var tm = localStorage.getItem('pgb_Theme');
+        if (tm !== '' || tm !== null || tm !== undefined) {
+            $('html').attr('data-theme', tm);
+        }
+    }
     function OpenInNewTab(url) {
         var win = window.open(url, '_blank');
         win.focus();
@@ -462,6 +468,9 @@ $(function () {
     }).on('click','.settings_toggle',function(){
         var a = $(this).data('theme');
         $('html').attr('data-theme',a);
+        if(window.localStorage) {
+            localStorage.setItem('pgb_Theme', a);
+        }
     });
     $(window).scroll(function() {
         if($(window).scrollTop() + $(window).height() == $(document).height()) {
@@ -488,7 +497,7 @@ $(function () {
             e.preventDefault();
         }
     });
-    function launchBats(nums){
+    function launchBats(){
         var r = Math.random,
             n = 0,
             d = document,
