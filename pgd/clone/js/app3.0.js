@@ -118,30 +118,39 @@ $(function () {
             }
             if(a[i].date.end == ''){
                 errorLog.push({form:(i+1),obj:"End Date",prob:"No Value",elem:"objEnd"});
+                c++;
             }
             if(a[i].title.en == ''){
                 errorLog.push({form:(i+1),obj:"English Title",prob:"No Value",elem:"objTitleEN"});
+                c++;
             }
             if(a[i].title.fr == ''){
                 errorLog.push({form:(i+1),obj:"French Title",prob:"No Value",elem:"objTitleFR"});
+                c++;
             }
             if(a[i].text.en == ''){
                 errorLog.push({form:(i+1),obj:"English Text",prob:"No Value",elem:"objTitleEN"});
+                c++;
             }
             if(a[i].text.fr == ''){
                 errorLog.push({form:(i+1),obj:"French Text",prob:"No Value",elem:"objTitleFR"});
+                c++;
             }
             if(a[i].button.label.en == ''){
                 errorLog.push({form:(i+1),obj:"English Button Label",prob:"No Value",elem:"objButtonEN"});
+                c++;
             }
             if(a[i].button.label.fr == ''){
                 errorLog.push({form:(i+1),obj:"French Button Label",prob:"No Value",elem:"objButtonFR"});
+                c++;
             }
             if(a[i].button.url == ''){
                 errorLog.push({form:(i+1),obj:"Button URL",prob:"No Value",elem:"objButtonLink"});
+                c++;
             }
             if(a[i].image.url == ''){
                 errorLog.push({form:(i+1),obj:"Image URL",prob:"No Value",elem:"objImageMain"});
+                c++;
             }
         }
         if(c > 0) {
@@ -218,6 +227,15 @@ $(function () {
             }
             $('html,body').css('overflow','auto');
         }
+    }
+    function prepareJSON(){
+        var c = [];
+        var len = $('.clonedInput form').length;
+        for(var i=0;i<len;i++){
+            var a = $('#entry'+(i+1)+' form').serializeArray();
+            c.push(a);
+        }
+        outputJson(c);
     }
     function outputJson(aCode){
         var nodes = aCode.length;
@@ -384,13 +402,7 @@ $(function () {
     }).on('click','.btnDel',function () {
         deleteItems();
     }).on('click','.submit_json',function (){
-        var c = [];
-        var len = $('.clonedInput form').length;
-        for(var i=0;i<len;i++){
-            var a = $('#entry'+(i+1)+' form').serializeArray();
-            c.push(a);
-        }
-        outputJson(c);
+        prepareJSON();
     }).on('click','.translate_json',function (){
         $('.overlay_message').html('');
         $("html, body").animate({ scrollTop: 0 }, 500).css('overflow','hidden');
@@ -409,6 +421,24 @@ $(function () {
             $('.copy-zone').fadeIn(500);
         }else{
             $('.copy-zone').fadeOut(500);
+        }
+    });
+    $(document).keydown(function(e) {
+        if (e.keyCode == 71 && e.ctrlKey) {
+            prepareJSON();
+            e.preventDefault();
+        }
+        if (e.keyCode == 82 && e.ctrlKey) {
+            deleteItems();
+            e.preventDefault();
+        }
+        if (e.keyCode == 65 && e.ctrlKey) {
+            addItems();
+            e.preventDefault();
+        }
+        if (e.keyCode == 191 && e.ctrlKey) {
+            window.open("http://davidemaser.github.io/pgd/release.html", "_blank","scrollbars=no,resizable=no,height=600, width=800, status=yes, toolbar=no, menubar=no, location=no");
+            e.preventDefault();
         }
     });
 });
