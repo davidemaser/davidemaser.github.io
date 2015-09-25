@@ -471,6 +471,27 @@ $(function () {
         if(window.localStorage) {
             localStorage.setItem('pgb_Theme', a);
         }
+    }).on('keyup','input',function(){
+        var a = $(this).val().length;
+        if($(this).hasClass('objTitleEN') || $(this).hasClass('objTitleFR') || $(this).hasClass('objTextEN') || $(this).hasClass('objTextFR')){
+            var compLen = 35;
+        }else if($(this).hasClass('objButtonEN') || $(this).hasClass('objButtonFR')){
+            compLen = 15;
+        }
+        if(a > compLen){
+            if($(this).parent().attr('class')!=='input_holders') {
+                $(this).wrap('<div class="input_holders"></div>').parent().append('<div class="input_alerts" title="The length of your text may be too long for the hero banner container. Make sure to check that it displays correctly."><span class="glyphicon glyphicon-exclamation-sign"></span></div>');
+                $(this).focus();
+            }
+        }else{
+            if(a <= compLen){
+                if($(this).parent().attr('class')=='input_holders') {
+                    $(this).parent().find('.input_alerts').remove();
+                    $(this).unwrap();
+                    $(this).focus();
+                }
+            }
+        }
     });
     $(window).scroll(function() {
         if($(window).scrollTop() + $(window).height() == $(document).height()) {
@@ -488,7 +509,7 @@ $(function () {
             deleteItems();
             e.preventDefault();
         }
-        if (e.keyCode == 65 && e.ctrlKey) {
+        if (e.keyCode == 73 && e.ctrlKey) {
             addItems();
             e.preventDefault();
         }
