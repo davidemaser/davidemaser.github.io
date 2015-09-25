@@ -152,6 +152,20 @@ h2.heading-reference {
     margin:20px 0;
     border-top:1px solid #ccc;
 }
+.input_holders {
+    display: block;
+    position: relative;
+}
+
+.input_alerts {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 8px;
+    color: red;
+    cursor:pointer;
+}
 #O_o {
     text-align: center;
     background: #33577b;

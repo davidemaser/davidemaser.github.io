@@ -129,11 +129,11 @@ $(function () {
                 c++;
             }
             if(a[i].text.en == ''){
-                errorLog.push({form:(i+1),obj:"English Text",prob:"No Value",elem:"objTitleEN"});
+                errorLog.push({form:(i+1),obj:"English Text",prob:"No Value",elem:"objTextEN"});
                 c++;
             }
             if(a[i].text.fr == ''){
-                errorLog.push({form:(i+1),obj:"French Text",prob:"No Value",elem:"objTitleFR"});
+                errorLog.push({form:(i+1),obj:"French Text",prob:"No Value",elem:"objTextFR"});
                 c++;
             }
             if(a[i].button.label.en == ''){
@@ -158,14 +158,14 @@ $(function () {
             $('.errorListing').empty();
             for (var j = 0; j < errorLog.length; j++) {
                 $('.errorListing').prepend('<li><a href="javascript:;" class="errorItem" data-item="'+j+'">Hero Item ' + errorLog[j].form + ' : ' + errorLog[j].obj + ' : ' + errorLog[j].prob + '</a></li>');
-                registerErrorButtons(errorLog[j].form,errorLog[j].elem,j);
+                registerErrorButtons(errorLog[j].form,errorLog[j].elem,j,errorLog[j].prob);
             }
             $('.errorList').find('button').html('Warnings<span class="label label-default numerrors">'+errorLog.length+'</span><span class="caret"></span>');
         }else{
             $('.errorList').css('display','none');
         }
     }
-    function registerErrorButtons(num,elem,item){
+    function registerErrorButtons(num,elem,item,prob){
         $('body').on('click','.errorItem[data-item="'+item+'"]',function(){
             $('#entry'+num).find('.'+elem).css('background-color','rgba(238, 162, 54, 0.3)');
             $('#output').hide();
@@ -173,6 +173,9 @@ $(function () {
             $('html, body').animate({
                 scrollTop: $('#entry' + num+' .'+elem).offset().top-100
             }, 500);
+            if($('.'+elem).parent().attr('class') !== 'input_holders'){
+                $('.'+elem).wrap('<div class="input_holders"></div>').parent().append('<div class="input_alerts" title="'+prob+'"><span class="glyphicon glyphicon-exclamation-sign"></span></div>')
+            }
         });
     }
     function traverseJSON(){
@@ -319,31 +322,67 @@ $(function () {
     }
     function validateImage(type,handler){
         if(type == 'main'){
-            var a = $('.check_image[data-handler="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.main_image').val();
-            var aa = $('.check_image[data-handler="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.main_image');
-            console.log(a);
+            var a = $('.check_image[data-handler="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.main_image').val(),
+                aa = $('.check_image[data-handler="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.main_image'),
+                aaa = $('.check_image[data-handler="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.main_image').parent().attr('class');
             if(a !== '') {
                 var b = urlExists(a);
                 if (b !== 200) {
-                    $(aa).next().css('background-color', '#ff3300').css('font-weight', 'bold').css('color', '#fff').html('Image does not exist');
+                    if(aaa == 'input_holders'){
+                        $(aa).next().next().css('background-color', '#ff3300').css('font-weight', 'bold').css('color', '#fff').html('Image does not exist');
+                    }else {
+                        $(aa).next().css('background-color', '#ff3300').css('font-weight', 'bold').css('color', '#fff').html('Image does not exist');
+                    }
                 } else if (b == 200) {
-                    $(aa).next().attr('style', '').css('background-color', 'rgb(82, 197, 82)').html('Image validated');
+                    if(aaa == 'input_holders'){
+                        $(aa).next().next().attr('style', '').css('background-color', 'rgb(82, 197, 82)').html('Image validated');
+                    }else {
+                        $(aa).next().attr('style', '').css('background-color', 'rgb(82, 197, 82)').html('Image validated');
+                    }
                 } else {
-                    $(aa).next().attr('style', '').html('Shopify CDN');
+                    if(aaa == 'input_holders'){
+                        $(aa).next().next().attr('style', '').html('Shopify CDN');
+                    }else {
+                        $(aa).next().attr('style', '').html('Shopify CDN');
+                    }
+                }
+            }else{
+                if(aaa == 'input_holders') {
+                    $(aa).next().next().css('background-color', '#eee').html('Nothing to validate');
+                }else {
+                    $(aa).next().css('background-color', '#eee').html('Nothing to validate');
                 }
             }
         }else if(type == 'alt'){
-            var a = $('.check_alt_image[data-handler="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.alt_image').val();
-            var aa = $('.check_alt_image[data-handler="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.alt_image');
-            console.log(a);
+            var a = $('.check_alt_image[data-handler="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.alt_image').val(),
+                aa = $('.check_alt_image[data-handler="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.alt_image'),
+                aaa = $('.check_alt_image[data-handler="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.alt_image').parent().attr('class');
             if(a !== '') {
                 var b = urlExists(a);
                 if (b !== 200) {
-                    $(aa).next().css('background-color', '#ff3300').css('font-weight', 'bold').css('color', '#fff').html('Image does not exist');
+                    if(aaa == 'input_holders') {
+                        $(aa).next().next().css('background-color', '#ff3300').css('font-weight', 'bold').css('color', '#fff').html('Image does not exist');
+                    }else{
+                        $(aa).next().css('background-color', '#ff3300').css('font-weight', 'bold').css('color', '#fff').html('Image does not exist');
+                    }
                 } else if (b == 200) {
-                    $(aa).next().attr('style', '').css('background-color', 'rgb(82, 197, 82)').html('Image validated');
+                    if(aaa == 'input_holders') {
+                        $(aa).next().next().attr('style', '').css('background-color', 'rgb(82, 197, 82)').html('Image validated');
+                    }else {
+                        $(aa).next().attr('style', '').css('background-color', 'rgb(82, 197, 82)').html('Image validated');
+                    }
                 } else {
-                    $(aa).next().attr('style', '').html('Shopify CDN');
+                    if(aaa == 'input_holders') {
+                        $(aa).next().next().attr('style', '').html('Shopify CDN');
+                    }else {
+                        $(aa).next().attr('style', '').html('Shopify CDN');
+                    }
+                }
+            }else{
+                if(aaa == 'input_holders') {
+                    $(aa).next().next().css('background-color', '#eee').html('Nothing to validate');
+                }else {
+                    $(aa).next().css('background-color', '#eee').html('Nothing to validate');
                 }
             }
         }
@@ -387,7 +426,6 @@ $(function () {
         validateJSON();
     }).on('change','.input_radio',function(){
         var a = $(this).parent().parent().parent().parent().parent().attr('id').replace('entry','');
-        console.log(a);
         if($(this).val()=='true'){
             $(this).parent().parent().css('border-left','6px solid #68B81F');
             $(this).parent().parent().parent().parent().find('h2').find('span').removeClass('label-danger').addClass('label-default');
@@ -413,8 +451,14 @@ $(function () {
         $('input,select').attr('style','');
         $('.errorList').css('display','none');
         $('html,body').css('overflow','auto');
+        $('.input_holders').find('.input_alerts').remove();
+        $('.input_holders').contents().unwrap();
     }).on('click','input,select',function(){
-        $(this).attr('style','')
+        $(this).attr('style','');
+        if($(this).parent().hasClass('input_holders')) {
+            $(this).parent().find('.input_alerts').remove();
+            $(this).unwrap();
+        }
     });
     $(window).scroll(function() {
         if($(window).scrollTop() + $(window).height() == $(document).height()) {
