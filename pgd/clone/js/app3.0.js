@@ -1,4 +1,5 @@
 $(function () {
+    $('.date_obj').datetimepicker({format: 'MM/DD/YYYY HH:mm'});
     function OpenInNewTab(url) {
         var win = window.open(url, '_blank');
         win.focus();
@@ -63,7 +64,7 @@ $(function () {
         if (newNum == 10)
             $('.btnAdd').attr('disabled', true).prop('value', "You've reached the limit"); // value here updates the text in the 'add' button when the limit is reached
         var dateNow = new Date();
-        $('.date_obj').datetimepicker({format: 'DD/MM/YYYY HH:mm',useCurrent:true});
+        $('.date_obj').datetimepicker({format: 'MM/DD/YYYY HH:mm'});
         $('.snapTo').append('<li><a href="#" class="gotoItem" data-item="'+newNum+'">Hero Item '+newNum+'</a></li>');
         $('html, body').animate({
             scrollTop: $('#entry' + newNum).offset().top-60
