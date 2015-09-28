@@ -269,6 +269,26 @@ h4.push_block {
     border-bottom: #fff;
     text-decoration: none;
 }
+.renderSmall .headline.herobanner {
+    font-size: 35px;
+    line-height: 45px;
+    top: -120px;
+}
+
+
+.renderSmall .timedown.is-countdown {
+    top: -130px;
+    position: relative;
+}
+
+.renderSmall .subtitle:not(.is-countdown) {
+    top: -70px;
+}
+
+.renderSmall .action_button {
+    top: 30px;
+    position: relative;
+}
 @media only screen and (max-width: 620px), only screen and (max-device-width: 620px) {
     #wrapper {
         width: 90%;
@@ -482,13 +502,12 @@ input#image_gl {
     float: none;
 }
 .fullsize #event-active-today{
-    float:left;
     padding: 0;
     width: 380px !important;
     height: 425px;
     position: relative;
     border-bottom: 5px solid #241e0e;
-    margin-right: 40px;
+    margin:0 auto;
     overflow: hidden;
 }
 .fullsize #event-active-today .event-active-bg {

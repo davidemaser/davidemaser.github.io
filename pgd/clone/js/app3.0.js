@@ -415,7 +415,7 @@ $(function () {
             }
         }
     }
-    function previewFeature(heroItem){
+    function previewFeature(heroItem,mode){
         var dt = $('#entry'+heroItem).find('form').serializeArray(),
             start = dt[0].value,
             img = dt[7].value,
@@ -426,13 +426,26 @@ $(function () {
             buttonLink = dt[11].value,
             container = '#html-zone',
             target = '.render_output';
-        var outputString = '<div data-instance="slide-0" data-str="'+img+'"';
+        if(mode == 'small'){
+            var outputString = '<div class="five columns jose pedro homepage_content event mini-spacers animated fadeIn delay-05s"><div id="event-active-today">';
+        }else{
+            var outputString = '';
+        }
+            outputString += '<div data-instance="slide-0" data-str="'+img+'"';
             outputString += ' data-promote="true" id="slide-0" class="hero fwidth root-0"><div data-object-pos="false-false" class="bcg skrollable skrollable-between" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -200px;" data-anchor-target="#slide-0"';
             outputString += ' style="background-image: url('+img+'); background-position: 50% -55.2631578947369px;"><div class="hsContainer"><div class="hsContent center skrollable skrollable-before" data-100-top="opacity: 1" data-25-top="opacity: 0" data-anchor-target="#slide-0 .animated" style="opacity: 1;">';
             outputString += '<div itemscope="" itemtype="http://schema.org/Event" class="animated fadeIn delay-025s hero_head"><p itemprop="startDate" content="'+start+'" class="subtitle timedown is-countdown" id="countdown0" style="opacity:0.9"><span>Ends In  <b>11:29:39</b> </span></p>';
             outputString += '<h1 class="headline herobanner" style="'+titleColor+'">'+titleText+'</h1><p class="subtitle herobanner">'+subTitleText+'</p><a data-bleed="" href="'+buttonLink+'" class="action_button hero"><span class="trn" data-trn-key="">'+buttonLabel+'</span></a></div></div></div></div></div>';
+        if(mode == 'small'){
+            outputString += '</div></div><div style="clear:both"></div>';
+        }
         $(container).show();
         $(target).empty().append(outputString);
+        if(mode == 'small'){
+            $(target).addClass('renderSmall');
+        }else if(mode == 'large'){
+            $(target).removeClass('renderSmall');
+        }
         }
     $('.btnAdd').attr('disabled', false);
     // Disable the "remove" button
@@ -477,7 +490,11 @@ $(function () {
     }).on('click','.previewItem.large',function(){
         $("html, body").animate({ scrollTop: 0 }, 500).css('overflow','hidden');
         var a = $(this).data('hero');
-        previewFeature(a);
+        previewFeature(a,'large');
+    }).on('click','.previewItem.small',function(){
+        $("html, body").animate({ scrollTop: 0 }, 500).css('overflow','hidden');
+        var a = $(this).data('hero');
+        previewFeature(a,'small');
     }).on('click','.removeThisItem',function(){
         deleteItems();
     }).on('change','.input_radio',function(){
