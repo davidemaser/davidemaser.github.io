@@ -56,7 +56,7 @@
         </div>
 
         <div class="btn-group errorList">
-            <button type="button" class="btn btn-warning dropdown-toggle action_utilities" data-toggle="dropdown" aria-expanded="false">
+            <button type="button" class="btn btn-warning dropdown-toggle action_utilities" data-toggle="dropdown" title="The JSON code contains errors and/or warnings that will cause display errors.">
                 Errors <span class="caret"></span>
             </button>
             <ul class="dropdown-menu errorListing" role="menu">
@@ -72,7 +72,7 @@
 
         <div id="entry1" class="clonedInput">
             <form action="#" method="post" id="json-data-creator" role="form">
-          <h2 id="reference" name="reference" class="heading-reference"><span class="label label-default">HERO ITEM 1</span></h2>
+          <h2 id="reference" name="reference" class="heading-reference"><span class="label label-default">HERO ITEM 1</span><span class="glyphicon glyphicon-picture previewItem" data-hero="1" title="Preview Hero Item"></span></h2>
           <fieldset>
       <!-- Text input-->
         <div class="form-group">
@@ -248,7 +248,38 @@
         </div><!-- end #entry1 -->
         <!-- Button (Double) -->
                 </fieldset>
-        <div id="help" data-reason="help" data-default="panel1"><div class="blackify_overlay"><span class="help_close label label-danger">close</span><div class="help_content"><h2><span class="label label-danger">Help</span></h2><div class="help_panel_holder">Coming Soon</div></div></div></div>
+        <div id="help" data-reason="help" data-default="panel1">
+            <div class="blackify_overlay"><span class="help_close label label-danger">close</span>
+
+                <div class="help_content"><h2><span class="label label-danger">Help</span></h2>
+
+                    <div class="help_panel_holder">
+                        <h4>Translating Hero JSON</h4>
+
+                        <p><span class="label label-primary">Usage</span> Copy existing hero data into a new form
+                            instance</p>
+
+                        <p>Translating Hero JSON allows you to add new hero items to an existing JSON file. This is
+                            particularly usefull when adding new hero banners to sales that are still active.</p>
+
+                        <p>To use this functionality, copy the JSON code from the shopify assets file. Click on Actions
+                            &gt; Translate JSON. In the text area that opens, paste the JSON code and click on Translate
+                            JSON. The function will create the form items and populate them with data from the JSON you
+                            pasted. You can now add new hero items to the form and generate a new JSON file once you're
+                            done.</p>
+                        <h4 class="push_block">Managing Errors</h4>
+
+                        <p><span class="label label-primary">Usage</span> Find and correct errors before exporting JSON</p>
+
+                        <p>The Page Builder app has a error manager feature that will display object errors when you generate your JSON code. If errors or warnings are found, a dropdown button will
+                        appear in the menu bar. </p>
+                        <p>Click on this new button to show a dropdown list of errors found during the JSON generation process. To go directly to the error in the form, click on it. The
+                        problematic form element will be highlighted and an error icon will appear to the right of the input area.</p>
+                        <p>To reset errors either click on the input area or select Actions > Reset Errors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id="output" data-reason=""><div class="blackify_overlay"><span class="overlay_message"></span><span class="overlay_close label label-danger">close</span><span class="select_content label label-primary">select all</span><span class="overlay_validate label label-default">validate JSON</span><span class="overlay_translate label label-info">translate JSON</span><textarea id="output_code"></textarea></div></div>
     </div> <!-- end wrapper -->
 <div class="copy-zone">&copy; David Maser</div>

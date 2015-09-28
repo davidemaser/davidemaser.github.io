@@ -218,6 +218,22 @@ html[data-theme="dark"] label {
     overflow-y: auto;
     width: 95%;
 }
+h4.push_block {
+    margin-top: 40px;
+}
+.help_content h2 {
+    text-transform: uppercase;
+}
+.help_panel_holder h4 {
+    font-weight: bold;
+}
+.previewItem {
+    font-size: 25px;
+    vertical-align: middle;
+    float: right;
+    color: #5cb85c;
+    cursor: pointer;
+}
 #O_o {
     text-align: center;
     background: #33577b;

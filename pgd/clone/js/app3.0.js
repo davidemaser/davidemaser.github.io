@@ -27,7 +27,7 @@ $(function () {
          Keep in mind that the .val() method is what clears the element when it gets cloned. Radio and checkboxes need .val([]) instead of .val('').
          */
         // H2 - section
-        newElem.find('.heading-reference').attr('id', 'ID' + newNum + '_reference').attr('name', 'ID' + newNum + '_reference').html('<span class="label label-default">HERO ITEM ' + newNum+'</span>');
+        newElem.find('.heading-reference').attr('id', 'ID' + newNum + '_reference').attr('name', 'ID' + newNum + '_reference').html('<span class="label label-default">HERO ITEM ' + newNum+'</span><span class="glyphicon glyphicon-picture previewItem" data-hero="'+newNum+'" title="Preview Hero Item"></span>');
 
         // Title - select
         newElem.find('.label_ttl').attr('for', 'ID' + newNum + '_title');
@@ -398,6 +398,10 @@ $(function () {
             }
         }
     }
+    function previewFeature(heroItem){
+        var dt = $('#entry'+heroItem).find('form').serializeArray();
+        console.log(dt);
+    }
     $('.btnAdd').attr('disabled', false);
     // Disable the "remove" button
     $('.btnDel').attr('disabled', true);
@@ -438,6 +442,9 @@ $(function () {
         validateImage('alt',a);
     }).on('click','.overlay_validate',function(){
         validateJSON();
+    }).on('click','.previewItem',function(){
+        var a = $(this).data('hero');
+        previewFeature(a);
     }).on('change','.input_radio',function(){
         var a = $(this).parent().parent().parent().parent().parent().attr('id').replace('entry','');
         if($(this).val()=='true'){
