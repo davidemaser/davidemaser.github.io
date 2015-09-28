@@ -4,6 +4,8 @@ $(function () {
         var tm = localStorage.getItem('pgb_Theme');
         if (tm !== '' || tm !== null || tm !== undefined) {
             $('html').attr('data-theme', tm);
+        }else{
+            $('html').attr('data-theme', 'light');
         }
     }
     function OpenInNewTab(url) {
