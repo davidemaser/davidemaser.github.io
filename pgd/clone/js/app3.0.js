@@ -313,6 +313,9 @@ $(function () {
             }
         }
         page_model += '\n      }\n   ]\n}';
+        if($('#help').css('display') == 'block'){
+            $('#help').css('display','none');
+        }
         $('#output').attr('data-reason','output');
         $('#output').css('display','block');
         $('#output textarea').val(page_model);
@@ -422,6 +425,9 @@ $(function () {
             $('html,body').css('overflow','auto');
             $('#output').css('display','none')
         }
+        if($('#help').css('display') == 'block'){
+            $('#help').css('display','none');
+        }
     }).on('click','.about_app',function (e){
         window.open("http://davidemaser.github.io/pgd/release.html", "_blank","scrollbars=no,resizable=no,height=600, width=800, status=yes, toolbar=no, menubar=no, location=no");
     }).on('click','.check_image',function(){
@@ -445,6 +451,15 @@ $(function () {
         }
     }).on('click','.copy-zone',function(){
         OpenInNewTab('https://github.com/davidemaser/');
+    }).on('click','.showHelp',function(){
+        $('#help').toggle();
+        if($('#output').css('display') == 'block'){
+            $('#output').css('display','none');
+        }
+    }).on('click','.help_close',function(){
+        if($('#help').css('display') == 'block'){
+            $(this).parent().parent().hide();
+        }
     }).on('click','.btnDel',function () {
         deleteItems();
     }).on('click','.submit_json',function (){
