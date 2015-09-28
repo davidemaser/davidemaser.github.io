@@ -27,8 +27,7 @@ $(function () {
          Keep in mind that the .val() method is what clears the element when it gets cloned. Radio and checkboxes need .val([]) instead of .val('').
          */
         // H2 - section
-        newElem.find('.heading-reference').attr('id', 'ID' + newNum + '_reference').attr('name', 'ID' + newNum + '_reference').html('<div class="btn-group bigboy"><button type="button" class="btn btn-info">HERO ITEM <span class="label label-default">' + newNum+'</span></button><button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button><ul class="dropdown-menu"><li><a class="previewItem" href="javascript:;" data-hero="'+newNum+'">Preview Large</a></li></ul></div>');
-
+        newElem.find('.heading-reference').attr('id', 'ID' + newNum + '_reference').attr('name', 'ID' + newNum + '_reference').html('<div class="btn-group bigboy"><button type="button" class="btn btn-info">HERO ITEM <span class="label label-default">' + newNum+'</span></button><button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button><ul class="dropdown-menu"><li><a class="previewItem large" href="javascript:;" data-hero="'+newNum+'">Preview Large</a></li><li><a class="previewItem small" href="javascript:;" data-hero="1">Preview Small</a></li></ul></div>');
         // Title - select
         newElem.find('.label_ttl').attr('for', 'ID' + newNum + '_title');
         newElem.find('.select_ttl').attr('id', 'ID' + newNum + '_title').attr('name', 'ID' + newNum + '_title').val('');
@@ -77,6 +76,9 @@ $(function () {
         $('html, body').animate({
             scrollTop: $('#entry' + newNum).offset().top-60
         }, 500);
+        $('.btn-group.bigboy').find('.divider').remove();
+        $('.removeThisItem').parent().remove();
+        $('.btn-group.bigboy').last().find('ul').append('<li class="divider"></li><li><a class="removeThisItem" href="javascript:;">Remove</a></li>');
     }
     function deleteItems(){
         if($('.clonedInput').length > 1) {
@@ -472,10 +474,12 @@ $(function () {
         validateImage('alt',a);
     }).on('click','.overlay_validate',function(){
         validateJSON();
-    }).on('click','.previewItem',function(){
+    }).on('click','.previewItem.large',function(){
         $("html, body").animate({ scrollTop: 0 }, 500).css('overflow','hidden');
         var a = $(this).data('hero');
         previewFeature(a);
+    }).on('click','.removeThisItem',function(){
+        deleteItems();
     }).on('change','.input_radio',function(){
         var a = $(this).parent().parent().parent().parent().parent().attr('id').replace('entry','');
         if($(this).val()=='true'){
