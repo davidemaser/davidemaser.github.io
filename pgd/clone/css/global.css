@@ -84,8 +84,10 @@ legend {
 label {
     margin-top: 10px;
 }
-h2.heading-reference {
+.heading-reference {
     padding: 10px 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 .mod-radio {
     padding-left: 50px;
@@ -133,6 +135,22 @@ html[data-theme="dark"] label {
 .nopad{
     padding:0!important;
     background-color: transparent;
+}
+.btn-group.bigboy button {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 5px;
+}
+.bigboy button .label {
+    font-size: 15px;
+    vertical-align: middle;
 }
 #output[data-reason="output"] .overlay_translate {
     display: none;
@@ -231,11 +249,7 @@ h4.push_block {
     font-weight: bold;
 }
 .previewItem {
-    font-size: 25px;
-    vertical-align: middle;
-    float: right;
-    color: #5cb85c;
-    cursor: pointer;
+    font-size: 15px;
 }
 #O_o {
     text-align: center;
@@ -315,12 +329,6 @@ input#image_gl {
 .selector-color {
     display: inline-block;
     margin: -5px 10px;
-.occ_button {
-    position: relative;
-    left: 72%;
-    width: 170px;
-    top: -10px;
-}
     width: 20px;
     height: 20px;
     font-size: 18px;

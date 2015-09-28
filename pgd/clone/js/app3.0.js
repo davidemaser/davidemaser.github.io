@@ -27,7 +27,7 @@ $(function () {
          Keep in mind that the .val() method is what clears the element when it gets cloned. Radio and checkboxes need .val([]) instead of .val('').
          */
         // H2 - section
-        newElem.find('.heading-reference').attr('id', 'ID' + newNum + '_reference').attr('name', 'ID' + newNum + '_reference').html('<span class="label label-default">HERO ITEM ' + newNum+'</span><span class="glyphicon glyphicon-picture previewItem" data-hero="'+newNum+'" title="Preview Hero Item"></span>');
+        newElem.find('.heading-reference').attr('id', 'ID' + newNum + '_reference').attr('name', 'ID' + newNum + '_reference').html('<div class="btn-group bigboy"><button type="button" class="btn btn-info">HERO ITEM <span class="label label-default">' + newNum+'</span></button><button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button><ul class="dropdown-menu"><li><a class="previewItem" href="javascript:;" data-hero="'+newNum+'">Preview Large</a></li></ul></div>');
 
         // Title - select
         newElem.find('.label_ttl').attr('for', 'ID' + newNum + '_title');
@@ -328,6 +328,9 @@ $(function () {
         if($('#help').css('display') == 'block'){
             $('#help').css('display','none');
         }
+        if($('#html-zone').css('display') == 'block'){
+            $('#html-zone').css('display','none');
+        }
         $('#output').attr('data-reason','output');
         $('#output').css('display','block');
         $('#output textarea').val(page_model);
@@ -488,8 +491,12 @@ $(function () {
         OpenInNewTab('https://github.com/davidemaser/');
     }).on('click','.showHelp',function(){
         $('#help').toggle();
+        $("html, body").animate({ scrollTop: 0 }, 500);
         if($('#output').css('display') == 'block'){
             $('#output').css('display','none');
+        }
+        if($('#html-zone').css('display') == 'block'){
+            $('#html-zone').css('display','none');
         }
     }).on('click','.help_close',function(){
         if($('#help').css('display') == 'block'){
