@@ -242,13 +242,19 @@
             </div>
             <!-- Select Basic -->
 
-            <label class="label_ttl control-label" for="options_promote">Promote Hero</label>
+
             <div class="form-group">
+                <div class="half_span lItem">
+                    <label class="label_ttl control-label" for="options_promote">Promote Hero</label>
               <select class="select_ttl form-control objHeroPromote" name="options_promote" id="options_promote">
                   <option value="false" selected="selected">No</option>
                   <option value="true">Yes</option>
 
-              </select> <!-- end .select_ttl -->
+              </select></div>
+                <div class="half_span">
+                    <label class="label_ln control-label" for="text_fr">Show X hours Before Active <span class="show_me_how" title="Show this hero item only when the start time is X hours from now">?</span></label>
+                    <input id="delay_ac" name="delay_ac" type="text" placeholder="Leave 0 to show by default" value="0" class="input_ln form-control objDelay">
+                </div>
             </div>
 
               <!-- Multiple Radios -->
@@ -301,6 +307,15 @@
                         <p>Click on this new button to show a dropdown list of errors found during the JSON generation process. To go directly to the error in the form, click on it. The
                         problematic form element will be highlighted and an error icon will appear to the right of the input area.</p>
                         <p>To reset errors either click on the input area or select Actions > Reset Errors</p>
+                        <h4 class="push_block">Hero Item Delay</h4>
+
+                        <p><span class="label label-primary">Usage</span> Offset the display of hero items</p>
+
+                        <p>This feature allows you to define how many hours before an event starts that you want the hero banner to appear.</p>
+                        <p>If for example you have a hero banner that is scheduled to start at 12:00 but you don't want it to show up in the hero banners in the days preceding, you can set
+                        a delay that will only show that hero when it is within the X hours of it's start time. </p>
+                        <p>To set the offset, add a numeric value (corresponding to a number of hours) into the <i>Show X hours Before Active</i> input field. Leave the value
+                        at 0 if you don't want to use the offset feature. It you leave the field empty, the default value 0 will be used.</p>
                     </div>
                 </div>
             </div>

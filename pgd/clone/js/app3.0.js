@@ -239,6 +239,7 @@ $(function () {
             $($this).find('.objButtonEN').val(aCode[i].button.label.en);
             $($this).find('.objButtonFR').val(aCode[i].button.label.fr);
             $($this).find('.objButtonLink').val(aCode[i].button.url);
+            $($this).find('.objDelay').val(aCode[i].date.delay);
             $($this).find('.objButtonPopup option[value="'+aCode[i].popUpLink+'"]').attr('selected',true);
             $($this).find('.objButtonPopupLink option[value="'+aCode[i].button.popUpLinkID+'"]').attr('selected',true);
             $($this).find('.objCountdownShow option[value="'+aCode[i].showCountdown+'"]').attr('selected',true);
@@ -262,6 +263,7 @@ $(function () {
         outputJson(c);
     }
     function outputJson(aCode){
+        console.log(aCode);
         var nodes = aCode.length;
         var lastItem = nodes-1;
         var page_model='{\n    "hero": [\n';
@@ -301,13 +303,23 @@ $(function () {
             }else{
                 elemD = true;
             }
+            if(aCode[i][20] !== undefined) {
+                if (aCode[i][20].value == '' || aCode[i][20].value == null || aCode[i][20].value == undefined) {
+                    var elemE = 0;
+                } else {
+                    elemE = aCode[i][19].value;
+                }
+            }else{
+                elemE = 0;
+            }
             page_model += '{\n        "heroId": "hero-elem'+i+'",';
             page_model += '\n        "active": '+elemD+',';
             page_model += '\n        "showCountdown": '+elemA+',';
             page_model += '\n        "popUpLink": '+elemB+',';
             page_model += '\n        "date": {';
             page_model += '\n          "start": "'+aCode[i][0].value+'",';
-            page_model += '\n          "end": "'+aCode[i][1].value+'"';
+            page_model += '\n          "end": "'+aCode[i][1].value+'",';
+            page_model += '\n          "delay": '+elemE;
             page_model += '\n        },';
             page_model += '\n        "title": {';
             page_model += '\n          "en": "'+aCode[i][2].value.trim()+'",';
