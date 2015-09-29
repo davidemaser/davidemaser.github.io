@@ -2,11 +2,13 @@ $(function () {
     $('.date_obj').datetimepicker({format: 'MM/DD/YYYY HH:mm'});
     if(window.localStorage) {
         var tm = localStorage.getItem('pgb_Theme');
-        if (tm !== '' || tm !== null || tm !== undefined) {
+        if (tm !== '' || tm !== null || tm !== undefined || tm !== 'undefined') {
             $('html').attr('data-theme', tm);
         }else{
             $('html').attr('data-theme', 'light');
         }
+    }else{
+        $('html').attr('data-theme', 'light');
     }
     function OpenInNewTab(url) {
         var win = window.open(url, '_blank');
