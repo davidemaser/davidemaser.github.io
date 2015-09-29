@@ -981,3 +981,7 @@ h1 .label-default {
     font-size: 12px;
   }
 }
+.errorListing {
+  max-height: 500px;
+  overflow-y: auto;
+}
