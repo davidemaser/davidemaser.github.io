@@ -577,25 +577,25 @@ $(function () {
             b = a-1,
             c = $(this).parent().parent().parent().parent().parent().parent(),
             d = $(c).closest('.clonedInput').prev();
-        if(b>0){
+
             $(c).insertBefore(d);
             $('html, body').animate({
                 scrollTop: $('#entry' + a).offset().top-60
             }, 500);
             //$(d).closest('.clonedInput').prev();
-        }
+
     }).on('click','.moveDownThisItem',function(){
         var a = $(this).data('item'),
             b = a-1,
             c = $(this).parent().parent().parent().parent().parent().parent(),
             d = $(c).closest('.clonedInput').next();
-        if(b>0){
+
             $(c).insertAfter(d);
             $('html, body').animate({
                 scrollTop: $('#entry' + a).offset().top-60
             }, 500);
             //$(d).closest('.clonedInput').prev();
-        }
+
     }).on('keyup','input',function(){
         var a = $(this).val().length;
         if($(this).hasClass('objTitleEN') || $(this).hasClass('objTitleFR') || $(this).hasClass('objTextEN') || $(this).hasClass('objTextFR')){
