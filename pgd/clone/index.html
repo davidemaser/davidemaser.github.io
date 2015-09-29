@@ -35,6 +35,8 @@
             </button>
             <ul class="dropdown-menu main_nav" role="menu">
                 <li><a href="#" class="cleaner_open btnAdd" id="btnAdd" title="CTRL+I">Add Hero Item <span class="micro-aid">CTRL+I</span></a></li>
+                <li><a href="#" class="cleaner_open btnAddMulti" id="btnAddMulti" title="CTRL+ALT+I">Add Multiple Hero Items <span class="micro-aid">CTRL+ALT+I</span></a></li>
+                <li class="divider"></li>
                 <li><a href="#" class="generate_page btnDel" id="btnDel" title="CTRL+R">Remove Last Hero Item <span class="micro-aid">CTRL+R</span></a></li>
                 <li class="divider"></li>
                 <li><a href="#" class="app_info_toggle submit_json" id="submit_button" title="CTRL+G">Generate JSON <span class="micro-aid">CTRL+G</span></a></li>
@@ -303,8 +305,26 @@
                 </div>
             </div>
         </div>
-        <div id="output" data-reason=""><div class="blackify_overlay"><span class="overlay_message"></span><span class="overlay_close label label-danger">close</span><span class="select_content label label-primary">select all</span><span class="overlay_validate label label-default">validate JSON</span><span class="overlay_translate label label-info">translate JSON</span><textarea id="output_code"></textarea></div></div>
-    </div> <!-- end wrapper -->
+        <div id="output" data-reason="">
+            <div class="blackify_overlay"><span class="overlay_message"></span><span
+                    class="overlay_close label label-danger">close</span><span
+                    class="select_content label label-primary">select all</span><span
+                    class="overlay_validate label label-default">validate JSON</span><span
+                    class="overlay_translate label label-info">translate JSON</span><textarea
+                    id="output_code"></textarea></div>
+        </div>
+        <div id="query-zone" data-reason="query">
+            <div class="blackify_overlay"><span class="multiquery_close label label-danger">close</span>
+
+                <div class="question_num">
+                    <div class="subs"><label class="label_ln control-label">How many Hero Items would you like to add ? </label><input
+                            class="input_ln form-control num_select" type="text" placeholder="Enter a number and click ENTER"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- end wrapper -->
 <div class="copy-zone">&copy; David Maser</div>
 </body>
 </html>

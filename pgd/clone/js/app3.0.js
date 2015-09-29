@@ -14,6 +14,11 @@ $(function () {
         var win = window.open(url, '_blank');
         win.focus();
     }
+    function addMulti(num){
+        for(var i=0;i<num;i++) {
+            addItems();
+        }
+    }
     function addItems(){
         if($('#output').css('display') == 'block'){
             $('#output').css('display','none');
@@ -485,9 +490,21 @@ $(function () {
         }
     }).on('click','.about_app',function (e){
         window.open("http://davidemaser.github.io/pgd/release.html", "_blank","scrollbars=no,resizable=no,height=600, width=800, status=yes, toolbar=no, menubar=no, location=no");
+    }).on('click','.btnAddMulti',function (){
+        $('#query-zone').toggle();
+        $("html, body").animate({ scrollTop: 0 }, 500);
+        if($('#output').css('display') == 'block'){
+            $('#output').css('display','none');
+        }
+        if($('#html-zone').css('display') == 'block'){
+            $('#html-zone').css('display','none');
+        }
+        $('.num_select').focus();
     }).on('click','.check_image',function(){
         var a = $(this).data('handler');
         validateImage('main',a);
+    }).on('click','.multiquery_close',function(){
+        $(this).parent().parent().hide();
     }).on('click','.check_alt_image',function(){
         var a = $(this).data('handler');
         validateImage('alt',a);
@@ -615,7 +632,14 @@ $(function () {
                 }
             }
         }
+    }).on('keyup','.num_select',function(e){
+        if(e.keyCode == 13){
+            $(this).trigger("enterKey");
+            addMulti($(this).val());
+            $(this).parent().parent().parent().parent().hide();
+        }
     });
+
     $(window).scroll(function() {
         if($(window).scrollTop() + $(window).height() == $(document).height()) {
             $('.copy-zone').fadeIn(500);
@@ -632,8 +656,20 @@ $(function () {
             deleteItems();
             e.preventDefault();
         }
-        if (e.keyCode == 73 && e.ctrlKey) {
+        if (e.keyCode == 73 && e.ctrlKey && !e.altKey) {
             addItems();
+            e.preventDefault();
+        }
+        if (e.keyCode == 73 && e.ctrlKey && e.altKey) {
+            $('#query-zone').toggle();
+            $("html, body").animate({ scrollTop: 0 }, 500);
+            if($('#output').css('display') == 'block'){
+                $('#output').css('display','none');
+            }
+            if($('#html-zone').css('display') == 'block'){
+                $('#html-zone').css('display','none');
+            }
+            $('.num_select').focus();
             e.preventDefault();
         }
         if (e.keyCode == 191 && e.ctrlKey) {

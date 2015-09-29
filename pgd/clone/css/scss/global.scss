@@ -212,6 +212,9 @@ span {
   &.overlay_close {
     @extend %extend_1;
   }
+  &.multiquery_close{
+    @extend %extend_1;
+  }
   &.renderer_close {
     @extend %extend_1;
   }
@@ -349,6 +352,9 @@ label {
   @extend %extend_2;
 }
 #html-zone {
+  @extend %extend_2;
+}
+#query-zone{
   @extend %extend_2;
 }
 .help_content {
@@ -991,5 +997,25 @@ h1 .label-default {
   &:hover {
     background-color: red;
     color: #fff;
+  }
+}
+input.hero_num {
+  width: 25px;
+  height: 20px;
+  position: absolute;
+  top: 9px;
+  left: 49px;
+}
+.question_num {
+  background-color: #fff;
+  width: 100%;
+  margin: 100px auto;
+  top: 50px;
+  padding: 5px 50px;
+  .subs {
+    background-color: #fff;
+    width: 980px;
+    margin: 50px auto;
+    top: 50px;
   }
 }
