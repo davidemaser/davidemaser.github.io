@@ -28,6 +28,7 @@ $(function () {
          */
         // H2 - section
         newElem.find('.heading-reference').attr('id', 'ID' + newNum + '_reference').attr('name', 'ID' + newNum + '_reference').html('<div class="btn-group bigboy"><button type="button" class="btn btn-info">HERO ITEM <span class="label label-default">' + newNum+'</span></button><button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button><ul class="dropdown-menu"><li><a class="previewItem large" href="javascript:;" data-hero="'+newNum+'">Preview Large</a></li><li><a class="previewItem small" href="javascript:;" data-hero="1">Preview Small</a></li></ul></div>');
+        newElem.attr('data-split',newNum);
         // Title - select
         newElem.find('.label_ttl').attr('for', 'ID' + newNum + '_title');
         newElem.find('.select_ttl').attr('id', 'ID' + newNum + '_title').attr('name', 'ID' + newNum + '_title').val('');
@@ -259,10 +260,10 @@ $(function () {
     function prepareJSON(){
         var c = [];
         var len = $('.clonedInput form').length;
-        for(var i=0;i<len;i++){
-            var a = $('.clonedInput form').serializeArray();
-            c.push(a);
-        }
+            $('.clonedInput form').each(function(){
+                var a = $(this).serializeArray();
+                c.push(a);
+            })
         outputJson(c);
     }
     function outputJson(aCode){
@@ -576,8 +577,9 @@ $(function () {
         var a = $(this).data('item'),
             b = a-1,
             c = $(this).parent().parent().parent().parent().parent().parent(),
-            d = $(c).closest('.clonedInput').prev();
-
+            d = $(c).closest('.clonedInput').prev(),
+            e = $(c).data('split');
+            $(c).attr('data-split',(e-1));
             $(c).insertBefore(d);
             $('html, body').animate({
                 scrollTop: $('#entry' + a).offset().top-60
@@ -588,12 +590,18 @@ $(function () {
         var a = $(this).data('item'),
             b = a-1,
             c = $(this).parent().parent().parent().parent().parent().parent(),
-            d = $(c).closest('.clonedInput').next();
-
-            $(c).insertAfter(d);
-            $('html, body').animate({
-                scrollTop: $('#entry' + a).offset().top-60
-            }, 500);
+            d = $(c).closest('.clonedInput').next(),
+            e = $(c).data('split'),
+            f = $(d).attr('id');
+            if(f.indexOf('entry') > -1) {
+                $(c).attr('data-split', (e + 1));
+                $(c).insertAfter(d);
+                $('html, body').animate({
+                    scrollTop: $('#entry' + a).offset().top - 60
+                }, 500);
+            }else{
+                alert('If I move down any further, I\'ll be off the page.');
+            }
             //$(d).closest('.clonedInput').prev();
 
     }).on('keyup','input',function(){
