@@ -180,7 +180,7 @@ $(function () {
     function registerErrorButtons(num,elem,item,prob,die){
         $('body').on('click','.errorItem[data-item="'+item+'"]',function(){
             if(die == true){
-                $('#entry'+num).find('.'+elem).css('background-color','rgba(238, 54, 54, 0.3)');
+                $('#entry'+num).find('.'+elem).css('background-color','rgba(238, 54, 54, 0.3)').attr('placeholder','Leaving this field empty will cause the hero banner function to fail');
             }else {
                 $('#entry' + num).find('.' + elem).css('background-color', 'rgba(238, 162, 54, 0.3)');
             }
@@ -546,13 +546,13 @@ $(function () {
     }).on('click','.overlay_translate',function (){
         traverseJSON();
     }).on('click','.errors_reset',function (){
-        $('input,select').attr('style','');
+        $('input,select').attr('style','').attr('placeholder','');
         $('.errorList').css('display','none');
         $('html,body').css('overflow','auto');
         $('.input_holders').find('.input_alerts').remove();
         $('.input_holders').contents().unwrap();
     }).on('click','input,select',function(){
-        $(this).attr('style','');
+        $(this).attr('style','').attr('placeholder','');
         if($(this).parent().hasClass('input_holders')) {
             $(this).parent().find('.input_alerts').remove();
             $(this).unwrap();
