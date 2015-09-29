@@ -412,14 +412,14 @@ label {
     top: -70px;
   }
 }
-@media only screen and(max-width: 620px), only screen and(max-device-width: 620px) {
-#wrapper {
-  width: 90%;
-}
-legend {
-  font-size: 24px;
-  font-weight: 500;
-}
+@media screen and (max-width:620px) and (max-device-width: 620px){
+  #wrapper {
+    width: 90%;
+  }
+  legend {
+    font-size: 24px;
+    font-weight: 500;
+  }
 }
 .panel-default {
   //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
@@ -984,4 +984,12 @@ h1 .label-default {
 .errorListing {
   max-height: 500px;
   overflow-y: auto;
+}
+.errorItem.true {
+  color: red;
+  transition: all 0.4s;
+  &:hover {
+    background-color: red;
+    color: #fff;
+  }
 }
