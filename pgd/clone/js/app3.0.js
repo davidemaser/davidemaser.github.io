@@ -22,40 +22,27 @@ $(function () {
             newNum  = new Number(num + 1),      // The numeric ID of the new input field being added, increasing by 1 each time
             newElem = $('#entry' + num).clone().attr('id', 'entry' + newNum); // create the new element via clone(), and manipulate it's ID using newNum value
 
-        /*  This is where we manipulate the name/id values of the input inside the new, cloned element
-         Below are examples of what forms elements you can clone, but not the only ones.
-         There are 2 basic structures below: one for an H2, and one for form elements.
-         To make more, you can copy the one for form elements and simply update the classes for its label and input.
-         Keep in mind that the .val() method is what clears the element when it gets cloned. Radio and checkboxes need .val([]) instead of .val('').
-         */
-        // H2 - section
         newElem.find('.heading-reference').attr('id', 'ID' + newNum + '_reference').attr('name', 'ID' + newNum + '_reference').html('<div class="btn-group bigboy"><button type="button" class="btn btn-info">HERO ITEM <span class="label label-default">' + newNum+'</span></button><button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button><ul class="dropdown-menu"><li><a class="previewItem large" href="javascript:;" data-hero="'+newNum+'">Preview Large</a></li><li><a class="previewItem small" href="javascript:;" data-hero="1">Preview Small</a></li></ul></div>');
         newElem.attr('data-split',newNum);
-        // Title - select
+
         newElem.find('.label_ttl').attr('for', 'ID' + newNum + '_title');
         newElem.find('.select_ttl').attr('id', 'ID' + newNum + '_title').attr('name', 'ID' + newNum + '_title').val('');
 
-        // First name - text
         newElem.find('.label_fn').attr('for', 'ID' + newNum + '_first_name');
         newElem.find('.input_fn').attr('id', 'ID' + newNum + '_first_name').attr('name', 'ID' + newNum + '_first_name').val('');
 
-        // Last name - text
         newElem.find('.label_ln').attr('for', 'ID' + newNum + '_last_name');
         newElem.find('.input_ln').attr('id', 'ID' + newNum + '_last_name').attr('name', 'ID' + newNum + '_last_name').val('');
 
-        // Color - checkbox
         newElem.find('.label_checkboxitem').attr('for', 'ID' + newNum + '_checkboxitem');
         newElem.find('.input_checkboxitem').attr('id', 'ID' + newNum + '_checkboxitem').attr('name', 'ID' + newNum + '_checkboxitem').val([]);
 
-        // Skate - radio
         newElem.find('.radio').attr('for', 'ID' + newNum + '_radioitem');
         newElem.find('.input_radio').attr('id', 'ID' + newNum + '_radioitem').attr('name', 'ID' + newNum + '_radioitem').val([]);
 
-        // Email - text
         newElem.find('.label_email').attr('for', 'ID' + newNum + '_email_address');
         newElem.find('.input_email').attr('id', 'ID' + newNum + '_email_address').attr('name', 'ID' + newNum + '_email_address').val('');
 
-        // Twitter handle (for Bootstrap demo) - append and text
         newElem.find('.label_twt').attr('for', 'ID' + newNum + '_twitter_handle');
         newElem.find('.input_twt').attr('id', 'ID' + newNum + '_twitter_handle').attr('name', 'ID' + newNum + '_twitter_handle').val('');
         newElem.find('.check_image').attr('data-handler', newNum);
@@ -63,14 +50,11 @@ $(function () {
         newElem.find('.input-group-addon.image_count').attr('style','').html('Shopify CDN');
         newElem.find('.mod-radio').attr('style','');
 
-        // Insert the new element after the last "duplicatable" input field
         $('.clonedInput:last').after(newElem);
         $('#ID' + newNum + '_title').focus();
 
-        // Enable the "remove" button. This only shows once you have a duplicated section.
         $('#btnDel').attr('disabled', false);
 
-        // Right now you can only add 4 sections, for a total of 5. Change '5' below to the max number of sections you want to allow.
         if (newNum == 10)
             $('.btnAdd').attr('disabled', true).prop('value', "You've reached the limit"); // value here updates the text in the 'add' button when the limit is reached
         var dateNow = new Date();
@@ -79,8 +63,8 @@ $(function () {
         $('html, body').animate({
             scrollTop: $('#entry' + newNum).offset().top-60
         }, 500);
-
         $('.btn-group.bigboy').last().find('ul').append('<li class="divider"></li><li><a class="removeThisItem" data-item="'+newNum+'" href="javascript:;">Remove</a></li><li class="divider"></li><li><a class="moveUpThisItem" data-item="'+newNum+'" href="javascript:;">Move Up<span class="glyphicon glyphicon-arrow-up"></span></a></li><li><a class="moveDownThisItem" data-item="'+newNum+'" href="javascript:;">Move Down<span class="glyphicon glyphicon-arrow-down"></span></a></li>');
+        $('#entry' + newNum).find('.mod-radio').find('input').first().prop('checked',true);
     }
     function deleteItems(elem) {
         if ($('.clonedInput').length > 1) {
