@@ -61,7 +61,7 @@ $(function () {
         newElem.find('.mod-radio').attr('style','');
 
         // Insert the new element after the last "duplicatable" input field
-        $('#entry' + num).after(newElem);
+        $('.clonedInput:last').after(newElem);
         $('#ID' + newNum + '_title').focus();
 
         // Enable the "remove" button. This only shows once you have a duplicated section.
@@ -76,32 +76,47 @@ $(function () {
         $('html, body').animate({
             scrollTop: $('#entry' + newNum).offset().top-60
         }, 500);
-        $('.btn-group.bigboy').find('.divider').remove();
-        $('.removeThisItem').parent().remove();
-        $('.btn-group.bigboy').last().find('ul').append('<li class="divider"></li><li><a class="removeThisItem" href="javascript:;">Remove</a></li>');
+
+        $('.btn-group.bigboy').last().find('ul').append('<li class="divider"></li><li><a class="removeThisItem" data-item="'+newNum+'" href="javascript:;">Remove</a></li><li class="divider"></li><li><a class="moveUpThisItem" data-item="'+newNum+'" href="javascript:;">Move Up</a></li><li><a class="moveDownThisItem" data-item="'+newNum+'" href="javascript:;">Move Down</a></li>');
     }
-    function deleteItems(){
-        if($('.clonedInput').length > 1) {
+    function deleteItems(elem) {
+        if ($('.clonedInput').length > 1) {
             if ($('#output').css('display') == 'block') {
                 $('#output').css('display', 'none');
             }
             // Confirmation dialog box. Works on all desktop browsers and iPhone.
             if (confirm("Are you sure you wish to remove this section? This cannot be undone.")) {
-                var num = $('.clonedInput').length;
+                //var num = $('.clonedInput').length;
                 // how many "duplicatable" input fields we currently have
-                $('#entry' + num).slideUp('slow', function () {
-                    $(this).remove();
-                    // if only one element remains, disable the "remove" button
-                    if (num - 1 === 1)
-                        $('.btnDel').attr('disabled', true);
-                    // enable the "add" button
-                    $('.btnAdd').attr('disabled', false).prop('value', "add section");
-                });
-                $('.snapTo').find('.gotoItem:last').remove()
+                if (elem == 'last') {
+                    var a = $('.clonedInput:last').attr('id'),
+                        b = a.replace('entry','');
+                    $('#' + a).slideUp('slow', function () {
+                        $(this).remove();
+                        // if only one element remains, disable the "remove" button
+                        if (elem - 1 === 1)
+                            $('.btnDel').attr('disabled', true);
+                        // enable the "add" button
+                        $('.btnAdd').attr('disabled', false).prop('value', "add section");
+                    });
+                    $('.snapTo').find('.gotoItem[data-item="'+b+'"]').parent().remove();
+                } else {
+                    $('#entry' + elem).slideUp('slow', function () {
+                        $(this).remove();
+                        // if only one element remains, disable the "remove" button
+                        if (elem - 1 === 1)
+                            $('.btnDel').attr('disabled', true);
+                        // enable the "add" button
+                        $('.btnAdd').attr('disabled', false).prop('value', "add section");
+                    });
+                    $('.snapTo').find('.gotoItem[data-item="'+elem+'"]').parent().remove();
+                }
+
+                console.log(b);
+                return false; // Removes the last section you added
+            } else {
+                alert('You cannot remove the first Hero Item.')
             }
-            return false; // Removes the last section you added
-        }else{
-            alert('You cannot remove the first Hero Item.')
         }
     }
     function validateJSON(){
@@ -245,7 +260,7 @@ $(function () {
         var c = [];
         var len = $('.clonedInput form').length;
         for(var i=0;i<len;i++){
-            var a = $('#entry'+(i+1)+' form').serializeArray();
+            var a = $('.clonedInput form').serializeArray();
             c.push(a);
         }
         outputJson(c);
@@ -496,7 +511,8 @@ $(function () {
         var a = $(this).data('hero');
         previewFeature(a,'small');
     }).on('click','.removeThisItem',function(){
-        deleteItems();
+        var a = $(this).data('item');
+        deleteItems(a);
     }).on('change','.input_radio',function(){
         var a = $(this).parent().parent().parent().parent().parent().attr('id').replace('entry','');
         if($(this).val()=='true'){
@@ -529,7 +545,7 @@ $(function () {
             $('html,body').css('overflow','auto');
         }
     }).on('click','.btnDel',function () {
-        deleteItems();
+        deleteItems('last');
     }).on('click','.submit_json',function (){
         prepareJSON();
     }).on('click','.translate_json',function (){
@@ -555,6 +571,30 @@ $(function () {
         $('html').attr('data-theme',a);
         if(window.localStorage) {
             localStorage.setItem('pgb_Theme', a);
+        }
+    }).on('click','.moveUpThisItem',function(){
+        var a = $(this).data('item'),
+            b = a-1,
+            c = $(this).parent().parent().parent().parent().parent().parent(),
+            d = $(c).closest('.clonedInput').prev();
+        if(b>0){
+            $(c).insertBefore(d);
+            $('html, body').animate({
+                scrollTop: $('#entry' + a).offset().top-60
+            }, 500);
+            //$(d).closest('.clonedInput').prev();
+        }
+    }).on('click','.moveDownThisItem',function(){
+        var a = $(this).data('item'),
+            b = a-1,
+            c = $(this).parent().parent().parent().parent().parent().parent(),
+            d = $(c).closest('.clonedInput').next();
+        if(b>0){
+            $(c).insertAfter(d);
+            $('html, body').animate({
+                scrollTop: $('#entry' + a).offset().top-60
+            }, 500);
+            //$(d).closest('.clonedInput').prev();
         }
     }).on('keyup','input',function(){
         var a = $(this).val().length;
