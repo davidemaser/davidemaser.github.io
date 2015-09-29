@@ -975,3 +975,9 @@ h1 .label-default {
   font-size: 12px;
   margin-left: 10px;
 }
+.moveUpThisItem,.moveDownThisItem {
+  span {
+    float: right;
+    font-size: 12px;
+  }
+}

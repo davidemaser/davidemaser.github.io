@@ -77,7 +77,7 @@ $(function () {
             scrollTop: $('#entry' + newNum).offset().top-60
         }, 500);
 
-        $('.btn-group.bigboy').last().find('ul').append('<li class="divider"></li><li><a class="removeThisItem" data-item="'+newNum+'" href="javascript:;">Remove</a></li><li class="divider"></li><li><a class="moveUpThisItem" data-item="'+newNum+'" href="javascript:;">Move Up</a></li><li><a class="moveDownThisItem" data-item="'+newNum+'" href="javascript:;">Move Down</a></li>');
+        $('.btn-group.bigboy').last().find('ul').append('<li class="divider"></li><li><a class="removeThisItem" data-item="'+newNum+'" href="javascript:;">Remove</a></li><li class="divider"></li><li><a class="moveUpThisItem" data-item="'+newNum+'" href="javascript:;">Move Up<span class="glyphicon glyphicon-arrow-up"></span></a></li><li><a class="moveDownThisItem" data-item="'+newNum+'" href="javascript:;">Move Down<span class="glyphicon glyphicon-arrow-down"></span></a></li>');
     }
     function deleteItems(elem) {
         if ($('.clonedInput').length > 1) {
