@@ -41,6 +41,17 @@ $(function () {
             addItems();
         }
     }
+    function saveNodeToLS(val){
+        if(window.localStorage) {
+            if(window.localStorage) {
+                var nodeStock = localStorage.getItem('pgb_SavedNode');
+                if(nodeStock !== null || nodeStock !== undefined){
+                    var tempSave = val+','+nodeStock;
+                    localStorage.setItem('pgb_SavedNode',tempSave)
+                }
+            }
+        }
+    }
     function addItems(){
         if($('#output').css('display') == 'block'){
             $('#output').css('display','none');
@@ -272,17 +283,20 @@ $(function () {
             $(root).css('overflow','auto');
         }
     }
-    function prepareJSON(){
+    function prepareJSON(meth){
         var c = [];
         var len = $('.clonedInput form').length;
             $('.clonedInput form').each(function(){
                 var a = $(this).serializeArray();
                 c.push(a);
-            })
-        outputJson(c);
+            });
+        if(meth == 'full') {
+            outputJson(c,meth);
+        }else if(meth == 'save'){
+            outputJson(c,meth);
+        }
     }
-    function outputJson(aCode){
-        console.log(aCode);
+    function outputJson(aCode,meth){
         var nodes = aCode.length;
         var lastItem = nodes-1;
         var page_model='{\n    "hero": [\n';
@@ -379,17 +393,21 @@ $(function () {
             }
         }
         page_model += '\n      }\n   ]\n}';
-        if($('#help').css('display') == 'block'){
-            $('#help').css('display','none');
+        if(meth == 'full') {
+            if ($('#help').css('display') == 'block') {
+                $('#help').css('display', 'none');
+            }
+            if ($('#html-zone').css('display') == 'block') {
+                $('#html-zone').css('display', 'none');
+            }
+            $('#output').attr('data-reason', 'output');
+            $('#output').css('display', 'block');
+            $('#output textarea').val(page_model);
+            $(root).animate({scrollTop: 0}, 500).css('overflow', 'hidden');
+            errorHandler();
+        }else{
+            saveNodeToLS(page_model);
         }
-        if($('#html-zone').css('display') == 'block'){
-            $('#html-zone').css('display','none');
-        }
-        $('#output').attr('data-reason','output');
-        $('#output').css('display','block');
-        $('#output textarea').val(page_model);
-        $(root).animate({ scrollTop: 0 }, 500).css('overflow','hidden');
-        errorHandler()
     }
     function urlExists(testUrl) {
         var http = jQuery.ajax({
@@ -606,11 +624,16 @@ $(function () {
     }).on('click','.btnDel',function () {
         deleteItems('last');
     }).on('click','.submit_json',function (){
-        prepareJSON();
+        prepareJSON('full');
     }).on('click','.translate_json',function (){
         $('.overlay_message').html('');
         $(root).animate({ scrollTop: 0 }, 500).css('overflow','hidden');
         $('#output').attr('data-reason','translate').css('display','block').find('#output_code').val('').attr('placeholder','Paste you code here');
+    }).on('click','.save_json',function (){
+        prepareJSON('save')
+    }).on('click','.import_json',function (){
+        var a = localStorage.getItem('pgb_SavedNode');
+        jsonToForm(a);
     }).on('click','.overlay_translate',function (){
         traverseJSON();
     }).on('click','.errors_reset',function (){
@@ -702,7 +725,7 @@ $(function () {
     });
     $(document).on('keydown', function(e) {
         if (e.keyCode == 71 && e.ctrlKey) {
-            prepareJSON();
+            prepareJSON('full');
             e.preventDefault();
         }
         if (e.keyCode == 82 && e.ctrlKey) {
