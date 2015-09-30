@@ -66,7 +66,10 @@ $font_1: Montserrat;
   //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
   box-shadow: 0 20px 20px -10px $black_30;
 }
-
+.help_content{
+  border-radius: 5px;
+  border-left: 5px solid #d9534f;
+}
 //original selectors
 //#O_o a:link, #O_o a:visited
 %extend_4 {
@@ -373,7 +376,7 @@ label {
   height: 570px;
   position: absolute;
   overflow-y: auto;
-  width: 95%;
+  width: auto;
   h4 {
     font-weight: bold;
   }
@@ -901,7 +904,7 @@ label {
 }
 .open>.dropdown-menu {
   display: block;
-  min-width: 250px;
+  min-width: 280px;
 }
 .btn-group.bigboy button {
   display: inline;
@@ -1047,4 +1050,7 @@ span.show_me_how {
   border-left: 6px solid #5bc0de;
   border-radius: 5px;
   box-shadow: inset 10px 1px 100px -58px rgba(0, 0, 0, 0.5);
+}
+.main_nav[role="menu"] {
+  border-left: 5px solid #398439;
 }
