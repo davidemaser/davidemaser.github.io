@@ -1,14 +1,5 @@
 var root = 'html,body';
 $(function () {
-    var winHeight = $(window).height(),
-        docHeight = $(document).height(),
-        progressBar = $('progress'),
-        max, value;
-
-    /* Set the max scrollable area */
-    max = docHeight - winHeight;
-    progressBar.attr('max', max);
-
     $('.date_obj').datetimepicker({format: 'MM/DD/YYYY HH:mm'});
     if(window.localStorage) {
         var tm = localStorage.getItem('pgb_Theme');
@@ -19,6 +10,27 @@ $(function () {
         }
     }else{
         $('html').attr('data-theme', 'light');
+    }
+    function scrollState(meth){
+        var winHeight = $(window).height(),
+            docHeight = $(document).height(),
+            progressBar = $('progress'),
+            max, value;
+        max = docHeight - winHeight;
+        progressBar.attr('max', max);
+        if(meth == 'a') {
+            winHeight = $(window).height(),
+                docHeight = $(document).height();
+
+            max = docHeight - winHeight;
+            progressBar.attr('max', max);
+
+            value = $(window).scrollTop();
+            progressBar.attr('value', value);
+        }else if(meth == 'b'){
+            value = $(window).scrollTop();
+            progressBar.attr('value', value);
+        }
     }
     function OpenInNewTab(url) {
         var win = window.open(url, '_blank');
@@ -87,9 +99,7 @@ $(function () {
             if ($('#output').css('display') == 'block') {
                 $('#output').css('display', 'none');
             }
-            // Confirmation dialog box. Works on all desktop browsers and iPhone.
                 //var num = $('.clonedInput').length;
-                // how many "duplicatable" input fields we currently have
                 if (elem == 'last') {
                     var a = $('.clonedInput:last').attr('id'),
                         b = a.replace('entry','');
@@ -102,6 +112,7 @@ $(function () {
                         $('.btnAdd').attr('disabled', false).prop('value', "add section");
                     });
                     $('.snapTo').find('.gotoItem[data-item="'+b+'"]').parent().remove();
+                    scrollState('a');
                 } else {
                     $('#entry' + elem).slideUp('slow', function () {
                         $(this).remove();
@@ -112,11 +123,9 @@ $(function () {
                         $('.btnAdd').attr('disabled', false).prop('value', "add section");
                     });
                     $('.snapTo').find('.gotoItem[data-item="'+elem+'"]').parent().remove();
+                    scrollState('a');
                 }
-
-                console.log(b);
                 return false; // Removes the last section you added
-
         }
     }
     function validateJSON(){
@@ -494,21 +503,7 @@ $(function () {
             $(target).removeClass('renderSmall');
         }
     }
-    function scrollState(meth){
-        if(meth == 'a') {
-            winHeight = $(window).height(),
-                docHeight = $(document).height();
 
-            max = docHeight - winHeight;
-            progressBar.attr('max', max);
-
-            value = $(window).scrollTop();
-            progressBar.attr('value', value);
-        }else if(meth == 'b'){
-            value = $(window).scrollTop();
-            progressBar.attr('value', value);
-        }
-    }
     $('.btnAdd').attr('disabled', false);
     // Disable the "remove" button
     $('.btnDel').attr('disabled', true);
