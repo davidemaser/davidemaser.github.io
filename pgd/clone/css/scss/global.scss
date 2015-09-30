@@ -66,10 +66,7 @@ $font_1: Montserrat;
   //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
   box-shadow: 0 20px 20px -10px $black_30;
 }
-.help_content{
-  border-radius: 5px;
-  border-left: 5px solid #d9534f;
-}
+
 //original selectors
 //#O_o a:link, #O_o a:visited
 %extend_4 {
@@ -363,6 +360,8 @@ label {
 }
 .help_content {
   @extend %extend_3;
+  border-radius: 5px;
+  border-left: 5px solid #d9534f;
   h2 {
     margin-bottom: 30px;
     text-transform: uppercase;
@@ -1029,10 +1028,20 @@ input.hero_num {
   }
 }
 span.show_me_how {
-  text-decoration: underline;
   cursor: pointer;
   color: green;
-  font-weight: bold;
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  &:before {
+    content: "\e085";
+  }
 }
 .preview_warning {
   position: absolute;
@@ -1053,4 +1062,39 @@ span.show_me_how {
 }
 .main_nav[role="menu"] {
   border-left: 5px solid #398439;
+}
+.custom_prog {
+  /* Positioning */
+  position: fixed;
+  left: 0;
+  top: 62px;
+
+  /* Dimensions */
+  width: 100%;
+  height: 2px;
+
+  /* Reset the appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* Get rid of the default border in Firefox/Opera. */
+  border: none;
+
+  /* Progress bar container for Firefox/IE10+ */
+  background-color: transparent;
+
+  /* Progress bar value for IE10+ */
+  color: #5bc0de;
+}
+.custom_prog::-webkit-progress-bar {
+  background-color: transparent;
+}
+
+.custom_prog::-webkit-progress-value {
+  background-color: #5bc0de;
+}
+
+.custom_prog::-moz-progress-bar {
+  background-color: #5bc0de;
 }

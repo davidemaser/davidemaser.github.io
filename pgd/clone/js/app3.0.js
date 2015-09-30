@@ -1,5 +1,14 @@
 var root = 'html,body';
 $(function () {
+    var winHeight = $(window).height(),
+        docHeight = $(document).height(),
+        progressBar = $('progress'),
+        max, value;
+
+    /* Set the max scrollable area */
+    max = docHeight - winHeight;
+    progressBar.attr('max', max);
+
     $('.date_obj').datetimepicker({format: 'MM/DD/YYYY HH:mm'});
     if(window.localStorage) {
         var tm = localStorage.getItem('pgb_Theme');
@@ -71,6 +80,7 @@ $(function () {
         }, 500);
         $('.btn-group.bigboy').last().find('ul').append('<li class="divider"></li><li><a class="removeThisItem" data-item="'+newNum+'" href="javascript:;">Remove</a></li><li class="divider"></li><li><a class="moveUpThisItem" data-item="'+newNum+'" href="javascript:;">Move Up<span class="glyphicon glyphicon-arrow-up"></span></a></li><li><a class="moveDownThisItem" data-item="'+newNum+'" href="javascript:;">Move Down<span class="glyphicon glyphicon-arrow-down"></span></a></li>');
         $('#entry' + newNum).find('.mod-radio').find('input').first().prop('checked',true);
+        scrollState('a');
     }
     function deleteItems(elem) {
         if ($('.clonedInput').length > 1) {
@@ -448,8 +458,9 @@ $(function () {
             }
         }
     }
-    function previewFeature(heroItem,mode){
-        var dt = $('#entry'+heroItem).find('form').serializeArray(),
+
+    function previewFeature(heroItem, mode) {
+        var dt = $('#entry' + heroItem).find('form').serializeArray(),
             start = dt[0].value,
             img = dt[7].value,
             titleColor = dt[4].value,
@@ -460,29 +471,44 @@ $(function () {
             container = '#html-zone',
             target = '.render_output',
             warningString = '<div class="preview_warning" title="The position and size of the background may display differently than on the live site.">Preview may differ from actual site render</div>';
-        if(mode == 'small'){
+        if (mode == 'small') {
             var outputString = '<div class="five columns jose pedro homepage_content event mini-spacers animated fadeIn delay-05s"><div id="event-active-today">';
-        }else{
+        } else {
             var outputString = '';
         }
-            outputString += '<div data-instance="slide-0" data-str="'+img+'"';
-            outputString += ' data-promote="true" id="slide-0" class="hero fwidth root-0"><div data-object-pos="false-false" class="bcg skrollable skrollable-between" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -200px;" data-anchor-target="#slide-0"';
-            outputString += ' style="background-image: url('+img+'); background-position: 50% -55.2631578947369px;"><div class="hsContainer"><div class="hsContent center skrollable skrollable-before" data-100-top="opacity: 1" data-25-top="opacity: 0" data-anchor-target="#slide-0 .animated" style="opacity: 1;">';
-            outputString += '<div itemscope="" itemtype="http://schema.org/Event" class="animated fadeIn delay-025s hero_head"><p itemprop="startDate" content="'+start+'" class="subtitle timedown is-countdown" id="countdown0" style="opacity:0.9"><span>Ends In  <b>11:29:39</b> </span></p>';
-            outputString += '<h1 class="headline herobanner" style="'+titleColor+'">'+titleText+'</h1><p class="subtitle herobanner">'+subTitleText+'</p><a data-bleed="" href="'+buttonLink+'" class="action_button hero"><span class="trn" data-trn-key="">'+buttonLabel+'</span></a></div></div></div></div></div>';
-        if(mode == 'small'){
+        outputString += '<div data-instance="slide-0" data-str="' + img + '"';
+        outputString += ' data-promote="true" id="slide-0" class="hero fwidth root-0"><div data-object-pos="false-false" class="bcg skrollable skrollable-between" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -200px;" data-anchor-target="#slide-0"';
+        outputString += ' style="background-image: url(' + img + '); background-position: 50% -55.2631578947369px;"><div class="hsContainer"><div class="hsContent center skrollable skrollable-before" data-100-top="opacity: 1" data-25-top="opacity: 0" data-anchor-target="#slide-0 .animated" style="opacity: 1;">';
+        outputString += '<div itemscope="" itemtype="http://schema.org/Event" class="animated fadeIn delay-025s hero_head"><p itemprop="startDate" content="' + start + '" class="subtitle timedown is-countdown" id="countdown0" style="opacity:0.9"><span>Ends In  <b>11:29:39</b> </span></p>';
+        outputString += '<h1 class="headline herobanner" style="' + titleColor + '">' + titleText + '</h1><p class="subtitle herobanner">' + subTitleText + '</p><a data-bleed="" href="' + buttonLink + '" class="action_button hero"><span class="trn" data-trn-key="">' + buttonLabel + '</span></a></div></div></div></div></div>';
+        if (mode == 'small') {
             outputString += '</div></div><div style="clear:both"></div>';
-        }else if(mode == 'large'){
+        } else if (mode == 'large') {
             outputString += warningString;
         }
         $(container).show();
         $(target).empty().append(outputString);
-        if(mode == 'small'){
+        if (mode == 'small') {
             $(target).addClass('renderSmall');
-        }else if(mode == 'large'){
+        } else if (mode == 'large') {
             $(target).removeClass('renderSmall');
         }
+    }
+    function scrollState(meth){
+        if(meth == 'a') {
+            winHeight = $(window).height(),
+                docHeight = $(document).height();
+
+            max = docHeight - winHeight;
+            progressBar.attr('max', max);
+
+            value = $(window).scrollTop();
+            progressBar.attr('value', value);
+        }else if(meth == 'b'){
+            value = $(window).scrollTop();
+            progressBar.attr('value', value);
         }
+    }
     $('.btnAdd').attr('disabled', false);
     // Disable the "remove" button
     $('.btnDel').attr('disabled', true);
@@ -670,14 +696,16 @@ $(function () {
         }
     });
 
-    $(window).scroll(function() {
+    $(window).on('scroll', function() {
         if($(window).scrollTop() + $(window).height() == $(document).height()) {
             $('.copy-zone').fadeIn(500);
         }else{
             $('.copy-zone').fadeOut(500);
         }
+    }).on('resize', function() {
+        scrollState('a');
     });
-    $(document).keydown(function(e) {
+    $(document).on('keydown', function(e) {
         if (e.keyCode == 71 && e.ctrlKey) {
             prepareJSON();
             e.preventDefault();
@@ -706,6 +734,8 @@ $(function () {
             window.open("http://davidemaser.github.io/pgd/release.html", "_blank","scrollbars=no,resizable=no,height=600, width=800, status=yes, toolbar=no, menubar=no, location=no");
             e.preventDefault();
         }
+    }).on('scroll', function(){
+        scrollState('b');
     });
     function launchBats(){
         var r = Math.random,
