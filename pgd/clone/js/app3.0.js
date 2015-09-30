@@ -78,7 +78,6 @@ $(function () {
                 $('#output').css('display', 'none');
             }
             // Confirmation dialog box. Works on all desktop browsers and iPhone.
-            if (confirm("Are you sure you wish to remove this section? This cannot be undone.")) {
                 //var num = $('.clonedInput').length;
                 // how many "duplicatable" input fields we currently have
                 if (elem == 'last') {
@@ -107,9 +106,7 @@ $(function () {
 
                 console.log(b);
                 return false; // Removes the last section you added
-            } else {
-                alert('You cannot remove the first Hero Item.')
-            }
+
         }
     }
     function validateJSON(){
@@ -245,6 +242,7 @@ $(function () {
             $($this).find('.objButtonPopup option[value="'+aCode[i].popUpLink+'"]').attr('selected',true);
             $($this).find('.objButtonPopupLink option[value="'+aCode[i].button.popUpLinkID+'"]').attr('selected',true);
             $($this).find('.objCountdownShow option[value="'+aCode[i].showCountdown+'"]').attr('selected',true);
+            $($this).find('.objHeroSticky option[value="'+aCode[i].sticky+'"]').attr('selected',true);
             //$($this).find('.objHeroTitleShow').val(aCode[i].showTitle);
             //$($this).find('.objHeroSubtitleShow').val(aCode[i].showSubTitle);
             $($this).find('.objHeroPromote option[value="'+aCode[i].promote+'"]').attr('selected',true);
@@ -296,26 +294,36 @@ $(function () {
             }else{
                 elemC = aCode[i][17].value;
             }
-            if(aCode[i][19] !== undefined) {
-                if (aCode[i][19].value == '' || aCode[i][19].value == null || aCode[i][19].value == undefined) {
+            if(aCode[i][20] !== undefined) {
+                if (aCode[i][20].value == '' || aCode[i][20].value == null || aCode[i][20].value == undefined) {
                     var elemD = true;
                 } else {
-                    elemD = aCode[i][19].value;
+                    elemD = aCode[i][20].value;
                 }
             }else{
                 elemD = true;
             }
             if(aCode[i][18] !== undefined) {
                 if (aCode[i][18].value == '' || aCode[i][18].value == null || aCode[i][18].value == undefined) {
+                    var elemDD = false;
+                } else {
+                    elemDD = aCode[i][18].value;
+                }
+            }else{
+                elemDD = false;
+            }
+            if(aCode[i][19] !== undefined) {
+                if (aCode[i][19].value == '' || aCode[i][19].value == null || aCode[i][19].value == undefined) {
                     var elemE = 0;
                 } else {
-                    elemE = aCode[i][18].value;
+                    elemE = aCode[i][19].value;
                 }
             }else{
                 elemE = 0;
             }
             page_model += '{\n        "heroId": "hero-elem'+i+'",';
             page_model += '\n        "active": '+elemD+',';
+            page_model += '\n        "sticky": '+elemDD+',';
             page_model += '\n        "showCountdown": '+elemA+',';
             page_model += '\n        "popUpLink": '+elemB+',';
             page_model += '\n        "date": {';
@@ -553,7 +561,11 @@ $(function () {
         OpenInNewTab('https://github.com/davidemaser/');
     }).on('click','.showHelp',function(){
         $('#help').toggle();
-        $(root).animate({ scrollTop: 0 }, 500);
+        if($('#help').css('display') == 'block'){
+            $(root).animate({ scrollTop: 0 }, 500).css('overflow','hidden');
+        }else{
+            $(root).css('overflow','auto');
+        }
         if($('#output').css('display') == 'block'){
             $('#output').css('display','none');
         }
@@ -563,6 +575,7 @@ $(function () {
     }).on('click','.help_close',function(){
         if($('#help').css('display') == 'block'){
             $(this).parent().parent().hide();
+            $(root).css('overflow','auto');
         }
     }).on('click','.renderer_close',function(){
         if($('#html-zone').css('display') == 'block'){

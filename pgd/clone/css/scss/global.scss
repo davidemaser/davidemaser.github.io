@@ -258,6 +258,7 @@ label {
 .mod-radio {
   padding-left: 50px;
   border-left: 6px solid $color_lima_approx;
+  border-radius: 5px;
 }
 .panel-body {
   position: relative;
@@ -1039,4 +1040,11 @@ span.show_me_how {
   border-left: 3px solid rgba(0, 0, 0, 0.51);
   border-top: 3px solid rgba(0, 0, 0, 0.51);
   cursor: pointer;
+}
+.grouped_feature {
+  padding: 0 20px 20px 20px;
+  background-color: rgba(221, 221, 221, 0.4);
+  border-left: 6px solid #5bc0de;
+  border-radius: 5px;
+  box-shadow: inset 10px 1px 100px -58px rgba(0, 0, 0, 0.5);
 }
