@@ -613,6 +613,11 @@ label {
     background-attachment: fixed;
     background-size: cover;
   }
+  &.renderSmall .bcg {
+    background-repeat: no-repeat;
+    background-attachment: initial;
+    background-size: cover;
+  }
   .hsContainer {
     height: 550px;
     display: table;
@@ -1024,4 +1029,14 @@ span.show_me_how {
   cursor: pointer;
   color: green;
   font-weight: bold;
+}
+.preview_warning {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 5px;
+  bottom: 10px;
+  right: 30px;
+  border-left: 3px solid rgba(0, 0, 0, 0.51);
+  border-top: 3px solid rgba(0, 0, 0, 0.51);
+  cursor: pointer;
 }

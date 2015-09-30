@@ -28,7 +28,7 @@ $(function () {
             newNum  = new Number(num + 1),      // The numeric ID of the new input field being added, increasing by 1 each time
             newElem = $('#entry' + num).clone().attr('id', 'entry' + newNum); // create the new element via clone(), and manipulate it's ID using newNum value
 
-        newElem.find('.heading-reference').attr('id', 'ID' + newNum + '_reference').attr('name', 'ID' + newNum + '_reference').html('<div class="btn-group bigboy"><button type="button" class="btn btn-info">HERO ITEM <span class="label label-default">' + newNum+'</span></button><button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button><ul class="dropdown-menu"><li><a class="previewItem large" href="javascript:;" data-hero="'+newNum+'">Preview Large</a></li><li><a class="previewItem small" href="javascript:;" data-hero="1">Preview Small</a></li></ul></div>');
+        newElem.find('.heading-reference').attr('id', 'ID' + newNum + '_reference').attr('name', 'ID' + newNum + '_reference').html('<div class="btn-group bigboy"><button type="button" class="btn btn-info">HERO ITEM <span class="label label-default">' + newNum+'</span></button><button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button><ul class="dropdown-menu"><li><a class="previewItem large" href="javascript:;" data-hero="'+newNum+'">Preview Large</a></li><li><a class="previewItem small" href="javascript:;" data-hero="'+newNum+'">Preview Small</a></li></ul></div>');
         newElem.attr('data-split',newNum);
 
         newElem.find('.label_ttl').attr('for', 'ID' + newNum + '_title');
@@ -450,7 +450,8 @@ $(function () {
             buttonLabel = dt[9].value,
             buttonLink = dt[11].value,
             container = '#html-zone',
-            target = '.render_output';
+            target = '.render_output',
+            warningString = '<div class="preview_warning" title="The position and size of the background may display differently than on the live site.">Preview may differ from actual site render</div>';
         if(mode == 'small'){
             var outputString = '<div class="five columns jose pedro homepage_content event mini-spacers animated fadeIn delay-05s"><div id="event-active-today">';
         }else{
@@ -463,6 +464,8 @@ $(function () {
             outputString += '<h1 class="headline herobanner" style="'+titleColor+'">'+titleText+'</h1><p class="subtitle herobanner">'+subTitleText+'</p><a data-bleed="" href="'+buttonLink+'" class="action_button hero"><span class="trn" data-trn-key="">'+buttonLabel+'</span></a></div></div></div></div></div>';
         if(mode == 'small'){
             outputString += '</div></div><div style="clear:both"></div>';
+        }else if(mode == 'large'){
+            outputString += warningString;
         }
         $(container).show();
         $(target).empty().append(outputString);
