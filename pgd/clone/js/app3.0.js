@@ -680,6 +680,10 @@ $(function () {
         }, 500);
         $('.help_item').css('opacity',0.4);
         $('.help_item[data-helper="'+a+'"]').css('opacity',1);
+    }).on('click','.helpItemReset',function(){
+        $('.help_item').animate({
+            opacity: 1
+        }, 500);
     }).on('click','.settings_toggle',function(){
         var a = $(this).data('theme');
         $('html').attr('data-theme',a);
