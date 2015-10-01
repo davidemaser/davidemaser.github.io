@@ -905,22 +905,27 @@ label {
   display: block;
   min-width: 280px;
 }
-.btn-group.bigboy button {
-  display: inline;
-  padding: .2em .6em .3em;
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 1;
-  color: $white;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
-  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-  border-radius: 5px;
-}
-.bigboy button .label {
-  font-size: 15px;
-  vertical-align: middle;
+.btn-group.bigboy {
+  button {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+    color: $white;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 5px;
+    .label {
+      font-size: 15px;
+      vertical-align: middle;
+    }
+  }
+  &.pushDown{
+    margin-bottom: 30px;
+  }
 }
 h4.push_block {
   margin-top: 40px;
@@ -1112,4 +1117,7 @@ span.show_me_how {
   width: 50%;
   margin: 0 auto;
   text-align: center;
+}
+.helpItem{
+  cursor: pointer;
 }

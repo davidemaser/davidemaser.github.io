@@ -298,10 +298,39 @@
         <div id="help" data-reason="help" data-default="panel1">
             <div class="blackify_overlay"><span class="help_close label label-danger">close</span>
 
-                <div class="help_content"><h2><span class="label label-danger">Help</span></h2>
+                <div class="help_content"><div class="btn-group bigboy pushDown">
+                    <button type="button" class="btn btn-danger">HELP</button>
+                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="helpItem" data-target="1">Promote Hero</a></li>
+                        <li><a class="helpItem" data-target="2">Translate Hero JSON</a></li>
+                        <li><a class="helpItem" data-target="3">Managing Errors</a></li>
+                        <li><a class="helpItem" data-target="4">Hero Item Delay</a></li>
+                        <li><a class="helpItem" data-target="5">Sticky Hero Items</a></li>
+                    </ul>
+                </div>
 
                     <div class="help_panel_holder">
-                        <h4>Translating Hero JSON</h4>
+                        <div class="help_item"  id="hlp1" data-helper="1">
+                        <h4>Promote Hero</h4>
+
+                        <p><span class="label label-primary">Usage</span> Promotes a specific hero to the main hero panel if more than one hero is active at the same time</p>
+
+                        <p>This feature allows you to define which of a number of hero banners takes precedent over the
+                        other heros and is "promoted" to the main hero panel when it is active.</p>
+
+                        <p>To use this functionality, select YES from the promote hero dropdown. The selected hero will appear
+                            in the main hero panel when it is active and all other active hero panels will slide down to the
+                            vignette panel.</p>
+                        <p><span class="label label-warning">Note</span> The sticky feature overrides the promote feature.</p>
+                        <p><span class="label label-danger">Common Errors</span> If you promote more than one hero item, they will BOTH show
+                            up in the main hero panel. This is a feature not a bug.</p>
+                        </div>
+                        <div class="help_item" id="hlp2" data-helper="2">
+                            <h4 class="push_block">Translating Hero JSON</h4>
 
                         <p><span class="label label-primary">Usage</span> Copy existing hero data into a new form
                             instance</p>
@@ -314,6 +343,8 @@
                             JSON. The function will create the form items and populate them with data from the JSON you
                             pasted. You can now add new hero items to the form and generate a new JSON file once you're
                             done.</p>
+                            </div>
+                        <div class="help_item" id="hlp3" data-helper="3">
                         <h4 class="push_block">Managing Errors</h4>
 
                         <p><span class="label label-primary">Usage</span> Find and correct errors before exporting JSON</p>
@@ -323,6 +354,8 @@
                         <p>Click on this new button to show a dropdown list of errors found during the JSON generation process. To go directly to the error in the form, click on it. The
                         problematic form element will be highlighted and an error icon will appear to the right of the input area.</p>
                         <p>To reset errors either click on the input area or select Actions > Reset Errors</p>
+                            </div>
+                        <div class="help_item" id="hlp4" data-helper="4">
                         <h4 class="push_block">Hero Item Delay</h4>
 
                         <p><span class="label label-primary">Usage</span> Offset the display of hero items</p>
@@ -333,7 +366,8 @@
                         <p>To set the offset, add a numeric value (corresponding to a number of hours) into the <i>Show X hours Before Active</i> input field. Leave the value
                         at 0 if you don't want to use the offset feature. It you leave the field empty, the default value 0 will be used.</p>
                         <p><span class="label label-warning">Note</span> The offset value must be between 1 and 24</p>
-
+</div>
+                        <div class="help_item" id="hlp5" data-helper="5">
                         <h4 class="push_block">Sticky Hero Items</h4>
 
                         <p><span class="label label-primary">Usage</span> Constrain the hero item to the vignette panel</p>
@@ -341,6 +375,9 @@
                         <p>This feature allows you to constrain a hero item to the vignette panel (below the main hero) and keep it from ever showing in the main panel section. The feature overwrites all other display options (promote...)</p>
                         <p>This can be very useful for minor sale items that you don't want to advertise with a large banner. This can also be useful for items which do not have a large resolution image.</p>
                         <p>The sticky option can be revoked before, or during the sale item's activity.</p>
+                        <p><span class="label label-danger">Common Errors</span> Make sure at least one of the hero items is NOT a sticky hero. If
+                        all items have the sticky hero attribute, no hero item will appear in the main hero panel.</p>
+                            </div>
 
                     </div>
                 </div>

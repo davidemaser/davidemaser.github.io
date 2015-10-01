@@ -673,6 +673,13 @@ $(function () {
             $(this).parent().find('.input_alerts').remove();
             $(this).unwrap();
         }
+    }).on('click','.helpItem',function(){
+        var a = $(this).data('target');
+        $('.help_panel_holder').animate({
+            scrollTop: $('.help_item[data-helper="'+a+'"]').offset().top
+        }, 500);
+        $('.help_item').css('opacity',0.4);
+        $('.help_item[data-helper="'+a+'"]').css('opacity',1);
     }).on('click','.settings_toggle',function(){
         var a = $(this).data('theme');
         $('html').attr('data-theme',a);
