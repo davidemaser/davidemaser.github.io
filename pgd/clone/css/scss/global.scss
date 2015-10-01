@@ -1098,3 +1098,18 @@ span.show_me_how {
 .custom_prog::-moz-progress-bar {
   background-color: #5bc0de;
 }
+.panel-body.bottom_level_bt {
+  display:none;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 50px;
+  z-index: 99;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.message_pane {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}

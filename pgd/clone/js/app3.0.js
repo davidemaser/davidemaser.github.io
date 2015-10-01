@@ -1,4 +1,10 @@
 var root = 'html,body';
+function panelAlert(mess){
+    var mPane = '.panel-body.bottom_level_bt';
+    $(mPane).show();
+    $(mPane).find('.message_pane').html(mess);
+    setTimeout("$('.panel-body.bottom_level_bt').hide()",5000);
+}
 $(function () {
     $('.date_obj').datetimepicker({format: 'MM/DD/YYYY HH:mm'});
     if(window.localStorage) {
@@ -40,10 +46,12 @@ $(function () {
         for(var i=0;i<num;i++) {
             addItems();
         }
+        panelAlert('Hero Items Added');
     }
     function saveNodeToLS(val){
         if(window.localStorage) {
-                    localStorage.setItem('pgb_SavedNode',val)
+                    localStorage.setItem('pgb_SavedNode',val);
+            panelAlert('Data Saved To Local Storage');
             }
     }
     function addItems(){
@@ -98,6 +106,7 @@ $(function () {
         $('.btn-group.bigboy').last().find('ul').append('<li class="divider"></li><li><a class="removeThisItem" data-item="'+newNum+'" href="javascript:;">Remove</a></li><li class="divider"></li><li><a class="moveUpThisItem" data-item="'+newNum+'" href="javascript:;">Move Up<span class="glyphicon glyphicon-arrow-up"></span></a></li><li><a class="moveDownThisItem" data-item="'+newNum+'" href="javascript:;">Move Down<span class="glyphicon glyphicon-arrow-down"></span></a></li>');
         $('#entry' + newNum).find('.mod-radio').find('input').first().prop('checked',true);
         scrollState('a');
+        panelAlert('Hero Item Added');
     }
     function deleteItems(elem) {
         if ($('.clonedInput').length > 1) {
@@ -226,8 +235,12 @@ $(function () {
         if($('.blackify_overlay textarea').val() !== '' || localStorage.getItem('pgb_SavedNode') !== '') {
             if(storage == false) {
                 var ctc = $('.blackify_overlay textarea').val();
-                    }else if(storage == true) {
-                    ctc = localStorage.getItem('pgb_SavedNode').replace(',null','');
+            }else if(storage == true) {
+                if(localStorage.getItem('pgb_SavedNode') !== undefined && localStorage.getItem('pgb_SavedNode') !== null && localStorage.getItem('pgb_SavedNode') !== '') {
+                    ctc = localStorage.getItem('pgb_SavedNode').replace(',null', '');
+                }else{
+                    panelAlert('No Data Found In Local Storage');
+                }
             }
                 var prs = JSON.parse(ctc),
                 obj = prs.hero,
@@ -245,6 +258,7 @@ $(function () {
                 formArray.push(obj[i]);
             }
             jsonToForm(formArray);
+            panelAlert('Data Translated To Form');
         }else{
             alert('Please generate or paste JSON before using this function')
         }
@@ -294,6 +308,7 @@ $(function () {
             outputJson(c,meth);
         }
     }
+
     function outputJson(aCode,meth){
         var nodes = aCode.length;
         var lastItem = nodes-1;
@@ -639,6 +654,19 @@ $(function () {
         $(root).css('overflow','auto');
         $('.input_holders').find('.input_alerts').remove();
         $('.input_holders').contents().unwrap();
+        panelAlert('Errors Reset');
+    }).on('click','.form_reset',function (e){
+        $(root).animate({ scrollTop: 0 }, 500).css('overflow','hidden');
+        $('.clonedInput:gt(0)').remove();
+        $('.snapTo').find('li:gt(0)').remove();
+        $('input').val('');
+        $('input,select').attr('style','').attr('placeholder','');
+        $('.errorList').css('display','none');
+        $(root).css('overflow','auto');
+        $('.input_holders').find('.input_alerts').remove();
+        $('.input_holders').contents().unwrap();
+        panelAlert('Form Reset To Default');
+        e.preventDefault();
     }).on('click','input,select',function(){
         $(this).attr('style','').attr('placeholder','');
         if($(this).parent().hasClass('input_holders')) {
@@ -745,8 +773,17 @@ $(function () {
             $('.num_select').focus();
             e.preventDefault();
         }
-        if (e.keyCode == 83 && e.ctrlKey && e.altKey) {
+        if (e.keyCode == 83 && e.ctrlKey && e.shiftKey) {
             prepareJSON('save');
+        }
+        if (e.keyCode == 13 && e.ctrlKey && e.altKey) {
+            $('.overlay_message').html('');
+            $(root).animate({ scrollTop: 0 }, 500).css('overflow','hidden');
+            $('#output').attr('data-reason','translate').css('display','block').find('#output_code').val('').attr('placeholder','Paste you code here');
+            e.preventDefault();
+        }
+        if (e.keyCode == 45 && e.ctrlKey && e.altKey) {
+            traverseJSON(true);
         }
         if (e.keyCode == 191 && e.ctrlKey) {
             window.open("http://davidemaser.github.io/pgd/release.html", "_blank","scrollbars=no,resizable=no,height=600, width=800, status=yes, toolbar=no, menubar=no, location=no");
