@@ -43,14 +43,8 @@ $(function () {
     }
     function saveNodeToLS(val){
         if(window.localStorage) {
-            if(window.localStorage) {
-                var nodeStock = localStorage.getItem('pgb_SavedNode');
-                if(nodeStock !== null || nodeStock !== undefined){
-                    var tempSave = val+','+nodeStock;
-                    localStorage.setItem('pgb_SavedNode',tempSave)
-                }
+                    localStorage.setItem('pgb_SavedNode',val)
             }
-        }
     }
     function addItems(){
         if($('#output').css('display') == 'block'){
@@ -228,10 +222,14 @@ $(function () {
             }
         });
     }
-    function traverseJSON(){
-        if($('.blackify_overlay textarea').val() !== '') {
-            var ctc = $('.blackify_overlay textarea').val(),
-                prs = JSON.parse(ctc),
+    function traverseJSON(storage){
+        if($('.blackify_overlay textarea').val() !== '' || localStorage.getItem('pgb_SavedNode') !== '') {
+            if(storage == false) {
+                var ctc = $('.blackify_overlay textarea').val();
+                    }else if(storage == true) {
+                    ctc = localStorage.getItem('pgb_SavedNode').replace(',null','');
+            }
+                var prs = JSON.parse(ctc),
                 obj = prs.hero,
                 len = obj.length,
                 formItems = $('.clonedInput').length,
@@ -632,10 +630,9 @@ $(function () {
     }).on('click','.save_json',function (){
         prepareJSON('save')
     }).on('click','.import_json',function (){
-        var a = localStorage.getItem('pgb_SavedNode');
-        jsonToForm(a);
+        traverseJSON(true);
     }).on('click','.overlay_translate',function (){
-        traverseJSON();
+        traverseJSON(false);
     }).on('click','.errors_reset',function (){
         $('input,select').attr('style','').attr('placeholder','');
         $('.errorList').css('display','none');
@@ -747,6 +744,9 @@ $(function () {
             }
             $('.num_select').focus();
             e.preventDefault();
+        }
+        if (e.keyCode == 83 && e.ctrlKey && e.altKey) {
+            prepareJSON('save');
         }
         if (e.keyCode == 191 && e.ctrlKey) {
             window.open("http://davidemaser.github.io/pgd/release.html", "_blank","scrollbars=no,resizable=no,height=600, width=800, status=yes, toolbar=no, menubar=no, location=no");
