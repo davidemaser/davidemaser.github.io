@@ -1,11 +1,11 @@
 {
   "project":{
     "name":"Page Builder",
-    "version":"3.0.2",
-    "revision":"12",
+    "version":"3.1",
+    "revision":"8",
     "downloadlink":"https://drive.google.com/file/d/0B4onXKnKkE6AY0JiVlZ3bG9scmM/view?usp=sharing",
     "semantic":{
-      "build":10,
+      "build":18,
       "language":["js","jquery","json","css","html"],
       "externals":["jquery","bootstrap","custom font","versioning file"],
       "minified":true
@@ -51,6 +51,15 @@
         "issue":"url schema included",
         "fix":{
           "solution":"remove url schema",
+          "applied":true
+        }
+      },
+      {
+        "file":"app3.0.js",
+        "line":366,
+        "issue":"recursive JSON error",
+        "fix":{
+          "solution":"recode JSON base schema",
           "applied":true
         }
       }
@@ -138,6 +147,30 @@
           "scoped":true,
           "version":1.8,
           "candidate":2,
+          "request":true
+        }
+      },
+      {
+        "line":"multi",
+        "file":"app3.0.js",
+        "structure":"add",
+        "utility":"Sticky Hero",
+        "appstatus":{
+          "scoped":true,
+          "version":"3.0.1",
+          "candidate":"3.0.2",
+          "request":true
+        }
+      },
+      {
+        "line":"multi",
+        "file":"app3.0.js",
+        "structure":"add",
+        "utility":"Local Storage Save/Load",
+        "appstatus":{
+          "scoped":true,
+          "version":"3.0.2",
+          "candidate":"3.1",
           "request":true
         }
       }
@@ -530,6 +563,34 @@
           {
             "item":"Added sticky hero functionality",
             "revision":"minor",
+            "impact":"global",
+            "codestatus":"working"
+          }
+        ]
+      },
+      {
+        "version":"3.0.3",
+        "date":"10/01/2015",
+        "failsafe":"minor",
+        "author":"David Maser",
+        "codeblocks":[
+          {
+            "item":"Added multiple UI/UX features",
+            "revision":"minor",
+            "impact":"global",
+            "codestatus":"working"
+          }
+        ]
+      },
+      {
+        "version":"3.1",
+        "date":"10/02/2015",
+        "failsafe":"major",
+        "author":"David Maser",
+        "codeblocks":[
+          {
+            "item":"Added save to and load from Local Storage feature",
+            "revision":"major",
             "impact":"global",
             "codestatus":"working"
           }
