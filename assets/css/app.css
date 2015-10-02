@@ -166,7 +166,7 @@ p.deprecated{
 }
 .bks-tutorial {
     display: none;
-    position: absolute;
+    position: fixed;
     left: 170px;
     width: 450px;
     height: auto;
@@ -175,7 +175,7 @@ p.deprecated{
 }
 .pgbuilder-zone {
     display: none;
-    position: absolute;
+    position: fixed;
     right: 170px;
     width: 450px;
     height: auto;
