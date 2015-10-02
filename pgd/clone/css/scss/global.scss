@@ -196,7 +196,7 @@ html[data-theme="dark"] {
     height: 100%;
     margin: 0 auto;
     padding: 50px;
-    background-color: $color_white_60_approx;
+    background-color: rgba(0, 0, 0, 0.7);
   }
   body {
     background-color: $color_storm_dust_approx;
@@ -207,6 +207,39 @@ html[data-theme="dark"] {
   .panel-body:not(.input-group) {
     background-color: $black;
   }
+  .form-control:focus {
+    color: #fff;
+  }
+  .grouped_feature{
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .inner_message{
+    color:#fff;
+  }
+  .form-control:focus {
+    color: #fff;
+  }
+
+  .inner_message {
+    color: #fff;
+  }
+
+  .dropdown-menu {
+    background-color: #666;
+    color: #fff;
+  }
+
+  .dropdown-menu a {
+    color: #fff;
+    &:hover {
+      background-color: #555;
+    }
+  }
+
+  .dropdown-menu .divider {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
 }
 span {
   &.overlay_close {
@@ -259,6 +292,10 @@ label {
   padding-left: 50px;
   border-left: 6px solid $color_lima_approx;
   border-radius: 5px;
+  transition:all 0.7s;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+  }
 }
 .panel-body {
   position: relative;
@@ -283,6 +320,13 @@ label {
   font-size: 22px;
   margin-left: 5px;
   cursor: pointer;
+  .label {
+    border-left: 10px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.5s;
+    &:hover {
+      border-radius: 0;
+    }
+  }
 }
 .clonedInput {
   //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
@@ -924,7 +968,7 @@ label {
     }
   }
   &.pushDown{
-    margin-bottom: 30px;
+    margin: 15px 0 30px 0;
   }
 }
 h4.push_block {
@@ -1062,8 +1106,14 @@ span.show_me_how {
   padding: 0 20px 20px 20px;
   background-color: rgba(221, 221, 221, 0.4);
   border-left: 6px solid #5bc0de;
+  border-right: 6px solid rgba(91, 192, 222, 0.20);
   border-radius: 5px;
   box-shadow: inset 10px 1px 100px -58px rgba(0, 0, 0, 0.5);
+  transition:all 0.5s;
+  &:hover {
+    border-right: 6px solid #5bc0de;
+    border-left: 6px solid rgba(91,192,222,0.2);
+  }
 }
 .main_nav[role="menu"] {
   border-left: 5px solid #398439;
@@ -1134,4 +1184,11 @@ span.show_me_how {
 }
 .helpItem{
   cursor: pointer;
+}
+.form-control{
+  transition:all 0.5s!important;
+  &:focus {
+    background-color: rgba(0,0,0,0.05) !important;
+    border-left: 6px solid #5bc0de;
+  }
 }

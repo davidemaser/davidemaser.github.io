@@ -236,7 +236,7 @@ $(function () {
     function registerErrorButtons(num,elem,item,prob,die){
         $('body').on('click','.errorItem[data-item="'+item+'"]',function(){
             if(die == true){
-                $('#entry'+num).find('.'+elem).css('background-color','rgba(238, 54, 54, 0.3)').attr('placeholder','Leaving this field empty will cause the hero banner function to fail');
+                $('#entry'+num).find('.'+elem).css('background-color','rgba(238, 54, 54, 0.3)').css('border-color','red').attr('placeholder','Leaving this field empty will cause the hero banner function to fail');
             }else {
                 $('#entry' + num).find('.' + elem).css('background-color', 'rgba(238, 162, 54, 0.3)');
             }
@@ -699,6 +699,8 @@ $(function () {
     }).on('click','.helpItem',function(){
         var a = $(this).data('target');
         jumpToHelper(a);
+    }).on('click','.panel-body.bottom_level_bt',function(){
+        $(this).slideUp();
     }).on('click','.show_me_how',function(){
         var a = $(this).data('target');
         $(root).animate({ scrollTop: 0 },
