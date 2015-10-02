@@ -1188,7 +1188,8 @@ span.show_me_how {
 .form-control{
   transition:all 0.5s!important;
   &:focus {
+    border-color: #4cae4c;
     background-color: rgba(0,0,0,0.05) !important;
-    border-left: 6px solid #5bc0de;
+    border-left: 6px solid #4cae4c;
   }
 }
