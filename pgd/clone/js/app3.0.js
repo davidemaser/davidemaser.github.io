@@ -282,7 +282,7 @@ $(function () {
             jsonToForm(formArray);
             panelAlert('Data Translated To Form','good');
         }else{
-            alert('Please generate or paste JSON before using this function')
+            panelAlert('Please generate or paste JSON before using this function','error');
         }
     }
     function jsonToForm(aCode){
@@ -588,7 +588,7 @@ $(function () {
         if($('#help').css('display') == 'block'){
             $('#help').css('display','none');
         }
-    }).on('click','.about_app',function (e){
+    }).on('click','.about_app,.version_number',function (e){
         window.open("../release.html", "_blank","scrollbars=no,resizable=no,height=600, width=800, status=yes, toolbar=no, menubar=no, location=no");
     }).on('click','.btnAddMulti',function (){
         $('#query-zone').toggle();
@@ -748,7 +748,7 @@ $(function () {
                     scrollTop: $('#entry' + a).offset().top - 60
                 }, 500);
             }else{
-                alert('If I move down any further, I\'ll be off the page.');
+                panelAlert('If I move down any further, I\'ll be off the page.','error');
             }
             //$(d).closest('.clonedInput').prev();
 
