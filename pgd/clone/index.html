@@ -21,7 +21,6 @@
     if (typeof jQuery == 'undefined') {
       document.write(decodeURIComponent("%3Cscript src='js/jquery-1.11.2.min.js' type='text/javascript'%3E%3C/script%3E"));
     }
-
     </script>
 </head>
 
@@ -386,10 +385,11 @@
         <div id="output" data-reason="">
             <div class="blackify_overlay"><span class="overlay_message"></span><span
                     class="overlay_close label label-danger">close</span><span
-                    class="select_content label label-primary">select all</span><span
+                    class="select_content label label-primary">select all</span>
+                <span
                     class="overlay_validate label label-default">validate JSON</span><span
-                    class="overlay_translate label label-info">translate JSON</span><textarea
-                    id="output_code"></textarea></div>
+                    class="overlay_translate label label-info">translate JSON</span>
+                <textarea id="output_code"></textarea></div>
         </div>
         <div id="query-zone" data-reason="query">
             <div class="blackify_overlay"><span class="multiquery_close label label-danger">close</span>

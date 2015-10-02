@@ -152,10 +152,10 @@ $(function () {
             compress: false,
             reformat: true,
             onSuccess: function (json) {
-                $('.overlay_message').css('display','inline-block').html('JSON Code is valid');
+                panelAlert('JSON Code is valid','good');
             },
             onError: function (error) {
-                $('.overlay_message').css('display','inline-block').html('A JSON error has been encountered. The line on which the error has occured is highlighted.');
+                panelAlert('A JSON error has been encountered. The line on which the error has occured is highlighted.','error');
             }
         })
     }
@@ -240,6 +240,9 @@ $(function () {
         if($('.blackify_overlay textarea').val() !== '' || localStorage.getItem('pgb_SavedNode') !== '') {
             if(storage == false) {
                 var ctc = $('.blackify_overlay textarea').val();
+                if(ctc == ''){
+                    panelAlert('Form Does Not Contain JSON Data','error');
+                }
             }else if(storage == true) {
                 if(localStorage.getItem('pgb_SavedNode') !== undefined && localStorage.getItem('pgb_SavedNode') !== null && localStorage.getItem('pgb_SavedNode') !== '') {
                     ctc = localStorage.getItem('pgb_SavedNode').replace(',null', '');
@@ -423,6 +426,7 @@ $(function () {
             $('#output textarea').val(page_model);
             $(root).animate({scrollTop: 0}, 500).css('overflow', 'hidden');
             errorHandler();
+            panelAlert('JSON Exported Successfuly','good');
         }else{
             saveNodeToLS(page_model);
         }
@@ -752,6 +756,12 @@ $(function () {
             $(this).trigger("enterKey");
             addMulti($(this).val());
             $(this).parent().parent().parent().parent().hide();
+        }
+    }).on('keyup','#output[data-reason="translate"] #output_code',function(e){
+        if(e.keyCode == 45){
+            $(this).trigger("enterKey");
+            traverseJSON(false);
+            e.preventDefault();
         }
     });
 
