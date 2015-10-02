@@ -633,7 +633,7 @@ $(function () {
             $('.gotoItem[data-item="'+a+'"]').addClass('redout').attr('title','This Hero entry is not activated');
         }
     }).on('click','.copy-zone',function(){
-        OpenInNewTab('https://github.com/davidemaser/');
+        OpenInNewTab('https://github.com/davidemaser/davidemaser.github.io');
     }).on('click','.showHelp',function(){
         $('#help').toggle();
         if($('#help').css('display') == 'block'){
