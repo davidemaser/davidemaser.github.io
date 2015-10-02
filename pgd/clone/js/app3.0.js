@@ -785,6 +785,20 @@ $(function () {
             traverseJSON(false);
             e.preventDefault();
         }
+    }).on('change','.objHeroSticky',function(){
+        var a = $(this).val();
+        if(a == 'true'){
+            $(this).parent().parent().find('.objHeroPromote option[value="true"]').attr('selected',false);
+        }else if(a == 'false'){
+            //$(this).parent().parent().find('.objHeroPromote option[value="false"]').attr('selected',true);
+        }
+    }).on('change','.objButtonPopup',function(){
+        var a = $(this).val();
+        if(a == 'true'){
+            $(this).parent().parent().find('.objButtonPopupLink').attr('disabled',false);
+        }else if(a == 'false'){
+            $(this).parent().parent().find('.objButtonPopupLink').attr('disabled',true);
+        }
     });
 
     $(window).on('scroll', function() {
