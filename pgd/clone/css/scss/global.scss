@@ -1108,15 +1108,29 @@ span.show_me_how {
   position: fixed;
   width: 100%;
   bottom: 0;
-  height: 50px;
+  height: 80px;
   z-index: 99;
   box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
-
 .message_pane {
   width: 50%;
   margin: 0 auto;
   text-align: center;
+  height: 80px;
+}
+.leftAlign {
+  float: left;
+  font-size: 40px;
+}
+.allGood{
+  color: green;
+}
+.allBad{
+  color: red;
+}
+.inner_message {
+  vertical-align: middle;
+  padding: 15px;
 }
 .helpItem{
   cursor: pointer;

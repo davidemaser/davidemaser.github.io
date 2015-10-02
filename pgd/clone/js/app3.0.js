@@ -1,9 +1,14 @@
 var root = 'html,body';
-function panelAlert(mess){
+function panelAlert(mess,state){
     var mPane = '.panel-body.bottom_level_bt';
-    $(mPane).show();
-    $(mPane).find('.message_pane').html(mess);
-    setTimeout("$('.panel-body.bottom_level_bt').hide()",5000);
+    if(state == 'error') {
+        $(mPane).find('.glyphicon').removeClass('allGood').removeClass('glyphicon-ok').addClass('allBad').addClass('glyphicon-remove');
+    }else if(state == 'good') {
+        $(mPane).find('.glyphicon').removeClass('allBad').removeClass('glyphicon-remove').addClass('allGood').addClass('glyphicon-ok');
+    }
+    $(mPane).slideDown();
+    $(mPane).find('.inner_message').html(mess);
+    setTimeout("$('.panel-body.bottom_level_bt').slideUp()",5000);
 }
 $(function () {
     $('.date_obj').datetimepicker({format: 'MM/DD/YYYY HH:mm'});
@@ -46,12 +51,12 @@ $(function () {
         for(var i=0;i<num;i++) {
             addItems();
         }
-        panelAlert('Hero Items Added');
+        panelAlert('Hero Items Added','good');
     }
     function saveNodeToLS(val){
         if(window.localStorage) {
                     localStorage.setItem('pgb_SavedNode',val);
-            panelAlert('Data Saved To Local Storage');
+            panelAlert('Data Saved To Local Storage','good');
             }
     }
     function addItems(){
@@ -103,10 +108,10 @@ $(function () {
         $(root).animate({
             scrollTop: $('#entry' + newNum).offset().top-60
         }, 500);
-        $('.btn-group.bigboy').last().find('ul').append('<li class="divider"></li><li><a class="removeThisItem" data-item="'+newNum+'" href="javascript:;">Remove</a></li><li class="divider"></li><li><a class="moveUpThisItem" data-item="'+newNum+'" href="javascript:;">Move Up<span class="glyphicon glyphicon-arrow-up"></span></a></li><li><a class="moveDownThisItem" data-item="'+newNum+'" href="javascript:;">Move Down<span class="glyphicon glyphicon-arrow-down"></span></a></li>');
+        $('.btn-group.bigboy:not(.helpMePlease)').last().find('ul').append('<li class="divider"></li><li><a class="removeThisItem" data-item="'+newNum+'" href="javascript:;">Remove</a></li><li class="divider"></li><li><a class="moveUpThisItem" data-item="'+newNum+'" href="javascript:;">Move Up<span class="glyphicon glyphicon-arrow-up"></span></a></li><li><a class="moveDownThisItem" data-item="'+newNum+'" href="javascript:;">Move Down<span class="glyphicon glyphicon-arrow-down"></span></a></li>');
         $('#entry' + newNum).find('.mod-radio').find('input').first().prop('checked',true);
         scrollState('a');
-        panelAlert('Hero Item Added');
+        panelAlert('Hero Item Added','good');
     }
     function deleteItems(elem) {
         if ($('.clonedInput').length > 1) {
@@ -239,7 +244,7 @@ $(function () {
                 if(localStorage.getItem('pgb_SavedNode') !== undefined && localStorage.getItem('pgb_SavedNode') !== null && localStorage.getItem('pgb_SavedNode') !== '') {
                     ctc = localStorage.getItem('pgb_SavedNode').replace(',null', '');
                 }else{
-                    panelAlert('No Data Found In Local Storage');
+                    panelAlert('No Data Found In Local Storage','error');
                 }
             }
                 var prs = JSON.parse(ctc),
@@ -258,7 +263,7 @@ $(function () {
                 formArray.push(obj[i]);
             }
             jsonToForm(formArray);
-            panelAlert('Data Translated To Form');
+            panelAlert('Data Translated To Form','good');
         }else{
             alert('Please generate or paste JSON before using this function')
         }
@@ -566,7 +571,7 @@ $(function () {
             $('#help').css('display','none');
         }
     }).on('click','.about_app',function (e){
-        window.open("http://davidemaser.github.io/pgd/release.html", "_blank","scrollbars=no,resizable=no,height=600, width=800, status=yes, toolbar=no, menubar=no, location=no");
+        window.open("../release.html", "_blank","scrollbars=no,resizable=no,height=600, width=800, status=yes, toolbar=no, menubar=no, location=no");
     }).on('click','.btnAddMulti',function (){
         $('#query-zone').toggle();
         $(root).animate({ scrollTop: 0 }, 500);
@@ -654,7 +659,7 @@ $(function () {
         $(root).css('overflow','auto');
         $('.input_holders').find('.input_alerts').remove();
         $('.input_holders').contents().unwrap();
-        panelAlert('Errors Reset');
+        panelAlert('Errors Reset','good');
     }).on('click','.form_reset',function (e){
         $(root).animate({ scrollTop: 0 }, 500).css('overflow','hidden');
         $('.clonedInput:gt(0)').remove();
@@ -665,7 +670,7 @@ $(function () {
         $(root).css('overflow','auto');
         $('.input_holders').find('.input_alerts').remove();
         $('.input_holders').contents().unwrap();
-        panelAlert('Form Reset To Default');
+        panelAlert('Form Reset To Default','good');
         e.preventDefault();
     }).on('click','input,select',function(){
         $(this).attr('style','').attr('placeholder','');
@@ -797,7 +802,7 @@ $(function () {
             traverseJSON(true);
         }
         if (e.keyCode == 191 && e.ctrlKey) {
-            window.open("http://davidemaser.github.io/pgd/release.html", "_blank","scrollbars=no,resizable=no,height=600, width=800, status=yes, toolbar=no, menubar=no, location=no");
+            window.open("../release.html", "_blank","scrollbars=no,resizable=no,height=600, width=800, status=yes, toolbar=no, menubar=no, location=no");
             e.preventDefault();
         }
     }).on('scroll', function(){

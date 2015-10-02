@@ -593,6 +593,24 @@
             "revision":"major",
             "impact":"global",
             "codestatus":"working"
+          },
+          {
+            "item":"Added core JS stability feature",
+            "revision":"major",
+            "impact":"global",
+            "codestatus":"working"
+          },
+          {
+            "item":"Added UX features",
+            "revision":"minor",
+            "impact":"global",
+            "codestatus":"working"
+          },
+          {
+            "item":"Modified Help Section",
+            "revision":"minor",
+            "impact":"global",
+            "codestatus":"working"
           }
         ]
       }
