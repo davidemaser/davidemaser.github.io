@@ -53,6 +53,13 @@ $(function () {
         }
         panelAlert('Hero Items Added','good');
     }
+    function jumpToHelper(a){
+        $('.help_panel_holder').animate({
+            scrollTop: $('.help_item[data-helper="'+a+'"]').offset().top
+        }, 500);
+        $('.help_item').css('opacity',0.4);
+        $('.help_item[data-helper="'+a+'"]').css('opacity',1);
+    }
     function saveNodeToLS(val){
         if(window.localStorage) {
                     localStorage.setItem('pgb_SavedNode',val);
@@ -684,11 +691,17 @@ $(function () {
         }
     }).on('click','.helpItem',function(){
         var a = $(this).data('target');
-        $('.help_panel_holder').animate({
-            scrollTop: $('.help_item[data-helper="'+a+'"]').offset().top
-        }, 500);
-        $('.help_item').css('opacity',0.4);
-        $('.help_item[data-helper="'+a+'"]').css('opacity',1);
+        jumpToHelper(a);
+    }).on('click','.show_me_how',function(){
+        var a = $(this).data('target');
+        $(root).animate({ scrollTop: 0 },
+            {duration:500,
+                complete:function(){
+                    console.log('done');
+                    $('#help').show();
+                    jumpToHelper(a);
+                }}).css('overflow','hidden');
+
     }).on('click','.helpItemReset',function(){
         $('.help_item').animate({
             opacity: 1
