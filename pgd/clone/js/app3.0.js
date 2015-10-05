@@ -337,7 +337,6 @@ $(function () {
         var page_model='{\n    "hero": [\n';
         for(var i=0;i<nodes;i++){
             //mapping
-            console.log(aCode[i]);
             if(aCode[i][14].value == '' || aCode[i][14].value == null || aCode[i][14].value == undefined){
                 var elemA = true;
             }else{
@@ -666,10 +665,12 @@ $(function () {
         $('.overlay_message').html('');
         $(root).animate({ scrollTop: 0 }, 500).css('overflow','hidden');
         $('#output').attr('data-reason','translate').css('display','block').find('#output_code').val('').attr('placeholder','Paste you code here');
-    }).on('click','.save_json',function (){
+    }).on('click','.save_json',function (e){
         prepareJSON('save')
-    }).on('click','.import_json',function (){
+        e.preventDefault();
+    }).on('click','.import_json',function (e){
         traverseJSON(true);
+        e.preventDefault();
     }).on('click','.overlay_translate',function (){
         traverseJSON(false);
     }).on('click','.errors_reset',function (){
@@ -707,7 +708,6 @@ $(function () {
         $(root).animate({ scrollTop: 0 },
             {duration:500,
                 complete:function(){
-                    console.log('done');
                     $('#help').show();
                     jumpToHelper(a);
                 }}).css('overflow','hidden');
@@ -716,12 +716,13 @@ $(function () {
         $('.help_item').animate({
             opacity: 1
         }, 500);
-    }).on('click','.settings_toggle',function(){
+    }).on('click','.settings_toggle',function(e){
         var a = $(this).data('theme');
         $('html').attr('data-theme',a);
         if(window.localStorage) {
             localStorage.setItem('pgb_Theme', a);
         }
+        e.preventDefault();
     }).on('click','.moveUpThisItem',function(){
         var a = $(this).data('item'),
             b = a-1,
