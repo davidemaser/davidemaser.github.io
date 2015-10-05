@@ -337,6 +337,7 @@ $(function () {
         var page_model='{\n    "hero": [\n';
         for(var i=0;i<nodes;i++){
             //mapping
+            console.log(aCode[i]);
             if(aCode[i][14].value == '' || aCode[i][14].value == null || aCode[i][14].value == undefined){
                 var elemA = true;
             }else{
@@ -795,9 +796,9 @@ $(function () {
     }).on('change','.objButtonPopup',function(){
         var a = $(this).val();
         if(a == 'true'){
-            $(this).parent().parent().find('.objButtonPopupLink').attr('disabled',false);
+            $(this).parent().parent().find('.objButtonPopupLink').attr('style','');
         }else if(a == 'false'){
-            $(this).parent().parent().find('.objButtonPopupLink').attr('disabled',true);
+            $(this).parent().parent().find('.objButtonPopupLink').css('opacity',0.3);
         }
     });
 
