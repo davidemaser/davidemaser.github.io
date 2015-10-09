@@ -30,7 +30,6 @@ $(function () {
             if (a !== null || a !== undefined) {
                 var b = a.split(','),
                     bLen = b.length;
-                console.log(bLen);
                 $('.lsOptions').find('option').remove();
                 $(target).append('<option value="null">SELECT</option>');
                 for (var i = 0; i < bLen; i++) {
