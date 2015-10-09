@@ -11,9 +11,10 @@ function panelAlert(mess,state){
     setTimeout("$('.panel-body.bottom_level_bt').slideUp()",5000);
 }
 function setHeadSec(){
+    $('.lsLoad').find('li').remove();
     var a = localStorage.getItem('pgb_SavedNode_LS').split(','),
-        long = a.length;console.log(long)
-    if(long > 01){
+        long = a.length;console.log(long);
+    if(long > 1){
         for(var i = 0; i<long;i++){
             if(a[i] !== ''){
                 $('.lsLoad').append('<li><a href="#" class="loadItem" data-item="'+a[i]+'">'+a[i]+'</a></li>');
@@ -857,6 +858,7 @@ $(function () {
             $(this).trigger("enterKey");
             prepareJSON('save',$(this).val());
             $(this).parent().parent().parent().parent().hide();
+            setHeadSec();
         }
     }).on('keyup','#output[data-reason="translate"] #output_code',function(e){
         if(e.keyCode == 45){
