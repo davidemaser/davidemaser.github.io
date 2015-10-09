@@ -23,19 +23,24 @@ $(function () {
         $('html').attr('data-theme', 'light');
     }
     function choseLocalSave(){
-        $('#loadandsave-zone').attr('data-reason','load').css('display','block');
-        var a = localStorage.getItem('pgb_SavedNode_LS'),
-            target = $('.lsOptions');
-        if(a !== null || a !== undefined) {
-            var b = a.split(','),
-                bLen = b.length;
-            $('.lsOptions').find('option').remove();
-            $(target).append('<option value="null">SELECT</option>');
-            for (var i = 0; i < bLen; i++) {
-                $(target).append('<option value="' + b[i] + '">' + b[i] + '</option>');
+        try {
+            $('#loadandsave-zone').attr('data-reason', 'load').css('display', 'block');
+            var a = localStorage.getItem('pgb_SavedNode_LS'),
+                target = $('.lsOptions');
+            if (a !== null || a !== undefined) {
+                var b = a.split(','),
+                    bLen = b.length;
+                console.log(bLen);
+                $('.lsOptions').find('option').remove();
+                $(target).append('<option value="null">SELECT</option>');
+                for (var i = 0; i < bLen; i++) {
+                    $(target).append('<option value="' + b[i] + '">' + b[i] + '</option>');
+                }
+            } else {
+                $(target).append('<option value="null">No Local Storage Found</option>');
             }
-        }else{
-            $(target).append('<option value="null">No Local Storage Found</option>');
+        }catch(e){
+
         }
     }
     function doLocalSave(method){
