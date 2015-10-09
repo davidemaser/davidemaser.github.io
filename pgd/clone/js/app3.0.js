@@ -10,7 +10,21 @@ function panelAlert(mess,state){
     $(mPane).find('.inner_message').html(mess);
     setTimeout("$('.panel-body.bottom_level_bt').slideUp()",5000);
 }
+function setHeadSec(){
+    var a = localStorage.getItem('pgb_SavedNode_LS').split(','),
+        long = a.length;console.log(long)
+    if(long > 01){
+        for(var i = 0; i<long;i++){
+            if(a[i] !== ''){
+                $('.lsLoad').append('<li><a href="#" class="loadItem" data-item="'+a[i]+'">'+a[i]+'</a></li>');
+            }
+        }
+    }else{
+        $('.loadLsItems').hide();
+    }
+}
 $(function () {
+    setHeadSec();
     $('.date_obj').datetimepicker({format: 'MM/DD/YYYY HH:mm'});
     if(window.localStorage) {
         var tm = localStorage.getItem('pgb_Theme');
@@ -680,6 +694,9 @@ $(function () {
         var a = $(this).val();
         console.log(a);
         traverseJSON(true,a);
+    }).on('click','.loadItem',function(){
+        var a = $(this).attr('data-item');
+        traverseJSON(true,a);
     }).on('click','.copy-zone',function(){
         OpenInNewTab('https://github.com/davidemaser/davidemaser.github.io');
     }).on('click','.showHelp',function(){
@@ -744,6 +761,7 @@ $(function () {
         e.preventDefault();
     }).on('click','.form_local_reset',function (e){
         doLocalSave('reset');
+        $('.loadLsItems').hide();
         e.preventDefault();
     }).on('click','input,select',function(){
         $(this).attr('style','').attr('placeholder','');
