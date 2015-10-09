@@ -48,6 +48,7 @@
                 <li class="divider"></li>
                 <li><a href="#" class="errors_reset">Reset Errors</a></li>
                 <li><a href="#" class="form_reset">Reset Form</a></li>
+                <li><a href="#" class="form_local_reset">Reset Local Storage</a></li>
                 <li class="divider"></li>
                 <li><a href="#" class="settings_toggle" data-theme="dark">Dark Theme</a></li>
                 <li><a href="#" class="settings_toggle" data-theme="light">Light Theme</a></li>
@@ -276,7 +277,7 @@
               <label class="label_radio control-label" for="radioitem">Activate Hero</label>
               <div class="input-group form-group mod-radio">
                   <label class="radio" for="radioitem-0">
-                      <input class="input_radio" type="radio" name="radioitem" id="radioitem-0" value="true" checked checked="checked">
+                      <input class="input_radio" type="radio" name="radioitem" id="radioitem-0" value="true" checked="checked">
                       Yes
                   </label>
                   <label class="radio" for="radioitem-1">
@@ -397,6 +398,22 @@
                 <div class="question_num">
                     <div class="subs"><label class="label_ln control-label">How many Hero Items would you like to add ? </label><input
                             class="input_ln form-control num_select" type="text" placeholder="Enter a number and click ENTER"></div>
+                </div>
+            </div>
+        </div>
+        <div id="loadandsave-zone" data-reason="load">
+            <div class="blackify_overlay"><span class="multiquery_close label label-danger">close</span>
+
+                <div class="question_loader">
+                    <div class="subs"><label class="label_ln control-label">Which Item Would You Like To Load ? </label>
+                        <select class="input_ln form-control num_select lsOptions">
+                                                    </select>
+                        </div>
+                </div>
+
+                <div class="saveme_loader">
+                    <div class="subs"><label class="label_ln control-label">Enter A Name ? </label>
+                        <input class="input_ln form-control lsl_select" type="text" placeholder="Enter a name and click ENTER"></div>
                 </div>
             </div>
         </div>

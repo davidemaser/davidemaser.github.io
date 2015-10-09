@@ -4,7 +4,7 @@ span.overlay_close, span.multiquery_close, span.renderer_close, span.help_close,
   cursor: pointer;
   margin: 0 0 10px 10px; }
 
-#help, #html-zone, #query-zone {
+#help, #html-zone, #query-zone, #loadandsave-zone {
   display: none;
   width: 100%;
   height: 100%;

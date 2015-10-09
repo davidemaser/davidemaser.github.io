@@ -402,6 +402,9 @@ label {
 #query-zone{
   @extend %extend_2;
 }
+#loadandsave-zone{
+  @extend %extend_2;
+}
 .help_content {
   @extend %extend_3;
   border-radius: 5px;
@@ -1063,7 +1066,7 @@ input.hero_num {
   top: 9px;
   left: 49px;
 }
-.question_num {
+.question_num,.question_loader,.saveme_loader {
   background-color: #fff;
   width: 100%;
   margin: 60px auto;
@@ -1191,5 +1194,21 @@ span.show_me_how {
     border-color: #4cae4c;
     background-color: rgba(0,0,0,0.05) !important;
     border-left: 6px solid #4cae4c;
+  }
+}
+#loadandsave-zone[data-reason="load"] {
+  .question_loader{
+    display:block;
+  }
+  .saveme_loader{
+    display:none;
+  }
+}
+#loadandsave-zone[data-reason="save"] {
+  .question_loader{
+    display:none;
+  }
+  .saveme_loader{
+    display:block;
   }
 }
