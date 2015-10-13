@@ -11,6 +11,10 @@ function panelAlert(mess,state){
     setTimeout("$('.panel-body.bottom_level_bt').slideUp()",5000);
 }
 function initializeTheme(){
+    /**
+     * reads and/or sets the html theme data attribute
+     * from the local storage item
+     */
     if(window.localStorage) {
         var tm = localStorage.getItem('pgb_Theme');
         if (tm == null || tm == undefined) {
@@ -24,6 +28,11 @@ function initializeTheme(){
     }
 }
 function setHeadSec(){
+    /**
+     * sets head section items that display in a button model
+     * the locally saved hero items for rapid translation of
+     * the JSON data
+     */
     try {
         var isReady = localStorage.getItem('pgb_SavedNode_LS');
         if (isReady !== null) {
