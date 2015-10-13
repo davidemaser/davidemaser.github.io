@@ -84,7 +84,7 @@ function Hilitor(id, tag)
                 after.nodeValue = after.nodeValue.substring(regs[0].length);
                 node.parentNode.insertBefore(match, after);
             }
-        };
+        }
     };
 
     // remove highlighting
@@ -129,18 +129,18 @@ $(function(){
     });
 });
 function freshMarks(mode){
+    var historyEL = '.bks-history-am';
     if(mode == 'add') {
-        $('.bks-history-am').empty();
+        $(historyEL).empty();
         var a = searchFREE.length;
-        sfra = searchFREE.join();
-        for (i = 0; i < a; i++) {
+        for (var i = 0; i < a; i++) {
             if (searchFREE[i] !== '') {
-                $('.bks-history-am').append('<div class="bm-tab"><span class="ion-ios-circle-filled search-tab"></span>' + searchFREE[i] + '</div>');
+                $(historyEL).append('<div class="bm-tab"><span class="ion-ios-circle-filled search-tab"></span>' + searchFREE[i] + '</div>');
             }
         }
     }else if(mode == 'flush') {
         searchFREE = [];
-        $('.bks-history-am').empty().append('Empty');;
+        $(historyEL).empty().append('Empty');
     }
 }
 function OpenInNewTab(url) {
@@ -164,34 +164,34 @@ $(document).ready(function(){
                 var dt = 'Liquid is the language used to build the shopify front end';
                 break;
             case 'js':
-                var dt = 'JS refers to JavaScript. Most of the site\'s front end functionalities have been scripted in Javascript';
+                dt = 'JS refers to JavaScript. Most of the site\'s front end functionalities have been scripted in Javascript';
                 break;
             case 'jq':
-                var dt = 'jQuery is a powerful JavaScript library that extends the core features of JavaScript.';
+                dt = 'jQuery is a powerful JavaScript library that extends the core features of JavaScript.';
                 break;
             case 'vanilla':
-                var dt = 'Vanilla JavaScript is the name used to differentiates core JavaScript from other more extended JavaScript libraries (i.e. jQuery, Prototype...) ';
+                dt = 'Vanilla JavaScript is the name used to differentiates core JavaScript from other more extended JavaScript libraries (i.e. jQuery, Prototype...) ';
                 break;
             case 'api':
-                var dt = 'API, an abbreviation of application program interface, is a set of routines, protocols, and tools for building software applications. The API specifies how software components should interact and APIs are used when programming graphical user interface (GUI) components.';
+                dt = 'API, an abbreviation of application program interface, is a set of routines, protocols, and tools for building software applications. The API specifies how software components should interact and APIs are used when programming graphical user interface (GUI) components.';
                 break;
             case 'tld':
-                var dt = 'A top-level domain (TLD) is one of the domains at the highest level in the hierarchical Domain Name System of the Internet. The top-level domain names are installed in the root zone of the name space.';
+                dt = 'A top-level domain (TLD) is one of the domains at the highest level in the hierarchical Domain Name System of the Internet. The top-level domain names are installed in the root zone of the name space.';
                 break;
             case 'dom':
-                var dt = 'The Document Object Model (DOM) is an application programming interface (API) for valid HTML and well-formed XML documents. It defines the logical structure of documents and the way a document is accessed and manipulated.';
+                dt = 'The Document Object Model (DOM) is an application programming interface (API) for valid HTML and well-formed XML documents. It defines the logical structure of documents and the way a document is accessed and manipulated.';
                 break;
             case 'json':
-                var dt = 'JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate. It is based on a subset of the JavaScript Programming Language, Standard ECMA-262 3rd Edition - December 1999.';
+                dt = 'JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate. It is based on a subset of the JavaScript Programming Language, Standard ECMA-262 3rd Edition - December 1999.';
                 break;
             case 'ajax':
-                var dt = 'Ajax is not a single technology, but a group of technologies. HTML and CSS can be used in combination to mark up and style information. The DOM is accessed with JavaScript to dynamically display – and allow the user to interact with – the information presented.';
+                dt = 'Ajax is not a single technology, but a group of technologies. HTML and CSS can be used in combination to mark up and style information. The DOM is accessed with JavaScript to dynamically display – and allow the user to interact with – the information presented.';
                 break;
             case 'mq':
-                var dt = 'Media Queries is a CSS3 module allowing content rendering to adapt to conditions such as screen resolution (e.g. smartphone screen vs. computer screen). It became a W3C recommended standard in June 2012, and is a cornerstone technology of Responsive web design.';
+                dt = 'Media Queries is a CSS3 module allowing content rendering to adapt to conditions such as screen resolution (e.g. smartphone screen vs. computer screen). It became a W3C recommended standard in June 2012, and is a cornerstone technology of Responsive web design.';
                 break;
             case 'mvc':
-                var dt = 'Model–view–controller (MVC) is a software architectural pattern for implementing user interfaces. It divides a given software application into three interconnected parts, so as to separate internal representations of information from the ways that information is presented to or accepted from the user.';
+                dt = 'Model–view–controller (MVC) is a software architectural pattern for implementing user interfaces. It divides a given software application into three interconnected parts, so as to separate internal representations of information from the ways that information is presented to or accepted from the user.';
                 break;
             default:
                 dt = a;
@@ -199,8 +199,7 @@ $(document).ready(function(){
         $('body').append('<div class="hover-tip">'+dt+'</div>');
         $('.hover-tip').css({'top':mouseY,'left':mouseX});
 
-    });
-    $('body').on('mouseout','.ttip',function(){
+    }).on('mouseout','.ttip',function(){
         $('.hover-tip').remove();
 
     }).on('click','.ld-js',function(){
@@ -249,7 +248,7 @@ $(document).ready(function(){
         loadJSON(a);
     });
 });
-$(window).on('hashchange', function(e){
+$(window).on('hashchange', function(){
     var a = window.location.href.slice(window.location.href.indexOf('#') + 1);
     var b = $("label").find("[data-json='" + a + "']");
     if(a.indexOf("tut")>-1) {
@@ -258,6 +257,8 @@ $(window).on('hashchange', function(e){
 });
 var searchFREE = searchFREE || [];
 function loadJSON(page){
+    var key = '#keywords',
+        dataZone = '#data-zone';
     if(page == null || page == ''){
         var def = 'intro';
     }else{
@@ -274,17 +275,17 @@ function loadJSON(page){
                 myHilitor2.apply(this.value);
             });
             $('.ion-ios-reload').click(function(){
-                if($('#keywords').val() !== "") {
+                if($(key).val() !== "") {
                     searchFREE.push($('#keywords').val().trim());
                 }
                 myHilitor2.remove();
-                $('#keywords').val('');
+                $(key).val('');
                 freshMarks('add');
             });
-            $('#data-zone').empty();
+            $(dataZone).empty();
             location.hash = def;
             var o = data.content.content.length;
-            for (i=0;i<o;i++){
+            for (var i=0;i<o;i++){
                 var ctc = data.content.content[i].paragraph,
                 format = data.content.content[i].type,
                 type = typeof data.content.content[i].paragraph;
@@ -295,66 +296,66 @@ function loadJSON(page){
                             b = '</p>';
                         break;
                     case "deprecated-text":
-                        var a = '<p class="deprecated">',
-                            b = '</p>';
+                        a = '<p class="deprecated">';
+                        b = '</p>';
                         break;
                     case "italic":
-                        var a = '<p class="italic">',
-                            b = '</p>';
+                        a = '<p class="italic">';
+                        b = '</p>';
                         break;
                     case "warning":
-                        var a = '<div class="warning"><span class="ion-ios-close-outline"></span>',
-                            b = '</div>';
+                        a = '<div class="warning"><span class="ion-ios-close-outline"></span>';
+                        b = '</div>';
                         break;
                     case "info":
-                        var a = '<div class="info">',
-                            b = '</div>';
+                        a = '<div class="info">';
+                        b = '</div>';
                         break;
                     case "note":
-                        var a = '<div class="note">',
-                            b = '</div>';
+                        a = '<div class="note">';
+                        b = '</div>';
                         break;
                     case "header":
-                        var a = '<h1>',
-                            b = '</h1>';
+                        a = '<h1>';
+                        b = '</h1>';
                         break;
                     case "subsection":
-                        var a = '<h2 class="underline italic">',
-                            b = '</h2>';
+                        a = '<h2 class="underline italic">';
+                        b = '</h2>';
                         break;
                     case "pre":
-                        var a = '<pre>',
-                            b = '</pre>';;
+                        a = '<pre>';
+                        b = '</pre>';
                         break;
                     case "bold-header":
-                        var a = '<h3 class="bold">',
-                            b = '</3>';
+                        a = '<h3 class="bold">';
+                        b = '</3>';
                         break;
                     case "underline-header":
-                        var a = '<h3 class="underline">',
-                            b = '</h3>';
+                        a = '<h3 class="underline">';
+                        b = '</h3>';
                         break;
                     default:
-                    var a = '',
+                        a = '';
                         b = '';
                 }
                 if(type == 'object'){
                     var expects = data.content.content[i].type;
                     if(expects == 'ul' || expects == 'ol'){
-                        var xlen = data.content.content[i].paragraph.length;
-                        var lobjs = [];
-                        for(j=0;j<xlen;j++){
+                        var xlen = data.content.content[i].paragraph.length,
+                            lobjs = [];
+                        for(var j=0;j<xlen;j++){
                             lobjs.push('<li>'+data.content.content[i].paragraph[j].item+'</li>');
                         }
                         var trimmed = lobjs.join().replace(/,/g,'');
                         $('#data-zone').append('<'+expects+'>'+trimmed+'</'+expects+'>');
                     }else if(expects == 'table' || expects == 'deprecated-table'){
                         var tb = [];
-                        var xlen = data.content.content[i].paragraph.length;
-                        for(k=0;k<xlen;k++){
+                            xlen = data.content.content[i].paragraph.length;
+                        for(var k=0;k<xlen;k++){
                             tb.push('<tr>');
                             var ylen = data.content.content[i].paragraph[k].row.length;
-                            for(l=0;l<ylen;l++){
+                            for(var l=0;l<ylen;l++){
                                 if(data.content.content[i].paragraph[k].row[l].column == null){
                                     tb.push('<td>&nbsp;</td>');
                                 }else {
@@ -363,12 +364,11 @@ function loadJSON(page){
                             }
                             tb.push('</tr>');
                         }
-                        var trimmed = tb.join().replace(/,/g,'');
+                        trimmed = tb.join().replace(/,/g,'');
                         $('#data-zone').append('<table class="'+expects+'"><tbody>'+trimmed+'</table></tbody>');
                     }
                 }else{
-                    $('#data-zone').append(a + ctc + b);
-                    $('#data-zone').attr('data-page', data.content.title);
+                    $('#data-zone').append(a + ctc + b).attr('data-page', data.content.title);
                 }
             }
         },
