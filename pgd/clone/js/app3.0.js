@@ -11,21 +11,29 @@ function panelAlert(mess,state){
     setTimeout("$('.panel-body.bottom_level_bt').slideUp()",5000);
 }
 function setHeadSec(){
-    var isReady = $('.lsLoad').find('ul').children().length;
-    if(isReady > 0) {
-        $('.lsLoad').find('li').remove();
-        var a = localStorage.getItem('pgb_SavedNode_LS').split(','),
-            long = a.length;
-        console.log(long);
-        if (long > 1) {
-            for (var i = 0; i < long; i++) {
-                if (a[i] !== '') {
-                    $('.lsLoad').append('<li><a href="#" class="loadItem" data-item="' + a[i] + '">' + a[i] + '</a></li>');
+    try {
+        var isReady = localStorage.getItem('pgb_SavedNode_LS');
+        if (isReady !== null) {
+            $('.loadLsItems').css('display', 'inline-block');
+            $('#import_json').css('display', 'block');
+            $('.lsLoad').find('li').remove();
+            var a = localStorage.getItem('pgb_SavedNode_LS').split(','),
+                long = a.length;
+            if (long > 1) {
+                for (var i = 0; i < long; i++) {
+                    if (a[i] !== '') {
+                        $('.lsLoad').append('<li><a href="#" class="loadItem" data-item="' + a[i] + '">' + a[i] + '</a></li>');
+                    }
                 }
+            } else {
+                $('.loadLsItems').hide();
             }
         } else {
-            $('.loadLsItems').hide();
+            $('.loadLsItems').css('display', 'none');
+            $('#import_json').css('display', 'none');
         }
+    }catch(e){
+        console.log(e);
     }
 }
 $(function () {
@@ -70,7 +78,7 @@ $(function () {
                 var key = localStorage.key(i);
                 if(key.indexOf('pgb_SavedNode_')>-1 && key.indexOf('pgb_SavedNode_LS')<0){
                     localStorage.removeItem(key);
-                };
+                }
             }
         }
     }
@@ -696,9 +704,16 @@ $(function () {
             $('.gotoItem[data-item="'+a+'"]').addClass('redout').attr('title','This Hero entry is not activated');
         }
     }).on('change','.lsOptions',function(){
-        var a = $(this).val();
-        console.log(a);
-        traverseJSON(true,a);
+        try {
+            if ($(this).val() !== "" || $(this).val() !== "undefined" || $(this).val() !== undefined || $(this).val() !== "null" || $(this).val() !== null) {
+                var a = $(this).val();
+                traverseJSON(true, a);
+            } else {
+                panelAlert('Please select a valid data item from the dropdown', 'error');
+            }
+        }catch(e){
+
+        }
     }).on('click','.loadItem',function(){
         var a = $(this).attr('data-item');
         traverseJSON(true,a);
