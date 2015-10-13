@@ -839,7 +839,7 @@ $(function () {
                 scrollTop: $('#entry' + a).offset().top-60
             }, 500);
             //$(d).closest('.clonedInput').prev();
-
+        $(this).parent().parent().parent().find('.btn.btn-info:not(.dropdown-toggle)').prepend('<span title="This entry has been moved from it\'s original position" class="glyphicon glyphicon-fullscreen reordered" aria-hidden="true"></span>');
     }).on('click','.moveDownThisItem',function(){
         var a = $(this).data('item'),
             b = a-1,
@@ -857,6 +857,8 @@ $(function () {
                 panelAlert('If I move down any further, I\'ll be off the page.','error');
             }
             //$(d).closest('.clonedInput').prev();
+        $(this).parent().parent().parent().find('.btn.btn-info:not(.dropdown-toggle)').prepend('<span title="This entry has been moved from it\'s original position" class="glyphicon glyphicon-fullscreen reordered" aria-hidden="true"></span>');
+
 
     }).on('keyup','input',function(){
         var a = $(this).val().length;
