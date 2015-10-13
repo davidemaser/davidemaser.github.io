@@ -10,6 +10,19 @@ function panelAlert(mess,state){
     $(mPane).find('.inner_message').html(mess);
     setTimeout("$('.panel-body.bottom_level_bt').slideUp()",5000);
 }
+function initializeTheme(){
+    if(window.localStorage) {
+        var tm = localStorage.getItem('pgb_Theme');
+        if (tm == null || tm == undefined) {
+            $('html').attr('data-theme', 'light');
+        }else{
+            console.log('wrong');
+            $('html').attr('data-theme', tm);
+        }
+    }else{
+        $('html').attr('data-theme', 'light');
+    }
+}
 function setHeadSec(){
     try {
         var isReady = localStorage.getItem('pgb_SavedNode_LS');
@@ -38,17 +51,8 @@ function setHeadSec(){
 }
 $(function () {
     setHeadSec();
+    initializeTheme();
     $('.date_obj').datetimepicker({format: 'MM/DD/YYYY HH:mm'});
-    if(window.localStorage) {
-        var tm = localStorage.getItem('pgb_Theme');
-        if (tm !== '' || tm !== null || tm !== undefined || tm !== 'undefined') {
-            $('html').attr('data-theme', tm);
-        }else{
-            $('html').attr('data-theme', 'light');
-        }
-    }else{
-        $('html').attr('data-theme', 'light');
-    }
     function choseLocalSave(){
         try {
             $('#loadandsave-zone').attr('data-reason', 'load').css('display', 'block');
