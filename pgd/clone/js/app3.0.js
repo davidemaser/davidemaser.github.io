@@ -10,6 +10,155 @@ function panelAlert(mess,state){
     $(mPane).find('.inner_message').html(mess);
     setTimeout("$('.panel-body.bottom_level_bt').slideUp()",5000);
 }
+function initializeForm(){
+    $.ajax({
+        type:'GET',
+        url:"schema/layout.json",
+        success:function(data) {
+            var dataBlock = data.layout,
+                htmlBlock = '<div id="entry1" class="clonedInput" data-split="1"><form action="'+dataBlock.form_action+'" method="'+dataBlock.method+'" id="'+dataBlock.form_id+'" role="form">';
+            htmlBlock += dataBlock.header;
+            htmlBlock += '<fieldset>';
+            var blockContent = dataBlock.block,
+                blockLen = blockContent.length;
+            for(var i = 0;i<blockLen;i++){
+                if(blockContent[i].display !== 'custom') {
+                    if (i % 2 === 0 || i === 0) {
+                        if (blockContent[i].wrap_group == true) {
+                            htmlBlock += '<div class="' + blockContent[i].wrap_group_class + '">';
+                        }
+                        htmlBlock += '<div class="form-group">';
+                        var blocker = ' lItem';
+                    } else {
+                        blocker = '';
+                    }
+                    if (blockContent[i].display !== 'empty') {
+                        switch (blockContent[i].display) {
+                            case "full":
+                                var line = '',
+                                    blocker = '';
+                                break;
+                            case "half":
+                                line = 'half_span';
+                                break;
+                        }
+
+                        htmlBlock += '<div class="' + line + ' ' + blocker + '">';
+                        htmlBlock += '<label class="label_fn control-label" for="' + blockContent[i].obj_id + '">' + blockContent[i].label + '</label>';
+                        if (blockContent[i].wrap == true) {
+                            htmlBlock += '<div class="' + blockContent[i].wrap_class + '">';
+                        }
+                        if (blockContent[i].inject_code !== '') {
+                            htmlBlock += blockContent[i].inject_code;
+                        }
+                        //input types
+                        if (blockContent[i].input_obj == 'text') {
+                            htmlBlock += '<input';
+                            if (blockContent[i].obj_id !== '') {
+                                htmlBlock += ' id="' + blockContent[i].obj_id + '" name="' + blockContent[i].obj_id + '"';
+                            }
+                            htmlBlock += ' type="text" placeholder="' + blockContent[i].placeholder + '" class="input_fn form-control';
+                            if (blockContent[i].class !== '') {
+                                htmlBlock += ' ' + blockContent[i].class;
+                            }
+                            if (blockContent[i].obj_label !== '') {
+                                htmlBlock += ' ' + blockContent[i].obj_label;
+                            }
+                            htmlBlock += '"';
+                            if (blockContent[i].options !== null) {
+                                var opLen = blockContent[i].options.length;
+                                for (var j = 0; j < opLen; j++) {
+                                    htmlBlock += ' ' + blockContent[i].options[j].item + '="' + blockContent[i].options[j].value + '"';
+                                }
+                            }
+                            if (blockContent[i].data !== null) {
+                                var dtLen = blockContent[i].data.length;
+                                for (var k = 0; k < dtLen; k++) {
+                                    htmlBlock += ' data-' + blockContent[i].data[k].item + '="' + blockContent[i].data[k].value + '"';
+                                }
+                            }
+                            htmlBlock += '>';
+                        } else if (blockContent[i].input_obj == 'radio') {
+                            htmlBlock += '<input';
+                            htmlBlock += ' type="radio"';
+                            if (blockContent[i].class !== '') {
+                                htmlBlock += ' class="' + blockContent[i].class + '"';
+                            }
+                            if (blockContent[i].obj_id !== '') {
+                                htmlBlock += ' id="' + blockContent[i].obj_id + '" name="' + blockContent[i].obj_id + '"';
+                            }
+                            if (blockContent[i].options !== null) {
+                                opLen = blockContent[i].options.length;
+                                for (j = 0; j < opLen; j++) {
+                                    htmlBlock += ' ' + blockContent[i].options[j].item + '="' + blockContent[i].options[j].value + '"';
+                                    if (blockContent[i].options[j].default !== undefined) {
+                                        htmlBlock += ' ' + blockContent[i].options[j].default;
+                                    }
+                                }
+                            }
+                            if (blockContent[i].data !== null) {
+                                dtLen = blockContent[i].data.length;
+                                for (k = 0; k < dtLen; k++) {
+                                    htmlBlock += ' data-' + blockContent[i].data[k].item + '="' + blockContent[i].data[k].value + '"';
+                                }
+                            }
+                            htmlBlock += '>';
+                        } else if (blockContent[i].input_obj == 'select') {
+                            htmlBlock += '<select';
+                            if (blockContent[i].class !== '') {
+                                htmlBlock += ' class="form-control ' + blockContent[i].class + '"';
+                            }
+                            if (blockContent[i].obj_id !== '') {
+                                htmlBlock += ' id="' + blockContent[i].obj_id + '" name="' + blockContent[i].obj_id + '"';
+                                if (blockContent[i].data !== null) {
+                                    dtLen = blockContent[i].data.length;
+                                    for (k = 0; k < dtLen; k++) {
+                                        htmlBlock += ' data-' + blockContent[i].data[k].item + '="' + blockContent[i].data[k].value + '"';
+                                    }
+                                }
+                            }
+                            htmlBlock += '>';
+                            if (blockContent[i].options !== null) {
+                                opLen = blockContent[i].options.length;
+                                for (j = 0; j < opLen; j++) {
+                                    htmlBlock += '<option';
+                                    htmlBlock += ' ' + blockContent[i].options[j].item + '="' + blockContent[i].options[j].value + '"';
+                                    if (blockContent[i].options[j].default !== undefined) {
+                                        htmlBlock += ' ' + blockContent[i].options[j].default;
+                                    }
+                                    htmlBlock += '>' + blockContent[i].options[j].label;
+                                    htmlBlock += '</option>';
+                                }
+                            }
+                            htmlBlock += '</select>';
+                        }
+                        if (blockContent[i].append !== '') {
+                            htmlBlock += blockContent[i].append;
+                        }
+                        if (blockContent[i].wrap == true) {
+                            htmlBlock += '</div>';
+                        }
+                        htmlBlock += '</div>';
+                    }
+                    if (i % 2 === 1) {
+                        htmlBlock += '</div>';
+                        if (blockContent[i].wrap_group == true) {
+                            htmlBlock += '</div>';
+                        }
+                    }
+                    console.log(blockContent[i]);
+                }else{
+                    htmlBlock += blockContent[i].inject_code;;
+                }
+            }
+            htmlBlock += '</fieldset>';
+            htmlBlock += '</form></div>';
+            console.log(htmlBlock);
+            $('#wrapper').prepend(htmlBlock);
+
+        }
+    })
+}
 function initializeTheme(){
     /**
      * reads and/or sets the html theme data attribute
