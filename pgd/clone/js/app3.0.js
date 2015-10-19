@@ -1,4 +1,36 @@
-var root = 'html,body';
+var app = {
+    locale:"EN",
+    user:"guest",
+    callback:true,
+    export:"json",
+    dialog:true,
+    save:true,
+    decode:false,
+    compress:false,
+    listener:"window",
+    states:{
+        e:"error",
+        s:"good",
+        d:"complete"
+    },
+    variant:null,
+    methods:{
+        g:"get",
+        p:"post"
+    },
+    objects:{
+        o:"#output",
+        e:"#entry",
+        h:"#html-zone",
+        i:".input_holders",
+        b:".blackify_overlay",
+        c:".check_image",
+        he:"#help",
+        cl:".clonedInput",
+        r:"html,body"
+    }
+};
+
 function panelAlert(mess,state){
     var mPane = '.panel-body.bottom_level_bt';
     if(state == 'error') {
@@ -12,7 +44,7 @@ function panelAlert(mess,state){
 }
 function initializeForm(){
     $.ajax({
-        type:'GET',
+        type:app.methods.g,
         url:"schema/layout.json",
         success:function(data) {
             var dataBlock = data.layout,
@@ -35,7 +67,7 @@ function initializeForm(){
                     if (blockContent[i].display !== 'empty') {
                         switch (blockContent[i].display) {
                             case "full":
-                                var line = '',
+                                var line = '';
                                     blocker = '';
                                 break;
                             case "half":
@@ -148,7 +180,7 @@ function initializeForm(){
                     }
                     console.log(blockContent[i]);
                 }else{
-                    htmlBlock += blockContent[i].inject_code;;
+                    htmlBlock += blockContent[i].inject_code;
                 }
             }
             htmlBlock += '</fieldset>';
@@ -168,7 +200,6 @@ function initializeTheme(){
         if (tm == null || tm == undefined) {
             $('html').attr('data-theme', 'light');
         }else{
-            console.log('wrong');
             $('html').attr('data-theme', tm);
         }
     }else{
@@ -306,12 +337,12 @@ $(function () {
             }
     }
     function addItems(){
-        if($('#output').css('display') == 'block'){
-            $('#output').css('display','none');
+        if($(app.objects.o).css('display') == 'block'){
+            $(app.objects.o).css('display','none');
         }
-        var num     = $('.clonedInput').length, // Checks to see how many "duplicatable" input fields we currently have
+        var num     = $(app.objects.cl).length, // Checks to see how many "duplicatable" input fields we currently have
             newNum  = new Number(num + 1),      // The numeric ID of the new input field being added, increasing by 1 each time
-            newElem = $('#entry' + num).clone().attr('id', 'entry' + newNum); // create the new element via clone(), and manipulate it's ID using newNum value
+            newElem = $(app.objects.e + num).clone().attr('id', 'entry' + newNum); // create the new element via clone(), and manipulate it's ID using newNum value
 
         newElem.find('.heading-reference').attr('id', 'ID' + newNum + '_reference').attr('name', 'ID' + newNum + '_reference').html('<div class="btn-group bigboy"><button type="button" class="btn btn-info">HERO ITEM <span class="label label-default">' + newNum+'</span></button><button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button><ul class="dropdown-menu"><li><a class="previewItem large" href="javascript:;" data-hero="'+newNum+'">Preview Large</a></li><li><a class="previewItem small" href="javascript:;" data-hero="'+newNum+'">Preview Small</a></li></ul></div>');
         newElem.attr('data-split',newNum);
@@ -336,7 +367,7 @@ $(function () {
 
         newElem.find('.label_twt').attr('for', 'ID' + newNum + '_twitter_handle');
         newElem.find('.input_twt').attr('id', 'ID' + newNum + '_twitter_handle').attr('name', 'ID' + newNum + '_twitter_handle').val('');
-        newElem.find('.check_image').attr('data-handler', newNum);
+        newElem.find(app.objects.c).attr('data-handler', newNum);
         newElem.find('.check_alt_image').attr('data-handler', newNum);
         newElem.find('.input-group-addon.image_count').attr('style','').html('Shopify CDN');
         newElem.find('.mod-radio').attr('style','');
@@ -351,20 +382,20 @@ $(function () {
         var dateNow = new Date();
         $('.date_obj').datetimepicker({format: 'MM/DD/YYYY HH:mm'});
         $('.snapTo').append('<li><a href="#" class="gotoItem" data-item="'+newNum+'">Hero Item '+newNum+'</a></li>');
-        $(root).animate({
-            scrollTop: $('#entry' + newNum).offset().top-60
+        $(app.objects.r).animate({
+            scrollTop: $(app.objects.e + newNum).offset().top-60
         }, 500);
         $('.btn-group.bigboy:not(.helpMePlease)').last().find('ul').append('<li class="divider"></li><li><a class="removeThisItem" data-item="'+newNum+'" href="javascript:;">Remove</a></li><li class="divider"></li><li><a class="moveUpThisItem" data-item="'+newNum+'" href="javascript:;">Move Up<span class="glyphicon glyphicon-arrow-up"></span></a></li><li><a class="moveDownThisItem" data-item="'+newNum+'" href="javascript:;">Move Down<span class="glyphicon glyphicon-arrow-down"></span></a></li>');
-        $('#entry' + newNum).find('.mod-radio').find('input').first().prop('checked',true);
+        $(app.objects.e + newNum).find('.mod-radio').find('input').first().prop('checked',true);
         scrollState('a');
         panelAlert('Hero Item Added','good');
     }
     function deleteItems(elem) {
-        if ($('.clonedInput').length > 1) {
-            if ($('#output').css('display') == 'block') {
-                $('#output').css('display', 'none');
+        if ($(app.objects.cl).length > 1) {
+            if ($(app.objects.o).css('display') == 'block') {
+                $(app.objects.o).css('display', 'none');
             }
-                //var num = $('.clonedInput').length;
+                //var num = $(app.objects.cl).length;
                 if (elem == 'last') {
                     var a = $('.clonedInput:last').attr('id'),
                         b = a.replace('entry','');
@@ -379,7 +410,7 @@ $(function () {
                     $('.snapTo').find('.gotoItem[data-item="'+b+'"]').parent().remove();
                     scrollState('a');
                 } else {
-                    $('#entry' + elem).slideUp('slow', function () {
+                    $(app.objects.e + elem).slideUp('slow', function () {
                         $(this).remove();
                         // if only one element remains, disable the "remove" button
                         if (elem - 1 === 1)
@@ -407,7 +438,7 @@ $(function () {
     }
     function errorHandler(){
         var errorLog = [],
-            a = JSON.parse($('#output[data-reason="output"]').find('textarea').val()).hero,
+            a = JSON.parse($(app.objects.o+'[data-reason="output"]').find('textarea').val()).hero,
             b = a.length,
             c = 0;
         for(var i =0;i<b;i++){
@@ -468,14 +499,14 @@ $(function () {
     function registerErrorButtons(num,elem,item,prob,die){
         $('body').on('click','.errorItem[data-item="'+item+'"]',function(){
             if(die == true){
-                $('#entry'+num).find('.'+elem).css('background-color','rgba(238, 54, 54, 0.3)').css('border-color','red').attr('placeholder','Leaving this field empty will cause the hero banner function to fail');
+                $(app.objects.e+num).find('.'+elem).css('background-color','rgba(238, 54, 54, 0.3)').css('border-color','red').attr('placeholder','Leaving this field empty will cause the hero banner function to fail');
             }else {
-                $('#entry' + num).find('.' + elem).css('background-color', 'rgba(238, 162, 54, 0.3)');
+                $(app.objects.e + num).find('.' + elem).css('background-color', 'rgba(238, 162, 54, 0.3)');
             }
-            $('#output').hide();
-            $(root).css('overflow','auto');
-            $(root).animate({
-                scrollTop: $('#entry' + num+' .'+elem).offset().top-100
+            $(app.objects.o).hide();
+            $(app.objects.r).css('overflow','auto');
+            $(app.objects.r).animate({
+                scrollTop: $(app.objects.e + num+' .'+elem).offset().top-100
             }, 500);
             if($('.'+elem).parent().attr('class') !== 'input_holders'){
                 $('.'+elem).wrap('<div class="input_holders"></div>').parent().append('<div class="input_alerts" title="'+prob+'"><span class="glyphicon glyphicon-exclamation-sign"></span></div>')
@@ -483,9 +514,9 @@ $(function () {
         });
     }
     function traverseJSON(storage,nodeName){
-        if($('.blackify_overlay textarea').val() !== '' || localStorage.getItem('pgb_SavedNode') !== '') {
+        if($(app.objects.b+' textarea').val() !== '' || localStorage.getItem('pgb_SavedNode') !== '') {
             if(storage == false) {
-                var ctc = $('.blackify_overlay textarea').val();
+                var ctc = $(app.objects.b+' textarea').val();
                 if(ctc == ''){
                     panelAlert('Form Does Not Contain JSON Data','error');
                 }
@@ -499,7 +530,7 @@ $(function () {
                 var prs = JSON.parse(ctc),
                 obj = prs.hero,
                 len = obj.length,
-                formItems = $('.clonedInput').length,
+                formItems = $(app.objects.cl).length,
                 formArray = [];
             if(formItems < len){
                 var build = true,
@@ -542,11 +573,11 @@ $(function () {
             //$($this).find('.objHeroTitleShow').val(aCode[i].showTitle);
             //$($this).find('.objHeroSubtitleShow').val(aCode[i].showSubTitle);
             $($this).find('.objHeroPromote option[value="'+aCode[i].promote+'"]').attr('selected',true);
-            if($('#output').css('display') == 'block'){
-                $('#output').hide();
-                $(root).css('overflow','auto');
+            if($(app.objects.o).css('display') == 'block'){
+                $(app.objects.o).hide();
+                $(app.objects.r).css('overflow','auto');
             }
-            $(root).css('overflow','auto');
+            $(app.objects.r).css('overflow','auto');
         }
     }
     function prepareJSON(meth,name){
@@ -661,16 +692,16 @@ $(function () {
         }
         page_model += '\n      }\n   ]\n}';
         if(meth == 'full') {
-            if ($('#help').css('display') == 'block') {
-                $('#help').css('display', 'none');
+            if ($(app.objects.he).css('display') == 'block') {
+                $(app.objects.he).css('display', 'none');
             }
-            if ($('#html-zone').css('display') == 'block') {
-                $('#html-zone').css('display', 'none');
+            if ($(app.objects.h).css('display') == 'block') {
+                $(app.objects.h).css('display', 'none');
             }
-            $('#output').attr('data-reason', 'output');
-            $('#output').css('display', 'block');
+            $(app.objects.o).attr('data-reason', 'output');
+            $(app.objects.o).css('display', 'block');
             $('#output textarea').val(page_model);
-            $(root).animate({scrollTop: 0}, 500).css('overflow', 'hidden');
+            $(app.objects.r).animate({scrollTop: 0}, 500).css('overflow', 'hidden');
             errorHandler();
             panelAlert('JSON Exported Successfuly','good');
         }else{
@@ -755,7 +786,7 @@ $(function () {
     }
 
     function previewFeature(heroItem, mode) {
-        var dt = $('#entry' + heroItem).find('form').serializeArray(),
+        var dt = $(app.objects.e + heroItem).find('form').serializeArray(),
             start = dt[0].value,
             img = dt[7].value,
             titleColor = dt[4].value,
@@ -763,7 +794,7 @@ $(function () {
             subTitleText = dt[5].value,
             buttonLabel = dt[9].value,
             buttonLink = dt[11].value,
-            container = '#html-zone',
+            container = app.objects.h,
             target = '.render_output',
             warningString = '<div class="preview_warning" title="The position and size of the background may display differently than on the live site.">Preview may differ from actual site render</div>';
         if (mode == 'small') {
@@ -797,10 +828,10 @@ $(function () {
         addItems();
     }).on('click','.overlay_close',function(){
         $(this).parent().parent().hide();
-        $(root).css('overflow','auto');
+        $(app.objects.r).css('overflow','auto');
         $('.overlay_message').css('display','none')
     }).on('click','.select_content',function() {
-        var $this = $('.blackify_overlay textarea');
+        var $this = $(app.objects.b+' textarea');
         $this.select();
         // Work around Chrome's little problem
         $this.mouseup(function() {
@@ -810,29 +841,29 @@ $(function () {
         });
     }).on('click','.gotoItem',function (){
         var a = $(this).data('item');
-        $(root).animate({
-            scrollTop: $('#entry' + a).offset().top-60
+        $(app.objects.r).animate({
+            scrollTop: $(app.objects.e + a).offset().top-60
         }, 500);
-        if($('#output').css('display')=='block'){
-            $(root).css('overflow','auto');
-            $('#output').css('display','none')
+        if($(app.objects.o).css('display')=='block'){
+            $(app.objects.r).css('overflow','auto');
+            $('#oapp.objects.output').css('display','none')
         }
-        if($('#help').css('display') == 'block'){
-            $('#help').css('display','none');
+        if($(app.objects.he).css('display') == 'block'){
+            $(app.objects.he).css('display','none');
         }
     }).on('click','.about_app,.version_number',function (e){
         window.open("../release.html", "_blank","scrollbars=no,resizable=no,height=600, width=800, status=yes, toolbar=no, menubar=no, location=no");
     }).on('click','.btnAddMulti',function (){
         $('#query-zone').toggle();
-        $(root).animate({ scrollTop: 0 }, 500);
-        if($('#output').css('display') == 'block'){
-            $('#output').css('display','none');
+        $(app.objects.r).animate({ scrollTop: 0 }, 500);
+        if($(app.objects.o).css('display') == 'block'){
+            $(app.objects.o).css('display','none');
         }
-        if($('#html-zone').css('display') == 'block'){
-            $('#html-zone').css('display','none');
+        if($(app.objects.h).css('display') == 'block'){
+            $(app.objects.h).css('display','none');
         }
         $('.num_select').focus();
-    }).on('click','.check_image',function(){
+    }).on('click',app.objects.c,function(){
         var a = $(this).data('handler');
         validateImage('main',a);
     }).on('click','.multiquery_close',function(){
@@ -843,11 +874,11 @@ $(function () {
     }).on('click','.overlay_validate',function(){
         validateJSON();
     }).on('click','.previewItem.large',function(){
-        $(root).animate({ scrollTop: 0 }, 500).css('overflow','hidden');
+        $(app.objects.r).animate({ scrollTop: 0 }, 500).css('overflow','hidden');
         var a = $(this).data('hero');
         previewFeature(a,'large');
     }).on('click','.previewItem.small',function(){
-        $(root).animate({ scrollTop: 0 }, 500).css('overflow','hidden');
+        $(app.objects.r).animate({ scrollTop: 0 }, 500).css('overflow','hidden');
         var a = $(this).data('hero');
         previewFeature(a,'small');
     }).on('click','.removeThisItem',function(){
@@ -881,27 +912,27 @@ $(function () {
     }).on('click','.copy-zone',function(){
         OpenInNewTab('https://github.com/davidemaser/davidemaser.github.io');
     }).on('click','.showHelp',function(){
-        $('#help').toggle();
-        if($('#help').css('display') == 'block'){
-            $(root).animate({ scrollTop: 0 }, 500).css('overflow','hidden');
+        $(app.objects.he).toggle();
+        if($(app.objects.he).css('display') == 'block'){
+            $(app.objects.r).animate({ scrollTop: 0 }, 500).css('overflow','hidden');
         }else{
-            $(root).css('overflow','auto');
+            $(app.objects.r).css('overflow','auto');
         }
-        if($('#output').css('display') == 'block'){
-            $('#output').css('display','none');
+        if($(app.objects.o).css('display') == 'block'){
+            $(app.objects.o).css('display','none');
         }
-        if($('#html-zone').css('display') == 'block'){
-            $('#html-zone').css('display','none');
+        if($(app.objects.h).css('display') == 'block'){
+            $(app.objects.h).css('display','none');
         }
     }).on('click','.help_close',function(){
-        if($('#help').css('display') == 'block'){
+        if($(app.objects.he).css('display') == 'block'){
             $(this).parent().parent().hide();
-            $(root).css('overflow','auto');
+            $(app.objects.r).css('overflow','auto');
         }
     }).on('click','.renderer_close',function(){
-        if($('#html-zone').css('display') == 'block'){
+        if($(app.objects.h).css('display') == 'block'){
             $(this).parent().parent().hide();
-            $(root).css('overflow','auto');
+            $(app.objects.r).css('overflow','auto');
         }
     }).on('click','.btnDel',function () {
         deleteItems('last');
@@ -909,8 +940,8 @@ $(function () {
         prepareJSON('full');
     }).on('click','.translate_json',function (){
         $('.overlay_message').html('');
-        $(root).animate({ scrollTop: 0 }, 500).css('overflow','hidden');
-        $('#output').attr('data-reason','translate').css('display','block').find('#output_code').val('').attr('placeholder','Paste you code here');
+        $(app.objects.r).animate({ scrollTop: 0 }, 500).css('overflow','hidden');
+        $(app.objects.o).attr('data-reason','translate').css('display','block').find('#output_code').val('').attr('placeholder','Paste you code here');
     }).on('click','.save_json',function (e){
         doLocalSave();
         /*prepareJSON('save');
@@ -924,20 +955,20 @@ $(function () {
     }).on('click','.errors_reset',function (){
         $('input,select').attr('style','').attr('placeholder','');
         $('.errorList').css('display','none');
-        $(root).css('overflow','auto');
-        $('.input_holders').find('.input_alerts').remove();
-        $('.input_holders').contents().unwrap();
+        $(app.objects.r).css('overflow','auto');
+        $(app.objects.i).find('.input_alerts').remove();
+        $(app.objects.i).contents().unwrap();
         panelAlert('Errors Reset','good');
     }).on('click','.form_reset',function (e){
-        $(root).animate({ scrollTop: 0 }, 500).css('overflow','hidden');
+        $(app.objects.r).animate({ scrollTop: 0 }, 500).css('overflow','hidden');
         $('.clonedInput:gt(0)').remove();
         $('.snapTo').find('li:gt(0)').remove();
         $('input').val('');
         $('input,select').attr('style','').attr('placeholder','');
         $('.errorList').css('display','none');
-        $(root).css('overflow','auto');
-        $('.input_holders').find('.input_alerts').remove();
-        $('.input_holders').contents().unwrap();
+        $(app.objects.r).css('overflow','auto');
+        $(app.objects.i).find('.input_alerts').remove();
+        $(app.objects.i).contents().unwrap();
         panelAlert('Form Reset To Default','good');
         e.preventDefault();
     }).on('click','.form_local_reset',function (e){
@@ -957,10 +988,10 @@ $(function () {
         $(this).slideUp();
     }).on('click','.show_me_how',function(){
         var a = $(this).data('target');
-        $(root).animate({ scrollTop: 0 },
+        $(app.objects.r).animate({ scrollTop: 0 },
             {duration:500,
                 complete:function(){
-                    $('#help').show();
+                    $(app.objects.he).show();
                     jumpToHelper(a);
                 }}).css('overflow','hidden');
 
@@ -979,32 +1010,32 @@ $(function () {
         var a = $(this).data('item'),
             b = a-1,
             c = $(this).parent().parent().parent().parent().parent().parent(),
-            d = $(c).closest('.clonedInput').prev(),
+            d = $(c).closest(app.objects.cl).prev(),
             e = $(c).data('split');
             $(c).attr('data-split',(e-1));
             $(c).insertBefore(d);
-            $(root).animate({
-                scrollTop: $('#entry' + a).offset().top-60
+            $(app.objects.r).animate({
+                scrollTop: $(app.objects.e + a).offset().top-60
             }, 500);
-            //$(d).closest('.clonedInput').prev();
+            //$(d).closest(app.objects.cl).prev();
         $(this).parent().parent().parent().find('.btn.btn-info:not(.dropdown-toggle)').prepend('<span title="This entry has been moved from it\'s original position" class="glyphicon glyphicon-fullscreen reordered" aria-hidden="true"></span>');
     }).on('click','.moveDownThisItem',function(){
         var a = $(this).data('item'),
             b = a-1,
             c = $(this).parent().parent().parent().parent().parent().parent(),
-            d = $(c).closest('.clonedInput').next(),
+            d = $(c).closest(app.objects.cl).next(),
             e = $(c).data('split'),
             f = $(d).attr('id');
             if(f.indexOf('entry') > -1) {
                 $(c).attr('data-split', (e + 1));
                 $(c).insertAfter(d);
-                $(root).animate({
-                    scrollTop: $('#entry' + a).offset().top - 60
+                $(app.objects.r).animate({
+                    scrollTop: $(app.objects.e + a).offset().top - 60
                 }, 500);
             }else{
                 panelAlert('If I move down any further, I\'ll be off the page.','error');
             }
-            //$(d).closest('.clonedInput').prev();
+            //$(d).closest(app.objects.cl).prev();
         $(this).parent().parent().parent().find('.btn.btn-info:not(.dropdown-toggle)').prepend('<span title="This entry has been moved from it\'s original position" class="glyphicon glyphicon-fullscreen reordered" aria-hidden="true"></span>');
 
 
@@ -1088,12 +1119,12 @@ $(function () {
         }
         if (e.keyCode == 73 && e.ctrlKey && e.altKey) {
             $('#query-zone').toggle();
-            $(root).animate({ scrollTop: 0 }, 500);
-            if($('#output').css('display') == 'block'){
-                $('#output').css('display','none');
+            $(app.objects.r).animate({ scrollTop: 0 }, 500);
+            if($(app.objects.o).css('display') == 'block'){
+                $(app.objects.o).css('display','none');
             }
-            if($('#html-zone').css('display') == 'block'){
-                $('#html-zone').css('display','none');
+            if($(app.objects.h).css('display') == 'block'){
+                $(app.objects.h).css('display','none');
             }
             $('.num_select').focus();
             e.preventDefault();
@@ -1103,8 +1134,8 @@ $(function () {
         }
         if (e.keyCode == 13 && e.ctrlKey && e.altKey) {
             $('.overlay_message').html('');
-            $(root).animate({ scrollTop: 0 }, 500).css('overflow','hidden');
-            $('#output').attr('data-reason','translate').css('display','block').find('#output_code').val('').attr('placeholder','Paste you code here');
+            $(app.objects.r).animate({ scrollTop: 0 }, 500).css('overflow','hidden');
+            $(app.objects.o).attr('data-reason','translate').css('display','block').find('#output_code').val('').attr('placeholder','Paste you code here');
             e.preventDefault();
         }
         if (e.keyCode == 45 && e.ctrlKey && e.altKey) {
@@ -1157,14 +1188,14 @@ $(function () {
     }
     function killBats(){
         $('.oooobats').remove();
-        $('.app_batsToggle').attr('data-status','allGone').html('Let In The Bats');
+        $('.batsToggle').attr('data-status','allGone').html('Let In The Bats');
     }
     var d = new Date();
     var dt = d.getDate(),
         dm = d.getMonth()+1;
     if(dm == 10 && dt > 21) {
-        $('.main_nav').append('<li class="divider"></li><li><a href="#" class="app_batsToggle" data-status="active">Kill The Bats</a></li>');
-        $('body').on('click','.app_batsToggle',function(){
+        $('.main_nav').append('<li class="divider"></li><li><a href="#" class="batsToggle" data-status="active">Kill The Bats</a></li>');
+        $('body').on('click','.batsToggle',function(){
             if($(this).data('status') == 'active') {
                 killBats();
             }else if($(this).data('status') == 'allGone') {
@@ -1173,7 +1204,7 @@ $(function () {
                 launchBats();
                 launchBats();
                 launchBats();
-                $('.app_batsToggle').data('status','active').html('Kill The Bats');
+                $('.batsToggle').data('status','active').html('Kill The Bats');
             }
         });
         launchBats();
