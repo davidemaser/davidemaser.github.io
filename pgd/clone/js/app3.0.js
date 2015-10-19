@@ -1,19 +1,19 @@
+/*
+ * webapp created by David Maser for use on The Last Hunt
+ * site. Use outside of the Altitude-Sports domains
+ * is not allowed.
+ */
+/**
+ * @type {{locale: string, user: string, callback: boolean, export: string, dialog: boolean, save: boolean, listener: string, methods: {g: string, p: string}, objects: {o: string, e: string, h: string, i: string, b: string, c: string, ca: string, he: string, hi: string, cl: string, r: string, bo: string, g: string, l: string}, handlers: {d: string, t: string, i: string, r: string, s: string}}}
+ */
 var app = {
-    locale:"EN",
+    locale:"en_EN",
     user:"guest",
     callback:true,
     export:"json",
     dialog:true,
     save:true,
-    decode:false,
-    compress:false,
     listener:"window",
-    states:{
-        e:"error",
-        s:"good",
-        d:"complete"
-    },
-    variant:null,
     methods:{
         g:"get",
         p:"post"
@@ -25,18 +25,33 @@ var app = {
         i:".input_holders",
         b:".blackify_overlay",
         c:".check_image",
+        ca:".check_alt_image",
         he:"#help",
+        hi:".help_item",
         cl:".clonedInput",
-        r:"html,body"
+        r:"html,body",
+        bo:"body",
+        g:".glyphicon",
+        l:".loadLsItems"
+    },
+    handlers:{
+        d:'data-handler',
+        t:'data-theme',
+        i:'data-item',
+        r:'data-reason',
+        s:'data-split'
     }
 };
-
+/**
+ * @param mess
+ * @param state
+ */
 function panelAlert(mess,state){
     var mPane = '.panel-body.bottom_level_bt';
     if(state == 'error') {
-        $(mPane).find('.glyphicon').removeClass('allGood').removeClass('glyphicon-ok').addClass('allBad').addClass('glyphicon-remove');
+        $(mPane).find(app.objects.g).removeClass('allGood').removeClass('glyphicon-ok').addClass('allBad').addClass('glyphicon-remove');
     }else if(state == 'good') {
-        $(mPane).find('.glyphicon').removeClass('allBad').removeClass('glyphicon-remove').addClass('allGood').addClass('glyphicon-ok');
+        $(mPane).find(app.objects.g).removeClass('allBad').removeClass('glyphicon-remove').addClass('allGood').addClass('glyphicon-ok');
     }
     $(mPane).slideDown();
     $(mPane).find('.inner_message').html(mess);
@@ -48,7 +63,7 @@ function initializeForm(){
         url:"schema/layout.json",
         success:function(data) {
             var dataBlock = data.layout,
-                htmlBlock = '<div id="entry1" class="clonedInput" data-split="1"><form action="'+dataBlock.form_action+'" method="'+dataBlock.method+'" id="'+dataBlock.form_id+'" role="form">';
+                htmlBlock = '<div id="entry1" class="clonedInput" '+app.handlers.s+'="1"><form action="'+dataBlock.form_action+'" method="'+dataBlock.method+'" id="'+dataBlock.form_id+'" role="form">';
             htmlBlock += dataBlock.header;
             htmlBlock += '<fieldset>';
             var blockContent = dataBlock.block,
@@ -74,7 +89,6 @@ function initializeForm(){
                                 line = 'half_span';
                                 break;
                         }
-
                         htmlBlock += '<div class="' + line + ' ' + blocker + '">';
                         htmlBlock += '<label class="label_fn control-label" for="' + blockContent[i].obj_id + '">' + blockContent[i].label + '</label>';
                         if (blockContent[i].wrap == true) {
@@ -83,7 +97,6 @@ function initializeForm(){
                         if (blockContent[i].inject_code !== '') {
                             htmlBlock += blockContent[i].inject_code;
                         }
-                        //input types
                         if (blockContent[i].input_obj == 'text') {
                             htmlBlock += '<input';
                             if (blockContent[i].obj_id !== '') {
@@ -186,7 +199,6 @@ function initializeForm(){
             htmlBlock += '</fieldset>';
             htmlBlock += '</form></div>';
             console.log(htmlBlock);
-            //$('#wrapper').prepend(htmlBlock);
         }
     })
 }
@@ -198,12 +210,12 @@ function initializeTheme(){
     if(window.localStorage) {
         var tm = localStorage.getItem('pgb_Theme');
         if (tm == null || tm == undefined) {
-            $('html').attr('data-theme', 'light');
+            $('html').attr(app.handlers.t, 'light');
         }else{
-            $('html').attr('data-theme', tm);
+            $('html').attr(app.handlers.t, tm);
         }
     }else{
-        $('html').attr('data-theme', 'light');
+        $('html').attr(app.handlers.t, 'light');
     }
 }
 function setHeadSec(){
@@ -215,7 +227,7 @@ function setHeadSec(){
     try {
         var isReady = localStorage.getItem('pgb_SavedNode_LS');
         if (isReady !== null) {
-            $('.loadLsItems').css('display', 'inline-block');
+            $(app.objects.l).css('display', 'inline-block');
             $('#import_json').css('display', 'block');
             $('.lsLoad').find('li').remove();
             var a = localStorage.getItem('pgb_SavedNode_LS').split(','),
@@ -223,14 +235,14 @@ function setHeadSec(){
             if (long > 1) {
                 for (var i = 0; i < long; i++) {
                     if (a[i] !== '') {
-                        $('.lsLoad').append('<li><a href="#" class="loadItem" data-item="' + a[i] + '">' + a[i] + '</a></li>');
+                        $('.lsLoad').append('<li><a href="#" class="loadItem" '+app.handlers.i+'="' + a[i] + '">' + a[i] + '</a></li>');
                     }
                 }
             } else {
-                $('.loadLsItems').hide();
+                $(app.objects.l).hide();
             }
         } else {
-            $('.loadLsItems').css('display', 'none');
+            $(app.objects.l).css('display', 'none');
             $('#import_json').css('display', 'none');
         }
     }catch(e){
@@ -258,12 +270,11 @@ $(function () {
                 $(target).append('<option value="null">No Local Storage Found</option>');
             }
         }catch(e){
-
         }
     }
     function doLocalSave(method){
         if(method == 'do' || method == null) {
-            $('#loadandsave-zone').attr('data-reason', 'save').css('display', 'block');
+            $('#loadandsave-zone').attr(app.handlers.r, 'save').css('display', 'block');
         }else if(method == 'reset'){
             localStorage.setItem('pgb_SavedNode_LS',"");
             for(var i=0, len=localStorage.length; i<len; i++) {
@@ -307,14 +318,14 @@ $(function () {
     }
     function jumpToHelper(a){
         $('.help_panel_holder').animate({
-            scrollTop: $('.help_item[data-helper="'+a+'"]').offset().top,
+            scrollTop: $(app.objects.hi+'[data-helper="'+a+'"]').offset().top,
             duration:500
         });
-        $('.help_item').animate({
+        $(app.objects.hi).animate({
             opacity:0.4,
             duration:500
         });
-        $('.help_item[data-helper="'+a+'"]').animate({
+        $(app.objects.hi+'[data-helper="'+a+'"]').animate({
             opacity:1,
             duration:500
         });
@@ -345,7 +356,7 @@ $(function () {
             newElem = $(app.objects.e + num).clone().attr('id', 'entry' + newNum); // create the new element via clone(), and manipulate it's ID using newNum value
 
         newElem.find('.heading-reference').attr('id', 'ID' + newNum + '_reference').attr('name', 'ID' + newNum + '_reference').html('<div class="btn-group bigboy"><button type="button" class="btn btn-info">HERO ITEM <span class="label label-default">' + newNum+'</span></button><button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button><ul class="dropdown-menu"><li><a class="previewItem large" href="javascript:;" data-hero="'+newNum+'">Preview Large</a></li><li><a class="previewItem small" href="javascript:;" data-hero="'+newNum+'">Preview Small</a></li></ul></div>');
-        newElem.attr('data-split',newNum);
+        newElem.attr(app.handlers.s,newNum);
 
         newElem.find('.label_ttl').attr('for', 'ID' + newNum + '_title');
         newElem.find('.select_ttl').attr('id', 'ID' + newNum + '_title').attr('name', 'ID' + newNum + '_title').val('');
@@ -367,8 +378,8 @@ $(function () {
 
         newElem.find('.label_twt').attr('for', 'ID' + newNum + '_twitter_handle');
         newElem.find('.input_twt').attr('id', 'ID' + newNum + '_twitter_handle').attr('name', 'ID' + newNum + '_twitter_handle').val('');
-        newElem.find(app.objects.c).attr('data-handler', newNum);
-        newElem.find('.check_alt_image').attr('data-handler', newNum);
+        newElem.find(app.objects.c).attr(app.handlers.d, newNum);
+        newElem.find('.check_alt_image').attr(app.handlers.d, newNum);
         newElem.find('.input-group-addon.image_count').attr('style','').html('Shopify CDN');
         newElem.find('.mod-radio').attr('style','');
 
@@ -381,11 +392,11 @@ $(function () {
             $('.btnAdd').attr('disabled', true).prop('value', "You've reached the limit"); // value here updates the text in the 'add' button when the limit is reached
         var dateNow = new Date();
         $('.date_obj').datetimepicker({format: 'MM/DD/YYYY HH:mm'});
-        $('.snapTo').append('<li><a href="#" class="gotoItem" data-item="'+newNum+'">Hero Item '+newNum+'</a></li>');
+        $('.snapTo').append('<li><a href="#" class="gotoItem" '+app.handlers.i+'="'+newNum+'">Hero Item '+newNum+'</a></li>');
         $(app.objects.r).animate({
             scrollTop: $(app.objects.e + newNum).offset().top-60
         }, 500);
-        $('.btn-group.bigboy:not(.helpMePlease)').last().find('ul').append('<li class="divider"></li><li><a class="removeThisItem" data-item="'+newNum+'" href="javascript:;">Remove</a></li><li class="divider"></li><li><a class="moveUpThisItem" data-item="'+newNum+'" href="javascript:;">Move Up<span class="glyphicon glyphicon-arrow-up"></span></a></li><li><a class="moveDownThisItem" data-item="'+newNum+'" href="javascript:;">Move Down<span class="glyphicon glyphicon-arrow-down"></span></a></li>');
+        $('.btn-group.bigboy:not(.helpMePlease)').last().find('ul').append('<li class="divider"></li><li><a class="removeThisItem" '+app.handlers.i+'="'+newNum+'" href="javascript:;">Remove</a></li><li class="divider"></li><li><a class="moveUpThisItem" '+app.handlers.i+'="'+newNum+'" href="javascript:;">Move Up<span class="glyphicon glyphicon-arrow-up"></span></a></li><li><a class="moveDownThisItem" '+app.handlers.i+'="'+newNum+'" href="javascript:;">Move Down<span class="glyphicon glyphicon-arrow-down"></span></a></li>');
         $(app.objects.e + newNum).find('.mod-radio').find('input').first().prop('checked',true);
         scrollState('a');
         panelAlert('Hero Item Added','good');
@@ -407,7 +418,7 @@ $(function () {
                         // enable the "add" button
                         $('.btnAdd').attr('disabled', false).prop('value', "add section");
                     });
-                    $('.snapTo').find('.gotoItem[data-item="'+b+'"]').parent().remove();
+                    $('.snapTo').find('.gotoItem['+app.handlers.i+'="'+b+'"]').parent().remove();
                     scrollState('a');
                 } else {
                     $(app.objects.e + elem).slideUp('slow', function () {
@@ -418,7 +429,7 @@ $(function () {
                         // enable the "add" button
                         $('.btnAdd').attr('disabled', false).prop('value', "add section");
                     });
-                    $('.snapTo').find('.gotoItem[data-item="'+elem+'"]').parent().remove();
+                    $('.snapTo').find('.gotoItem['+app.handlers.i+'="'+elem+'"]').parent().remove();
                     scrollState('a');
                 }
                 return false; // Removes the last section you added
@@ -438,7 +449,7 @@ $(function () {
     }
     function errorHandler(){
         var errorLog = [],
-            a = JSON.parse($(app.objects.o+'[data-reason="output"]').find('textarea').val()).hero,
+            a = JSON.parse($(app.objects.o+'['+app.handlers.r+'="output"]').find('textarea').val()).hero,
             b = a.length,
             c = 0;
         for(var i =0;i<b;i++){
@@ -488,7 +499,7 @@ $(function () {
             $('.errorList').css('display','inline-block');
             $('.errorListing').empty();
             for (var j = 0; j < errorLog.length; j++) {
-                $('.errorListing').prepend('<li><a href="javascript:;" class="errorItem '+errorLog[j].die+'" data-item="'+j+'">Hero Item ' + errorLog[j].form + ' : ' + errorLog[j].obj + ' : ' + errorLog[j].prob + '</a></li>');
+                $('.errorListing').prepend('<li><a href="javascript:;" class="errorItem '+errorLog[j].die+'" '+app.handlers.i+'="'+j+'">Hero Item ' + errorLog[j].form + ' : ' + errorLog[j].obj + ' : ' + errorLog[j].prob + '</a></li>');
                 registerErrorButtons(errorLog[j].form,errorLog[j].elem,j,errorLog[j].prob,errorLog[j].die);
             }
             $('.errorList').find('button').html('Warnings<span class="label label-default numerrors">'+errorLog.length+'</span><span class="caret"></span>');
@@ -497,7 +508,7 @@ $(function () {
         }
     }
     function registerErrorButtons(num,elem,item,prob,die){
-        $('body').on('click','.errorItem[data-item="'+item+'"]',function(){
+        $(app.objects.bo).on('click','.errorItem['+app.handlers.i+'="'+item+'"]',function(){
             if(die == true){
                 $(app.objects.e+num).find('.'+elem).css('background-color','rgba(238, 54, 54, 0.3)').css('border-color','red').attr('placeholder','Leaving this field empty will cause the hero banner function to fail');
             }else {
@@ -698,9 +709,9 @@ $(function () {
             if ($(app.objects.h).css('display') == 'block') {
                 $(app.objects.h).css('display', 'none');
             }
-            $(app.objects.o).attr('data-reason', 'output');
+            $(app.objects.o).attr(app.handlers.r, 'output');
             $(app.objects.o).css('display', 'block');
-            $('#output textarea').val(page_model);
+            $(app.objects.o+' textarea').val(page_model);
             $(app.objects.r).animate({scrollTop: 0}, 500).css('overflow', 'hidden');
             errorHandler();
             panelAlert('JSON Exported Successfuly','good');
@@ -719,9 +730,9 @@ $(function () {
     }
     function validateImage(type,handler){
         if(type == 'main'){
-            var a = $('.check_image[data-handler="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.main_image').val(),
-                aa = $('.check_image[data-handler="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.main_image'),
-                aaa = $('.check_image[data-handler="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.main_image').parent().attr('class');
+            var a = $(app.objects.c+'['+app.handlers.d+'="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.main_image').val(),
+                aa = $(app.objects.c+'['+app.handlers.d+'="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.main_image'),
+                aaa = $(app.objects.c+'['+app.handlers.d+'="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.main_image').parent().attr('class');
             if(a !== '') {
                 var b = urlExists(a);
                 if (b !== 200) {
@@ -751,9 +762,9 @@ $(function () {
                 }
             }
         }else if(type == 'alt'){
-            var a = $('.check_alt_image[data-handler="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.alt_image').val(),
-                aa = $('.check_alt_image[data-handler="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.alt_image'),
-                aaa = $('.check_alt_image[data-handler="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.alt_image').parent().attr('class');
+            var a = $(app.objects.ca+'['+app.handlers.d+'="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.alt_image').val(),
+                aa = $(app.objects.ca+'['+app.handlers.d+'="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.alt_image'),
+                aaa = $(app.objects.ca+'['+app.handlers.d+'="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.alt_image').parent().attr('class');
             if(a !== '') {
                 var b = urlExists(a);
                 if (b !== 200) {
@@ -800,7 +811,7 @@ $(function () {
         if (mode == 'small') {
             var outputString = '<div class="five columns jose pedro homepage_content event mini-spacers animated fadeIn delay-05s"><div id="event-active-today">';
         } else {
-            var outputString = '';
+            outputString = '';
         }
         outputString += '<div data-instance="slide-0" data-str="' + img + '"';
         outputString += ' data-promote="true" id="slide-0" class="hero fwidth root-0"><div data-object-pos="false-false" class="bcg skrollable skrollable-between" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -200px;" data-anchor-target="#slide-0"';
@@ -824,7 +835,7 @@ $(function () {
     $('.btnAdd').attr('disabled', false);
     // Disable the "remove" button
     $('.btnDel').attr('disabled', true);
-    $('body').on('click','.btnAdd',function () {
+    $(app.objects.bo).on('click','.btnAdd',function () {
         addItems();
     }).on('click','.overlay_close',function(){
         $(this).parent().parent().hide();
@@ -889,11 +900,11 @@ $(function () {
         if($(this).val()=='true'){
             $(this).parent().parent().css('border-left','6px solid #68B81F');
             $(this).parent().parent().parent().parent().find('h2').find('span').removeClass('label-danger').addClass('label-default');
-            $('.gotoItem[data-item="'+a+'"]').removeClass('redout').attr('title','');
+            $('.gotoItem['+app.handlers.i+'="'+a+'"]').removeClass('redout').attr('title','');
         }else{
             $(this).parent().parent().css('border-left','6px solid #FD0000');
             $(this).parent().parent().parent().parent().find('h2').find('span').removeClass('label-default').addClass('label-danger');
-            $('.gotoItem[data-item="'+a+'"]').addClass('redout').attr('title','This Hero entry is not activated');
+            $('.gotoItem['+app.handlers.i+'="'+a+'"]').addClass('redout').attr('title','This Hero entry is not activated');
         }
     }).on('change','.lsOptions',function(){
         try {
@@ -907,7 +918,7 @@ $(function () {
 
         }
     }).on('click','.loadItem',function(){
-        var a = $(this).attr('data-item');
+        var a = $(this).attr(app.handlers.i);
         traverseJSON(true,a);
     }).on('click','.copy-zone',function(){
         OpenInNewTab('https://github.com/davidemaser/davidemaser.github.io');
@@ -941,7 +952,7 @@ $(function () {
     }).on('click','.translate_json',function (){
         $('.overlay_message').html('');
         $(app.objects.r).animate({ scrollTop: 0 }, 500).css('overflow','hidden');
-        $(app.objects.o).attr('data-reason','translate').css('display','block').find('#output_code').val('').attr('placeholder','Paste you code here');
+        $(app.objects.o).attr(app.handlers.r,'translate').css('display','block').find('#output_code').val('').attr('placeholder','Paste you code here');
     }).on('click','.save_json',function (e){
         doLocalSave();
         /*prepareJSON('save');
@@ -973,7 +984,7 @@ $(function () {
         e.preventDefault();
     }).on('click','.form_local_reset',function (e){
         doLocalSave('reset');
-        $('.loadLsItems').hide();
+        $(app.objects.l).hide();
         e.preventDefault();
     }).on('click','input,select',function(){
         $(this).attr('style','').attr('placeholder','');
@@ -984,6 +995,9 @@ $(function () {
     }).on('click','.helpItem',function(){
         var a = $(this).data('target');
         jumpToHelper(a);
+    }).on('click','.image_count',function(){
+        $(this).attr('style','');
+        $(this).text('Shopify CDN');
     }).on('click','.panel-body.bottom_level_bt',function(){
         $(this).slideUp();
     }).on('click','.show_me_how',function(){
@@ -994,14 +1008,13 @@ $(function () {
                     $(app.objects.he).show();
                     jumpToHelper(a);
                 }}).css('overflow','hidden');
-
     }).on('click','.helpItemReset',function(){
-        $('.help_item').animate({
+        $(app.objects.hi).animate({
             opacity: 1
         }, 500);
     }).on('click','.settings_toggle',function(e){
         var a = $(this).data('theme');
-        $('html').attr('data-theme',a);
+        $('html').attr(app.handlers.t,a);
         if(window.localStorage) {
             localStorage.setItem('pgb_Theme', a);
         }
@@ -1012,12 +1025,13 @@ $(function () {
             c = $(this).parent().parent().parent().parent().parent().parent(),
             d = $(c).closest(app.objects.cl).prev(),
             e = $(c).data('split');
-            $(c).attr('data-split',(e-1));
+            $(c).attr(app.handlers.s,(e-1));
             $(c).insertBefore(d);
             $(app.objects.r).animate({
                 scrollTop: $(app.objects.e + a).offset().top-60
             }, 500);
             //$(d).closest(app.objects.cl).prev();
+        $(this).parent().parent().parent().find('.reordered').remove();
         $(this).parent().parent().parent().find('.btn.btn-info:not(.dropdown-toggle)').prepend('<span title="This entry has been moved from it\'s original position" class="glyphicon glyphicon-fullscreen reordered" aria-hidden="true"></span>');
     }).on('click','.moveDownThisItem',function(){
         var a = $(this).data('item'),
@@ -1027,18 +1041,16 @@ $(function () {
             e = $(c).data('split'),
             f = $(d).attr('id');
             if(f.indexOf('entry') > -1) {
-                $(c).attr('data-split', (e + 1));
+                $(c).attr(app.handlers.s, (e + 1));
                 $(c).insertAfter(d);
                 $(app.objects.r).animate({
                     scrollTop: $(app.objects.e + a).offset().top - 60
                 }, 500);
+                $(this).parent().parent().parent().find('.reordered').remove();
+                $(this).parent().parent().parent().find('.btn.btn-info:not(.dropdown-toggle)').prepend('<span title="This entry has been moved from it\'s original position" class="glyphicon glyphicon-fullscreen reordered" aria-hidden="true"></span>');
             }else{
                 panelAlert('If I move down any further, I\'ll be off the page.','error');
             }
-            //$(d).closest(app.objects.cl).prev();
-        $(this).parent().parent().parent().find('.btn.btn-info:not(.dropdown-toggle)').prepend('<span title="This entry has been moved from it\'s original position" class="glyphicon glyphicon-fullscreen reordered" aria-hidden="true"></span>');
-
-
     }).on('keyup','input',function(){
         var a = $(this).val().length;
         if($(this).hasClass('objTitleEN') || $(this).hasClass('objTitleFR') || $(this).hasClass('objTextEN') || $(this).hasClass('objTextFR')){
@@ -1073,7 +1085,7 @@ $(function () {
             $(this).parent().parent().parent().parent().hide();
             setHeadSec();
         }
-    }).on('keyup','#output[data-reason="translate"] #output_code',function(e){
+    }).on('keyup',app.objects.o+'['+app.handlers.r+'="translate"] #output_code',function(e){
         if(e.keyCode == 45){
             $(this).trigger("enterKey");
             traverseJSON(false);
@@ -1094,7 +1106,6 @@ $(function () {
             $(this).parent().parent().find('.objButtonPopupLink').css('opacity',0.3);
         }
     });
-
     $(window).on('scroll', function() {
         if($(window).scrollTop() + $(window).height() == $(document).height()) {
             $('.copy-zone').fadeIn(500);
@@ -1135,7 +1146,7 @@ $(function () {
         if (e.keyCode == 13 && e.ctrlKey && e.altKey) {
             $('.overlay_message').html('');
             $(app.objects.r).animate({ scrollTop: 0 }, 500).css('overflow','hidden');
-            $(app.objects.o).attr('data-reason','translate').css('display','block').find('#output_code').val('').attr('placeholder','Paste you code here');
+            $(app.objects.o).attr(app.handlers.r,'translate').css('display','block').find('#output_code').val('').attr('placeholder','Paste you code here');
             e.preventDefault();
         }
         if (e.keyCode == 45 && e.ctrlKey && e.altKey) {
@@ -1170,7 +1181,6 @@ $(function () {
         function R(o, m) {
             return Math.max(Math.min(o + (r() - .5) * 400, m - 50), 50)
         }
-
         function A() {
             var x = R(a, w.innerWidth),
                 y = R(b, w.innerHeight),
@@ -1195,7 +1205,7 @@ $(function () {
         dm = d.getMonth()+1;
     if(dm == 10 && dt > 21) {
         $('.main_nav').append('<li class="divider"></li><li><a href="#" class="batsToggle" data-status="active">Kill The Bats</a></li>');
-        $('body').on('click','.batsToggle',function(){
+        $(app.objects.bo).on('click','.batsToggle',function(){
             if($(this).data('status') == 'active') {
                 killBats();
             }else if($(this).data('status') == 'allGone') {

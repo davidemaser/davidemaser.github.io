@@ -1196,7 +1196,7 @@ span.show_me_how {
   &:focus {
     border-color: #4cae4c;
     background-color: rgba(0,0,0,0.05) !important;
-    border-left: 6px solid #4cae4c;
+    border-left-width: 6px;
   }
 }
 #loadandsave-zone[data-reason="load"] {
@@ -1218,4 +1218,7 @@ span.show_me_how {
 .reordered {
   font-size: 20px;
   margin-right: 10px;
+}
+.image_count{
+  cursor: pointer;
 }
