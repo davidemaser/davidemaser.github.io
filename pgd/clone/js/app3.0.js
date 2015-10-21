@@ -1,9 +1,5 @@
-/*
- * webapp created by David Maser for use on The Last Hunt
- * site. Use outside of the Altitude-Sports domains
- * is not allowed.
- */
 /**
+ * @copyright webapp created by David Maser for use on The Last Hunt site. Use outside of the Altitude-Sports domains is not allowed.
  * @type {{locale: string, user: string, callback: boolean, export: string, dialog: boolean, save: boolean, listener: string, methods: {g: string, p: string}, objects: {o: string, e: string, h: string, i: string, b: string, c: string, ca: string, he: string, hi: string, cl: string, r: string, bo: string, g: string, l: string}, handlers: {d: string, t: string, i: string, r: string, s: string}}}
  */
 var app = {
