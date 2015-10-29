@@ -826,7 +826,7 @@ $(function () {
         } else if (mode == 'large') {
             outputString += warningString;
         }
-        $(container).show();
+        $(container).show().css('top',sPos+50);
         $(target).empty().append(outputString);
         if (mode == 'small') {
             $(target).addClass('renderSmall');
@@ -888,11 +888,11 @@ $(function () {
     }).on('click','.overlay_validate',function(){
         validateJSON();
     }).on('click','.previewItem.large',function(){
-        $(app.objects.r).animate({ scrollTop: 0 }, 500).css('overflow','hidden');
+        $(app.objects.r).animate({ scrollTop: sPos }, 500).css('overflow','hidden');
         var a = $(this).data('hero');
         previewFeature(a,'large');
     }).on('click','.previewItem.small',function(){
-        $(app.objects.r).animate({ scrollTop: 0 }, 500).css('overflow','hidden');
+        $(app.objects.r).animate({ scrollTop: sPos }, 500).css('overflow','hidden');
         var a = $(this).data('hero');
         previewFeature(a,'small');
     }).on('click','.removeThisItem',function(){
