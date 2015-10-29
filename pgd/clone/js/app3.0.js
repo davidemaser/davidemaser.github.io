@@ -1114,6 +1114,7 @@ $(function () {
         }else{
             $('.copy-zone').fadeOut(500);
         }
+        console.log($(window).scrollTop()+' : '+$(window).height());
     }).on('resize', function() {
         scrollState('a');
     });

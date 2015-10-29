@@ -38,7 +38,6 @@
             }else if(isFirefox == true) {
                 pref = '-moz-';
             }
-
         console.log(options);
         // filterize the collection based on the settings variable.
         if(settings.blur !== null){
