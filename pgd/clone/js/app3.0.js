@@ -246,6 +246,7 @@ function setHeadSec(){
     }
 }
 $(function () {
+    var sPos = 0;
     setHeadSec();
     initializeTheme();
     $('.date_obj').datetimepicker({format: 'MM/DD/YYYY HH:mm'});
@@ -1114,7 +1115,6 @@ $(function () {
         }else{
             $('.copy-zone').fadeOut(500);
         }
-        console.log($(window).scrollTop()+' : '+$(window).height());
     }).on('resize', function() {
         scrollState('a');
     });
@@ -1161,6 +1161,8 @@ $(function () {
         }
     }).on('scroll', function(){
         scrollState('b');
+        sPos = $(window).scrollTop();
+        console.log(sPos);
     });
     function launchBats(){
         var r = Math.random,
