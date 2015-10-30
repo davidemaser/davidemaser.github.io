@@ -732,6 +732,9 @@ $(function () {
             if ($(app.objects.h).css('display') == 'block') {
                 $(app.objects.h).css('display', 'none');
             }
+            if ($(app.objects.ls).css('display') == 'block') {
+                $(app.objects.ls).css('display', 'none');
+            }
             $(app.objects.o).attr(app.handlers.r, 'output');
             $(app.objects.o).css('display', 'block');
             $(app.objects.o+' textarea').val(page_model);

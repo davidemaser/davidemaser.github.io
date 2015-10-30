@@ -28,6 +28,7 @@ var app = {
         bo:"body",
         g:".glyphicon",
         l:".loadLsItems",
+        ls:"#loadandsave-zone",
         ro:".render_output"
     },
     handlers:{

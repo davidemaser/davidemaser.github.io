@@ -1021,6 +1021,9 @@ a.action_button {
   font-smoothing: antialiased;
   //Instead of the line below you could use @include box-sizing($bs)
   box-sizing: border-box;
+  &.hero {
+    pointer-events: none;
+  }
 }
 div#html-view {
   position: absolute;
