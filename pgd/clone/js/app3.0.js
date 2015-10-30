@@ -888,10 +888,14 @@ $(function () {
             $(target).removeClass('renderSmall').attr('data-hero',heroItem).attr('data-language',lang).attr('data-mode',mode);
         }
     }
-
     $('.btnAdd').attr('disabled', false);
     // Disable the "remove" button
     $('.btnDel').attr('disabled', true);
+    /**
+     * click handlers bound to the .on expression
+     * so that dynamically generated divs are
+     * taken into consideration
+     */
     $(app.objects.bo).on('click','.btnAdd',function () {
         addItems();
     }).on('click','.overlay_close',function(){
@@ -956,28 +960,6 @@ $(function () {
     }).on('click','.removeThisItem',function(){
         var a = $(this).data('item');
         deleteItems(a);
-    }).on('change','.input_radio',function(){
-        var a = $(this).parent().parent().parent().parent().parent().attr('id').replace('entry','');
-        if($(this).val()=='true'){
-            $(this).parent().parent().css('border-left','6px solid #68B81F');
-            $(this).parent().parent().parent().parent().find('h2').find('span').removeClass('label-danger').addClass('label-default');
-            $('.gotoItem['+app.handlers.i+'="'+a+'"]').removeClass('redout').attr('title','');
-        }else{
-            $(this).parent().parent().css('border-left','6px solid #FD0000');
-            $(this).parent().parent().parent().parent().find('h2').find('span').removeClass('label-default').addClass('label-danger');
-            $('.gotoItem['+app.handlers.i+'="'+a+'"]').addClass('redout').attr('title','This Hero entry is not activated');
-        }
-    }).on('change','.lsOptions',function(){
-        try {
-            if ($(this).val() !== "" || $(this).val() !== "undefined" || $(this).val() !== undefined || $(this).val() !== "null" || $(this).val() !== null) {
-                var a = $(this).val();
-                traverseJSON(true, a);
-            } else {
-                panelAlert('Please select a valid data item from the dropdown', 'error');
-            }
-        }catch(e){
-
-        }
     }).on('click','.loadItem',function(){
         var a = $(this).attr(app.handlers.i);
         traverseJSON(true,a);
@@ -1190,6 +1172,28 @@ $(function () {
             $(this).parent().parent().find('.objButtonPopupLink').attr('style','');
         }else if(a == 'false'){
             $(this).parent().parent().find('.objButtonPopupLink').css('opacity',0.3);
+        }
+    }).on('change','.input_radio',function(){
+        var a = $(this).parent().parent().parent().parent().parent().attr('id').replace('entry','');
+        if($(this).val()=='true'){
+            $(this).parent().parent().css('border-left','6px solid #68B81F');
+            $(this).parent().parent().parent().parent().find('h2').find('span').removeClass('label-danger').addClass('label-default');
+            $('.gotoItem['+app.handlers.i+'="'+a+'"]').removeClass('redout').attr('title','');
+        }else{
+            $(this).parent().parent().css('border-left','6px solid #FD0000');
+            $(this).parent().parent().parent().parent().find('h2').find('span').removeClass('label-default').addClass('label-danger');
+            $('.gotoItem['+app.handlers.i+'="'+a+'"]').addClass('redout').attr('title','This Hero entry is not activated');
+        }
+    }).on('change','.lsOptions',function(){
+        try {
+            if ($(this).val() !== "" || $(this).val() !== "undefined" || $(this).val() !== undefined || $(this).val() !== "null" || $(this).val() !== null) {
+                var a = $(this).val();
+                traverseJSON(true, a);
+            } else {
+                panelAlert('Please select a valid data item from the dropdown', 'error');
+            }
+        }catch(e){
+
         }
     });
     $(window).on('scroll', function() {
