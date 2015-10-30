@@ -65,8 +65,8 @@
                 Preview Language <span class="caret"></span>
             </button>
             <ul class="dropdown-menu lang_switcher" role="menu">
-            <li><a href="#" class="cleaner_open btnSwitch view-active" data-language="en">English</a></li>
-            <li><a href="#" class="cleaner_open btnSwitch" data-language="fr">French</a></li>
+            <li><a href="#" class="cleaner_open btnSwitch view-active" data-language="en" title="Use CTRL+ALT+E to switch languages">English <span class="micro-aid">CTRL+ALT+E</span></a></li>
+            <li><a href="#" class="cleaner_open btnSwitch" data-language="fr" title="Use CTRL+ALT+E to switch languages">French <span class="micro-aid">CTRL+ALT+E</span></a></li>
             </ul>
         </div>
         <div class="btn-group">
@@ -326,80 +326,13 @@
                         <span class="caret"></span>
                         <span class="sr-only">Toggle Dropdown</span>
                     </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="helpItem" data-target="1">Promote Hero</a></li>
-                        <li><a class="helpItem" data-target="2">Translate Hero JSON</a></li>
-                        <li><a class="helpItem" data-target="3">Managing Errors</a></li>
-                        <li><a class="helpItem" data-target="4">Hero Item Delay</a></li>
-                        <li><a class="helpItem" data-target="5">Sticky Hero Items</a></li>
+                    <ul class="dropdown-menu help-items">
+
                     </ul>
                 </div>
 
                     <div class="help_panel_holder">
-                        <div class="help_item"  id="hlp1" data-helper="1">
-                        <h4>Promote Hero</h4>
 
-                        <p><span class="label label-primary">Usage</span> Promotes a specific hero to the main hero panel if more than one hero is active at the same time</p>
-
-                        <p>This feature allows you to define which of a number of hero banners takes precedent over the
-                        other heros and is "promoted" to the main hero panel when it is active.</p>
-
-                        <p>To use this functionality, select YES from the promote hero dropdown. The selected hero will appear
-                            in the main hero panel when it is active and all other active hero panels will slide down to the
-                            vignette panel.</p>
-                        <p><span class="label label-warning">Note</span> The sticky feature overrides the promote feature.</p>
-                        <p><span class="label label-danger">Common Errors</span> If you promote more than one hero item, they will BOTH show
-                            up in the main hero panel. This is a feature not a bug.</p>
-                        </div>
-                        <div class="help_item" id="hlp2" data-helper="2">
-                            <h4 class="push_block">Translating Hero JSON</h4>
-
-                        <p><span class="label label-primary">Usage</span> Copy existing hero data into a new form
-                            instance</p>
-
-                        <p>Translating Hero JSON allows you to add new hero items to an existing JSON file. This is
-                            particularly usefull when adding new hero banners to sales that are still active.</p>
-
-                        <p>To use this functionality, copy the JSON code from the shopify assets file. Click on Actions
-                            &gt; Translate JSON. In the text area that opens, paste the JSON code and click on Translate
-                            JSON. The function will create the form items and populate them with data from the JSON you
-                            pasted. You can now add new hero items to the form and generate a new JSON file once you're
-                            done.</p>
-                            </div>
-                        <div class="help_item" id="hlp3" data-helper="3">
-                        <h4 class="push_block">Managing Errors</h4>
-
-                        <p><span class="label label-primary">Usage</span> Find and correct errors before exporting JSON</p>
-
-                        <p>The Page Builder app has a error manager feature that will display object errors when you generate your JSON code. If errors or warnings are found, a dropdown button will
-                        appear in the menu bar. </p>
-                        <p>Click on this new button to show a dropdown list of errors found during the JSON generation process. To go directly to the error in the form, click on it. The
-                        problematic form element will be highlighted and an error icon will appear to the right of the input area.</p>
-                        <p>To reset errors either click on the input area or select Actions > Reset Errors</p>
-                            </div>
-                        <div class="help_item" id="hlp4" data-helper="4">
-                        <h4 class="push_block">Hero Item Delay</h4>
-
-                        <p><span class="label label-primary">Usage</span> Offset the display of hero items</p>
-
-                        <p>This feature allows you to define how many hours before an event starts that you want the hero banner to appear.</p>
-                        <p>If for example you have a hero banner that is scheduled to start at 12:00 but you don't want it to show up in the hero banners in the days preceding, you can set
-                        a delay that will only show that hero when it is within the X hours of it's start time. </p>
-                        <p>To set the offset, add a numeric value (corresponding to a number of hours) into the <i>Show X hours Before Active</i> input field. Leave the value
-                        at 0 if you don't want to use the offset feature. It you leave the field empty, the default value 0 will be used.</p>
-                        <p><span class="label label-warning">Note</span> The offset value must be between 1 and 24</p>
-</div>
-                        <div class="help_item" id="hlp5" data-helper="5">
-                        <h4 class="push_block">Sticky Hero Items</h4>
-
-                        <p><span class="label label-primary">Usage</span> Constrain the hero item to the vignette panel</p>
-
-                        <p>This feature allows you to constrain a hero item to the vignette panel (below the main hero) and keep it from ever showing in the main panel section. The feature overwrites all other display options (promote...)</p>
-                        <p>This can be very useful for minor sale items that you don't want to advertise with a large banner. This can also be useful for items which do not have a large resolution image.</p>
-                        <p>The sticky option can be revoked before, or during the sale item's activity.</p>
-                        <p><span class="label label-danger">Common Errors</span> Make sure at least one of the hero items is NOT a sticky hero. If
-                        all items have the sticky hero attribute, no hero item will appear in the main hero panel.</p>
-                            </div>
 
                     </div>
                 </div>

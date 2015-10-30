@@ -216,6 +216,22 @@ function initializeTheme(){
         $('html').attr(app.handlers.t, 'light');
     }
 }
+function initHelp(){
+    $.ajax({
+        type:app.methods.g,
+        url:'data/help.json',
+        success:function(data){
+            for(var h=0;h<data.items.length;h++){
+                $('.help-items').append('<li><a class="helpItem" data-target="'+h+'">'+data.items[h].title+'</a></li>');
+                $('.help_panel_holder').append('<div class="help_item" id="hlp'+h+'" data-helper="'+h+'">'+data.items[h].block+'</div>');
+            }
+        },
+        error:function(){
+            panelAlert('Unable to load Help Contents from JSON source', 'error');
+        }
+    });
+
+}
 function setHeadSec(){
     /**
      * sets head section items that display in a button model
@@ -292,6 +308,7 @@ $(function () {
     var sPos = 0;
     setHeadSec();
     initializeTheme();
+    initHelp();
     $('.date_obj').datetimepicker({format: 'MM/DD/YYYY HH:mm'});
     function choseLocalSave(){
         try {
@@ -1052,6 +1069,7 @@ $(function () {
                 rM = pfMode;
             previewFeature(rH, rM, rL)
         }
+        panelAlert('Preview language changed','good');
         e.preventDefault();
     }).on('click','.panel-body.bottom_level_bt',function(){
         $(this).slideUp();
@@ -1241,6 +1259,23 @@ $(function () {
         }
         if (e.keyCode == 45 && e.ctrlKey && e.altKey) {
             traverseJSON(true);
+        }
+        if (e.keyCode == 69 && e.ctrlKey && e.altKey) {
+            if(pfLang == 'en'){
+                pfLang = 'fr';
+            }else if(pfLang == 'fr'){
+                pfLang = 'en';
+            }
+            $('.btnSwitch').removeClass('view-active');
+            $('.btnSwitch[data-language="'+pfLang+'"]').addClass('view-active');
+            if($(app.objects.ro).children().not('.preview_warning').length > 0){
+                    var rH = pfHero,
+                    rL = pfLang,
+                    rM = pfMode;
+                previewFeature(rH, rM, rL);
+            }
+            panelAlert('Preview language changed','good');
+            e.preventDefault();
         }
         if (e.keyCode == 191 && e.ctrlKey) {
             window.open("../release.html", "_blank","scrollbars=no,resizable=no,height=600, width=800, status=yes, toolbar=no, menubar=no, location=no");
