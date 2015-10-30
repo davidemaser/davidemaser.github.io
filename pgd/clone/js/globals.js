@@ -47,5 +47,9 @@ var app = {
     storage:{
         t:'pgb_Theme',
         n:'pgb_SavedNode_LS'
+    },
+    language:{
+        e:'en',
+        f:'fr'
     }
 };

@@ -826,12 +826,12 @@ $(function () {
             start = dt[0].value,
             img = dt[7].value,
             titleColor = dt[4].value;
-            if(lang == 'en'){
+            if(lang == app.language.e){
             var titleText = dt[2].value,
                 subTitleText = dt[5].value,
                 buttonLabel = dt[9].value,
                 endsLabel = 'Ends In';
-            }else if(lang == 'fr'){
+            }else if(lang == app.language.f){
                     titleText = dt[3].value,
                     subTitleText = dt[6].value,
                     buttonLabel = dt[10].value,
@@ -1230,10 +1230,10 @@ $(function () {
             traverseJSON(true);
         }
         if (e.keyCode == 69 && e.ctrlKey && e.altKey) {
-            if(pfLang == 'en'){
-                pfLang = 'fr';
-            }else if(pfLang == 'fr'){
-                pfLang = 'en';
+            if(pfLang == app.language.e){
+                pfLang = app.language.f;
+            }else if(pfLang == app.language.f){
+                pfLang = app.language.e;
             }
             $('.btnSwitch').removeClass('view-active');
             $('.btnSwitch[data-language="'+pfLang+'"]').addClass('view-active');
