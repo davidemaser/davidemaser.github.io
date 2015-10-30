@@ -1,56 +1,17 @@
 /**
  * @copyright webapp created by David Maser for use on The Last Hunt site. Use outside of the Altitude-Sports domains is not allowed.
  * @type {{locale: string, user: string, callback: boolean, export: string, dialog: boolean, save: boolean, listener: string, methods: {g: string, p: string}, objects: {o: string, e: string, h: string, i: string, b: string, c: string, ca: string, he: string, hi: string, cl: string, r: string, bo: string, g: string, l: string}, handlers: {d: string, t: string, i: string, r: string, s: string}}}
- */
-var app = {
-    locale:"en_EN",
-    user:"guest",
-    callback:true,
-    export:"json",
-    dialog:true,
-    save:true,
-    listener:"window",
-    methods:{
-        g:"get",
-        p:"post"
-    },
-    objects:{
-        o:"#output",
-        e:"#entry",
-        h:"#html-zone",
-        i:".input_holders",
-        b:".blackify_overlay",
-        c:".check_image",
-        ca:".check_alt_image",
-        he:"#help",
-        hi:".help_item",
-        cl:".clonedInput",
-        r:"html,body",
-        bo:"body",
-        g:".glyphicon",
-        l:".loadLsItems",
-        ro:".render_output"
-    },
-    handlers:{
-        d:'data-handler',
-        t:'data-theme',
-        i:'data-item',
-        r:'data-reason',
-        s:'data-split'
-    }
-};
-/**
  * @param mess
  * @param state
  */
-var pfLang = 'en',
+var pfLang = app.params.l,
     pfHero = 0,
-    pfMode = 'small';
+    pfMode = app.params.s;
 function panelAlert(mess,state){
     var mPane = '.panel-body.bottom_level_bt';
-    if(state == 'error') {
+    if(state == app.params.e) {
         $(mPane).find(app.objects.g).removeClass('allGood').removeClass('glyphicon-ok').addClass('allBad').addClass('glyphicon-remove');
-    }else if(state == 'good') {
+    }else if(state == app.params.g) {
         $(mPane).find(app.objects.g).removeClass('allBad').removeClass('glyphicon-remove').addClass('allGood').addClass('glyphicon-ok');
     }
     $(mPane).slideDown();
@@ -206,7 +167,7 @@ function initializeTheme(){
      * from the local storage item
      */
     if(window.localStorage) {
-        var tm = localStorage.getItem('pgb_Theme');
+        var tm = localStorage.getItem(app.storage.t);
         if (tm == null || tm == undefined) {
             $('html').attr(app.handlers.t, 'light');
         }else{
@@ -244,12 +205,12 @@ function setHeadSec(){
      * the JSON data
      */
     try {
-        var isReady = localStorage.getItem('pgb_SavedNode_LS');
+        var isReady = localStorage.getItem(app.storage.n);
         if (isReady !== null) {
             $(app.objects.l).css('display', 'inline-block');
             $('#import_json').css('display', 'block');
             $('.lsLoad').find('li').remove();
-            var a = localStorage.getItem('pgb_SavedNode_LS').split(','),
+            var a = localStorage.getItem(app.storage.n).split(','),
                 long = a.length;
             if (long > 1) {
                 for (var i = 0; i < long; i++) {
@@ -318,7 +279,7 @@ $(function () {
     function choseLocalSave(){
         try {
             $('#loadandsave-zone').attr('data-reason', 'load').css('display', 'block');
-            var a = localStorage.getItem('pgb_SavedNode_LS'),
+            var a = localStorage.getItem(app.storage.n),
                 target = $('.lsOptions');
             if (a !== null || a !== undefined) {
                 var b = a.split(','),
@@ -338,10 +299,10 @@ $(function () {
         if(method == 'do' || method == null) {
             $('#loadandsave-zone').attr(app.handlers.r, 'save').css('display', 'block');
         }else if(method == 'reset'){
-            localStorage.setItem('pgb_SavedNode_LS',"");
+            localStorage.setItem(app.storage.n,"");
             for(var i=0, len=localStorage.length; i<len; i++) {
                 var key = localStorage.key(i);
-                if(key.indexOf('pgb_SavedNode_')>-1 && key.indexOf('pgb_SavedNode_LS')<0){
+                if(key.indexOf('pgb_SavedNode_')>-1 && key.indexOf(app.storage.n)<0){
                     localStorage.removeItem(key);
                 }
             }
@@ -394,17 +355,17 @@ $(function () {
     }
     function saveNodeToLS(val,name){
         if(window.localStorage) {
-            if(localStorage.getItem('pgb_SavedNode_LS') == null || localStorage.getItem('pgb_SavedNode_LS') == undefined){
-                localStorage.setItem('pgb_SavedNode_LS',"");
+            if(localStorage.getItem(app.storage.n) == null || localStorage.getItem(app.storage.n) == undefined){
+                localStorage.setItem(app.storage.n,"");
             }
-            var getList = localStorage.getItem('pgb_SavedNode_LS'),
+            var getList = localStorage.getItem(app.storage.n),
                 getListLen = getList.split(',').length;
             if(getListLen > 0){
                 var newList = getList+','+name;
             }else{
                 newList = name;
             }
-            localStorage.setItem('pgb_SavedNode_LS',newList);
+            localStorage.setItem(app.storage.n,newList);
                     localStorage.setItem('pgb_SavedNode_'+name,val);
             panelAlert('Data Saved To Local Storage','good');
             }
