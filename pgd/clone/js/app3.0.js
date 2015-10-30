@@ -890,24 +890,28 @@ $(function () {
             $(app.objects.h).css('display','none');
         }
         $('.num_select').focus();
-    }).on('click',app.objects.c,function(){
+    }).on('click',app.objects.c,function(e){
         var a = $(this).data('handler');
         validateImage('main',a);
+        e.preventDefault();
     }).on('click','.multiquery_close',function(){
         $(this).parent().parent().hide();
-    }).on('click','.check_alt_image',function(){
+    }).on('click','.check_alt_image',function(e){
         var a = $(this).data('handler');
         validateImage('alt',a);
+        e.preventDefault();
     }).on('click','.overlay_validate',function(){
         validateJSON();
-    }).on('click','.previewItem.large',function(){
+    }).on('click','.previewItem.large',function(e){
         $(app.objects.r).animate({ scrollTop: sPos }, 500).css('overflow','hidden');
         var a = $(this).data('hero');
         previewFeature(a,'large',pfLang);
-    }).on('click','.previewItem.small',function(){
+        e.preventDefault();
+    }).on('click','.previewItem.small',function(e){
         $(app.objects.r).animate({ scrollTop: sPos }, 500).css('overflow','hidden');
         var a = $(this).data('hero');
         previewFeature(a,'small',pfLang);
+        e.preventDefault();
     }).on('click','.removeThisItem',function(){
         var a = $(this).data('item');
         deleteItems(a);
@@ -1047,7 +1051,7 @@ $(function () {
             localStorage.setItem('pgb_Theme', a);
         }
         e.preventDefault();
-    }).on('click','.moveUpThisItem',function(){
+    }).on('click','.moveUpThisItem',function(e){
         var a = $(this).data('item'),
             b = a-1,
             c = $(this).parent().parent().parent().parent().parent().parent(),
@@ -1061,7 +1065,8 @@ $(function () {
             //$(d).closest(app.objects.cl).prev();
         $(this).parent().parent().parent().find('.reordered').remove();
         $(this).parent().parent().parent().find('.btn.btn-info:not(.dropdown-toggle)').prepend('<span title="This entry has been moved from it\'s original position" class="glyphicon glyphicon-fullscreen reordered" aria-hidden="true"></span>');
-    }).on('click','.moveDownThisItem',function(){
+        e.preventDefault();
+    }).on('click','.moveDownThisItem',function(e){
         var a = $(this).data('item'),
             b = a-1,
             c = $(this).parent().parent().parent().parent().parent().parent(),
@@ -1079,6 +1084,7 @@ $(function () {
             }else{
                 panelAlert('If I move down any further, I\'ll be off the page.','error');
             }
+        e.preventDefault();
     }).on('keyup','input',function(){
         var a = $(this).val().length;
         if($(this).hasClass('objTitleEN') || $(this).hasClass('objTitleFR') || $(this).hasClass('objTextEN') || $(this).hasClass('objTextFR')){
