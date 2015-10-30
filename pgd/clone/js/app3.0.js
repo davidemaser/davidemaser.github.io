@@ -28,7 +28,8 @@ var app = {
         r:"html,body",
         bo:"body",
         g:".glyphicon",
-        l:".loadLsItems"
+        l:".loadLsItems",
+        ro:".render_output"
     },
     handlers:{
         d:'data-handler',
@@ -42,7 +43,9 @@ var app = {
  * @param mess
  * @param state
  */
-var pfLang = 'en';
+var pfLang = 'en',
+    pfHero = 0,
+    pfMode = 'small';
 function panelAlert(mess,state){
     var mPane = '.panel-body.bottom_level_bt';
     if(state == 'error') {
@@ -791,8 +794,7 @@ $(function () {
             }
         }
     }
-
-    function previewFeature(heroItem, mode,lang) {
+    function previewFeature(heroItem, mode, lang) {
         var dt = $(app.objects.e + heroItem).find('form').serializeArray(),
             start = dt[0].value,
             img = dt[7].value,
@@ -836,9 +838,13 @@ $(function () {
         $(container).show().css('top',sPos+50);
         $(target).empty().append(outputString);
         if (mode == 'small') {
-            $(target).addClass('renderSmall');
+            pfHero = heroItem;
+            pfMode = mode;
+            $(target).addClass('renderSmall').attr('data-hero',heroItem).attr('data-language',lang).attr('data-mode',mode);
         } else if (mode == 'large') {
-            $(target).removeClass('renderSmall');
+            pfHero = heroItem;
+            pfMode = mode;
+            $(target).removeClass('renderSmall').attr('data-hero',heroItem).attr('data-language',lang).attr('data-mode',mode);
         }
     }
 
@@ -954,6 +960,7 @@ $(function () {
         if($(app.objects.h).css('display') == 'block'){
             $(this).parent().parent().hide();
             $(app.objects.r).css('overflow','auto');
+            $(app.objects.h).find('.render_output').empty();
         }
     }).on('click','.btnDel',function () {
         deleteItems('last');
@@ -1012,6 +1019,12 @@ $(function () {
         pfLang = $(this).data('language');
         $('.btnSwitch').removeClass('view-active');
         $('.btnSwitch[data-language="'+pfLang+'"]').addClass('view-active');
+        if($(app.objects.ro).children().not('.preview_warning').length > 0){
+            var rH = pfHero,
+                rL = pfLang,
+                rM = pfMode;
+            previewFeature(rH, rM, rL)
+        }
         e.preventDefault();
     }).on('click','.panel-body.bottom_level_bt',function(){
         $(this).slideUp();
