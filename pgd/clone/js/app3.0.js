@@ -1080,12 +1080,12 @@ $(function () {
         $(this).slideUp();
     }).on('click','.show_me_how',function(){
         var a = $(this).data('target')-1;
-        $(app.objects.r).animate({ scrollTop: 0 },
-            {duration:500,
+        $(app.objects.r).animate({ scrollTop: 0 },{duration:500,
                 complete:function(){
                     $(app.objects.he).show();
                     jumpToHelper(a);
-                }}).css('overflow','hidden');
+                }
+        }).css('overflow','hidden');
     }).on('click','.helpItemReset',function(){
         $(app.objects.hi).animate({
             opacity: 1

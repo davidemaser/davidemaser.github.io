@@ -1,0 +1,49 @@
+/*
+Error: Invalid CSS after "...embed font-size": expected ";", was ": 85%;"
+        on line 45 of /home/david-maser/DEV/davidemaser.github.io/assets/scss/app.scss
+
+40: .bold {
+41:   font-weight: bold;
+42: }
+43: pre {
+44:   white-space: pre;
+45:   unicode-bidi: embed font-size: 85%;
+46:   margin: 20px;
+47:   font-style: italic;
+48:   font-family: $font_0;
+49:   background-color: #eee;
+50:   display: inline-block;
+
+Backtrace:
+/home/david-maser/DEV/davidemaser.github.io/assets/scss/app.scss:45
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:1167:in `expected'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:1101:in `expected'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:1096:in `tok!'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:761:in `block in try_declaration'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:1141:in `call'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:1141:in `rethrow'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:766:in `try_declaration'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:696:in `declaration_or_ruleset'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:661:in `block_child'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:653:in `block_contents'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:642:in `block'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:636:in `ruleset'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:660:in `block_child'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:653:in `block_contents'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:117:in `stylesheet'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:42:in `parse'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:393:in `_to_tree'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:285:in `render_with_sourcemap'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:396:in `run'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:62:in `process_result'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:52:in `parse'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:19:in `parse!'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/bin/sass:13:in `<top (required)>'
+/usr/share/applications/koala/bin/sass:18:in `load'
+/usr/share/applications/koala/bin/sass:18:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...embed font-size\": expected \";\", was \": 85%;\"\A         on line 45 of /home/david-maser/DEV/davidemaser.github.io/assets/scss/app.scss\A \A 40: .bold {\A 41:   font-weight: bold;\A 42: }\A 43: pre {\A 44:   white-space: pre;\A 45:   unicode-bidi: embed font-size: 85%;\A 46:   margin: 20px;\A 47:   font-style: italic;\A 48:   font-family: $font_0;\A 49:   background-color: #eee;\A 50:   display: inline-block;"; }

@@ -1,0 +1,69 @@
+/*
+Error: Undefined variable: "$btn-primary-bg".
+        on line 7 of /home/david-maser/DEV/davidemaser.github.io/bower_components/eonasdan-bootstrap-datetimepicker/src/sass/_bootstrap-datetimepicker.scss
+        from line 16 of /home/david-maser/DEV/davidemaser.github.io/bower_components/eonasdan-bootstrap-datetimepicker/src/sass/bootstrap-datetimepicker-build.scss
+
+2: //@import "../../node_modules/bootstrap/less/variables.less";
+3: 
+4: .sr-only {
+5:   position: absolute;
+6:   width: 1px;
+7:   height: 1px;
+8:   margin: -1px;
+9:   padding: 0;
+10:   overflow: hidden;
+11:   clip: rect(0,0,0,0);
+12:   border: 0;
+
+Backtrace:
+/home/david-maser/DEV/davidemaser.github.io/bower_components/eonasdan-bootstrap-datetimepicker/src/sass/_bootstrap-datetimepicker.scss:7
+/home/david-maser/DEV/davidemaser.github.io/bower_components/eonasdan-bootstrap-datetimepicker/src/sass/bootstrap-datetimepicker-build.scss:16
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/script/tree/variable.rb:49:in `_perform'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/script/tree/node.rb:50:in `perform'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:458:in `visit_variable'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:79:in `block in with_base'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:115:in `with_frame'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:79:in `with_base'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:315:in `block (2 levels) in visit_import'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:315:in `map'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:315:in `block in visit_import'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:88:in `block in with_import'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:115:in `with_frame'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:88:in `with_import'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:312:in `visit_import'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:79:in `block in with_base'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:115:in `with_frame'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:79:in `with_base'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `map'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/root_node.rb:36:in `css_tree'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:285:in `render_with_sourcemap'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:396:in `run'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:62:in `process_result'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:52:in `parse'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:19:in `parse!'
+/usr/share/applications/koala/rubygems/gems/sass-3.4.9/bin/sass:13:in `<top (required)>'
+/usr/share/applications/koala/bin/sass:18:in `load'
+/usr/share/applications/koala/bin/sass:18:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined variable: \"$btn-primary-bg\".\A         on line 7 of /home/david-maser/DEV/davidemaser.github.io/bower_components/eonasdan-bootstrap-datetimepicker/src/sass/_bootstrap-datetimepicker.scss\A         from line 16 of /home/david-maser/DEV/davidemaser.github.io/bower_components/eonasdan-bootstrap-datetimepicker/src/sass/bootstrap-datetimepicker-build.scss\A \A 2: //@import \"../../node_modules/bootstrap/less/variables.less\";\A 3: \A 4: .sr-only {\A 5:   position: absolute;\A 6:   width: 1px;\A 7:   height: 1px;\A 8:   margin: -1px;\A 9:   padding: 0;\A 10:   overflow: hidden;\A 11:   clip: rect(0,0,0,0);\A 12:   border: 0;"; }
