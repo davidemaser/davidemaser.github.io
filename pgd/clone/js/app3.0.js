@@ -42,6 +42,7 @@ var app = {
  * @param mess
  * @param state
  */
+var pfLang = 'en';
 function panelAlert(mess,state){
     var mPane = '.panel-body.bottom_level_bt';
     if(state == 'error') {
@@ -187,14 +188,12 @@ function initializeForm(){
                             htmlBlock += '</div>';
                         }
                     }
-                    console.log(blockContent[i]);
                 }else{
                     htmlBlock += blockContent[i].inject_code;
                 }
             }
             htmlBlock += '</fieldset>';
             htmlBlock += '</form></div>';
-            console.log(htmlBlock);
         }
     })
 }
@@ -793,15 +792,23 @@ $(function () {
         }
     }
 
-    function previewFeature(heroItem, mode) {
+    function previewFeature(heroItem, mode,lang) {
         var dt = $(app.objects.e + heroItem).find('form').serializeArray(),
             start = dt[0].value,
             img = dt[7].value,
-            titleColor = dt[4].value,
-            titleText = dt[2].value,
-            subTitleText = dt[5].value,
-            buttonLabel = dt[9].value,
-            buttonLink = dt[11].value,
+            titleColor = dt[4].value;
+            if(lang == 'en'){
+            var titleText = dt[2].value,
+                subTitleText = dt[5].value,
+                buttonLabel = dt[9].value,
+                endsLabel = 'Ends In';
+            }else if(lang == 'fr'){
+                    titleText = dt[3].value,
+                    subTitleText = dt[6].value,
+                    buttonLabel = dt[10].value,
+                    endsLabel = 'Termine dans';
+            }
+            var buttonLink = dt[11].value,
             container = app.objects.h,
             target = '.render_output',
             sub = dt[16].value,
@@ -814,7 +821,7 @@ $(function () {
         outputString += '<div data-instance="slide-0" data-str="' + img + '"';
         outputString += ' data-promote="true" id="slide-0" class="hero fwidth root-0"><div data-object-pos="false-false" class="bcg skrollable skrollable-between" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -200px;" data-anchor-target="#slide-0"';
         outputString += ' style="background-image: url(' + img + '); background-position: 50% -55.2631578947369px;"><div class="hsContainer"><div class="hsContent center skrollable skrollable-before" data-100-top="opacity: 1" data-25-top="opacity: 0" data-anchor-target="#slide-0 .animated" style="opacity: 1;">';
-        outputString += '<div itemscope="" itemtype="http://schema.org/Event" class="animated fadeIn delay-025s hero_head"><p itemprop="startDate" content="' + start + '" class="subtitle timedown is-countdown" id="countdown0" style="opacity:0.9"><span>Ends In  <b>11:29:39</b> </span></p>';
+        outputString += '<div itemscope="" itemtype="http://schema.org/Event" class="animated fadeIn delay-025s hero_head"><p itemprop="startDate" content="' + start + '" class="subtitle timedown is-countdown" id="countdown0" style="opacity:0.9"><span>'+endsLabel+'  <b>11:29:39</b> </span></p>';
         outputString += '<h1 class="headline herobanner" style="color:' + titleColor + '">' + titleText + '</h1>';
         if(sub == 'true') {
             outputString += '<p class="subtitle herobanner">' + subTitleText + '</p>';
@@ -890,11 +897,11 @@ $(function () {
     }).on('click','.previewItem.large',function(){
         $(app.objects.r).animate({ scrollTop: sPos }, 500).css('overflow','hidden');
         var a = $(this).data('hero');
-        previewFeature(a,'large');
+        previewFeature(a,'large',pfLang);
     }).on('click','.previewItem.small',function(){
         $(app.objects.r).animate({ scrollTop: sPos }, 500).css('overflow','hidden');
         var a = $(this).data('hero');
-        previewFeature(a,'small');
+        previewFeature(a,'small',pfLang);
     }).on('click','.removeThisItem',function(){
         var a = $(this).data('item');
         deleteItems(a);
@@ -1001,6 +1008,11 @@ $(function () {
     }).on('click','.image_count',function(){
         $(this).attr('style','');
         $(this).text('Shopify CDN');
+    }).on('click','.btnSwitch',function(e){
+        pfLang = $(this).data('language');
+        $('.btnSwitch').removeClass('view-active');
+        $('.btnSwitch[data-language="'+pfLang+'"]').addClass('view-active');
+        e.preventDefault();
     }).on('click','.panel-body.bottom_level_bt',function(){
         $(this).slideUp();
     }).on('click','.show_me_how',function(){
@@ -1162,7 +1174,6 @@ $(function () {
     }).on('scroll', function(){
         scrollState('b');
         sPos = $(window).scrollTop();
-        console.log(sPos);
     });
     function launchBats(){
         var r = Math.random,

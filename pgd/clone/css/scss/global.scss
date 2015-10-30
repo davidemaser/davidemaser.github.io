@@ -1222,3 +1222,7 @@ span.show_me_how {
 .image_count{
   cursor: pointer;
 }
+.view-active {
+  border-right: 5px solid rgba(0, 0, 0, 0.4);
+  background: rgba(221, 221, 221, 0.3);
+}
