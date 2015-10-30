@@ -222,8 +222,13 @@ function initHelp(){
         url:'data/help.json',
         success:function(data){
             for(var h=0;h<data.items.length;h++){
+                if(h > 0){
+                    var push = 'push_block';
+                }else{
+                    push = '';
+                }
                 $('.help-items').append('<li><a class="helpItem" data-target="'+h+'">'+data.items[h].title+'</a></li>');
-                $('.help_panel_holder').append('<div class="help_item" id="hlp'+h+'" data-helper="'+h+'">'+data.items[h].block+'</div>');
+                $('.help_panel_holder').append('<div class="help_item" id="hlp'+h+'" data-helper="'+h+'"><h4 class="'+push+'">'+data.items[h].title+'</h4>'+data.items[h].block+'</div>');
             }
         },
         error:function(){
@@ -1074,7 +1079,7 @@ $(function () {
     }).on('click','.panel-body.bottom_level_bt',function(){
         $(this).slideUp();
     }).on('click','.show_me_how',function(){
-        var a = $(this).data('target');
+        var a = $(this).data('target')-1;
         $(app.objects.r).animate({ scrollTop: 0 },
             {duration:500,
                 complete:function(){
