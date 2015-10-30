@@ -3,19 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5ed53085-34d5-4ed7-8e2d-04ebf135fb37" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/moment-timezone/.bower.json" afterPath="$PROJECT_DIR$/bower_components/moment-timezone/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/moment-timezone/bower.json" afterPath="$PROJECT_DIR$/bower_components/moment-timezone/bower.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/moment-timezone/changelog.md" afterPath="$PROJECT_DIR$/bower_components/moment-timezone/changelog.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/moment-timezone/composer.json" afterPath="$PROJECT_DIR$/bower_components/moment-timezone/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/moment-timezone/data/meta/latest.json" afterPath="$PROJECT_DIR$/bower_components/moment-timezone/data/meta/latest.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/moment-timezone/data/packed/latest.json" afterPath="$PROJECT_DIR$/bower_components/moment-timezone/data/packed/latest.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/moment-timezone/data/unpacked/latest.json" afterPath="$PROJECT_DIR$/bower_components/moment-timezone/data/unpacked/latest.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/moment-timezone/moment-timezone-utils.js" afterPath="$PROJECT_DIR$/bower_components/moment-timezone/moment-timezone-utils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js" afterPath="$PROJECT_DIR$/bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.min.js" afterPath="$PROJECT_DIR$/bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/moment-timezone/builds/moment-timezone-with-data.js" afterPath="$PROJECT_DIR$/bower_components/moment-timezone/builds/moment-timezone-with-data.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/moment-timezone/builds/moment-timezone-with-data.min.js" afterPath="$PROJECT_DIR$/bower_components/moment-timezone/builds/moment-timezone-with-data.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/moment-timezone/moment-timezone.js" afterPath="$PROJECT_DIR$/bower_components/moment-timezone/moment-timezone.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/moment-timezone/builds/moment-timezone.min.js" afterPath="$PROJECT_DIR$/bower_components/moment-timezone/builds/moment-timezone.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pgd/clone/css/scss/global.scss" afterPath="$PROJECT_DIR$/pgd/clone/css/scss/global.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pgd/clone/css/globals.css" afterPath="$PROJECT_DIR$/pgd/clone/css/globals.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="davidemaser.github.io.iws" />
@@ -75,8 +65,8 @@
       <file leaf-file-name="global.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pgd/clone/css/scss/global.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16647398" vertical-offset="17316" max-vertical-offset="22266">
-              <caret line="970" column="12" selection-start-line="970" selection-start-column="12" selection-end-line="970" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.20809248" vertical-offset="8658" max-vertical-offset="22248">
+              <caret line="491" column="1" selection-start-line="491" selection-start-column="1" selection-end-line="491" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -171,12 +161,12 @@
         <option value="$PROJECT_DIR$/pgd/clone/js/dmFilters.js" />
         <option value="$PROJECT_DIR$/pgd/assets/project/release.json" />
         <option value="$PROJECT_DIR$/pgd/clone/data/help.json" />
-        <option value="$PROJECT_DIR$/pgd/clone/css/scss/global.scss" />
         <option value="$PROJECT_DIR$/pgd/clone/js/app3.0.min.js" />
         <option value="$PROJECT_DIR$/pgd/clone/css/globals.css" />
         <option value="$PROJECT_DIR$/pgd/clone/index.html" />
         <option value="$PROJECT_DIR$/pgd/clone/js/globals.js" />
         <option value="$PROJECT_DIR$/pgd/clone/js/app3.0.js" />
+        <option value="$PROJECT_DIR$/pgd/clone/css/scss/global.scss" />
       </list>
     </option>
   </component>
@@ -1352,7 +1342,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446239567876</updated>
     </task>
-    <option name="localTasksCounter" value="155" />
+    <task id="LOCAL-00155" summary="Bower update">
+      <created>1446240800861</created>
+      <option name="number" value="00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1446240800861</updated>
+    </task>
+    <option name="localTasksCounter" value="156" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1377,7 +1373,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1920" height="1084" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1387,7 +1383,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.49973643" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="false" weight="0.334375" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" x="11" y="391" width="1897" height="293" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24986821" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24986821" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1416,7 +1412,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="remove console.log" />
     <MESSAGE value="New LocalStorage methods" />
     <MESSAGE value="tweek" />
     <MESSAGE value="Nav LS" />
@@ -1441,7 +1436,8 @@
     <MESSAGE value="CSS Reform" />
     <MESSAGE value="Minor updates" />
     <MESSAGE value="New globals" />
-    <option name="LAST_COMMIT_MESSAGE" value="New globals" />
+    <MESSAGE value="Bower update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bower update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1829,8 +1825,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/clone/css/scss/global.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16647398" vertical-offset="17316" max-vertical-offset="22266">
-          <caret line="970" column="12" selection-start-line="970" selection-start-column="12" selection-end-line="970" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.20809248" vertical-offset="8658" max-vertical-offset="22248">
+          <caret line="491" column="1" selection-start-line="491" selection-start-column="1" selection-end-line="491" selection-end-column="1" />
           <folding />
         </state>
       </provider>
