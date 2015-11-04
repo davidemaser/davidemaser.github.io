@@ -878,7 +878,7 @@ $(function () {
         }
     }
     function previewFeature(heroItem, mode, lang) {
-        var dt = $(app.objects.e + heroItem).find('form').serializeArray(),
+        var dt = $(app.objects.e + heroItem).find('form').find('fieldset[data-role="hero"]').serializeArray(),
             start = dt[0].value,
             img = dt[7].value,
             titleColor = dt[4].value;
@@ -1081,6 +1081,7 @@ $(function () {
         $(app.objects.r).css('overflow','auto');
         $(app.objects.i).find('.input_alerts').remove();
         $(app.objects.i).contents().unwrap();
+        $('.reordered').remove();
         panelAlert('Form Reset To Default','good');
         e.preventDefault();
     }).on('click','.form_local_reset',function (e){
