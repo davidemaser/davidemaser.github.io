@@ -1041,7 +1041,7 @@ $(function () {
         }else if(a == 'hello'){
             $('body').attr('data-nmode','hero');
             $(this).attr('data-nmode','hero');
-            $(this).html('Switch to Hero Banner Mode');
+            $(this).html('Switch to Hello Bar Mode');
             switchModes('hero')
         }
         console.log(a);
