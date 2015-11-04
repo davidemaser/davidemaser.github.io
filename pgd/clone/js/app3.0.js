@@ -3,6 +3,7 @@
  * @type {{locale: string, user: string, callback: boolean, export: string, dialog: boolean, save: boolean, listener: string, methods: {g: string, p: string}, objects: {o: string, e: string, h: string, i: string, b: string, c: string, ca: string, he: string, hi: string, cl: string, r: string, bo: string, g: string, l: string}, handlers: {d: string, t: string, i: string, r: string, s: string}}}
  * @param mess
  * @param state
+ * @require globals.js
  */
 var pfLang = app.params.l,
     pfHero = 0,
@@ -20,15 +21,19 @@ function panelAlert(mess,state){
     setTimeout("$('.panel-body.bottom_level_bt').slideUp()",5000);
 }
 function getVersion(){
-    $.ajax({
-        type: app.methods.g,
-        url: "../assets/project/release.json",
-        success: function (data) {
-            var ver = data.project.version;
-            document.title = "Page Builder "+ver;
-            $('.version_number').attr('title','You are using version '+ver).html(ver);
-        }
-    })
+    try {
+        $.ajax({
+            type: app.methods.g,
+            url: "../assets/project/release.json",
+            success: function (data) {
+                var ver = data.project.version;
+                document.title = "Page Builder " + ver;
+                $('.version_number').attr('title', 'You are using version ' + ver).html(ver);
+            }
+        })
+    }catch(e){
+        console.log(e);
+    }
 }
 function initializeForm(){
     $.ajax({
