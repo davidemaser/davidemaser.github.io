@@ -6,8 +6,8 @@
     "downloadlink":"https://drive.google.com/file/d/0B4onXKnKkE6AY0JiVlZ3bG9scmM/view?usp=sharing",
     "semantic":{
       "build":10,
-      "language":["js","jquery","json","css","html"],
-      "externals":["jquery","bootstrap","custom font","versioning file"],
+      "language":["js","jquery","json","css","html","md"],
+      "externals":["jquery","bootstrap","custom font","versioning file","moment","bootstrap datetimepicker","validate json"],
       "minified":true
     },
     "latest":"major",
@@ -60,6 +60,24 @@
         "issue":"recursive JSON error",
         "fix":{
           "solution":"recode JSON base schema",
+          "applied":true
+        }
+      },
+      {
+        "file":"app3.0.js",
+        "line":886,
+        "issue":"preview feature node error",
+        "fix":{
+          "solution":"add data object handle",
+          "applied":true
+        }
+      },
+      {
+        "file":"app3.0.js",
+        "line":684,
+        "issue":"JSON type mismatch",
+        "fix":{
+          "solution":"format output node as integer",
           "applied":true
         }
       }
@@ -543,7 +561,19 @@
         "author":"David Maser",
         "codeblocks":[
           {
-            "item":"Added JSON export feature as well as JSON formatter and code validator",
+            "item":"Added JSON export feature",
+            "revision":"major",
+            "impact":"global",
+            "codestatus":"working"
+          },
+          {
+            "item":"Added JSON formatter",
+            "revision":"major",
+            "impact":"global",
+            "codestatus":"working"
+          },
+          {
+            "item":"Added JSON code validator",
             "revision":"major",
             "impact":"global",
             "codestatus":"working"
@@ -666,7 +696,7 @@
         "codeblocks":[
           {
             "item":"Added hello bar builder support",
-            "revision":"minor",
+            "revision":"major",
             "impact":"global",
             "codestatus":"working"
           },
