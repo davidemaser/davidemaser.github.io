@@ -1228,3 +1228,12 @@ span.show_me_how {
   border-right: 5px solid rgba(0, 0, 0, 0.4);
   background: rgba(221, 221, 221, 0.3);
 }
+*[data-role="hello"] {
+  display: none;
+}
+body[data-nmode="hello"] *[data-role="hero"]{
+  display: none;
+}
+body[data-nmode="hero"] *[data-role="hello"]{
+  display: none;
+}

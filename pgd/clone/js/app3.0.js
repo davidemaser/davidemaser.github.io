@@ -6,7 +6,8 @@
  */
 var pfLang = app.params.l,
     pfHero = 0,
-    pfMode = app.params.s;
+    pfMode = app.params.s,
+    pfExport = 'hero';
 function panelAlert(mess,state){
     var mPane = '.panel-body.bottom_level_bt';
     if(state == app.params.e) {
@@ -160,6 +161,21 @@ function initializeForm(){
             htmlBlock += '</form></div>';
         }
     })
+}
+function switchModes(va){
+    if(va == 'hello') {
+        $('*[data-role="hero"]').css('display', 'none');
+        $('*[data-role="hello"]').css('display', 'block');
+        pfExport = 'hello';
+        $('.submit_json').attr('data-nmode','hello');
+        panelAlert('Switched to Hello Banner Creation mode','good');
+    }else{
+        $('*[data-role="hello"]').css('display', 'none');
+        $('*[data-role="hero"]').attr('style', '');
+        pfExport = 'hero';
+        $('.submit_json').attr('data-nmode','hero');
+        panelAlert('Switched to Hero Banner Creation mode','good');
+    }
 }
 function initializeTheme(){
     /**
@@ -378,7 +394,7 @@ $(function () {
             newNum  = new Number(num + 1),      // The numeric ID of the new input field being added, increasing by 1 each time
             newElem = $(app.objects.e + num).clone().attr('id', 'entry' + newNum); // create the new element via clone(), and manipulate it's ID using newNum value
 
-        newElem.find('.heading-reference').attr('id', 'ID' + newNum + '_reference').attr('name', 'ID' + newNum + '_reference').html('<div class="btn-group bigboy"><button type="button" class="btn btn-info">HERO ITEM <span class="label label-default">' + newNum+'</span></button><button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button><ul class="dropdown-menu"><li><a class="previewItem large" href="javascript:;" data-hero="'+newNum+'">Preview Large</a></li><li><a class="previewItem small" href="javascript:;" data-hero="'+newNum+'">Preview Small</a></li></ul></div>');
+        newElem.find('.heading-reference').attr('id', 'ID' + newNum + '_reference').attr('name', 'ID' + newNum + '_reference').html('<div class="btn-group bigboy"><button type="button" class="btn btn-info">ITEM <span class="label label-default">' + newNum+'</span></button><button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button><ul class="dropdown-menu"><li><a class="previewItem large" href="javascript:;" data-hero="'+newNum+'" data-role="hero">Preview Large</a></li><li><a class="previewItem small" href="javascript:;" data-hero="'+newNum+'" data-role="hero">Preview Small</a></li></ul></div>');
         newElem.attr(app.handlers.s,newNum);
 
         newElem.find('.label_ttl').attr('for', 'ID' + newNum + '_title');
@@ -419,7 +435,7 @@ $(function () {
         $(app.objects.r).animate({
             scrollTop: $(app.objects.e + newNum).offset().top-60
         }, 500);
-        $('.btn-group.bigboy:not(.helpMePlease)').last().find('ul').append('<li class="divider"></li><li><a class="removeThisItem" '+app.handlers.i+'="'+newNum+'" href="javascript:;">Remove</a></li><li class="divider"></li><li><a class="moveUpThisItem" '+app.handlers.i+'="'+newNum+'" href="javascript:;">Move Up<span class="glyphicon glyphicon-arrow-up"></span></a></li><li><a class="moveDownThisItem" '+app.handlers.i+'="'+newNum+'" href="javascript:;">Move Down<span class="glyphicon glyphicon-arrow-down"></span></a></li>');
+        $('.btn-group.bigboy:not(.helpMePlease)').last().find('ul').append('<li class="divider" data-role="hero"></li><li><a class="removeThisItem" '+app.handlers.i+'="'+newNum+'" href="javascript:;">Remove</a></li><li class="divider"></li><li><a class="moveUpThisItem" '+app.handlers.i+'="'+newNum+'" href="javascript:;">Move Up<span class="glyphicon glyphicon-arrow-up"></span></a></li><li><a class="moveDownThisItem" '+app.handlers.i+'="'+newNum+'" href="javascript:;">Move Down<span class="glyphicon glyphicon-arrow-down"></span></a></li>');
         $(app.objects.e + newNum).find('.mod-radio').find('input').first().prop('checked',true);
         scrollState('a');
         panelAlert('Hero Item Added','good');
@@ -614,136 +630,164 @@ $(function () {
             $(app.objects.r).css('overflow','auto');
         }
     }
-    function prepareJSON(meth,name){
+    function prepareJSON(meth,name,mode){
         var c = [];
-        var len = $('.clonedInput form').length;
-            $('.clonedInput form').each(function(){
+        if(mode == 'hero') {
+            $('.clonedInput form fieldset[data-role="hero"]').each(function(){
                 var a = $(this).serializeArray();
                 c.push(a);
             });
-        if(meth == 'full') {
-            outputJson(c,meth,null);
-        }else if(meth == 'save'){
-            outputJson(c,meth,name);
+            if (meth == 'full') {
+                outputJson(c, meth, null, mode);
+            } else if (meth == 'save') {
+                outputJson(c, meth, name, mode);
+            }
+        }else if(mode == 'hello') {
+            $('.clonedInput form fieldset[data-role="hello"]').each(function(){
+                var a = $(this).serializeArray();
+                c.push(a);
+            });
+                outputJson(c, 'full', null, 'hello');
         }
     }
 
-    function outputJson(aCode,meth,name){
+    function outputJson(aCode,meth,name,mode){
         var nodes = aCode.length;
         var lastItem = nodes-1;
-        var page_model='{\n    "hero": [\n';
-        for(var i=0;i<nodes;i++){
-            //mapping
-            if(aCode[i][14].value == '' || aCode[i][14].value == null || aCode[i][14].value == undefined){
-                var elemA = true;
-            }else{
-                elemA = aCode[i][14].value;
-            }
-            if(aCode[i][15].value == '' || aCode[i][15].value == null || aCode[i][15].value == undefined){
-                var elemAA = true;
-            }else{
-                elemAA = aCode[i][15].value;
-            }
-            if(aCode[i][16].value == '' || aCode[i][16].value == null || aCode[i][16].value == undefined){
-                var elemAAA = true;
-            }else{
-                elemAAA = aCode[i][16].value;
-            }
-            if(aCode[i][12].value == '' || aCode[i][12].value == null || aCode[i][12].value == undefined){
-                var elemB = false;
-            }else{
-                elemB = aCode[i][12].value;
-            }
-            if(aCode[i][17].value == '' || aCode[i][17].value == null || aCode[i][17].value == undefined){
-                var elemC = false;
-            }else{
-                elemC = aCode[i][17].value;
-            }
-            if(aCode[i][20] !== undefined) {
-                if (aCode[i][20].value == '' || aCode[i][20].value == null || aCode[i][20].value == undefined) {
-                    var elemD = true;
-                } else {
-                    elemD = aCode[i][20].value;
+        if(mode == 'hello'){
+            var page_model = '{\n    "hello": [\n';
+            for (var i = 0; i < nodes; i++) {
+                page_model += '{\n        "helloItem": "hello' + i + '",';
+                page_model += '\n        "date": {';
+                page_model += '\n          "start": "' + aCode[i][0].value + '",';
+                page_model += '\n          "end": "' + aCode[i][1].value + '"';
+                page_model += '\n        },';
+                page_model += '\n        "text": {';
+                page_model += '\n          "en": "' + aCode[i][2].value.trim() + '",';
+                page_model += '\n          "fr": "' + aCode[i][3].value.trim() + '"';
+                page_model += '\n        }';
+                if (i < lastItem) {
+                    page_model += '\n},\n';
                 }
-            }else{
-                elemD = true;
             }
-            if(aCode[i][18] !== undefined) {
-                if (aCode[i][18].value == '' || aCode[i][18].value == null || aCode[i][18].value == undefined) {
-                    var elemDD = false;
+            page_model += '\n      }\n   ]\n}';
+        }else if(mode == 'hero') {
+            page_model = '{\n    "hero": [\n';
+            for (i = 0; i < nodes; i++) {
+                //mapping
+                if (aCode[i][14].value == '' || aCode[i][14].value == null || aCode[i][14].value == undefined) {
+                    var elemA = true;
                 } else {
-                    elemDD = aCode[i][18].value;
+                    elemA = aCode[i][14].value;
                 }
-            }else{
-                elemDD = false;
-            }
-            if(aCode[i][19] !== undefined) {
-                if (aCode[i][19].value == '' || aCode[i][19].value == null || aCode[i][19].value == undefined) {
-                    var elemE = 0;
+                if (aCode[i][15].value == '' || aCode[i][15].value == null || aCode[i][15].value == undefined) {
+                    var elemAA = true;
                 } else {
-                    elemE = aCode[i][19].value;
+                    elemAA = aCode[i][15].value;
                 }
-            }else{
-                elemE = 0;
+                if (aCode[i][16].value == '' || aCode[i][16].value == null || aCode[i][16].value == undefined) {
+                    var elemAAA = true;
+                } else {
+                    elemAAA = aCode[i][16].value;
+                }
+                if (aCode[i][12].value == '' || aCode[i][12].value == null || aCode[i][12].value == undefined) {
+                    var elemB = false;
+                } else {
+                    elemB = aCode[i][12].value;
+                }
+                if (aCode[i][17].value == '' || aCode[i][17].value == null || aCode[i][17].value == undefined) {
+                    var elemC = false;
+                } else {
+                    elemC = aCode[i][17].value;
+                }
+                if (aCode[i][20] !== undefined) {
+                    if (aCode[i][20].value == '' || aCode[i][20].value == null || aCode[i][20].value == undefined) {
+                        var elemD = true;
+                    } else {
+                        elemD = aCode[i][20].value;
+                    }
+                } else {
+                    elemD = true;
+                }
+                if (aCode[i][18] !== undefined) {
+                    if (aCode[i][18].value == '' || aCode[i][18].value == null || aCode[i][18].value == undefined) {
+                        var elemDD = false;
+                    } else {
+                        elemDD = aCode[i][18].value;
+                    }
+                } else {
+                    elemDD = false;
+                }
+                if (aCode[i][19] !== undefined) {
+                    if (aCode[i][19].value == '' || aCode[i][19].value == null || aCode[i][19].value == undefined) {
+                        var elemE = 0;
+                    } else {
+                        elemE = aCode[i][19].value;
+                    }
+                } else {
+                    elemE = 0;
+                }
+                page_model += '{\n        "heroId": "hero-elem' + i + '",';
+                page_model += '\n        "active": ' + elemD + ',';
+                page_model += '\n        "sticky": ' + elemDD + ',';
+                page_model += '\n        "showCountdown": ' + elemA + ',';
+                page_model += '\n        "popUpLink": ' + elemB + ',';
+                page_model += '\n        "date": {';
+                page_model += '\n          "start": "' + aCode[i][0].value + '",';
+                page_model += '\n          "end": "' + aCode[i][1].value + '",';
+                page_model += '\n          "delay": ' + elemE;
+                page_model += '\n        },';
+                page_model += '\n        "title": {';
+                page_model += '\n          "en": "' + aCode[i][2].value.trim() + '",';
+                page_model += '\n          "fr": "' + aCode[i][3].value.trim() + '",';
+                page_model += '\n          "color": "' + aCode[i][4].value + '",';
+                page_model += '\n          "showTitle": ' + elemAA;
+                page_model += '\n        },';
+                page_model += '\n        "text": {';
+                page_model += '\n          "en": "' + aCode[i][5].value.trim() + '",';
+                page_model += '\n          "fr": "' + aCode[i][6].value.trim() + '",';
+                page_model += '\n          "showSubTitle": ' + elemAAA;
+                page_model += '\n        },';
+                page_model += '\n        "promote": ' + elemC + ',';
+                page_model += '\n        "button": {';
+                page_model += '\n          "label": {';
+                page_model += '\n            "en": "' + aCode[i][9].value.trim() + '",';
+                page_model += '\n            "fr": "' + aCode[i][10].value.trim() + '"';
+                page_model += '\n          },';
+                page_model += '\n        "url": "' + aCode[i][11].value + '",';
+                page_model += '\n        "popUpLinkID": "' + aCode[i][13].value + '"';
+                page_model += '\n        },';
+                page_model += '\n        "image": {';
+                page_model += '\n          "url": "' + aCode[i][7].value + '",';
+                page_model += '\n          "altUrl": "' + aCode[i][8].value + '"';
+                page_model += '\n        }';
+                if (i < lastItem) {
+                    page_model += '\n},\n';
+                }
             }
-            page_model += '{\n        "heroId": "hero-elem'+i+'",';
-            page_model += '\n        "active": '+elemD+',';
-            page_model += '\n        "sticky": '+elemDD+',';
-            page_model += '\n        "showCountdown": '+elemA+',';
-            page_model += '\n        "popUpLink": '+elemB+',';
-            page_model += '\n        "date": {';
-            page_model += '\n          "start": "'+aCode[i][0].value+'",';
-            page_model += '\n          "end": "'+aCode[i][1].value+'",';
-            page_model += '\n          "delay": '+elemE;
-            page_model += '\n        },';
-            page_model += '\n        "title": {';
-            page_model += '\n          "en": "'+aCode[i][2].value.trim()+'",';
-            page_model += '\n          "fr": "'+aCode[i][3].value.trim()+'",';
-            page_model += '\n          "color": "'+aCode[i][4].value+'",';
-            page_model += '\n          "showTitle": '+elemAA;
-            page_model += '\n        },';
-            page_model += '\n        "text": {';
-            page_model += '\n          "en": "'+aCode[i][5].value.trim()+'",';
-            page_model += '\n          "fr": "'+aCode[i][6].value.trim()+'",';
-            page_model += '\n          "showSubTitle": '+elemAAA;
-            page_model += '\n        },';
-            page_model += '\n        "promote": '+elemC+',';
-            page_model += '\n        "button": {';
-            page_model += '\n          "label": {';
-            page_model += '\n            "en": "'+aCode[i][9].value.trim()+'",';
-            page_model += '\n            "fr": "'+aCode[i][10].value.trim()+'"';
-            page_model += '\n          },';
-            page_model += '\n        "url": "'+aCode[i][11].value+'",';
-            page_model += '\n        "popUpLinkID": "'+aCode[i][13].value+'"';
-            page_model += '\n        },';
-            page_model += '\n        "image": {';
-            page_model += '\n          "url": "'+aCode[i][7].value+'",';
-            page_model += '\n          "altUrl": "'+aCode[i][8].value+'"';
-            page_model += '\n        }';
-            if(i<lastItem){
-                page_model += '\n},\n';
-            }
+            page_model += '\n      }\n   ]\n}';
         }
-        page_model += '\n      }\n   ]\n}';
-        if(meth == 'full') {
-            if ($(app.objects.he).css('display') == 'block') {
-                $(app.objects.he).css('display', 'none');
+            if (meth == 'full') {
+                if ($(app.objects.he).css('display') == 'block') {
+                    $(app.objects.he).css('display', 'none');
+                }
+                if ($(app.objects.h).css('display') == 'block') {
+                    $(app.objects.h).css('display', 'none');
+                }
+                if ($(app.objects.ls).css('display') == 'block') {
+                    $(app.objects.ls).css('display', 'none');
+                }
+                $(app.objects.o).attr(app.handlers.r, 'output');
+                $(app.objects.o).css('display', 'block');
+                $(app.objects.o + ' textarea').val(page_model);
+                $(app.objects.r).animate({scrollTop: 0}, 500).css('overflow', 'hidden');
+                if(mode == 'hero'){
+                    errorHandler();
+                }
+                panelAlert('JSON Exported Successfuly', 'good');
+            } else {
+                saveNodeToLS(page_model, name);
             }
-            if ($(app.objects.h).css('display') == 'block') {
-                $(app.objects.h).css('display', 'none');
-            }
-            if ($(app.objects.ls).css('display') == 'block') {
-                $(app.objects.ls).css('display', 'none');
-            }
-            $(app.objects.o).attr(app.handlers.r, 'output');
-            $(app.objects.o).css('display', 'block');
-            $(app.objects.o+' textarea').val(page_model);
-            $(app.objects.r).animate({scrollTop: 0}, 500).css('overflow', 'hidden');
-            errorHandler();
-            panelAlert('JSON Exported Successfuly','good');
-        }else{
-            saveNodeToLS(page_model,name);
-        }
     }
     function urlExists(testUrl) {
         var http = jQuery.ajax({
@@ -975,10 +1019,25 @@ $(function () {
             $(app.objects.r).css('overflow','auto');
             $(app.objects.h).find('.render_output').empty();
         }
+    }).on('click','.btnNmode',function () {
+        var a = $('body').attr('data-nmode');
+        if(a == 'hero'){
+            $('body').attr('data-nmode','hello');
+            $(this).attr('data-nmode','hello');
+            $(this).html('Switch to Hero Banner Mode');
+            switchModes('hello')
+        }else if(a == 'hello'){
+            $('body').attr('data-nmode','hero');
+            $(this).attr('data-nmode','hero');
+            $(this).html('Switch to Hero Banner Mode');
+            switchModes('hero')
+        }
+        console.log(a);
     }).on('click','.btnDel',function () {
         deleteItems('last');
     }).on('click','.submit_json',function (){
-        prepareJSON('full');
+        var a = $(this).attr('data-nmode');
+        prepareJSON('full',null,a);
     }).on('click','.translate_json',function (){
         $('.overlay_message').html('');
         $(app.objects.r).animate({ scrollTop: 0 }, 500).css('overflow','hidden');

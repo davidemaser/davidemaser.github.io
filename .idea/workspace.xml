@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ed53085-34d5-4ed7-8e2d-04ebf135fb37" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/moment-timezone/.bower.json" afterPath="$PROJECT_DIR$/bower_components/moment-timezone/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/moment-timezone/changelog.md" afterPath="$PROJECT_DIR$/bower_components/moment-timezone/changelog.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pgd/clone/js/app3.0.js" afterPath="$PROJECT_DIR$/pgd/clone/js/app3.0.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pgd/clone/js/app3.0.min.js" afterPath="$PROJECT_DIR$/pgd/clone/js/app3.0.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pgd/clone/css/scss/global.scss" afterPath="$PROJECT_DIR$/pgd/clone/css/scss/global.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pgd/clone/css/globals.css" afterPath="$PROJECT_DIR$/pgd/clone/css/globals.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pgd/clone/index.html" afterPath="$PROJECT_DIR$/pgd/clone/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="davidemaser.github.io.iws" />
@@ -50,23 +51,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pgd/clone/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.592592" vertical-offset="7094" max-vertical-offset="7668">
-              <caret line="419" column="7" selection-start-line="419" selection-start-column="7" selection-end-line="419" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.1255814" vertical-offset="378" max-vertical-offset="8190">
+              <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
               <folding>
-                <element signature="n#style#0;n#select#0;n#div#1;n#div#0;n#div#7;n#fieldset#0;n#form#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#1;n#div#0;n#div#7;n#fieldset#1;n#form#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="global.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="global.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pgd/clone/css/scss/global.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20809248" vertical-offset="8658" max-vertical-offset="22248">
-              <caret line="491" column="1" selection-start-line="491" selection-start-column="1" selection-end-line="491" selection-end-column="1" />
+            <state vertical-scroll-proportion="-0.74390244" vertical-offset="21557" max-vertical-offset="22392">
+              <caret line="1201" column="3" selection-start-line="1201" selection-start-column="3" selection-end-line="1201" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -85,11 +86,11 @@
       <file leaf-file-name="app3.0.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pgd/clone/js/app3.0.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.133333" vertical-offset="22022" max-vertical-offset="22914">
-              <caret line="1232" column="41" selection-start-line="1232" selection-start-column="41" selection-end-line="1232" selection-end-column="41" />
+            <state vertical-scroll-proportion="-74.63333" vertical-offset="5357" max-vertical-offset="23976">
+              <caret line="422" column="52" selection-start-line="422" selection-start-column="52" selection-end-line="422" selection-end-column="52" />
               <folding>
-                <marker date="1446239496353" expanded="true" signature="44483:44494" placeholder="..." />
-                <marker date="1446239496353" expanded="true" signature="45340:45350" placeholder="..." />
+                <marker date="1446656240184" expanded="true" signature="47050:47061" placeholder="..." />
+                <marker date="1446656240184" expanded="true" signature="47907:47917" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -110,7 +111,7 @@
       <file leaf-file-name="app3.0.min.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pgd/clone/js/app3.0.min.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="126">
+            <state vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="126">
               <caret line="1" column="74" selection-start-line="1" selection-start-column="74" selection-end-line="1" selection-end-column="74" />
               <folding />
             </state>
@@ -163,10 +164,10 @@
         <option value="$PROJECT_DIR$/pgd/clone/data/help.json" />
         <option value="$PROJECT_DIR$/pgd/clone/js/app3.0.min.js" />
         <option value="$PROJECT_DIR$/pgd/clone/css/globals.css" />
-        <option value="$PROJECT_DIR$/pgd/clone/index.html" />
         <option value="$PROJECT_DIR$/pgd/clone/js/globals.js" />
         <option value="$PROJECT_DIR$/pgd/clone/js/app3.0.js" />
         <option value="$PROJECT_DIR$/pgd/clone/css/scss/global.scss" />
+        <option value="$PROJECT_DIR$/pgd/clone/index.html" />
       </list>
     </option>
   </component>
@@ -1348,7 +1349,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446240800861</updated>
     </task>
-    <option name="localTasksCounter" value="156" />
+    <task id="LOCAL-00156" summary="CSS upd">
+      <created>1446241701981</created>
+      <option name="number" value="00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1446241701981</updated>
+    </task>
+    <option name="localTasksCounter" value="157" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1412,7 +1419,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="New LocalStorage methods" />
     <MESSAGE value="tweek" />
     <MESSAGE value="Nav LS" />
     <MESSAGE value="Fix LS" />
@@ -1437,7 +1443,8 @@
     <MESSAGE value="Minor updates" />
     <MESSAGE value="New globals" />
     <MESSAGE value="Bower update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bower update" />
+    <MESSAGE value="CSS upd" />
+    <option name="LAST_COMMIT_MESSAGE" value="CSS upd" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1770,19 +1777,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/clone/js/app3.0.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="126">
+        <state vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="126">
           <caret line="1" column="74" selection-start-line="1" selection-start-column="74" selection-end-line="1" selection-end-column="74" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pgd/clone/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.592592" vertical-offset="7094" max-vertical-offset="7668">
-          <caret line="419" column="7" selection-start-line="419" selection-start-column="7" selection-end-line="419" selection-end-column="7" />
-          <folding>
-            <element signature="n#style#0;n#select#0;n#div#1;n#div#0;n#div#7;n#fieldset#0;n#form#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1814,20 +1811,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/clone/js/app3.0.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.133333" vertical-offset="22022" max-vertical-offset="22914">
-          <caret line="1232" column="41" selection-start-line="1232" selection-start-column="41" selection-end-line="1232" selection-end-column="41" />
+        <state vertical-scroll-proportion="-74.63333" vertical-offset="5357" max-vertical-offset="23976">
+          <caret line="422" column="52" selection-start-line="422" selection-start-column="52" selection-end-line="422" selection-end-column="52" />
           <folding>
-            <marker date="1446239496353" expanded="true" signature="44483:44494" placeholder="..." />
-            <marker date="1446239496353" expanded="true" signature="45340:45350" placeholder="..." />
+            <marker date="1446656240184" expanded="true" signature="47050:47061" placeholder="..." />
+            <marker date="1446656240184" expanded="true" signature="47907:47917" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/clone/css/scss/global.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20809248" vertical-offset="8658" max-vertical-offset="22248">
-          <caret line="491" column="1" selection-start-line="491" selection-start-column="1" selection-end-line="491" selection-end-column="1" />
+        <state vertical-scroll-proportion="-0.74390244" vertical-offset="21557" max-vertical-offset="22392">
+          <caret line="1201" column="3" selection-start-line="1201" selection-start-column="3" selection-end-line="1201" selection-end-column="3" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pgd/clone/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1255814" vertical-offset="378" max-vertical-offset="8190">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+          <folding>
+            <element signature="n#style#0;n#select#0;n#div#1;n#div#0;n#div#7;n#fieldset#1;n#form#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
