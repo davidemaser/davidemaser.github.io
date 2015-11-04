@@ -13,6 +13,10 @@ var app = {
         g:"get",
         p:"post"
     },
+    dom:{
+        b:"body",
+        h:"html"
+    },
     objects:{
         o:"#output",
         e:"#entry",

@@ -311,7 +311,7 @@ $(function () {
     $('.date_obj').datetimepicker({format: 'MM/DD/YYYY HH:mm'});
     function choseLocalSave(){
         try {
-            $('#loadandsave-zone').attr('data-reason', 'load').css('display', 'block');
+            $('#loadandsave-zone').attr(app.handlers.r, 'load').css('display', 'block');
             var a = localStorage.getItem(app.storage.n),
                 target = $('.lsOptions');
             if (a !== null || a !== undefined) {
@@ -1037,19 +1037,18 @@ $(function () {
             $(app.objects.h).find('.render_output').empty();
         }
     }).on('click','.btnNmode',function () {
-        var a = $('body').attr('data-nmode');
+        var a = $(app.dom.b).attr('data-nmode');
         if(a == 'hero'){
-            $('body').attr('data-nmode','hello');
+            $(app.dom.b).attr('data-nmode','hello');
             $(this).attr('data-nmode','hello');
             $(this).html('Switch to Hero Banner Mode');
             switchModes('hello')
         }else if(a == 'hello'){
-            $('body').attr('data-nmode','hero');
+            $(app.dom.b).attr('data-nmode','hero');
             $(this).attr('data-nmode','hero');
             $(this).html('Switch to Hello Bar Mode');
             switchModes('hero')
         }
-        console.log(a);
     }).on('click','.btnDel',function () {
         deleteItems('last');
     }).on('click','.submit_json',function (){
@@ -1061,11 +1060,7 @@ $(function () {
         $(app.objects.o).attr(app.handlers.r,'translate').css('display','block').find('#output_code').val('').attr('placeholder','Paste you code here');
     }).on('click','.save_json',function (e){
         doLocalSave();
-        /*prepareJSON('save');
-        e.preventDefault();*/
     }).on('click','.import_json',function (e){
-        /*traverseJSON(true);
-        e.preventDefault();*/
         choseLocalSave();
     }).on('click','.overlay_translate',function (){
         traverseJSON(false);
@@ -1138,7 +1133,7 @@ $(function () {
             localStorage.setItem('pgb_Theme', a);
         }
         e.preventDefault();
-    }).on('click','.moveUpThisItem',function(e){
+    }).on('click','.moveUpThisItem',function(fn){
         var a = $(this).data('item'),
             b = a-1,
             c = $(this).parent().parent().parent().parent().parent().parent(),
@@ -1152,8 +1147,8 @@ $(function () {
             //$(d).closest(app.objects.cl).prev();
         $(this).parent().parent().parent().find('.reordered').remove();
         $(this).parent().parent().parent().find('.btn.btn-info:not(.dropdown-toggle)').prepend('<span title="This entry has been moved from it\'s original position" class="glyphicon glyphicon-fullscreen reordered" aria-hidden="true"></span>');
-        e.preventDefault();
-    }).on('click','.moveDownThisItem',function(e){
+        fn.preventDefault();
+    }).on('click','.moveDownThisItem',function(fn){
         var a = $(this).data('item'),
             b = a-1,
             c = $(this).parent().parent().parent().parent().parent().parent(),
@@ -1171,7 +1166,7 @@ $(function () {
             }else{
                 panelAlert('If I move down any further, I\'ll be off the page.','error');
             }
-        e.preventDefault();
+        fn.preventDefault();
     }).on('click','.batsToggle',function(){
         if($(this).attr('data-status') == 'active') {
             killBats();

@@ -18,10 +18,8 @@
     <script type="text/javascript" src="js/globals.min.js"></script>
     <script type="text/javascript" src="js/app3.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <!-- only added as a smoke test for js conflicts -->
     <script src="../assets/js/validate-json.js"></script>
     <script type="text/javascript">
-        // if Google is down, it looks to local file...
         if (typeof jQuery == 'undefined') {
             document.write(decodeURIComponent("%3Cscript src='js/jquery-1.11.2.min.js' type='text/javascript'%3E%3C/script%3E"));
         }
@@ -118,7 +116,7 @@
 </div>
 <div id="wrapper">
     <div id="entry1" class="clonedInput" data-split="1" data-nmode="hero">
-        <form action="#" method="post" id="json-data-creator" role="form">
+
             <div id="reference" name="reference" class="heading-reference">
                 <div class="btn-group bigboy">
                     <button type="button" class="btn btn-info">ITEM <span class="label label-default">1</span>
@@ -139,6 +137,7 @@
                     </ul>
                 </div>
             </div>
+        <form action="#" method="post" id="json-data-creator" role="form">
             <fieldset data-role="hello">
                 <div id="hello-section" class="buildHello">
                     <div class="form-group">
@@ -168,7 +167,6 @@
                 </div>
             </fieldset>
             <fieldset data-role="hero">
-                <!-- Text input-->
                 <div class="form-group">
                     <div class="half_span lItem">
                         <label class="label_fn control-label" for="start_date">Start Date</label>
@@ -181,7 +179,6 @@
                                class="input_ln form-control date_obj objEnd">
                     </div>
                 </div>
-                <!-- Text input-->
                 <div class="form-group">
                     <div class="half_span lItem">
                         <label class="label_ln control-label" for="title_en">Title EN</label>
@@ -194,17 +191,15 @@
                                class="input_ln form-control objTitleFR">
                     </div>
                 </div>
-                <!-- Select Basic -->
                 <div class="form-group">
                     <label class="label_ttl control-label" for="title_color">Title Color</label>
-                    <select class="select_ttl form-control" name="title_color" id="title_color objTitleCol">
+                    <select class="select_ttl form-control objTitleCol" name="title_color" id="title_color">
                         <option value="#fff" selected="selected">White (Default)</option>
                         <option value="#000">Black</option>
                         <option value="#ee3600">Red</option>
                         <option value="#9bd000">Green</option>
-                    </select> <!-- end .select_ttl -->
+                    </select>
                 </div>
-                <!-- Text input-->
                 <div class="form-group">
                     <div class="half_span lItem">
                         <label class="label_ln control-label" for="text_en">Text EN</label>
@@ -217,11 +212,9 @@
                                class="input_ln form-control objTextFR">
                     </div>
                 </div>
-                <!-- Text input-->
                 <div class="grouped_feature">
                     <div class="form-group">
                         <label class="label_ln control-label" for="image_main">Image Link</label>
-
                         <div class="panel-body input-group nopad">
                             <div class="input-group-btn">
                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
@@ -238,10 +231,8 @@
                             <span class="input-group-addon image_count" id="basic-addon2">Shopify CDN</span>
                         </div>
                     </div>
-                    <!-- Text input-->
                     <div class="form-group">
                         <label class="label_ln control-label" for="image_alt">Alternative Image Link</label>
-
                         <div class="panel-body input-group nopad">
                             <div class="input-group-btn">
                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
@@ -260,7 +251,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Text input-->
                 <div class="form-group">
                     <div class="half_span lItem">
                         <label class="label_ln control-label" for="button_label_en">Button Label EN</label>
@@ -273,13 +263,11 @@
                                class="input_ln form-control objButtonFR">
                     </div>
                 </div>
-                <!-- Text input-->
                 <div class="form-group">
                     <label class="label_ln control-label" for="button_link">Button Link</label>
                     <input id="button_link" name="button_link" type="text" placeholder=""
                            class="input_ln form-control objButtonLink">
                 </div>
-                <!-- Select Basic -->
                 <div class="grouped_feature">
                     <div class="form-group">
                         <div class="half_span lItem">
@@ -288,7 +276,7 @@
                                     id="options_popup">
                                 <option value="false" selected="selected">No</option>
                                 <option value="true">Yes</option>
-                            </select> <!-- end .select_ttl -->
+                            </select>
                         </div>
                         <div class="half_span">
                             <label class="label_ttl control-label" for="options_popup_id">Link To Which ID</label>
@@ -297,19 +285,17 @@
                                 <option value="null" selected="selected">Select</option>
                                 <option value="popup-1">Popup 1</option>
                                 <option value="popup-2">Popup 2</option>
-                            </select> <!-- end .select_ttl -->
+                            </select>
                         </div>
                     </div>
-                    <!-- Select Basic -->
                     <div class="form-group"><label class="label_ttl control-label" for="options_countdown">Show
                         Countdown Timer</label>
                         <select class="select_ttl form-control objCountdownShow" name="options_countdown"
                                 id="options_countdown">
                             <option value="true" selected="selected">Yes</option>
                             <option value="false">No</option>
-                        </select> <!-- end .select_ttl -->
+                        </select>
                     </div>
-                    <!-- Select Basic -->
                     <div class="form-group">
                         <div class="half_span lItem">
                             <label class="label_ttl control-label" for="options_hero_title">Show Hero Title</label>
@@ -317,9 +303,8 @@
                                     id="options_hero_title">
                                 <option value="true" selected="selected">Yes</option>
                                 <option value="false">No</option>
-                            </select> <!-- end .select_ttl -->
+                            </select>
                         </div>
-                        <!-- Select Basic -->
                         <div class="half_span">
                             <label class="label_ttl control-label" for="options_hero_subtitle">Show Hero
                                 Subtitle</label>
@@ -327,10 +312,9 @@
                                     id="options_hero_subtitle">
                                 <option value="true" selected="selected">Yes</option>
                                 <option value="false">No</option>
-                            </select> <!-- end .select_ttl -->
+                            </select>
                         </div>
                     </div>
-                    <!-- Select Basic -->
                     <div class="form-group">
                         <div class="half_span lItem">
                             <label class="label_ttl control-label" for="options_promote">Promote Hero <span
@@ -361,9 +345,7 @@
                                value="0" class="input_ln form-control objDelay">
                     </div>
                 </div>
-                <!-- Multiple Radios -->
                 <label class="label_radio control-label" for="radioitem">Activate Hero</label>
-
                 <div class="input-group form-group mod-radio">
                     <label class="radio" for="radioitem-0">
                         <input class="input_radio" type="radio" name="radioitem" id="radioitem-0" value="true"
@@ -375,11 +357,9 @@
                         No
                     </label>
                 </div>
-        </form>
-    </div>
-    <!-- end #entry1 -->
-    <!-- Button (Double) -->
-    </fieldset>
+        </div>
+        </fieldset>
+    </form>
     <div id="html-zone" data-reason="preview">
         <div class="blackify_overlay"><span class="renderer_close label label-danger">close</span>
             <div class="render_output preview fullsize">
@@ -405,7 +385,7 @@
             </div>
         </div>
     </div>
-    <div id="output" data-reason="">
+    <div id="output" data-reason="output">
         <div class="blackify_overlay"><span class="overlay_message"></span><span
                 class="overlay_close label label-danger">close</span><span
                 class="select_content label label-primary">select all</span>
@@ -442,7 +422,6 @@
         </div>
     </div>
 </div>
-<!-- end wrapper -->
 <div class="copy-zone">&copy; David Maser</div>
 </body>
 </html>
