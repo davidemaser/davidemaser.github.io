@@ -365,7 +365,7 @@ $(function () {
         for(var i=0;i<num;i++) {
             addItems();
         }
-        panelAlert('Hero Items Added','good');
+        panelAlert('Items Added','good');
     }
     function jumpToHelper(a){
         $('.help_panel_holder').animate({
@@ -443,14 +443,14 @@ $(function () {
             $('.btnAdd').attr('disabled', true).prop('value', "You've reached the limit"); // value here updates the text in the 'add' button when the limit is reached
         var dateNow = new Date();
         $('.date_obj').datetimepicker({format: 'MM/DD/YYYY HH:mm'});
-        $('.snapTo').append('<li><a href="#" class="gotoItem" '+app.handlers.i+'="'+newNum+'">Hero Item '+newNum+'</a></li>');
+        $('.snapTo').append('<li><a href="#" class="gotoItem" '+app.handlers.i+'="'+newNum+'">Item '+newNum+'</a></li>');
         $(app.objects.r).animate({
             scrollTop: $(app.objects.e + newNum).offset().top-60
         }, 500);
         $('.btn-group.bigboy:not(.helpMePlease)').last().find('ul').append('<li class="divider" data-role="hero"></li><li><a class="removeThisItem" '+app.handlers.i+'="'+newNum+'" href="javascript:;">Remove</a></li><li class="divider"></li><li><a class="moveUpThisItem" '+app.handlers.i+'="'+newNum+'" href="javascript:;">Move Up<span class="glyphicon glyphicon-arrow-up"></span></a></li><li><a class="moveDownThisItem" '+app.handlers.i+'="'+newNum+'" href="javascript:;">Move Down<span class="glyphicon glyphicon-arrow-down"></span></a></li>');
         $(app.objects.e + newNum).find('.mod-radio').find('input').first().prop('checked',true);
         scrollState('a');
-        panelAlert('Hero Item Added','good');
+        panelAlert('Item Added','good');
     }
     function deleteItems(elem) {
         if ($(app.objects.cl).length > 1) {
@@ -550,7 +550,7 @@ $(function () {
             $('.errorList').css('display','inline-block');
             $('.errorListing').empty();
             for (var j = 0; j < errorLog.length; j++) {
-                $('.errorListing').prepend('<li><a href="javascript:;" class="errorItem '+errorLog[j].die+'" '+app.handlers.i+'="'+j+'">Hero Item ' + errorLog[j].form + ' : ' + errorLog[j].obj + ' : ' + errorLog[j].prob + '</a></li>');
+                $('.errorListing').prepend('<li><a href="javascript:;" class="errorItem '+errorLog[j].die+'" '+app.handlers.i+'="'+j+'">Item ' + errorLog[j].form + ' : ' + errorLog[j].obj + ' : ' + errorLog[j].prob + '</a></li>');
                 registerErrorButtons(errorLog[j].form,errorLog[j].elem,j,errorLog[j].prob,errorLog[j].die);
             }
             $('.errorList').find('button').html('Warnings<span class="label label-default numerrors">'+errorLog.length+'</span><span class="caret"></span>');
