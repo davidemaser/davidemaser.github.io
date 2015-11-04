@@ -1,7 +1,7 @@
 {
   "project":{
     "name":"Page Builder",
-    "version":"3.1.1",
+    "version":"3.1.2",
     "revision":"2",
     "downloadlink":"https://drive.google.com/file/d/0B4onXKnKkE6AY0JiVlZ3bG9scmM/view?usp=sharing",
     "semantic":{
@@ -184,6 +184,18 @@
           "version":"3.1",
           "candidate":"3.1.1",
           "request":true
+        }
+      },
+      {
+        "line":"multi",
+        "file":"app3.0.js",
+        "structure":"add",
+        "utility":"Hello bar support",
+        "appstatus":{
+          "scoped":true,
+          "version":"3.1.1",
+          "candidate":"3.1.2",
+          "request":false
         }
       }
     ],
@@ -640,6 +652,26 @@
           },
           {
             "item":"Added live preview language switch",
+            "revision":"minor",
+            "impact":"global",
+            "codestatus":"working"
+          }
+        ]
+      },
+      {
+        "version":"3.1.2",
+        "date":"11/04/2015",
+        "failsafe":"minor",
+        "author":"David Maser",
+        "codeblocks":[
+          {
+            "item":"Added hello bar builder support",
+            "revision":"minor",
+            "impact":"global",
+            "codestatus":"working"
+          },
+          {
+            "item":"Added hello bar json file export",
             "revision":"minor",
             "impact":"global",
             "codestatus":"working"

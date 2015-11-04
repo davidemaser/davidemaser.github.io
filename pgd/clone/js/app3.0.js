@@ -19,6 +19,17 @@ function panelAlert(mess,state){
     $(mPane).find('.inner_message').html(mess);
     setTimeout("$('.panel-body.bottom_level_bt').slideUp()",5000);
 }
+function getVersion(){
+    $.ajax({
+        type: app.methods.g,
+        url: "../assets/project/release.json",
+        success: function (data) {
+            var ver = data.project.version;
+            document.title = "Page Builder "+ver;
+            $('.version_number').attr('title','You are using version '+ver).html(ver);
+        }
+    })
+}
 function initializeForm(){
     $.ajax({
         type:app.methods.g,
@@ -291,6 +302,7 @@ $(function () {
     setHeadSec();
     initializeTheme();
     initHelp();
+    getVersion();
     $('.date_obj').datetimepicker({format: 'MM/DD/YYYY HH:mm'});
     function choseLocalSave(){
         try {
@@ -657,7 +669,7 @@ $(function () {
         if(mode == 'hello'){
             var page_model = '{\n    "hello": [\n';
             for (var i = 0; i < nodes; i++) {
-                page_model += '{\n        "helloItem": "hello' + i + '",';
+                page_model += '       {\n        "helloItem": "hello' + i + '",';
                 page_model += '\n        "date": {';
                 page_model += '\n          "start": "' + aCode[i][0].value + '",';
                 page_model += '\n          "end": "' + aCode[i][1].value + '"';
