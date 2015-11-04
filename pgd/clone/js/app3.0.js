@@ -675,8 +675,8 @@ $(function () {
                 page_model += '\n          "end": "' + aCode[i][1].value + '"';
                 page_model += '\n        },';
                 page_model += '\n        "text": {';
-                page_model += '\n          "en": "' + aCode[i][2].value.trim() + '",';
-                page_model += '\n          "fr": "' + aCode[i][3].value.trim() + '"';
+                page_model += '\n          "en": "' + aCode[i][2].value.trim().replace(/"/g,'') + '",';
+                page_model += '\n          "fr": "' + aCode[i][3].value.trim().replace(/"/g,'') + '"';
                 page_model += '\n        }';
                 if (i < lastItem) {
                     page_model += '\n},\n';
