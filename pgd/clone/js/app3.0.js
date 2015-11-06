@@ -399,7 +399,7 @@ $(function () {
     initializeTheme();
     initHelp();
     getVersion(true);
-    setInterval("getVersion(false)",3600000);
+    setInterval("getVersion(false)",600000);
     $('.date_obj').datetimepicker({format: 'MM/DD/YYYY HH:mm'});
     function choseLocalSave(){
         /**
