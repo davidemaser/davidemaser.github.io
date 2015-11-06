@@ -73,6 +73,7 @@ function initVersionUpdate(){
         location.reload();
     }).on('click','.btn-update.false',function(){
         $(this).parent().parent().parent().parent().remove();
+        panelAlert('Version update stopped. The update prompt will reappear at the next update interval.','good');
     })
 }
 function tagNew(ver){
