@@ -1256,23 +1256,39 @@ body[data-nmode="hero"] *[data-role="hello"]{
   top: 60px;
   box-shadow: 0 20px 20px -10px rgba(0,0,0,0.3);
 }
-
 .prompt-choice {
   position: absolute;
   bottom: 20px;
 }
-
-.btn-update {
+.btn-update{
   margin-right: 10px;
+  &.true {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+  }
+  &.false {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #4cae4c;
+  }
 }
-
-.btn-update.true {
-  color: #fff;
-  background-color: #5cb85c;
-  border-color: #4cae4c;
+.prompt-message,.prompt-icon {
+  display: inline-block;
 }
-.btn-update.false {
-  color: #fff;
-  background-color: #d9534f;
-  border-color: #4cae4c;
+@keyframes mymove {
+  0%   {color: #5bc0de;opacity:1;}
+  25%   {color: #fff;opacity:0.5;}
+  50% {color: #5cb85c;opacity:1;}
+  75% {color: #fff;opacity:0.5;}
+  100%   {color: #5bc0de;opacity:1;}
+}
+.prompt-icon {
+  font-size: 60px;
+  margin-right: 20px;
+  color: #5bc0de;
+  span {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.39);
+    animation: mymove 4s infinite;
+  }
 }
