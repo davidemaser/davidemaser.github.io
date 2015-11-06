@@ -57,7 +57,7 @@ function tagNew(ver){
      * main menu links
      */
     var cssBlock = '<style>.main_nav a[data-version="'+ver+'"]:after {content: "new";float: right;background-color: #f0ad4e;padding: 2px 5px;font-size: 10px;color: #fff;font-weight: bold;}</style>';
-    $('body').append(cssBlock);
+    $(app.dom.b).append(cssBlock).find('a[data-version="'+ver+'"]').attr('title','This feature is new to the current version');
 }
 function initializeForm(){
     /**
