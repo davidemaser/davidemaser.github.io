@@ -19,6 +19,10 @@
     {
       "title":"Sticky Hero Items",
       "block": "<p><span class=\"label label-primary\">Usage</span> Constrain the hero item to the vignette panel</p> <p>This feature allows you to constrain a hero item to the vignette panel (below the main hero) and keep it from ever showing in the main panel section. The feature overwrites all other display options (promote...)</p> <p>This can be very useful for minor sale items that you don't want to advertise with a large banner. This can also be useful for items which do not have a large resolution image.</p> <p>The sticky option can be revoked before, or during the sale item's activity.</p> <p><span class=\"label label-danger\">Common Errors</span> Make sure at least one of the hero items is NOT a sticky hero. If all items have the sticky hero attribute, no hero item will appear in the main hero panel.</p>"
+    },
+    {
+      "title":"Using Hello Bar Mode",
+      "block": "<p><span class=\"label label-primary\">Usage</span> Create Hello bar entries for the site </p> <p>This feature allows you to switch to the Hello Bar Creation mode in order to create Hello Bar JSON files.</p> <p>Similiar to the Hero Bar, the Hello banner requires much less data and exports a more simplified JSON file.</p> <p>Simply add the date that you want the Hello Bar message to appear as well as it's expiration date. Add the english and french text. Create as many Hello Bar entries as you want. They will be displayed between the start and end date you defined.</p> <p><span class=\"label label-danger\">Fallback</span> If ever the Hello Bar can not load the JSON data or if no Hello Bar item is set to display at the current date, a default message will be displayed in place until a valid message can be collected from the JSON.</p><p><span class=\"label label-warning\">Note</span> The default Hello Bar text can be set in the Theme Customization => Hello Bar => Set Default Hello Text. Split the languages using the bar-slash-bar (|-|) syntax.</p>"
     }
   ]
 }
