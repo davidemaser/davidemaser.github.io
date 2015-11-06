@@ -304,11 +304,16 @@ function killBats(){
     $('.batsToggle').attr('data-status','allGone').html('Let In The Bats');
 }
 function resetItems(){
-    $('#wrapper').find('.clonedInput').sort(function (a, b) {
-        return $(a).attr('id').replace('entry','') - $(b).attr('id').replace('entry','');
-    }).appendTo('#wrapper');
-    $('.reordered').remove();
-    panelAlert('Items reset to their original position','good');
+    if($(app.objects.re).length > 0) {
+        $(app.objects.w).find(app.objects.cl).sort(function (a, b) {
+            return $(a).attr('id').replace('entry', '') - $(b).attr('id').replace('entry', '');
+        }).appendTo(app.objects.w);
+        $(app.objects.re).remove();
+        panelAlert('Items reset to their original position','good');
+    }else{
+        panelAlert('All items are in their original position','error');
+    }
+
 }
 $(function () {
     var sPos = 0;

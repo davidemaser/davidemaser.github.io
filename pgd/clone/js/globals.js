@@ -21,6 +21,7 @@ var app = {
         o:"#output",
         e:"#entry",
         h:"#html-zone",
+        w:"#wrapper",
         i:".input_holders",
         b:".blackify_overlay",
         c:".check_image",
@@ -33,7 +34,8 @@ var app = {
         g:".glyphicon",
         l:".loadLsItems",
         ls:"#loadandsave-zone",
-        ro:".render_output"
+        ro:".render_output",
+        re:".reordered"
     },
     handlers:{
         d:'data-handler',
