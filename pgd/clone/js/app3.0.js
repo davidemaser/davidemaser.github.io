@@ -28,10 +28,13 @@ function panelAlert(mess,state){
             setTimeout("$('.panel-body.bottom_level_bt').slideUp()", app.animation.d.max);
         }
 }
-function getVersion(){
+function getVersion(init){
     /**
      * Recovers and displays the app version from
-     * the release.json file
+     * the release.json file. init=false checks the
+     * current version against the server json and
+     * initializes and update prompt if the local
+     * version is outdated.
      */
     try {
         $.ajax({
@@ -41,14 +44,36 @@ function getVersion(){
                 var ver = data.project.version,
                     sup = data.project.history.length-1,
                     lup = data.project.history[sup].date;
-                document.title = "Page Builder " + ver;
-                $('.version_number').attr('title', 'You are using version ' + ver+', last updated '+lup).html(ver);
-                tagNew(ver);
+                if(init == true) {
+                    document.title = "Page Builder " + ver;
+                    $('.version_number').attr('title', 'You are using version ' + ver + ', last updated ' + lup).html(ver);
+                    $('html').attr('data-version',ver);
+                    tagNew(ver);
+                }else if(init == false) {
+                    var cur = $('html').attr('data-version');
+                    if(cur < ver || cur > ver){
+                        initVersionUpdate();
+                    }
+                }
             }
         })
     }catch(e){
         console.log(e);
     }
+}
+function initVersionUpdate(){
+    /**
+     * Prompts the user to reload the page if a
+     * newer version of the app has been detected
+     * remotely.
+     */
+    $('.init-update').remove();
+    var pageData = '<div class="init-update"><div class="blackify_overlay"><div class="prompt-update"><div class="prompt-message">A newer version of the PageBuilder app has been detected. Do you want to load the newer version now? <br><br>Make sure you save all your work before answering YES.</div><div class="prompt-choice"><button type="button" class="btn btn-update true" data-toggle="dropdown" aria-expanded="false">YES</button><button type="button" class="btn btn-update false" data-toggle="dropdown" aria-expanded="false">NO</button></div></div></div></div>';
+    $(app.dom.b).append(pageData).on('click','.btn-update.true',function(){
+        location.reload();
+    }).on('click','.btn-update.false',function(){
+        $(this).parent().parent().parent().parent().remove();
+    })
 }
 function tagNew(ver){
     /**
@@ -372,7 +397,8 @@ $(function () {
     setHeadSec();
     initializeTheme();
     initHelp();
-    getVersion();
+    getVersion(true);
+    setInterval("getVersion(false)",3600000);
     $('.date_obj').datetimepicker({format: 'MM/DD/YYYY HH:mm'});
     function choseLocalSave(){
         /**

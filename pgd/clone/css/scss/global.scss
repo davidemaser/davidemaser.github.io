@@ -1237,3 +1237,42 @@ body[data-nmode="hello"] *[data-role="hero"]{
 body[data-nmode="hero"] *[data-role="hello"]{
   display: none;
 }
+//update init modal
+.init-update {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  z-index: 80;
+}
+.prompt-update {
+  position: relative;
+  height: 150px;
+  width: 50%;
+  margin: 0 auto;
+  background-color: #efefef;
+  padding: 10px 30px;
+  top: 60px;
+  box-shadow: 0 20px 20px -10px rgba(0,0,0,0.3);
+}
+
+.prompt-choice {
+  position: absolute;
+  bottom: 20px;
+}
+
+.btn-update {
+  margin-right: 10px;
+}
+
+.btn-update.true {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.btn-update.false {
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #4cae4c;
+}
