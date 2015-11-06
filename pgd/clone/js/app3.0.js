@@ -30,11 +30,16 @@ function getVersion(){
                 var ver = data.project.version;
                 document.title = "Page Builder " + ver;
                 $('.version_number').attr('title', 'You are using version ' + ver).html(ver);
+                tagNew(ver);
             }
         })
     }catch(e){
         console.log(e);
     }
+}
+function tagNew(ver){
+    var cssBlock = '<style>.main_nav a[data-version="'+ver+'"]:after {content: "new";float: right;background-color: #f0ad4e;padding: 2px 5px;font-size: 10px;color: #fff;font-weight: bold;}</style>';
+    $('body').append(cssBlock);
 }
 function initializeForm(){
     $.ajax({
