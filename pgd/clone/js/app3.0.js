@@ -5,6 +5,7 @@
  * @param state
  * @require globals.js
  */
+//"use strict";
 var pfLang = app.params.l,
     pfHero = 0,
     pfMode = app.params.s,
@@ -301,6 +302,13 @@ function launchBats(){
 function killBats(){
     $('.oooobats').remove();
     $('.batsToggle').attr('data-status','allGone').html('Let In The Bats');
+}
+function resetItems(){
+    $('#wrapper').find('.clonedInput').sort(function (a, b) {
+        return $(a).attr('id').replace('entry','') - $(b).attr('id').replace('entry','');
+    }).appendTo('#wrapper');
+    $('.reordered').remove();
+    panelAlert('Items reset to their original position','good');
 }
 $(function () {
     var sPos = 0;
@@ -618,7 +626,7 @@ $(function () {
     function jsonToForm(aCode){
         var jsLen = aCode.length;
         for(var i = 0;i<jsLen;i++){
-            var jsForm = 'entry'+(i+1);
+            var jsForm = 'entry'+(i+1),
             $this = '#'+jsForm;
             $($this).find('.objStart').val(aCode[i].date.start);
             $($this).find('.objEnd').val(aCode[i].date.end);
@@ -1083,6 +1091,9 @@ $(function () {
         $(app.objects.i).contents().unwrap();
         $('.reordered').remove();
         panelAlert('Form Reset To Default','good');
+        e.preventDefault();
+    }).on('click','.itemize_reset',function (e){
+        resetItems();
         e.preventDefault();
     }).on('click','.form_local_reset',function (e){
         doLocalSave('reset');
