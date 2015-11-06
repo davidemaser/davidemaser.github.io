@@ -2,7 +2,7 @@
  * Created by david-maser on 30/10/15.
  */
 var app = {
-    locale:"en_EN",
+    lang:"en",
     user:"guest",
     callback:true,
     export:"json",
@@ -35,7 +35,8 @@ var app = {
         l:".loadLsItems",
         ls:"#loadandsave-zone",
         ro:".render_output",
-        re:".reordered"
+        re:".reordered",
+        el:".errorList"
     },
     handlers:{
         d:'data-handler',
@@ -45,7 +46,6 @@ var app = {
         s:'data-split'
     },
     params:{
-        l:'en',
         s:'small',
         e:'error',
         g:'good'
@@ -57,5 +57,11 @@ var app = {
     language:{
         e:'en',
         f:'fr'
+    },
+    animation:{
+        d:{
+            min:500,
+            max:5000
+        }
     }
 };

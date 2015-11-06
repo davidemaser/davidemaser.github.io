@@ -6,30 +6,43 @@
  * @require globals.js
  */
 //"use strict";
-var pfLang = app.params.l,
+var pfLang = app.lang,
     pfHero = 0,
     pfMode = app.params.s,
     pfExport = 'hero';
 function panelAlert(mess,state){
-    var mPane = '.panel-body.bottom_level_bt';
-    if(state == app.params.e) {
-        $(mPane).find(app.objects.g).removeClass('allGood').removeClass('glyphicon-ok').addClass('allBad').addClass('glyphicon-remove');
-    }else if(state == app.params.g) {
-        $(mPane).find(app.objects.g).removeClass('allBad').removeClass('glyphicon-remove').addClass('allGood').addClass('glyphicon-ok');
-    }
-    $(mPane).slideDown();
-    $(mPane).find('.inner_message').html(mess);
-    setTimeout("$('.panel-body.bottom_level_bt').slideUp()",5000);
+    /**
+     * Creates a bottom panel alert view
+     * that slides into view with a
+     * defined message.
+     */
+        if(app.dialog == true) {
+            var mPane = '.panel-body.bottom_level_bt';
+            if (state == app.params.e) {
+                $(mPane).find(app.objects.g).removeClass('allGood').removeClass('glyphicon-ok').addClass('allBad').addClass('glyphicon-remove');
+            } else if (state == app.params.g) {
+                $(mPane).find(app.objects.g).removeClass('allBad').removeClass('glyphicon-remove').addClass('allGood').addClass('glyphicon-ok');
+            }
+            $(mPane).slideDown();
+            $(mPane).find('.inner_message').html(mess);
+            setTimeout("$('.panel-body.bottom_level_bt').slideUp()", app.animation.d.max);
+        }
 }
 function getVersion(){
+    /**
+     * Recovers and displays the app version from
+     * the release.json file
+     */
     try {
         $.ajax({
             type: app.methods.g,
             url: "../assets/project/release.json",
             success: function (data) {
-                var ver = data.project.version;
+                var ver = data.project.version,
+                    sup = data.project.history.length-1,
+                    lup = data.project.history[sup].date;
                 document.title = "Page Builder " + ver;
-                $('.version_number').attr('title', 'You are using version ' + ver).html(ver);
+                $('.version_number').attr('title', 'You are using version ' + ver+', last updated '+lup).html(ver);
                 tagNew(ver);
             }
         })
@@ -38,10 +51,21 @@ function getVersion(){
     }
 }
 function tagNew(ver){
+    /**
+     * Tags new items by comparing the current app
+     * version to the data-version attribute on
+     * main menu links
+     */
     var cssBlock = '<style>.main_nav a[data-version="'+ver+'"]:after {content: "new";float: right;background-color: #f0ad4e;padding: 2px 5px;font-size: 10px;color: #fff;font-weight: bold;}</style>';
     $('body').append(cssBlock);
 }
 function initializeForm(){
+    /**
+     * creates the initial form instance by
+     * populating the parent container with
+     * elements defined in a layout.json
+     * file
+     */
     $.ajax({
         type:app.methods.g,
         url:"schema/layout.json",
@@ -185,6 +209,11 @@ function initializeForm(){
     })
 }
 function switchModes(va){
+    /**
+     * switches the page builder mode from
+     * Hero builder mode to Hello Bar
+     * builder mode
+     */
     if(va == 'hello') {
         $('*[data-role="hero"]').css('display', 'none');
         $('*[data-role="hello"]').css('display', 'block');
@@ -216,6 +245,10 @@ function initializeTheme(){
     }
 }
 function initHelp(){
+    /**
+     * Initialize the help view by loading items
+     * from the help.json file
+     */
     $.ajax({
         type:app.methods.g,
         url:'data/help.json',
@@ -268,6 +301,10 @@ function setHeadSec(){
     }
 }
 function launchBats(){
+    /**
+     * A useless script that runs at halloween
+     * and shows flying bats on the page.
+     */
     var r = Math.random,
         n = 0,
         d = document,
@@ -305,10 +342,18 @@ function launchBats(){
     setTimeout(A, r() * 3e3);
 }
 function killBats(){
+    /**
+     * Removes the flying bats from the dom
+     */
     $('.oooobats').remove();
     $('.batsToggle').attr('data-status','allGone').html('Let In The Bats');
 }
 function resetItems(){
+    /**
+     * Checks if page items have been moved
+     * and resets them to their original position
+     * based on the numeric value of their ID
+     */
     if($(app.objects.re).length > 0) {
         $(app.objects.w).find(app.objects.cl).sort(function (a, b) {
             return $(a).attr('id').replace('entry', '') - $(b).attr('id').replace('entry', '');
@@ -318,9 +363,11 @@ function resetItems(){
     }else{
         panelAlert('All items are in their original position','error');
     }
-
 }
 $(function () {
+    /**
+     * Main document ready initialized function
+     */
     var sPos = 0;
     setHeadSec();
     initializeTheme();
@@ -328,6 +375,11 @@ $(function () {
     getVersion();
     $('.date_obj').datetimepicker({format: 'MM/DD/YYYY HH:mm'});
     function choseLocalSave(){
+        /**
+         * Populates the load saved data from
+         * localstorage item and presents it
+         * in a dropdown modal
+         */
         try {
             $('#loadandsave-zone').attr(app.handlers.r, 'load').css('display', 'block');
             var a = localStorage.getItem(app.storage.n),
@@ -347,6 +399,9 @@ $(function () {
         }
     }
     function doLocalSave(method){
+        /**
+         * Save heros to localstorage or flush
+         */
         if(method == 'do' || method == null) {
             $('#loadandsave-zone').attr(app.handlers.r, 'save').css('display', 'block');
         }else if(method == 'reset'){
@@ -360,6 +415,11 @@ $(function () {
         }
     }
     function scrollState(meth){
+        /**
+         * Checks the users scroll position on the
+         * window and displays a progress bar
+         * below the main menu navs
+         */
         var winHeight = $(window).height(),
             docHeight = $(document).height(),
             progressBar = $('progress'),
@@ -381,30 +441,47 @@ $(function () {
         }
     }
     function OpenInNewTab(url) {
+        /**
+         * Simple open url in new tab function
+         */
         var win = window.open(url, '_blank');
         win.focus();
     }
     function addMulti(num){
+        /**
+         * Adds multiple hero items to the current
+         * instance
+         */
         for(var i=0;i<num;i++) {
             addItems();
         }
         panelAlert('Items Added','good');
     }
     function jumpToHelper(a){
+        /**
+         * Animates the help item click to bring
+         * into view the correct help item
+         */
         $('.help_panel_holder').animate({
             scrollTop: $(app.objects.hi+'[data-helper="'+a+'"]').offset().top,
-            duration:500
+            duration:app.animation.d.min
         });
         $(app.objects.hi).animate({
             opacity:0.4,
-            duration:500
+            duration:app.animation.d.min
         });
         $(app.objects.hi+'[data-helper="'+a+'"]').animate({
             opacity:1,
-            duration:500
+            duration:app.animation.d.min
         });
     }
     function saveNodeToLS(val,name){
+        /**
+         * Saves the form data in the pagebuilder form
+         * to a localstorage object. Creates a key-value
+         * relation and creates a second localstorage
+         * object with an array of savec heros
+         */
         if(window.localStorage) {
             if(localStorage.getItem(app.storage.n) == null || localStorage.getItem(app.storage.n) == undefined){
                 localStorage.setItem(app.storage.n,"");
@@ -422,6 +499,10 @@ $(function () {
             }
     }
     function addItems(){
+        /**
+         * Add new items to the form. Duplicates a
+         * form block
+         */
         if($(app.objects.o).css('display') == 'block'){
             $(app.objects.o).css('display','none');
         }
@@ -469,13 +550,17 @@ $(function () {
         $('.snapTo').append('<li><a href="#" class="gotoItem" '+app.handlers.i+'="'+newNum+'">Item '+newNum+'</a></li>');
         $(app.objects.r).animate({
             scrollTop: $(app.objects.e + newNum).offset().top-60
-        }, 500);
+        }, app.animation.d.min);
         $('.btn-group.bigboy:not(.helpMePlease)').last().find('ul').append('<li class="divider" data-role="hero"></li><li><a class="removeThisItem" '+app.handlers.i+'="'+newNum+'" href="javascript:;">Remove</a></li><li class="divider"></li><li><a class="moveUpThisItem" '+app.handlers.i+'="'+newNum+'" href="javascript:;">Move Up<span class="glyphicon glyphicon-arrow-up"></span></a></li><li><a class="moveDownThisItem" '+app.handlers.i+'="'+newNum+'" href="javascript:;">Move Down<span class="glyphicon glyphicon-arrow-down"></span></a></li>');
         $(app.objects.e + newNum).find('.mod-radio').find('input').first().prop('checked',true);
         scrollState('a');
         panelAlert('Item Added','good');
     }
     function deleteItems(elem) {
+        /**
+         * Delete items from the form instance and
+         * removes them from the dom reference
+         */
         if ($(app.objects.cl).length > 1) {
             if ($(app.objects.o).css('display') == 'block') {
                 $(app.objects.o).css('display', 'none');
@@ -510,6 +595,10 @@ $(function () {
         }
     }
     function validateJSON(){
+        /**
+         * Validate the JSON that has been exported
+         * when the user clicks the button
+         */
         $("#output_code").validateJSON({
             compress: false,
             reformat: true,
@@ -522,6 +611,11 @@ $(function () {
         })
     }
     function errorHandler(){
+        /**
+         * Generic error handler that checks if certain
+         * form objects are filled and outputs a dropdown
+         * list with anchor links
+         */
         var errorLog = [],
             a = JSON.parse($(app.objects.o+'['+app.handlers.r+'="output"]').find('textarea').val()).hero,
             b = a.length,
@@ -570,18 +664,24 @@ $(function () {
         }
         errorLog.reverse();//present the errors in the right direction
         if(c > 0) {
-            $('.errorList').css('display','inline-block');
+            $(app.objects.el).css('display','inline-block');
             $('.errorListing').empty();
             for (var j = 0; j < errorLog.length; j++) {
                 $('.errorListing').prepend('<li><a href="javascript:;" class="errorItem '+errorLog[j].die+'" '+app.handlers.i+'="'+j+'">Item ' + errorLog[j].form + ' : ' + errorLog[j].obj + ' : ' + errorLog[j].prob + '</a></li>');
                 registerErrorButtons(errorLog[j].form,errorLog[j].elem,j,errorLog[j].prob,errorLog[j].die);
             }
-            $('.errorList').find('button').html('Warnings<span class="label label-default numerrors">'+errorLog.length+'</span><span class="caret"></span>');
+            $(app.objects.el).find('button').html('Warnings<span class="label label-default numerrors">'+errorLog.length+'</span><span class="caret"></span>');
         }else{
-            $('.errorList').css('display','none');
+            $(app.objects.el).css('display','none');
         }
     }
     function registerErrorButtons(num,elem,item,prob,die){
+        /**
+         * Binds each error item created by the
+         * errorHandler function to a click handler
+         * that animates scroll to the specific
+         * error item
+         */
         $(app.objects.bo).on('click','.errorItem['+app.handlers.i+'="'+item+'"]',function(){
             if(die == true){
                 $(app.objects.e+num).find('.'+elem).css('background-color','rgba(238, 54, 54, 0.3)').css('border-color','red').attr('placeholder','Leaving this field empty will cause the hero banner function to fail');
@@ -592,13 +692,19 @@ $(function () {
             $(app.objects.r).css('overflow','auto');
             $(app.objects.r).animate({
                 scrollTop: $(app.objects.e + num+' .'+elem).offset().top-100
-            }, 500);
+            }, app.animation.d.min);
             if($('.'+elem).parent().attr('class') !== 'input_holders'){
                 $('.'+elem).wrap('<div class="input_holders"></div>').parent().append('<div class="input_alerts" title="'+prob+'"><span class="glyphicon glyphicon-exclamation-sign"></span></div>')
             }
         });
     }
     function traverseJSON(storage,nodeName){
+        /**
+         * Reads JSON that is pasted in the form in
+         * translate JSON mode and prepares and formats
+         * it to be output to the corresponding
+         * form objects
+         */
         if($(app.objects.b+' textarea').val() !== '' || localStorage.getItem('pgb_SavedNode') !== '') {
             if(storage == false) {
                 var ctc = $(app.objects.b+' textarea').val();
@@ -634,6 +740,11 @@ $(function () {
         }
     }
     function jsonToForm(aCode){
+        /**
+         * Takes formatted JSON sent from the TraverseJSON
+         * function and outputs it to the mapped form
+         * element
+         */
         var jsLen = aCode.length;
         for(var i = 0;i<jsLen;i++){
             var jsForm = 'entry'+(i+1),
@@ -666,6 +777,11 @@ $(function () {
         }
     }
     function prepareJSON(meth,name,mode){
+        /**
+         * Serializes the form data in a JSON format
+         * and passes the data to the outputJson
+         * function
+         */
         var c = [];
         if(mode == 'hero') {
             $('.clonedInput form fieldset[data-role="hero"]').each(function(){
@@ -685,8 +801,12 @@ $(function () {
                 outputJson(c, 'full', null, 'hello');
         }
     }
-
     function outputJson(aCode,meth,name,mode){
+        /**
+         * Receives the serialized data parsed in the
+         * prepareJSON function and outputs JSON
+         * formatted code to the output view
+         */
         var nodes = aCode.length;
         var lastItem = nodes-1;
         if(mode == 'hello'){
@@ -815,7 +935,7 @@ $(function () {
                 $(app.objects.o).attr(app.handlers.r, 'output');
                 $(app.objects.o).css('display', 'block');
                 $(app.objects.o + ' textarea').val(page_model);
-                $(app.objects.r).animate({scrollTop: 0}, 500).css('overflow', 'hidden');
+                $(app.objects.r).animate({scrollTop: 0}, app.animation.d.min).css('overflow', 'hidden');
                 if(mode == 'hero'){
                     errorHandler();
                 }
@@ -825,6 +945,9 @@ $(function () {
             }
     }
     function urlExists(testUrl) {
+        /**
+         * Check if an url exists
+         */
         var http = jQuery.ajax({
             type:"HEAD",
             url: 'https:' + testUrl,
@@ -834,6 +957,12 @@ $(function () {
         // this will return 200 on success, and 0 or negative value on error
     }
     function validateImage(type,handler){
+        /**
+         * Gets the image url input by the user and runs it
+         * through the urlExists function. Depending on the
+         * value returned, the form elements will be
+         * formatted accordingly
+         */
         if(type == 'main'){
             var a = $(app.objects.c+'['+app.handlers.d+'="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.main_image').val(),
                 aa = $(app.objects.c+'['+app.handlers.d+'="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.main_image'),
@@ -901,6 +1030,11 @@ $(function () {
         }
     }
     function previewFeature(heroItem, mode, lang) {
+        /**
+         * Generates a preview of the hero banner in large
+         * and small format by collection the forms
+         * serialized data.
+         */
         var dt = $(app.objects.e + heroItem).find('form').find('fieldset[data-role="hero"]').serializeArray(),
             start = dt[0].value,
             img = dt[7].value,
@@ -957,7 +1091,7 @@ $(function () {
     // Disable the "remove" button
     $('.btnDel').attr('disabled', true);
     /**
-     * click handlers bound to the .on expression
+     * event handlers bound to the .on expression
      * so that dynamically generated divs are
      * taken into consideration
      */
@@ -980,7 +1114,7 @@ $(function () {
         var a = $(this).data('item');
         $(app.objects.r).animate({
             scrollTop: $(app.objects.e + a).offset().top-60
-        }, 500);
+        }, app.animation.d.min);
         if($(app.objects.o).css('display')=='block'){
             $(app.objects.r).css('overflow','auto');
             $('#oapp.objects.output').css('display','none')
@@ -992,7 +1126,7 @@ $(function () {
         window.open("../release.html", "_blank","scrollbars=no,resizable=no,height=600, width=800, status=yes, toolbar=no, menubar=no, location=no");
     }).on('click','.btnAddMulti',function (){
         $('#query-zone').toggle();
-        $(app.objects.r).animate({ scrollTop: 0 }, 500);
+        $(app.objects.r).animate({ scrollTop: 0 }, app.animation.d.min);
         if($(app.objects.o).css('display') == 'block'){
             $(app.objects.o).css('display','none');
         }
@@ -1013,12 +1147,12 @@ $(function () {
     }).on('click','.overlay_validate',function(){
         validateJSON();
     }).on('click','.previewItem.large',function(e){
-        $(app.objects.r).animate({ scrollTop: sPos }, 500).css('overflow','hidden');
+        $(app.objects.r).animate({ scrollTop: sPos }, app.animation.d.min).css('overflow','hidden');
         var a = $(this).data('hero');
         previewFeature(a,'large',pfLang);
         e.preventDefault();
     }).on('click','.previewItem.small',function(e){
-        $(app.objects.r).animate({ scrollTop: sPos }, 500).css('overflow','hidden');
+        $(app.objects.r).animate({ scrollTop: sPos }, app.animation.d.min).css('overflow','hidden');
         var a = $(this).data('hero');
         previewFeature(a,'small',pfLang);
         e.preventDefault();
@@ -1033,7 +1167,7 @@ $(function () {
     }).on('click','.showHelp',function(){
         $(app.objects.he).toggle();
         if($(app.objects.he).css('display') == 'block'){
-            $(app.objects.r).animate({ scrollTop: 0 }, 500).css('overflow','hidden');
+            $(app.objects.r).animate({ scrollTop: 0 }, app.animation.d.min).css('overflow','hidden');
         }else{
             $(app.objects.r).css('overflow','auto');
         }
@@ -1074,10 +1208,14 @@ $(function () {
         prepareJSON('full',null,a);
     }).on('click','.translate_json',function (){
         $('.overlay_message').html('');
-        $(app.objects.r).animate({ scrollTop: 0 }, 500).css('overflow','hidden');
+        $(app.objects.r).animate({ scrollTop: 0 }, app.animation.d.min).css('overflow','hidden');
         $(app.objects.o).attr(app.handlers.r,'translate').css('display','block').find('#output_code').val('').attr('placeholder','Paste you code here');
     }).on('click','.save_json',function (e){
-        doLocalSave();
+        if(app.save == true) {
+            doLocalSave();
+        }else{
+            confirm('The save to localstorage feature is disabled. Change the save value to true in the globals file.');
+        }
     }).on('click','.import_json',function (e){
         choseLocalSave();
     }).on('click','.overlay_translate',function (){
@@ -1090,7 +1228,7 @@ $(function () {
         $(app.objects.i).contents().unwrap();
         panelAlert('Errors Reset','good');
     }).on('click','.form_reset',function (e){
-        $(app.objects.r).animate({ scrollTop: 0 }, 500).css('overflow','hidden');
+        $(app.objects.r).animate({ scrollTop: 0 }, app.animation.d.min).css('overflow','hidden');
         $('.clonedInput:gt(0)').remove();
         $('.snapTo').find('li:gt(0)').remove();
         $('input').val('');
@@ -1137,7 +1275,7 @@ $(function () {
         $(this).slideUp();
     }).on('click','.show_me_how',function(){
         var a = $(this).data('target')-1;
-        $(app.objects.r).animate({ scrollTop: 0 },{duration:500,
+        $(app.objects.r).animate({ scrollTop: 0 },{duration:app.animation.d.min,
                 complete:function(){
                     $(app.objects.he).show();
                     jumpToHelper(a);
@@ -1146,7 +1284,7 @@ $(function () {
     }).on('click','.helpItemReset',function(){
         $(app.objects.hi).animate({
             opacity: 1
-        }, 500);
+        }, app.animation.d.min);
     }).on('click','.settings_toggle',function(e){
         var a = $(this).data('theme');
         $('html').attr(app.handlers.t,a);
@@ -1164,7 +1302,7 @@ $(function () {
             $(c).insertBefore(d);
             $(app.objects.r).animate({
                 scrollTop: $(app.objects.e + a).offset().top-60
-            }, 500);
+            }, app.animation.d.min);
             //$(d).closest(app.objects.cl).prev();
         $(this).parent().parent().parent().find('.reordered').remove();
         $(this).parent().parent().parent().find('.btn.btn-info:not(.dropdown-toggle)').prepend('<span title="This entry has been moved from it\'s original position" class="glyphicon glyphicon-fullscreen reordered" aria-hidden="true"></span>');
@@ -1181,7 +1319,7 @@ $(function () {
                 $(c).insertAfter(d);
                 $(app.objects.r).animate({
                     scrollTop: $(app.objects.e + a).offset().top - 60
-                }, 500);
+                }, app.animation.d.min);
                 $(this).parent().parent().parent().find('.reordered').remove();
                 $(this).parent().parent().parent().find('.btn.btn-info:not(.dropdown-toggle)').prepend('<span title="This entry has been moved from it\'s original position" class="glyphicon glyphicon-fullscreen reordered" aria-hidden="true"></span>');
             }else{
@@ -1278,9 +1416,9 @@ $(function () {
     });
     $(window).on('scroll', function() {
         if($(window).scrollTop() + $(window).height() == $(document).height()) {
-            $('.copy-zone').fadeIn(500);
+            $('.copy-zone').fadeIn(app.animation.d.min);
         }else{
-            $('.copy-zone').fadeOut(500);
+            $('.copy-zone').fadeOut(app.animation.d.min);
         }
     }).on('resize', function() {
         scrollState('a');
@@ -1300,7 +1438,7 @@ $(function () {
         }
         if (e.keyCode == 73 && e.ctrlKey && e.altKey) {
             $('#query-zone').toggle();
-            $(app.objects.r).animate({ scrollTop: 0 }, 500);
+            $(app.objects.r).animate({ scrollTop: 0 }, app.animation.d.min);
             if($(app.objects.o).css('display') == 'block'){
                 $(app.objects.o).css('display','none');
             }
@@ -1315,7 +1453,7 @@ $(function () {
         }
         if (e.keyCode == 13 && e.ctrlKey && e.altKey) {
             $('.overlay_message').html('');
-            $(app.objects.r).animate({ scrollTop: 0 }, 500).css('overflow','hidden');
+            $(app.objects.r).animate({ scrollTop: 0 }, app.animation.d.min).css('overflow','hidden');
             $(app.objects.o).attr(app.handlers.r,'translate').css('display','block').find('#output_code').val('').attr('placeholder','Paste you code here');
             e.preventDefault();
         }
