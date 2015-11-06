@@ -1,1 +1,1 @@
-Root directory for the lasters Page Builder interaction
+Root directory for the latest Page Builder application
