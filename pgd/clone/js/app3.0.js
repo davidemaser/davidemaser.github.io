@@ -39,7 +39,7 @@ function getVersion(init){
     try {
         $.ajax({
             type: app.methods.g,
-            url: "../assets/project/release.json",
+            url: app.version,
             success: function (data) {
                 var ver = data.project.version,
                     sup = data.project.history.length-1,
@@ -94,7 +94,7 @@ function initializeForm(){
      */
     $.ajax({
         type:app.methods.g,
-        url:"schema/layout.json",
+        url:app.objects.form.l,
         success:function(data) {
             var dataBlock = data.layout,
                 htmlBlock = '<div id="entry1" class="clonedInput" '+app.handlers.s+'="1"><form action="'+dataBlock.form_action+'" method="'+dataBlock.method+'" id="'+dataBlock.form_id+'" role="form">';

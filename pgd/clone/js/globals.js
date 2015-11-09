@@ -9,6 +9,7 @@ var app = {
     dialog:true,
     save:true,
     listener:"window",
+    version:"../assets/project/release.json",
     methods:{
         g:"get",
         p:"post"
@@ -36,7 +37,10 @@ var app = {
         ls:"#loadandsave-zone",
         ro:".render_output",
         re:".reordered",
-        el:".errorList"
+        el:".errorList",
+        form:{
+            l:"schema/layout.json"
+        }
     },
     handlers:{
         d:'data-handler',
