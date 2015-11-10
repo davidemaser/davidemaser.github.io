@@ -772,6 +772,7 @@ $(function () {
          * function and outputs it to the mapped form
          * element
          */
+            console.log(aCode);
         var jsLen = aCode.length;
         for(var i = 0;i<jsLen;i++){
             var jsForm = 'entry'+(i+1),
@@ -796,6 +797,15 @@ $(function () {
             //$($this).find('.objHeroTitleShow').val(aCode[i].showTitle);
             //$($this).find('.objHeroSubtitleShow').val(aCode[i].showSubTitle);
             $($this).find('.objHeroPromote option[value="'+aCode[i].promote+'"]').attr('selected',true);
+            console.log(aCode[i].active);
+            if(aCode[i].active == true){
+                $($this).find('.mod-radio').find('input[type="radio"]').first().prop('checked',true);
+                $($this).find('.mod-radio').find('input[type="radio"]').last().prop('checked',false);
+            }else if(aCode[i].active == false){
+                $($this).find('.mod-radio').css('border-left-width','6px').css('border-left-style','solid').css('border-left-color','rgb(253, 0, 0)');
+                $($this).find('.mod-radio').find('input[type="radio"]').first().prop('checked',false);
+                $($this).find('.mod-radio').find('input[type="radio"]').last().prop('checked',true);
+            }
             if($(app.objects.o).css('display') == 'block'){
                 $(app.objects.o).hide();
                 $(app.objects.r).css('overflow','auto');
