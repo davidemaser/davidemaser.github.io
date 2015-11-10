@@ -80,6 +80,15 @@
           "solution":"format output node as integer",
           "applied":true
         }
+      },
+      {
+        "file":"app3.0.js",
+        "line":800,
+        "issue":"Activate Hero value not translating to form",
+        "fix":{
+          "solution":"Recode conditional validation",
+          "applied":true
+        }
       }
     ],
     "updates":[
