@@ -575,7 +575,7 @@
           {
             "row": [
               {"column": " wordTranslate "},
-              {"column": " Translates the category hierarchy based on URI parameted. "},
+              {"column": " Translates the category hierarchy based on URI parameters. "},
               {"column": " Top:Top level category word:word in URL string to translate (can be null)<br>second: second category (can be null)<br>lang:current language setting<br>brand: brand parameter (can be null) "},
               {"column": " Returns HTML string "}
             ]
