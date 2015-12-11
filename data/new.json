@@ -616,7 +616,7 @@
             "row": [
               {"column": " setLs "},
               {"column": " Calls lsTest and if lsTest returns true it sets a Local Storage item. "},
-              {"column": " name: The name of the Local Storage item. val: The value of the local storage item. "},
+              {"column": " name: The name of the Local Storage item. <br>val: The value of the local storage item. "},
               {"column": " Returns nothing "}
             ]
           },
@@ -632,7 +632,7 @@
             "row": [
               {"column": " regExReplace "},
               {"column": " Performs a regex search and replace "},
-              {"column": " element: the element to replace replacer: the element to replace with "},
+              {"column": " element: the element to replace <br>replacer: the element to replace with "},
               {"column": " Returns string "}
             ]
           },
@@ -672,7 +672,7 @@
             "row": [
               {"column": " doPercent "},
               {"column": " Calculates the percentage value of two monetary values. "},
-              {"column": " origP: original price newP: new price showMode: extended or concise lang: en or fr "},
+              {"column": " origP: original price <br>newP: new price <br>showMode: extended or concise <br>lang: en or fr "},
               {"column": " Returns HTML string "}
             ]
           },
