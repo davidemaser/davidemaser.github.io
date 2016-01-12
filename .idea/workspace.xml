@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ed53085-34d5-4ed7-8e2d-04ebf135fb37" name="Default" comment="New flag feature">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pgd/clone/.gitignore" afterPath="$PROJECT_DIR$/pgd/clone/.gitignore" />
+    <list default="true" id="5ed53085-34d5-4ed7-8e2d-04ebf135fb37" name="Default" comment="Version update prompts">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pgd/clone/js/app3.0-b.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/faq.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pgd/clone/css/scss/global.scss" afterPath="$PROJECT_DIR$/pgd/clone/css/scss/global.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pgd/clone/css/globals.css" afterPath="$PROJECT_DIR$/pgd/clone/css/globals.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pgd/clone/index.html" afterPath="$PROJECT_DIR$/pgd/clone/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/intro.json" afterPath="$PROJECT_DIR$/data/intro.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="davidemaser.github.io.iws" />
@@ -31,18 +36,28 @@
       <file leaf-file-name="release.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pgd/assets/project/release.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.3508773" vertical-offset="12658" max-vertical-offset="13518">
-              <caret line="717" column="30" selection-start-line="717" selection-start-column="30" selection-end-line="717" selection-end-column="30" />
+            <state vertical-scroll-proportion="-0.0" vertical-offset="1692" max-vertical-offset="14148">
+              <caret line="94" column="7" selection-start-line="94" selection-start-column="7" selection-end-line="94" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="release.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pgd/release.html">
+      <file leaf-file-name="faq.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/faq.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.259259" vertical-offset="38" max-vertical-offset="1872">
-              <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+            <state vertical-scroll-proportion="-152.66667" vertical-offset="0" max-vertical-offset="4950">
+              <caret line="229" column="47" selection-start-line="229" selection-start-column="47" selection-end-line="229" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="intro.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data/intro.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.18202247" vertical-offset="0" max-vertical-offset="890">
+              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -51,8 +66,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pgd/clone/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="24.31579" vertical-offset="2196" max-vertical-offset="8190">
-              <caret line="45" column="79" selection-start-line="45" selection-start-column="79" selection-end-line="45" selection-end-column="79" />
+            <state vertical-scroll-proportion="-62.962963" vertical-offset="802" max-vertical-offset="8190">
+              <caret line="139" column="25" selection-start-line="139" selection-start-column="25" selection-end-line="139" selection-end-column="25" />
               <folding>
                 <element signature="n#style#0;n#select#0;n#div#1;n#div#0;n#div#7;n#fieldset#1;n#form#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -60,54 +75,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="help.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pgd/clone/data/help.json">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="594">
-              <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="global.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pgd/clone/css/scss/global.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.74390244" vertical-offset="21557" max-vertical-offset="22392">
-              <caret line="1201" column="3" selection-start-line="1201" selection-start-column="3" selection-end-line="1201" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app3.0.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pgd/clone/js/app3.0.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.6" vertical-offset="144" max-vertical-offset="24588">
-              <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+            <state vertical-scroll-proportion="-50.666668" vertical-offset="54" max-vertical-offset="2790">
+              <caret line="79" column="89" selection-start-line="79" selection-start-column="89" selection-end-line="79" selection-end-column="89" />
               <folding>
-                <marker date="1446831791426" expanded="true" signature="48351:48362" placeholder="..." />
-                <marker date="1446831791426" expanded="true" signature="49208:49218" placeholder="..." />
+                <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pgd/clone/.gitignore">
+      <file leaf-file-name="new.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/new.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="846">
-              <caret line="41" column="10" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.09677419" vertical-offset="0" max-vertical-offset="930">
-              <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="11142" max-vertical-offset="13266">
+              <caret line="619" column="45" selection-start-line="619" selection-start-column="45" selection-end-line="619" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -116,20 +100,31 @@
       <file leaf-file-name="globals.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pgd/clone/js/globals.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1188">
-              <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="1368">
+              <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app3.0.min.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pgd/clone/js/app3.0.min.js">
+      <file leaf-file-name="global.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pgd/clone/css/scss/global.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.6" vertical-offset="0" max-vertical-offset="126">
-              <caret line="1" column="393" selection-start-line="1" selection-start-column="393" selection-end-line="1" selection-end-column="393" />
+            <state vertical-scroll-proportion="-4.0" vertical-offset="22392" max-vertical-offset="23544">
+              <caret line="1250" column="14" selection-start-line="1250" selection-start-column="14" selection-end-line="1250" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app3.0.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pgd/clone/js/app3.0.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="11718" max-vertical-offset="27738">
+              <caret line="651" column="70" selection-start-line="651" selection-start-column="70" selection-end-line="651" selection-end-column="70" />
               <folding>
-                <marker date="1446831795738" expanded="true" signature="39257:39461" placeholder="{...}" />
+                <marker date="1447173341750" expanded="true" signature="55112:55123" placeholder="..." />
+                <marker date="1447173341750" expanded="true" signature="55969:55979" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -140,6 +135,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="David Maser &lt;davidelmaser@gmail.com&gt;" />
         <option value="David Maser" />
       </list>
     </option>
@@ -158,7 +154,6 @@
         <option value="$PROJECT_DIR$/pgd/assets/js/app.min.js" />
         <option value="$PROJECT_DIR$/pgd/assets/css/app.css" />
         <option value="$PROJECT_DIR$/pgd/assets/js/validate-json.js" />
-        <option value="$PROJECT_DIR$/data/new.json" />
         <option value="$PROJECT_DIR$/pgd/Clone-section-of-form-using-jQuery-master/dynamic-form-bootstrap-3-0.html" />
         <option value="$PROJECT_DIR$/pgd/Clone-section-of-form-using-jQuery-master/js/clone-form-td.js" />
         <option value="$PROJECT_DIR$/pgd/page-builder.html" />
@@ -169,7 +164,6 @@
         <option value="$PROJECT_DIR$/pgd/assets/js/app.js" />
         <option value="$PROJECT_DIR$/pgd/clone/css/global.css" />
         <option value="$PROJECT_DIR$/assets/scss/app.scss" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/assets/css/globals.css" />
         <option value="$PROJECT_DIR$/assets/css/app.css" />
         <option value="$PROJECT_DIR$/assets/js/controler.js" />
@@ -177,18 +171,24 @@
         <option value="$PROJECT_DIR$/pgd/clone/schema/layout.json" />
         <option value="$PROJECT_DIR$/pgd/clone/js/dmFilters.js" />
         <option value="$PROJECT_DIR$/pgd/clone/css/globals.css" />
-        <option value="$PROJECT_DIR$/pgd/clone/css/scss/global.scss" />
-        <option value="$PROJECT_DIR$/pgd/clone/js/app3.0.min.js" />
-        <option value="$PROJECT_DIR$/pgd/assets/project/release.json" />
-        <option value="$PROJECT_DIR$/pgd/clone/js/globals.js" />
         <option value="$PROJECT_DIR$/pgd/clone/data/help.json" />
-        <option value="$PROJECT_DIR$/pgd/clone/index.html" />
-        <option value="$PROJECT_DIR$/pgd/clone/js/app3.0.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/pgd/clone/.gitignore" />
+        <option value="$PROJECT_DIR$/pgd/clone/js/app3.0.min.js" />
+        <option value="$PROJECT_DIR$/pgd/clone/js/globals.js" />
+        <option value="$PROJECT_DIR$/pgd/clone/js/app3.0.js" />
+        <option value="$PROJECT_DIR$/pgd/assets/project/release.json" />
+        <option value="$PROJECT_DIR$/faq.json" />
+        <option value="$PROJECT_DIR$/pgd/clone/css/scss/global.scss" />
+        <option value="$PROJECT_DIR$/pgd/clone/js/app3.0-b.js" />
+        <option value="$PROJECT_DIR$/pgd/clone/index.html" />
+        <option value="$PROJECT_DIR$/data/new.json" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/data/intro.json" />
       </list>
     </option>
   </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
   </component>
@@ -220,7 +220,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -249,64 +248,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pgd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="davidemaser.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="davidemaser.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pgd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="clone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="davidemaser.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="davidemaser.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="davidemaser.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="davidemaser.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/TLH/VERSION/CURRENT" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
     <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="options.splitter.main.proportions" value="0.3" />
@@ -331,11 +286,13 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1142" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="LayoutCode.rearrangeEntriesJSON" value="false" />
+    <property name="Node.Profiling.Tick.Path" value="/usr/local/lib/node_modules/tick" />
+    <property name="Node.Profiling.Gnuplot.Path" value="" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/../JQ-plugins" />
       <recent name="$PROJECT_DIR$/pgd/clone/js" />
+      <recent name="$PROJECT_DIR$/../JQ-plugins" />
       <recent name="$PROJECT_DIR$/pgd/Clone-section-of-form-using-jQuery-master" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -392,810 +349,6 @@
       <created>1437505987590</created>
       <option name="number" value="Default" />
       <updated>1437505987590</updated>
-    </task>
-    <task id="LOCAL-00001" summary="MBD">
-      <created>1442346154911</created>
-      <option name="number" value="00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1442346154912</updated>
-    </task>
-    <task id="LOCAL-00002" summary="MBD">
-      <created>1442346254989</created>
-      <option name="number" value="00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1442346254989</updated>
-    </task>
-    <task id="LOCAL-00003" summary="MBD">
-      <created>1442346561478</created>
-      <option name="number" value="00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1442346561478</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Version file mod">
-      <created>1442346766222</created>
-      <option name="number" value="00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1442346766222</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Version file mod">
-      <created>1442346887808</created>
-      <option name="number" value="00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1442346887808</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Version file mod">
-      <created>1442346997433</created>
-      <option name="number" value="00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1442346997433</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Version file mod">
-      <created>1442347066517</created>
-      <option name="number" value="00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1442347066517</updated>
-    </task>
-    <task id="LOCAL-00008" summary="add json method type">
-      <created>1442604974304</created>
-      <option name="number" value="00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1442604974304</updated>
-    </task>
-    <task id="LOCAL-00009" summary="add json method type">
-      <created>1442605148447</created>
-      <option name="number" value="00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1442605148447</updated>
-    </task>
-    <task id="LOCAL-00010" summary="add json method type">
-      <created>1442605399360</created>
-      <option name="number" value="00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1442605399360</updated>
-    </task>
-    <task id="LOCAL-00011" summary="add json method type">
-      <created>1442605787020</created>
-      <option name="number" value="00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1442605787020</updated>
-    </task>
-    <task id="LOCAL-00012" summary="add json method type">
-      <created>1442605903192</created>
-      <option name="number" value="00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1442605903192</updated>
-    </task>
-    <task id="LOCAL-00013" summary="add json method type">
-      <created>1442607901286</created>
-      <option name="number" value="00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1442607901286</updated>
-    </task>
-    <task id="LOCAL-00014" summary="add json method type">
-      <created>1442608054110</created>
-      <option name="number" value="00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1442608054110</updated>
-    </task>
-    <task id="LOCAL-00015" summary="add json method type">
-      <created>1442608445201</created>
-      <option name="number" value="00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1442608445201</updated>
-    </task>
-    <task id="LOCAL-00016" summary="add json method type">
-      <created>1442608654123</created>
-      <option name="number" value="00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1442608654123</updated>
-    </task>
-    <task id="LOCAL-00017" summary="add json method type">
-      <created>1442608722083</created>
-      <option name="number" value="00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1442608722083</updated>
-    </task>
-    <task id="LOCAL-00018" summary="add json method type">
-      <created>1442609355832</created>
-      <option name="number" value="00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1442609355832</updated>
-    </task>
-    <task id="LOCAL-00019" summary="add json method type">
-      <created>1442612410904</created>
-      <option name="number" value="00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1442612410904</updated>
-    </task>
-    <task id="LOCAL-00020" summary="JSON validator">
-      <created>1442845156458</created>
-      <option name="number" value="00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1442845156458</updated>
-    </task>
-    <task id="LOCAL-00021" summary="JSON validator">
-      <created>1442845810562</created>
-      <option name="number" value="00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1442845810562</updated>
-    </task>
-    <task id="LOCAL-00022" summary="JSON validator">
-      <created>1442846809786</created>
-      <option name="number" value="00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1442846809786</updated>
-    </task>
-    <task id="LOCAL-00023" summary="JSON validator">
-      <created>1442865147944</created>
-      <option name="number" value="00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1442865147944</updated>
-    </task>
-    <task id="LOCAL-00024" summary="JSON code translation">
-      <created>1442954630531</created>
-      <option name="number" value="00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1442954630531</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Update documentation">
-      <created>1442955891180</created>
-      <option name="number" value="00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1442955891180</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Mod JSON node export">
-      <created>1442957871903</created>
-      <option name="number" value="00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1442957871903</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Version upgrade">
-      <created>1443023094876</created>
-      <option name="number" value="00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1443023094876</updated>
-    </task>
-    <task id="LOCAL-00028" summary="AJAX VERSION">
-      <created>1443023492235</created>
-      <option name="number" value="00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1443023492235</updated>
-    </task>
-    <task id="LOCAL-00029" summary="REFACTOR">
-      <created>1443023537863</created>
-      <option name="number" value="00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1443023537863</updated>
-    </task>
-    <task id="LOCAL-00030" summary="REFACTOR">
-      <created>1443023634923</created>
-      <option name="number" value="00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1443023634923</updated>
-    </task>
-    <task id="LOCAL-00031" summary="REFACTOR">
-      <created>1443023654038</created>
-      <option name="number" value="00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1443023654038</updated>
-    </task>
-    <task id="LOCAL-00032" summary="REFACTOR">
-      <created>1443027085884</created>
-      <option name="number" value="00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1443027085884</updated>
-    </task>
-    <task id="LOCAL-00033" summary="REFACTOR">
-      <created>1443032632658</created>
-      <option name="number" value="00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1443032632658</updated>
-    </task>
-    <task id="LOCAL-00034" summary="REFACTOR">
-      <created>1443033123800</created>
-      <option name="number" value="00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1443033123800</updated>
-    </task>
-    <task id="LOCAL-00035" summary="REFACTOR">
-      <created>1443036877746</created>
-      <option name="number" value="00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1443036877746</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Animate">
-      <created>1443037707601</created>
-      <option name="number" value="00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1443037707601</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Animate">
-      <created>1443038385864</created>
-      <option name="number" value="00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1443038385864</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Promote mod">
-      <created>1443039101642</created>
-      <option name="number" value="00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1443039101642</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Correction">
-      <created>1443039508346</created>
-      <option name="number" value="00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1443039508346</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Translate JSON object">
-      <created>1443040835744</created>
-      <option name="number" value="00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1443040835744</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Translate JSON object">
-      <created>1443041711199</created>
-      <option name="number" value="00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1443041711199</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Translate JSON object">
-      <created>1443045277601</created>
-      <option name="number" value="00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1443045277601</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Release object">
-      <created>1443045407713</created>
-      <option name="number" value="00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1443045407713</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Release object">
-      <created>1443045600884</created>
-      <option name="number" value="00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1443045600884</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Release object">
-      <created>1443047848663</created>
-      <option name="number" value="00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1443047848663</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Release object">
-      <created>1443105014095</created>
-      <option name="number" value="00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1443105014095</updated>
-    </task>
-    <task id="LOCAL-00047" summary="HTML corrections">
-      <created>1443108579626</created>
-      <option name="number" value="00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1443108579626</updated>
-    </task>
-    <task id="LOCAL-00048" summary="HTML corrections">
-      <created>1443117041283</created>
-      <option name="number" value="00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1443117041283</updated>
-    </task>
-    <task id="LOCAL-00049" summary="Completed traverse function">
-      <created>1443123182797</created>
-      <option name="number" value="00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1443123182797</updated>
-    </task>
-    <task id="LOCAL-00050" summary="Completed traverse function">
-      <created>1443123324642</created>
-      <option name="number" value="00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1443123324642</updated>
-    </task>
-    <task id="LOCAL-00051" summary="Correction">
-      <created>1443123651543</created>
-      <option name="number" value="00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1443123651543</updated>
-    </task>
-    <task id="LOCAL-00052" summary="New CSS">
-      <created>1443123849467</created>
-      <option name="number" value="00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1443123849467</updated>
-    </task>
-    <task id="LOCAL-00053" summary="Mods">
-      <created>1443124953807</created>
-      <option name="number" value="00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1443124953807</updated>
-    </task>
-    <task id="LOCAL-00054" summary="Refactoring">
-      <created>1443125056314</created>
-      <option name="number" value="00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1443125056314</updated>
-    </task>
-    <task id="LOCAL-00055" summary="Refactoring">
-      <created>1443125141272</created>
-      <option name="number" value="00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1443125141272</updated>
-    </task>
-    <task id="LOCAL-00056" summary="Refactoring">
-      <created>1443125428863</created>
-      <option name="number" value="00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1443125428863</updated>
-    </task>
-    <task id="LOCAL-00057" summary="Error handler">
-      <created>1443189032457</created>
-      <option name="number" value="00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1443189032457</updated>
-    </task>
-    <task id="LOCAL-00058" summary="Error handler features">
-      <created>1443191021243</created>
-      <option name="number" value="00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1443191021243</updated>
-    </task>
-    <task id="LOCAL-00059" summary="Date format fix">
-      <created>1443195409309</created>
-      <option name="number" value="00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1443195409309</updated>
-    </task>
-    <task id="LOCAL-00060" summary="CSS fix">
-      <created>1443195749285</created>
-      <option name="number" value="00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1443195749285</updated>
-    </task>
-    <task id="LOCAL-00061" summary="Minor fix">
-      <created>1443196313588</created>
-      <option name="number" value="00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1443196313588</updated>
-    </task>
-    <task id="LOCAL-00062" summary="Fix error handler">
-      <created>1443203282158</created>
-      <option name="number" value="00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1443203282158</updated>
-    </task>
-    <task id="LOCAL-00063" summary="Fix error handler">
-      <created>1443206434412</created>
-      <option name="number" value="00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1443206434415</updated>
-    </task>
-    <task id="LOCAL-00064" summary="Fix error handler">
-      <created>1443209250395</created>
-      <option name="number" value="00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1443209250395</updated>
-    </task>
-    <task id="LOCAL-00065" summary="LocalStorage handler">
-      <created>1443211730529</created>
-      <option name="number" value="00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1443211730529</updated>
-    </task>
-    <task id="LOCAL-00066" summary="Added length verification code">
-      <created>1443215710800</created>
-      <option name="number" value="00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1443215710801</updated>
-    </task>
-    <task id="LOCAL-00067" summary="add trim function">
-      <created>1443448948452</created>
-      <option name="number" value="00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1443448948452</updated>
-    </task>
-    <task id="LOCAL-00068" summary="add trim function">
-      <created>1443449314886</created>
-      <option name="number" value="00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1443449314886</updated>
-    </task>
-    <task id="LOCAL-00069" summary="Help module">
-      <created>1443451549230</created>
-      <option name="number" value="00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1443451549230</updated>
-    </task>
-    <task id="LOCAL-00070" summary="Help module">
-      <created>1443455425337</created>
-      <option name="number" value="00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1443455425337</updated>
-    </task>
-    <task id="LOCAL-00071" summary="Added JSON node">
-      <created>1443455962667</created>
-      <option name="number" value="00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1443455962667</updated>
-    </task>
-    <task id="LOCAL-00072" summary="Added preview mode">
-      <created>1443461123517</created>
-      <option name="number" value="00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1443461123517</updated>
-    </task>
-    <task id="LOCAL-00073" summary="Add webfont">
-      <created>1443461269728</created>
-      <option name="number" value="00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1443461269728</updated>
-    </task>
-    <task id="LOCAL-00074" summary="Render window formats">
-      <created>1443462603502</created>
-      <option name="number" value="00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1443462603502</updated>
-    </task>
-    <task id="LOCAL-00075" summary="Render window formats">
-      <created>1443467124175</created>
-      <option name="number" value="00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1443467124175</updated>
-    </task>
-    <task id="LOCAL-00076" summary="Render window modules">
-      <created>1443470196878</created>
-      <option name="number" value="00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1443470196879</updated>
-    </task>
-    <task id="LOCAL-00077" summary="SCSS">
-      <created>1443470909207</created>
-      <option name="number" value="00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1443470909207</updated>
-    </task>
-    <task id="LOCAL-00078" summary="Ordering function">
-      <created>1443539353000</created>
-      <option name="number" value="00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1443539353000</updated>
-    </task>
-    <task id="LOCAL-00079" summary="Ordering function">
-      <created>1443539706037</created>
-      <option name="number" value="00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1443539706037</updated>
-    </task>
-    <task id="LOCAL-00080" summary="Ordering function">
-      <created>1443540881249</created>
-      <option name="number" value="00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1443540881249</updated>
-    </task>
-    <task id="LOCAL-00081" summary="Ordering function tweaks">
-      <created>1443543116005</created>
-      <option name="number" value="00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1443543116005</updated>
-    </task>
-    <task id="LOCAL-00082" summary="Css fixes">
-      <created>1443543232578</created>
-      <option name="number" value="00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1443543232578</updated>
-    </task>
-    <task id="LOCAL-00083" summary="Css fixes">
-      <created>1443544000076</created>
-      <option name="number" value="00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1443544000076</updated>
-    </task>
-    <task id="LOCAL-00084" summary="Radio button fixes">
-      <created>1443545919443</created>
-      <option name="number" value="00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1443545919443</updated>
-    </task>
-    <task id="LOCAL-00085" summary="Error handler tweak">
-      <created>1443546660261</created>
-      <option name="number" value="00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1443546660261</updated>
-    </task>
-    <task id="LOCAL-00086" summary="Mod input labels">
-      <created>1443547603625</created>
-      <option name="number" value="00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1443547603625</updated>
-    </task>
-    <task id="LOCAL-00087" summary="Mod input labels">
-      <created>1443550365403</created>
-      <option name="number" value="00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1443550365403</updated>
-    </task>
-    <task id="LOCAL-00088" summary="Multi_add mode">
-      <created>1443552950089</created>
-      <option name="number" value="00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1443552950089</updated>
-    </task>
-    <task id="LOCAL-00089" summary="Delay offset">
-      <created>1443561758363</created>
-      <option name="number" value="00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1443561758363</updated>
-    </task>
-    <task id="LOCAL-00090" summary="Delay offset">
-      <created>1443563324380</created>
-      <option name="number" value="00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1443563324380</updated>
-    </task>
-    <task id="LOCAL-00091" summary="Delay offset">
-      <created>1443622947907</created>
-      <option name="number" value="00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1443622947909</updated>
-    </task>
-    <task id="LOCAL-00092" summary="Delay offset">
-      <created>1443646734898</created>
-      <option name="number" value="00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1443646734898</updated>
-    </task>
-    <task id="LOCAL-00093" summary="Sticky feature and versioning">
-      <created>1443649320675</created>
-      <option name="number" value="00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1443649320675</updated>
-    </task>
-    <task id="LOCAL-00094" summary="Title mod">
-      <created>1443649359339</created>
-      <option name="number" value="00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1443649359339</updated>
-    </task>
-    <task id="LOCAL-00095" summary="Style mod">
-      <created>1443649859720</created>
-      <option name="number" value="00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1443649859720</updated>
-    </task>
-    <task id="LOCAL-00096" summary="Style mod">
-      <created>1443652410167</created>
-      <option name="number" value="00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1443652410167</updated>
-    </task>
-    <task id="LOCAL-00097" summary="Scroll State">
-      <created>1443653015553</created>
-      <option name="number" value="00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1443653015553</updated>
-    </task>
-    <task id="LOCAL-00098" summary="Scroll State">
-      <created>1443656487623</created>
-      <option name="number" value="00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1443656487623</updated>
-    </task>
-    <task id="LOCAL-00099" summary="Scroll State">
-      <created>1443710445427</created>
-      <option name="number" value="00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1443710445428</updated>
-    </task>
-    <task id="LOCAL-00100" summary="New UX features">
-      <created>1443726135424</created>
-      <option name="number" value="00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1443726135424</updated>
-    </task>
-    <task id="LOCAL-00101" summary="New UX features">
-      <created>1443730983045</created>
-      <option name="number" value="00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1443730983045</updated>
-    </task>
-    <task id="LOCAL-00102" summary="Help Section Rework">
-      <created>1443731123998</created>
-      <option name="number" value="00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1443731123998</updated>
-    </task>
-    <task id="LOCAL-00103" summary="Release updates">
-      <created>1443795857196</created>
-      <option name="number" value="00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1443795857196</updated>
-    </task>
-    <task id="LOCAL-00104" summary="Release updates">
-      <created>1443797365410</created>
-      <option name="number" value="00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1443797365410</updated>
-    </task>
-    <task id="LOCAL-00105" summary="Release updates">
-      <created>1443800076457</created>
-      <option name="number" value="00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1443800076457</updated>
-    </task>
-    <task id="LOCAL-00106" summary="Help section mods">
-      <created>1443800938867</created>
-      <option name="number" value="00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1443800938874</updated>
-    </task>
-    <task id="LOCAL-00107" summary="Help animate">
-      <created>1443809526611</created>
-      <option name="number" value="00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1443809526611</updated>
-    </task>
-    <task id="LOCAL-00108" summary="Theme modifications">
-      <created>1443811987606</created>
-      <option name="number" value="00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1443811987606</updated>
-    </task>
-    <task id="LOCAL-00109" summary="Panel Alerts">
-      <created>1443813469751</created>
-      <option name="number" value="00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1443813469751</updated>
-    </task>
-    <task id="LOCAL-00110" summary="Panel Alerts">
-      <created>1443813571385</created>
-      <option name="number" value="00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1443813571385</updated>
-    </task>
-    <task id="LOCAL-00111" summary="Styling">
-      <created>1443814058620</created>
-      <option name="number" value="00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1443814058620</updated>
-    </task>
-    <task id="LOCAL-00112" summary="Minor upgrades">
-      <created>1443819562305</created>
-      <option name="number" value="00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1443819562305</updated>
-    </task>
-    <task id="LOCAL-00113" summary="JS minification">
-      <created>1443820518917</created>
-      <option name="number" value="00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1443820518917</updated>
-    </task>
-    <task id="LOCAL-00114" summary="CSS mods">
-      <created>1443821408507</created>
-      <option name="number" value="00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1443821408507</updated>
-    </task>
-    <task id="LOCAL-00115" summary="CSS mods">
-      <created>1444069642842</created>
-      <option name="number" value="00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1444069642842</updated>
-    </task>
-    <task id="LOCAL-00116" summary="CSS mods">
-      <created>1444072355777</created>
-      <option name="number" value="00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1444072355777</updated>
-    </task>
-    <task id="LOCAL-00117" summary="CSS mods">
-      <created>1444081187383</created>
-      <option name="number" value="00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1444081187383</updated>
-    </task>
-    <task id="LOCAL-00118" summary="remove console.log">
-      <created>1444081682380</created>
-      <option name="number" value="00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1444081682380</updated>
-    </task>
-    <task id="LOCAL-00119" summary="New LocalStorage methods">
-      <created>1444424070988</created>
-      <option name="number" value="00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1444424070988</updated>
-    </task>
-    <task id="LOCAL-00120" summary="tweek">
-      <created>1444424596789</created>
-      <option name="number" value="00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1444424596789</updated>
-    </task>
-    <task id="LOCAL-00121" summary="tweek">
-      <created>1444424655823</created>
-      <option name="number" value="00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1444424655823</updated>
-    </task>
-    <task id="LOCAL-00122" summary="tweek">
-      <created>1444425654098</created>
-      <option name="number" value="00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1444425654098</updated>
-    </task>
-    <task id="LOCAL-00123" summary="Nav LS">
-      <created>1444425903430</created>
-      <option name="number" value="00123" />
-      <option name="project" value="LOCAL" />
-      <updated>1444425903430</updated>
-    </task>
-    <task id="LOCAL-00124" summary="Fix LS">
-      <created>1444746565561</created>
-      <option name="number" value="00124" />
-      <option name="project" value="LOCAL" />
-      <updated>1444746565561</updated>
-    </task>
-    <task id="LOCAL-00125" summary="Fix LS">
-      <created>1444747591128</created>
-      <option name="number" value="00125" />
-      <option name="project" value="LOCAL" />
-      <updated>1444747591128</updated>
-    </task>
-    <task id="LOCAL-00126" summary="Fix LS">
-      <created>1444748503065</created>
-      <option name="number" value="00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1444748503065</updated>
-    </task>
-    <task id="LOCAL-00127" summary="Style mods">
-      <created>1444750208863</created>
-      <option name="number" value="00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1444750208863</updated>
-    </task>
-    <task id="LOCAL-00128" summary="Controler refactor">
-      <created>1444752804038</created>
-      <option name="number" value="00128" />
-      <option name="project" value="LOCAL" />
-      <updated>1444752804038</updated>
-    </task>
-    <task id="LOCAL-00129" summary="Controler refactor">
-      <created>1444774105175</created>
-      <option name="number" value="00129" />
-      <option name="project" value="LOCAL" />
-      <updated>1444774105175</updated>
-    </task>
-    <task id="LOCAL-00130" summary="New form builder">
-      <created>1444938994469</created>
-      <option name="number" value="00130" />
-      <option name="project" value="LOCAL" />
-      <updated>1444938994469</updated>
-    </task>
-    <task id="LOCAL-00131" summary="New form builder">
-      <created>1445278708362</created>
-      <option name="number" value="00131" />
-      <option name="project" value="LOCAL" />
-      <updated>1445278708362</updated>
-    </task>
-    <task id="LOCAL-00132" summary="App params">
-      <created>1445280363011</created>
-      <option name="number" value="00132" />
-      <option name="project" value="LOCAL" />
-      <updated>1445280363011</updated>
-    </task>
-    <task id="LOCAL-00133" summary="App params">
-      <created>1445291487393</created>
-      <option name="number" value="00133" />
-      <option name="project" value="LOCAL" />
-      <updated>1445291487393</updated>
-    </task>
-    <task id="LOCAL-00134" summary="App params">
-      <created>1445456407031</created>
-      <option name="number" value="00134" />
-      <option name="project" value="LOCAL" />
-      <updated>1445456407043</updated>
     </task>
     <task id="LOCAL-00135" summary="New subtitle params">
       <created>1445534317289</created>
@@ -1413,7 +566,85 @@
       <option name="project" value="LOCAL" />
       <updated>1446831863191</updated>
     </task>
-    <option name="localTasksCounter" value="171" />
+    <task id="LOCAL-00171" summary="Whatever">
+      <created>1446832132212</created>
+      <option name="number" value="00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1446832132212</updated>
+    </task>
+    <task id="LOCAL-00172" summary="New global definitions">
+      <created>1446840445698</created>
+      <option name="number" value="00172" />
+      <option name="project" value="LOCAL" />
+      <updated>1446840445698</updated>
+    </task>
+    <task id="LOCAL-00173" summary="Version management">
+      <created>1446840759056</created>
+      <option name="number" value="00173" />
+      <option name="project" value="LOCAL" />
+      <updated>1446840759056</updated>
+    </task>
+    <task id="LOCAL-00174" summary="Version update prompts">
+      <created>1446844209035</created>
+      <option name="number" value="00174" />
+      <option name="project" value="LOCAL" />
+      <updated>1446844209035</updated>
+    </task>
+    <task id="LOCAL-00175" summary="Added features in initUpdate">
+      <created>1446846283386</created>
+      <option name="number" value="00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1446846283390</updated>
+    </task>
+    <task id="LOCAL-00176" summary="Version update prompts (height fix)">
+      <created>1446846486486</created>
+      <option name="number" value="00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1446846486486</updated>
+    </task>
+    <task id="LOCAL-00177" summary="Release doc updates">
+      <created>1446847312989</created>
+      <option name="number" value="00177" />
+      <option name="project" value="LOCAL" />
+      <updated>1446847312989</updated>
+    </task>
+    <task id="LOCAL-00178" summary="Global updates">
+      <created>1447078917765</created>
+      <option name="number" value="00178" />
+      <option name="project" value="LOCAL" />
+      <updated>1447078917765</updated>
+    </task>
+    <task id="LOCAL-00179" summary="Active hero fix">
+      <created>1447173436921</created>
+      <option name="number" value="00179" />
+      <option name="project" value="LOCAL" />
+      <updated>1447173436921</updated>
+    </task>
+    <task id="LOCAL-00180" summary="Added error item">
+      <created>1447173623584</created>
+      <option name="number" value="00180" />
+      <option name="project" value="LOCAL" />
+      <updated>1447173623584</updated>
+    </task>
+    <task id="LOCAL-00181" summary="Version update prompts">
+      <created>1449852447304</created>
+      <option name="number" value="00181" />
+      <option name="project" value="LOCAL" />
+      <updated>1449852447304</updated>
+    </task>
+    <task id="LOCAL-00182" summary="Typo fix">
+      <created>1449862126331</created>
+      <option name="number" value="00182" />
+      <option name="project" value="LOCAL" />
+      <updated>1449862126331</updated>
+    </task>
+    <task id="LOCAL-00183" summary="Enforce line breaks">
+      <created>1449862293896</created>
+      <option name="number" value="00183" />
+      <option name="project" value="LOCAL" />
+      <updated>1449862293896</updated>
+    </task>
+    <option name="localTasksCounter" value="184" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1441,24 +672,25 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25039536" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5002636" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.49973643" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="false" weight="0.334375" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" x="11" y="391" width="1897" height="293" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24986821" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="false" weight="0.334375" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" x="11" y="419" width="1897" height="293" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="V8 Profiling" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1477,18 +709,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="href upgrades" />
-    <MESSAGE value="Bats function" />
-    <MESSAGE value="Mod event handlers" />
-    <MESSAGE value="Help file restructure" />
-    <MESSAGE value="Refactor" />
-    <MESSAGE value="Delegate to globals" />
-    <MESSAGE value="CSS Reform" />
-    <MESSAGE value="Minor updates" />
-    <MESSAGE value="New globals" />
-    <MESSAGE value="Bower update" />
-    <MESSAGE value="CSS upd" />
-    <MESSAGE value="Added hero banner support" />
     <MESSAGE value="Added versioning HB" />
     <MESSAGE value="Fix hello bar button" />
     <MESSAGE value="GO TO fix" />
@@ -1502,7 +722,19 @@
     <MESSAGE value="resetItems global vars" />
     <MESSAGE value="Added help item entries" />
     <MESSAGE value="New flag feature" />
-    <option name="LAST_COMMIT_MESSAGE" value="New flag feature" />
+    <MESSAGE value="Whatever" />
+    <MESSAGE value="New global definitions" />
+    <MESSAGE value="Version management" />
+    <MESSAGE value="Added features in initUpdate" />
+    <MESSAGE value="Version update prompts (height fix)" />
+    <MESSAGE value="Release doc updates" />
+    <MESSAGE value="Global updates" />
+    <MESSAGE value="Active hero fix" />
+    <MESSAGE value="Added error item" />
+    <MESSAGE value="Version update prompts" />
+    <MESSAGE value="Typo fix" />
+    <MESSAGE value="Enforce line breaks" />
+    <option name="LAST_COMMIT_MESSAGE" value="Enforce line breaks" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1511,62 +743,30 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pgd/clone/js/app3.0.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="126">
-          <caret line="1" column="74" selection-start-line="1" selection-start-column="74" selection-end-line="1" selection-end-column="74" />
-          <folding>
-            <marker date="1446831795738" expanded="true" signature="39257:39461" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pgd/release.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="1872">
-          <caret line="9" column="95" selection-start-line="9" selection-start-column="95" selection-end-line="9" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pgd/page-builder.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="13626">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pgd/assets/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="8922" max-vertical-offset="23670">
-          <caret line="628" column="35" selection-start-line="628" selection-start-column="35" selection-end-line="628" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/js/validate-json.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="14382">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/js/app.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="126">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/js/version.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1404" max-vertical-offset="3420">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="160" column="47" selection-start-line="160" selection-start-column="47" selection-end-line="160" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/project/release.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="8352" max-vertical-offset="9072">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="491" column="34" selection-start-line="491" selection-start-column="34" selection-end-line="491" selection-end-column="34" />
           <folding />
         </state>
@@ -1574,43 +774,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/release.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="1872">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="9" column="95" selection-start-line="9" selection-start-column="95" selection-end-line="9" selection-end-column="95" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/page-builder.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="13338">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="7" column="66" selection-start-line="7" selection-start-column="66" selection-end-line="7" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="21882" max-vertical-offset="22428">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="1220" column="22" selection-start-line="1220" selection-start-column="22" selection-end-line="1220" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/js/app.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="126">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/js/version.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2682" max-vertical-offset="3420">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="161" column="58" selection-start-line="161" selection-start-column="58" selection-end-line="161" selection-end-column="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/project/release.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="8604">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="8" column="53" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
           <folding />
         </state>
@@ -1618,285 +817,308 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/release.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1298" max-vertical-offset="1872">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="91" column="11" selection-start-line="91" selection-start-column="11" selection-end-line="91" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1026" max-vertical-offset="22428">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/js/version.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3420">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/js/saasd.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.31707317" vertical-offset="182" max-vertical-offset="756">
+        <state vertical-scroll-proportion="-0.31707317" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/js/version.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="684" max-vertical-offset="3420">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="160" column="47" selection-start-line="160" selection-start-column="47" selection-end-line="160" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/js/jquery-linedtextarea.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0560747" vertical-offset="1017" max-vertical-offset="2358">
+        <state vertical-scroll-proportion="-1.0560747" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/js/app.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="126">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/js/validate-json.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6168224" vertical-offset="2790" max-vertical-offset="14292">
+        <state vertical-scroll-proportion="0.6168224" vertical-offset="0" max-vertical-offset="0">
           <caret line="188" column="54" selection-start-line="188" selection-start-column="54" selection-end-line="188" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bower_components/jquery/src/data.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="930" max-vertical-offset="3312">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="69" column="41" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/new.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6666667" vertical-offset="4050" max-vertical-offset="13266">
-          <caret line="229" column="22" selection-start-line="229" selection-start-column="22" selection-end-line="229" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/clone/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5522388" vertical-offset="7713" max-vertical-offset="8316">
+        <state vertical-scroll-proportion="0.5522388" vertical-offset="0" max-vertical-offset="0">
           <caret line="447" column="31" selection-start-line="447" selection-start-column="31" selection-end-line="447" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bower_components/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18305084" vertical-offset="0" max-vertical-offset="46044">
+        <state vertical-scroll-proportion="0.18305084" vertical-offset="0" max-vertical-offset="0">
           <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="10252" max-vertical-offset="25722">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="596" column="29" selection-start-line="596" selection-start-column="29" selection-end-line="596" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3911" max-vertical-offset="10332">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="228" column="9" selection-start-line="228" selection-start-column="1" selection-end-line="228" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/clone/css/global.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12175874" vertical-offset="0" max-vertical-offset="14814">
+        <state vertical-scroll-proportion="0.12175874" vertical-offset="0" max-vertical-offset="0">
           <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/scss/app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8531792" vertical-offset="0" max-vertical-offset="5436">
-          <caret line="41" column="15" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="2790">
-          <caret line="7" column="65" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/modalJQ.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1570338" vertical-offset="0" max-vertical-offset="917">
+        <state vertical-scroll-proportion="0.1570338" vertical-offset="0" max-vertical-offset="0">
           <caret line="8" column="27" selection-start-line="7" selection-start-column="38" selection-end-line="8" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/controler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4943" max-vertical-offset="7236">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="291" column="16" selection-start-line="291" selection-start-column="16" selection-end-line="293" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/clone/schema/layout.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6208" max-vertical-offset="7092">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="355" column="24" selection-start-line="355" selection-start-column="24" selection-end-line="355" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/altitude.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="8046">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3920" max-vertical-offset="5490">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../JQ-plugins/dmFilters.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48387095" vertical-offset="0" max-vertical-offset="1944">
+        <state vertical-scroll-proportion="0.48387095" vertical-offset="0" max-vertical-offset="0">
           <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/globals.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="126">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="113354" selection-start-line="0" selection-start-column="113354" selection-end-line="0" selection-end-column="113354" />
-          <folding>
-            <element signature="e#61920#62989#2" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/clone/js/dmFilters.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.2" vertical-offset="960" max-vertical-offset="1890">
+        <state vertical-scroll-proportion="-0.2" vertical-offset="0" max-vertical-offset="0">
           <caret line="45" column="41" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#46#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/page-builder.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6666665" vertical-offset="414" max-vertical-offset="13968">
+        <state vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="0">
           <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/clone/css/globals.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6" vertical-offset="0" max-vertical-offset="126">
+        <state vertical-scroll-proportion="-0.6" vertical-offset="0" max-vertical-offset="0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/clone/js/app3.0.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6" vertical-offset="0" max-vertical-offset="126">
+        <state vertical-scroll-proportion="-0.6" vertical-offset="0" max-vertical-offset="0">
           <caret line="1" column="393" selection-start-line="1" selection-start-column="393" selection-end-line="1" selection-end-column="393" />
-          <folding>
-            <marker date="1446831795738" expanded="true" signature="39257:39461" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pgd/clone/css/scss/global.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.74390244" vertical-offset="21557" max-vertical-offset="22392">
-          <caret line="1201" column="3" selection-start-line="1201" selection-start-column="3" selection-end-line="1201" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/release.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.259259" vertical-offset="38" max-vertical-offset="1872">
+        <state vertical-scroll-proportion="0.4022472" vertical-offset="0" max-vertical-offset="0">
           <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pgd/clone/data/help.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pgd/clone/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29032257" vertical-offset="0" max-vertical-offset="0">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/scss/app.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-28.296297" vertical-offset="0" max-vertical-offset="0">
+          <caret line="286" column="1" selection-start-line="286" selection-start-column="1" selection-end-line="286" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/project/release.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.3508773" vertical-offset="12658" max-vertical-offset="13518">
-          <caret line="717" column="30" selection-start-line="717" selection-start-column="30" selection-end-line="717" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="94" column="7" selection-start-line="94" selection-start-column="7" selection-end-line="94" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/new.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="619" column="45" selection-start-line="619" selection-start-column="45" selection-end-line="619" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/clone/js/globals.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1188">
-          <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="1368">
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pgd/clone/data/help.json">
+    <entry file="file://$PROJECT_DIR$/pgd/clone/js/app3.0-b.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="594">
-          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pgd/clone/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="24.31579" vertical-offset="2196" max-vertical-offset="8190">
-          <caret line="45" column="79" selection-start-line="45" selection-start-column="79" selection-end-line="45" selection-end-column="79" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="473" column="20" selection-start-line="473" selection-start-column="20" selection-end-line="473" selection-end-column="20" />
           <folding>
-            <element signature="n#style#0;n#select#0;n#div#1;n#div#0;n#div#7;n#fieldset#1;n#form#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1447860152832" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447860152832" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/clone/js/app3.0.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6" vertical-offset="144" max-vertical-offset="24588">
-          <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="651" column="70" selection-start-line="651" selection-start-column="70" selection-end-line="651" selection-end-column="70" />
           <folding>
-            <marker date="1446831791426" expanded="true" signature="48351:48362" placeholder="..." />
-            <marker date="1446831791426" expanded="true" signature="49208:49218" placeholder="..." />
+            <marker date="1447173341750" expanded="true" signature="55112:55123" placeholder="..." />
+            <marker date="1447173341750" expanded="true" signature="55969:55979" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pgd/clone/.gitignore">
+    <entry file="file://$PROJECT_DIR$/pgd/clone/css/scss/global.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="846">
-          <caret line="41" column="10" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
+        <state vertical-scroll-proportion="-4.0" vertical-offset="22392" max-vertical-offset="23544">
+          <caret line="1250" column="14" selection-start-line="1250" selection-start-column="14" selection-end-line="1250" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/v8.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09677419" vertical-offset="0" max-vertical-offset="930">
-          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faq.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-152.66667" vertical-offset="0" max-vertical-offset="4950">
+          <caret line="229" column="47" selection-start-line="229" selection-start-column="47" selection-end-line="229" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pgd/clone/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-62.962963" vertical-offset="802" max-vertical-offset="8190">
+          <caret line="139" column="25" selection-start-line="139" selection-start-column="25" selection-end-line="139" selection-end-column="25" />
+          <folding>
+            <element signature="n#style#0;n#select#0;n#div#1;n#div#0;n#div#7;n#fieldset#1;n#form#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-50.666668" vertical-offset="54" max-vertical-offset="2790">
+          <caret line="79" column="89" selection-start-line="79" selection-start-column="89" selection-end-line="79" selection-end-column="89" />
+          <folding>
+            <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/intro.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18202247" vertical-offset="0" max-vertical-offset="890">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
           <folding />
         </state>
       </provider>

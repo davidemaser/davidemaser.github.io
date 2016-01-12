@@ -1,0 +1,270 @@
+{
+  "faq": [
+    {
+      "cat": [
+        {
+          "title": {
+            "en":"Orders",
+            "fr":"Commandes"
+          },
+          "list": [
+            {
+              "q": {
+                "en":"Does the website show store’s availability?",
+                "fr":"Est-ce que le site Web affiche les disponibilités en magasin?"
+              },
+              "a": {
+                "en":"No, the website does not show store availability. To be certain of product availability call 1&nbsp;800&nbsp;729-0322 and select the store you wish to speak with.",
+                "fr":""
+              }
+            },
+            {
+              "q": {
+                "en":"How much is this in American dollars?",
+                "fr":"Quels sont les prix en dollar américain?"
+              },
+              "a":{
+                "en":"All orders placed on Altitude-sports.com are in Canadian dollars.<p>The amount you will be charged in American dollars will depend on your bank and the platform used to pay. For instance, if you pay with a credit card, then it will be the bank’s daily rate, while if you pay with PayPal it will be their rate. For this reason, we cannot tell you exactly how much a product will cost in American&nbsp;dollars.</p><p>Note that if a return is made, the amount reimbursed may differ from the amount charged. The amount reimbursed may differ from the amount initially charged as the amount is dependent on the rate from the day the return is&nbsp;processed.</p>",
+                "fr":""
+              }
+            },
+            {
+              "q":{
+                "en":"Where do I use my discount code?",
+                "fr":"Où dois-je entrer mon code rabais?"
+              },
+              "a":{
+                "en":"When you are ready to purchase with a discount code, in the shopping cart you will see a box on the left entitled ‘Discount Code?’ Insert the code in that box and click ‘Apply.’ You will see the discount amount apply instantly.<p>Otherwise in the Checkout page, while choosing your payment method, you will see ‘Discount code?’ Simply click on the button to the right and insert your discount code in the&nbsp;box.</p><p>Please note that you cannot apply more than one discount code per&nbsp;order.</p>",
+                "fr":""
+              }
+            },
+            {
+              "q":{
+                "en":"Why won't my discount code work?",
+                "fr":"Pourquoi mon code rabais ne fonctionne-t-il pas?"
+              },
+              "a": {
+                "en":"There are two reasons why your discount code might not work.<p>First, check the expiration date of the code. It has perhaps expired. Second, check that it is applicable on the products/brands/amount in your shopping cart.</p><p>If your code is not valid, <a href=\"http://www.altitude-sports.com/en/coupons-discount-codes/\">click here</a> to see all our current coupon codes.</p>",
+                "fr": ""
+              }
+            },
+            {
+              "q":{
+                "en":"Can I apply both coupons at the same time?",
+                "fr":"Puis-je appliquer plus d’un code rabais à la fois?"
+              },
+              "a":{
+                "en":"No, only one coupon can be used per order.",
+                "fr":""
+              }
+            },
+            {
+              "q": {
+                "en":"How do I use a gift card?",
+                "fr":"Comment utiliser sa carte-cadeau?"
+              },
+              "a": {
+                "en":"At the first stage of your shopping cart, simply insert your gift card code under the section entitled “Gift Card?”. Click “Apply” and the discount will now appear above the grand total.",
+                "fr": ""
+              }
+            },
+            {
+              "q": {
+                "en":"How do I use my store credit?",
+                "fr":"Comment puis-je utiliser mes crédits?"
+              },
+              "a": {
+                "en":"First, log into your account. At the Checkout stage, when choosing your payment method you will see ‘Use Store Credit’ with the amount available next to it. Simply tick the&nbsp;box.<br /><br />If you do not know how to access your account please call our customer service at 1 800 729-0322 or email us at <a href=\"mailto:info@altitude-sports.com\">info@altitude-sports.com</a>.",
+                "fr": ""
+              }
+            },
+            {
+              "q":{
+                "en":"How do I see my order status?",
+                "fr":"Comment vérifier le statut de ma commande?"
+              },
+              "a": {
+                "en":"You can check the status of your order at any time if you have placed your order through your account. If you have placed your order as a guest, you must check your emails (including your Spam folder) to find out your password to gain access to your account. Here are the required steps to check your order&nbsp;status:<ol style=\"font-size: 11px; line-height:125%; padding:10px 0 0 20px\"><li style=\"float: left; padding-right: 30px; width: 160px;\">Connect to your account</li><li style=\"float: left; padding-right: 30px; width: 160px;\">Click on “My Orders/ initiate a return” on the&nbsp;left</li><li style=\"float: left; width:160px;\">Select the order in question by clicking “View Order” on the right of the order you wish to&nbsp;view</li></ol><p>Below is a list of possible order status, and their meaning:</p><ul style=\"border-bottom: none; margin-bottom:0; padding-bottom:0;\"><li><em>New:</em> The order has been received in the system, but not yet processed.</li><li style=\"padding-top: 5px\"><em>Processing:</em> The order is being processed. This stage includes verification, picking of the items and physical movement of them, and&nbsp;packaging.</li><li style=\"padding-top: 5px\"><em>On hold:</em> The order is being verified. We suggest you check your emails (including the Spam folder) to see if we have requested additional&nbsp;information.</li><li style=\"padding-top: 5px\"><em>Complete:</em> The order is either being picked up by the courier or is already on its way. You will receive an email with a tracking number included (may be in the Spam folder), within 1&nbsp;business&nbsp;day.</li><li style=\"padding-top: 5px\"><em>Closed:</em> The order can no longer be modified as all the items have been&nbsp;refunded.</li></ul>",
+                "fr": ""
+              }
+            },
+            {
+              "q":{
+                "en":"Why do I have to go through a verification process?",
+                "fr":"Pourquoi dois-je passer à travers un processus de vérification?"
+              },
+              "a": {
+                "en":"The verification process is a routine procedure done for certain orders to ensure our customers safety from fraud. By having a verification process we can be certain that all billing information is indeed&nbsp;correct.",
+                "fr": ""
+              }
+            },
+            {
+              "q":{
+                "en":"Why was my order cancelled?",
+                "fr":"Pourquoi ma commande a-t-elle été annulée?"
+              },
+              "a": {
+                "en":"We work very hard to protect our customers. Our system will cancel orders automatically if billing information does not match up with our verification process. Please call our customer service at 1 800 729-0322 or email us at <a href=\"mailto:info@altitude-sports.com\">info@altitude-sports.com</a> if your order has been cancelled.",
+                "fr": ""
+              }
+            },
+            {
+              "q": {
+              "en":"What are the discounts for group orders?",
+              "fr":"Quels sont les rabais pour les commandes de groupe?"
+            },
+              "a": {
+                "en":"If you order more than 5 units of the same model, you will be eligible for a group discount. This discount will vary depending on quantity, type of product, the brand, and time of year. For a quote, please contact one of our <a href=\"http://www.altitude-sports.com/en/contacts/\">customer service agents</a>.<p>Special conditions for group purchases</p><ul><li>Payment is made by credit card upon delivery of the products, or by cheque 10&nbsp;business days before&nbsp;delivery.</li><li>Group orders are final, non-refundable and not exchangeable.</li><li>Customization of products can affect the Altitude-sports.com warranty and manufacturer's extended warranty. Contact one of our <a href=\"http://www.altitude-sports.com/en/contacts/\">customer service agents</a> for more information.</li></ul>",
+                "fr": ""
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "en":"Shipping",
+            "fr":"Livraison"
+          },
+          "list": [
+            {
+              "q":{
+                "en":"How to check if my order, which is over $49, will be eligible for free standard shipping within Canada?",
+                "fr":"Comment valider que mon futur achat de 49 $ et plus se "
+              },
+              "a": {
+                "en":"<p>To know if your purchase qualifies for free standard shipping, simply add the item(s) to your shopping cart. While viewing the complete contents of your shopping cart, you may ask for a shipping estimate after you enter your country, province, and postal code by clicking “Get a Quote.” A menu entitled “Choose a shipping option” will appear below, indicating the shipping methods available to you, as well as the delivery dates and respective prices of each method. You will then be able to see if your order qualifies for free standard shipping with UPS and/or Canada&nbsp;Post.</p><p>If the standard method of shipping indicates a fee, this is either due to the remoteness of the delivery address, the dimensions of the order, or the exceptional weight of the order. We work hard to minimize these surcharges by negotiating the best possible prices with the courier companies, and by assuming most of the shipping fees for almost all of these situations. Canada, as we know, is a vast country and so a line must be drawn to render our business viable in the long-term. We appreciate your&nbsp;understanding.</p>",
+                "fr": ""
+              }
+            },
+            {
+              "q":{
+                "en":"How to obtain the estimated date of delivery of my order?",
+                "fr":"Comment obtenir la date prévue de livraison de mon colis?"
+              },
+              "a": {
+                "en":"In your cart,  click “Proceed to checkout.” In the section called “Shipping Method” you will see the estimated delivery dates of each shipping choice.",
+                "fr": ""
+              }
+            },
+            {
+              "q":{
+                "en":"How much will my shipping fees be (if indeed I have any)?",
+                "fr":"Comment connaitre les frais de livraison de mon colis?"
+              },
+              "a": {
+                "en":"<a href=\"#free-shipping\">Follow these guidelines</a>, and select a shipping method in the drop down menu. In this menu you will see the shipping fees of each shipping choice.",
+                "fr": ""
+              }
+            },
+            {
+              "q":{
+                "en":"How to follow the processing of your order?",
+                "fr":"Comment suivre les étapes de traitement de votre commande?"
+              },
+              "a": {
+                "en":"Here are the steps to follow:<p>Below is a brief list of terms to help you understand the lingo:</p><ul><li><em>New:</em> your order has been placed, but not processed&nbsp;yet</li><li><em>Processing:</em> your order is being processed at the&nbsp;warehouse</li><li><em>On hold:</em> your order is being processed, but is waiting on further&nbsp;information</li><li><em>Complete:</em> your order is either being picked up by the courier or has already been&nbsp;shipped</li><li><em>Cancelled:</em> your order has been cancelled and not charged</li></ul>",
+                "fr": ""
+              }
+            },
+            {
+              "q":{
+                "en":"Where can I get my tracking number?",
+                "fr":"Où puis-je obtenir le numéro de suivi de ma commande?"
+              },
+              "a": {
+                "en": "<p>Log into your account and click on the ‘My Orders’ tab on the left. Find your order and click ‘View Order’ on the right. The tracking number will be indicated in the shipping information. Copy this number into your carrier’s website (Canada Post or UPS) for tracking information.</p><p>If you do not know how to access your account please call our customer service at 1-800-729-0322 or email us at <a href=\"mailto:info@altitude-sports.com\">info@altitude-sports.com</a></p>",
+                "fr": ""
+              }
+            },
+            {
+              "q":{
+                "en":"What brand can be shipped outside Canada?",
+                "fr":"Quelles marques ne peuvent pas être expédiées à l’extérieur du Canada?"
+              },
+              "a":{
+                "en":"Due to agreements with certain brands, we cannot ship all brands outside of Canada. On each product page you will see an icon indicating to which country the product may be shipped. It can be found under the ‘Add to Cart’ button.<br/><br />Our three options:<ul><li><img src=\"http://www.altitude-sports.com/skin/frontend/enterprise/altitude/images/shipping-worldwide.png\" alt=\"Shipping Worldwide\" width=\"13\" height=\"13\">Worldwide</li><li><img src=\"http://www.altitude-sports.com/skin/frontend/enterprise/altitude/images/United-States.png\" alt=\"Shipping Canada &amp; United States\" width=\"39\" height=\"13\">Canada &amp; US only</li><li><img src=\"http://www.altitude-sports.com/skin/frontend/enterprise/altitude/images/Canada.png\" alt=\"Shipping Canada\" width=\"18\" height=\"13\">Canada only</li></ul>",
+                "fr":""
+              }
+            },
+            {
+              "q":{
+                "en":"How much is it to ship an order to the United States?",
+                "fr":"Combien coûte la livraison pour les États-Unis?"
+              },
+              "a":{
+                "en":"There is a flat rate of $30 for all orders shipped within the Continental United States. It is delivered using Xpresspost USA in 2-5 business days.",
+                "fr":""
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "en":"Returns",
+            "fr":"Retours"
+          },
+          "list": [
+            {
+              "q":{
+                "en":"Return procedure for an order placed with an account",
+                "fr":"Procédure de retour pour une commande passée avec un compte"
+              },
+              "a":{
+                "en":"<p>To know if your purchase qualifies for free standard shipping, simply add the item(s) to your shopping cart. While viewing the complete contents of your shopping cart, you may ask for a shipping estimate after you enter your country, province, and postal code by clicking “Get a Quote.” A menu entitled “Choose a shipping option” will appear below, indicating the shipping methods available to you, as well as the delivery dates and respective prices of each method. You will then be able to see if your order qualifies for free standard shipping with UPS and/or Canada&nbsp;Post.</p><p>If the standard method of shipping indicates a fee, this is either due to the remoteness of the delivery address, the dimensions of the order, or the exceptional weight of the order. We work hard to minimize these surcharges by negotiating the best possible prices with the courier companies, and by assuming most of the shipping fees for almost all of these situations. Canada, as we know, is a vast country and so a line must be drawn to render our business viable in the long-term. We appreciate your&nbsp;understanding.</p>",
+                "fr":""
+              }
+            },
+            {
+              "q":{
+                "en":"Return procedure for an order placed as a guest",
+                "fr":"Procédure de retour pour une commande passée en tant qu'invité"
+              },
+              "a":{
+                "en":"<p>To know if your purchase qualifies for free standard shipping, simply add the item(s) to your shopping cart. While viewing the complete contents of your shopping cart, you may ask for a shipping estimate after you enter your country, province, and postal code by clicking “Get a Quote.” A menu entitled “Choose a shipping option” will appear below, indicating the shipping methods available to you, as well as the delivery dates and respective prices of each method. You will then be able to see if your order qualifies for free standard shipping with UPS and/or Canada&nbsp;Post.</p><p>If the standard method of shipping indicates a fee, this is either due to the remoteness of the delivery address, the dimensions of the order, or the exceptional weight of the order. We work hard to minimize these surcharges by negotiating the best possible prices with the courier companies, and by assuming most of the shipping fees for almost all of these situations. Canada, as we know, is a vast country and so a line must be drawn to render our business viable in the long-term. We appreciate your&nbsp;understanding.</p>",
+                "fr":""
+              }
+            },
+            {
+              "q":{
+                "en":"How reimbursements work for products purchased during a promotion?",
+                "fr":"Comment fonctionne le remboursement des produits achetés dans le cadre d'une promotion?"
+              },
+              "a":{
+                "en":"<p>To know if your purchase qualifies for free standard shipping, simply add the item(s) to your shopping cart. While viewing the complete contents of your shopping cart, you may ask for a shipping estimate after you enter your country, province, and postal code by clicking “Get a Quote.” A menu entitled “Choose a shipping option” will appear below, indicating the shipping methods available to you, as well as the delivery dates and respective prices of each method. You will then be able to see if your order qualifies for free standard shipping with UPS and/or Canada&nbsp;Post.</p><p>If the standard method of shipping indicates a fee, this is either due to the remoteness of the delivery address, the dimensions of the order, or the exceptional weight of the order. We work hard to minimize these surcharges by negotiating the best possible prices with the courier companies, and by assuming most of the shipping fees for almost all of these situations. Canada, as we know, is a vast country and so a line must be drawn to render our business viable in the long-term. We appreciate your&nbsp;understanding.</p>",
+                "fr":""
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "en":"Registered Accounts",
+            "fr":"Comptes clients"
+          },
+          "list": [
+            {
+              "q":{
+                "en":"Why am I being asked for a password if I never created an account?",
+                "fr":"Pourquoi me demande-t-on un mot de passe si je n’ai jamais créé de compte?"
+              },
+              "a":{
+                "en":"<p>When you pass an order at Altitude-sports.com with an email address, a profile is created in our system. You will receive an email indicating how you can access your new profile.</p><p>You can click here to reset your password, if you have not already done so.<p>",
+                "fr":"<p>Lorsque vous passez une commande sur altitude-sports.com, un profil associé à votre adresse courriel est automatiquement créé. Vous recevrez un courriel vous indiquant comment accéder à votre compte.</p><p>Pour réinitialiser votre mot de passe, Cliquez ici.</p>"
+              }
+            },
+            {
+              "q":{
+                "en":"Have you forgotten your password? Do not panic. Here is how in three simple steps:",
+                "fr":"Vous avez oublié votre mot de passe? N'ayez crainte. Voici donc comment faire en 3 étapes faciles :"
+              },
+              "a":{
+                "en":"<ol><li>Click on <a >this link</a>. &nbsp;In the \"Email address\" field, enter the email address that you last used to place an order with us. Then click “Submit.”</li><li>Look in the Inbox of the email address you just entered. If you do not find the email in your Inbox, it may have found its way into your Spam folder. Open the email entitled “Password Reset Confirmation for {{Your Name }}.” Read the instructions carefully and click on the link given to proceed to the next step of the process.</li><li>Enter your password in both required fields. Please keep your password confidential. We suggest using numbers, symbols, and both minuscule and capital letters. Your password must be at least six characters, but no longer than 15. For more information, read this <a >Google page</a> explaining how to choose a secure password. Finally, click “Reset your password.”</li></ol><p>You will be redirected to a page confirming that your password has been successfully reset. All that remains now is to enter your email address and new password in the corresponding fields. Click \"Login\" to access your account. If you encounter any problems in the process, don't hesitate to call our <a >customer&nbsp;service</a>.</p>",
+                "fr":"<ol><li>Cliquez sur le <a >lien suivant</a>. Dans le champ «&nbsp;Adresse courriel&nbsp;», entrez l'adresse courriel que vous avez utilisée lors de votre dernier achat chez Altitude-sports.com. Cliquez ensuite sur « Soumettre ».</li><li>Dirigez-vous dans la boite de réception de l'adresse courriel en question. Si vous ne trouvez pas dans votre boite de réception, il se peut que celui-ci soit dans vos courriels indésirables. Ouvrez le courriel intitulé «&nbsp;Confirmation de réinitialisation de mot de passe pour “Votre Nom”&nbsp;». Lisez attentivement les instructions du courriel et cliquez sur le lien fourni afin de poursuivre vers la prochaine étape du&nbsp;processus.</li><li>Entrez maintenant votre nouveau mot de passe à deux reprises dans les champs correspondants. Le mot de passe que vous choisissez doit demeurer confidentiel. Altitude-sports.com conseille d'utiliser des chiffres, des symboles, et des lettres minuscules et majuscules dans votre mot de passe afin de le rendre plus difficile à deviner ou à déchiffrer. Votre mot de passe doit avoir un minimum de 6 et un maximum de 15 caractères. Pour plus de détails, <a >cliquez ici</a> pour lire un billet de Google expliquant comment choisir un mot de passe sécurisé. Cliquez ensuite sur le bouton «&nbsp;Réinitialiser votre mot de&nbsp;passe&nbsp;».</li></ol><p>Vous serez ensuite redirigé vers une page confirmant que le mot de passe a été mis à jour. Il ne reste plus qu'à entrer votre adresse courriel et votre nouveau mot de passe dans les champs correspondants. Cliquez ensuite sur «&nbsp;connexion&nbsp;» pour vous accéder à votre compte client. Si vous rencontrez des difficultés dans ce processus, n'hésitez pas à contacter un de nos conseillers au <a >service à la&nbsp;clientèle</a>.</p>"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

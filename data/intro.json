@@ -18,7 +18,7 @@
       {
         "id":3,
         "type":"info",
-        "paragraph":"Add all new JavaScript functions to the <span class=\"ttip\" data-attribute=\"Liquid file format\">davesFunctions.js.liquid</span> file (found in the assets folder."
+        "paragraph":"Add all new JavaScript functions to the <span class=\"ttip\" data-attribute=\"Liquid file format\">davesFunctions.js.liquid</span> file (found in the assets folder)"
       }
     ]
   }
