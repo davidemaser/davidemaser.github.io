@@ -19,6 +19,11 @@
         "id":3,
         "type":"text",
         "paragraph":"In order to add more settings and customized elements to the site, modify the settings.html file in the Configs root. New data elements will write to the .json file. To add a new settings element to the site, add the following snippet to a .liquid page {{settings.my_new_setting}}."
+      },
+      {
+        "id":4,
+        "type":"info",
+        "paragraph":"Shopify has modified it's settings export functionalities. All config settings must be added or modified in the setting_schema file under the config root."
       }
     ]
   }
