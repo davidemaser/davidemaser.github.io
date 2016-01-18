@@ -206,7 +206,7 @@ $(document).ready(function(){
         var a = $(this).attr('data-json');
         loadJSON(a);
         historyPush(a,'f');
-            $("html, body").animate({ scrollTop: 0 }, "slow");
+        $("html, body").animate({ scrollTop: 0 }, "slow");
     }).on('click','.tutorials',function(){
         $('.bks-tutorial').show();
         $('.search-zone').hide();
