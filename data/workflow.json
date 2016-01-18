@@ -2,13 +2,28 @@
   "type": "project",
   "case": "page",
   "content": {
-    "title": "Page Specific Templates",
+    "title": "Development Workflow Process",
     "format": true,
     "content": [
       {
         "id": 1,
-        "type": "text",
-        "paragraph": "Certain specific pages don't rely on a block template layout but rather use their own specific page template with nested blocks to render the page. These pages always use the global theme file to present the general page architecture. <span class=\"ttip\" data-attribute=\"Liquid\">Liquid</span> identifies page templates using the following code : {% if template contains \"...\" %}. This allows us to create a custom layout template and reference it in the global theme file."
+        "type": "note",
+        "paragraph": "This section is designed to help the developer understand TLH development workflows and protocols."
+      },
+      {
+        "id":2,
+        "type":"subsection",
+        "paragraph":"Development Environments"
+      },
+      {
+        "id":3,
+        "type":"subsection",
+        "paragraph":"Pre-production Environments & Theme Repositories"
+      },
+      {
+        "id":4,
+        "type":"subsection",
+        "paragraph":"Production Environments"
       }
     ]
   }
