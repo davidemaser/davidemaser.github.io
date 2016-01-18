@@ -24,6 +24,11 @@
         "id":4,
         "type":"subsection",
         "paragraph":"Production Environments"
+      },
+      {
+        "id":5,
+        "type":"subsection",
+        "paragraph":"Shopify Specifics"
       }
     ]
   }
