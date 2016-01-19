@@ -164,6 +164,7 @@ p.deprecated:before {content: "DEPRECATED : "}
 p.deprecated{
     text-decoration: line-through;
     background-color: rgba(255, 0, 0, 0.3)!important;
+    padding: 10px;
 }
 .deprecated-table {
     background-color: rgba(255, 0, 0, 0.3)!important;
@@ -171,7 +172,6 @@ p.deprecated{
 .deprecated-table td:before{
     content:"Deprecated:";
     opacity:0.3
-
 }
 .bks-history {
     display: none;
