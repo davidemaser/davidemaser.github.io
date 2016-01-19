@@ -32,7 +32,7 @@
       },
       {
         "id":3,
-        "type":"subsection",
+        "type":"header",
         "paragraph":"Pre-production Environments & Theme Repositories"
       },
       {
@@ -41,14 +41,29 @@
         "paragraph": "<p>Pre-production environment refers to non active themes on the production server that can be tested and validated prior to be published and pushed live. All themes reside in the theme repository and should be named to identify the latest working theme, the pre-production theme and the currently working theme (i.e version number, an explicit title \"current\", \"working\", \"mnew_feature\"...). Only very minor, non breaking changes should be applied to live theme items.</p><p>The pre-production theme repository has the same address as the production server (https://lasthunt.myshopify.com/admin)</p>"
       },
       {
+        "id": 1,
+        "type": "text",
+        "paragraph": "<p>The production environment refers to the live and theme repository environment. Avoid making major changes to the production environment unless a hot fix is necessary or minor style fixes must be made.</p><p>Any changes made to the live environment should be mirrored onto the dev and pre-prod environments.</p>"
+      },
+      {
+        "id":12,
+        "type":"warning",
+        "paragraph":"Do not make any changes to the config file in the live environment. All config changes MUST go through a full test in dev before being pushed live. Config files are versioned."
+      },
+      {
         "id":4,
-        "type":"subsection",
+        "type":"header",
         "paragraph":"Production Environments"
       },
       {
         "id":5,
         "type":"subsection",
         "paragraph":"Shopify Specifics"
+      },
+      {
+        "id": 1,
+        "type": "text",
+        "paragraph": "<p>Image repositories are the same no matter what environment the image is uploaded to. The CDN link will remain the same and doesn't need to be changed.</p><p>Shopify requires all links to be schemaless (i.e. //www.mydomain.com/)</p><p>JS, SCSS and CSS files in the Assets folder are not versioned</p><p>Ensure JS and SCSS .liquid file extension (i.e. app.js.liquid...) in order to use liquid variables within them</p>"
       }
     ]
   }
