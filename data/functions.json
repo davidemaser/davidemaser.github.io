@@ -33,7 +33,7 @@
       {
         "id": 4,
         "type": "pre",
-        "paragraph": "{<br />   \"hello\": [<br />     {<br />     \"helloItem\": \"hello0\",<br />       \"date\": {<br />         \"start\": \"11\/25\/2015 00:00\",<br />         \"end\": \"11\/04\/2015 00:00\"<br />       },<br />       \"text\": {<br />         \"en\": \"Looking for more styles, colour or sizes? Visit <a href=\"http://www.altitude-sports.com/en\">Altitude-sports.com</a>\",<br />         \"fr\": \"Vous cherchez plus de modèles, grandeurs ou couleurs ? <a href=\"http://www.altitude-sports.com/fr\">Visitez Altitude-sports.com</a>\"<br />       }<br />     }<br />   ]<br />}"      },
+        "paragraph": "{<br />   \"hello\": [<br />     {<br />     \"helloItem\": \"hello0\",<br />       \"date\": {<br />         \"start\": \"11\/25\/2015 00:00\",<br />         \"end\": \"11\/04\/2015 00:00\"<br />       },<br />       \"text\": {<br />         \"en\": \"Looking for more styles, colour or sizes? Visit &lt;a href=\"http://www.altitude-sports.com/en\"&gt;Altitude-sports.com&lt;/a&gt;\",<br />         \"fr\": \"Vous cherchez plus de modèles, grandeurs ou couleurs ? &lt;a href=\"http://www.altitude-sports.com/fr\"&gt;Visitez Altitude-sports.com&lt;/a&gt;\"<br />       }<br />     }<br />   ]<br />}"      },
       {
         "id":5,
         "type":"warning",
