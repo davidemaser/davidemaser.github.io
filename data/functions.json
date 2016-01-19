@@ -12,7 +12,7 @@
       },
       {
         "id":2,
-        "type":"underline-header",
+        "type":"header",
         "paragraph":"Hello Banner"
       },
       {
@@ -32,7 +32,7 @@
       },
       {
         "id":6,
-        "type":"underline-header",
+        "type":"header",
         "paragraph":"Navigation Menu"
       },
       {
@@ -57,7 +57,7 @@
       },
       {
         "id":11,
-        "type":"underline-header",
+        "type":"header",
         "paragraph":"Language Switcher"
       },
       {
@@ -67,7 +67,7 @@
       },
       {
         "id":13,
-        "type":"underline-header",
+        "type":"header",
         "paragraph":"Sale Labels"
       },
       {
@@ -77,7 +77,7 @@
       },
       {
         "id":15,
-        "type":"underline-header",
+        "type":"header",
         "paragraph":"Filtered Left Menu"
       },
       {
@@ -207,7 +207,7 @@
       },
       {
         "id":19,
-        "type":"underline-header",
+        "type":"header",
         "paragraph":"Compartmentalized Pre Footer"
       },
       {
@@ -217,7 +217,7 @@
       },
       {
         "id":21,
-        "type":"underline-header",
+        "type":"header",
         "paragraph":"Hero Banners"
       },
       {
@@ -333,7 +333,7 @@
       },
       {
         "id":28,
-        "type":"underline-header",
+        "type":"header",
         "paragraph":"Easy Shot"
       },
       {
@@ -348,7 +348,7 @@
       },
       {
         "id":31,
-        "type":"underline-header",
+        "type":"header",
         "paragraph":"Upcoming Events"
       },
       {
