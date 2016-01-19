@@ -52,7 +52,7 @@
       {
         "id":8,
         "type":"pre",
-        "paragraph":"{<br /> &quot;navitems&quot;: [<br /> {<br /> &quot;name_en&quot;: &quot;Men's&quot;,<br /> &quot;name_fr&quot;: &quot;Hommes&quot;,<br /> &quot;href&quot;: &quot;mens&quot;,<br /> &quot;level1&quot;: [<br /> {<br /> &quot;name_en&quot;: &quot;Jackets and vests&quot;,<br /> &quot;name_fr&quot;: &quot;Manteaux &amp; Vestes&quot;,<br /> &quot;href&quot;: &quot;jackets&quot;,<br /> &quot;visible&quot;: true,<br /> &quot;level2&quot;: [<br /> {<br /> &quot;name_en&quot;: &quot;Insulated&quot;,<br /> &quot;name_fr&quot;: &quot;Isol&eacute;s&quot;,<br /> &quot;href&quot;: &quot;insulated&quot;,<br /> &quot;visible&quot;: true }<br /> }]<br /> }]<br /> }"
+        "paragraph":"{<br />   &quot;navitems&quot;: [<br />      {<br />         &quot;name_en&quot;: &quot;Men's&quot;,<br />         &quot;name_fr&quot;: &quot;Hommes&quot;,<br />         &quot;href&quot;: &quot;mens&quot;,<br />         &quot;level1&quot;: [<br /> {<br />            &quot;name_en&quot;: &quot;Jackets and vests&quot;,<br />            &quot;name_fr&quot;: &quot;Manteaux &amp; Vestes&quot;,<br />            &quot;href&quot;: &quot;jackets&quot;,<br />            &quot;visible&quot;: true,<br />               &quot;level2&quot;: [<br /> {<br />               &quot;name_en&quot;: &quot;Insulated&quot;,<br />               &quot;name_fr&quot;: &quot;Isol&eacute;s&quot;,<br />               &quot;href&quot;: &quot;insulated&quot;,<br />               &quot;visible&quot;: true<br />               }<br />           }<br />         ]<br />      }<br />   ]<br />}"
       },
       {
         "id":9,
