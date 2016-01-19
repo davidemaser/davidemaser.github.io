@@ -296,7 +296,7 @@ function loadJSON(page){
                             b = '</p>';
                         break;
                     case "deprecated-text":
-                        a = '<p class="deprecated">';
+                        a = '<p class="deprecated" title="This is a deprecated feature. Refer to the guide to find the newest implementation method.">';
                         b = '</p>';
                         break;
                     case "italic":
