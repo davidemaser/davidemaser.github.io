@@ -7,9 +7,7 @@ $(document).mousemove( function(e) {
     mouseX = e.pageX;
     mouseY = e.pageY;
 });
-function Hilitor(id, tag)
-{
-
+function Hilitor(id, tag){
     var targetNode = document.getElementById(id) || document.body;
     var hiliteTag = tag || "EM";
     var skipTags = new RegExp("^(?:" + hiliteTag + "|SCRIPT|FORM|SPAN)$");
@@ -19,11 +17,8 @@ function Hilitor(id, tag)
     var matchRegex = "";
     var openLeft = false;
     var openRight = false;
-
-    this.setMatchType = function(type)
-    {
-        switch(type)
-        {
+    this.setMatchType = function(type){
+        switch(type){
             case "left":
                 this.openLeft = false;
                 this.openRight = true;
@@ -39,27 +34,21 @@ function Hilitor(id, tag)
                 this.openLeft = this.openRight = false;
         }
     };
-
-    this.setRegex = function(input)
-    {
+    this.setRegex = function(input){
         input = input.replace(/^[^\w]+|[^\w]+$/g, "").replace(/[^\w'-]+/g, "|");
         var re = "(" + input + ")";
         if(!this.openLeft) re = "\\b" + re;
         if(!this.openRight) re = re + "\\b";
         matchRegex = new RegExp(re, "i");
     };
-
-    this.getRegex = function()
-    {
+    this.getRegex = function(){
         var retval = matchRegex.toString();
         retval = retval.replace(/(^\/(\\b)?|\(|\)|(\\b)?\/i$)/g, "");
         retval = retval.replace(/\|/g, " ");
         return retval;
     };
-
     // recursively apply word highlighting
-    this.hiliteWords = function(node)
-    {
+    this.hiliteWords = function(node){
         if(node === undefined || !node) return;
         if(!matchRegex) return;
         if(skipTags.test(node.nodeName)) return;
@@ -86,10 +75,8 @@ function Hilitor(id, tag)
             }
         }
     };
-
     // remove highlighting
-    this.remove = function()
-    {
+    this.remove = function(){
         var arr = document.getElementsByTagName(hiliteTag);
         while(arr.length && (el = arr[0])) {
             var parent = el.parentNode;
@@ -97,10 +84,8 @@ function Hilitor(id, tag)
             parent.normalize();
         }
     };
-
     // start highlighting at target node
-    this.apply = function(input)
-    {
+    this.apply = function(input){
         this.remove();
         if(input === undefined || !input) return;
         this.setRegex(input);
@@ -108,9 +93,7 @@ function Hilitor(id, tag)
     };
 
 }
-
 var basket = [];
-
 function historyPush(that,dir){
     if(dir == 'f') {
         basket.push(that);

@@ -17,8 +17,7 @@
         var docElem, win,
             box = {top: 0, left: 0},
             doc = elem && elem.ownerDocument;
-
-        docElem = doc.documentElement;
+            docElem = doc.documentElement;
 
         if (typeof elem.getBoundingClientRect !== typeof undefined) {
             box = elem.getBoundingClientRect();
@@ -29,19 +28,15 @@
             left: box.left + win.pageXOffset - docElem.clientLeft
         };
     }
-
     function convertStyle(obj) {
         var style = '';
-
         for (var a in obj) {
             if (obj.hasOwnProperty(a)) {
                 style += (a + ':' + obj[a] + ';');
             }
         }
-
         return style;
     }
-
     var Effect = {
 
         // Effect delay
