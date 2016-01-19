@@ -12,13 +12,33 @@
       },
       {
         "id":2,
-        "type":"subsection",
+        "type":"header",
         "paragraph":"Development Environments"
+      },
+      {
+        "id": 1,
+        "type": "text",
+        "paragraph": "<p>The Last Hunt has a development website that is kept up to date with any changes made in the production environment. Any new functions, scripts or features must be tested in dev before being pushed to preprod and eventually prod. To access the dev server, got to https://tlh-dev-2.myshopify.com/admin/ and acces the online store > themes section.</p><p>Updates must be made manually to ensure that all environments are mirror copies of each other. If changes are made in dev, they must be exported as a new theme and then imported into the other environments. Once testing has been completed on the pre-prod theme, that theme can be activated and pushed into production.</p>"
+      },
+      {
+        "id": 1,
+        "type": "note",
+        "paragraph": "The dev server is not a shopify plus account and may, on rare occurrences, react somewhat differently."
+      },
+      {
+        "id": 1,
+        "type": "note",
+        "paragraph": "When making large changes to any aspect of the theme, it is important to duplicate the theme and use it as the new working development environment. If a revert is required, simply reactivate the last working theme."
       },
       {
         "id":3,
         "type":"subsection",
         "paragraph":"Pre-production Environments & Theme Repositories"
+      },
+      {
+        "id": 1,
+        "type": "text",
+        "paragraph": "<p>Pre-production environment refers to non active themes on the production server that can be tested and validated prior to be published and pushed live. All themes reside in the theme repository and should be named to identify the latest working theme, the pre-production theme and the currently working theme (i.e version number, an explicit title \"current\", \"working\", \"mnew_feature\"...). Only very minor, non breaking changes should be applied to live theme items.</p><p>The pre-production theme repository has the same address as the production server (https://lasthunt.myshopify.com/admin)</p>"
       },
       {
         "id":4,
