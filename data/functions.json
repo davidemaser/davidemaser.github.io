@@ -251,7 +251,7 @@
       },
       {
         "id":25,
-        "type":"pre",
+        "type":"deprecated-pre",
         "paragraph":"Code HTML (deprecated)<br /><br /> &lt;div style=\"display: none;\"&gt;<br /> &lt;div id=\"start_date\"&gt;July 1, 2015 00:00:00&lt;/div&gt;<br /> &lt;div id=\"end_date\"&gt;July 4, 2015 00:00:00&lt;/div&gt;<br /> &lt;div id=\"show_count\"&gt;true&lt;/div&gt;<br /> &lt;div id=\"ongoing_event\"&gt;true&lt;/div&gt;<br /> &lt;div id=\"promote_hero\"&gt;false&lt;/div&gt;<br /> &lt;div id=\"popup_link\"&gt;false&lt;/div&gt;<br /> &lt;div id=\"show_title\"&gt;true&lt;/div&gt;<br /> &lt;div id=\"show_subtitle\"&gt;false&lt;/div&gt;<br /> &lt;/div&gt;<br /> &lt;div id=\"event-active-today\"&gt;<br /> &lt;div class=\"event-active-bg\"&gt;&lt;img src=\"...\" /&gt;&lt;/div&gt;<br /> &lt;div class=\"event-active-content\"&gt;<br /> &lt;p class=\"headline\"&gt;TITLE&lt;/p&gt;<br /> &lt;p class=\"subtitle\"&gt;Subtitle (Optional)&lt;/p&gt;<br /> &lt;/div&gt;<br /> &lt;div class=\"event-active-cta\"&gt;&lt;a href=\"link\" class=\"action_button\"&gt; CTA &lt;/a&gt;&lt;/div&gt;<br /> &lt;/div&gt;<br /> |-|<br /> &lt;div id=\"event-active-today\"&gt;<br /> &lt;div class=\"event-active-bg\"&gt;&lt;img src=\"...\" /&gt;&lt;/div&gt;<br /> &lt;div class=\"event-active-content\"&gt;<br /> &lt;p class=\"headline\"&gt;TITLE&lt;/p&gt;<br /> &lt;p class=\"subtitle\"&gt;Subtitle (Optional)&lt;/p&gt;<br /> &lt;/div&gt;<br /> &lt;div class=\"event-active-cta\"&gt;&lt;a href=\"link\" class=\"action_button\"&gt; CTA &lt;/a&gt;&lt;/div&gt;<br /> &lt;/div&gt;<br />"
       },
       {

@@ -327,6 +327,10 @@ function loadJSON(page){
                         a = '<pre>';
                         b = '</pre>';
                         break;
+                    case "deprecated-pre":
+                        a = '<pre class="deprecated">';
+                        b = '</pre>';
+                        break;
                     case "bold-header":
                         a = '<h3 class="bold">';
                         b = '</3>';

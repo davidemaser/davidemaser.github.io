@@ -62,6 +62,10 @@ pre {
     position:relative;
     vertical-align: top;
 }
+pre.deprecated {
+    text-decoration: line-through;
+    background-color: rgba(255, 0, 0, 0.3)!important;
+}
 pre:before {
     content: "Source";
     position: absolute;
