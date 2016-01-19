@@ -18,13 +18,22 @@
       {
         "id":3,
         "type":"text",
-        "paragraph":"The new hello banner allows for messages to be displayed between specific dates by adding metafield values. The hello banner content is organized into a linklist whose content is fed from basic shopify pages. It can contain short text and links. The linklist is called HelloBar and can be found in the navigation sub menu of shopify admin. To add a new item, create a new page with your custom content and then add that page to the linklist. The Hello Banner is a multilingual element so to separate the English and French text, use the bar-slash-bar separator string. Example :"
+        "paragraph":"The new hello banner uses a JSON data source to display hello messages between specific date parameters. Hello banner JSON can be created using the Page Builder APP (click on Actions > Switch To Hello Banner Mode). To define the default hello banner message, add content to the Hello Bar Default Content in the customize theme settings using the bar-slash-bar (|-|) language convention . Example :"
       },
       {
         "id":4,
         "type":"pre",
         "paragraph":"Get your fill of sale items while they last. &lt;a href=&quot;collections/all&quot; title=&quot;All collections&quot;&gt;Click here&lt;/a&gt;.|-|Faites le plein d&apos;articles en solde avant qu&apos;ils ne disparaisent. &lt;a href=&quot;collections/all&quot; title=&quot;All collections&quot;&gt;Cliquez ici&lt;/a&gt;"
       },
+      {
+        "id": 3,
+        "type": "text",
+        "paragraph": "Sample JSON format for the hello banner is below. The default JSON source is hello-banners.json, found in the assets folder."
+      },
+      {
+        "id": 4,
+        "type": "pre",
+        "paragraph": "{<br />   \"hello\": [<br />     {\"helloItem\": \"hello0\",<br />       \"date\": {<br />         \"start\": \"11\/25\/2015 00:00\",<br />         \"end\": \"11\/04\/2015 00:00\"<br />       },<br />       \"text\": {<br />         \"en\": \"Looking for more styles, colour or sizes? Visit <a href=\"http://www.altitude-sports.com/en\">Altitude-sports.com</a>\",<br />         \"fr\": \"Vous cherchez plus de modèles, grandeurs ou couleurs ? <a href=\"http://www.altitude-sports.com/fr\">Visitez Altitude-sports.com</a>\"<br />       }<br />     }<br />   ]<br />}"      },
       {
         "id":5,
         "type":"warning",
