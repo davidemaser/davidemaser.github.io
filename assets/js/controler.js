@@ -272,8 +272,7 @@ function loadJSON(page){
                 var ctc = data.content.content[i].paragraph,
                 format = data.content.content[i].type,
                 type = typeof data.content.content[i].paragraph;
-                switch(format)
-                {
+                switch(format){
                     case "text":
                         var a = '<p>',
                             b = '</p>';
