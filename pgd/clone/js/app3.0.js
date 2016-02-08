@@ -28,6 +28,29 @@ function panelAlert(mess,state){
             setTimeout("$('.panel-body.bottom_level_bt').slideUp()", app.animation.d.max);
         }
 }
+function pushToStalk(){
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://altitude-sports.beanstalkapp.com/api/repositories/tlh-dev/node.json",
+        "method": "PUT",
+        "headers": {
+            "content-type": "application/json",
+            "password": "f2519d22b223e87f89d8fc86b5ae2a49a0720f5d1b26bb37",
+            "login": "davidemaser",
+            "user-agent": "App-TLH",
+            "authorization": "Basic ZGF2aWRlbWFzZXI6ZjI1MTlkMjJiMjIzZTg3Zjg5ZDhmYzg2YjVhZTJhNDlhMDcyMGY1ZDFiMjZiYjM3",
+            "cache-control": "no-cache",
+            "postman-token": "0d523b9d-8f20-5026-fbb4-75640e3745ee"
+        },
+        "processData": false,
+        "data": "{\n    \"branch\": \"vinnies-playhouse\",\n    \"commit_message\": \"Adding utility functions\",\n    \"path\": \"assets/newbanner.json\",\n    \"contents\": \"(defn- basename [path]\\n(.getName (File. ^String path)))\\n\"\n}"
+    }
+
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
+}
 function getVersion(init){
     /**
      * Recovers and displays the app version from
