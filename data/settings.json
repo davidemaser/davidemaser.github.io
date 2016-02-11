@@ -24,6 +24,11 @@
         "id":4,
         "type":"info",
         "paragraph":"Shopify has modified it's settings export functionalities. All config settings must be added or modified in the setting_schema file under the config root."
+      },
+      {
+        "id":5,
+        "type":"note",
+        "paragraph":"For more information about shopify's settings configuration click <a href=\"https://docs.shopify.com/themes/theme-development/storefront-editor/settings-schema\" target=\"_blank\">here</a>"
       }
     ]
   }
