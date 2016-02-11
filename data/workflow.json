@@ -11,6 +11,11 @@
         "paragraph": "This section is designed to help the developer understand TLH development workflows and protocols."
       },
       {
+        "id": 1,
+        "type": "note",
+        "paragraph": "For information about the Beanstalk Workflow process, refer to the confluence document <a href=\"https://altitude-sports.atlassian.net/wiki/display/AS/BEANSTALK+WORKFLOW+PROCESSES\">here</a>"
+      },
+      {
         "id":2,
         "type":"header",
         "paragraph":"Development Environments"
