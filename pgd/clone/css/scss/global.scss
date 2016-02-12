@@ -1231,10 +1231,19 @@ span.show_me_how {
 *[data-role="hello"] {
   display: none;
 }
+*[data-role="altiSpecial"] {
+  display: none;
+}
 body[data-nmode="hello"] *[data-role="hero"]{
   display: none;
 }
+body[data-nmode="hello"] *[data-role="altiSpecial"]{
+  display: none;
+}
 body[data-nmode="hero"] *[data-role="hello"]{
+  display: none;
+}
+body[data-nmode="hero"] *[data-role="altiSpecial"]{
   display: none;
 }
 //update init modal
