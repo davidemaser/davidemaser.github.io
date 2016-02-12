@@ -23,7 +23,7 @@
       {
         "id": 1,
         "type": "text",
-        "paragraph": "<p>The Last Hunt has a development website that is kept up to date with any changes made in the production environment. Any new functions, scripts or features must be tested in dev before being pushed to preprod and eventually prod. To access the dev server, got to https://tlh-dev-2.myshopify.com/admin/ and acces the online store > themes section.</p><p>Updates must be made manually to ensure that all environments are mirror copies of each other. If changes are made in dev, they must be exported as a new theme and then imported into the other environments. Once testing has been completed on the pre-prod theme, that theme can be activated and pushed into production.</p>"
+        "paragraph": "<p>There are two development websites. The DEV server must be kept up to date with any changes made in the production environment. Any new functions, scripts or features must be tested in dev before being pushed to preprod and eventually prod.</p><p>DEV   https://ldc-dev.myshopify.com.<br />DEV PLAN B  https://dernierechasse.myshopify.com.</p><p>Acces admin (/admin/) and access settings configs via online store > themes section.</p><p>Updates must be made manually to ensure that all environments are mirror copies of each other. If changes are made in dev, they must be exported as a new theme and then imported into the other environments. Once testing has been completed on the pre-prod theme, that theme can be activated and pushed into production.</p>"
       },
       {
         "id": 1,
