@@ -23,7 +23,12 @@
       {
         "id": 1,
         "type": "text",
-        "paragraph": "<p>There are two development websites. The DEV server must be kept up to date with any changes made in the production environment. Any new functions, scripts or features must be tested in dev before being pushed to preprod and eventually prod.</p><p>DEV   https://ldc-dev.myshopify.com.<br />DEV PLAN B  https://dernierechasse.myshopify.com.</p><p>Acces admin (/admin/) and access settings configs via online store > themes section.</p><p>Updates must be made manually to ensure that all environments are mirror copies of each other. If changes are made in dev, they must be exported as a new theme and then imported into the other environments. Once testing has been completed on the pre-prod theme, that theme can be activated and pushed into production.</p>"
+        "paragraph": "<p>There are two development websites. The DEV server must be kept up to date with any changes made in the production environment. Any new functions, scripts or features must be tested in dev before being pushed to preprod and eventually prod.</p><p>DEV   https://ldc-dev.myshopify.com.<br />DEV PLAN B  https://dernierechasse.myshopify.com.</p><p>Acces admin (/admin/) and access settings configs via online store > themes section.</p><p>Updates must be made manually to ensure that all environments are mirror copies of each other. If changes are made in dev, they must be exported as a new theme and then imported into the other environments. Once testing has been completed on the pre-prod theme, that theme can be activated and pushed into production.</p><p><em>See below for lines to add to your hosts file to access the sites via a common url</em></p>"
+      },
+      {
+        "id": 4,
+        "type": "pre",
+        "paragraph": "23.227.38.35	www.ladernierechasse.ca<br />23.227.38.35	www.thelasthunt.ca<br />23.227.38.68    www.ladernierechasse.fr<br />23.227.38.69    www.ladernierechasse.fr<br />23.227.38.70    www.ladernierechasse.fr<br />23.227.38.71    www.ladernierechasse.fr<br />23.227.38.68    www.thelasthunt.fr<br />        23.227.38.69    www.thelasthunt.fr<br />23.227.38.70    www.thelasthunt.fr<br />23.227.38.71    www.thelasthunt.fr"
       },
       {
         "id": 1,
