@@ -432,16 +432,13 @@ $(function () {
         }
     }
     function doLocalSave(method){
-        /**
-         * Save heros to localstorage or flush
-         */
         if(method == 'do' || method == null) {
-            $('#loadandsave-zone').attr(app.handlers.r, 'save').css('display', 'block');
+            $('#loadandsave-zone').attr('data-reason', 'save').css('display', 'block');
         }else if(method == 'reset'){
-            localStorage.setItem(app.storage.n,"");
+            localStorage.setItem('pgb_SavedNode_LS',"");
             for(var i=0, len=localStorage.length; i<len; i++) {
                 var key = localStorage.key(i);
-                if(key.indexOf('pgb_SavedNode_')>-1 && key.indexOf(app.storage.n)<0){
+                if(key.indexOf('pgb_SavedNode_')>-1 && key.indexOf('pgb_SavedNode_LS')<0){
                     localStorage.removeItem(key);
                 }
             }
