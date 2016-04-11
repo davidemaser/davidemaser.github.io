@@ -163,6 +163,9 @@ function initializeForm(){
                             if (blockContent[i].class !== '') {
                                 htmlBlock += ' class="' + blockContent[i].class + '"';
                             }
+                            if (blockContent[i].obj_label !== '') {
+                                htmlBlock += ' ' + blockContent[i].obj_label;
+                            }
                             if (blockContent[i].obj_id !== '') {
                                 htmlBlock += ' id="' + blockContent[i].obj_id + '" name="' + blockContent[i].obj_id + '"';
                             }
@@ -186,6 +189,9 @@ function initializeForm(){
                             htmlBlock += '<select';
                             if (blockContent[i].class !== '') {
                                 htmlBlock += ' class="form-control ' + blockContent[i].class + '"';
+                            }
+                            if (blockContent[i].obj_label !== '') {
+                                htmlBlock += ' ' + blockContent[i].obj_label;
                             }
                             if (blockContent[i].obj_id !== '') {
                                 htmlBlock += ' id="' + blockContent[i].obj_id + '" name="' + blockContent[i].obj_id + '"';
