@@ -816,7 +816,7 @@ $(function () {
          * function
          */
         var c = [];
-        if(mode == 'hero') {
+        if(mode == 'hero' || mode == '' || mode == null || mode == undefined) {
             $('.clonedInput form fieldset[data-role="hero"]').each(function(){
                 var a = $(this).serializeArray();
                 c.push(a);
@@ -824,6 +824,7 @@ $(function () {
             if (meth == 'full') {
                 outputJson(c, meth, null, mode);
             } else if (meth == 'save') {
+                console.log(meth+' : '+name+' : '+mode+' : '+c);
                 outputJson(c, meth, name, mode);
             }
         }else if(mode == 'hello') {
