@@ -509,27 +509,21 @@ $(function () {
         });
     }
     function saveNodeToLS(val,name){
-        /**
-         * Saves the form data in the pagebuilder form
-         * to a localstorage object. Creates a key-value
-         * relation and creates a second localstorage
-         * object with an array of savec heros
-         */
         if(window.localStorage) {
-            if(localStorage.getItem(app.storage.n) == null || localStorage.getItem(app.storage.n) == undefined){
-                localStorage.setItem(app.storage.n,"");
+            if(localStorage.getItem('pgb_SavedNode_LS') == null || localStorage.getItem('pgb_SavedNode_LS') == undefined){
+                localStorage.setItem('pgb_SavedNode_LS',"");
             }
-            var getList = localStorage.getItem(app.storage.n),
+            var getList = localStorage.getItem('pgb_SavedNode_LS'),
                 getListLen = getList.split(',').length;
             if(getListLen > 0){
                 var newList = getList+','+name;
             }else{
                 newList = name;
             }
-            localStorage.setItem(app.storage.n,newList);
-                    localStorage.setItem('pgb_SavedNode_'+name,val);
+            localStorage.setItem('pgb_SavedNode_LS',newList);
+            localStorage.setItem('pgb_SavedNode_'+name,val);
             panelAlert('Data Saved To Local Storage','good');
-            }
+        }
     }
     function addItems(){
         /**
