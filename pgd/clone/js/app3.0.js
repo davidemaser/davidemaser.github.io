@@ -801,8 +801,9 @@ $(function () {
             $(formEl).find('.objButtonPopupLink option[value="'+aCode[i].button.popUpLinkID+'"]').attr('selected',true).prop('selected',true);
             $(formEl).find('.objCountdownShow option[value="'+aCode[i].showCountdown+'"]').attr('selected',true).prop('selected',true);
             $(formEl).find('.objHeroSticky option[value="'+aCode[i].sticky+'"]').attr('selected',true).prop('selected',true);
-            $(formEl).find('.objHeroTitleShow').val(aCode[i].showTitle);
-            $(formEl).find('.objHeroSubtitleShow').val(aCode[i].showSubTitle);
+            $(formEl).find('.objHeroTitleShow option[value="'+aCode[i].showTitle+'"]').attr('selected',true).prop('selected',true);
+            $(formEl).find('.objHeroSubtitleShow option[value="'+aCode[i].showSubTitle+'"]').attr('selected',true).prop('selected',true);
+            //$(formEl).find('.objHeroSubtitleShow').val(aCode[i].showSubTitle);
             $(formEl).find('.objHeroPromote option[value="'+aCode[i].promote+'"]').attr('selected',true).prop('selected',true);
             console.log(aCode[i].active);
             if(aCode[i].active == true){
