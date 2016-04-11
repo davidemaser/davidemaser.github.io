@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ed53085-34d5-4ed7-8e2d-04ebf135fb37" name="Default" comment="Version update prompts">
+    <list default="true" id="5ed53085-34d5-4ed7-8e2d-04ebf135fb37" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pgd/clone/js/app3.0.js" afterPath="$PROJECT_DIR$/pgd/clone/js/app3.0.js" />
     </list>
@@ -102,13 +102,13 @@
       <file leaf-file-name="app3.0.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pgd/clone/js/app3.0.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.271012">
-              <caret line="179" column="29" selection-start-line="179" selection-start-column="29" selection-end-line="179" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.47512865">
+              <caret line="797" column="65" selection-start-line="797" selection-start-column="65" selection-end-line="797" selection-end-column="65" />
               <folding>
-                <marker date="1460402829103" expanded="true" signature="56651:56662" placeholder="..." />
-                <marker date="1460402829103" expanded="true" signature="56900:56911" placeholder="..." />
-                <marker date="1460402829103" expanded="true" signature="57028:57034" placeholder="..." />
-                <marker date="1460402829103" expanded="true" signature="57508:57518" placeholder="..." />
+                <marker date="1460403230429" expanded="true" signature="56783:56794" placeholder="..." />
+                <marker date="1460403230429" expanded="true" signature="57032:57043" placeholder="..." />
+                <marker date="1460403230429" expanded="true" signature="57160:57166" placeholder="..." />
+                <marker date="1460403230429" expanded="true" signature="57640:57650" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -423,12 +423,6 @@
       <option name="number" value="Default" />
       <updated>1437505987590</updated>
     </task>
-    <task id="LOCAL-00172" summary="New global definitions">
-      <created>1446840445698</created>
-      <option name="number" value="00172" />
-      <option name="project" value="LOCAL" />
-      <updated>1446840445698</updated>
-    </task>
     <task id="LOCAL-00173" summary="Version management">
       <created>1446840759056</created>
       <option name="number" value="00173" />
@@ -717,7 +711,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460402652254</updated>
     </task>
-    <option name="localTasksCounter" value="221" />
+    <task id="LOCAL-00221" summary="Another schema try&#10;">
+      <created>1460402847075</created>
+      <option name="number" value="00221" />
+      <option name="project" value="LOCAL" />
+      <updated>1460402847075</updated>
+    </task>
+    <option name="localTasksCounter" value="222" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -731,7 +731,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32846716" sideWeight="0.49973643" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="false" show_stripe_button="true" weight="0.334375" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" x="11" y="447" width="1897" height="293" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="false" show_stripe_button="true" weight="0.334375" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" x="11" y="475" width="1897" height="293" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -760,7 +760,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Added error item" />
     <MESSAGE value="Typo fix" />
     <MESSAGE value="Enforce line breaks" />
     <MESSAGE value="Minor fix" />
@@ -785,7 +784,8 @@
     <MESSAGE value="Revert OBJ 1" />
     <MESSAGE value="JSON catch error" />
     <MESSAGE value="Try fix title color class&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Try fix title color class&#10;" />
+    <MESSAGE value="Another schema try&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Another schema try&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -799,10 +799,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="651" column="40" selection-start-line="651" selection-start-column="40" selection-end-line="651" selection-end-column="40" />
           <folding>
-            <marker date="1460402829103" expanded="true" signature="56651:56662" placeholder="..." />
-            <marker date="1460402829103" expanded="true" signature="56900:56911" placeholder="..." />
-            <marker date="1460402829103" expanded="true" signature="57028:57034" placeholder="..." />
-            <marker date="1460402829103" expanded="true" signature="57508:57518" placeholder="..." />
+            <marker date="1460403230429" expanded="true" signature="56783:56794" placeholder="..." />
+            <marker date="1460403230429" expanded="true" signature="57032:57043" placeholder="..." />
+            <marker date="1460403230429" expanded="true" signature="57160:57166" placeholder="..." />
+            <marker date="1460403230429" expanded="true" signature="57640:57650" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1167,13 +1167,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/clone/js/app3.0.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.271012">
-          <caret line="179" column="29" selection-start-line="179" selection-start-column="29" selection-end-line="179" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.47512865">
+          <caret line="797" column="65" selection-start-line="797" selection-start-column="65" selection-end-line="797" selection-end-column="65" />
           <folding>
-            <marker date="1460402829103" expanded="true" signature="56651:56662" placeholder="..." />
-            <marker date="1460402829103" expanded="true" signature="56900:56911" placeholder="..." />
-            <marker date="1460402829103" expanded="true" signature="57028:57034" placeholder="..." />
-            <marker date="1460402829103" expanded="true" signature="57508:57518" placeholder="..." />
+            <marker date="1460403230429" expanded="true" signature="56783:56794" placeholder="..." />
+            <marker date="1460403230429" expanded="true" signature="57032:57043" placeholder="..." />
+            <marker date="1460403230429" expanded="true" signature="57160:57166" placeholder="..." />
+            <marker date="1460403230429" expanded="true" signature="57640:57650" placeholder="..." />
           </folding>
         </state>
       </provider>

@@ -782,35 +782,35 @@ $(function () {
         var jsLen = aCode.length;
         for(var i = 0;i<jsLen;i++){
             var jsForm = 'entry'+(i+1),
-            $this = '#'+jsForm;
-            $($this).find('.objStart').val(aCode[i].date.start);
-            $($this).find('.objEnd').val(aCode[i].date.end);
-            $($this).find('.objTitleEN').val(aCode[i].title.en);
-            $($this).find('.objTitleFR').val(aCode[i].title.fr);
-            $($this).find('.objTitleCol').val(aCode[i].title.color);
-            $($this).find('.objTextEN').val(aCode[i].text.en);
-            $($this).find('.objTextFR').val(aCode[i].text.fr);
-            $($this).find('.objImageMain').val(aCode[i].image.url);
-            $($this).find('.objImageAlt').val(aCode[i].image.altUrl);
-            $($this).find('.objButtonEN').val(aCode[i].button.label.en);
-            $($this).find('.objButtonFR').val(aCode[i].button.label.fr);
-            $($this).find('.objButtonLink').val(aCode[i].button.url);
-            $($this).find('.objDelay').val(aCode[i].date.delay);
-            $($this).find('.objButtonPopup option[value="'+aCode[i].popUpLink+'"]').attr('selected',true);
-            $($this).find('.objButtonPopupLink option[value="'+aCode[i].button.popUpLinkID+'"]').attr('selected',true);
-            $($this).find('.objCountdownShow option[value="'+aCode[i].showCountdown+'"]').attr('selected',true);
-            $($this).find('.objHeroSticky option[value="'+aCode[i].sticky+'"]').attr('selected',true);
-            //$($this).find('.objHeroTitleShow').val(aCode[i].showTitle);
-            //$($this).find('.objHeroSubtitleShow').val(aCode[i].showSubTitle);
-            $($this).find('.objHeroPromote option[value="'+aCode[i].promote+'"]').attr('selected',true);
+            formEl = '#'+jsForm;
+            $(formEl).find('.objStart').val(aCode[i].date.start);
+            $(formEl).find('.objEnd').val(aCode[i].date.end);
+            $(formEl).find('.objTitleEN').val(aCode[i].title.en);
+            $(formEl).find('.objTitleFR').val(aCode[i].title.fr);
+            $(formEl).find('.objTitleCol').val(aCode[i].title.color);
+            $(formEl).find('.objTextEN').val(aCode[i].text.en);
+            $(formEl).find('.objTextFR').val(aCode[i].text.fr);
+            $(formEl).find('.objImageMain').val(aCode[i].image.url);
+            $(formEl).find('.objImageAlt').val(aCode[i].image.altUrl);
+            $(formEl).find('.objButtonEN').val(aCode[i].button.label.en);
+            $(formEl).find('.objButtonFR').val(aCode[i].button.label.fr);
+            $(formEl).find('.objButtonLink').val(aCode[i].button.url);
+            $(formEl).find('.objDelay').val(aCode[i].date.delay);
+            $(formEl).find('.objButtonPopup option[value="'+aCode[i].popUpLink+'"]').attr('selected',true).prop('selected',true);
+            $(formEl).find('.objButtonPopupLink option[value="'+aCode[i].button.popUpLinkID+'"]').attr('selected',true).prop('selected',true);
+            $(formEl).find('.objCountdownShow option[value="'+aCode[i].showCountdown+'"]').attr('selected',true).prop('selected',true);
+            $(formEl).find('.objHeroSticky option[value="'+aCode[i].sticky+'"]').attr('selected',true).prop('selected',true);
+            $(formEl).find('.objHeroTitleShow').val(aCode[i].showTitle);
+            $(formEl).find('.objHeroSubtitleShow').val(aCode[i].showSubTitle);
+            $(formEl).find('.objHeroPromote option[value="'+aCode[i].promote+'"]').attr('selected',true).prop('selected',true);
             console.log(aCode[i].active);
             if(aCode[i].active == true){
-                $($this).find('.mod-radio').find('input[type="radio"]').first().prop('checked',true);
-                $($this).find('.mod-radio').find('input[type="radio"]').last().prop('checked',false);
+                $(formEl).find('.mod-radio').find('input[type="radio"]').first().prop('checked',true);
+                $(formEl).find('.mod-radio').find('input[type="radio"]').last().prop('checked',false);
             }else if(aCode[i].active == false){
-                $($this).find('.mod-radio').css('border-left-width','6px').css('border-left-style','solid').css('border-left-color','rgb(253, 0, 0)');
-                $($this).find('.mod-radio').find('input[type="radio"]').first().prop('checked',false);
-                $($this).find('.mod-radio').find('input[type="radio"]').last().prop('checked',true);
+                $(formEl).find('.mod-radio').css('border-left-width','6px').css('border-left-style','solid').css('border-left-color','rgb(253, 0, 0)');
+                $(formEl).find('.mod-radio').find('input[type="radio"]').first().prop('checked',false);
+                $(formEl).find('.mod-radio').find('input[type="radio"]').last().prop('checked',true);
             }
             if($(app.objects.o).css('display') == 'block'){
                 $(app.objects.o).hide();
