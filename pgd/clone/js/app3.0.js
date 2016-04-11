@@ -844,141 +844,145 @@ $(function () {
          * prepareJSON function and outputs JSON
          * formatted code to the output view
          */
-        var nodes = aCode.length;
-        var lastItem = nodes-1;
-        if(mode == 'hello'){
-            var page_model = '{\n    "hello": [\n';
-            for (var i = 0; i < nodes; i++) {
-                page_model += '       {\n        "helloItem": "hello' + i + '",';
-                page_model += '\n        "date": {';
-                page_model += '\n          "start": "' + aCode[i][0].value + '",';
-                page_model += '\n          "end": "' + aCode[i][1].value + '"';
-                page_model += '\n        },';
-                page_model += '\n        "text": {';
-                page_model += '\n          "en": "' + aCode[i][2].value.trim().replace(/"/g,'') + '",';
-                page_model += '\n          "fr": "' + aCode[i][3].value.trim().replace(/"/g,'') + '"';
-                page_model += '\n        }';
-                if (i < lastItem) {
-                    page_model += '\n},\n';
-                }
-            }
-            page_model += '\n      }\n   ]\n}';
-        }else if(mode == 'hero') {
-            page_model = '{\n    "hero": [\n';
-            for (i = 0; i < nodes; i++) {
-                //mapping
-                if (aCode[i][14].value == '' || aCode[i][14].value == null || aCode[i][14].value == undefined) {
-                    var elemA = true;
-                } else {
-                    elemA = aCode[i][14].value;
-                }
-                if (aCode[i][15].value == '' || aCode[i][15].value == null || aCode[i][15].value == undefined) {
-                    var elemAA = true;
-                } else {
-                    elemAA = aCode[i][15].value;
-                }
-                if (aCode[i][16].value == '' || aCode[i][16].value == null || aCode[i][16].value == undefined) {
-                    var elemAAA = true;
-                } else {
-                    elemAAA = aCode[i][16].value;
-                }
-                if (aCode[i][12].value == '' || aCode[i][12].value == null || aCode[i][12].value == undefined) {
-                    var elemB = false;
-                } else {
-                    elemB = aCode[i][12].value;
-                }
-                if (aCode[i][17].value == '' || aCode[i][17].value == null || aCode[i][17].value == undefined) {
-                    var elemC = false;
-                } else {
-                    elemC = aCode[i][17].value;
-                }
-                if (aCode[i][20] !== undefined) {
-                    if (aCode[i][20].value == '' || aCode[i][20].value == null || aCode[i][20].value == undefined) {
-                        var elemD = true;
-                    } else {
-                        elemD = aCode[i][20].value;
+            try {
+                var nodes = aCode.length;
+                var lastItem = nodes - 1;
+                if (mode == 'hello') {
+                    var page_model = '{\n    "hello": [\n';
+                    for (var i = 0; i < nodes; i++) {
+                        page_model += '       {\n        "helloItem": "hello' + i + '",';
+                        page_model += '\n        "date": {';
+                        page_model += '\n          "start": "' + aCode[i][0].value + '",';
+                        page_model += '\n          "end": "' + aCode[i][1].value + '"';
+                        page_model += '\n        },';
+                        page_model += '\n        "text": {';
+                        page_model += '\n          "en": "' + aCode[i][2].value.trim().replace(/"/g, '') + '",';
+                        page_model += '\n          "fr": "' + aCode[i][3].value.trim().replace(/"/g, '') + '"';
+                        page_model += '\n        }';
+                        if (i < lastItem) {
+                            page_model += '\n},\n';
+                        }
                     }
-                } else {
-                    elemD = true;
-                }
-                if (aCode[i][18] !== undefined) {
-                    if (aCode[i][18].value == '' || aCode[i][18].value == null || aCode[i][18].value == undefined) {
-                        var elemDD = false;
-                    } else {
-                        elemDD = aCode[i][18].value;
+                    page_model += '\n      }\n   ]\n}';
+                } else if (mode == 'hero') {
+                    page_model = '{\n    "hero": [\n';
+                    for (i = 0; i < nodes; i++) {
+                        //mapping
+                        if (aCode[i][14].value == '' || aCode[i][14].value == null || aCode[i][14].value == undefined) {
+                            var elemA = true;
+                        } else {
+                            elemA = aCode[i][14].value;
+                        }
+                        if (aCode[i][15].value == '' || aCode[i][15].value == null || aCode[i][15].value == undefined) {
+                            var elemAA = true;
+                        } else {
+                            elemAA = aCode[i][15].value;
+                        }
+                        if (aCode[i][16].value == '' || aCode[i][16].value == null || aCode[i][16].value == undefined) {
+                            var elemAAA = true;
+                        } else {
+                            elemAAA = aCode[i][16].value;
+                        }
+                        if (aCode[i][12].value == '' || aCode[i][12].value == null || aCode[i][12].value == undefined) {
+                            var elemB = false;
+                        } else {
+                            elemB = aCode[i][12].value;
+                        }
+                        if (aCode[i][17].value == '' || aCode[i][17].value == null || aCode[i][17].value == undefined) {
+                            var elemC = false;
+                        } else {
+                            elemC = aCode[i][17].value;
+                        }
+                        if (aCode[i][20] !== undefined) {
+                            if (aCode[i][20].value == '' || aCode[i][20].value == null || aCode[i][20].value == undefined) {
+                                var elemD = true;
+                            } else {
+                                elemD = aCode[i][20].value;
+                            }
+                        } else {
+                            elemD = true;
+                        }
+                        if (aCode[i][18] !== undefined) {
+                            if (aCode[i][18].value == '' || aCode[i][18].value == null || aCode[i][18].value == undefined) {
+                                var elemDD = false;
+                            } else {
+                                elemDD = aCode[i][18].value;
+                            }
+                        } else {
+                            elemDD = false;
+                        }
+                        if (aCode[i][19] !== undefined) {
+                            if (aCode[i][19].value == '' || aCode[i][19].value == null || aCode[i][19].value == undefined) {
+                                var elemE = 0;
+                            } else {
+                                elemE = aCode[i][19].value;
+                            }
+                        } else {
+                            elemE = 0;
+                        }
+                        page_model += '{\n        "heroId": "hero-elem' + i + '",';
+                        page_model += '\n        "active": ' + elemD + ',';
+                        page_model += '\n        "sticky": ' + elemDD + ',';
+                        page_model += '\n        "showCountdown": ' + elemA + ',';
+                        page_model += '\n        "popUpLink": ' + elemB + ',';
+                        page_model += '\n        "date": {';
+                        page_model += '\n          "start": "' + aCode[i][0].value + '",';
+                        page_model += '\n          "end": "' + aCode[i][1].value + '",';
+                        page_model += '\n          "delay": ' + elemE;
+                        page_model += '\n        },';
+                        page_model += '\n        "title": {';
+                        page_model += '\n          "en": "' + aCode[i][2].value.trim() + '",';
+                        page_model += '\n          "fr": "' + aCode[i][3].value.trim() + '",';
+                        page_model += '\n          "color": "' + aCode[i][4].value + '",';
+                        page_model += '\n          "showTitle": ' + elemAA;
+                        page_model += '\n        },';
+                        page_model += '\n        "text": {';
+                        page_model += '\n          "en": "' + aCode[i][5].value.trim() + '",';
+                        page_model += '\n          "fr": "' + aCode[i][6].value.trim() + '",';
+                        page_model += '\n          "showSubTitle": ' + elemAAA;
+                        page_model += '\n        },';
+                        page_model += '\n        "promote": ' + elemC + ',';
+                        page_model += '\n        "button": {';
+                        page_model += '\n          "label": {';
+                        page_model += '\n            "en": "' + aCode[i][9].value.trim() + '",';
+                        page_model += '\n            "fr": "' + aCode[i][10].value.trim() + '"';
+                        page_model += '\n          },';
+                        page_model += '\n        "url": "' + aCode[i][11].value + '",';
+                        page_model += '\n        "popUpLinkID": "' + aCode[i][13].value + '"';
+                        page_model += '\n        },';
+                        page_model += '\n        "image": {';
+                        page_model += '\n          "url": "' + aCode[i][7].value + '",';
+                        page_model += '\n          "altUrl": "' + aCode[i][8].value + '"';
+                        page_model += '\n        }';
+                        if (i < lastItem) {
+                            page_model += '\n},\n';
+                        }
                     }
-                } else {
-                    elemDD = false;
+                    page_model += '\n      }\n   ]\n}';
                 }
-                if (aCode[i][19] !== undefined) {
-                    if (aCode[i][19].value == '' || aCode[i][19].value == null || aCode[i][19].value == undefined) {
-                        var elemE = 0;
-                    } else {
-                        elemE = aCode[i][19].value;
+                if (meth == 'full') {
+                    if ($(app.objects.he).css('display') == 'block') {
+                        $(app.objects.he).css('display', 'none');
                     }
+                    if ($(app.objects.h).css('display') == 'block') {
+                        $(app.objects.h).css('display', 'none');
+                    }
+                    if ($(app.objects.ls).css('display') == 'block') {
+                        $(app.objects.ls).css('display', 'none');
+                    }
+                    $(app.objects.o).attr(app.handlers.r, 'output');
+                    $(app.objects.o).css('display', 'block');
+                    $(app.objects.o + ' textarea').val(page_model);
+                    $(app.objects.r).animate({scrollTop: 0}, app.animation.d.min).css('overflow', 'hidden');
+                    if (mode == 'hero') {
+                        errorHandler();
+                    }
+                    panelAlert('JSON Exported Successfuly', 'good');
                 } else {
-                    elemE = 0;
+                    saveNodeToLS(page_model, name);
                 }
-                page_model += '{\n        "heroId": "hero-elem' + i + '",';
-                page_model += '\n        "active": ' + elemD + ',';
-                page_model += '\n        "sticky": ' + elemDD + ',';
-                page_model += '\n        "showCountdown": ' + elemA + ',';
-                page_model += '\n        "popUpLink": ' + elemB + ',';
-                page_model += '\n        "date": {';
-                page_model += '\n          "start": "' + aCode[i][0].value + '",';
-                page_model += '\n          "end": "' + aCode[i][1].value + '",';
-                page_model += '\n          "delay": ' + elemE;
-                page_model += '\n        },';
-                page_model += '\n        "title": {';
-                page_model += '\n          "en": "' + aCode[i][2].value.trim() + '",';
-                page_model += '\n          "fr": "' + aCode[i][3].value.trim() + '",';
-                page_model += '\n          "color": "' + aCode[i][4].value + '",';
-                page_model += '\n          "showTitle": ' + elemAA;
-                page_model += '\n        },';
-                page_model += '\n        "text": {';
-                page_model += '\n          "en": "' + aCode[i][5].value.trim() + '",';
-                page_model += '\n          "fr": "' + aCode[i][6].value.trim() + '",';
-                page_model += '\n          "showSubTitle": ' + elemAAA;
-                page_model += '\n        },';
-                page_model += '\n        "promote": ' + elemC + ',';
-                page_model += '\n        "button": {';
-                page_model += '\n          "label": {';
-                page_model += '\n            "en": "' + aCode[i][9].value.trim() + '",';
-                page_model += '\n            "fr": "' + aCode[i][10].value.trim() + '"';
-                page_model += '\n          },';
-                page_model += '\n        "url": "' + aCode[i][11].value + '",';
-                page_model += '\n        "popUpLinkID": "' + aCode[i][13].value + '"';
-                page_model += '\n        },';
-                page_model += '\n        "image": {';
-                page_model += '\n          "url": "' + aCode[i][7].value + '",';
-                page_model += '\n          "altUrl": "' + aCode[i][8].value + '"';
-                page_model += '\n        }';
-                if (i < lastItem) {
-                    page_model += '\n},\n';
-                }
-            }
-            page_model += '\n      }\n   ]\n}';
-        }
-            if (meth == 'full') {
-                if ($(app.objects.he).css('display') == 'block') {
-                    $(app.objects.he).css('display', 'none');
-                }
-                if ($(app.objects.h).css('display') == 'block') {
-                    $(app.objects.h).css('display', 'none');
-                }
-                if ($(app.objects.ls).css('display') == 'block') {
-                    $(app.objects.ls).css('display', 'none');
-                }
-                $(app.objects.o).attr(app.handlers.r, 'output');
-                $(app.objects.o).css('display', 'block');
-                $(app.objects.o + ' textarea').val(page_model);
-                $(app.objects.r).animate({scrollTop: 0}, app.animation.d.min).css('overflow', 'hidden');
-                if(mode == 'hero'){
-                    errorHandler();
-                }
-                panelAlert('JSON Exported Successfuly', 'good');
-            } else {
-                saveNodeToLS(page_model, name);
+            }catch(e){
+                panelAlert('An unknown error has occured. Please make sure all required fields are filled.','error');
             }
     }
     function urlExists(testUrl) {
