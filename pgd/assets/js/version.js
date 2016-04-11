@@ -54,7 +54,7 @@ function loadJSON(){
             //setTimeout("console.log(global_v)",1000);
             builder += '<div class="object title"><h2>App Name : '+prj_name+'</h2></div>';
             builder += '<div class="object author"><h4><span class="label label-default" title="Author">'+prj_author+'</span></h4></div>';
-            builder += '<div class="object licensing"><h4><span class="label label-default" title="Author">'+prj_licensing+'</span></h4></div>';
+            builder += '<div class="object licensing"><h4><span class="label label-default" title="License">'+prj_licensing+'</span></h4></div>';
             builder += '<div class="object version"><h4><span class="label label-default" title="Version">'+prj_version+'</span></h4></div>';
             builder += '<div class="object revision"><h4><span class="label label-success" title="Revision">'+prj_revision+'</span></h4></div>';
             builder += '<div class="object build"><h4><span class="label label-primary" title="Build">'+prj_semantic.build+'</span></h4></div>';
