@@ -769,7 +769,6 @@ $(function () {
          * function and outputs it to the mapped form
          * element
          */
-            console.log(aCode);
         var jsLen = aCode.length;
         for(var i = 0;i<jsLen;i++){
             var jsForm = 'entry'+(i+1),
@@ -794,9 +793,7 @@ $(function () {
             $(formEl).find('.objHeroSticky option[value="'+aCode[i].sticky+'"]').attr('selected',true).prop('selected',true);
             $(formEl).find('.objHeroTitleShow option[value="'+aCode[i].title.showTitle+'"]').attr('selected',true).prop('selected',true);
             $(formEl).find('.objHeroSubtitleShow option[value="'+aCode[i].text.showSubTitle+'"]').attr('selected',true).prop('selected',true);
-            console.log(aCode[i].title.showTitle+' : '+aCode[i].text.showSubTitle);
             $(formEl).find('.objHeroPromote option[value="'+aCode[i].promote+'"]').attr('selected',true).prop('selected',true);
-            console.log(aCode[i].active);
             if(aCode[i].active == true){
                 $(formEl).find('.mod-radio').find('input[type="radio"]').first().prop('checked',true);
                 $(formEl).find('.mod-radio').find('input[type="radio"]').last().prop('checked',false);
