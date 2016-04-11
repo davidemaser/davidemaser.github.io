@@ -801,9 +801,9 @@ $(function () {
             $(formEl).find('.objButtonPopupLink option[value="'+aCode[i].button.popUpLinkID+'"]').attr('selected',true).prop('selected',true);
             $(formEl).find('.objCountdownShow option[value="'+aCode[i].showCountdown+'"]').attr('selected',true).prop('selected',true);
             $(formEl).find('.objHeroSticky option[value="'+aCode[i].sticky+'"]').attr('selected',true).prop('selected',true);
-            $(formEl).find('.objHeroTitleShow option[value="'+aCode[i].text.showTitle+'"]').attr('selected',true).prop('selected',true);
-            $(formEl).find('.objHeroSubtitleShow option[value="'+aCode[i].title.showSubTitle+'"]').attr('selected',true).prop('selected',true);
-            console.log(aCode[i].text.showTitle+' : '+aCode[i].title.showSubTitle);
+            $(formEl).find('.objHeroTitleShow option[value="'+aCode[i].title.showTitle+'"]').attr('selected',true).prop('selected',true);
+            $(formEl).find('.objHeroSubtitleShow option[value="'+aCode[i].text.showSubTitle+'"]').attr('selected',true).prop('selected',true);
+            console.log(aCode[i].title.showTitle+' : '+aCode[i].text.showSubTitle);
             $(formEl).find('.objHeroPromote option[value="'+aCode[i].promote+'"]').attr('selected',true).prop('selected',true);
             console.log(aCode[i].active);
             if(aCode[i].active == true){
