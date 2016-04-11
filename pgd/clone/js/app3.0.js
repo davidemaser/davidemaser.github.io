@@ -824,8 +824,8 @@ $(function () {
             if (meth == 'full') {
                 outputJson(c, meth, null, mode);
             } else if (meth == 'save') {
-                console.log(meth+' : '+name+' : '+mode+' : '+c);
-                outputJson(c, meth, name, mode);
+                console.log(c);
+                outputJson(c, meth, name, 'hello');
             }
         }else if(mode == 'hello') {
             $('.clonedInput form fieldset[data-role="hello"]').each(function(){
