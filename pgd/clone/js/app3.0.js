@@ -803,7 +803,7 @@ $(function () {
             $(formEl).find('.objHeroSticky option[value="'+aCode[i].sticky+'"]').attr('selected',true).prop('selected',true);
             $(formEl).find('.objHeroTitleShow option[value="'+aCode[i].showTitle+'"]').attr('selected',true).prop('selected',true);
             $(formEl).find('.objHeroSubtitleShow option[value="'+aCode[i].showSubTitle+'"]').attr('selected',true).prop('selected',true);
-            //$(formEl).find('.objHeroSubtitleShow').val(aCode[i].showSubTitle);
+            console.log(aCode[i].showTitle+' : '+aCode[i].showSubTitle);
             $(formEl).find('.objHeroPromote option[value="'+aCode[i].promote+'"]').attr('selected',true).prop('selected',true);
             console.log(aCode[i].active);
             if(aCode[i].active == true){
