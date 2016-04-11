@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ed53085-34d5-4ed7-8e2d-04ebf135fb37" name="Default" comment="">
+    <list default="true" id="5ed53085-34d5-4ed7-8e2d-04ebf135fb37" name="Default" comment="App update&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pgd/clone/js/app3.0.js" afterPath="$PROJECT_DIR$/pgd/clone/js/app3.0.js" />
     </list>
@@ -102,13 +102,13 @@
       <file leaf-file-name="app3.0.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pgd/clone/js/app3.0.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.50600344">
+            <state vertical-scroll-proportion="0.22813036">
               <caret line="798" column="76" selection-start-line="798" selection-start-column="76" selection-end-line="798" selection-end-column="76" />
               <folding>
-                <marker date="1460403453834" expanded="true" signature="56860:56871" placeholder="..." />
-                <marker date="1460403453834" expanded="true" signature="57109:57120" placeholder="..." />
-                <marker date="1460403453834" expanded="true" signature="57237:57243" placeholder="..." />
-                <marker date="1460403453834" expanded="true" signature="57717:57727" placeholder="..." />
+                <marker date="1460404165861" expanded="true" signature="57073:57084" placeholder="..." />
+                <marker date="1460404165861" expanded="true" signature="57322:57333" placeholder="..." />
+                <marker date="1460404165861" expanded="true" signature="57450:57456" placeholder="..." />
+                <marker date="1460404165861" expanded="true" signature="57930:57940" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -423,24 +423,6 @@
       <option name="number" value="Default" />
       <updated>1437505987590</updated>
     </task>
-    <task id="LOCAL-00174" summary="Version update prompts">
-      <created>1446844209035</created>
-      <option name="number" value="00174" />
-      <option name="project" value="LOCAL" />
-      <updated>1446844209035</updated>
-    </task>
-    <task id="LOCAL-00175" summary="Added features in initUpdate">
-      <created>1446846283386</created>
-      <option name="number" value="00175" />
-      <option name="project" value="LOCAL" />
-      <updated>1446846283390</updated>
-    </task>
-    <task id="LOCAL-00176" summary="Version update prompts (height fix)">
-      <created>1446846486486</created>
-      <option name="number" value="00176" />
-      <option name="project" value="LOCAL" />
-      <updated>1446846486486</updated>
-    </task>
     <task id="LOCAL-00177" summary="Release doc updates">
       <created>1446847312989</created>
       <option name="number" value="00177" />
@@ -717,7 +699,25 @@
       <option name="project" value="LOCAL" />
       <updated>1460403246784</updated>
     </task>
-    <option name="localTasksCounter" value="223" />
+    <task id="LOCAL-00223" summary="App update&#10;">
+      <created>1460403468764</created>
+      <option name="number" value="00223" />
+      <option name="project" value="LOCAL" />
+      <updated>1460403468764</updated>
+    </task>
+    <task id="LOCAL-00224" summary="looking good&#10;">
+      <created>1460403871793</created>
+      <option name="number" value="00224" />
+      <option name="project" value="LOCAL" />
+      <updated>1460403871793</updated>
+    </task>
+    <task id="LOCAL-00225" summary="App update&#10;">
+      <created>1460404065522</created>
+      <option name="number" value="00225" />
+      <option name="project" value="LOCAL" />
+      <updated>1460404065522</updated>
+    </task>
+    <option name="localTasksCounter" value="226" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -731,7 +731,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32846716" sideWeight="0.49973643" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="false" show_stripe_button="true" weight="0.334375" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" x="11" y="503" width="1897" height="293" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="true" show_stripe_button="true" weight="0.334375" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" x="11" y="503" width="1887" height="291" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -760,8 +760,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Enforce line breaks" />
-    <MESSAGE value="Minor fix" />
     <MESSAGE value="App JS commit" />
     <MESSAGE value="Settings JSON mod" />
     <MESSAGE value="Added node" />
@@ -785,7 +783,9 @@
     <MESSAGE value="Try fix title color class&#10;" />
     <MESSAGE value="Another schema try&#10;" />
     <MESSAGE value="Correct $this definition&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correct $this definition&#10;" />
+    <MESSAGE value="looking good&#10;" />
+    <MESSAGE value="App update&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="App update&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -799,10 +799,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="651" column="40" selection-start-line="651" selection-start-column="40" selection-end-line="651" selection-end-column="40" />
           <folding>
-            <marker date="1460403453834" expanded="true" signature="56860:56871" placeholder="..." />
-            <marker date="1460403453834" expanded="true" signature="57109:57120" placeholder="..." />
-            <marker date="1460403453834" expanded="true" signature="57237:57243" placeholder="..." />
-            <marker date="1460403453834" expanded="true" signature="57717:57727" placeholder="..." />
+            <marker date="1460404165861" expanded="true" signature="57073:57084" placeholder="..." />
+            <marker date="1460404165861" expanded="true" signature="57322:57333" placeholder="..." />
+            <marker date="1460404165861" expanded="true" signature="57450:57456" placeholder="..." />
+            <marker date="1460404165861" expanded="true" signature="57930:57940" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1167,13 +1167,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/clone/js/app3.0.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50600344">
+        <state vertical-scroll-proportion="0.22813036">
           <caret line="798" column="76" selection-start-line="798" selection-start-column="76" selection-end-line="798" selection-end-column="76" />
           <folding>
-            <marker date="1460403453834" expanded="true" signature="56860:56871" placeholder="..." />
-            <marker date="1460403453834" expanded="true" signature="57109:57120" placeholder="..." />
-            <marker date="1460403453834" expanded="true" signature="57237:57243" placeholder="..." />
-            <marker date="1460403453834" expanded="true" signature="57717:57727" placeholder="..." />
+            <marker date="1460404165861" expanded="true" signature="57073:57084" placeholder="..." />
+            <marker date="1460404165861" expanded="true" signature="57322:57333" placeholder="..." />
+            <marker date="1460404165861" expanded="true" signature="57450:57456" placeholder="..." />
+            <marker date="1460404165861" expanded="true" signature="57930:57940" placeholder="..." />
           </folding>
         </state>
       </provider>
