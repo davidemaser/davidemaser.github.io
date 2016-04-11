@@ -796,6 +796,7 @@ $(function () {
             $(formEl).find('.objButtonFR').val(aCode[i].button.label.fr);
             $(formEl).find('.objButtonLink').val(aCode[i].button.url);
             $(formEl).find('.objDelay').val(aCode[i].date.delay);
+            $(formEl).find('.objCountdownShow').val(aCode[i].showCountdown);
             $(formEl).find('.objButtonPopup option[value="'+aCode[i].popUpLink+'"]').attr('selected',true).prop('selected',true);
             $(formEl).find('.objButtonPopupLink option[value="'+aCode[i].button.popUpLinkID+'"]').attr('selected',true).prop('selected',true);
             $(formEl).find('.objCountdownShow option[value="'+aCode[i].showCountdown+'"]').attr('selected',true).prop('selected',true);
