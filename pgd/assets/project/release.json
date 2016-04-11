@@ -2,6 +2,8 @@
   "project":{
     "name":"Page Builder",
     "version":"3.1.4",
+    "author":"David Maser",
+    "licensing":"MIT",
     "revision":"2",
     "downloadlink":"https://drive.google.com/file/d/0B4onXKnKkE6AY0JiVlZ3bG9scmM/view?usp=sharing",
     "semantic":{
