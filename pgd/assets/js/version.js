@@ -30,6 +30,24 @@ function loadVersion(){
         dataType:'json'
     });
 }
+function initChomper(){
+    try {
+        var apiKey = 'ae8447SA90@18d',
+            blocks = [],
+            a = $('body').find('chomper');
+        if (a.length > 0) {
+            var b = a.children();
+            chompCode(true, b);
+        }
+    }catch(e){
+
+    }
+}
+function chompCode(work,organs){
+    if(work === true){
+        console.log(organs);
+    }
+}
 function loadJSON(){
     loadVersion();
     $.ajax({
