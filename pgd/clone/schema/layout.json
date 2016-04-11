@@ -144,7 +144,7 @@
             ],
             "obj_label": "objTitleCol",
             "obj_id": "title_color",
-            "class": "select_ttl",
+            "class": "select_ttl objTitleCol",
             "required": true,
             "validate": true,
             "actions": "",
