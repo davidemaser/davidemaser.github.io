@@ -615,6 +615,7 @@ $(function () {
                     $('.snapTo').find('.gotoItem['+app.handlers.i+'="'+elem+'"]').parent().remove();
                     scrollState('a');
                 }
+            panelAlert('Last Item Removed','good');
                 return false; // Removes the last section you added
         }
     }
@@ -1328,6 +1329,7 @@ $(function () {
         if(window.localStorage) {
             localStorage.setItem('pgb_Theme', a);
         }
+        panelAlert('Theme Settings Updated','good');
         e.preventDefault();
     }).on('click','.moveUpThisItem',function(fn){
         var a = $(this).data('item'),
@@ -1343,6 +1345,7 @@ $(function () {
             //$(d).closest(app.objects.cl).prev();
         $(this).parent().parent().parent().find('.reordered').remove();
         $(this).parent().parent().parent().find('.btn.btn-info:not(.dropdown-toggle)').prepend('<span title="This entry has been moved from it\'s original position" class="glyphicon glyphicon-fullscreen reordered" aria-hidden="true"></span>');
+        panelAlert('Item Order Changed','good');
         fn.preventDefault();
     }).on('click','.moveDownThisItem',function(fn){
         var a = $(this).data('item'),
@@ -1359,6 +1362,7 @@ $(function () {
                 }, app.animation.d.min);
                 $(this).parent().parent().parent().find('.reordered').remove();
                 $(this).parent().parent().parent().find('.btn.btn-info:not(.dropdown-toggle)').prepend('<span title="This entry has been moved from it\'s original position" class="glyphicon glyphicon-fullscreen reordered" aria-hidden="true"></span>');
+                panelAlert('Item Order Changed','good');
             }else{
                 panelAlert('If I move down any further, I\'ll be off the page.','error');
             }
