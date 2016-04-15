@@ -70,12 +70,12 @@
         <entry file="file://$PROJECT_DIR$/pgd/clone/js/app3.0.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="245">
-              <caret line="788" column="45" selection-start-line="788" selection-start-column="45" selection-end-line="788" selection-end-column="45" />
+              <caret line="788" column="52" selection-start-line="788" selection-start-column="52" selection-end-line="788" selection-end-column="52" />
               <folding>
-                <marker date="1460748186422" expanded="true" signature="57234:57245" placeholder="..." />
-                <marker date="1460748186422" expanded="true" signature="57483:57494" placeholder="..." />
-                <marker date="1460748186422" expanded="true" signature="57611:57617" placeholder="..." />
-                <marker date="1460748186422" expanded="true" signature="58091:58101" placeholder="..." />
+                <marker date="1460748264942" expanded="true" signature="57241:57252" placeholder="..." />
+                <marker date="1460748264942" expanded="true" signature="57490:57501" placeholder="..." />
+                <marker date="1460748264942" expanded="true" signature="57618:57624" placeholder="..." />
+                <marker date="1460748264942" expanded="true" signature="58098:58108" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -432,14 +432,7 @@
       <option name="presentableId" value="Default" />
       <updated>1437505987590</updated>
       <workItem from="1460744390167" duration="436000" />
-      <workItem from="1460746926250" duration="1261000" />
-    </task>
-    <task id="LOCAL-00199" summary="Version update prompts">
-      <created>1453221085127</created>
-      <option name="number" value="00199" />
-      <option name="presentableId" value="LOCAL-00199" />
-      <option name="project" value="LOCAL" />
-      <updated>1453221085127</updated>
+      <workItem from="1460746926250" duration="1340000" />
     </task>
     <task id="LOCAL-00200" summary="Version update prompts">
       <created>1453221583071</created>
@@ -777,11 +770,18 @@
       <option name="project" value="LOCAL" />
       <updated>1460747916642</updated>
     </task>
-    <option name="localTasksCounter" value="248" />
+    <task id="LOCAL-00248" summary="Pane alert change">
+      <created>1460748194400</created>
+      <option name="number" value="00248" />
+      <option name="presentableId" value="LOCAL-00248" />
+      <option name="project" value="LOCAL" />
+      <updated>1460748194400</updated>
+    </task>
+    <option name="localTasksCounter" value="249" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1697000" />
+    <option name="totallyTimeSpent" value="1776000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1920" height="1056" extended-state="6" />
@@ -1272,12 +1272,12 @@
     <entry file="file://$PROJECT_DIR$/pgd/clone/js/app3.0.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
-          <caret line="788" column="45" selection-start-line="788" selection-start-column="45" selection-end-line="788" selection-end-column="45" />
+          <caret line="788" column="52" selection-start-line="788" selection-start-column="52" selection-end-line="788" selection-end-column="52" />
           <folding>
-            <marker date="1460748186422" expanded="true" signature="57234:57245" placeholder="..." />
-            <marker date="1460748186422" expanded="true" signature="57483:57494" placeholder="..." />
-            <marker date="1460748186422" expanded="true" signature="57611:57617" placeholder="..." />
-            <marker date="1460748186422" expanded="true" signature="58091:58101" placeholder="..." />
+            <marker date="1460748264942" expanded="true" signature="57241:57252" placeholder="..." />
+            <marker date="1460748264942" expanded="true" signature="57490:57501" placeholder="..." />
+            <marker date="1460748264942" expanded="true" signature="57618:57624" placeholder="..." />
+            <marker date="1460748264942" expanded="true" signature="58098:58108" placeholder="..." />
           </folding>
         </state>
       </provider>

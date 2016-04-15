@@ -786,7 +786,7 @@ $(function () {
             $(formEl).find('.objButtonEN').val(aCode[i].button.label.en);
             $(formEl).find('.objButtonFR').val(aCode[i].button.label.fr);
             $(formEl).find('.objButtonLink').val(aCode[i].button.url);
-            console.log(aCode[i].date.delay);
+            console.log(isNaN(aCode[i].date.delay));
             if(isNaN(aCode[i].date.delay) == true){
                 panelAlert('Make sure to set all delay entires to a numerical value manually.','error');
                 console.log('Error in delay string');
