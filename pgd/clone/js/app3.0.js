@@ -873,8 +873,9 @@ $(function () {
                     page_model = '{\n    "hero": [\n';
                     for (i = 0; i < nodes; i++) {
                         //mapping
+                        console.log(aCode[i][13].value);
                         if (aCode[i][13].value == '' || aCode[i][13].value == null || aCode[i][13].value == undefined) {
-                            var elemAAAA = 'true';
+                            var elemAAAA = 'null';
                         } else {
                             elemAAAA = aCode[i][13].value;
                         }
