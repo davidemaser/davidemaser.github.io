@@ -873,7 +873,7 @@ $(function () {
                     page_model = '{\n    "hero": [\n';
                     for (i = 0; i < nodes; i++) {
                         //mapping
-                        console.log(aCode[i][13].value);
+                        console.log(aCode[i]);
                         if (aCode[i][13].value == '' || aCode[i][13].value == null || aCode[i][13].value == undefined) {
                             var elemAAAA = 'null';
                         } else {
