@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ed53085-34d5-4ed7-8e2d-04ebf135fb37" name="Default" comment="App update&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    <list default="true" id="5ed53085-34d5-4ed7-8e2d-04ebf135fb37" name="Default" comment="Pane alert change">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pgd/clone/js/app3.0.js" afterPath="$PROJECT_DIR$/pgd/clone/js/app3.0.js" />
+    </list>
+    <list id="58049a34-def5-4539-914e-a97403d460f8" name="New changelist" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="davidemaser.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,18 +31,28 @@
       <file leaf-file-name="release.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pgd/assets/project/release.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-62.666668">
-              <caret line="94" column="7" selection-start-line="94" selection-start-column="7" selection-end-line="94" selection-end-column="7" />
+            <state relative-caret-position="90">
+              <caret line="5" column="14" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="faq.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/faq.json">
+      <file leaf-file-name="version.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pgd/assets/js/version.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="229" column="47" selection-start-line="229" selection-start-column="47" selection-end-line="229" selection-end-column="47" />
+            <state relative-caret-position="846">
+              <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pgd/assets/css/app.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -48,52 +61,8 @@
       <file leaf-file-name="intro.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/intro.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.0">
+            <state relative-caret-position="162">
               <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pgd/clone/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="139" column="25" selection-start-line="139" selection-start-column="25" selection-end-line="139" selection-end-column="25" />
-              <folding>
-                <element signature="n#style#0;n#select#0;n#div#1;n#div#0;n#div#7;n#fieldset#1;n#form#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="79" column="65" selection-start-line="79" selection-start-column="65" selection-end-line="79" selection-end-column="65" />
-              <folding>
-                <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="globals.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pgd/clone/js/globals.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="global.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pgd/clone/css/scss/global.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.7407407">
-              <caret line="1259" column="14" selection-start-line="1259" selection-start-column="14" selection-end-line="1259" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -102,14 +71,86 @@
       <file leaf-file-name="app3.0.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pgd/clone/js/app3.0.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22813036">
-              <caret line="798" column="76" selection-start-line="798" selection-start-column="76" selection-end-line="798" selection-end-column="76" />
+            <state relative-caret-position="198">
+              <caret line="790" column="17" selection-start-line="790" selection-start-column="17" selection-end-line="790" selection-end-column="17" />
               <folding>
-                <marker date="1460404165861" expanded="true" signature="57073:57084" placeholder="..." />
-                <marker date="1460404165861" expanded="true" signature="57322:57333" placeholder="..." />
-                <marker date="1460404165861" expanded="true" signature="57450:57456" placeholder="..." />
-                <marker date="1460404165861" expanded="true" signature="57930:57940" placeholder="..." />
+                <marker date="1460747227169" expanded="true" signature="56971:56982" placeholder="..." />
+                <marker date="1460747227169" expanded="true" signature="57220:57231" placeholder="..." />
+                <marker date="1460747227169" expanded="true" signature="57348:57354" placeholder="..." />
+                <marker date="1460747227169" expanded="true" signature="57828:57838" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pgd/assets/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+              <folding>
+                <marker date="1443023071671" expanded="true" signature="5678:5692" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="5857:5868" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="6032:6046" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="6916:6930" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="7095:7106" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="7270:7284" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="21508:21523" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="21554:21568" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="21599:21611" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="21642:21653" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="21684:21699" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="21730:21744" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="21775:21787" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="21818:21829" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="23963:23978" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="24009:24023" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="24054:24066" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="24097:24108" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="24139:24154" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="24185:24199" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="24230:24242" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="24273:24284" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="28214:28228" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="28400:28411" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="28583:28597" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="30130:30141" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="32036:32051" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="32081:32095" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="32125:32137" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="32167:32178" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="32208:32223" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="32253:32267" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="32297:32309" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="32339:32350" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="32463:32478" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="32508:32522" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="32552:32564" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="32594:32605" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="32635:32650" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="32680:32694" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="32724:32736" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="32766:32777" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="39396:39410" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="44909:44924" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="44954:44968" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="44998:45010" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="45040:45051" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="45081:45096" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="45126:45140" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="45170:45182" placeholder="..." />
+                <marker date="1443023071671" expanded="true" signature="45212:45223" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="release.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pgd/release.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1332">
+              <caret line="74" column="31" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -117,7 +158,7 @@
       <file leaf-file-name="layout.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pgd/clone/schema/layout.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.189655">
+            <state relative-caret-position="2628">
               <caret line="146" column="46" selection-start-line="146" selection-start-column="46" selection-end-line="146" selection-end-column="46" />
               <folding />
             </state>
@@ -129,6 +170,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="David David Maser &lt;davidelmaser@gmail.com&gt;" />
         <option value="David Maser" />
         <option value="David Maser &lt;davidelmaser@gmail.com&gt;" />
       </list>
@@ -143,10 +185,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pgd/assets/js/version.js" />
-        <option value="$PROJECT_DIR$/pgd/release.html" />
         <option value="$PROJECT_DIR$/pgd/assets/js/app.min.js" />
-        <option value="$PROJECT_DIR$/pgd/assets/css/app.css" />
         <option value="$PROJECT_DIR$/pgd/assets/js/validate-json.js" />
         <option value="$PROJECT_DIR$/pgd/Clone-section-of-form-using-jQuery-master/dynamic-form-bootstrap-3-0.html" />
         <option value="$PROJECT_DIR$/pgd/Clone-section-of-form-using-jQuery-master/js/clone-form-td.js" />
@@ -165,7 +204,6 @@
         <option value="$PROJECT_DIR$/pgd/clone/.gitignore" />
         <option value="$PROJECT_DIR$/pgd/clone/js/app3.0.min.js" />
         <option value="$PROJECT_DIR$/pgd/clone/js/globals.js" />
-        <option value="$PROJECT_DIR$/pgd/assets/project/release.json" />
         <option value="$PROJECT_DIR$/faq.json" />
         <option value="$PROJECT_DIR$/pgd/clone/css/scss/global.scss" />
         <option value="$PROJECT_DIR$/pgd/clone/js/app3.0-b.js" />
@@ -182,6 +220,10 @@
         <option value="$PROJECT_DIR$/assets/scss/app.scss" />
         <option value="$PROJECT_DIR$/data/workflow.json" />
         <option value="$PROJECT_DIR$/pgd/clone/schema/layout.json" />
+        <option value="$PROJECT_DIR$/pgd/assets/project/release.json" />
+        <option value="$PROJECT_DIR$/pgd/assets/css/app.css" />
+        <option value="$PROJECT_DIR$/pgd/assets/js/version.js" />
+        <option value="$PROJECT_DIR$/pgd/release.html" />
         <option value="$PROJECT_DIR$/pgd/clone/js/app3.0.js" />
       </list>
     </option>
@@ -196,9 +238,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="-4" />
+    <option name="y" value="24" />
     <option name="width" value="1920" />
-    <option name="height" value="1084" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -225,6 +267,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -233,110 +277,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="davidemaser.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="davidemaser.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="davidemaser.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="davidemaser.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pgd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="davidemaser.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="davidemaser.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pgd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="clone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="davidemaser.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="davidemaser.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pgd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="clone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="schema" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="davidemaser.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="davidemaser.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pgd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="clone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="davidemaser.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="davidemaser.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -397,6 +339,7 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile />
       <tasks />
@@ -408,11 +351,14 @@
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
       <command value="run-script" />
       <scripts />
+      <node-interpreter value="project" />
       <envs />
       <method />
     </configuration>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -421,317 +367,372 @@
       <changelist id="5ed53085-34d5-4ed7-8e2d-04ebf135fb37" name="Default" comment="" />
       <created>1437505987590</created>
       <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
       <updated>1437505987590</updated>
-    </task>
-    <task id="LOCAL-00177" summary="Release doc updates">
-      <created>1446847312989</created>
-      <option name="number" value="00177" />
-      <option name="project" value="LOCAL" />
-      <updated>1446847312989</updated>
-    </task>
-    <task id="LOCAL-00178" summary="Global updates">
-      <created>1447078917765</created>
-      <option name="number" value="00178" />
-      <option name="project" value="LOCAL" />
-      <updated>1447078917765</updated>
-    </task>
-    <task id="LOCAL-00179" summary="Active hero fix">
-      <created>1447173436921</created>
-      <option name="number" value="00179" />
-      <option name="project" value="LOCAL" />
-      <updated>1447173436921</updated>
-    </task>
-    <task id="LOCAL-00180" summary="Added error item">
-      <created>1447173623584</created>
-      <option name="number" value="00180" />
-      <option name="project" value="LOCAL" />
-      <updated>1447173623584</updated>
-    </task>
-    <task id="LOCAL-00181" summary="Version update prompts">
-      <created>1449852447304</created>
-      <option name="number" value="00181" />
-      <option name="project" value="LOCAL" />
-      <updated>1449852447304</updated>
-    </task>
-    <task id="LOCAL-00182" summary="Typo fix">
-      <created>1449862126331</created>
-      <option name="number" value="00182" />
-      <option name="project" value="LOCAL" />
-      <updated>1449862126331</updated>
-    </task>
-    <task id="LOCAL-00183" summary="Enforce line breaks">
-      <created>1449862293896</created>
-      <option name="number" value="00183" />
-      <option name="project" value="LOCAL" />
-      <updated>1449862293896</updated>
-    </task>
-    <task id="LOCAL-00184" summary="Minor fix">
-      <created>1452612218228</created>
-      <option name="number" value="00184" />
-      <option name="project" value="LOCAL" />
-      <updated>1452612218233</updated>
-    </task>
-    <task id="LOCAL-00185" summary="App JS commit">
-      <created>1452612266713</created>
-      <option name="number" value="00185" />
-      <option name="project" value="LOCAL" />
-      <updated>1452612266713</updated>
-    </task>
-    <task id="LOCAL-00186" summary="Settings JSON mod">
-      <created>1452612480529</created>
-      <option name="number" value="00186" />
-      <option name="project" value="LOCAL" />
-      <updated>1452612480529</updated>
-    </task>
-    <task id="LOCAL-00187" summary="Added node">
-      <created>1453138119932</created>
-      <option name="number" value="00187" />
-      <option name="project" value="LOCAL" />
-      <updated>1453138119932</updated>
-    </task>
-    <task id="LOCAL-00188" summary="New workflow JSON">
-      <created>1453138553660</created>
-      <option name="number" value="00188" />
-      <option name="project" value="LOCAL" />
-      <updated>1453138553660</updated>
-    </task>
-    <task id="LOCAL-00189" summary="Version update prompts">
-      <created>1453138913712</created>
-      <option name="number" value="00189" />
-      <option name="project" value="LOCAL" />
-      <updated>1453138913712</updated>
-    </task>
-    <task id="LOCAL-00190" summary="Version update prompts">
-      <created>1453139028265</created>
-      <option name="number" value="00190" />
-      <option name="project" value="LOCAL" />
-      <updated>1453139028265</updated>
-    </task>
-    <task id="LOCAL-00191" summary="Controler mods">
-      <created>1453139110316</created>
-      <option name="number" value="00191" />
-      <option name="project" value="LOCAL" />
-      <updated>1453139110316</updated>
-    </task>
-    <task id="LOCAL-00192" summary="Updates lang and json">
-      <created>1453139245373</created>
-      <option name="number" value="00192" />
-      <option name="project" value="LOCAL" />
-      <updated>1453139245373</updated>
-    </task>
-    <task id="LOCAL-00193" summary="Version update prompts">
-      <created>1453218526860</created>
-      <option name="number" value="00193" />
-      <option name="project" value="LOCAL" />
-      <updated>1453218526860</updated>
-    </task>
-    <task id="LOCAL-00194" summary="Worflow info mod">
-      <created>1453219432264</created>
-      <option name="number" value="00194" />
-      <option name="project" value="LOCAL" />
-      <updated>1453219432264</updated>
-    </task>
-    <task id="LOCAL-00195" summary="Minor header fix">
-      <created>1453219528072</created>
-      <option name="number" value="00195" />
-      <option name="project" value="LOCAL" />
-      <updated>1453219528072</updated>
+      <workItem from="1460744390167" duration="436000" />
+      <workItem from="1460746926250" duration="329000" />
     </task>
     <task id="LOCAL-00196" summary="Version update prompts">
       <created>1453219667784</created>
       <option name="number" value="00196" />
+      <option name="presentableId" value="LOCAL-00196" />
       <option name="project" value="LOCAL" />
       <updated>1453219667784</updated>
     </task>
     <task id="LOCAL-00197" summary="Version update prompts">
       <created>1453220151948</created>
       <option name="number" value="00197" />
+      <option name="presentableId" value="LOCAL-00197" />
       <option name="project" value="LOCAL" />
       <updated>1453220151948</updated>
     </task>
     <task id="LOCAL-00198" summary="Version update prompts">
       <created>1453220877633</created>
       <option name="number" value="00198" />
+      <option name="presentableId" value="LOCAL-00198" />
       <option name="project" value="LOCAL" />
       <updated>1453220877633</updated>
     </task>
     <task id="LOCAL-00199" summary="Version update prompts">
       <created>1453221085127</created>
       <option name="number" value="00199" />
+      <option name="presentableId" value="LOCAL-00199" />
       <option name="project" value="LOCAL" />
       <updated>1453221085127</updated>
     </task>
     <task id="LOCAL-00200" summary="Version update prompts">
       <created>1453221583071</created>
       <option name="number" value="00200" />
+      <option name="presentableId" value="LOCAL-00200" />
       <option name="project" value="LOCAL" />
       <updated>1453221583071</updated>
     </task>
     <task id="LOCAL-00201" summary="Version update prompts">
       <created>1453221622888</created>
       <option name="number" value="00201" />
+      <option name="presentableId" value="LOCAL-00201" />
       <option name="project" value="LOCAL" />
       <updated>1453221622888</updated>
     </task>
     <task id="LOCAL-00202" summary="Version update prompts">
       <created>1453221862516</created>
       <option name="number" value="00202" />
+      <option name="presentableId" value="LOCAL-00202" />
       <option name="project" value="LOCAL" />
       <updated>1453221862516</updated>
     </task>
     <task id="LOCAL-00203" summary="Version update prompts">
       <created>1453222248371</created>
       <option name="number" value="00203" />
+      <option name="presentableId" value="LOCAL-00203" />
       <option name="project" value="LOCAL" />
       <updated>1453222248371</updated>
     </task>
     <task id="LOCAL-00204" summary="Version update prompts">
       <created>1453222334470</created>
       <option name="number" value="00204" />
+      <option name="presentableId" value="LOCAL-00204" />
       <option name="project" value="LOCAL" />
       <updated>1453222334470</updated>
     </task>
     <task id="LOCAL-00205" summary="Version update prompts">
       <created>1453222612538</created>
       <option name="number" value="00205" />
+      <option name="presentableId" value="LOCAL-00205" />
       <option name="project" value="LOCAL" />
       <updated>1453222612538</updated>
     </task>
     <task id="LOCAL-00206" summary="Version update prompts">
       <created>1453222832920</created>
       <option name="number" value="00206" />
+      <option name="presentableId" value="LOCAL-00206" />
       <option name="project" value="LOCAL" />
       <updated>1453222832920</updated>
     </task>
     <task id="LOCAL-00207" summary="Version update prompts">
       <created>1453222983765</created>
       <option name="number" value="00207" />
+      <option name="presentableId" value="LOCAL-00207" />
       <option name="project" value="LOCAL" />
       <updated>1453222983765</updated>
     </task>
     <task id="LOCAL-00208" summary="Update CTD definitions">
       <created>1453234518705</created>
       <option name="number" value="00208" />
+      <option name="presentableId" value="LOCAL-00208" />
       <option name="project" value="LOCAL" />
       <updated>1453234518706</updated>
     </task>
     <task id="LOCAL-00209" summary="Removing empty lines">
       <created>1453304283935</created>
       <option name="number" value="00209" />
+      <option name="presentableId" value="LOCAL-00209" />
       <option name="project" value="LOCAL" />
       <updated>1453304283935</updated>
     </task>
     <task id="LOCAL-00210" summary="Button css definitions">
       <created>1453304637832</created>
       <option name="number" value="00210" />
+      <option name="presentableId" value="LOCAL-00210" />
       <option name="project" value="LOCAL" />
       <updated>1453304637832</updated>
     </task>
     <task id="LOCAL-00211" summary="App update">
       <created>1454945691571</created>
       <option name="number" value="00211" />
+      <option name="presentableId" value="LOCAL-00211" />
       <option name="project" value="LOCAL" />
       <updated>1454945691573</updated>
     </task>
     <task id="LOCAL-00212" summary="Clone mod">
       <created>1454945890640</created>
       <option name="number" value="00212" />
+      <option name="presentableId" value="LOCAL-00212" />
       <option name="project" value="LOCAL" />
       <updated>1454945890640</updated>
     </task>
     <task id="LOCAL-00213" summary="Add beanstalk specs">
       <created>1455210113213</created>
       <option name="number" value="00213" />
+      <option name="presentableId" value="LOCAL-00213" />
       <option name="project" value="LOCAL" />
       <updated>1455210113221</updated>
     </task>
     <task id="LOCAL-00214" summary="Settings update">
       <created>1455210297428</created>
       <option name="number" value="00214" />
+      <option name="presentableId" value="LOCAL-00214" />
       <option name="project" value="LOCAL" />
       <updated>1455210297428</updated>
     </task>
     <task id="LOCAL-00215" summary="Css mods">
       <created>1455210689585</created>
       <option name="number" value="00215" />
+      <option name="presentableId" value="LOCAL-00215" />
       <option name="project" value="LOCAL" />
       <updated>1455210689585</updated>
     </task>
     <task id="LOCAL-00216" summary="Version update prompts">
       <created>1455297215337</created>
       <option name="number" value="00216" />
+      <option name="presentableId" value="LOCAL-00216" />
       <option name="project" value="LOCAL" />
       <updated>1455297215337</updated>
     </task>
     <task id="LOCAL-00217" summary="Documentation mods">
       <created>1455298130581</created>
       <option name="number" value="00217" />
+      <option name="presentableId" value="LOCAL-00217" />
       <option name="project" value="LOCAL" />
       <updated>1455298130582</updated>
     </task>
     <task id="LOCAL-00218" summary="Revert OBJ 1">
       <created>1460401571015</created>
       <option name="number" value="00218" />
+      <option name="presentableId" value="LOCAL-00218" />
       <option name="project" value="LOCAL" />
       <updated>1460401571022</updated>
     </task>
     <task id="LOCAL-00219" summary="JSON catch error">
       <created>1460401845951</created>
       <option name="number" value="00219" />
+      <option name="presentableId" value="LOCAL-00219" />
       <option name="project" value="LOCAL" />
       <updated>1460401845958</updated>
     </task>
     <task id="LOCAL-00220" summary="Try fix title color class&#10;">
       <created>1460402652254</created>
       <option name="number" value="00220" />
+      <option name="presentableId" value="LOCAL-00220" />
       <option name="project" value="LOCAL" />
       <updated>1460402652254</updated>
     </task>
     <task id="LOCAL-00221" summary="Another schema try&#10;">
       <created>1460402847075</created>
       <option name="number" value="00221" />
+      <option name="presentableId" value="LOCAL-00221" />
       <option name="project" value="LOCAL" />
       <updated>1460402847075</updated>
     </task>
     <task id="LOCAL-00222" summary="Correct $this definition&#10;">
       <created>1460403246784</created>
       <option name="number" value="00222" />
+      <option name="presentableId" value="LOCAL-00222" />
       <option name="project" value="LOCAL" />
       <updated>1460403246784</updated>
     </task>
     <task id="LOCAL-00223" summary="App update&#10;">
       <created>1460403468764</created>
       <option name="number" value="00223" />
+      <option name="presentableId" value="LOCAL-00223" />
       <option name="project" value="LOCAL" />
       <updated>1460403468764</updated>
     </task>
     <task id="LOCAL-00224" summary="looking good&#10;">
       <created>1460403871793</created>
       <option name="number" value="00224" />
+      <option name="presentableId" value="LOCAL-00224" />
       <option name="project" value="LOCAL" />
       <updated>1460403871793</updated>
     </task>
     <task id="LOCAL-00225" summary="App update&#10;">
       <created>1460404065522</created>
       <option name="number" value="00225" />
+      <option name="presentableId" value="LOCAL-00225" />
       <option name="project" value="LOCAL" />
       <updated>1460404065522</updated>
     </task>
-    <option name="localTasksCounter" value="226" />
+    <task id="LOCAL-00226" summary="Gotcha">
+      <created>1460404207742</created>
+      <option name="number" value="00226" />
+      <option name="presentableId" value="LOCAL-00226" />
+      <option name="project" value="LOCAL" />
+      <updated>1460404207742</updated>
+    </task>
+    <task id="LOCAL-00227" summary="Gotcha REALLY">
+      <created>1460404353339</created>
+      <option name="number" value="00227" />
+      <option name="presentableId" value="LOCAL-00227" />
+      <option name="project" value="LOCAL" />
+      <updated>1460404353339</updated>
+    </task>
+    <task id="LOCAL-00228" summary="LS bug fix">
+      <created>1460405111929</created>
+      <option name="number" value="00228" />
+      <option name="presentableId" value="LOCAL-00228" />
+      <option name="project" value="LOCAL" />
+      <updated>1460405111929</updated>
+    </task>
+    <task id="LOCAL-00229" summary="LS weird fix">
+      <created>1460405444795</created>
+      <option name="number" value="00229" />
+      <option name="presentableId" value="LOCAL-00229" />
+      <option name="project" value="LOCAL" />
+      <updated>1460405444795</updated>
+    </task>
+    <task id="LOCAL-00230" summary="LS weird fix">
+      <created>1460405578253</created>
+      <option name="number" value="00230" />
+      <option name="presentableId" value="LOCAL-00230" />
+      <option name="project" value="LOCAL" />
+      <updated>1460405578253</updated>
+    </task>
+    <task id="LOCAL-00231" summary="LS weird fix">
+      <created>1460405900858</created>
+      <option name="number" value="00231" />
+      <option name="presentableId" value="LOCAL-00231" />
+      <option name="project" value="LOCAL" />
+      <updated>1460405900858</updated>
+    </task>
+    <task id="LOCAL-00232" summary="LS weird fix">
+      <created>1460406156758</created>
+      <option name="number" value="00232" />
+      <option name="presentableId" value="LOCAL-00232" />
+      <option name="project" value="LOCAL" />
+      <updated>1460406156758</updated>
+    </task>
+    <task id="LOCAL-00233" summary="Wow huw dumb am I">
+      <created>1460406819481</created>
+      <option name="number" value="00233" />
+      <option name="presentableId" value="LOCAL-00233" />
+      <option name="project" value="LOCAL" />
+      <updated>1460406819481</updated>
+    </task>
+    <task id="LOCAL-00234" summary="Wow huw dumb am I">
+      <created>1460408143620</created>
+      <option name="number" value="00234" />
+      <option name="presentableId" value="LOCAL-00234" />
+      <option name="project" value="LOCAL" />
+      <updated>1460408143620</updated>
+    </task>
+    <task id="LOCAL-00235" summary="Wow huw dumb am I">
+      <created>1460408358922</created>
+      <option name="number" value="00235" />
+      <option name="presentableId" value="LOCAL-00235" />
+      <option name="project" value="LOCAL" />
+      <updated>1460408358922</updated>
+    </task>
+    <task id="LOCAL-00236" summary="Wow huw dumb am I">
+      <created>1460408469907</created>
+      <option name="number" value="00236" />
+      <option name="presentableId" value="LOCAL-00236" />
+      <option name="project" value="LOCAL" />
+      <updated>1460408469907</updated>
+    </task>
+    <task id="LOCAL-00237" summary="Wow huw dumb am I">
+      <created>1460408686896</created>
+      <option name="number" value="00237" />
+      <option name="presentableId" value="LOCAL-00237" />
+      <option name="project" value="LOCAL" />
+      <updated>1460408686897</updated>
+    </task>
+    <task id="LOCAL-00238" summary="Wow huw dumb am I">
+      <created>1460408755749</created>
+      <option name="number" value="00238" />
+      <option name="presentableId" value="LOCAL-00238" />
+      <option name="project" value="LOCAL" />
+      <updated>1460408755749</updated>
+    </task>
+    <task id="LOCAL-00239" summary="Wow huw dumb am I">
+      <created>1460408833088</created>
+      <option name="number" value="00239" />
+      <option name="presentableId" value="LOCAL-00239" />
+      <option name="project" value="LOCAL" />
+      <updated>1460408833088</updated>
+    </task>
+    <task id="LOCAL-00240" summary="Chomper&#10;">
+      <created>1460409319078</created>
+      <option name="number" value="00240" />
+      <option name="presentableId" value="LOCAL-00240" />
+      <option name="project" value="LOCAL" />
+      <updated>1460409319079</updated>
+    </task>
+    <task id="LOCAL-00241" summary="Settings alert features&#10;">
+      <created>1460654663572</created>
+      <option name="number" value="00241" />
+      <option name="presentableId" value="LOCAL-00241" />
+      <option name="project" value="LOCAL" />
+      <updated>1460654663572</updated>
+    </task>
+    <task id="LOCAL-00242" summary="Chomper lags&#10;">
+      <created>1460654797799</created>
+      <option name="number" value="00242" />
+      <option name="presentableId" value="LOCAL-00242" />
+      <option name="project" value="LOCAL" />
+      <updated>1460654797799</updated>
+    </task>
+    <task id="LOCAL-00243" summary="Switch statement i1">
+      <created>1460744690196</created>
+      <option name="number" value="00243" />
+      <option name="presentableId" value="LOCAL-00243" />
+      <option name="project" value="LOCAL" />
+      <updated>1460744690196</updated>
+    </task>
+    <task id="LOCAL-00244" summary="Pane alert change">
+      <created>1460747086856</created>
+      <option name="number" value="00244" />
+      <option name="presentableId" value="LOCAL-00244" />
+      <option name="project" value="LOCAL" />
+      <updated>1460747086857</updated>
+    </task>
+    <option name="localTasksCounter" value="245" />
     <servers />
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="765000" />
+  </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-4" width="1920" height="1084" extended-state="6" />
+    <frame x="0" y="24" width="1920" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2534685" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2588047" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5002636" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32846716" sideWeight="0.49973643" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.49973643" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="true" show_stripe_button="true" weight="0.334375" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" x="11" y="503" width="1887" height="291" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="true" show_stripe_button="true" weight="0.334375" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" x="11" y="531" width="1807" height="275" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -760,16 +761,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="App JS commit" />
-    <MESSAGE value="Settings JSON mod" />
-    <MESSAGE value="Added node" />
-    <MESSAGE value="New workflow JSON" />
-    <MESSAGE value="Controler mods" />
-    <MESSAGE value="Updates lang and json" />
-    <MESSAGE value="Worflow info mod" />
-    <MESSAGE value="Minor header fix" />
-    <MESSAGE value="Update CTD definitions" />
-    <MESSAGE value="Removing empty lines" />
     <MESSAGE value="Button css definitions" />
     <MESSAGE value="App update" />
     <MESSAGE value="Clone mod" />
@@ -785,7 +776,17 @@
     <MESSAGE value="Correct $this definition&#10;" />
     <MESSAGE value="looking good&#10;" />
     <MESSAGE value="App update&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="App update&#10;" />
+    <MESSAGE value="Gotcha" />
+    <MESSAGE value="Gotcha REALLY" />
+    <MESSAGE value="LS bug fix" />
+    <MESSAGE value="LS weird fix" />
+    <MESSAGE value="Wow huw dumb am I" />
+    <MESSAGE value="Chomper&#10;" />
+    <MESSAGE value="Settings alert features&#10;" />
+    <MESSAGE value="Chomper lags&#10;" />
+    <MESSAGE value="Switch statement i1" />
+    <MESSAGE value="Pane alert change" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pane alert change" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -794,43 +795,30 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pgd/clone/js/app3.0.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="651" column="40" selection-start-line="651" selection-start-column="40" selection-end-line="651" selection-end-column="40" />
-          <folding>
-            <marker date="1460404165861" expanded="true" signature="57073:57084" placeholder="..." />
-            <marker date="1460404165861" expanded="true" signature="57322:57333" placeholder="..." />
-            <marker date="1460404165861" expanded="true" signature="57450:57456" placeholder="..." />
-            <marker date="1460404165861" expanded="true" signature="57930:57940" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/js/validate-json.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/js/app.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/js/version.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="160" column="47" selection-start-line="160" selection-start-column="47" selection-end-line="160" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/project/release.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="491" column="34" selection-start-line="491" selection-start-column="34" selection-end-line="491" selection-end-column="34" />
           <folding />
         </state>
@@ -838,42 +826,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/release.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="9" column="95" selection-start-line="9" selection-start-column="95" selection-end-line="9" selection-end-column="95" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/page-builder.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="7" column="66" selection-start-line="7" selection-start-column="66" selection-end-line="7" selection-end-column="66" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="1220" column="22" selection-start-line="1220" selection-start-column="22" selection-end-line="1220" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/js/app.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/js/version.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="161" column="58" selection-start-line="161" selection-start-column="58" selection-end-line="161" selection-end-column="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/project/release.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="8" column="53" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
           <folding />
         </state>
@@ -881,226 +869,189 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/release.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="91" column="11" selection-start-line="91" selection-start-column="11" selection-end-line="91" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/js/version.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/js/saasd.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.31707317">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pgd/assets/js/version.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="160" column="47" selection-start-line="160" selection-start-column="47" selection-end-line="160" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/js/jquery-linedtextarea.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0560747">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/js/app.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/assets/js/validate-json.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6168224">
+        <state relative-caret-position="0">
           <caret line="188" column="54" selection-start-line="188" selection-start-column="54" selection-end-line="188" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bower_components/jquery/src/data.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="69" column="41" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/clone/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5522388">
+        <state relative-caret-position="0">
           <caret line="447" column="31" selection-start-line="447" selection-start-column="31" selection-end-line="447" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bower_components/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18305084">
+        <state relative-caret-position="0">
           <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pgd/assets/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="596" column="29" selection-start-line="596" selection-start-column="29" selection-end-line="596" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pgd/assets/css/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="228" column="9" selection-start-line="228" selection-start-column="1" selection-end-line="228" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/clone/css/global.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12175874">
+        <state relative-caret-position="0">
           <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/modalJQ.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1570338">
+        <state relative-caret-position="0">
           <caret line="8" column="27" selection-start-line="7" selection-start-column="38" selection-end-line="8" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/controler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="291" column="16" selection-start-line="291" selection-start-column="16" selection-end-line="293" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/altitude.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../JQ-plugins/dmFilters.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48387095">
+        <state relative-caret-position="0">
           <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/globals.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="113354" selection-start-line="0" selection-start-column="113354" selection-end-line="0" selection-end-column="113354" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/clone/js/dmFilters.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.2">
+        <state relative-caret-position="0">
           <caret line="45" column="41" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/page-builder.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6666665">
+        <state relative-caret-position="0">
           <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/clone/css/globals.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6">
+        <state relative-caret-position="0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/clone/js/app3.0.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6">
+        <state relative-caret-position="0">
           <caret line="1" column="393" selection-start-line="1" selection-start-column="393" selection-end-line="1" selection-end-column="393" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pgd/release.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4022472">
-          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/clone/data/help.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/clone/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29032257">
+        <state relative-caret-position="0">
           <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/scss/app.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.296297">
+        <state relative-caret-position="0">
           <caret line="286" column="1" selection-start-line="286" selection-start-column="1" selection-end-line="286" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pgd/assets/project/release.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-62.666668">
-          <caret line="94" column="7" selection-start-line="94" selection-start-column="7" selection-end-line="94" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/clone/js/globals.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/clone/js/app3.0-b.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="473" column="20" selection-start-line="473" selection-start-column="20" selection-end-line="473" selection-end-column="20" />
           <folding />
         </state>
@@ -1108,72 +1059,163 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/v8.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/faq.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="229" column="47" selection-start-line="229" selection-start-column="47" selection-end-line="229" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/clone/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="139" column="25" selection-start-line="139" selection-start-column="25" selection-end-line="139" selection-end-column="25" />
-          <folding>
-            <element signature="n#style#0;n#select#0;n#div#1;n#div#0;n#div#7;n#fieldset#1;n#form#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="79" column="65" selection-start-line="79" selection-start-column="65" selection-end-line="79" selection-end-column="65" />
-          <folding>
-            <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/intro.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.0">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pgd/clone/css/scss/global.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7407407">
-          <caret line="1259" column="14" selection-start-line="1259" selection-start-column="14" selection-end-line="1259" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/clone/schema/layout.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.189655">
+        <state relative-caret-position="2628">
           <caret line="146" column="46" selection-start-line="146" selection-start-column="46" selection-end-line="146" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pgd/assets/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+          <folding>
+            <marker date="1443023071671" expanded="true" signature="5678:5692" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="5857:5868" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="6032:6046" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="6916:6930" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="7095:7106" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="7270:7284" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="21508:21523" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="21554:21568" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="21599:21611" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="21642:21653" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="21684:21699" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="21730:21744" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="21775:21787" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="21818:21829" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="23963:23978" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="24009:24023" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="24054:24066" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="24097:24108" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="24139:24154" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="24185:24199" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="24230:24242" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="24273:24284" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="28214:28228" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="28400:28411" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="28583:28597" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="30130:30141" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="32036:32051" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="32081:32095" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="32125:32137" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="32167:32178" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="32208:32223" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="32253:32267" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="32297:32309" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="32339:32350" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="32463:32478" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="32508:32522" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="32552:32564" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="32594:32605" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="32635:32650" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="32680:32694" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="32724:32736" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="32766:32777" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="39396:39410" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="44909:44924" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="44954:44968" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="44998:45010" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="45040:45051" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="45081:45096" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="45126:45140" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="45170:45182" placeholder="..." />
+            <marker date="1443023071671" expanded="true" signature="45212:45223" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pgd/assets/project/release.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pgd/assets/js/version.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="846">
+          <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pgd/assets/css/app.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="45" selection-start-line="0" selection-start-column="44" selection-end-line="0" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pgd/clone/css/scss/global.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="1259" column="14" selection-start-line="1259" selection-start-column="14" selection-end-line="1259" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/intro.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pgd/assets/css/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pgd/release.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1332">
+          <caret line="74" column="31" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pgd/clone/js/app3.0.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22813036">
-          <caret line="798" column="76" selection-start-line="798" selection-start-column="76" selection-end-line="798" selection-end-column="76" />
+        <state relative-caret-position="198">
+          <caret line="790" column="17" selection-start-line="790" selection-start-column="17" selection-end-line="790" selection-end-column="17" />
           <folding>
-            <marker date="1460404165861" expanded="true" signature="57073:57084" placeholder="..." />
-            <marker date="1460404165861" expanded="true" signature="57322:57333" placeholder="..." />
-            <marker date="1460404165861" expanded="true" signature="57450:57456" placeholder="..." />
-            <marker date="1460404165861" expanded="true" signature="57930:57940" placeholder="..." />
+            <marker date="1460747227169" expanded="true" signature="56971:56982" placeholder="..." />
+            <marker date="1460747227169" expanded="true" signature="57220:57231" placeholder="..." />
+            <marker date="1460747227169" expanded="true" signature="57348:57354" placeholder="..." />
+            <marker date="1460747227169" expanded="true" signature="57828:57838" placeholder="..." />
           </folding>
         </state>
       </provider>
