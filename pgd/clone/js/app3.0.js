@@ -873,6 +873,11 @@ $(function () {
                     page_model = '{\n    "hero": [\n';
                     for (i = 0; i < nodes; i++) {
                         //mapping
+                        if (aCode[i][13].value == '' || aCode[i][13].value == null || aCode[i][13].value == undefined) {
+                            var elemAAAA = 'true';
+                        } else {
+                            elemAAAA = aCode[i][13].value;
+                        }
                         if (aCode[i][14].value == '' || aCode[i][14].value == null || aCode[i][14].value == undefined) {
                             var elemA = true;
                         } else {
@@ -953,7 +958,7 @@ $(function () {
                         page_model += '\n            "fr": "' + aCode[i][10].value.trim() + '"';
                         page_model += '\n          },';
                         page_model += '\n        "url": "' + aCode[i][11].value + '",';
-                        page_model += '\n        "popUpLinkID": "' + aCode[i][13].value + '"';
+                        page_model += '\n        "popUpLinkID": "' + elemAAAA + '"';
                         page_model += '\n        },';
                         page_model += '\n        "image": {';
                         page_model += '\n          "url": "' + aCode[i][7].value + '",';
