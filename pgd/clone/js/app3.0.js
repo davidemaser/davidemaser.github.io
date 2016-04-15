@@ -20,12 +20,14 @@ function panelAlert(mess,state){
             var mPane = '.panel-body.bottom_level_bt';
             if (state == app.params.e) {
                 $(mPane).find(app.objects.g).removeClass('allGood').removeClass('glyphicon-ok').addClass('allBad').addClass('glyphicon-remove');
+                var dispLeng = app.animation.d.max;
             } else if (state == app.params.g) {
                 $(mPane).find(app.objects.g).removeClass('allBad').removeClass('glyphicon-remove').addClass('allGood').addClass('glyphicon-ok');
+                dispLeng = 10000;
             }
             $(mPane).slideDown();
             $(mPane).find('.inner_message').html(mess);
-            setTimeout("$('.panel-body.bottom_level_bt').slideUp()", app.animation.d.max);
+            setTimeout("$('.panel-body.bottom_level_bt').slideUp()", dispLeng);
         }
 }
 function getVersion(init){
