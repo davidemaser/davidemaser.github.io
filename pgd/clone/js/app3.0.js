@@ -788,7 +788,7 @@ $(function () {
             $(formEl).find('.objButtonLink').val(aCode[i].button.url);
             if(aCode[i].date.delay == '' || aCode[i].date.delay == null || aCode[i].date.delay == undefined || aCode[i].date.delay == 'undefined'){
                 $(formEl).find('.objDelay').val(0);
-            }else if(aCode[i].date.delay == 'true' || aCode[i].date.delay == 'false'){
+            }else if(isNaN(aCode[i].date.delay) == true){
                 panelAlert('Make sure to set all delay entires to a numerical value.','error');
             }else{
                 $(formEl).find('.objDelay').val(aCode[i].date.delay);
