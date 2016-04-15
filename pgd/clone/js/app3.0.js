@@ -786,7 +786,7 @@ $(function () {
             $(formEl).find('.objButtonEN').val(aCode[i].button.label.en);
             $(formEl).find('.objButtonFR').val(aCode[i].button.label.fr);
             $(formEl).find('.objButtonLink').val(aCode[i].button.url);
-            if(aCode[i].date.delay == true || aCode[i].date.delay == false){
+            if(aCode[i].date.delay === true || aCode[i].date.delay === false){
                 panelAlert('Make sure to set all delay entries to a numerical value manually.','error');
                 console.log('Error in delay string');
             }else if(aCode[i].date.delay == '' || aCode[i].date.delay == null || aCode[i].date.delay == undefined || aCode[i].date.delay == 'undefined'){
