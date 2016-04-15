@@ -790,6 +790,7 @@ $(function () {
                 $(formEl).find('.objDelay').val(0);
             }else if(isNaN(aCode[i].date.delay) == true){
                 panelAlert('Make sure to set all delay entires to a numerical value.','error');
+                console.log('Error in delay string');
             }else{
                 $(formEl).find('.objDelay').val(aCode[i].date.delay);
             }
