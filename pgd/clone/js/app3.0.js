@@ -540,7 +540,7 @@ $(function () {
         newElem.attr(app.handlers.s,newNum);
 
         newElem.find('.label_ttl').attr('for', 'ID' + newNum + '_title');
-        newElem.find('.select_ttl').attr('id', 'ID' + newNum + '_title').attr('name', 'ID' + newNum + '_title').val('');
+        newElem.find('.select_ttl:not(".objButtonPopupLink")').attr('id', 'ID' + newNum + '_title').attr('name', 'ID' + newNum + '_title').val('');
 
         newElem.find('.label_fn').attr('for', 'ID' + newNum + '_first_name');
         newElem.find('.input_fn').attr('id', 'ID' + newNum + '_first_name').attr('name', 'ID' + newNum + '_first_name').val('');
