@@ -1480,7 +1480,8 @@ $(function () {
     });
     $(document).on('keydown', function(e) {
         if (e.keyCode == 71 && e.ctrlKey) {
-            prepareJSON('full');
+            var a = $('.submit_json').attr('data-nmode');
+            prepareJSON('full',null,a);
             e.preventDefault();
         }
         if (e.keyCode == 82 && e.ctrlKey) {
