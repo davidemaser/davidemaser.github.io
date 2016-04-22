@@ -250,25 +250,16 @@ function switchModes(va){
      */
     if(va == 'hello') {
         $('*[data-role="hero"]').css('display', 'none');
-        $('*[data-role="message"]').css('display', 'none');
         $('*[data-role="hello"]').css('display', 'block');
         pfExport = 'hello';
         $('.submit_json').attr('data-nmode','hello');
         panelAlert('Switched to Hello Banner Creation mode','good');
-    }else if(va == 'hero'){
+    }else{
         $('*[data-role="hello"]').css('display', 'none');
-        $('*[data-role="message"]').css('display', 'none');
-        $('*[data-role="hero"]').css('display', 'block');
+        $('*[data-role="hero"]').attr('style', '');
         pfExport = 'hero';
         $('.submit_json').attr('data-nmode','hero');
         panelAlert('Switched to Hero Banner Creation mode','good');
-    }else if(va == 'message'){
-        $('*[data-role="hello"]').css('display', 'none');
-        $('*[data-role="hero"]').css('display', 'none');
-        $('*[data-role="message"]').css('display', 'block');
-        pfExport = 'message';
-        $('.submit_json').attr('data-nmode','message');
-        panelAlert('Switched to Special Message Creation mode','good');
     }
 }
 function initializeTheme(){
@@ -1261,13 +1252,6 @@ $(function () {
             $(this).attr('data-nmode','hero');
             $(this).html('Switch to Hello Bar Mode');
             switchModes('hero')
-        }
-    }).on('click','.btnSpecialNmode',function () {
-        var a = $(app.dom.b).attr('data-nmode');
-        if(a == 'message'){
-            $(app.dom.b).attr('data-nmode','message');
-            $(this).attr('data-nmode','message');
-            switchModes('message')
         }
     }).on('click','.btnDel',function () {
         deleteItems('last');
