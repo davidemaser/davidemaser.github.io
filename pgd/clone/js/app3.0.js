@@ -1262,6 +1262,13 @@ $(function () {
             $(this).html('Switch to Hello Bar Mode');
             switchModes('hero')
         }
+    }).on('click','.btnSpecialNmode',function () {
+        var a = $(app.dom.b).attr('data-nmode');
+        if(a == 'message'){
+            $(app.dom.b).attr('data-nmode','message');
+            $(this).attr('data-nmode','message');
+            switchModes('message')
+        }
     }).on('click','.btnDel',function () {
         deleteItems('last');
     }).on('click','.submit_json',function (){
