@@ -957,7 +957,8 @@ span.show_me_how {
 
 *[data-role="altiSpecial"] {
   display: none; }
-
+*[data-role="message"] {
+  display: none; }
 body[data-nmode="hello"] *[data-role="hero"] {
   display: none; }
 
