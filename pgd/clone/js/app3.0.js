@@ -258,17 +258,17 @@ function switchModes(va){
     }else if(va == 'hero'){
         $('*[data-role="hello"]').css('display', 'none');
         $('*[data-role="message"]').css('display', 'none');
-        $('*[data-role="hero"]').attr('style', '');
+        $('*[data-role="hero"]').css('display', 'block');
         pfExport = 'hero';
         $('.submit_json').attr('data-nmode','hero');
         panelAlert('Switched to Hero Banner Creation mode','good');
     }else if(va == 'message'){
         $('*[data-role="hello"]').css('display', 'none');
         $('*[data-role="hero"]').css('display', 'none');
-        $('*[data-role="message"]').attr('style', '');
+        $('*[data-role="message"]').css('display', 'block');
         pfExport = 'message';
         $('.submit_json').attr('data-nmode','message');
-        panelAlert('Switched to Hero Banner Creation mode','good');
+        panelAlert('Switched to Special Message Creation mode','good');
     }
 }
 function initializeTheme(){
