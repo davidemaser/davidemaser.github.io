@@ -85,8 +85,8 @@ function languageManager(lng){
                     lngContainer = [];
                 for(var i=0;i<dataLen;i++){
                     lngContainer.push({objID:data.node.section[0].actions[i].id,objTran:data.node.section[0].actions[i].translate});
-                    //console.log(data.node.section[0].actions[i].id);
                 }
+                console.log(lngContainer);
             }
         })
     }catch(e){
