@@ -71,7 +71,7 @@ function languageManager(lng){
     try {
         $.ajax({
             type: app.methods.g,
-            url: app.languageRoot+lng,
+            url: app.languageRoot,
             success: function (data) {
                 console.log(data);
             }
