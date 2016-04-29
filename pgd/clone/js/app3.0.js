@@ -68,7 +68,6 @@ function languageManager(lng){
 
      */
     lng = $('html').attr('data-language') || lng;
-    var drop = [];
     switch (lng) {
         case "en_EN":
             var newLang = 'fr_FR';
@@ -77,6 +76,7 @@ function languageManager(lng){
             newLang = 'en_EN';
             break;
     }
+    var lngContainer = [];
     try {
         $.ajax({
             type: app.methods.g,
@@ -84,7 +84,7 @@ function languageManager(lng){
             success: function (data) {
                 var dataLen = data.node.section[0].actions.length;
                 for(var i=0;i<dataLen;i++){
-                    drop.push({objID:data.node.section[0].actions[i].id,objTran:data.node.section[0].actions[i].translate});
+                    lngContainer.push({objID:data.node.section[0].actions[i].id,objTran:data.node.section[0].actions[i].translate});
                     console.log(data.node.section[0].actions[i].id);
                 }
             }
