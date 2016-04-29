@@ -68,6 +68,7 @@ function languageManager(lng){
 
      */
     lng = $('html').attr('data-language') || lng;
+    var drop = [];
     switch (lng) {
         case "en_EN":
             var newLang = 'fr_FR';
@@ -83,6 +84,7 @@ function languageManager(lng){
             success: function (data) {
                 var dataLen = data.node.section[0].actions.length;
                 for(var i=0;i<dataLen;i++){
+                    drop.push({objID:data.node.section[0].actions[i].id,objTran:data.node.section[0].actions[i].translate});
                     console.log(data.node.section[0].actions[i].id);
                 }
             }
