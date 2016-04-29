@@ -37,60 +37,59 @@
 <div class="panel-body top_level_bt">
     <progress class="custom_prog" value="0"></progress>
     <div class="sub">
-        <div class="btn-group">
+        <div class="btn-group" data-lang-node="actions">
             <button type="button" class="btn btn-success dropdown-toggle action_utilities" data-toggle="dropdown"
                     aria-expanded="false">
                 Actions <span class="caret"></span>
             </button>
             <ul class="dropdown-menu main_nav" role="menu">
-                <li><a href="#" class="cleaner_open btnNmode" data-nmode="hero" data-version="3.1.3">Switch to Hello Bar Mode</a></li>
-                <li><a href="#" class="cleaner_open btnSpecialNmode" data-nmode="message" data-version="3.1.3">Switch to Event Message Mode</a></li>
-                <li class="divider"></li>
-                <li><a href="#" class="cleaner_open btnAdd" id="btnAdd" title="CTRL+I">Add Item <span
+                <li><a href="#" class="cleaner_open btnNmode" data-nmode="hero" data-lang-id="action1" data-version="3.1.3">Switch to Hello Bar Mode</a></li>
+                          <li class="divider"></li>
+                <li><a href="#" class="cleaner_open btnAdd" data-lang-id="action2" id="btnAdd" title="CTRL+I">Add Item <span
                         class="micro-aid">CTRL+I</span></a></li>
-                <li data-role="hero"><a href="#" class="cleaner_open btnAddMulti" id="btnAddMulti" title="CTRL+ALT+I">Add Multiple Items <span class="micro-aid">CTRL+ALT+I</span></a></li>
+                <li data-role="hero"><a href="#" class="cleaner_open btnAddMulti" data-lang-id="action3" id="btnAddMulti" title="CTRL+ALT+I">Add Multiple Items <span class="micro-aid">CTRL+ALT+I</span></a></li>
                 <li class="divider"></li>
-                <li data-role="hero"><a href="#" class="generate_page btnDel" id="btnDel" title="CTRL+R">Remove Last Item <span
+                <li data-role="hero"><a href="#" class="generate_page btnDel" data-lang-id="action4" id="btnDel" title="CTRL+R">Remove Last Item <span
                         class="micro-aid">CTRL+R</span></a></li>
                 <li class="divider" data-role="hero"></li>
-                <li><a href="#" class="app_info_toggle submit_json" id="submit_button" title="CTRL+G" data-nmode="hero">Generate JSON
+                <li><a href="#" class="app_info_toggle submit_json" data-lang-id="action5" id="submit_button" title="CTRL+G" data-nmode="hero">Generate JSON
                     <span class="micro-aid">CTRL+G</span></a></li>
-                <li data-role="hero"><a href="#" class="app_info_toggle translate_json" id="translate_json" title="CTRL+ALT+ENTER">Translate
+                <li data-role="hero"><a href="#" class="app_info_toggle translate_json" data-lang-id="action6" id="translate_json" title="CTRL+ALT+ENTER">Translate
                     JSON <span class="micro-aid">CTRL+ALT+ENTER</span></a></li>
                 <li class="divider"></li>
-                <li data-role="hero"><a href="#" class="app_info_toggle save_json" id="save_json" title="CTRL+SHIFT+S">Save For Later
+                <li data-role="hero"><a href="#" class="app_info_toggle save_json" data-lang-id="action7" id="save_json" title="CTRL+SHIFT+S">Save For Later
                     <span class="micro-aid">CTRL+SHIFT+S</span></a></li>
-                <li data-role="hero"><a href="#" class="app_info_toggle import_json" id="import_json" title="CTRL+ALT+INSERT">Import From
+                <li data-role="hero"><a href="#" class="app_info_toggle import_json" data-lang-id="action8" id="import_json" title="CTRL+ALT+INSERT">Import From
                     Save <span class="micro-aid">CTRL+ALT+INSERT</span></a></li>
                 <li class="divider" data-role="hero"></li>
-                <li data-role="hero"><a href="#" class="errors_reset">Reset Errors</a></li>
-                <li><a href="#" class="form_reset">Reset Form</a></li>
-                <li><a href="#" class="itemize_reset" data-version="3.1.3">Reset Item Positions</a></li>
-                <li data-role="hero"><a href="#" class="form_local_reset">Reset Local Storage</a></li>
+                <li data-role="hero"><a href="#" class="errors_reset" data-lang-id="action9">Reset Errors</a></li>
+                <li><a href="#" class="form_reset" data-lang-id="action10">Reset Form</a></li>
+                <li><a href="#" class="itemize_reset" data-version="3.1.3" data-lang-id="action11">Reset Item Positions</a></li>
+                <li data-role="hero"><a href="#" class="form_local_reset" data-lang-id="action12">Reset Local Storage</a></li>
                 <li class="divider"></li>
-                <li><a href="#" class="settings_toggle" data-theme="dark">Dark Theme</a></li>
-                <li><a href="#" class="settings_toggle" data-theme="light">Light Theme</a></li>
+                <li><a href="#" class="settings_toggle" data-theme="dark" data-lang-id="action13">Dark Theme</a></li>
+                <li><a href="#" class="settings_toggle" data-theme="light" data-lang-id="action14">Light Theme</a></li>
                 <li class="divider"></li>
-                <li><a href="#" class="app_info_toggle about_app" title="CTRL+?">About this app <span class="micro-aid">CTRL+?</span></a>
+                <li><a href="#" class="app_info_toggle about_app" data-lang-id="action15" title="CTRL+?">About this app <span class="micro-aid">CTRL+?</span></a>
                 </li>
             </ul>
         </div>
-        <div class="btn-group" data-role="hero">
+        <div class="btn-group" data-role="hero" data-lang-node="preview">
             <button type="button" class="btn btn-success dropdown-toggle lang_utilities" data-toggle="dropdown"
                     aria-expanded="false">
                 Preview Language <span class="caret"></span>
             </button>
             <ul class="dropdown-menu lang_switcher" role="menu">
-                <li><a href="#" class="cleaner_open btnSwitch view-active" data-language="en"
+                <li><a href="#" class="cleaner_open btnSwitch view-active" data-lang-id="preview1" data-language="en"
                        title="Use CTRL+ALT+E to switch languages">English <span class="micro-aid">CTRL+ALT+E</span></a>
                 </li>
-                <li><a href="#" class="cleaner_open btnSwitch" data-language="fr"
+                <li><a href="#" class="cleaner_open btnSwitch" data-lang-id="preview2" data-language="fr"
                        title="Use CTRL+ALT+E to switch languages">French <span class="micro-aid">CTRL+ALT+E</span></a>
                 </li>
             </ul>
         </div>
-        <div class="btn-group">
-            <button type="button" class="btn btn-success dropdown-toggle action_utilities" data-toggle="dropdown"
+        <div class="btn-group" data-lang-node="jump">
+            <button type="button" class="btn btn-success dropdown-toggle action_utilities" data-toggle="dropdown" data-lang-id="jump1"
                     aria-expanded="false">
                 Go To <span class="caret"></span>
             </button>
@@ -98,15 +97,15 @@
                 <li><a href="#" class="gotoItem" data-item="1">Item 1</a></li>
             </ul>
         </div>
-        <div class="btn-group loadLsItems" data-role="hero">
-            <button type="button" class="btn btn-success dropdown-toggle ls_utilities" data-toggle="dropdown"
+        <div class="btn-group loadLsItems" data-role="hero" data-lang-node="load">
+            <button type="button" class="btn btn-success dropdown-toggle ls_utilities" data-toggle="dropdown" data-lang-id="load1"
                     aria-expanded="false">
                 Load Saved Heros <span class="caret"></span>
             </button>
             <ul class="dropdown-menu lsLoad" role="menu"></ul>
         </div>
-        <div class="btn-group errorList" data-role="hero">
-            <button type="button" class="btn btn-warning dropdown-toggle action_utilities" data-toggle="dropdown"
+        <div class="btn-group errorList" data-role="hero" data-lang-node="errors">
+            <button type="button" class="btn btn-warning dropdown-toggle action_utilities" data-toggle="dropdown" data-lang-id="errors1"
                     title="The JSON code contains errors and/or warnings that will cause display errors.">
                 Errors <span class="caret"></span>
             </button>
@@ -115,7 +114,7 @@
         <div class="info-group"><span class="label label-default" title="This version exports in JSON">JSON</span></div>
         <div class="info-group"><span class="label label-warning version_number" title="You are using version"></span>
         </div>
-        <div class="info-group"><span class="label label-danger showHelp" title="Show Help">Help</span></div>
+        <div class="info-group" data-lang-node="help"><span class="label label-danger showHelp" title="Show Help" data-lang-id="help1">Help</span></div>
     </div>
 </div>
 <div id="wrapper">

@@ -1,0 +1,114 @@
+{
+  "node": {
+      "section":[
+        {
+          "actions":[
+            {
+              "id":"action1",
+              "translate":"Activer mode Hello Bar"
+            },
+            {
+              "id":"action2",
+              "translate":"Ajouter Element"
+            },
+            {
+              "id":"action3",
+              "translate":"Ajouter Multiples Elements"
+            },
+            {
+              "id":"action4",
+              "translate":"Supprimer Dernier Element"
+            },
+            {
+              "id":"action5",
+              "translate":"Generer JSON"
+            },
+            {
+              "id":"action6",
+              "translate":"Traduire JSON"
+            },
+            {
+              "id":"action7",
+              "translate":"Sauvegarder"
+            },
+            {
+              "id":"action8",
+              "translate":"Importer Une Sauvegarde"
+            },
+            {
+              "id":"action9",
+              "translate":"Reinitialiser Erreurs"
+            },
+            {
+              "id":"action10",
+              "translate":"Reinitialiser Formulaire"
+            },
+            {
+              "id":"action11",
+              "translate":"Reinitialiser Positionement Des Elements"
+            },
+            {
+              "id":"action12",
+              "translate":"Reinitialiser Local Storage"
+            },
+            {
+              "id":"action13",
+              "translate":"Theme Fonce"
+            },
+            {
+              "id":"action14",
+              "translate":"Theme Claire"
+            },
+            {
+              "id":"action15",
+              "translate":"A Propos De Cette Application"
+            }
+          ]
+        },
+        {
+          "preview":[
+            {
+              "id":"preview1",
+              "translate":"Anglais"
+            },
+            {
+              "id":"preview2",
+              "translate":"Francais"
+            }
+          ]
+        },
+        {
+          "jump":[
+            {
+              "id":"jump1",
+              "translate":"Aller A"
+            }
+          ]
+        },
+        {
+          "load":[
+            {
+              "id":"load1",
+              "translate":"Charger Hero Sauvegarde"
+            }
+          ]
+        },
+        {
+          "errors":[
+            {
+              "id":"errors1",
+              "translate":"Erreurs"
+            }
+          ]
+        },
+        {
+          "help":[
+            {
+              "id":"help1",
+              "translate":"Aide"
+            }
+          ]
+        }
+      ]
+    }
+}
