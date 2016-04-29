@@ -10,6 +10,7 @@ var app = {
     save:true,
     listener:"window",
     version:"../assets/project/release.json",
+    languageRoot:"data/language/",
     methods:{
         g:"get",
         p:"post"

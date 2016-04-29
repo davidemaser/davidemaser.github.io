@@ -63,6 +63,23 @@ function getVersion(init){
         console.log(e);
     }
 }
+function languageManager(lng){
+    /**
+
+     */
+    lng = $('html').attr('data-language') || lng;
+    try {
+        $.ajax({
+            type: app.methods.g,
+            url: app.languageRoot+lng,
+            success: function (data) {
+                console.log(data);
+            }
+        })
+    }catch(e){
+        console.log(e);
+    }
+}
 function initVersionUpdate(){
     /**
      * Prompts the user to reload the page if a
