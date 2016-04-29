@@ -68,12 +68,23 @@ function languageManager(lng){
 
      */
     lng = $('html').attr('data-language') || lng;
+    switch (lng) {
+        case "en_EN":
+            var newLang = 'fr_FR';
+            break;
+        case "fr_FR":
+            newLang = 'en_EN';
+            break;
+    }
     try {
         $.ajax({
             type: app.methods.g,
-            url: 'data/language/fr_FR.json',
+            url: 'data/language/'+newLang+'.json',
             success: function (data) {
-                console.log(data);
+                var dataLen = data.node.section[0].actions.length;
+                for(var i=0;i<dataLen;i++){
+                    console.log(data.node.section[0].actions[i].id);
+                }
             }
         })
     }catch(e){
