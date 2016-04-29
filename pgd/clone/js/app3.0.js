@@ -76,16 +76,16 @@ function languageManager(lng){
             newLang = 'en_EN';
             break;
     }
-    var lngContainer = [];
     try {
         $.ajax({
             type: app.methods.g,
             url: 'data/language/'+newLang+'.json',
             success: function (data) {
-                var dataLen = data.node.section[0].actions.length;
+                var dataLen = data.node.section[0].actions.length,
+                    lngContainer = [];
                 for(var i=0;i<dataLen;i++){
                     lngContainer.push({objID:data.node.section[0].actions[i].id,objTran:data.node.section[0].actions[i].translate});
-                    console.log(data.node.section[0].actions[i].id);
+                    //console.log(data.node.section[0].actions[i].id);
                 }
             }
         })
