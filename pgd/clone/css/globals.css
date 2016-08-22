@@ -1,6 +1,3 @@
-* {
-  transition: background 0.5s;
-}
 span.overlay_close, span.multiquery_close, span.renderer_close, span.help_close, span.select_content, span.overlay_validate, span.overlay_translate {
   padding: 20px;
   float: right;
@@ -790,7 +787,7 @@ h1 .label-default {
   font-size: 12px;
   margin-left: 10px; }
 
-.moveUpThisItem span, .moveDownThisItem span {
+.moveUpThisItem span:not([data-lang-id]), .moveDownThisItem span:not([data-lang-id]) {
   float: right;
   font-size: 12px; }
 
@@ -957,8 +954,7 @@ span.show_me_how {
 
 *[data-role="altiSpecial"] {
   display: none; }
-*[data-role="message"] {
-  display: none; }
+
 body[data-nmode="hello"] *[data-role="hero"] {
   display: none; }
 

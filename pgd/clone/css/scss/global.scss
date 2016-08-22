@@ -1047,7 +1047,7 @@ h1 .label-default {
   margin-left: 10px;
 }
 .moveUpThisItem,.moveDownThisItem {
-  span {
+  span:not([data-lang-id]) {
     float: right;
     font-size: 12px;
   }
