@@ -108,13 +108,41 @@
               "translate":"Titre FR"
             },
             {
+              "id":"formElement5",
+              "translate":"Couleur du Titre"
+            },
+            {
+              "id":"formElement6",
+              "translate":"Texte EN"
+            },{
+              "id":"formElement7",
+              "translate":"Texte FR"
+            },{
+              "id":"formElement8",
+              "translate":"Lien Vers l'Image"
+            },{
+              "id":"formElement9",
+              "translate":"Valide Image"
+            },{
+              "id":"formElement10",
+              "translate":"Ouvrir Explorateur Shopify"
+            },{
+              "id":"formElement11",
+              "translate":"CDN Shopify"
+            },{
+              "id":"formElement12",
+              "translate":"Lien Vers Image Alternative"
+            },{
+              "id":"formElement13",
+              "translate":"Label Bouton EN"
+            },{
+              "id":"formElement14",
+              "translate":"Label Bouton FR"
+            },
+            {
               "id":"help1",
               "translate":"Aide"
-            }
-          ]
-        },
-        {
-          "jump":[
+            },
             {
               "id":"jump1",
               "translate":"Aller A"
