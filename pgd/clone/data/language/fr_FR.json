@@ -21,7 +21,7 @@
             },
             {
               "id":"action5",
-              "translate":"Generer JSON"
+              "translate":"G&eacute;n&eacute;rer JSON"
             },
             {
               "id":"action6",
@@ -37,27 +37,27 @@
             },
             {
               "id":"action9",
-              "translate":"Reinitialiser Erreurs"
+              "translate":"R&eacute;initialiser Erreurs"
             },
             {
               "id":"action10",
-              "translate":"Reinitialiser Formulaire"
+              "translate":"R&eacute;initialiser Formulaire"
             },
             {
               "id":"action11",
-              "translate":"Reinitialiser Positionement Des Elements"
+              "translate":"R&eacute;initialiser Positionement Des Elements"
             },
             {
               "id":"action12",
-              "translate":"Reinitialiser Local Storage"
+              "translate":"R&eacute;initialiser Local Storage"
             },
             {
               "id":"action13",
-              "translate":"Theme Fonce"
+              "translate":"Th&eagrave;me Fonce"
             },
             {
               "id":"action14",
-              "translate":"Theme Claire"
+              "translate":"Th&eagrave;me Claire"
             },
             {
               "id":"action15",
@@ -67,6 +67,10 @@
         },
         {
           "preview":[
+            {
+              "id":"preview0",
+              "translate":"Langue de l'apercu"
+            },
             {
               "id":"preview1",
               "translate":"Anglais"
