@@ -10,13 +10,14 @@ var pfLang = app.lang,
     pfHero = 0,
     pfMode = app.params.s,
     pfExport = 'hero';
-function panelAlert(mess,state){
-    /**
-     * Creates a bottom panel alert view
-     * that slides into view with a
-     * defined message.
-     */
-        if(app.dialog == true) {
+var core = {
+    panelAlert: function (mess, state) {
+        /**
+         * Creates a bottom panel alert view
+         * that slides into view with a
+         * defined message.
+         */
+        if (app.dialog == true) {
             var mPane = '.panel-body.bottom_level_bt';
             if (state == app.params.e) {
                 $(mPane).find(app.objects.g).removeClass('allGood').removeClass('glyphicon-ok').addClass('allBad').addClass('glyphicon-remove');
@@ -29,417 +30,407 @@ function panelAlert(mess,state){
             $(mPane).find('.inner_message').html(mess);
             setTimeout("$('.panel-body.bottom_level_bt').slideUp()", dispLeng);
         }
-}
-function getVersion(init){
-    /**
-     * Recovers and displays the app version from
-     * the release.json file. init=false checks the
-     * current version against the server json and
-     * initializes and update prompt if the local
-     * version is outdated.
-     */
-    try {
-        $.ajax({
-            type: app.methods.g,
-            url: app.version,
-            success: function (data) {
-                var ver = data.project.version,
-                    sup = data.project.history.length-1,
-                    lup = data.project.history[sup].date;
-                if(init == true) {
-                    document.title = "Page Builder " + ver;
-                    $('.version_number').attr('title', 'You are using version ' + ver + ', last updated ' + lup).html(ver);
-                    $('html').attr('data-version',ver);
-                    tagNew(ver);
-                }else if(init == false) {
-                    var cur = $('html').attr('data-version');
-                    if(cur < ver || cur > ver){
-                        initVersionUpdate();
-                    }
-                }
-            }
-        })
-    }catch(e){
-        console.log(e);
-    }
-}
-function languageManager(lng){
-    /**
-
-     */
-    lng = $('html').attr('data-language') || lng;
-    switch (lng) {
-        case "en_EN":
-            var newLang = 'fr_FR';
-            break;
-        case "fr_FR":
-            newLang = 'en_EN';
-            break;
-    }
-    try {
-        $.ajax({
-            type: app.methods.g,
-            url: 'data/language/'+newLang+'.json',
-            success: function (data) {
-                var dataLen = data.node.section[0].actions.length,
-                    lngContainer = [];
-                for(var i=0;i<dataLen;i++){
-                    lngContainer.push({objID:data.node.section[0].actions[i].id,objTran:data.node.section[0].actions[i].translate});
-                }
-                console.log(lngContainer);
-            }
-        })
-    }catch(e){
-        console.log(e);
-    }
-}
-function initVersionUpdate(){
-    /**
-     * Prompts the user to reload the page if a
-     * newer version of the app has been detected
-     * remotely.
-     */
-    $('.init-update').remove();
-    var pageData = '<div class="init-update"><div class="blackify_overlay"><div class="prompt-update"><div class="prompt-icon"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span></div><div class="prompt-message">A newer version of the PageBuilder app has been detected. Do you want to load the newer version now? <br><br>Make sure you save all your work before answering YES.</div><div class="prompt-choice"><button type="button" class="btn btn-update true" data-toggle="dropdown" aria-expanded="false">YES</button><button type="button" class="btn btn-update false" data-toggle="dropdown" aria-expanded="false">NO</button></div></div></div></div>';
-    $(app.dom.b).append(pageData).on('click','.btn-update.true',function(){
-        location.reload();
-    }).on('click','.btn-update.false',function(){
-        $(this).parent().parent().parent().parent().remove();
-        panelAlert('Version update stopped. The update prompt will reappear at the next update interval.','good');
-    })
-}
-function tagNew(ver){
-    /**
-     * Tags new items by comparing the current app
-     * version to the data-version attribute on
-     * main menu links
-     */
-    var cssBlock = '<style>.main_nav a[data-version="'+ver+'"]:after {content: "new";float: right;background-color: #f0ad4e;padding: 2px 5px;font-size: 10px;color: #fff;font-weight: bold;}</style>';
-    $(app.dom.b).append(cssBlock).find('a[data-version="'+ver+'"]').attr('title','This feature is new to the current version');
-}
-function initializeForm(){
-    /**
-     * creates the initial form instance by
-     * populating the parent container with
-     * elements defined in a layout.json
-     * file
-     */
-    $.ajax({
-        type:app.methods.g,
-        url:app.objects.form.l,
-        success:function(data) {
-            var dataBlock = data.layout,
-                htmlBlock = '<div id="entry1" class="clonedInput" '+app.handlers.s+'="1"><form action="'+dataBlock.form_action+'" method="'+dataBlock.method+'" id="'+dataBlock.form_id+'" role="form">';
-            htmlBlock += dataBlock.header;
-            htmlBlock += '<fieldset>';
-            var blockContent = dataBlock.block,
-                blockLen = blockContent.length;
-            for(var i = 0;i<blockLen;i++){
-                if(blockContent[i].display !== 'custom') {
-                    if (i % 2 === 0 || i === 0) {
-                        if (blockContent[i].wrap_group == true) {
-                            htmlBlock += '<div class="' + blockContent[i].wrap_group_class + '">';
+    },
+    getVersion: function (init) {
+        /**
+         * Recovers and displays the app version from
+         * the release.json file. init=false checks the
+         * current version against the server json and
+         * initializes and update prompt if the local
+         * version is outdated.
+         */
+        try {
+            $.ajax({
+                type: app.methods.g,
+                url: app.version,
+                success: function (data) {
+                    var ver = data.project.version,
+                        sup = data.project.history.length - 1,
+                        lup = data.project.history[sup].date;
+                    if (init == true) {
+                        document.title = "Page Builder " + ver;
+                        $('.version_number').attr('title', 'You are using version ' + ver + ', last updated ' + lup).html(ver);
+                        $('html').attr('data-version', ver);
+                        core.tagNew(ver);
+                    } else if (init == false) {
+                        var cur = $('html').attr('data-version');
+                        if (cur < ver || cur > ver) {
+                            core.initVersionUpdate();
                         }
-                        htmlBlock += '<div class="form-group">';
-                        var blocker = ' lItem';
-                    } else {
-                        blocker = '';
                     }
-                    if (blockContent[i].display !== 'empty') {
-                        switch (blockContent[i].display) {
-                            case "full":
-                                var line = '';
+                }
+            })
+        } catch (e) {
+            console.log(e);
+        }
+    },
+    languageManager: function (lng) {
+        lng = $('html').attr('data-language') || lng;
+        switch (lng) {
+            case "en_EN":
+                var newLang = 'fr_FR';
+                break;
+            case "fr_FR":
+                newLang = 'en_EN';
+                break;
+        }
+        try {
+            $.ajax({
+                type: app.methods.g,
+                url: 'data/language/' + newLang + '.json',
+                success: function (data) {
+                    var dataLen = data.node.section[0].actions.length,
+                        lngContainer = [];
+                    for (var i = 0; i < dataLen; i++) {
+                        lngContainer.push({
+                            objID: data.node.section[0].actions[i].id,
+                            objTran: data.node.section[0].actions[i].translate
+                        });
+                    }
+                    console.log(lngContainer);
+                }
+            })
+        } catch (e) {
+            console.log(e);
+        }
+    },
+    initVersionUpdate: function () {
+        /**
+         * Prompts the user to reload the page if a
+         * newer version of the app has been detected
+         * remotely.
+         */
+        $('.init-update').remove();
+        var pageData = '<div class="init-update"><div class="blackify_overlay"><div class="prompt-update"><div class="prompt-icon"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span></div><div class="prompt-message">A newer version of the PageBuilder app has been detected. Do you want to load the newer version now? <br><br>Make sure you save all your work before answering YES.</div><div class="prompt-choice"><button type="button" class="btn btn-update true" data-toggle="dropdown" aria-expanded="false">YES</button><button type="button" class="btn btn-update false" data-toggle="dropdown" aria-expanded="false">NO</button></div></div></div></div>';
+        $(app.dom.b).append(pageData).on('click', '.btn-update.true', function () {
+            location.reload();
+        }).on('click', '.btn-update.false', function () {
+            $(this).parent().parent().parent().parent().remove();
+            core.panelAlert('Version update stopped. The update prompt will reappear at the next update interval.', 'good');
+        })
+    },
+    tagNew: function (ver) {
+        /**
+         * Tags new items by comparing the current app
+         * version to the data-version attribute on
+         * main menu links
+         */
+        var cssBlock = '<style>.main_nav a[data-version="' + ver + '"]:after {content: "new";float: right;background-color: #f0ad4e;padding: 2px 5px;font-size: 10px;color: #fff;font-weight: bold;}</style>';
+        $(app.dom.b).append(cssBlock).find('a[data-version="' + ver + '"]').attr('title', 'This feature is new to the current version');
+    },
+    initializeForm: function () {
+        /**
+         * creates the initial form instance by
+         * populating the parent container with
+         * elements defined in a layout.json
+         * file
+         */
+        $.ajax({
+            type: app.methods.g,
+            url: app.objects.form.l,
+            success: function (data) {
+                var dataBlock = data.layout,
+                    htmlBlock = '<div id="entry1" class="clonedInput" ' + app.handlers.s + '="1"><form action="' + dataBlock.form_action + '" method="' + dataBlock.method + '" id="' + dataBlock.form_id + '" role="form">';
+                htmlBlock += dataBlock.header;
+                htmlBlock += '<fieldset>';
+                var blockContent = dataBlock.block,
+                    blockLen = blockContent.length;
+                for (var i = 0; i < blockLen; i++) {
+                    if (blockContent[i].display !== 'custom') {
+                        if (i % 2 === 0 || i === 0) {
+                            if (blockContent[i].wrap_group == true) {
+                                htmlBlock += '<div class="' + blockContent[i].wrap_group_class + '">';
+                            }
+                            htmlBlock += '<div class="form-group">';
+                            var blocker = ' lItem';
+                        } else {
+                            blocker = '';
+                        }
+                        if (blockContent[i].display !== 'empty') {
+                            switch (blockContent[i].display) {
+                                case "full":
+                                    var line = '';
                                     blocker = '';
-                                break;
-                            case "half":
-                                line = 'half_span';
-                                break;
-                        }
-                        htmlBlock += '<div class="' + line + ' ' + blocker + '">';
-                        htmlBlock += '<label class="label_fn control-label" for="' + blockContent[i].obj_id + '">' + blockContent[i].label + '</label>';
-                        if (blockContent[i].wrap == true) {
-                            htmlBlock += '<div class="' + blockContent[i].wrap_class + '">';
-                        }
-                        if (blockContent[i].inject_code !== '') {
-                            htmlBlock += blockContent[i].inject_code;
-                        }
-                        if (blockContent[i].input_obj == 'text') {
-                            htmlBlock += '<input';
-                            if (blockContent[i].obj_id !== '') {
-                                htmlBlock += ' id="' + blockContent[i].obj_id + '" name="' + blockContent[i].obj_id + '"';
+                                    break;
+                                case "half":
+                                    line = 'half_span';
+                                    break;
                             }
-                            htmlBlock += ' type="text" placeholder="' + blockContent[i].placeholder + '" class="input_fn form-control';
-                            if (blockContent[i].class !== '') {
-                                htmlBlock += ' ' + blockContent[i].class;
+                            htmlBlock += '<div class="' + line + ' ' + blocker + '">';
+                            htmlBlock += '<label class="label_fn control-label" for="' + blockContent[i].obj_id + '">' + blockContent[i].label + '</label>';
+                            if (blockContent[i].wrap == true) {
+                                htmlBlock += '<div class="' + blockContent[i].wrap_class + '">';
                             }
-                            if (blockContent[i].obj_label !== '') {
-                                htmlBlock += ' ' + blockContent[i].obj_label;
+                            if (blockContent[i].inject_code !== '') {
+                                htmlBlock += blockContent[i].inject_code;
                             }
-                            htmlBlock += '"';
-                            if (blockContent[i].options !== null) {
-                                var opLen = blockContent[i].options.length;
-                                for (var j = 0; j < opLen; j++) {
-                                    htmlBlock += ' ' + blockContent[i].options[j].item + '="' + blockContent[i].options[j].value + '"';
+                            if (blockContent[i].input_obj == 'text') {
+                                htmlBlock += '<input';
+                                if (blockContent[i].obj_id !== '') {
+                                    htmlBlock += ' id="' + blockContent[i].obj_id + '" name="' + blockContent[i].obj_id + '"';
                                 }
-                            }
-                            if (blockContent[i].data !== null) {
-                                var dtLen = blockContent[i].data.length;
-                                for (var k = 0; k < dtLen; k++) {
-                                    htmlBlock += ' data-' + blockContent[i].data[k].item + '="' + blockContent[i].data[k].value + '"';
+                                htmlBlock += ' type="text" placeholder="' + blockContent[i].placeholder + '" class="input_fn form-control';
+                                if (blockContent[i].class !== '') {
+                                    htmlBlock += ' ' + blockContent[i].class;
                                 }
-                            }
-                            htmlBlock += '>';
-                        } else if (blockContent[i].input_obj == 'radio') {
-                            htmlBlock += '<input';
-                            htmlBlock += ' type="radio"';
-                            if (blockContent[i].class !== '') {
-                                htmlBlock += ' class="' + blockContent[i].class + '"';
-                            }
-                            if (blockContent[i].obj_label !== '') {
-                                htmlBlock += ' ' + blockContent[i].obj_label;
-                            }
-                            if (blockContent[i].obj_id !== '') {
-                                htmlBlock += ' id="' + blockContent[i].obj_id + '" name="' + blockContent[i].obj_id + '"';
-                            }
-                            if (blockContent[i].options !== null) {
-                                opLen = blockContent[i].options.length;
-                                for (j = 0; j < opLen; j++) {
-                                    htmlBlock += ' ' + blockContent[i].options[j].item + '="' + blockContent[i].options[j].value + '"';
-                                    if (blockContent[i].options[j].default !== undefined) {
-                                        htmlBlock += ' ' + blockContent[i].options[j].default;
+                                if (blockContent[i].obj_label !== '') {
+                                    htmlBlock += ' ' + blockContent[i].obj_label;
+                                }
+                                htmlBlock += '"';
+                                if (blockContent[i].options !== null) {
+                                    var opLen = blockContent[i].options.length;
+                                    for (var j = 0; j < opLen; j++) {
+                                        htmlBlock += ' ' + blockContent[i].options[j].item + '="' + blockContent[i].options[j].value + '"';
                                     }
                                 }
-                            }
-                            if (blockContent[i].data !== null) {
-                                dtLen = blockContent[i].data.length;
-                                for (k = 0; k < dtLen; k++) {
-                                    htmlBlock += ' data-' + blockContent[i].data[k].item + '="' + blockContent[i].data[k].value + '"';
+                                if (blockContent[i].data !== null) {
+                                    var dtLen = blockContent[i].data.length;
+                                    for (var k = 0; k < dtLen; k++) {
+                                        htmlBlock += ' data-' + blockContent[i].data[k].item + '="' + blockContent[i].data[k].value + '"';
+                                    }
                                 }
-                            }
-                            htmlBlock += '>';
-                        } else if (blockContent[i].input_obj == 'select') {
-                            htmlBlock += '<select';
-                            if (blockContent[i].class !== '') {
-                                htmlBlock += ' class="form-control ' + blockContent[i].class + '"';
-                            }
-                            if (blockContent[i].obj_label !== '') {
-                                htmlBlock += ' ' + blockContent[i].obj_label;
-                            }
-                            if (blockContent[i].obj_id !== '') {
-                                htmlBlock += ' id="' + blockContent[i].obj_id + '" name="' + blockContent[i].obj_id + '"';
+                                htmlBlock += '>';
+                            } else if (blockContent[i].input_obj == 'radio') {
+                                htmlBlock += '<input';
+                                htmlBlock += ' type="radio"';
+                                if (blockContent[i].class !== '') {
+                                    htmlBlock += ' class="' + blockContent[i].class + '"';
+                                }
+                                if (blockContent[i].obj_label !== '') {
+                                    htmlBlock += ' ' + blockContent[i].obj_label;
+                                }
+                                if (blockContent[i].obj_id !== '') {
+                                    htmlBlock += ' id="' + blockContent[i].obj_id + '" name="' + blockContent[i].obj_id + '"';
+                                }
+                                if (blockContent[i].options !== null) {
+                                    opLen = blockContent[i].options.length;
+                                    for (j = 0; j < opLen; j++) {
+                                        htmlBlock += ' ' + blockContent[i].options[j].item + '="' + blockContent[i].options[j].value + '"';
+                                        if (blockContent[i].options[j].default !== undefined) {
+                                            htmlBlock += ' ' + blockContent[i].options[j].default;
+                                        }
+                                    }
+                                }
                                 if (blockContent[i].data !== null) {
                                     dtLen = blockContent[i].data.length;
                                     for (k = 0; k < dtLen; k++) {
                                         htmlBlock += ' data-' + blockContent[i].data[k].item + '="' + blockContent[i].data[k].value + '"';
                                     }
                                 }
-                            }
-                            htmlBlock += '>';
-                            if (blockContent[i].options !== null) {
-                                opLen = blockContent[i].options.length;
-                                for (j = 0; j < opLen; j++) {
-                                    htmlBlock += '<option';
-                                    htmlBlock += ' ' + blockContent[i].options[j].item + '="' + blockContent[i].options[j].value + '"';
-                                    if (blockContent[i].options[j].default !== undefined) {
-                                        htmlBlock += ' ' + blockContent[i].options[j].default;
-                                    }
-                                    htmlBlock += '>' + blockContent[i].options[j].label;
-                                    htmlBlock += '</option>';
+                                htmlBlock += '>';
+                            } else if (blockContent[i].input_obj == 'select') {
+                                htmlBlock += '<select';
+                                if (blockContent[i].class !== '') {
+                                    htmlBlock += ' class="form-control ' + blockContent[i].class + '"';
                                 }
+                                if (blockContent[i].obj_label !== '') {
+                                    htmlBlock += ' ' + blockContent[i].obj_label;
+                                }
+                                if (blockContent[i].obj_id !== '') {
+                                    htmlBlock += ' id="' + blockContent[i].obj_id + '" name="' + blockContent[i].obj_id + '"';
+                                    if (blockContent[i].data !== null) {
+                                        dtLen = blockContent[i].data.length;
+                                        for (k = 0; k < dtLen; k++) {
+                                            htmlBlock += ' data-' + blockContent[i].data[k].item + '="' + blockContent[i].data[k].value + '"';
+                                        }
+                                    }
+                                }
+                                htmlBlock += '>';
+                                if (blockContent[i].options !== null) {
+                                    opLen = blockContent[i].options.length;
+                                    for (j = 0; j < opLen; j++) {
+                                        htmlBlock += '<option';
+                                        htmlBlock += ' ' + blockContent[i].options[j].item + '="' + blockContent[i].options[j].value + '"';
+                                        if (blockContent[i].options[j].default !== undefined) {
+                                            htmlBlock += ' ' + blockContent[i].options[j].default;
+                                        }
+                                        htmlBlock += '>' + blockContent[i].options[j].label;
+                                        htmlBlock += '</option>';
+                                    }
+                                }
+                                htmlBlock += '</select>';
                             }
-                            htmlBlock += '</select>';
-                        }
-                        if (blockContent[i].append !== '') {
-                            htmlBlock += blockContent[i].append;
-                        }
-                        if (blockContent[i].wrap == true) {
+                            if (blockContent[i].append !== '') {
+                                htmlBlock += blockContent[i].append;
+                            }
+                            if (blockContent[i].wrap == true) {
+                                htmlBlock += '</div>';
+                            }
                             htmlBlock += '</div>';
                         }
-                        htmlBlock += '</div>';
-                    }
-                    if (i % 2 === 1) {
-                        htmlBlock += '</div>';
-                        if (blockContent[i].wrap_group == true) {
+                        if (i % 2 === 1) {
                             htmlBlock += '</div>';
+                            if (blockContent[i].wrap_group == true) {
+                                htmlBlock += '</div>';
+                            }
                         }
-                    }
-                }else{
-                    htmlBlock += blockContent[i].inject_code;
-                }
-            }
-            htmlBlock += '</fieldset>';
-            htmlBlock += '</form></div>';
-        }
-    })
-}
-function switchModes(va){
-    /**
-     * switches the page builder mode from
-     * Hero builder mode to Hello Bar
-     * builder mode
-     */
-    if(va == 'hello') {
-        $('*[data-role="hero"]').css('display', 'none');
-        $('*[data-role="hello"]').css('display', 'block');
-        pfExport = 'hello';
-        $('.submit_json').attr('data-nmode','hello');
-        panelAlert('Switched to Hello Banner Creation mode','good');
-    }else{
-        $('*[data-role="hello"]').css('display', 'none');
-        $('*[data-role="hero"]').attr('style', '');
-        pfExport = 'hero';
-        $('.submit_json').attr('data-nmode','hero');
-        panelAlert('Switched to Hero Banner Creation mode','good');
-    }
-}
-function initializeTheme(){
-    /**
-     * reads and/or sets the html theme data attribute
-     * from the local storage item
-     */
-    if(window.localStorage) {
-        var tm = localStorage.getItem(app.storage.t);
-        if (tm == null || tm == undefined) {
-            $('html').attr(app.handlers.t, 'light');
-        }else{
-            $('html').attr(app.handlers.t, tm);
-        }
-    }else{
-        $('html').attr(app.handlers.t, 'light');
-    }
-}
-function initHelp(){
-    /**
-     * Initialize the help view by loading items
-     * from the help.json file
-     */
-    $.ajax({
-        type:app.methods.g,
-        url:'data/help.json',
-        success:function(data){
-            for(var h=0;h<data.items.length;h++){
-                if(h > 0){
-                    var push = 'push_block';
-                }else{
-                    push = '';
-                }
-                $('.help-items').append('<li><a class="helpItem" data-target="'+h+'">'+data.items[h].title+'</a></li>');
-                $('.help_panel_holder').append('<div class="help_item" id="hlp'+h+'" data-helper="'+h+'"><h4 class="'+push+'">'+data.items[h].title+'</h4>'+data.items[h].block+'</div>');
-            }
-        },
-        error:function(){
-            panelAlert('Unable to load Help Contents from JSON source', 'error');
-        }
-    });
-
-}
-function setHeadSec(){
-    /**
-     * sets head section items that display in a button model
-     * the locally saved hero items for rapid translation of
-     * the JSON data
-     */
-    try {
-        var isReady = localStorage.getItem(app.storage.n);
-        if (isReady !== null) {
-            $(app.objects.l).css('display', 'inline-block');
-            $('#import_json').css('display', 'block');
-            $('.lsLoad').find('li').remove();
-            var a = localStorage.getItem(app.storage.n).split(','),
-                long = a.length;
-            if (long > 1) {
-                for (var i = 0; i < long; i++) {
-                    if (a[i] !== '') {
-                        $('.lsLoad').append('<li><a href="#" class="loadItem" '+app.handlers.i+'="' + a[i] + '">' + a[i] + '</a></li>');
+                    } else {
+                        htmlBlock += blockContent[i].inject_code;
                     }
                 }
+                htmlBlock += '</fieldset>';
+                htmlBlock += '</form></div>';
+            }
+        })
+    },
+    switchModes: function (va) {
+        /**
+         * switches the page builder mode from
+         * Hero builder mode to Hello Bar
+         * builder mode
+         */
+        if (va == 'hello') {
+            $('*[data-role="hero"]').css('display', 'none');
+            $('*[data-role="hello"]').css('display', 'block');
+            pfExport = 'hello';
+            $('.submit_json').attr('data-nmode', 'hello');
+            core.panelAlert('Switched to Hello Banner Creation mode', 'good');
+        } else {
+            $('*[data-role="hello"]').css('display', 'none');
+            $('*[data-role="hero"]').attr('style', '');
+            pfExport = 'hero';
+            $('.submit_json').attr('data-nmode', 'hero');
+            core.panelAlert('Switched to Hero Banner Creation mode', 'good');
+        }
+    },
+    initializeTheme: function () {
+        /**
+         * reads and/or sets the html theme data attribute
+         * from the local storage item
+         */
+        if (window.localStorage) {
+            var tm = localStorage.getItem(app.storage.t);
+            if (tm == null || tm == undefined) {
+                $('html').attr(app.handlers.t, 'light');
             } else {
-                $(app.objects.l).hide();
+                $('html').attr(app.handlers.t, tm);
             }
         } else {
-            $(app.objects.l).css('display', 'none');
-            $('#import_json').css('display', 'none');
+            $('html').attr(app.handlers.t, 'light');
         }
-    }catch(e){
-        console.log(e);
-    }
-}
-function launchBats(){
-    /**
-     * A useless script that runs at halloween
-     * and shows flying bats on the page.
-     */
-    var r = Math.random,
-        n = 0,
-        d = document,
-        w = window,
-        i = d.createElement('img'),
-        z = d.createElement('div'),
-        zs = z.style,
-        a = w.innerWidth * r(),
-        b = w.innerHeight * r();
-    z.className = 'oooobats';
-    zs.position = "fixed";
-    zs.left = 0;
-    zs.top = 0;
-    zs.opacity = 0;
-    z.appendChild(i);
-    i.src = 'data:image/gif;base64,R0lGODlhMAAwAJECAAAAAEJCQv///////yH/C05FVFNDQVBFMi4wAwEAAAAh+QQJAQACACwAAAAAMAAwAAACdpSPqcvtD6NcYNpbr4Z5ewV0UvhRohOe5UE+6cq0carCgpzQuM3ut16zvRBAH+/XKQ6PvaQyCFs+mbnWlEq0FrGi15XZJSmxP8OTRj4DyWY1lKdmV8fyLL3eXOPn6D3f6BcoOEhYaHiImKi4yNjo+AgZKTl5WAAAIfkECQEAAgAsAAAAADAAMAAAAnyUj6nL7Q+jdCDWicF9G1vdeWICao05ciUVpkrZIqjLwCdI16s+5wfck+F8JOBiR/zZZAJk0mAsDp/KIHRKvVqb2KxTu/Vdvt/nGFs2V5Bpta3tBcKp8m5WWL/z5PpbtH/0B/iyNGh4iJiouMjY6PgIGSk5SVlpeYmZqVkAACH5BAkBAAIALAAAAAAwADAAAAJhlI+py+0Po5y02ouz3rz7D4biSJbmiabq6gCs4B5AvM7GTKv4buby7vsAbT9gZ4h0JYmZpXO4YEKeVCk0QkVUlw+uYovE8ibgaVBSLm1Pa3W194rL5/S6/Y7P6/f8vp9SAAAh+QQJAQACACwAAAAAMAAwAAACZZSPqcvtD6OctNqLs968+w+G4kiW5omm6ooALeCusAHHclyzQs3rOz9jAXuqIRFlPJ6SQWRSaIQOpUBqtfjEZpfMJqmrHIFtpbGze2ZywWu0aUwWEbfiZvQdD4sXuWUj7gPos1EAACH5BAkBAAIALAAAAAAwADAAAAJrlI+py+0Po5y02ouz3rz7D4ZiCIxUaU4Amjrr+rDg+7ojXTdyh+e7kPP0egjabGg0EIVImHLJa6KaUam1aqVynNNsUvPTQjO/J84cFA3RzlaJO2495TF63Y7P6/f8vv8PGCg4SFhoeIg4UQAAIfkEBQEAAgAsAAAAADAAMAAAAnaUj6nL7Q+jXGDaW6+GeXsFdFL4UaITnuVBPunKtHGqwoKc0LjN7rdes70QQB/v1ykOj72kMghbPpm51pRKtBaxoteV2SUpsT/Dk0Y+A8lmNZSnZlfH8iy93lzj5+g93+gXKDhIWGh4iJiouMjY6PgIGSk5eVgAADs=';
-    d.body.appendChild(z);
+    },
+    initHelp: function () {
+        /**
+         * Initialize the help view by loading items
+         * from the help.json file
+         */
+        $.ajax({
+            type: app.methods.g,
+            url: 'data/help.json',
+            success: function (data) {
+                for (var h = 0; h < data.items.length; h++) {
+                    if (h > 0) {
+                        var push = 'push_block';
+                    } else {
+                        push = '';
+                    }
+                    $('.help-items').append('<li><a class="helpItem" data-target="' + h + '">' + data.items[h].title + '</a></li>');
+                    $('.help_panel_holder').append('<div class="help_item" id="hlp' + h + '" data-helper="' + h + '"><h4 class="' + push + '">' + data.items[h].title + '</h4>' + data.items[h].block + '</div>');
+                }
+            },
+            error: function () {
+                core.panelAlert('Unable to load Help Contents from JSON source', 'error');
+            }
+        });
+    },
+    setHeadSec: function () {
+        /**
+         * sets head section items that display in a button model
+         * the locally saved hero items for rapid translation of
+         * the JSON data
+         */
+        try {
+            var isReady = localStorage.getItem(app.storage.n);
+            if (isReady !== null) {
+                $(app.objects.l).css('display', 'inline-block');
+                $('#import_json').css('display', 'block');
+                $('.lsLoad').find('li').remove();
+                var a = localStorage.getItem(app.storage.n).split(','),
+                    long = a.length;
+                if (long > 1) {
+                    for (var i = 0; i < long; i++) {
+                        if (a[i] !== '') {
+                            $('.lsLoad').append('<li><a href="#" class="loadItem" ' + app.handlers.i + '="' + a[i] + '">' + a[i] + '</a></li>');
+                        }
+                    }
+                } else {
+                    $(app.objects.l).hide();
+                }
+            } else {
+                $(app.objects.l).css('display', 'none');
+                $('#import_json').css('display', 'none');
+            }
+        } catch (e) {
+            console.log(e);
+        }
+    },
+    launchBats: function () {
+        /**
+         * A useless script that runs at halloween
+         * and shows flying bats on the page.
+         */
+        var r = Math.random,
+            n = 0,
+            d = document,
+            w = window,
+            i = d.createElement('img'),
+            z = d.createElement('div'),
+            zs = z.style,
+            a = w.innerWidth * r(),
+            b = w.innerHeight * r();
+        z.className = 'oooobats';
+        zs.position = "fixed";
+        zs.left = 0;
+        zs.top = 0;
+        zs.opacity = 0;
+        z.appendChild(i);
+        i.src = 'data:image/gif;base64,R0lGODlhMAAwAJECAAAAAEJCQv///////yH/C05FVFNDQVBFMi4wAwEAAAAh+QQJAQACACwAAAAAMAAwAAACdpSPqcvtD6NcYNpbr4Z5ewV0UvhRohOe5UE+6cq0carCgpzQuM3ut16zvRBAH+/XKQ6PvaQyCFs+mbnWlEq0FrGi15XZJSmxP8OTRj4DyWY1lKdmV8fyLL3eXOPn6D3f6BcoOEhYaHiImKi4yNjo+AgZKTl5WAAAIfkECQEAAgAsAAAAADAAMAAAAnyUj6nL7Q+jdCDWicF9G1vdeWICao05ciUVpkrZIqjLwCdI16s+5wfck+F8JOBiR/zZZAJk0mAsDp/KIHRKvVqb2KxTu/Vdvt/nGFs2V5Bpta3tBcKp8m5WWL/z5PpbtH/0B/iyNGh4iJiouMjY6PgIGSk5SVlpeYmZqVkAACH5BAkBAAIALAAAAAAwADAAAAJhlI+py+0Po5y02ouz3rz7D4biSJbmiabq6gCs4B5AvM7GTKv4buby7vsAbT9gZ4h0JYmZpXO4YEKeVCk0QkVUlw+uYovE8ibgaVBSLm1Pa3W194rL5/S6/Y7P6/f8vp9SAAAh+QQJAQACACwAAAAAMAAwAAACZZSPqcvtD6OctNqLs968+w+G4kiW5omm6ooALeCusAHHclyzQs3rOz9jAXuqIRFlPJ6SQWRSaIQOpUBqtfjEZpfMJqmrHIFtpbGze2ZywWu0aUwWEbfiZvQdD4sXuWUj7gPos1EAACH5BAkBAAIALAAAAAAwADAAAAJrlI+py+0Po5y02ouz3rz7D4ZiCIxUaU4Amjrr+rDg+7ojXTdyh+e7kPP0egjabGg0EIVImHLJa6KaUam1aqVynNNsUvPTQjO/J84cFA3RzlaJO2495TF63Y7P6/f8vv8PGCg4SFhoeIg4UQAAIfkEBQEAAgAsAAAAADAAMAAAAnaUj6nL7Q+jXGDaW6+GeXsFdFL4UaITnuVBPunKtHGqwoKc0LjN7rdes70QQB/v1ykOj72kMghbPpm51pRKtBaxoteV2SUpsT/Dk0Y+A8lmNZSnZlfH8iy93lzj5+g93+gXKDhIWGh4iJiouMjY6PgIGSk5eVgAADs=';
+        d.body.appendChild(z);
 
-    function R(o, m) {
-        return Math.max(Math.min(o + (r() - .5) * 400, m - 50), 50)
-    }
-    function A() {
-        var x = R(a, w.innerWidth),
-            y = R(b, w.innerHeight),
-            d = 5 * Math.sqrt((a - x) * (a - x) + (b - y) * (b - y));
-        zs.opacity = n;
-        n = 1;
-        zs.transition = zs.webkitTransition = d / 1e3 + 's linear';
-        zs.transform = zs.webkitTransform = 'translate(' + x + 'px,' + y + 'px)';
-        i.style.transform = i.style.webkitTransform = (a > x) ? '' : 'scaleX(-1)';
-        a = x;
-        b = y;
-        setTimeout(A, d);
-    }
-    setTimeout(A, r() * 3e3);
-}
-function killBats(){
-    /**
-     * Removes the flying bats from the dom
-     */
-    $('.oooobats').remove();
-    $('.batsToggle').attr('data-status','allGone').html('Let In The Bats');
-}
-function resetItems(){
-    /**
-     * Checks if page items have been moved
-     * and resets them to their original position
-     * based on the numeric value of their ID
-     */
-    if($(app.objects.re).length > 0) {
-        $(app.objects.w).find(app.objects.cl).sort(function (a, b) {
-            return $(a).attr('id').replace('entry', '') - $(b).attr('id').replace('entry', '');
-        }).appendTo(app.objects.w);
-        $(app.objects.re).remove();
-        panelAlert('Items reset to their original position','good');
-    }else{
-        panelAlert('All items are in their original position','error');
-    }
-}
-$(function () {
-    /**
-     * Main document ready initialized function
-     */
-    var sPos = 0;
-    setHeadSec();
-    initializeTheme();
-    initHelp();
-    getVersion(true);
-    setInterval("getVersion(false)",600000);
-    $('.date_obj').datetimepicker({format: 'MM/DD/YYYY HH:mm'});
-    function choseLocalSave(){
+        function R(o, m) {
+            return Math.max(Math.min(o + (r() - .5) * 400, m - 50), 50)
+        }
+
+        function A() {
+            var x = R(a, w.innerWidth),
+                y = R(b, w.innerHeight),
+                d = 5 * Math.sqrt((a - x) * (a - x) + (b - y) * (b - y));
+            zs.opacity = n;
+            n = 1;
+            zs.transition = zs.webkitTransition = d / 1e3 + 's linear';
+            zs.transform = zs.webkitTransform = 'translate(' + x + 'px,' + y + 'px)';
+            i.style.transform = i.style.webkitTransform = (a > x) ? '' : 'scaleX(-1)';
+            a = x;
+            b = y;
+            setTimeout(A, d);
+        }
+
+        setTimeout(A, r() * 3e3);
+    },
+    killBats: function () {
+        /**
+         * Removes the flying bats from the dom
+         */
+        $('.oooobats').remove();
+        $('.batsToggle').attr('data-status', 'allGone').html('Let In The Bats');
+    },
+    resetItems: function () {
+        /**
+         * Checks if page items have been moved
+         * and resets them to their original position
+         * based on the numeric value of their ID
+         */
+        if ($(app.objects.re).length > 0) {
+            $(app.objects.w).find(app.objects.cl).sort(function (a, b) {
+                return $(a).attr('id').replace('entry', '') - $(b).attr('id').replace('entry', '');
+            }).appendTo(app.objects.w);
+            $(app.objects.re).remove();
+            core.panelAlert('Items reset to their original position', 'good');
+        } else {
+            core.panelAlert('All items are in their original position', 'error');
+        }
+    },
+    choseLocalSave: function () {
         /**
          * Populates the load saved data from
          * localstorage item and presents it
@@ -460,23 +451,23 @@ $(function () {
             } else {
                 $(target).append('<option value="null">No Local Storage Found</option>');
             }
-        }catch(e){
+        } catch (e) {
         }
-    }
-    function doLocalSave(method){
-        if(method == 'do' || method == null) {
+    },
+    doLocalSave: function (method) {
+        if (method == 'do' || method == null) {
             $('#loadandsave-zone').attr('data-reason', 'save').css('display', 'block');
-        }else if(method == 'reset'){
-            localStorage.setItem('pgb_SavedNode_LS',"");
-            for(var i=0, len=localStorage.length; i<len; i++) {
+        } else if (method == 'reset') {
+            localStorage.setItem('pgb_SavedNode_LS', "");
+            for (var i = 0, len = localStorage.length; i < len; i++) {
                 var key = localStorage.key(i);
-                if(key.indexOf('pgb_SavedNode_')>-1 && key.indexOf('pgb_SavedNode_LS')<0){
+                if (key.indexOf('pgb_SavedNode_') > -1 && key.indexOf('pgb_SavedNode_LS') < 0) {
                     localStorage.removeItem(key);
                 }
             }
         }
-    }
-    function scrollState(meth){
+    },
+    scrollState: function (meth) {
         /**
          * Checks the users scroll position on the
          * window and displays a progress bar
@@ -488,7 +479,7 @@ $(function () {
             max, value;
         max = docHeight - winHeight;
         progressBar.attr('max', max);
-        if(meth == 'a') {
+        if (meth == 'a') {
             winHeight = $(window).height(),
                 docHeight = $(document).height();
 
@@ -497,77 +488,77 @@ $(function () {
 
             value = $(window).scrollTop();
             progressBar.attr('value', value);
-        }else if(meth == 'b'){
+        } else if (meth == 'b') {
             value = $(window).scrollTop();
             progressBar.attr('value', value);
         }
-    }
-    function OpenInNewTab(url) {
+    },
+    OpenInNewTab: function (url) {
         /**
          * Simple open url in new tab function
          */
         var win = window.open(url, '_blank');
         win.focus();
-    }
-    function addMulti(num){
+    },
+    addMulti: function (num) {
         /**
          * Adds multiple hero items to the current
          * instance
          */
-        for(var i=0;i<num;i++) {
-            addItems();
+        for (var i = 0; i < num; i++) {
+            core.addItems();
         }
-        panelAlert('Items Added','good');
-    }
-    function jumpToHelper(a){
+        core.panelAlert('Items Added', 'good');
+    },
+    jumpToHelper: function (a) {
         /**
          * Animates the help item click to bring
          * into view the correct help item
          */
         $('.help_panel_holder').animate({
-            scrollTop: $(app.objects.hi+'[data-helper="'+a+'"]').offset().top,
-            duration:app.animation.d.min
+            scrollTop: $(app.objects.hi + '[data-helper="' + a + '"]').offset().top,
+            duration: app.animation.d.min
         });
         $(app.objects.hi).animate({
-            opacity:0.4,
-            duration:app.animation.d.min
+            opacity: 0.4,
+            duration: app.animation.d.min
         });
-        $(app.objects.hi+'[data-helper="'+a+'"]').animate({
-            opacity:1,
-            duration:app.animation.d.min
+        $(app.objects.hi + '[data-helper="' + a + '"]').animate({
+            opacity: 1,
+            duration: app.animation.d.min
         });
-    }
-    function saveNodeToLS(val,name){
-        if(window.localStorage) {
-            if(localStorage.getItem('pgb_SavedNode_LS') == null || localStorage.getItem('pgb_SavedNode_LS') == undefined){
-                localStorage.setItem('pgb_SavedNode_LS',"");
+    },
+    saveNodeToLS: function (val, name) {
+        if (window.localStorage) {
+            if (localStorage.getItem('pgb_SavedNode_LS') == null || localStorage.getItem('pgb_SavedNode_LS') == undefined) {
+                localStorage.setItem('pgb_SavedNode_LS', "");
             }
             var getList = localStorage.getItem('pgb_SavedNode_LS'),
                 getListLen = getList.split(',').length;
-            if(getListLen > 0){
-                var newList = getList+','+name;
-            }else{
+            if (getListLen > 0) {
+                var newList = getList + ',' + name;
+            } else {
                 newList = name;
             }
-            localStorage.setItem('pgb_SavedNode_LS',newList);
-            localStorage.setItem('pgb_SavedNode_'+name,val);
-            panelAlert('Data Saved To Local Storage','good');
+            localStorage.setItem('pgb_SavedNode_LS', newList);
+            localStorage.setItem('pgb_SavedNode_' + name, val);
+            core.panelAlert('Data Saved To Local Storage', 'good');
         }
-    }
-    function addItems(){
+    },
+    addItems: function () {
         /**
          * Add new items to the form. Duplicates a
          * form block
          */
-        if($(app.objects.o).css('display') == 'block'){
-            $(app.objects.o).css('display','none');
+        if ($(app.objects.o).css('display') == 'block') {
+            $(app.objects.o).css('display', 'none');
         }
-        var num     = $(app.objects.cl).length, // Checks to see how many "duplicatable" input fields we currently have
-            newNum  = new Number(num + 1),      // The numeric ID of the new input field being added, increasing by 1 each time
+        var num = $(app.objects.cl).length, // Checks to see how many "duplicatable" input fields we currently have
+            newNum = new Number(num + 1),      // The numeric ID of the new input field being added, increasing by 1 each time
             newElem = $(app.objects.e + num).clone().attr('id', 'entry' + newNum); // create the new element via clone(), and manipulate it's ID using newNum value
 
-        newElem.find('.heading-reference').attr('id', 'ID' + newNum + '_reference').attr('name', 'ID' + newNum + '_reference').html('<div class="btn-group bigboy"><button type="button" class="btn btn-info">ITEM <span class="label label-default">' + newNum+'</span></button><button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button><ul class="dropdown-menu"><li><a class="previewItem large" href="javascript:;" data-hero="'+newNum+'" data-role="hero">Preview Large</a></li><li><a class="previewItem small" href="javascript:;" data-hero="'+newNum+'" data-role="hero">Preview Small</a></li></ul></div>');
-        newElem.attr(app.handlers.s,newNum);
+        newElem.find('.heading-reference').attr('id', 'ID' + newNum + '_reference').attr('name', 'ID' + newNum + '_reference').html('<div class="btn-group bigboy"><button type="button" class="btn btn-info">ITEM <span class="label label-default">' + newNum + '</span></button><button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button><ul class="dropdown-menu"><li><a class="previewItem large" href="javascript:;" data-hero="' + newNum + '" data-role="hero">Preview Large</a></li><li><a class="previewItem small" href="javascript:;" data-hero="' + newNum + '" data-role="hero">Preview Small</a></li></ul></div>');
+        newElem.attr(app.handlers.s, newNum);
 
         newElem.find('.label_ttl').attr('for', 'ID' + newNum + '_title');
         newElem.find('.select_ttl:not(".objButtonPopupLink")').attr('id', 'ID' + newNum + '_title').attr('name', 'ID' + newNum + '_title').val('');
@@ -591,8 +582,8 @@ $(function () {
         newElem.find('.input_twt').attr('id', 'ID' + newNum + '_twitter_handle').attr('name', 'ID' + newNum + '_twitter_handle').val('');
         newElem.find(app.objects.c).attr(app.handlers.d, newNum);
         newElem.find('.check_alt_image').attr(app.handlers.d, newNum);
-        newElem.find('.input-group-addon.image_count').attr('style','').html('Shopify CDN');
-        newElem.find('.mod-radio').attr('style','');
+        newElem.find('.input-group-addon.image_count').attr('style', '').html('Shopify CDN');
+        newElem.find('.mod-radio').attr('style', '');
 
         $('.clonedInput:last').after(newElem);
         $('#ID' + newNum + '_title').focus();
@@ -603,16 +594,16 @@ $(function () {
             $('.btnAdd').attr('disabled', true).prop('value', "You've reached the limit"); // value here updates the text in the 'add' button when the limit is reached
         var dateNow = new Date();
         $('.date_obj').datetimepicker({format: 'MM/DD/YYYY HH:mm'});
-        $('.snapTo').append('<li><a href="#" class="gotoItem" '+app.handlers.i+'="'+newNum+'">Item '+newNum+'</a></li>');
+        $('.snapTo').append('<li><a href="#" class="gotoItem" ' + app.handlers.i + '="' + newNum + '">Item ' + newNum + '</a></li>');
         $(app.objects.r).animate({
-            scrollTop: $(app.objects.e + newNum).offset().top-60
+            scrollTop: $(app.objects.e + newNum).offset().top - 60
         }, app.animation.d.min);
-        $('.btn-group.bigboy:not(.helpMePlease)').last().find('ul').append('<li class="divider" data-role="hero"></li><li><a class="removeThisItem" '+app.handlers.i+'="'+newNum+'" href="javascript:;">Remove</a></li><li class="divider"></li><li><a class="moveUpThisItem" '+app.handlers.i+'="'+newNum+'" href="javascript:;">Move Up<span class="glyphicon glyphicon-arrow-up"></span></a></li><li><a class="moveDownThisItem" '+app.handlers.i+'="'+newNum+'" href="javascript:;">Move Down<span class="glyphicon glyphicon-arrow-down"></span></a></li>');
-        $(app.objects.e + newNum).find('.mod-radio').find('input').first().prop('checked',true);
-        scrollState('a');
-        panelAlert('Item Added','good');
-    }
-    function deleteItems(elem) {
+        $('.btn-group.bigboy:not(.helpMePlease)').last().find('ul').append('<li class="divider" data-role="hero"></li><li><a class="removeThisItem" ' + app.handlers.i + '="' + newNum + '" href="javascript:;">Remove</a></li><li class="divider"></li><li><a class="moveUpThisItem" ' + app.handlers.i + '="' + newNum + '" href="javascript:;">Move Up<span class="glyphicon glyphicon-arrow-up"></span></a></li><li><a class="moveDownThisItem" ' + app.handlers.i + '="' + newNum + '" href="javascript:;">Move Down<span class="glyphicon glyphicon-arrow-down"></span></a></li>');
+        $(app.objects.e + newNum).find('.mod-radio').find('input').first().prop('checked', true);
+        core.scrollState('a');
+        core.panelAlert('Item Added', 'good');
+    },
+    deleteItems: function (elem) {
         /**
          * Delete items from the form instance and
          * removes them from the dom reference
@@ -621,37 +612,37 @@ $(function () {
             if ($(app.objects.o).css('display') == 'block') {
                 $(app.objects.o).css('display', 'none');
             }
-                //var num = $(app.objects.cl).length;
-                if (elem == 'last') {
-                    var a = $('.clonedInput:last').attr('id'),
-                        b = a.replace('entry','');
-                    $('#' + a).slideUp('slow', function () {
-                        $(this).remove();
-                        // if only one element remains, disable the "remove" button
-                        if (elem - 1 === 1)
-                            $('.btnDel').attr('disabled', true);
-                        // enable the "add" button
-                        $('.btnAdd').attr('disabled', false).prop('value', "add section");
-                    });
-                    $('.snapTo').find('.gotoItem['+app.handlers.i+'="'+b+'"]').parent().remove();
-                    scrollState('a');
-                } else {
-                    $(app.objects.e + elem).slideUp('slow', function () {
-                        $(this).remove();
-                        // if only one element remains, disable the "remove" button
-                        if (elem - 1 === 1)
-                            $('.btnDel').attr('disabled', true);
-                        // enable the "add" button
-                        $('.btnAdd').attr('disabled', false).prop('value', "add section");
-                    });
-                    $('.snapTo').find('.gotoItem['+app.handlers.i+'="'+elem+'"]').parent().remove();
-                    scrollState('a');
-                }
-            panelAlert('Last Item Removed','good');
-                return false; // Removes the last section you added
+            //var num = $(app.objects.cl).length;
+            if (elem == 'last') {
+                var a = $('.clonedInput:last').attr('id'),
+                    b = a.replace('entry', '');
+                $('#' + a).slideUp('slow', function () {
+                    $(this).remove();
+                    // if only one element remains, disable the "remove" button
+                    if (elem - 1 === 1)
+                        $('.btnDel').attr('disabled', true);
+                    // enable the "add" button
+                    $('.btnAdd').attr('disabled', false).prop('value', "add section");
+                });
+                $('.snapTo').find('.gotoItem[' + app.handlers.i + '="' + b + '"]').parent().remove();
+                core.scrollState('a');
+            } else {
+                $(app.objects.e + elem).slideUp('slow', function () {
+                    $(this).remove();
+                    // if only one element remains, disable the "remove" button
+                    if (elem - 1 === 1)
+                        $('.btnDel').attr('disabled', true);
+                    // enable the "add" button
+                    $('.btnAdd').attr('disabled', false).prop('value', "add section");
+                });
+                $('.snapTo').find('.gotoItem[' + app.handlers.i + '="' + elem + '"]').parent().remove();
+                core.scrollState('a');
+            }
+            core.panelAlert('Last Item Removed', 'good');
+            return false; // Removes the last section you added
         }
-    }
-    function validateJSON(){
+    },
+    validateJSON: function () {
         /**
          * Validate the JSON that has been exported
          * when the user clicks the button
@@ -660,152 +651,164 @@ $(function () {
             compress: false,
             reformat: true,
             onSuccess: function (json) {
-                panelAlert('JSON Code is valid','good');
+                core.panelAlert('JSON Code is valid', 'good');
             },
             onError: function (error) {
-                panelAlert('A JSON error has been encountered. The line on which the error has occured is highlighted.','error');
+                core.panelAlert('A JSON error has been encountered. The line on which the error has occured is highlighted.', 'error');
             }
         })
-    }
-    function errorHandler(){
+    },
+    errorHandler: function () {
         /**
          * Generic error handler that checks if certain
          * form objects are filled and outputs a dropdown
          * list with anchor links
          */
         var errorLog = [],
-            a = JSON.parse($(app.objects.o+'['+app.handlers.r+'="output"]').find('textarea').val()).hero,
+            a = JSON.parse($(app.objects.o + '[' + app.handlers.r + '="output"]').find('textarea').val()).hero,
             b = a.length,
             c = 0;
-        for(var i =0;i<b;i++){
-            if(a[i].date.start == ''){
-                errorLog.push({form:(i+1),obj:"Start Date",prob:"No Value. FATAL",elem:"objStart",die:true});
+        for (var i = 0; i < b; i++) {
+            if (a[i].date.start == '') {
+                errorLog.push({form: (i + 1), obj: "Start Date", prob: "No Value. FATAL", elem: "objStart", die: true});
                 c++;
             }
-            if(a[i].date.end == ''){
-                errorLog.push({form:(i+1),obj:"End Date",prob:"No Value. FATAL",elem:"objEnd",die:true});
+            if (a[i].date.end == '') {
+                errorLog.push({form: (i + 1), obj: "End Date", prob: "No Value. FATAL", elem: "objEnd", die: true});
                 c++;
             }
-            if(a[i].title.en == ''){
-                errorLog.push({form:(i+1),obj:"English Title",prob:"No Value",elem:"objTitleEN",die:false});
+            if (a[i].title.en == '') {
+                errorLog.push({form: (i + 1), obj: "English Title", prob: "No Value", elem: "objTitleEN", die: false});
                 c++;
             }
-            if(a[i].title.fr == ''){
-                errorLog.push({form:(i+1),obj:"French Title",prob:"No Value",elem:"objTitleFR",die:false});
+            if (a[i].title.fr == '') {
+                errorLog.push({form: (i + 1), obj: "French Title", prob: "No Value", elem: "objTitleFR", die: false});
                 c++;
             }
-            if(a[i].text.en == ''){
-                errorLog.push({form:(i+1),obj:"English Text",prob:"No Value",elem:"objTextEN",die:false});
+            if (a[i].text.en == '') {
+                errorLog.push({form: (i + 1), obj: "English Text", prob: "No Value", elem: "objTextEN", die: false});
                 c++;
             }
-            if(a[i].text.fr == ''){
-                errorLog.push({form:(i+1),obj:"French Text",prob:"No Value",elem:"objTextFR",die:false});
+            if (a[i].text.fr == '') {
+                errorLog.push({form: (i + 1), obj: "French Text", prob: "No Value", elem: "objTextFR", die: false});
                 c++;
             }
-            if(a[i].button.label.en == ''){
-                errorLog.push({form:(i+1),obj:"English Button Label",prob:"No Value",elem:"objButtonEN",die:false});
+            if (a[i].button.label.en == '') {
+                errorLog.push({
+                    form: (i + 1),
+                    obj: "English Button Label",
+                    prob: "No Value",
+                    elem: "objButtonEN",
+                    die: false
+                });
                 c++;
             }
-            if(a[i].button.label.fr == ''){
-                errorLog.push({form:(i+1),obj:"French Button Label",prob:"No Value",elem:"objButtonFR",die:false});
+            if (a[i].button.label.fr == '') {
+                errorLog.push({
+                    form: (i + 1),
+                    obj: "French Button Label",
+                    prob: "No Value",
+                    elem: "objButtonFR",
+                    die: false
+                });
                 c++;
             }
-            if(a[i].button.url == ''){
-                errorLog.push({form:(i+1),obj:"Button URL",prob:"No Value",elem:"objButtonLink",die:false});
+            if (a[i].button.url == '') {
+                errorLog.push({form: (i + 1), obj: "Button URL", prob: "No Value", elem: "objButtonLink", die: false});
                 c++;
             }
-            if(a[i].image.url == ''){
-                errorLog.push({form:(i+1),obj:"Image URL",prob:"No Value",elem:"objImageMain",die:false});
+            if (a[i].image.url == '') {
+                errorLog.push({form: (i + 1), obj: "Image URL", prob: "No Value", elem: "objImageMain", die: false});
                 c++;
             }
         }
         errorLog.reverse();//present the errors in the right direction
-        if(c > 0) {
-            $(app.objects.el).css('display','inline-block');
+        if (c > 0) {
+            $(app.objects.el).css('display', 'inline-block');
             $('.errorListing').empty();
             for (var j = 0; j < errorLog.length; j++) {
-                $('.errorListing').prepend('<li><a href="javascript:;" class="errorItem '+errorLog[j].die+'" '+app.handlers.i+'="'+j+'">Item ' + errorLog[j].form + ' : ' + errorLog[j].obj + ' : ' + errorLog[j].prob + '</a></li>');
-                registerErrorButtons(errorLog[j].form,errorLog[j].elem,j,errorLog[j].prob,errorLog[j].die);
+                $('.errorListing').prepend('<li><a href="javascript:;" class="errorItem ' + errorLog[j].die + '" ' + app.handlers.i + '="' + j + '">Item ' + errorLog[j].form + ' : ' + errorLog[j].obj + ' : ' + errorLog[j].prob + '</a></li>');
+                core.registerErrorButtons(errorLog[j].form, errorLog[j].elem, j, errorLog[j].prob, errorLog[j].die);
             }
-            $(app.objects.el).find('button').html('Warnings<span class="label label-default numerrors">'+errorLog.length+'</span><span class="caret"></span>');
-        }else{
-            $(app.objects.el).css('display','none');
+            $(app.objects.el).find('button').html('Warnings<span class="label label-default numerrors">' + errorLog.length + '</span><span class="caret"></span>');
+        } else {
+            $(app.objects.el).css('display', 'none');
         }
-    }
-    function registerErrorButtons(num,elem,item,prob,die){
+    },
+    registerErrorButtons: function (num, elem, item, prob, die) {
         /**
          * Binds each error item created by the
          * errorHandler function to a click handler
          * that animates scroll to the specific
          * error item
          */
-        $(app.objects.bo).on('click','.errorItem['+app.handlers.i+'="'+item+'"]',function(){
-            if(die == true){
-                $(app.objects.e+num).find('.'+elem).css('background-color','rgba(238, 54, 54, 0.3)').css('border-color','red').attr('placeholder','Leaving this field empty will cause the hero banner function to fail');
-            }else {
+        $(app.objects.bo).on('click', '.errorItem[' + app.handlers.i + '="' + item + '"]', function () {
+            if (die == true) {
+                $(app.objects.e + num).find('.' + elem).css('background-color', 'rgba(238, 54, 54, 0.3)').css('border-color', 'red').attr('placeholder', 'Leaving this field empty will cause the hero banner function to fail');
+            } else {
                 $(app.objects.e + num).find('.' + elem).css('background-color', 'rgba(238, 162, 54, 0.3)');
             }
             $(app.objects.o).hide();
-            $(app.objects.r).css('overflow','auto');
+            $(app.objects.r).css('overflow', 'auto');
             $(app.objects.r).animate({
-                scrollTop: $(app.objects.e + num+' .'+elem).offset().top-100
+                scrollTop: $(app.objects.e + num + ' .' + elem).offset().top - 100
             }, app.animation.d.min);
-            if($('.'+elem).parent().attr('class') !== 'input_holders'){
-                $('.'+elem).wrap('<div class="input_holders"></div>').parent().append('<div class="input_alerts" title="'+prob+'"><span class="glyphicon glyphicon-exclamation-sign"></span></div>')
+            if ($('.' + elem).parent().attr('class') !== 'input_holders') {
+                $('.' + elem).wrap('<div class="input_holders"></div>').parent().append('<div class="input_alerts" title="' + prob + '"><span class="glyphicon glyphicon-exclamation-sign"></span></div>')
             }
         });
-    }
-    function traverseJSON(storage,nodeName){
+    },
+    traverseJSON: function (storage, nodeName) {
         /**
          * Reads JSON that is pasted in the form in
          * translate JSON mode and prepares and formats
          * it to be output to the corresponding
          * form objects
          */
-        if($(app.objects.b+' textarea').val() !== '' || localStorage.getItem('pgb_SavedNode') !== '') {
-            if(storage == false) {
-                var ctc = $(app.objects.b+' textarea').val();
-                if(ctc == ''){
-                    panelAlert('Form Does Not Contain JSON Data','error');
+        if ($(app.objects.b + ' textarea').val() !== '' || localStorage.getItem('pgb_SavedNode') !== '') {
+            if (storage == false) {
+                var ctc = $(app.objects.b + ' textarea').val();
+                if (ctc == '') {
+                    core.panelAlert('Form Does Not Contain JSON Data', 'error');
                 }
-            }else if(storage == true && nodeName !== '') {
-                if(localStorage.getItem('pgb_SavedNode_'+nodeName) !== undefined && localStorage.getItem('pgb_SavedNode_'+nodeName) !== null && localStorage.getItem('pgb_SavedNode_'+nodeName) !== '') {
-                    ctc = localStorage.getItem('pgb_SavedNode_'+nodeName).replace(',null', '');
-                }else{
-                    panelAlert('No Data Found In Local Storage','error');
+            } else if (storage == true && nodeName !== '') {
+                if (localStorage.getItem('pgb_SavedNode_' + nodeName) !== undefined && localStorage.getItem('pgb_SavedNode_' + nodeName) !== null && localStorage.getItem('pgb_SavedNode_' + nodeName) !== '') {
+                    ctc = localStorage.getItem('pgb_SavedNode_' + nodeName).replace(',null', '');
+                } else {
+                    core.panelAlert('No Data Found In Local Storage', 'error');
                 }
             }
-                var prs = JSON.parse(ctc),
+            var prs = JSON.parse(ctc),
                 obj = prs.hero,
                 len = obj.length,
                 formItems = $(app.objects.cl).length,
                 formArray = [];
-            if(formItems < len){
+            if (formItems < len) {
                 var build = true,
-                    bItems = len-formItems;
+                    bItems = len - formItems;
             }
-            for(var h = 0;h<bItems;h++){
-                addItems();
+            for (var h = 0; h < bItems; h++) {
+                core.addItems();
             }
             for (var i = 0; i < len; i++) {
                 formArray.push(obj[i]);
             }
-            jsonToForm(formArray);
-            panelAlert('Data Translated To Form','good');
-        }else{
-            panelAlert('Please generate or paste JSON before using this function','error');
+            core.jsonToForm(formArray);
+            core.panelAlert('Data Translated To Form', 'good');
+        } else {
+            core.panelAlert('Please generate or paste JSON before using this function', 'error');
         }
-    }
-    function jsonToForm(aCode){
+    },
+    jsonToForm: function (aCode) {
         /**
          * Takes formatted JSON sent from the TraverseJSON
          * function and outputs it to the mapped form
          * element
          */
         var jsLen = aCode.length;
-        for(var i = 0;i<jsLen;i++){
-            var jsForm = 'entry'+(i+1),
-            formEl = '#'+jsForm;
+        for (var i = 0; i < jsLen; i++) {
+            var jsForm = 'entry' + (i + 1),
+                formEl = '#' + jsForm;
             $(formEl).find('.objStart').val(aCode[i].date.start);
             $(formEl).find('.objEnd').val(aCode[i].date.end);
             $(formEl).find('.objTitleEN').val(aCode[i].title.en);
@@ -818,300 +821,300 @@ $(function () {
             $(formEl).find('.objButtonEN').val(aCode[i].button.label.en);
             $(formEl).find('.objButtonFR').val(aCode[i].button.label.fr);
             $(formEl).find('.objButtonLink').val(aCode[i].button.url);
-            if(aCode[i].date.delay === true || aCode[i].date.delay === false){
-                setTimeout("panelAlert('Some delay entries are not numerical. Make sure to set all delay entries to a numerical value manually.','error')",2000);
-            }else if(aCode[i].date.delay == '' || aCode[i].date.delay == null || aCode[i].date.delay == undefined || aCode[i].date.delay == 'undefined'){
+            if (aCode[i].date.delay === true || aCode[i].date.delay === false) {
+                setTimeout("panelAlert('Some delay entries are not numerical. Make sure to set all delay entries to a numerical value manually.','error')", 2000);
+            } else if (aCode[i].date.delay == '' || aCode[i].date.delay == null || aCode[i].date.delay == undefined || aCode[i].date.delay == 'undefined') {
                 $(formEl).find('.objDelay').val(0);
-            }else{
+            } else {
                 $(formEl).find('.objDelay').val(aCode[i].date.delay);
             }
             $(formEl).find('.objCountdownShow').val(aCode[i].showCountdown);
-            $(formEl).find('.objButtonPopup option[value="'+aCode[i].popUpLink+'"]').attr('selected',true).prop('selected',true);
-            $(formEl).find('.objButtonPopupLink option[value="'+aCode[i].button.popUpLinkID+'"]').attr('selected',true).prop('selected',true);
-            $(formEl).find('.objCountdownShow option[value="'+aCode[i].showCountdown+'"]').attr('selected',true).prop('selected',true);
-            $(formEl).find('.objHeroSticky option[value="'+aCode[i].sticky+'"]').attr('selected',true).prop('selected',true);
-            $(formEl).find('.objHeroTitleShow option[value="'+aCode[i].title.showTitle+'"]').attr('selected',true).prop('selected',true);
-            $(formEl).find('.objHeroSubtitleShow option[value="'+aCode[i].text.showSubTitle+'"]').attr('selected',true).prop('selected',true);
-            $(formEl).find('.objHeroPromote option[value="'+aCode[i].promote+'"]').attr('selected',true).prop('selected',true);
-            if(aCode[i].active == true){
-                $(formEl).find('.mod-radio').find('input[type="radio"]').first().prop('checked',true);
-                $(formEl).find('.mod-radio').find('input[type="radio"]').last().prop('checked',false);
-            }else if(aCode[i].active == false){
-                $(formEl).find('.mod-radio').css('border-left-width','6px').css('border-left-style','solid').css('border-left-color','rgb(253, 0, 0)');
-                $(formEl).find('.mod-radio').find('input[type="radio"]').first().prop('checked',false);
-                $(formEl).find('.mod-radio').find('input[type="radio"]').last().prop('checked',true);
+            $(formEl).find('.objButtonPopup option[value="' + aCode[i].popUpLink + '"]').attr('selected', true).prop('selected', true);
+            $(formEl).find('.objButtonPopupLink option[value="' + aCode[i].button.popUpLinkID + '"]').attr('selected', true).prop('selected', true);
+            $(formEl).find('.objCountdownShow option[value="' + aCode[i].showCountdown + '"]').attr('selected', true).prop('selected', true);
+            $(formEl).find('.objHeroSticky option[value="' + aCode[i].sticky + '"]').attr('selected', true).prop('selected', true);
+            $(formEl).find('.objHeroTitleShow option[value="' + aCode[i].title.showTitle + '"]').attr('selected', true).prop('selected', true);
+            $(formEl).find('.objHeroSubtitleShow option[value="' + aCode[i].text.showSubTitle + '"]').attr('selected', true).prop('selected', true);
+            $(formEl).find('.objHeroPromote option[value="' + aCode[i].promote + '"]').attr('selected', true).prop('selected', true);
+            if (aCode[i].active == true) {
+                $(formEl).find('.mod-radio').find('input[type="radio"]').first().prop('checked', true);
+                $(formEl).find('.mod-radio').find('input[type="radio"]').last().prop('checked', false);
+            } else if (aCode[i].active == false) {
+                $(formEl).find('.mod-radio').css('border-left-width', '6px').css('border-left-style', 'solid').css('border-left-color', 'rgb(253, 0, 0)');
+                $(formEl).find('.mod-radio').find('input[type="radio"]').first().prop('checked', false);
+                $(formEl).find('.mod-radio').find('input[type="radio"]').last().prop('checked', true);
             }
-            if($(app.objects.o).css('display') == 'block'){
+            if ($(app.objects.o).css('display') == 'block') {
                 $(app.objects.o).hide();
-                $(app.objects.r).css('overflow','auto');
+                $(app.objects.r).css('overflow', 'auto');
             }
-            $(app.objects.r).css('overflow','auto');
+            $(app.objects.r).css('overflow', 'auto');
         }
-    }
-    function prepareJSON(meth,name,mode){
+    },
+    prepareJSON: function (meth, name, mode) {
         /**
          * Serializes the form data in a JSON format
          * and passes the data to the outputJson
          * function
          */
         var c = [];
-        if(mode == 'hero' || mode == '' || mode == null || mode == undefined) {
-            $('.clonedInput form fieldset[data-role="hero"]').each(function(){
+        if (mode == 'hero' || mode == '' || mode == null || mode == undefined) {
+            $('.clonedInput form fieldset[data-role="hero"]').each(function () {
                 var a = $(this).serializeArray();
                 c.push(a);
             });
             if (meth == 'full') {
-                outputJson(c, meth, null, mode);
+                core.outputJson(c, meth, null, mode);
             } else if (meth == 'save') {
-                outputJson(c, meth, name, 'hero');
+                core.outputJson(c, meth, name, 'hero');
             }
-        }else if(mode == 'hello') {
-            $('.clonedInput form fieldset[data-role="hello"]').each(function(){
+        } else if (mode == 'hello') {
+            $('.clonedInput form fieldset[data-role="hello"]').each(function () {
                 var a = $(this).serializeArray();
                 c.push(a);
             });
-                outputJson(c, 'full', null, 'hello');
+            core.outputJson(c, 'full', null, 'hello');
         }
-    }
-    function outputJson(aCode,meth,name,mode){
+    },
+    outputJson: function (aCode, meth, name, mode) {
         /**
          * Receives the serialized data parsed in the
          * prepareJSON function and outputs JSON
          * formatted code to the output view
          */
-            try {
-                var nodes = aCode.length;
-                var lastItem = nodes - 1;
-                if (mode == 'hello') {
-                    var page_model = '{\n    "hello": [\n';
-                    for (var i = 0; i < nodes; i++) {
-                        page_model += '       {\n        "helloItem": "hello' + i + '",';
-                        page_model += '\n        "date": {';
-                        page_model += '\n          "start": "' + aCode[i][0].value + '",';
-                        page_model += '\n          "end": "' + aCode[i][1].value + '"';
-                        page_model += '\n        },';
-                        page_model += '\n        "text": {';
-                        page_model += '\n          "en": "' + aCode[i][2].value.trim().replace(/"/g, '') + '",';
-                        page_model += '\n          "fr": "' + aCode[i][3].value.trim().replace(/"/g, '') + '"';
-                        page_model += '\n        }';
-                        if (i < lastItem) {
-                            page_model += '\n},\n';
-                        }
+        try {
+            var nodes = aCode.length;
+            var lastItem = nodes - 1;
+            if (mode == 'hello') {
+                var page_model = '{\n    "hello": [\n';
+                for (var i = 0; i < nodes; i++) {
+                    page_model += '       {\n        "helloItem": "hello' + i + '",';
+                    page_model += '\n        "date": {';
+                    page_model += '\n          "start": "' + aCode[i][0].value + '",';
+                    page_model += '\n          "end": "' + aCode[i][1].value + '"';
+                    page_model += '\n        },';
+                    page_model += '\n        "text": {';
+                    page_model += '\n          "en": "' + aCode[i][2].value.trim().replace(/"/g, '') + '",';
+                    page_model += '\n          "fr": "' + aCode[i][3].value.trim().replace(/"/g, '') + '"';
+                    page_model += '\n        }';
+                    if (i < lastItem) {
+                        page_model += '\n},\n';
                     }
-                    page_model += '\n      }\n   ]\n}';
-                } else if (mode == 'hero') {
-                    page_model = '{\n    "hero": [\n';
-                    for (i = 0; i < nodes; i++) {
-                        //mapping
-                        console.log(aCode[i][13].value);
-                        if (aCode[i][13].value == '' || aCode[i][13].value == null || aCode[i][13].value == undefined) {
-                            var elemAAAA = 'null';
-                        } else {
-                            elemAAAA = aCode[i][13].value;
-                        }
-                        if (aCode[i][14].value == '' || aCode[i][14].value == null || aCode[i][14].value == undefined) {
-                            var elemA = true;
-                        } else {
-                            elemA = aCode[i][14].value;
-                        }
-                        if (aCode[i][15].value == '' || aCode[i][15].value == null || aCode[i][15].value == undefined) {
-                            var elemAA = true;
-                        } else {
-                            elemAA = aCode[i][15].value;
-                        }
-                        if (aCode[i][16].value == '' || aCode[i][16].value == null || aCode[i][16].value == undefined) {
-                            var elemAAA = true;
-                        } else {
-                            elemAAA = aCode[i][16].value;
-                        }
-                        if (aCode[i][12].value == '' || aCode[i][12].value == null || aCode[i][12].value == undefined) {
-                            var elemB = false;
-                        } else {
-                            elemB = aCode[i][12].value;
-                        }
-                        if (aCode[i][17].value == '' || aCode[i][17].value == null || aCode[i][17].value == undefined) {
-                            var elemC = false;
-                        } else {
-                            elemC = aCode[i][17].value;
-                        }
-                        if (aCode[i][20] !== undefined) {
-                            if (aCode[i][20].value == '' || aCode[i][20].value == null || aCode[i][20].value == undefined) {
-                                var elemD = true;
-                            } else {
-                                elemD = aCode[i][20].value;
-                            }
-                        } else {
-                            elemD = true;
-                        }
-                        if (aCode[i][18] !== undefined) {
-                            if (aCode[i][18].value == '' || aCode[i][18].value == null || aCode[i][18].value == undefined) {
-                                var elemDD = false;
-                            } else {
-                                elemDD = aCode[i][18].value;
-                            }
-                        } else {
-                            elemDD = false;
-                        }
-                        if (aCode[i][19] !== undefined) {
-                            if (aCode[i][19].value == '' || aCode[i][19].value == null || aCode[i][19].value == undefined) {
-                                var elemE = 0;
-                            } else {
-                                elemE = aCode[i][19].value;
-                            }
-                        } else {
-                            elemE = 0;
-                        }
-                        page_model += '{\n        "heroId": "hero-elem' + i + '",';
-                        page_model += '\n        "active": ' + elemD + ',';
-                        page_model += '\n        "sticky": ' + elemDD + ',';
-                        page_model += '\n        "showCountdown": ' + elemA + ',';
-                        page_model += '\n        "popUpLink": ' + elemB + ',';
-                        page_model += '\n        "date": {';
-                        page_model += '\n          "start": "' + aCode[i][0].value + '",';
-                        page_model += '\n          "end": "' + aCode[i][1].value + '",';
-                        page_model += '\n          "delay": ' + elemE;
-                        page_model += '\n        },';
-                        page_model += '\n        "title": {';
-                        page_model += '\n          "en": "' + aCode[i][2].value.trim() + '",';
-                        page_model += '\n          "fr": "' + aCode[i][3].value.trim() + '",';
-                        page_model += '\n          "color": "' + aCode[i][4].value + '",';
-                        page_model += '\n          "showTitle": ' + elemAA;
-                        page_model += '\n        },';
-                        page_model += '\n        "text": {';
-                        page_model += '\n          "en": "' + aCode[i][5].value.trim() + '",';
-                        page_model += '\n          "fr": "' + aCode[i][6].value.trim() + '",';
-                        page_model += '\n          "showSubTitle": ' + elemAAA;
-                        page_model += '\n        },';
-                        page_model += '\n        "promote": ' + elemC + ',';
-                        page_model += '\n        "button": {';
-                        page_model += '\n          "label": {';
-                        page_model += '\n            "en": "' + aCode[i][9].value.trim() + '",';
-                        page_model += '\n            "fr": "' + aCode[i][10].value.trim() + '"';
-                        page_model += '\n          },';
-                        page_model += '\n        "url": "' + aCode[i][11].value + '",';
-                        page_model += '\n        "popUpLinkID": "' + elemAAAA + '"';
-                        page_model += '\n        },';
-                        page_model += '\n        "image": {';
-                        page_model += '\n          "url": "' + aCode[i][7].value + '",';
-                        page_model += '\n          "altUrl": "' + aCode[i][8].value + '"';
-                        page_model += '\n        }';
-                        if (i < lastItem) {
-                            page_model += '\n},\n';
-                        }
-                    }
-                    page_model += '\n      }\n   ]\n}';
                 }
-                if (meth == 'full') {
-                    if ($(app.objects.he).css('display') == 'block') {
-                        $(app.objects.he).css('display', 'none');
+                page_model += '\n      }\n   ]\n}';
+            } else if (mode == 'hero') {
+                page_model = '{\n    "hero": [\n';
+                for (i = 0; i < nodes; i++) {
+                    //mapping
+                    console.log(aCode[i][13].value);
+                    if (aCode[i][13].value == '' || aCode[i][13].value == null || aCode[i][13].value == undefined) {
+                        var elemAAAA = 'null';
+                    } else {
+                        elemAAAA = aCode[i][13].value;
                     }
-                    if ($(app.objects.h).css('display') == 'block') {
-                        $(app.objects.h).css('display', 'none');
+                    if (aCode[i][14].value == '' || aCode[i][14].value == null || aCode[i][14].value == undefined) {
+                        var elemA = true;
+                    } else {
+                        elemA = aCode[i][14].value;
                     }
-                    if ($(app.objects.ls).css('display') == 'block') {
-                        $(app.objects.ls).css('display', 'none');
+                    if (aCode[i][15].value == '' || aCode[i][15].value == null || aCode[i][15].value == undefined) {
+                        var elemAA = true;
+                    } else {
+                        elemAA = aCode[i][15].value;
                     }
-                    $(app.objects.o).attr(app.handlers.r, 'output');
-                    $(app.objects.o).css('display', 'block');
-                    $(app.objects.o + ' textarea').val(page_model);
-                    $(app.objects.r).animate({scrollTop: 0}, app.animation.d.min).css('overflow', 'hidden');
-                    if (mode == 'hero') {
-                        errorHandler();
+                    if (aCode[i][16].value == '' || aCode[i][16].value == null || aCode[i][16].value == undefined) {
+                        var elemAAA = true;
+                    } else {
+                        elemAAA = aCode[i][16].value;
                     }
-                    panelAlert('JSON Exported Successfuly', 'good');
-                } else {
-                    saveNodeToLS(page_model, name);
+                    if (aCode[i][12].value == '' || aCode[i][12].value == null || aCode[i][12].value == undefined) {
+                        var elemB = false;
+                    } else {
+                        elemB = aCode[i][12].value;
+                    }
+                    if (aCode[i][17].value == '' || aCode[i][17].value == null || aCode[i][17].value == undefined) {
+                        var elemC = false;
+                    } else {
+                        elemC = aCode[i][17].value;
+                    }
+                    if (aCode[i][20] !== undefined) {
+                        if (aCode[i][20].value == '' || aCode[i][20].value == null || aCode[i][20].value == undefined) {
+                            var elemD = true;
+                        } else {
+                            elemD = aCode[i][20].value;
+                        }
+                    } else {
+                        elemD = true;
+                    }
+                    if (aCode[i][18] !== undefined) {
+                        if (aCode[i][18].value == '' || aCode[i][18].value == null || aCode[i][18].value == undefined) {
+                            var elemDD = false;
+                        } else {
+                            elemDD = aCode[i][18].value;
+                        }
+                    } else {
+                        elemDD = false;
+                    }
+                    if (aCode[i][19] !== undefined) {
+                        if (aCode[i][19].value == '' || aCode[i][19].value == null || aCode[i][19].value == undefined) {
+                            var elemE = 0;
+                        } else {
+                            elemE = aCode[i][19].value;
+                        }
+                    } else {
+                        elemE = 0;
+                    }
+                    page_model += '{\n        "heroId": "hero-elem' + i + '",';
+                    page_model += '\n        "active": ' + elemD + ',';
+                    page_model += '\n        "sticky": ' + elemDD + ',';
+                    page_model += '\n        "showCountdown": ' + elemA + ',';
+                    page_model += '\n        "popUpLink": ' + elemB + ',';
+                    page_model += '\n        "date": {';
+                    page_model += '\n          "start": "' + aCode[i][0].value + '",';
+                    page_model += '\n          "end": "' + aCode[i][1].value + '",';
+                    page_model += '\n          "delay": ' + elemE;
+                    page_model += '\n        },';
+                    page_model += '\n        "title": {';
+                    page_model += '\n          "en": "' + aCode[i][2].value.trim() + '",';
+                    page_model += '\n          "fr": "' + aCode[i][3].value.trim() + '",';
+                    page_model += '\n          "color": "' + aCode[i][4].value + '",';
+                    page_model += '\n          "showTitle": ' + elemAA;
+                    page_model += '\n        },';
+                    page_model += '\n        "text": {';
+                    page_model += '\n          "en": "' + aCode[i][5].value.trim() + '",';
+                    page_model += '\n          "fr": "' + aCode[i][6].value.trim() + '",';
+                    page_model += '\n          "showSubTitle": ' + elemAAA;
+                    page_model += '\n        },';
+                    page_model += '\n        "promote": ' + elemC + ',';
+                    page_model += '\n        "button": {';
+                    page_model += '\n          "label": {';
+                    page_model += '\n            "en": "' + aCode[i][9].value.trim() + '",';
+                    page_model += '\n            "fr": "' + aCode[i][10].value.trim() + '"';
+                    page_model += '\n          },';
+                    page_model += '\n        "url": "' + aCode[i][11].value + '",';
+                    page_model += '\n        "popUpLinkID": "' + elemAAAA + '"';
+                    page_model += '\n        },';
+                    page_model += '\n        "image": {';
+                    page_model += '\n          "url": "' + aCode[i][7].value + '",';
+                    page_model += '\n          "altUrl": "' + aCode[i][8].value + '"';
+                    page_model += '\n        }';
+                    if (i < lastItem) {
+                        page_model += '\n},\n';
+                    }
                 }
-            }catch(e){
-                panelAlert('An unknown error has occured. Please make sure all required fields are filled.','error');
+                page_model += '\n      }\n   ]\n}';
             }
-    }
-    function urlExists(testUrl) {
+            if (meth == 'full') {
+                if ($(app.objects.he).css('display') == 'block') {
+                    $(app.objects.he).css('display', 'none');
+                }
+                if ($(app.objects.h).css('display') == 'block') {
+                    $(app.objects.h).css('display', 'none');
+                }
+                if ($(app.objects.ls).css('display') == 'block') {
+                    $(app.objects.ls).css('display', 'none');
+                }
+                $(app.objects.o).attr(app.handlers.r, 'output');
+                $(app.objects.o).css('display', 'block');
+                $(app.objects.o + ' textarea').val(page_model);
+                $(app.objects.r).animate({scrollTop: 0}, app.animation.d.min).css('overflow', 'hidden');
+                if (mode == 'hero') {
+                    core.errorHandler();
+                }
+                core.panelAlert('JSON Exported Successfuly', 'good');
+            } else {
+                core.saveNodeToLS(page_model, name);
+            }
+        } catch (e) {
+            core.panelAlert('An unknown error has occured. Please make sure all required fields are filled.', 'error');
+        }
+    },
+    urlExists: function (testUrl) {
         /**
          * Check if an url exists
          */
         var http = jQuery.ajax({
-            type:"HEAD",
+            type: "HEAD",
             url: 'https:' + testUrl,
             async: false
         });
         return http.status;
         // this will return 200 on success, and 0 or negative value on error
-    }
-    function validateImage(type,handler){
+    },
+    validateImage: function (type, handler) {
         /**
          * Gets the image url input by the user and runs it
          * through the urlExists function. Depending on the
          * value returned, the form elements will be
          * formatted accordingly
          */
-        if(type == 'main'){
-            var a = $(app.objects.c+'['+app.handlers.d+'="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.main_image').val(),
-                aa = $(app.objects.c+'['+app.handlers.d+'="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.main_image'),
-                aaa = $(app.objects.c+'['+app.handlers.d+'="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.main_image').parent().attr('class');
-            if(a !== '') {
-                var b = urlExists(a);
+        if (type == 'main') {
+            var a = $(app.objects.c + '[' + app.handlers.d + '="' + handler + '"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.main_image').val(),
+                aa = $(app.objects.c + '[' + app.handlers.d + '="' + handler + '"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.main_image'),
+                aaa = $(app.objects.c + '[' + app.handlers.d + '="' + handler + '"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.main_image').parent().attr('class');
+            if (a !== '') {
+                var b = core.urlExists(a);
                 if (b !== 200) {
-                    if(aaa == 'input_holders'){
+                    if (aaa == 'input_holders') {
                         $(aa).next().next().css('background-color', '#ff3300').css('font-weight', 'bold').css('color', '#fff').html('Image does not exist');
-                    }else {
+                    } else {
                         $(aa).next().css('background-color', '#ff3300').css('font-weight', 'bold').css('color', '#fff').html('Image does not exist');
                     }
                 } else if (b == 200) {
-                    if(aaa == 'input_holders'){
+                    if (aaa == 'input_holders') {
                         $(aa).next().next().attr('style', '').css('background-color', 'rgb(82, 197, 82)').html('Image validated');
-                    }else {
+                    } else {
                         $(aa).next().attr('style', '').css('background-color', 'rgb(82, 197, 82)').html('Image validated');
                     }
                 } else {
-                    if(aaa == 'input_holders'){
+                    if (aaa == 'input_holders') {
                         $(aa).next().next().attr('style', '').html('Shopify CDN');
-                    }else {
+                    } else {
                         $(aa).next().attr('style', '').html('Shopify CDN');
                     }
                 }
-            }else{
-                if(aaa == 'input_holders') {
+            } else {
+                if (aaa == 'input_holders') {
                     $(aa).next().next().css('background-color', '#eee').html('Nothing to validate');
-                }else {
+                } else {
                     $(aa).next().css('background-color', '#eee').html('Nothing to validate');
                 }
             }
-        }else if(type == 'alt'){
-            var a = $(app.objects.ca+'['+app.handlers.d+'="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.alt_image').val(),
-                aa = $(app.objects.ca+'['+app.handlers.d+'="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.alt_image'),
-                aaa = $(app.objects.ca+'['+app.handlers.d+'="'+handler+'"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.alt_image').parent().attr('class');
-            if(a !== '') {
-                var b = urlExists(a);
+        } else if (type == 'alt') {
+            a = $(app.objects.ca + '[' + app.handlers.d + '="' + handler + '"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.alt_image').val(),
+                aa = $(app.objects.ca + '[' + app.handlers.d + '="' + handler + '"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.alt_image'),
+                aaa = $(app.objects.ca + '[' + app.handlers.d + '="' + handler + '"]').parent().parent().parent().parent().parent().parent().parent().parent().find('.alt_image').parent().attr('class');
+            if (a !== '') {
+                var b = core.urlExists(a);
                 if (b !== 200) {
-                    if(aaa == 'input_holders') {
+                    if (aaa == 'input_holders') {
                         $(aa).next().next().css('background-color', '#ff3300').css('font-weight', 'bold').css('color', '#fff').html('Image does not exist');
-                    }else{
+                    } else {
                         $(aa).next().css('background-color', '#ff3300').css('font-weight', 'bold').css('color', '#fff').html('Image does not exist');
                     }
                 } else if (b == 200) {
-                    if(aaa == 'input_holders') {
+                    if (aaa == 'input_holders') {
                         $(aa).next().next().attr('style', '').css('background-color', 'rgb(82, 197, 82)').html('Image validated');
-                    }else {
+                    } else {
                         $(aa).next().attr('style', '').css('background-color', 'rgb(82, 197, 82)').html('Image validated');
                     }
                 } else {
-                    if(aaa == 'input_holders') {
+                    if (aaa == 'input_holders') {
                         $(aa).next().next().attr('style', '').html('Shopify CDN');
-                    }else {
+                    } else {
                         $(aa).next().attr('style', '').html('Shopify CDN');
                     }
                 }
-            }else{
-                if(aaa == 'input_holders') {
+            } else {
+                if (aaa == 'input_holders') {
                     $(aa).next().next().css('background-color', '#eee').html('Nothing to validate');
-                }else {
+                } else {
                     $(aa).next().css('background-color', '#eee').html('Nothing to validate');
                 }
             }
         }
-    }
-    function previewFeature(heroItem, mode, lang) {
+    },
+    previewFeature: function (heroItem, mode, lang) {
         /**
          * Generates a preview of the hero banner in large
          * and small format by collection the forms
@@ -1121,18 +1124,18 @@ $(function () {
             start = dt[0].value,
             img = dt[7].value,
             titleColor = dt[4].value;
-            if(lang == app.language.e){
+        if (lang == app.language.e) {
             var titleText = dt[2].value,
                 subTitleText = dt[5].value,
                 buttonLabel = dt[9].value,
                 endsLabel = 'Ends In';
-            }else if(lang == app.language.f){
-                    titleText = dt[3].value,
-                    subTitleText = dt[6].value,
-                    buttonLabel = dt[10].value,
-                    endsLabel = 'Termine dans';
-            }
-            var buttonLink = dt[11].value,
+        } else if (lang == app.language.f) {
+            titleText = dt[3].value,
+                subTitleText = dt[6].value,
+                buttonLabel = dt[10].value,
+                endsLabel = 'Termine dans';
+        }
+        var buttonLink = dt[11].value,
             container = app.objects.h,
             target = '.render_output',
             sub = dt[16].value,
@@ -1145,9 +1148,9 @@ $(function () {
         outputString += '<div data-instance="slide-0" data-str="' + img + '"';
         outputString += ' data-promote="true" id="slide-0" class="hero fwidth root-0"><div data-object-pos="false-false" class="bcg skrollable skrollable-between" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -200px;" data-anchor-target="#slide-0"';
         outputString += ' style="background-image: url(' + img + '); background-position: 50% -55.2631578947369px;"><div class="hsContainer"><div class="hsContent center skrollable skrollable-before" data-100-top="opacity: 1" data-25-top="opacity: 0" data-anchor-target="#slide-0 .animated" style="opacity: 1;">';
-        outputString += '<div itemscope="" itemtype="http://schema.org/Event" class="animated fadeIn delay-025s hero_head"><p itemprop="startDate" content="' + start + '" class="subtitle timedown is-countdown" id="countdown0" style="opacity:0.9"><span>'+endsLabel+'  <b>11:29:39</b> </span></p>';
+        outputString += '<div itemscope="" itemtype="http://schema.org/Event" class="animated fadeIn delay-025s hero_head"><p itemprop="startDate" content="' + start + '" class="subtitle timedown is-countdown" id="countdown0" style="opacity:0.9"><span>' + endsLabel + '  <b>11:29:39</b> </span></p>';
         outputString += '<h1 class="headline herobanner" style="color:' + titleColor + '">' + titleText + '</h1>';
-        if(sub == 'true') {
+        if (sub == 'true') {
             outputString += '<p class="subtitle herobanner">' + subTitleText + '</p>';
         }
         outputString += '<a data-bleed="" href="' + buttonLink + '" class="action_button hero"><span class="trn" data-trn-key="">' + buttonLabel + '</span></a>';
@@ -1157,18 +1160,32 @@ $(function () {
         } else if (mode == 'large') {
             outputString += warningString;
         }
-        $(container).show().css('top',sPos+50);
+        $(container).show().css('top', sPos + 50);
         $(target).empty().append(outputString);
         if (mode == 'small') {
             pfHero = heroItem;
             pfMode = mode;
-            $(target).addClass('renderSmall').attr('data-hero',heroItem).attr('data-language',lang).attr('data-mode',mode);
+            $(target).addClass('renderSmall').attr('data-hero', heroItem).attr('data-language', lang).attr('data-mode', mode);
         } else if (mode == 'large') {
             pfHero = heroItem;
             pfMode = mode;
-            $(target).removeClass('renderSmall').attr('data-hero',heroItem).attr('data-language',lang).attr('data-mode',mode);
+            $(target).removeClass('renderSmall').attr('data-hero', heroItem).attr('data-language', lang).attr('data-mode', mode);
         }
     }
+}
+
+$(function () {
+    /**
+     * Main document ready initialized function
+     */
+    var sPos = 0;
+    core.setHeadSec();
+    core.initializeTheme();
+    core.initHelp();
+    core.getVersion(true);
+    setInterval("core.getVersion(false)",600000);
+    $('.date_obj').datetimepicker({format: 'MM/DD/YYYY HH:mm'});
+
     $('.btnAdd').attr('disabled', false);
     // Disable the "remove" button
     $('.btnDel').attr('disabled', true);
@@ -1178,7 +1195,7 @@ $(function () {
      * taken into consideration
      */
     $(app.objects.bo).on('click','.btnAdd',function () {
-        addItems();
+        core.addItems();
     }).on('click','.overlay_close',function(){
         $(this).parent().parent().hide();
         $(app.objects.r).css('overflow','auto');
@@ -1218,34 +1235,34 @@ $(function () {
         $('.num_select').focus();
     }).on('click',app.objects.c,function(e){
         var a = $(this).data('handler');
-        validateImage('main',a);
+        core.validateImage('main',a);
         e.preventDefault();
     }).on('click','.multiquery_close',function(){
         $(this).parent().parent().hide();
     }).on('click','.check_alt_image',function(e){
         var a = $(this).data('handler');
-        validateImage('alt',a);
+        core.validateImage('alt',a);
         e.preventDefault();
     }).on('click','.overlay_validate',function(){
-        validateJSON();
+        core.validateJSON();
     }).on('click','.previewItem.large',function(e){
         $(app.objects.r).animate({ scrollTop: sPos }, app.animation.d.min).css('overflow','hidden');
         var a = $(this).data('hero');
-        previewFeature(a,'large',pfLang);
+        core.previewFeature(a,'large',pfLang);
         e.preventDefault();
     }).on('click','.previewItem.small',function(e){
         $(app.objects.r).animate({ scrollTop: sPos }, app.animation.d.min).css('overflow','hidden');
         var a = $(this).data('hero');
-        previewFeature(a,'small',pfLang);
+        core.previewFeature(a,'small',pfLang);
         e.preventDefault();
     }).on('click','.removeThisItem',function(){
         var a = $(this).data('item');
-        deleteItems(a);
+        core.deleteItems(a);
     }).on('click','.loadItem',function(){
         var a = $(this).attr(app.handlers.i);
-        traverseJSON(true,a);
+        core.traverseJSON(true,a);
     }).on('click','.copy-zone',function(){
-        OpenInNewTab('https://github.com/davidemaser/davidemaser.github.io');
+        core.OpenInNewTab('https://github.com/davidemaser/davidemaser.github.io');
     }).on('click','.showHelp',function(){
         $(app.objects.he).toggle();
         if($(app.objects.he).css('display') == 'block'){
@@ -1276,39 +1293,39 @@ $(function () {
             $(app.dom.b).attr('data-nmode','hello');
             $(this).attr('data-nmode','hello');
             $(this).html('Switch to Hero Banner Mode');
-            switchModes('hello')
+            core.switchModes('hello')
         }else if(a == 'hello'){
             $(app.dom.b).attr('data-nmode','hero');
             $(this).attr('data-nmode','hero');
             $(this).html('Switch to Hello Bar Mode');
-            switchModes('hero')
+            core.switchModes('hero')
         }
     }).on('click','.btnDel',function () {
-        deleteItems('last');
+        core.deleteItems('last');
     }).on('click','.submit_json',function (){
         var a = $(this).attr('data-nmode');
-        prepareJSON('full',null,a);
+        core.prepareJSON('full',null,a);
     }).on('click','.translate_json',function (){
         $('.overlay_message').html('');
         $(app.objects.r).animate({ scrollTop: 0 }, app.animation.d.min).css('overflow','hidden');
         $(app.objects.o).attr(app.handlers.r,'translate').css('display','block').find('#output_code').val('').attr('placeholder','Paste you code here');
     }).on('click','.save_json',function (e){
         if(app.save == true) {
-            doLocalSave();
+            core.doLocalSave();
         }else{
             confirm('The save to localstorage feature is disabled. Change the save value to true in the globals file.');
         }
     }).on('click','.import_json',function (e){
-        choseLocalSave();
+        core.choseLocalSave();
     }).on('click','.overlay_translate',function (){
-        traverseJSON(false);
+        core.traverseJSON(false);
     }).on('click','.errors_reset',function (){
         $('input,select').attr('style','').attr('placeholder','');
         $('.errorList').css('display','none');
         $(app.objects.r).css('overflow','auto');
         $(app.objects.i).find('.input_alerts').remove();
         $(app.objects.i).contents().unwrap();
-        panelAlert('Errors Reset','good');
+        core.panelAlert('Errors Reset','good');
     }).on('click','.form_reset',function (e){
         $(app.objects.r).animate({ scrollTop: 0 }, app.animation.d.min).css('overflow','hidden');
         $('.clonedInput:gt(0)').remove();
@@ -1320,13 +1337,13 @@ $(function () {
         $(app.objects.i).find('.input_alerts').remove();
         $(app.objects.i).contents().unwrap();
         $('.reordered').remove();
-        panelAlert('Form Reset To Default','good');
+        core.panelAlert('Form Reset To Default','good');
         e.preventDefault();
     }).on('click','.itemize_reset',function (e){
-        resetItems();
+        core.resetItems();
         e.preventDefault();
     }).on('click','.form_local_reset',function (e){
-        doLocalSave('reset');
+        core.doLocalSave('reset');
         $(app.objects.l).hide();
         e.preventDefault();
     }).on('click','input,select',function(){
@@ -1337,7 +1354,7 @@ $(function () {
         }
     }).on('click','.helpItem',function(){
         var a = $(this).data('target');
-        jumpToHelper(a);
+        core.jumpToHelper(a);
     }).on('click','.image_count',function(){
         $(this).attr('style','');
         $(this).text('Shopify CDN');
@@ -1349,9 +1366,9 @@ $(function () {
             var rH = pfHero,
                 rL = pfLang,
                 rM = pfMode;
-            previewFeature(rH, rM, rL)
+            core.previewFeature(rH, rM, rL)
         }
-        panelAlert('Preview language changed','good');
+        core.panelAlert('Preview language changed','good');
         e.preventDefault();
     }).on('click','.panel-body.bottom_level_bt',function(){
         $(this).slideUp();
@@ -1360,7 +1377,7 @@ $(function () {
         $(app.objects.r).animate({ scrollTop: 0 },{duration:app.animation.d.min,
                 complete:function(){
                     $(app.objects.he).show();
-                    jumpToHelper(a);
+                    core.jumpToHelper(a);
                 }
         }).css('overflow','hidden');
     }).on('click','.helpItemReset',function(){
@@ -1373,7 +1390,7 @@ $(function () {
         if(window.localStorage) {
             localStorage.setItem('pgb_Theme', a);
         }
-        panelAlert('Theme Settings Updated','good');
+        core.panelAlert('Theme Settings Updated','good');
         e.preventDefault();
     }).on('click','.moveUpThisItem',function(fn){
         var a = $(this).data('item'),
@@ -1389,7 +1406,7 @@ $(function () {
             //$(d).closest(app.objects.cl).prev();
         $(this).parent().parent().parent().find('.reordered').remove();
         $(this).parent().parent().parent().find('.btn.btn-info:not(.dropdown-toggle)').prepend('<span title="This entry has been moved from it\'s original position" class="glyphicon glyphicon-fullscreen reordered" aria-hidden="true"></span>');
-        panelAlert('Item Order Changed','good');
+        core.panelAlert('Item Order Changed','good');
         fn.preventDefault();
     }).on('click','.moveDownThisItem',function(fn){
         var a = $(this).data('item'),
@@ -1406,20 +1423,20 @@ $(function () {
                 }, app.animation.d.min);
                 $(this).parent().parent().parent().find('.reordered').remove();
                 $(this).parent().parent().parent().find('.btn.btn-info:not(.dropdown-toggle)').prepend('<span title="This entry has been moved from it\'s original position" class="glyphicon glyphicon-fullscreen reordered" aria-hidden="true"></span>');
-                panelAlert('Item Order Changed','good');
+                core.panelAlert('Item Order Changed','good');
             }else{
-                panelAlert('If I move down any further, I\'ll be off the page.','error');
+                core.panelAlert('If I move down any further, I\'ll be off the page.','error');
             }
         fn.preventDefault();
     }).on('click','.batsToggle',function(){
         if($(this).attr('data-status') == 'active') {
-            killBats();
+            core.killBats();
         }else if($(this).attr('data-status') == 'allGone') {
-            launchBats();
-            launchBats();
-            launchBats();
-            launchBats();
-            launchBats();
+            core.launchBats();
+            core.launchBats();
+            core.launchBats();
+            core.launchBats();
+            core.launchBats();
             $('.batsToggle').attr('data-status','active').html('Kill The Bats');
         }
     }).on('keyup','input',function(){
@@ -1446,20 +1463,20 @@ $(function () {
     }).on('keyup','.num_select',function(e){
         if(e.keyCode == 13){
             $(this).trigger("enterKey");
-            addMulti($(this).val());
+            core.addMulti($(this).val());
             $(this).parent().parent().parent().parent().hide();
         }
     }).on('keyup','.lsl_select',function(e){
         if(e.keyCode == 13){
             $(this).trigger("enterKey");
-            prepareJSON('save',$(this).val());
+            core.prepareJSON('save',$(this).val());
             $(this).parent().parent().parent().parent().hide();
-            setHeadSec();
+            core.setHeadSec();
         }
     }).on('keyup',app.objects.o+'['+app.handlers.r+'="translate"] #output_code',function(e){
         if(e.keyCode == 45){
             $(this).trigger("enterKey");
-            traverseJSON(false);
+            core.traverseJSON(false);
             e.preventDefault();
         }
     }).on('change','.objHeroSticky',function(){
@@ -1491,7 +1508,7 @@ $(function () {
         try {
             if ($(this).val() !== "" || $(this).val() !== "undefined" || $(this).val() !== undefined || $(this).val() !== "null" || $(this).val() !== null) {
                 var a = $(this).val();
-                traverseJSON(true, a);
+                core.traverseJSON(true, a);
             } else {
                 panelAlert('Please select a valid data item from the dropdown', 'error');
             }
@@ -1506,20 +1523,20 @@ $(function () {
             $('.copy-zone').fadeOut(app.animation.d.min);
         }
     }).on('resize', function() {
-        scrollState('a');
+        core.scrollState('a');
     });
     $(document).on('keydown', function(e) {
         if (e.keyCode == 71 && e.ctrlKey) {
             var a = $('.submit_json').attr('data-nmode');
-            prepareJSON('full',null,a);
+            core.prepareJSON('full',null,a);
             e.preventDefault();
         }
         if (e.keyCode == 82 && e.ctrlKey) {
-            deleteItems();
+            core.deleteItems();
             e.preventDefault();
         }
         if (e.keyCode == 73 && e.ctrlKey && !e.altKey) {
-            addItems();
+            core.addItems();
             e.preventDefault();
         }
         if (e.keyCode == 73 && e.ctrlKey && e.altKey) {
@@ -1535,7 +1552,7 @@ $(function () {
             e.preventDefault();
         }
         if (e.keyCode == 83 && e.ctrlKey && e.shiftKey) {
-            prepareJSON('save');
+            core.prepareJSON('save');
         }
         if (e.keyCode == 13 && e.ctrlKey && e.altKey) {
             $('.overlay_message').html('');
@@ -1544,7 +1561,7 @@ $(function () {
             e.preventDefault();
         }
         if (e.keyCode == 45 && e.ctrlKey && e.altKey) {
-            traverseJSON(true);
+            core.traverseJSON(true);
         }
         if (e.keyCode == 69 && e.ctrlKey && e.altKey) {
             if(pfLang == app.language.e){
@@ -1558,9 +1575,9 @@ $(function () {
                     var rH = pfHero,
                     rL = pfLang,
                     rM = pfMode;
-                previewFeature(rH, rM, rL);
+                core.previewFeature(rH, rM, rL);
             }
-            panelAlert('Preview language changed','good');
+            core.panelAlert('Preview language changed','good');
             e.preventDefault();
         }
         if (e.keyCode == 191 && e.ctrlKey) {
@@ -1568,7 +1585,7 @@ $(function () {
             e.preventDefault();
         }
     }).on('scroll', function(){
-        scrollState('b');
+        core.scrollState('b');
         sPos = $(window).scrollTop();
     });
     var d = new Date();
@@ -1576,10 +1593,10 @@ $(function () {
         dm = d.getMonth()+1;
     if(dm == 10 && dt > 21) {
         $('.main_nav').append('<li class="divider"></li><li><a href="#" class="batsToggle" data-status="active">Kill The Bats</a></li>');
-        launchBats();
-        launchBats();
-        launchBats();
-        launchBats();
-        launchBats();
+        core.launchBats();
+        core.launchBats();
+        core.launchBats();
+        core.launchBats();
+        core.launchBats();
     }
 });
