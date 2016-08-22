@@ -62,11 +62,7 @@
             {
               "id":"action15",
               "translate":"A Propos De Cette Application"
-            }
-          ]
-        },
-        {
-          "preview":[
+            },
             {
               "id":"preview1",
               "translate":"Anglais"
@@ -78,6 +74,10 @@
             {
               "id":"preview3",
               "translate":"Langue de l'apercu"
+            },
+            {
+              "id":"help1",
+              "translate":"Aide"
             }
           ]
         },

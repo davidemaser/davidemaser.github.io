@@ -88,8 +88,6 @@ var core = {
                             objTran: data.node.section[0].actions[i].translate
                         });
                         $('[data-lang-id="'+data.node.section[0].actions[i].id+'"]').html(data.node.section[0].actions[i].translate);
-                        $('[data-lang-id="'+data.node.section[0].preview[i].id+'"]').html(data.node.section[0].preview[i].translate);
-                        $('[data-lang-id="'+data.node.section[0].help[i].id+'"]').html(data.node.section[0].help[i].translate);
                     }
                     console.log(lngContainer);
                 }
