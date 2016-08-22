@@ -53,11 +53,11 @@
             },
             {
               "id":"action13",
-              "translate":"Th&eagrave;me Fonce"
+              "translate":"Th&egrave;me Fonce"
             },
             {
               "id":"action14",
-              "translate":"Th&eagrave;me Claire"
+              "translate":"Th&egrave;me Claire"
             },
             {
               "id":"action15",
@@ -74,6 +74,30 @@
             {
               "id":"preview3",
               "translate":"Langue de l'apercu"
+            },
+            {
+              "id":"preview4",
+              "translate":"Grand Apercu"
+            },
+            {
+              "id":"preview5",
+              "translate":"Petit Apercu"
+            },
+            {
+              "id":"move1",
+              "translate":"D&eacute;placer Vers le Haut"
+            },
+            {
+              "id":"move2",
+              "translate":"D&eacute;placer Vers le Bas"
+            },
+            {
+              "id":"formElement1",
+              "translate":"Date de D&eacute;but"
+            },
+            {
+              "id":"formElement2",
+              "translate":"Date de Fin"
             },
             {
               "id":"help1",
