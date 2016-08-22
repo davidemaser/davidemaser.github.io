@@ -9,7 +9,8 @@
 var pfLang = app.lang,
     pfHero = 0,
     pfMode = app.params.s,
-    pfExport = 'hero';
+    pfExport = 'hero',
+    sPos = 0;
 var core = {
     panelAlert: function (mess, state) {
         /**
@@ -1178,7 +1179,6 @@ $(function () {
     /**
      * Main document ready initialized function
      */
-    var sPos = 0;
     core.setHeadSec();
     core.initializeTheme();
     core.initHelp();
