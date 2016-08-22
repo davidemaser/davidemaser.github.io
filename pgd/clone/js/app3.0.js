@@ -87,6 +87,7 @@ var core = {
                             objID: data.node.section[0].actions[i].id,
                             objTran: data.node.section[0].actions[i].translate
                         });
+                        $('[data-lang-id="'+data.node.section[0].actions[i].id+'"]').html(data.node.section[0].actions[i].translate);
                     }
                     console.log(lngContainer);
                 }
