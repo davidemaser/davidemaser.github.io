@@ -68,16 +68,16 @@
         {
           "preview":[
             {
-              "id":"preview0",
-              "translate":"Langue de l'apercu"
-            },
-            {
               "id":"preview1",
               "translate":"Anglais"
             },
             {
               "id":"preview2",
               "translate":"Francais"
+            },
+            {
+              "id":"preview3",
+              "translate":"Langue de l'apercu"
             }
           ]
         },
