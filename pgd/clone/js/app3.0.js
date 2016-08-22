@@ -1573,10 +1573,7 @@ $(function () {
             $('.btnSwitch').removeClass('view-active');
             $('.btnSwitch[data-language="'+pfLang+'"]').addClass('view-active');
             if($(app.objects.ro).children().not('.preview_warning').length > 0){
-                    var rH = pfHero,
-                    rL = pfLang,
-                    rM = pfMode;
-                core.previewFeature(rH, rM, rL);
+                core.previewFeature(pfHero, pfMode, pfLang);
             }
             core.panelAlert('Preview language changed','good');
             e.preventDefault();
