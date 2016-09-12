@@ -1,178 +1,186 @@
 {
   "node": {
-      "section":[
-        {
-          "actions":[
-            {
-              "id":"action1",
-              "translate":"Activer mode Hello Bar"
-            },
-            {
-              "id":"action2",
-              "translate":"Ajouter Element"
-            },
-            {
-              "id":"action3",
-              "translate":"Ajouter Multiples Elements"
-            },
-            {
-              "id":"action4",
-              "translate":"Supprimer Dernier Element"
-            },
-            {
-              "id":"action5",
-              "translate":"G&eacute;n&eacute;rer JSON"
-            },
-            {
-              "id":"action6",
-              "translate":"Traduire JSON"
-            },
-            {
-              "id":"action7",
-              "translate":"Sauvegarder"
-            },
-            {
-              "id":"action8",
-              "translate":"Importer Une Sauvegarde"
-            },
-            {
-              "id":"action9",
-              "translate":"R&eacute;initialiser Erreurs"
-            },
-            {
-              "id":"action10",
-              "translate":"R&eacute;initialiser Formulaire"
-            },
-            {
-              "id":"action11",
-              "translate":"R&eacute;initialiser Positionement Des Elements"
-            },
-            {
-              "id":"action12",
-              "translate":"R&eacute;initialiser Local Storage"
-            },
-            {
-              "id":"action13",
-              "translate":"Th&egrave;me Fonce"
-            },
-            {
-              "id":"action14",
-              "translate":"Th&egrave;me Claire"
-            },
-            {
-              "id":"action15",
-              "translate":"A Propos De Cette Application"
-            },
-            {
-              "id":"preview1",
-              "translate":"Anglais"
-            },
-            {
-              "id":"preview2",
-              "translate":"Francais"
-            },
-            {
-              "id":"preview3",
-              "translate":"Langue de l'apercu"
-            },
-            {
-              "id":"preview4",
-              "translate":"Grand Apercu"
-            },
-            {
-              "id":"preview5",
-              "translate":"Petit Apercu"
-            },
-            {
-              "id":"move1",
-              "translate":"D&eacute;placer Vers le Haut"
-            },
-            {
-              "id":"move2",
-              "translate":"D&eacute;placer Vers le Bas"
-            },
-            {
-              "id":"formElement1",
-              "translate":"Date de D&eacute;but"
-            },
-            {
-              "id":"formElement2",
-              "translate":"Date de Fin"
-            },
-            {
-              "id":"formElement3",
-              "translate":"Titre EN"
-            },
-            {
-              "id":"formElement4",
-              "translate":"Titre FR"
-            },
-            {
-              "id":"formElement5",
-              "translate":"Couleur du Titre"
-            },
-            {
-              "id":"formElement6",
-              "translate":"Texte EN"
-            },{
-              "id":"formElement7",
-              "translate":"Texte FR"
-            },{
-              "id":"formElement8",
-              "translate":"Lien Vers l'Image"
-            },{
-              "id":"formElement9",
-              "translate":"Valider Image"
-            },{
-              "id":"formElement10",
-              "translate":"Ouvrir Explorateur Shopify"
-            },{
-              "id":"formElement11",
-              "translate":"CDN Shopify"
-            },{
-              "id":"formElement12",
-              "translate":"Lien Vers Image Alternative"
-            },{
-              "id":"formElement13",
-              "translate":"Label Bouton EN"
-            },{
-              "id":"formElement14",
-              "translate":"Label Bouton FR"
-            },
-            {
-              "id":"help1",
-              "translate":"Aide"
-            },
-            {
-              "id":"jump1",
-              "translate":"Aller A"
-            }
-          ]
-        },
-        {
-          "load":[
-            {
-              "id":"load1",
-              "translate":"Charger Hero Sauvegarde"
-            }
-          ]
-        },
-        {
-          "errors":[
-            {
-              "id":"errors1",
-              "translate":"Erreurs"
-            }
-          ]
-        },
-        {
-          "help":[
-            {
-              "id":"help1",
-              "translate":"Aide"
-            }
-          ]
-        }
-      ]
-    }
+    "section": [
+      {
+        "actions": [
+          {
+            "id": "action1",
+            "translate": "Activer mode Hello Bar"
+          },
+          {
+            "id": "action2",
+            "translate": "Ajouter Element"
+          },
+          {
+            "id": "action3",
+            "translate": "Ajouter Multiples Elements"
+          },
+          {
+            "id": "action4",
+            "translate": "Supprimer Dernier Element"
+          },
+          {
+            "id": "action5",
+            "translate": "G&eacute;n&eacute;rer JSON"
+          },
+          {
+            "id": "action6",
+            "translate": "Traduire JSON"
+          },
+          {
+            "id": "action7",
+            "translate": "Sauvegarder"
+          },
+          {
+            "id": "action8",
+            "translate": "Importer Une Sauvegarde"
+          },
+          {
+            "id": "action9",
+            "translate": "R&eacute;initialiser Erreurs"
+          },
+          {
+            "id": "action10",
+            "translate": "R&eacute;initialiser Formulaire"
+          },
+          {
+            "id": "action11",
+            "translate": "R&eacute;initialiser Positionement Des Elements"
+          },
+          {
+            "id": "action12",
+            "translate": "R&eacute;initialiser Local Storage"
+          },
+          {
+            "id": "action13",
+            "translate": "Th&egrave;me Fonce"
+          },
+          {
+            "id": "action14",
+            "translate": "Th&egrave;me Claire"
+          },
+          {
+            "id": "action15",
+            "translate": "A Propos De Cette Application"
+          },
+          {
+            "id": "preview1",
+            "translate": "Anglais"
+          },
+          {
+            "id": "preview2",
+            "translate": "Francais"
+          },
+          {
+            "id": "preview3",
+            "translate": "Langue de l'apercu"
+          },
+          {
+            "id": "preview4",
+            "translate": "Grand Apercu"
+          },
+          {
+            "id": "preview5",
+            "translate": "Petit Apercu"
+          },
+          {
+            "id": "move1",
+            "translate": "D&eacute;placer Vers le Haut"
+          },
+          {
+            "id": "move2",
+            "translate": "D&eacute;placer Vers le Bas"
+          },
+          {
+            "id": "formElement1",
+            "translate": "Date de D&eacute;but"
+          },
+          {
+            "id": "formElement2",
+            "translate": "Date de Fin"
+          },
+          {
+            "id": "formElement3",
+            "translate": "Titre EN"
+          },
+          {
+            "id": "formElement4",
+            "translate": "Titre FR"
+          },
+          {
+            "id": "formElement5",
+            "translate": "Couleur du Titre"
+          },
+          {
+            "id": "formElement6",
+            "translate": "Texte EN"
+          },
+          {
+            "id": "formElement7",
+            "translate": "Texte FR"
+          },
+          {
+            "id": "formElement8",
+            "translate": "Lien Vers l'Image"
+          },
+          {
+            "id": "formElement9",
+            "translate": "Valider Image"
+          },
+          {
+            "id": "formElement10",
+            "translate": "Ouvrir Explorateur Shopify"
+          },
+          {
+            "id": "formElement11",
+            "translate": "CDN Shopify"
+          },
+          {
+            "id": "formElement12",
+            "translate": "Lien Vers Image Alternative"
+          },
+          {
+            "id": "formElement13",
+            "translate": "Label Bouton EN"
+          },
+          {
+            "id": "formElement14",
+            "translate": "Label Bouton FR"
+          },
+          {
+            "id": "help1",
+            "translate": "Aide"
+          },
+          {
+            "id": "jump1",
+            "translate": "Aller A"
+          }
+        ]
+      },
+      {
+        "load": [
+          {
+            "id": "load1",
+            "translate": "Charger Hero Sauvegarde"
+          }
+        ]
+      },
+      {
+        "errors": [
+          {
+            "id": "errors1",
+            "translate": "Erreurs"
+          }
+        ]
+      },
+      {
+        "help": [
+          {
+            "id": "help1",
+            "translate": "Aide"
+          }
+        ]
+      }
+    ]
+  }
 }
