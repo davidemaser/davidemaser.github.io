@@ -1,793 +1,812 @@
 {
-  "project":{
-    "name":"Page Builder",
-    "version":"3.2",
-    "author":"David Maser",
-    "licensing":"MIT",
-    "revision":"2",
-    "downloadlink":"https://drive.google.com/file/d/0B4onXKnKkE6AY0JiVlZ3bG9scmM/view?usp=sharing",
-    "semantic":{
-      "build":1,
-      "language":["js","jquery","json","css","html","md","coffee"],
-      "externals":["jquery","bootstrap","custom font","versioning file","moment","bootstrap datetimepicker","validate json","Shopify API"],
-      "minified":true
+  "project": {
+    "name": "Page Builder",
+    "version": "3.2",
+    "author": "David Maser",
+    "licensing": "MIT",
+    "revision": "2",
+    "downloadlink": "https://drive.google.com/file/d/0B4onXKnKkE6AY0JiVlZ3bG9scmM/view?usp=sharing",
+    "semantic": {
+      "build": 1,
+      "language": [
+        "js",
+        "jquery",
+        "json",
+        "css",
+        "html",
+        "md",
+        "coffee"
+      ],
+      "externals": [
+        "jquery",
+        "bootstrap",
+        "custom font",
+        "versioning file",
+        "moment",
+        "bootstrap datetimepicker",
+        "validate json",
+        "Shopify API"
+      ],
+      "minified": true
     },
-    "latest":"major",
-    "errors":[
+    "latest": "major",
+    "errors": [
       {
-        "file":"app.js",
-        "line":184,
-        "issue":"function else not closed",
-        "fix":{
-          "solution":"basic find and close",
-          "applied":true
-        }
-      },{
-        "file":"app.css",
-        "line":384,
-        "issue":"Unclosed CSS feature",
-        "fix":{
-          "solution":"basic find and close",
-          "applied":true
-        }
-      },{
-        "file":"app.js",
-        "line":402,
-        "issue":"JSON format mismatch",
-        "fix":{
-          "solution":"Declare string",
-          "applied":true
-        }
-      },{
-        "file":"app.js",
-        "line":808,
-        "issue":"Date variable error",
-        "fix":{
-          "solution":"Provide UTF-8 value",
-          "applied":true
+        "file": "app.js",
+        "line": 184,
+        "issue": "function else not closed",
+        "fix": {
+          "solution": "basic find and close",
+          "applied": true
         }
       },
       {
-        "file":"version.js",
-        "line":548,
-        "issue":"url schema included",
-        "fix":{
-          "solution":"remove url schema",
-          "applied":true
+        "file": "app.css",
+        "line": 384,
+        "issue": "Unclosed CSS feature",
+        "fix": {
+          "solution": "basic find and close",
+          "applied": true
         }
       },
       {
-        "file":"app3.0.js",
-        "line":366,
-        "issue":"recursive JSON error",
-        "fix":{
-          "solution":"recode JSON base schema",
-          "applied":true
+        "file": "app.js",
+        "line": 402,
+        "issue": "JSON format mismatch",
+        "fix": {
+          "solution": "Declare string",
+          "applied": true
         }
       },
       {
-        "file":"app3.0.js",
-        "line":886,
-        "issue":"preview feature node error",
-        "fix":{
-          "solution":"add data object handle",
-          "applied":true
+        "file": "app.js",
+        "line": 808,
+        "issue": "Date variable error",
+        "fix": {
+          "solution": "Provide UTF-8 value",
+          "applied": true
         }
       },
       {
-        "file":"app3.0.js",
-        "line":684,
-        "issue":"JSON type mismatch",
-        "fix":{
-          "solution":"format output node as integer",
-          "applied":true
+        "file": "version.js",
+        "line": 548,
+        "issue": "url schema included",
+        "fix": {
+          "solution": "remove url schema",
+          "applied": true
         }
       },
       {
-        "file":"app3.0.js",
-        "line":800,
-        "issue":"Activate Hero value not translating to form",
-        "fix":{
-          "solution":"Recode conditional validation",
-          "applied":true
-        }
-      }
-    ],
-    "updates":[
-      {
-        "line":42,
-        "file":"app.js",
-        "structure":"add",
-        "utility":"Show line breaks",
-        "appstatus":{
-          "scoped":true,
-          "version":1.2,
-          "candidate":1.4,
-          "request":false
+        "file": "app3.0.js",
+        "line": 366,
+        "issue": "recursive JSON error",
+        "fix": {
+          "solution": "recode JSON base schema",
+          "applied": true
         }
       },
       {
-        "line":766,
-        "file":"app.js",
-        "structure":"add",
-        "utility":"initialize date function",
-        "appstatus":{
-          "scoped":true,
-          "version":1.4,
-          "candidate":1.5,
-          "request":false
+        "file": "app3.0.js",
+        "line": 886,
+        "issue": "preview feature node error",
+        "fix": {
+          "solution": "add data object handle",
+          "applied": true
         }
       },
       {
-        "line":1000,
-        "file":"app.js",
-        "structure":"add",
-        "utility":"keydown generate trigger",
-        "appstatus":{
-          "scoped":true,
-          "version":1.6,
-          "candidate":1.6,
-          "request":false
-        }
-      },
-        {
-        "line":562,
-        "file":"app.js",
-        "structure":"add",
-        "utility":"live preview alternate image",
-        "appstatus":{
-          "scoped":true,
-          "version":1.6,
-          "candidate":1.6,
-          "request":false
-        }
-      }
-      ,
-        {
-        "line":427,
-        "file":"app.js",
-        "structure":"add",
-        "utility":"get alt image values",
-        "appstatus":{
-          "scoped":true,
-          "version":1.6,
-          "candidate":1.6,
-          "request":false
+        "file": "app3.0.js",
+        "line": 684,
+        "issue": "JSON type mismatch",
+        "fix": {
+          "solution": "format output node as integer",
+          "applied": true
         }
       },
       {
-        "line":1128,
-        "file":"version.js",
-        "structure":"modify",
-        "utility":"change url schema",
-        "appstatus":{
-          "scoped":true,
-          "version":1.7,
-          "candidate":1.8,
-          "request":false
-        }
-      },
-      {
-        "line":"multi",
-        "file":"app.js",
-        "structure":"add",
-        "utility":"JSON Export",
-        "appstatus":{
-          "scoped":true,
-          "version":1.8,
-          "candidate":2,
-          "request":true
-        }
-      },
-      {
-        "line":"multi",
-        "file":"app3.0.js",
-        "structure":"add",
-        "utility":"Sticky Hero",
-        "appstatus":{
-          "scoped":true,
-          "version":"3.0.1",
-          "candidate":"3.0.2",
-          "request":true
-        }
-      },
-      {
-        "line":"multi",
-        "file":"app3.0.js",
-        "structure":"add",
-        "utility":"Local Storage Save/Load",
-        "appstatus":{
-          "scoped":true,
-          "version":"3.0.2",
-          "candidate":"3.1",
-          "request":true
-        }
-      },
-      {
-        "line":"multi",
-        "file":"app3.0.js",
-        "structure":"add",
-        "utility":"Multi-language preview and switcher",
-        "appstatus":{
-          "scoped":true,
-          "version":"3.1",
-          "candidate":"3.1.1",
-          "request":true
-        }
-      },
-      {
-        "line":"multi",
-        "file":"app3.0.js",
-        "structure":"add",
-        "utility":"Hello bar support",
-        "appstatus":{
-          "scoped":true,
-          "version":"3.1.1",
-          "candidate":"3.1.2",
-          "request":false
-        }
-      },
-      {
-        "line":"306",
-        "file":"app3.0.js",
-        "structure":"add",
-        "utility":"Reset form items to their original position",
-        "appstatus":{
-          "scoped":true,
-          "version":"3.1.2",
-          "candidate":"3.1.3",
-          "request":false
-        }
-      },
-      {
-        "line":"64",
-        "file":"app3.0.js",
-        "structure":"add",
-        "utility":"Prompts user to update to latest version",
-        "appstatus":{
-          "scoped":true,
-          "version":"3.1.3",
-          "candidate":"3.1.4",
-          "request":false
+        "file": "app3.0.js",
+        "line": 800,
+        "issue": "Activate Hero value not translating to form",
+        "fix": {
+          "solution": "Recode conditional validation",
+          "applied": true
         }
       }
     ],
-    "history":[
+    "updates": [
       {
-        "version":0.4,
-        "date":"28/03/2015",
-        "failsafe":"major",
-        "author":"David Maser",
-        "codeblocks":[
+        "line": 42,
+        "file": "app.js",
+        "structure": "add",
+        "utility": "Show line breaks",
+        "appstatus": {
+          "scoped": true,
+          "version": 1.2,
+          "candidate": 1.4,
+          "request": false
+        }
+      },
+      {
+        "line": 766,
+        "file": "app.js",
+        "structure": "add",
+        "utility": "initialize date function",
+        "appstatus": {
+          "scoped": true,
+          "version": 1.4,
+          "candidate": 1.5,
+          "request": false
+        }
+      },
+      {
+        "line": 1000,
+        "file": "app.js",
+        "structure": "add",
+        "utility": "keydown generate trigger",
+        "appstatus": {
+          "scoped": true,
+          "version": 1.6,
+          "candidate": 1.6,
+          "request": false
+        }
+      },
+      {
+        "line": 562,
+        "file": "app.js",
+        "structure": "add",
+        "utility": "live preview alternate image",
+        "appstatus": {
+          "scoped": true,
+          "version": 1.6,
+          "candidate": 1.6,
+          "request": false
+        }
+      },
+      {
+        "line": 427,
+        "file": "app.js",
+        "structure": "add",
+        "utility": "get alt image values",
+        "appstatus": {
+          "scoped": true,
+          "version": 1.6,
+          "candidate": 1.6,
+          "request": false
+        }
+      },
+      {
+        "line": 1128,
+        "file": "version.js",
+        "structure": "modify",
+        "utility": "change url schema",
+        "appstatus": {
+          "scoped": true,
+          "version": 1.7,
+          "candidate": 1.8,
+          "request": false
+        }
+      },
+      {
+        "line": "multi",
+        "file": "app.js",
+        "structure": "add",
+        "utility": "JSON Export",
+        "appstatus": {
+          "scoped": true,
+          "version": 1.8,
+          "candidate": 2,
+          "request": true
+        }
+      },
+      {
+        "line": "multi",
+        "file": "app3.0.js",
+        "structure": "add",
+        "utility": "Sticky Hero",
+        "appstatus": {
+          "scoped": true,
+          "version": "3.0.1",
+          "candidate": "3.0.2",
+          "request": true
+        }
+      },
+      {
+        "line": "multi",
+        "file": "app3.0.js",
+        "structure": "add",
+        "utility": "Local Storage Save/Load",
+        "appstatus": {
+          "scoped": true,
+          "version": "3.0.2",
+          "candidate": "3.1",
+          "request": true
+        }
+      },
+      {
+        "line": "multi",
+        "file": "app3.0.js",
+        "structure": "add",
+        "utility": "Multi-language preview and switcher",
+        "appstatus": {
+          "scoped": true,
+          "version": "3.1",
+          "candidate": "3.1.1",
+          "request": true
+        }
+      },
+      {
+        "line": "multi",
+        "file": "app3.0.js",
+        "structure": "add",
+        "utility": "Hello bar support",
+        "appstatus": {
+          "scoped": true,
+          "version": "3.1.1",
+          "candidate": "3.1.2",
+          "request": false
+        }
+      },
+      {
+        "line": "306",
+        "file": "app3.0.js",
+        "structure": "add",
+        "utility": "Reset form items to their original position",
+        "appstatus": {
+          "scoped": true,
+          "version": "3.1.2",
+          "candidate": "3.1.3",
+          "request": false
+        }
+      },
+      {
+        "line": "64",
+        "file": "app3.0.js",
+        "structure": "add",
+        "utility": "Prompts user to update to latest version",
+        "appstatus": {
+          "scoped": true,
+          "version": "3.1.3",
+          "candidate": "3.1.4",
+          "request": false
+        }
+      }
+    ],
+    "history": [
+      {
+        "version": 0.4,
+        "date": "28/03/2015",
+        "failsafe": "major",
+        "author": "David Maser",
+        "codeblocks": [
           {
-            "item":"Initial release",
-            "revision":"major",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Initial release",
+            "revision": "major",
+            "impact": "global",
+            "codestatus": "working"
           }
         ]
       },
       {
-        "version":0.5,
-        "date":"30/03/2015",
-        "failsafe":"major",
-        "author":"David Maser",
-        "codeblocks":[
+        "version": 0.5,
+        "date": "30/03/2015",
+        "failsafe": "major",
+        "author": "David Maser",
+        "codeblocks": [
           {
-            "item":"Added error handling",
-            "revision":"major",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added error handling",
+            "revision": "major",
+            "impact": "global",
+            "codestatus": "working"
           },
           {
-            "item":"Added block callbacks",
-            "revision":"major",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added block callbacks",
+            "revision": "major",
+            "impact": "global",
+            "codestatus": "working"
           },
           {
-            "item":"Removed delta functions",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Removed delta functions",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           }
         ]
       },
       {
-        "version":0.6,
-        "date":"02/04/2015",
-        "failsafe":"major",
-        "author":"David Maser",
-        "codeblocks":[
+        "version": 0.6,
+        "date": "02/04/2015",
+        "failsafe": "major",
+        "author": "David Maser",
+        "codeblocks": [
           {
-            "item":"Added color range alerts",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added color range alerts",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           },
           {
-            "item":"Added charting verification",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added charting verification",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           },
           {
-            "item":"Added code cleaner",
-            "revision":"major",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added code cleaner",
+            "revision": "major",
+            "impact": "global",
+            "codestatus": "working"
           },
           {
-            "item":"Added Title Color Option",
-            "revision":"minor",
-            "impact":"local",
-            "codestatus":"working"
+            "item": "Added Title Color Option",
+            "revision": "minor",
+            "impact": "local",
+            "codestatus": "working"
           }
         ]
       },
       {
-        "version":0.7,
-        "date":"04/04/2015",
-        "failsafe":"minor",
-        "author":"David Maser",
-        "codeblocks":[
+        "version": 0.7,
+        "date": "04/04/2015",
+        "failsafe": "minor",
+        "author": "David Maser",
+        "codeblocks": [
           {
-            "item":"Added bootstrap",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added bootstrap",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           },
           {
-            "item":"Added error reporting",
-            "revision":"major",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added error reporting",
+            "revision": "major",
+            "impact": "global",
+            "codestatus": "working"
           },
           {
-            "item":"Added shopify api support",
-            "revision":"major",
-            "impact":"global",
-            "codestatus":"removed"
+            "item": "Added shopify api support",
+            "revision": "major",
+            "impact": "global",
+            "codestatus": "removed"
           },
           {
-            "item":"Added Pop Up integration",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added Pop Up integration",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           }
         ]
       },
       {
-        "version":0.8,
-        "date":"07/04/2015",
-        "failsafe":"minor",
-        "author":"David Maser",
-        "codeblocks":[
+        "version": 0.8,
+        "date": "07/04/2015",
+        "failsafe": "minor",
+        "author": "David Maser",
+        "codeblocks": [
           {
-            "item":"Added detection function",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added detection function",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           },
           {
-            "item":"Added regex comparison",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added regex comparison",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           }
         ]
       },
       {
-        "version":0.9,
-        "date":"10/04/2015",
-        "failsafe":"minor",
-        "author":"David Maser",
-        "codeblocks":[
+        "version": 0.9,
+        "date": "10/04/2015",
+        "failsafe": "minor",
+        "author": "David Maser",
+        "codeblocks": [
           {
-            "item":"Added visual error logging",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added visual error logging",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           },
           {
-            "item":"Code cleaner rewrite",
-            "revision":"minor",
-            "impact":"local",
-            "codestatus":"working"
+            "item": "Code cleaner rewrite",
+            "revision": "minor",
+            "impact": "local",
+            "codestatus": "working"
           }
         ]
       },
       {
-        "version":1.0,
-        "date":"20/04/2015",
-        "failsafe":"major",
-        "author":"David Maser",
-        "codeblocks":[
+        "version": 1,
+        "date": "20/04/2015",
+        "failsafe": "major",
+        "author": "David Maser",
+        "codeblocks": [
           {
-            "item":"Added paste to builder function",
-            "revision":"major",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added paste to builder function",
+            "revision": "major",
+            "impact": "global",
+            "codestatus": "working"
           },
           {
-            "item":"Added input detection scripts",
-            "revision":"minor",
-            "impact":"local",
-            "codestatus":"working"
+            "item": "Added input detection scripts",
+            "revision": "minor",
+            "impact": "local",
+            "codestatus": "working"
           },
           {
-            "item":"Added try/catch handlers",
-            "revision":"minor",
-            "impact":"local",
-            "codestatus":"working"
+            "item": "Added try/catch handlers",
+            "revision": "minor",
+            "impact": "local",
+            "codestatus": "working"
           }
         ]
       },
       {
-        "version":1.1,
-        "date":"29/04/2015",
-        "failsafe":"minor",
-        "author":"David Maser",
-        "codeblocks":[
+        "version": 1.1,
+        "date": "29/04/2015",
+        "failsafe": "minor",
+        "author": "David Maser",
+        "codeblocks": [
           {
-            "item":"Rescripted paste to builder",
-            "revision":"major",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Rescripted paste to builder",
+            "revision": "major",
+            "impact": "global",
+            "codestatus": "working"
           },
           {
-            "item":"Added input detection masks",
-            "revision":"minor",
-            "impact":"local",
-            "codestatus":"working"
+            "item": "Added input detection masks",
+            "revision": "minor",
+            "impact": "local",
+            "codestatus": "working"
           },
           {
-            "item":"Added ongoing event feature",
-            "revision":"major",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added ongoing event feature",
+            "revision": "major",
+            "impact": "global",
+            "codestatus": "working"
           }
         ]
       },
       {
-        "version":1.2,
-        "date":"29/04/2015",
-        "failsafe":"minor",
-        "author":"David Maser",
-        "codeblocks":[
+        "version": 1.2,
+        "date": "29/04/2015",
+        "failsafe": "minor",
+        "author": "David Maser",
+        "codeblocks": [
           {
-            "item":"Minified js commons",
-            "revision":"major",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Minified js commons",
+            "revision": "major",
+            "impact": "global",
+            "codestatus": "working"
           },
           {
-            "item":"Added strip html batch",
-            "revision":"minor",
-            "impact":"local",
-            "codestatus":"working"
+            "item": "Added strip html batch",
+            "revision": "minor",
+            "impact": "local",
+            "codestatus": "working"
           }
         ]
       },
       {
-        "version":1.3,
-        "date":"12/05/2015",
-        "failsafe":"major",
-        "author":"David Maser",
-        "codeblocks":[
+        "version": 1.3,
+        "date": "12/05/2015",
+        "failsafe": "major",
+        "author": "David Maser",
+        "codeblocks": [
           {
-            "item":"Added helper companions",
-            "revision":"major",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added helper companions",
+            "revision": "major",
+            "impact": "global",
+            "codestatus": "working"
           },
           {
-            "item":"Added preview generator",
-            "revision":"major",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added preview generator",
+            "revision": "major",
+            "impact": "global",
+            "codestatus": "working"
           },
           {
-            "item":"Added image detector",
-            "revision":"major",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added image detector",
+            "revision": "major",
+            "impact": "global",
+            "codestatus": "working"
           },
           {
-            "item":"Added server file detection",
-            "revision":"major",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added server file detection",
+            "revision": "major",
+            "impact": "global",
+            "codestatus": "working"
           }
         ]
       },
       {
-        "version":1.4,
-        "date":"27/05/2015",
-        "failsafe":"minor",
-        "author":"David Maser",
-        "codeblocks":[
+        "version": 1.4,
+        "date": "27/05/2015",
+        "failsafe": "minor",
+        "author": "David Maser",
+        "codeblocks": [
           {
-            "item":"Added date assistant",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added date assistant",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           },
           {
-            "item":"Added error reset feature",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added error reset feature",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           },
           {
-            "item":"Added show/hide title feature",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added show/hide title feature",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           },
           {
-            "item":"Added show/hide subtitle feature",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added show/hide subtitle feature",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           }
         ]
       },
       {
-        "version":1.5,
-        "date":"08/06/2015",
-        "failsafe":"minor",
-        "author":"David Maser",
-        "codeblocks":[
+        "version": 1.5,
+        "date": "08/06/2015",
+        "failsafe": "minor",
+        "author": "David Maser",
+        "codeblocks": [
           {
-            "item":"Minor performance tweaks",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Minor performance tweaks",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           }
         ]
       },
       {
-        "version":1.6,
-        "date":"22/06/2015",
-        "failsafe":"minor",
-        "author":"David Maser",
-        "codeblocks":[
+        "version": 1.6,
+        "date": "22/06/2015",
+        "failsafe": "minor",
+        "author": "David Maser",
+        "codeblocks": [
           {
-            "item":"Added alternate image functionality",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added alternate image functionality",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           }
         ]
       },
       {
-        "version":1.7,
-        "date":"8/07/2015",
-        "failsafe":"minor",
-        "author":"David Maser",
-        "codeblocks":[
+        "version": 1.7,
+        "date": "8/07/2015",
+        "failsafe": "minor",
+        "author": "David Maser",
+        "codeblocks": [
           {
-            "item":"Added promote ongoing hero functionality",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added promote ongoing hero functionality",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           }
         ]
       },
       {
-        "version":1.8,
-        "date":"9/15/2015",
-        "failsafe":"minor",
-        "author":"David Maser",
-        "codeblocks":[
+        "version": 1.8,
+        "date": "9/15/2015",
+        "failsafe": "minor",
+        "author": "David Maser",
+        "codeblocks": [
           {
-            "item":"Modified http, https prefix to adhere to new shopify standards",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Modified http, https prefix to adhere to new shopify standards",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           }
         ]
       },
       {
-        "version":2,
-        "date":"9/21/2015",
-        "failsafe":"major",
-        "author":"David Maser",
-        "codeblocks":[
+        "version": 2,
+        "date": "9/21/2015",
+        "failsafe": "major",
+        "author": "David Maser",
+        "codeblocks": [
           {
-            "item":"Added JSON export feature",
-            "revision":"major",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added JSON export feature",
+            "revision": "major",
+            "impact": "global",
+            "codestatus": "working"
           },
           {
-            "item":"Added JSON formatter",
-            "revision":"major",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added JSON formatter",
+            "revision": "major",
+            "impact": "global",
+            "codestatus": "working"
           },
           {
-            "item":"Added JSON code validator",
-            "revision":"major",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added JSON code validator",
+            "revision": "major",
+            "impact": "global",
+            "codestatus": "working"
           }
         ]
       },
       {
-        "version":3,
-        "date":"9/23/2015",
-        "failsafe":"major",
-        "author":"David Maser",
-        "codeblocks":[
+        "version": 3,
+        "date": "9/23/2015",
+        "failsafe": "major",
+        "author": "David Maser",
+        "codeblocks": [
           {
-            "item":"Recoded PageBuilder to export and translate JSON from multiple form instances. App base source changed to pgd/clone/index.html",
-            "revision":"major",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Recoded PageBuilder to export and translate JSON from multiple form instances. App base source changed to pgd/clone/index.html",
+            "revision": "major",
+            "impact": "global",
+            "codestatus": "working"
           }
         ]
       },
       {
-        "version":"3.0.1",
-        "date":"9/27/2015",
-        "failsafe":"minor",
-        "author":"David Maser",
-        "codeblocks":[
+        "version": "3.0.1",
+        "date": "9/27/2015",
+        "failsafe": "minor",
+        "author": "David Maser",
+        "codeblocks": [
           {
-            "item":"Added hero activation delay function",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added hero activation delay function",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           }
         ]
       },
       {
-        "version":"3.0.2",
-        "date":"9/30/2015",
-        "failsafe":"minor",
-        "author":"David Maser",
-        "codeblocks":[
+        "version": "3.0.2",
+        "date": "9/30/2015",
+        "failsafe": "minor",
+        "author": "David Maser",
+        "codeblocks": [
           {
-            "item":"Added sticky hero functionality",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added sticky hero functionality",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           }
         ]
       },
       {
-        "version":"3.0.3",
-        "date":"10/01/2015",
-        "failsafe":"minor",
-        "author":"David Maser",
-        "codeblocks":[
+        "version": "3.0.3",
+        "date": "10/01/2015",
+        "failsafe": "minor",
+        "author": "David Maser",
+        "codeblocks": [
           {
-            "item":"Added multiple UI/UX features",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added multiple UI/UX features",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           }
         ]
       },
       {
-        "version":"3.1",
-        "date":"10/02/2015",
-        "failsafe":"major",
-        "author":"David Maser",
-        "codeblocks":[
+        "version": "3.1",
+        "date": "10/02/2015",
+        "failsafe": "major",
+        "author": "David Maser",
+        "codeblocks": [
           {
-            "item":"Added save to and load from Local Storage feature",
-            "revision":"major",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added save to and load from Local Storage feature",
+            "revision": "major",
+            "impact": "global",
+            "codestatus": "working"
           },
           {
-            "item":"Added core JS stability feature",
-            "revision":"major",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added core JS stability feature",
+            "revision": "major",
+            "impact": "global",
+            "codestatus": "working"
           },
           {
-            "item":"Added UX features",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added UX features",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           },
           {
-            "item":"Modified Help Section",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Modified Help Section",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           }
         ]
       },
       {
-        "version":"3.1.1",
-        "date":"10/30/2015",
-        "failsafe":"minor",
-        "author":"David Maser",
-        "codeblocks":[
+        "version": "3.1.1",
+        "date": "10/30/2015",
+        "failsafe": "minor",
+        "author": "David Maser",
+        "codeblocks": [
           {
-            "item":"Added language switcher to preview mode",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added language switcher to preview mode",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           },
           {
-            "item":"Added live preview language switch",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added live preview language switch",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           }
         ]
       },
       {
-        "version":"3.1.2",
-        "date":"11/04/2015",
-        "failsafe":"minor",
-        "author":"David Maser",
-        "codeblocks":[
+        "version": "3.1.2",
+        "date": "11/04/2015",
+        "failsafe": "minor",
+        "author": "David Maser",
+        "codeblocks": [
           {
-            "item":"Added hello bar builder support",
-            "revision":"major",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added hello bar builder support",
+            "revision": "major",
+            "impact": "global",
+            "codestatus": "working"
           },
           {
-            "item":"Added hello bar json file export",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added hello bar json file export",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           }
         ]
       },
       {
-        "version":"3.1.3",
-        "date":"11/06/2015",
-        "failsafe":"minor",
-        "author":"David Maser",
-        "codeblocks":[
+        "version": "3.1.3",
+        "date": "11/06/2015",
+        "failsafe": "minor",
+        "author": "David Maser",
+        "codeblocks": [
           {
-            "item":"Added feature to allow resetting of the form items to their original order",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added feature to allow resetting of the form items to their original order",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           },
           {
-            "item":"Bind button in action menu to resetItems function",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Bind button in action menu to resetItems function",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           }
         ]
       },
       {
-        "version":"3.1.4",
-        "date":"11/06/2015",
-        "failsafe":"minor",
-        "author":"David Maser",
-        "codeblocks":[
+        "version": "3.1.4",
+        "date": "11/06/2015",
+        "failsafe": "minor",
+        "author": "David Maser",
+        "codeblocks": [
           {
-            "item":"Added feature that prompts user to update to latest version when version change detected",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added feature that prompts user to update to latest version when version change detected",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           }
         ]
       },
       {
-        "version":"3.2",
-        "date":"9/23/2016",
-        "failsafe":"minor",
-        "author":"David Maser",
-        "codeblocks":[
+        "version": "3.2",
+        "date": "9/23/2016",
+        "failsafe": "minor",
+        "author": "David Maser",
+        "codeblocks": [
           {
-            "item":"Added Shopify API support with direct node write access",
-            "revision":"minor",
-            "impact":"global",
-            "codestatus":"working"
+            "item": "Added Shopify API support with direct node write access",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
           }
         ]
       }
