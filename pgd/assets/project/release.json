@@ -9,7 +9,7 @@
     "semantic":{
       "build":1,
       "language":["js","jquery","json","css","html","md","coffee"],
-      "externals":["jquery","bootstrap","custom font","versioning file","moment","bootstrap datetimepicker","validate json","Shopify API"]],
+      "externals":["jquery","bootstrap","custom font","versioning file","moment","bootstrap datetimepicker","validate json","Shopify API"],
       "minified":true
     },
     "latest":"major",
