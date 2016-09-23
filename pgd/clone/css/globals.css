@@ -1098,6 +1098,8 @@ body[data-nmode="hero"] *[data-role="altiSpecial"] {
   border: none;
   background-color: #5bc0de;
   color: #5bc0de;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
 }
 
 .com_API_state {
