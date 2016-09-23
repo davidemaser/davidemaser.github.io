@@ -1,7 +1,7 @@
 {
   "project":{
     "name":"Page Builder",
-    "version":"3.1.4",
+    "version":"3.2.0",
     "author":"David Maser",
     "licensing":"MIT",
     "revision":"2",
@@ -771,6 +771,20 @@
         "codeblocks":[
           {
             "item":"Added feature that prompts user to update to latest version when version change detected",
+            "revision":"minor",
+            "impact":"global",
+            "codestatus":"working"
+          }
+        ]
+      },
+      {
+        "version":"3.2",
+        "date":"9/23/2016",
+        "failsafe":"minor",
+        "author":"David Maser",
+        "codeblocks":[
+          {
+            "item":"Added Shopify API support with direct node write access",
             "revision":"minor",
             "impact":"global",
             "codestatus":"working"
