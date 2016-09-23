@@ -2,7 +2,6 @@
  * Created by david-maser on 12/09/16.
  */
 module.exports = function(grunt) {
-
     grunt.initConfig({
         jshint: {
             files: ['Gruntfile.js', 'pgd/clone/js/*.js', 'assets/**/*.js'],
@@ -21,7 +20,7 @@ module.exports = function(grunt) {
         },
         jsonlint: {
             all: {
-                src: [ 'pgd/clone/data/help.json','pgd/clone/schema/layout.json','pgd/clone/data/language/fr_FR.json' ],
+                src: ['pgd/assets/project/release.json', 'pgd/clone/data/help.json','pgd/clone/schema/layout.json','pgd/clone/data/language/fr_FR.json' ],
                 options: {
                     format: true,
                     indent: 2
