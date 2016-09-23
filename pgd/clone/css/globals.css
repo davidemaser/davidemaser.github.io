@@ -1061,7 +1061,47 @@ body[data-nmode="hero"] *[data-role="altiSpecial"] {
 .prompt-icon {
   font-size: 60px;
   margin-right: 20px;
-  color: #5bc0de; }
+  color: #5bc0de;
+}
   .prompt-icon span {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.39);
-    animation: mymove 4s infinite; }
+    animation: mymove 4s infinite;
+  }
+.com_API_local {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 99;
+}
+
+.com_API_message {
+  position: relative;
+  width: 980px;
+  height: 70px;
+  margin: auto;
+  top: 25%;
+  background: #fff;
+  /* padding: 10px; */
+  border-radius: 4px;
+}
+.com_API_prog {
+  position: absolute;
+  left: 0;
+  /* top: 62px; */
+  width: 0;
+  height: 32px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background-color: #5bc0de;
+  color: #5bc0de;
+}
+
+.com_API_state {
+  padding: 10px;
+  position: absolute;
+  top: 30px;
+}

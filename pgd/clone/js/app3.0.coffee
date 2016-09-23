@@ -1148,6 +1148,27 @@ core =
       pfMode = mode
       $(target).removeClass('renderSmall').attr('data-hero', heroItem).attr('data-language', lang).attr 'data-mode', mode
     return
+  loadAPIparams: ->
+    parent = $('.com_API_local')
+    elem = $('.com_API_prog')
+    subElem = $('.com_API_state')
+    width = 10
+    id = setInterval(frame, 70)
+    loadText = 'Loading Shopify API components'
+    doneText = 'Shopify API successfully loaded'
+    $(parent).css('display', 'block');
+    $(elem).attr('style', '');
+    $(subElem).html(loadText);
+    frame() ->
+      if width >= 100
+        $(elem).css('background-color', '#5cb85c')
+        $(subElem).html(doneText)
+        clearInterval(id)
+        setTimeout("$('.com_API_local').remove()", 1500)
+      else
+        width++
+        $(elem).css('width', width + '%')
+
 $ ->
 
   ###*
@@ -1158,6 +1179,7 @@ $ ->
   core.initializeTheme()
   core.initHelp()
   core.getVersion true
+  core.loadAPIparams()
   setInterval 'core.getVersion(false)', 600000
   $('.date_obj').datetimepicker format: 'MM/DD/YYYY HH:mm'
   $('.btnAdd').attr 'disabled', false
