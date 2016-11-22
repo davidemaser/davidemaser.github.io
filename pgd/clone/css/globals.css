@@ -1107,7 +1107,7 @@ body[data-nmode="hero"] *[data-role="altiSpecial"] {
   position: absolute;
   top: 30px;
 }
-.addConditions {
+.option-selection {
   display: none;
 }
 .dropdown-menu>li>a{
