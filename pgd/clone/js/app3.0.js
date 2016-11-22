@@ -1557,6 +1557,8 @@ $(function () {
         }catch(e){
 
         }
+    }).on('click','.addConditions',function(){
+        $(this).parent().parent().parent().parent().parent().parent().find('.form-group.option-selection').toggle();
     });
     $(window).on('scroll', function() {
         if($(window).scrollTop() + $(window).height() == $(document).height()) {

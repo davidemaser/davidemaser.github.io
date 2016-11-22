@@ -1107,3 +1107,6 @@ body[data-nmode="hero"] *[data-role="altiSpecial"] {
   position: absolute;
   top: 30px;
 }
+.addConditions {
+  display: none;
+}
