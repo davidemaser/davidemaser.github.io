@@ -1110,3 +1110,6 @@ body[data-nmode="hero"] *[data-role="altiSpecial"] {
 .addConditions {
   display: none;
 }
+.dropdown-menu>li>a{
+  cursor: pointer;
+}
