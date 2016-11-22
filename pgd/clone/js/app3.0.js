@@ -922,11 +922,10 @@ var core = {
                 page_model = '{\n    "hero": [\n';
                 for (i = 0; i < nodes; i++) {
                     //mapping
-                    console.log(aCode[i][15].value);
                     if (aCode[i][15].value == '' || aCode[i][15].value == null || aCode[i][15].value == undefined) {
                         var elemAAAA = 'null';
                     } else {
-                        elemAAAA = aCode[i][13].value;
+                        elemAAAA = aCode[i][15].value;
                     }
                     if (aCode[i][16].value == '' || aCode[i][16].value == null || aCode[i][16].value == undefined) {
                         var elemA = true;
@@ -936,7 +935,7 @@ var core = {
                     if (aCode[i][17].value == '' || aCode[i][17].value == null || aCode[i][17].value == undefined) {
                         var elemAA = true;
                     } else {
-                        elemAA = aCode[i][15].value;
+                        elemAA = aCode[i][17].value;
                     }
                     if (aCode[i][18].value == '' || aCode[i][18].value == null || aCode[i][18].value == undefined) {
                         var elemAAA = true;
