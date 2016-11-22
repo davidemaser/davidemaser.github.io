@@ -1,13 +1,13 @@
 {
   "project": {
     "name": "Page Builder",
-    "version": "3.2",
+    "version": "3.2.1",
     "author": "David Maser",
     "licensing": "MIT",
-    "revision": "2",
+    "revision": "1",
     "downloadlink": "https://drive.google.com/file/d/0B4onXKnKkE6AY0JiVlZ3bG9scmM/view?usp=sharing",
     "semantic": {
-      "build": 1,
+      "build": 5,
       "language": [
         "js",
         "jquery",
@@ -804,6 +804,20 @@
         "codeblocks": [
           {
             "item": "Added Shopify API support with direct node write access",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
+          }
+        ]
+      },
+      {
+        "version": "3.2.1",
+        "date": "11/22/2016",
+        "failsafe": "minor",
+        "author": "David Maser",
+        "codeblocks": [
+          {
+            "item": "Added Condition fields that allows showing conditions in place",
             "revision": "minor",
             "impact": "global",
             "codestatus": "working"
