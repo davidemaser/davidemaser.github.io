@@ -117,7 +117,7 @@ var core = {
          * version to the data-version attribute on
          * main menu links
          */
-        var cssBlock = '<style>.main_nav a[data-version="' + ver + '"]:after {content: "new";float: right;background-color: #f0ad4e;padding: 2px 5px;font-size: 10px;color: #fff;font-weight: bold;}</style>';
+        var cssBlock = '<style>.main_nav a[data-version="' + ver + '"]:after,.bigboy a[data-version="' + ver + '"]:after {content: "new";float: right;background-color: #f0ad4e;padding: 2px 5px;font-size: 10px;color: #fff;font-weight: bold;}</style>';
         $(app.dom.b).append(cssBlock).find('a[data-version="' + ver + '"]').attr('title', 'This feature is new to the current version');
     },
     initializeForm: function () {
