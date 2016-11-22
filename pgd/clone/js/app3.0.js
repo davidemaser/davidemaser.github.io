@@ -1558,7 +1558,13 @@ $(function () {
 
         }
     }).on('click','.addConditions',function(){
-        $(this).parent().parent().parent().parent().parent().parent().find('.form-group.option-selection').toggle();
+        var $targetObject = $(this).parent().parent().parent().parent().parent().parent().find('.form-group.option-selection'),
+            $targetStatus = $targetObject.css('display');
+        if($targetStatus === 'none'){
+            $targetObject.css('display','table');
+        }else if($targetStatus === 'table'){
+            $targetObject.css('display','none')
+        }
     });
     $(window).on('scroll', function() {
         if($(window).scrollTop() + $(window).height() == $(document).height()) {
