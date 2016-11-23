@@ -1,4 +1,4 @@
-span.overlay_close, span.multiquery_close, span.renderer_close, span.help_close, span.select_content, span.overlay_validate, span.overlay_translate {
+span.overlay_close, span.multiquery_close, span.renderer_close, span.help_close, span.select_content, span.overlay_validate, span.overlay_trim, span.overlay_translate {
   padding: 20px;
   float: right;
   cursor: pointer;
