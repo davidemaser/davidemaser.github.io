@@ -600,7 +600,7 @@ var core = {
         $(app.objects.r).animate({
             scrollTop: $(app.objects.e + newNum).offset().top - 60
         }, app.animation.d.min);
-        $('.btn-group.bigboy:not(.helpMePlease)').last().find('ul').append('<li class="divider" data-role="hero"></li><li><a class="removeThisItem" ' + app.handlers.i + '="' + newNum + '" href="javascript:;">Remove</a></li><li class="divider"></li><li><a class="moveUpThisItem" ' + app.handlers.i + '="' + newNum + '" href="javascript:;">Move Up<span class="glyphicon glyphicon-arrow-up"></span></a></li><li><a class="moveDownThisItem" ' + app.handlers.i + '="' + newNum + '" href="javascript:;">Move Down<span class="glyphicon glyphicon-arrow-down"></span></a></li><li class="divider" data-role="hero"></li><li data-role="hero"><a class="addConditions" data-hero="1" data-role="hero" data-lang-id="toggle" data-version="3.2.1">Toggle Conditions</a></li>');
+        $('.btn-group.bigboy:not(.helpMePlease)').last().find('ul').append('<li class="divider" data-role="hero"></li><li><a class="removeThisItem" ' + app.handlers.i + '="' + newNum + '" href="javascript:;">Remove</a></li><li class="divider"></li><li><a class="moveUpThisItem" ' + app.handlers.i + '="' + newNum + '" href="javascript:;">Move Up<span class="glyphicon glyphicon-arrow-up"></span></a></li><li><a class="moveDownThisItem" ' + app.handlers.i + '="' + newNum + '" href="javascript:;">Move Down<span class="glyphicon glyphicon-arrow-down"></span></a></li><li class="divider" data-role="hero"></li><li data-role="hero"><a class="addConditions" data-hero="1" data-role="hero" data-lang-id="toggle" data-version="3.2.1">Toggle Conditions</a></li><li data-role="hero"><a class="hideItem" data-hero="1" data-role="hero" data-lang-id="toggle" data-version="3.2.1">Hide Item</a></li>');
         $(app.objects.e + newNum).find('.mod-radio').find('input').first().prop('checked', true);
         core.scrollState('a');
         core.panelAlert('Item Added', 'good');
@@ -1237,6 +1237,11 @@ var core = {
                 .replace(/[\t ]+\]/g, "]")
                 .replace(/\n/g, "");
         $('#output_code').val(b);
+    },
+    cacheClickedItem:function(item){
+        console.log(item);
+        item.parent().parent().parent().parent().find('[data-role="hero"]').hide()
+       // $('.btn.btn-info').on('click',function(){$(this).parent().parent().parent().find('[data-role="hero"]').hide();})
     }
 };
 
@@ -1371,6 +1376,8 @@ $(function () {
         }
     }).on('click','.btnDel',function () {
         core.deleteItems('last');
+    }).on('click','.hideItem',function () {
+        core.cacheClickedItem($(this));
     }).on('click','.submit_json',function (){
         var a = $(this).attr('data-nmode');
         core.prepareJSON('full',null,a);
