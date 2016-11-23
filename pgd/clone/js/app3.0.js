@@ -1143,6 +1143,7 @@ var core = {
             start = dt[0].value,
             img = dt[7].value,
             titleColor = dt[4].value;
+        console.log(dt);
         if (lang == app.language.e) {
             var titleText = dt[2].value,
                 subTitleText = dt[5].value,
