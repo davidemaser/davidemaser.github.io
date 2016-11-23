@@ -293,6 +293,18 @@
           "candidate": "3.2.1",
           "request": false
         }
+      },
+      {
+        "line": "1241",
+        "file": "app3.0.js",
+        "structure": "add",
+        "utility": "Add click to show/hide form items",
+        "appstatus": {
+          "scoped": true,
+          "version": "3.2.0",
+          "candidate": "3.2.1",
+          "request": false
+        }
       }
     ],
     "history": [
@@ -848,6 +860,12 @@
           },
           {
             "item": "Added format for PLAN B function",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
+          },
+          {
+            "item": "Add ability to hide a form item",
             "revision": "minor",
             "impact": "global",
             "codestatus": "working"
