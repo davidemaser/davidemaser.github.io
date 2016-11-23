@@ -1217,6 +1217,7 @@ var core = {
     planBify:function(){
         $('.objHeroPromote').find('option[value="true"]').prop('selected',true);
         $('.objHeroSticky').find('option[value="false"]').prop('selected',true);
+        core.panelAlert('Form items have been modified to be Plan B compliant', 'good');
     }
 };
 
