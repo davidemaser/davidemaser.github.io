@@ -269,6 +269,30 @@
           "candidate": "3.1.4",
           "request": false
         }
+      },
+      {
+        "line": "multi",
+        "file": "app3.0.js",
+        "structure": "add",
+        "utility": "Enable terms and conditions input",
+        "appstatus": {
+          "scoped": true,
+          "version": "3.2.0",
+          "candidate": "3.2.1",
+          "request": false
+        }
+      },
+      {
+        "line": "1217",
+        "file": "app3.0.js",
+        "structure": "add",
+        "utility": "Add parsing as PLAN B feature",
+        "appstatus": {
+          "scoped": true,
+          "version": "3.2.0",
+          "candidate": "3.2.1",
+          "request": false
+        }
       }
     ],
     "history": [
@@ -818,6 +842,12 @@
         "codeblocks": [
           {
             "item": "Added Condition fields that allows showing conditions in place",
+            "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
+          },
+          {
+            "item": "Added format for PLAN B function",
             "revision": "minor",
             "impact": "global",
             "codestatus": "working"
