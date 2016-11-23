@@ -1399,7 +1399,6 @@ $(function () {
         }
     }).on('click','.import_json',function (e){
         core.choseLocalSave();
-        e.preventDefault();
     }).on('click','.planb_friendly',function (e){
         core.planBify();
         e.preventDefault();
@@ -1658,7 +1657,7 @@ $(function () {
             e.preventDefault();
         }
         if (e.keyCode == 45 && e.ctrlKey && e.altKey) {
-            core.traverseJSON(true);
+            core.choseLocalSave();
         }
         if (e.keyCode == 69 && e.ctrlKey && e.altKey) {
             if(pfLang == app.language.e){
