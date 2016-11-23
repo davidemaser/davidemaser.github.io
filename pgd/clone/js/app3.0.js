@@ -1240,8 +1240,7 @@ var core = {
     },
     cacheClickedItem:function(item){
         console.log(item);
-        item.parent().parent().parent().parent().find('[data-role="hero"]').hide()
-       // $('.btn.btn-info').on('click',function(){$(this).parent().parent().parent().find('[data-role="hero"]').hide();})
+        item.parent().parent().parent().parent().parent().find('[data-role="hero"]').hide();
     }
 };
 
