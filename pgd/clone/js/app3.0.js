@@ -1196,7 +1196,7 @@ var core = {
             elem = $('.com_API_prog'),
             subElem = $('.com_API_state'),
             width = 10,
-            id = setInterval(frame, 70),
+            id = setInterval(frame, 20),
             loadText = 'Loading Shopify API components',
             doneText = 'Shopify API successfully loaded';
         $(parent).css('display', 'block');
@@ -1207,7 +1207,7 @@ var core = {
                 $(elem).css('background-color', '#5cb85c');
                 $(subElem).html(doneText);
                 clearInterval(id);
-                setTimeout("$('.com_API_local').remove()", 1500);
+                setTimeout("$('.com_API_local').remove()", 1000);
             } else {
                 width++;
                 $(elem).css('width', width + '%');
