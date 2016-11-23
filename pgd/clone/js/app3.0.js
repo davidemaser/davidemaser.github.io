@@ -1215,8 +1215,8 @@ var core = {
         }
     },
     planBify:function(){
-        $('.objHeroPromote').find('option[value="true"]').prop('selected',true);
-        $('.objHeroSticky').find('option[value="false"]').prop('selected',true);
+        $('.objHeroPromote').find('option[value="true"]').prop('selected',true).prop('disabled',true);
+        $('.objHeroSticky').find('option[value="false"]').prop('selected',true).prop('disabled',true);
         core.panelAlert('Form items have been modified to be Plan B compliant', 'good');
     },
     cleanWhitespace:function(){
