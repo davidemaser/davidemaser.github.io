@@ -1590,6 +1590,7 @@ $(function () {
             if ($(this).val() !== "" || $(this).val() !== "undefined" || $(this).val() !== undefined || $(this).val() !== "null" || $(this).val() !== null) {
                 var a = $(this).val();
                 core.traverseJSON(true, a);
+                $('#loadandsave-zone').css('display','none');
             } else {
                 panelAlert('Please select a valid data item from the dropdown', 'error');
             }
