@@ -1503,11 +1503,9 @@ $(function () {
         if($(this).attr('data-status') == 'active') {
             core.killBats();
         }else if($(this).attr('data-status') == 'allGone') {
-            core.launchBats();
-            core.launchBats();
-            core.launchBats();
-            core.launchBats();
-            core.launchBats();
+            for(i=0;i<4;i++) {
+                core.launchBats();
+            }
             $('.batsToggle').attr('data-status','active').html('Kill The Bats');
         }
     }).on('keyup','input',function(){
@@ -1669,10 +1667,8 @@ $(function () {
         dm = d.getMonth()+1;
     if(dm == 10 && dt > 21) {
         $('.main_nav').append('<li class="divider"></li><li><a href="#" class="batsToggle" data-status="active">Kill The Bats</a></li>');
-        core.launchBats();
-        core.launchBats();
-        core.launchBats();
-        core.launchBats();
-        core.launchBats();
+        for(var i = 0;i<4;i++) {
+            core.launchBats();
+        }
     }
 });
