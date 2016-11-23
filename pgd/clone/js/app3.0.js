@@ -1239,8 +1239,13 @@ var core = {
         $('#output_code').val(b);
     },
     cacheClickedItem:function(item){
-        item.addClass('childHidden');
-        item.parent().parent().parent().parent().parent().find('fieldset[data-role="hero"]').hide();
+        if(item.hasClass('childHidden')){
+            item.html('Show Item').removeClass('childHidden');
+            item.parent().parent().parent().parent().parent().find('fieldset[data-role="hero"]').show();
+        }else if(!item.hasClass('childHidden')){
+            item.html('Hide Item').addClass('childHidden');
+            item.parent().parent().parent().parent().parent().find('fieldset[data-role="hero"]').hide();
+        }
     }
 };
 
