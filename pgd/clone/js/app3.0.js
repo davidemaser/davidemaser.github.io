@@ -1240,10 +1240,10 @@ var core = {
     },
     cacheClickedItem:function(item){
         if(item.hasClass('childHidden')){
-            item.html('Show Item').removeClass('childHidden');
+            item.html('Hide Item').removeClass('childHidden');
             item.parent().parent().parent().parent().parent().find('fieldset[data-role="hero"]').show();
         }else if(!item.hasClass('childHidden')){
-            item.html('Hide Item').addClass('childHidden');
+            item.html('Show Item').addClass('childHidden');
             item.parent().parent().parent().parent().parent().find('fieldset[data-role="hero"]').hide();
         }
     }
