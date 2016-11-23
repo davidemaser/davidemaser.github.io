@@ -1218,6 +1218,25 @@ var core = {
         $('.objHeroPromote').find('option[value="true"]').prop('selected',true);
         $('.objHeroSticky').find('option[value="false"]').prop('selected',true);
         core.panelAlert('Form items have been modified to be Plan B compliant', 'good');
+    },
+    cleanWhitespace:function(){
+        var a = $('#output_code').val(),
+            b = a.replace(/[\t ]+\"/g, '"')
+                .replace(/\][\t ]+\[/g, "][")
+                .replace(/\}[\t ]+\}/g, '}}')
+                .replace(/\}[\t ]+\]/g, "}]")
+                .replace(/\"[\t ]+\}/g, '"}')
+                .replace(/\"[\t ]+\]/g, '"]')
+                .replace(/[\t ]+\}/g, '}')
+                .replace(/[\t ]+\{/g, "{")
+                .replace(/\:[\t ]+\[/g, ":[")
+                .replace(/[\t ]+\:/g, ":")
+                .replace(/\:[\t ]+$/g, ":")
+                .replace(/\}[\t ]+$/g, "}")
+                .replace(/\}[\t ]+$/g, "}")
+                .replace(/[\t ]+\]/g, "]")
+                .replace(/\n/g, "");
+        $('#output_code').val(b);
     }
 };
 
@@ -1292,6 +1311,9 @@ $(function () {
         e.preventDefault();
     }).on('click','.overlay_validate',function(){
         core.validateJSON();
+    }).on('click','.overlay_trim',function(){
+        core.cleanWhitespace();
+        core.panelAlert('Whitespace and line breaks have been removed.','good');
     }).on('click','.previewItem.large',function(e){
         $(app.objects.r).animate({ scrollTop: sPos }, app.animation.d.min).css('overflow','hidden');
         var a = $(this).data('hero');
