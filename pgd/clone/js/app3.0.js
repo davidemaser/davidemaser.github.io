@@ -1141,18 +1141,18 @@ var core = {
          */
         var dt = $(app.objects.e + heroItem).find('form').find('fieldset[data-role="hero"]').serializeArray(),
             start = dt[0].value,
-            img = dt[7].value,
+            img = dt[9].value,
             titleColor = dt[4].value;
         console.log(dt);
         if (lang == app.language.e) {
             var titleText = dt[2].value,
                 subTitleText = dt[5].value,
-                buttonLabel = dt[9].value,
+                buttonLabel = dt[11].value,
                 endsLabel = 'Ends In';
         } else if (lang == app.language.f) {
             titleText = dt[3].value,
                 subTitleText = dt[6].value,
-                buttonLabel = dt[10].value,
+                buttonLabel = dt[12].value,
                 endsLabel = 'Termine dans';
         }
         var buttonLink = dt[11].value,
