@@ -1381,8 +1381,9 @@ $(function () {
         }
     }).on('click','.btnDel',function () {
         core.deleteItems('last');
-    }).on('click','.hideItem',function () {
+    }).on('click','.hideItem',function (e) {
         core.cacheClickedItem($(this));
+        e.preventDefault();
     }).on('click','.submit_json',function (){
         var a = $(this).attr('data-nmode');
         core.prepareJSON('full',null,a);
@@ -1390,7 +1391,7 @@ $(function () {
         $('.overlay_message').html('');
         $(app.objects.r).animate({ scrollTop: 0 }, app.animation.d.min).css('overflow','hidden');
         $(app.objects.o).attr(app.handlers.r,'translate').css('display','block').find('#output_code').val('').attr('placeholder','Paste you code here');
-    }).on('click','.save_json',function (e){
+    }).on('click','.save_json',function (){
         if(app.save == true) {
             core.doLocalSave();
         }else{
@@ -1398,8 +1399,10 @@ $(function () {
         }
     }).on('click','.import_json',function (e){
         core.choseLocalSave();
+        e.preventDefault();
     }).on('click','.planb_friendly',function (e){
         core.planBify();
+        e.preventDefault();
     }).on('click','.overlay_translate',function (){
         core.traverseJSON(false);
     }).on('click','.errors_reset',function (){
