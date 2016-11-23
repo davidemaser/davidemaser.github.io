@@ -1239,8 +1239,8 @@ var core = {
         $('#output_code').val(b);
     },
     cacheClickedItem:function(item){
-        console.log(item);
-        item.parent().parent().parent().parent().parent().find('[data-role="hero"]').hide();
+        item.addClass('childHidden');
+        item.parent().parent().parent().parent().parent().find('fieldset[data-role="hero"]').hide();
     }
 };
 
