@@ -1641,7 +1641,11 @@ $(function () {
             e.preventDefault();
         }
         if (e.keyCode == 83 && e.ctrlKey && e.shiftKey) {
-            core.prepareJSON('save');
+            if(app.save == true) {
+                core.doLocalSave();
+            }else{
+                confirm('The save to localstorage feature is disabled. Change the save value to true in the globals file.');
+            }
         }
         if (e.keyCode == 13 && e.ctrlKey && e.altKey) {
             $('.overlay_message').html('');
