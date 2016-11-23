@@ -1213,6 +1213,10 @@ var core = {
                 $(elem).css('width', width + '%');
             }
         }
+    },
+    planBify:function(){
+        $('.objHeroPromote').find('option[value="true"]').prop('selected',true);
+        $('.objHeroSticky').find('option[value="false"]').prop('selected',true);
     }
 };
 
@@ -1359,6 +1363,8 @@ $(function () {
         }
     }).on('click','.import_json',function (e){
         core.choseLocalSave();
+    }).on('click','.planb_friendly',function (e){
+        core.planBify();
     }).on('click','.overlay_translate',function (){
         core.traverseJSON(false);
     }).on('click','.errors_reset',function (){
