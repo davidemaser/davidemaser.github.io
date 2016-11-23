@@ -1241,10 +1241,10 @@ var core = {
     cacheClickedItem:function(item){
         if(item.hasClass('childHidden')){
             item.html('Hide Item').removeClass('childHidden');
-            item.parent().parent().parent().parent().parent().find('fieldset[data-role="hero"]').show();
+            item.parent().parent().parent().parent().parent().find('fieldset[data-role="hero"]').slideToggle(300);
         }else if(!item.hasClass('childHidden')){
             item.html('Show Item').addClass('childHidden');
-            item.parent().parent().parent().parent().parent().find('fieldset[data-role="hero"]').hide();
+            item.parent().parent().parent().parent().parent().find('fieldset[data-role="hero"]').slideToggle(300);
         }
     }
 };
