@@ -64,6 +64,10 @@
             "translate": "A Propos De Cette Application"
           },
           {
+            "id": "action16",
+            "translate": "Formater pour Plan B"
+          },
+          {
             "id": "preview1",
             "translate": "Anglais"
           },
@@ -161,7 +165,7 @@
         "load": [
           {
             "id": "load1",
-            "translate": "Charger Hero Sauvegarde"
+            "translate": "Charger Hero Sauvegard&eacute;"
           }
         ]
       },

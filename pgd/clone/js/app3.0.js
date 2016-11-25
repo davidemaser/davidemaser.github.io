@@ -80,16 +80,39 @@ var core = {
                 type: app.methods.g,
                 url: 'data/language/' + newLang + '.json',
                 success: function (data) {
-                    var dataLen = data.node.section[0].actions.length,
+                    var actionLen = data.node.section[0].actions.length,
+                        loadLen = data.node.section[0].load.length,
+                        errorLen = data.node.section[0].errors.length,
+                        helpLen = data.node.section[0].help.length,
                         lngContainer = [];
-                    for (var i = 0; i < dataLen; i++) {
+                    for (var i = 0; i < actionLen; i++) {
                         lngContainer.push({
                             objID: data.node.section[0].actions[i].id,
                             objTran: data.node.section[0].actions[i].translate
                         });
-                        $('[data-lang-id="'+data.node.section[0].actions[i].id+'"]').html(data.node.section[0].actions[i].translate);
                     }
+                    for (var j = 0; i < loadLen; i++) {
+                        lngContainer.push({
+                            objID: data.node.section[0].load[i].id,
+                            objTran: data.node.section[0].load[i].translate
+                        });
+                    }
+                    for (var k = 0; i < errorLen; i++) {
+                        lngContainer.push({
+                            objID: data.node.section[0].errors[i].id,
+                            objTran: data.node.section[0].errors[i].translate
+                        });
+                    }
+                    for (var l = 0; i < helpLen; i++) {
+                        lngContainer.push({
+                            objID: data.node.section[0].help[i].id,
+                            objTran: data.node.section[0].help[i].translate
+                        });
+                    }
+                },
+                complete:function(){
                     console.log(lngContainer);
+                    //$('[data-lang-id="'+data.node.section[0].actions[i].id+'"]').html(data.node.section[0].actions[i].translate);
                 }
             })
         } catch (e) {
