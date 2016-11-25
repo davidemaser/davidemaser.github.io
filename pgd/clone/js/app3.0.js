@@ -81,9 +81,9 @@ var core = {
                 url: 'data/language/' + newLang + '.json',
                 success: function (data) {
                     var actionLen = data.node.section[0].actions.length,
-                        loadLen = data.node.section[0].load.length,
-                        errorLen = data.node.section[0].errors.length,
-                        helpLen = data.node.section[0].help.length,
+                        loadLen = data.node.section[1].load.length,
+                        errorLen = data.node.section[2].errors.length,
+                        helpLen = data.node.section[3].help.length,
                         lngContainer = [];
                     for (var i = 0; i < actionLen; i++) {
                         lngContainer.push({
@@ -93,20 +93,20 @@ var core = {
                     }
                     for (var j = 0; i < loadLen; i++) {
                         lngContainer.push({
-                            objID: data.node.section[0].load[i].id,
-                            objTran: data.node.section[0].load[i].translate
+                            objID: data.node.section[1].load[i].id,
+                            objTran: data.node.section[1].load[i].translate
                         });
                     }
                     for (var k = 0; i < errorLen; i++) {
                         lngContainer.push({
-                            objID: data.node.section[0].errors[i].id,
-                            objTran: data.node.section[0].errors[i].translate
+                            objID: data.node.section[2].errors[i].id,
+                            objTran: data.node.section[2].errors[i].translate
                         });
                     }
                     for (var l = 0; i < helpLen; i++) {
                         lngContainer.push({
-                            objID: data.node.section[0].help[i].id,
-                            objTran: data.node.section[0].help[i].translate
+                            objID: data.node.section[3].help[i].id,
+                            objTran: data.node.section[3].help[i].translate
                         });
                     }
                 },
