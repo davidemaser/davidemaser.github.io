@@ -49,6 +49,8 @@
                 Actions <span class="caret"></span>
             </button>
             <ul class="dropdown-menu main_nav" role="menu">
+                <li><a href="#" class="app_lang_toggle" data-nmode="hero" data-lang-id="action19" data-version="4.0">Switch To French</a></li>
+                <li class="divider"></li>
                 <li><a href="#" class="cleaner_open btnNmode" data-nmode="hero" data-lang-id="action1">Switch to Hello Bar Mode</a></li>
                           <li class="divider"></li>
                 <li><a href="#" class="cleaner_open btnAdd" data-lang-id="action2" id="btnAdd" title="CTRL+I">Add Item <span
@@ -144,8 +146,8 @@
                         <li><a class="moveUpThisItem" data-item="1"><span data-lang-id="move1">Move Up</span><span class="glyphicon glyphicon-arrow-up"></span></a></li>
                         <li><a class="moveDownThisItem" data-item="1"><span data-lang-id="move2">Move Down</span><span class="glyphicon glyphicon-arrow-down"></span></a></li>
                         <li class="divider" data-role="hero"></li>
-                        <li data-role="hero"><a class="addConditions" data-hero="1" data-role="hero" data-lang-id="toggle" data-version="3.2.1">Toggle Conditions</a></li>
-                        <li data-role="hero"><a class="hideItem" data-hero="1" data-role="hero" data-lang-id="toggle" data-version="3.2.1">Hide Item</a></li>
+                        <li data-role="hero"><a class="addConditions" data-hero="1" data-role="hero" data-lang-id="action17" data-version="3.2.1">Toggle Conditions</a></li>
+                        <li data-role="hero"><a class="hideItem" data-hero="1" data-role="hero" data-lang-id="action18" data-version="3.2.1">Hide Item</a></li>
 
                     </ul>
                 </div>
@@ -297,7 +299,7 @@
                 </div>
                 <!-- Text input-->
                 <div class="form-group">
-                    <label class="label_ln control-label" for="button_link">Button Link</label>
+                    <label class="label_ln control-label" for="button_link" data-lang-id="formElement15">Button Link</label>
                     <input id="button_link" name="button_link" type="text" placeholder=""
                            class="input_ln form-control objButtonLink">
                 </div>
@@ -305,78 +307,78 @@
                 <div class="grouped_feature">
                     <div class="form-group">
                         <div class="half_span lItem">
-                            <label class="label_ttl control-label" for="options_popup">Open Link In A Popup ?</label>
+                            <label class="label_ttl control-label" for="options_popup" data-lang-id="formElement16">Open Link In A Popup ?</label>
                             <select class="select_ttl form-control objButtonPopup" name="options_popup"
                                     id="options_popup">
-                                <option value="false" selected="selected">No</option>
-                                <option value="true">Yes</option>
+                                <option value="false" selected="selected" data-lang-id="formLabel2">No</option>
+                                <option value="true" data-lang-id="formLabel1">Yes</option>
                             </select> <!-- end .select_ttl -->
                         </div>
                         <div class="half_span">
-                            <label class="label_ttl control-label" for="options_popup_id">Link To Which ID</label>
+                            <label class="label_ttl control-label" for="options_popup_id" data-lang-id="formElement17">Link To Which ID</label>
                             <select class="select_ttl form-control objButtonPopupLink" name="options_popup_id"
                                     id="options_popup_id" style="opacity:0.3">
-                                <option value="null" selected="selected">Select</option>
+                                <option value="null" selected="selected" data-lang-id="formLabel3">Select</option>
                                 <option value="popup-1">Popup 1</option>
                                 <option value="popup-2">Popup 2</option>
                             </select> <!-- end .select_ttl -->
                         </div>
                     </div>
                     <!-- Select Basic -->
-                    <div class="form-group"><label class="label_ttl control-label" for="options_countdown">Show
+                    <div class="form-group"><label class="label_ttl control-label" for="options_countdown" data-lang-id="formElement18">Show
                         Countdown Timer</label>
                         <select class="select_ttl form-control objCountdownShow" name="options_countdown"
                                 id="options_countdown">
-                            <option value="true" selected="selected">Yes</option>
-                            <option value="false">No</option>
+                            <option value="true" selected="selected" data-lang-id="formLabel1">Yes</option>
+                            <option value="false" data-lang-id="formLabel2">No</option>
                         </select> <!-- end .select_ttl -->
                     </div>
                     <!-- Select Basic -->
                     <div class="form-group">
                         <div class="half_span lItem">
-                            <label class="label_ttl control-label" for="options_hero_title">Show Hero Title</label>
+                            <label class="label_ttl control-label" for="options_hero_title" data-lang-id="formElement19">Show Hero Title</label>
                             <select class="select_ttl form-control objHeroTitleShow" name="options_hero_title"
                                     id="options_hero_title">
-                                <option value="true" selected="selected">Yes</option>
-                                <option value="false">No</option>
+                                <option value="true" selected="selected" data-lang-id="formLabel1">Yes</option>
+                                <option value="false" data-lang-id="formLabel2">No</option>
                             </select> <!-- end .select_ttl -->
                         </div>
                         <!-- Select Basic -->
                         <div class="half_span">
-                            <label class="label_ttl control-label" for="options_hero_subtitle">Show Hero
+                            <label class="label_ttl control-label" for="options_hero_subtitle" data-lang-id="formElement20">Show Hero
                                 Subtitle</label>
                             <select class="select_ttl form-control objHeroSubtitleShow" name="options_hero_subtitle"
                                     id="options_hero_subtitle">
-                                <option value="true" selected="selected">Yes</option>
-                                <option value="false">No</option>
+                                <option value="true" selected="selected" data-lang-id="formLabel1">Yes</option>
+                                <option value="false" data-lang-id="formLabel2">No</option>
                             </select> <!-- end .select_ttl -->
                         </div>
                     </div>
                     <!-- Select Basic -->
                     <div class="form-group">
                         <div class="half_span lItem">
-                            <label class="label_ttl control-label" for="options_promote">Promote Hero <span
+                            <label class="label_ttl control-label" for="options_promote" data-lang-id="formElement21">Promote Hero <span
                                     class="show_me_how" data-target="1"
                                     title="Promote this hero item to the main panel"></span></label>
                             <select class="select_ttl form-control objHeroPromote" name="options_promote"
                                     id="options_promote">
-                                <option value="false" selected="selected">No</option>
-                                <option value="true">Yes</option>
+                                <option value="false" selected="selected" data-lang-id="formLabel2">No</option>
+                                <option value="true" data-lang-id="formLabel1">Yes</option>
                             </select>
                         </div>
                         <div class="half_span">
-                            <label class="label_ttl control-label" for="options_sticky">Sticky Hero <span
+                            <label class="label_ttl control-label" for="options_sticky" data-lang-id="formElement22">Sticky Hero <span
                                     class="show_me_how" data-target="5"
                                     title="A sticky hero item will always remain in the smaller hero vignette panel. It will never promote to a main hero but it won't take it personally. "></span></label>
                             <select class="select_ttl form-control objHeroSticky" name="options_sticky"
                                     id="options_sticky">
-                                <option value="false" selected="selected">No</option>
-                                <option value="true">Yes</option>
+                                <option value="false" selected="selected" data-lang-id="formLabel2">No</option>
+                                <option value="true" data-lang-id="formLabel1">Yes</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="label_ln control-label" for="text_fr">Show X hours Before Active <span
+                        <label class="label_ln control-label" for="text_fr" data-lang-id="formElement23">Show X hours Before Active <span
                                 class="show_me_how" data-target="4"
                                 title="Show this hero item only when the start time is X hours from now"></span></label>
                         <input id="delay_ac" name="delay_ac" type="text" placeholder="Leave 0 to show by default"
@@ -384,17 +386,17 @@
                     </div>
                 </div>
                 <!-- Multiple Radios -->
-                <label class="label_radio control-label" for="radioitem">Activate Hero</label>
+                <label class="label_radio control-label" for="radioitem" data-lang-id="formElement24">Activate Hero</label>
 
                 <div class="input-group form-group mod-radio">
                     <label class="radio" for="radioitem-0">
                         <input class="input_radio" type="radio" name="radioitem" id="radioitem-0" value="true"
                                checked="checked">
-                        Yes
+                        <span data-lang-id="formLabel1">Yes</span>
                     </label>
                     <label class="radio" for="radioitem-1">
                         <input class="input_radio" type="radio" name="radioitem" id="radioitem-1" value="false">
-                        No
+                        <span data-lang-id="formLabel2">No</span>
                     </label>
                 </div>
         </form>

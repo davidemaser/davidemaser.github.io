@@ -2,7 +2,7 @@
  * Created by david-maser on 30/10/15.
  */
 var app = {
-    lang:"en",
+    lang:"en_EN",
     user:"guest",
     callback:true,
     export:"json",

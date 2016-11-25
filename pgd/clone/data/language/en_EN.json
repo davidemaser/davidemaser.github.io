@@ -5,223 +5,223 @@
         "actions": [
           {
             "id": "action1",
-            "translate": "Activer mode Hello Bar"
+            "translate": "Switch to Hello Bar Mode"
           },
           {
             "id": "action2",
-            "translate": "Ajouter Element"
+            "translate": "Add Item"
           },
           {
             "id": "action3",
-            "translate": "Ajouter Multiples Elements"
+            "translate": "Add Multiple Items"
           },
           {
             "id": "action4",
-            "translate": "Supprimer Dernier Element"
+            "translate": "Remove Last Item"
           },
           {
             "id": "action5",
-            "translate": "G&eacute;n&eacute;rer JSON"
+            "translate": "Generate JSON"
           },
           {
             "id": "action6",
-            "translate": "Traduire JSON"
+            "translate": "Translate JSON"
           },
           {
             "id": "action7",
-            "translate": "Sauvegarder"
+            "translate": "Save For Later"
           },
           {
             "id": "action8",
-            "translate": "Importer Une Sauvegarde"
+            "translate": "Import From Save"
           },
           {
             "id": "action9",
-            "translate": "R&eacute;initialiser Erreurs"
+            "translate": "Reset Errors"
           },
           {
             "id": "action10",
-            "translate": "R&eacute;initialiser Formulaire"
+            "translate": "Reset Form"
           },
           {
             "id": "action11",
-            "translate": "R&eacute;initialiser Positionement Des Elements"
+            "translate": "Reset Item Positions"
           },
           {
             "id": "action12",
-            "translate": "R&eacute;initialiser Local Storage"
+            "translate": "Reset Local Storage"
           },
           {
             "id": "action13",
-            "translate": "Th&egrave;me Fonce"
+            "translate": "Dark Theme"
           },
           {
             "id": "action14",
-            "translate": "Th&egrave;me Claire"
+            "translate": "Light Theme"
           },
           {
             "id": "action15",
-            "translate": "A Propos De Cette Application"
+            "translate": "About this app"
           },
           {
             "id": "action16",
-            "translate": "Formater pour Plan B"
+            "translate": "Format For Plan B"
           },
           {
             "id": "action17",
-            "translate": "Activer/Desactiver Conditions"
+            "translate": "Toggle Conditions"
           },
           {
             "id": "action18",
-            "translate": "Masquer Item"
+            "translate": "Hide Item"
           },
           {
             "id": "action19",
-            "translate": "Traduire En Anglais"
+            "translate": "Translate To French"
           },
           {
             "id": "preview1",
-            "translate": "Anglais"
+            "translate": "English"
           },
           {
             "id": "preview2",
-            "translate": "Francais"
+            "translate": "French"
           },
           {
             "id": "preview3",
-            "translate": "Langue de l'apercu"
+            "translate": "Preview Language"
           },
           {
             "id": "preview4",
-            "translate": "Grand Apercu"
+            "translate": "Preview Large"
           },
           {
             "id": "preview5",
-            "translate": "Petit Apercu"
+            "translate": "Preview Small"
           },
           {
             "id": "move1",
-            "translate": "D&eacute;placer Vers le Haut"
+            "translate": "Move Up"
           },
           {
             "id": "move2",
-            "translate": "D&eacute;placer Vers le Bas"
+            "translate": "Move Down"
           },
           {
             "id": "formElement1",
-            "translate": "Date de D&eacute;but"
+            "translate": "Start Date"
           },
           {
             "id": "formElement2",
-            "translate": "Date de Fin"
+            "translate": "End Date"
           },
           {
             "id": "formElement3",
-            "translate": "Titre EN"
+            "translate": "Title EN"
           },
           {
             "id": "formElement4",
-            "translate": "Titre FR"
+            "translate": "Title FR"
           },
           {
             "id": "formElement5",
-            "translate": "Couleur du Titre"
+            "translate": "Title Color"
           },
           {
             "id": "formElement6",
-            "translate": "Texte EN"
+            "translate": "Text EN"
           },
           {
             "id": "formElement7",
-            "translate": "Texte FR"
+            "translate": "Text FR"
           },
           {
             "id": "formElement8",
-            "translate": "Lien Vers l'Image"
+            "translate": "Image Link"
           },
           {
             "id": "formElement9",
-            "translate": "Valider Image"
+            "translate": "Validate Image"
           },
           {
             "id": "formElement10",
-            "translate": "Ouvrir Explorateur Shopify"
+            "translate": "Open Shopify Explorer"
           },
           {
             "id": "formElement11",
-            "translate": "CDN Shopify"
+            "translate": "Shopify CDN"
           },
           {
             "id": "formElement12",
-            "translate": "Lien Vers Image Alternative"
+            "translate": "Alternative Image Link"
           },
           {
             "id": "formElement13",
-            "translate": "Label Bouton EN"
+            "translate": "Button Label EN"
           },
           {
             "id": "formElement14",
-            "translate": "Label Bouton FR"
+            "translate": "Button Label FR"
           },
           {
             "id": "formElement15",
-            "translate": "Lien Bouton"
+            "translate": "Button Link"
           },
           {
             "id": "formElement16",
-            "translate": "Ouvrir Lien Dans Un Popup"
+            "translate": "Open Link In A Popup ?"
           },
           {
             "id": "formElement17",
-            "translate": "Lien Vers Quel ID"
+            "translate": "Link To Which ID"
           },
           {
             "id": "formElement18",
-            "translate": "Afficher D&eacute;compte"
+            "translate": "Show Countdown Timer"
           },
           {
             "id": "formElement19",
-            "translate": "Afficher Titre Hero"
+            "translate": "Show Hero Title"
           },
           {
             "id": "formElement20",
-            "translate": "Afficher Sous-Titre Hero"
+            "translate": "Show Hero SubTitle"
           },
           {
             "id": "formElement21",
-            "translate": "Promouvoir Hero"
+            "translate": "Promote Hero"
           },
           {
             "id": "formElement22",
-            "translate": "Hero Persistent"
+            "translate": "Sticky Hero"
           },
           {
             "id": "formElement23",
-            "translate": "Afficher X Heures Avant Actif"
+            "translate": "Show X hours Before Active"
           },
           {
             "id": "formElement24",
-            "translate": "Activer Hero"
+            "translate": "Activate Hero"
           },
           {
             "id": "formLabel1",
-            "translate": "Oui"
+            "translate": "Yes"
           },
           {
             "id": "formLabel2",
-            "translate": "Non"
+            "translate": "No"
           },
           {
             "id": "formLabel3",
-            "translate": "S&eacute;lectionner"
+            "translate": "Select"
           },
           {
             "id": "help1",
-            "translate": "Aide"
+            "translate": "Help"
           },
           {
             "id": "jump1",
-            "translate": "Aller A"
+            "translate": "Go To"
           }
         ]
       },
@@ -229,7 +229,7 @@
         "load": [
           {
             "id": "load1",
-            "translate": "Charger Hero Sauvegard&eacute;"
+            "translate": "Load Saved Heros"
           }
         ]
       },
@@ -237,7 +237,7 @@
         "errors": [
           {
             "id": "errors1",
-            "translate": "Erreurs"
+            "translate": "Errors"
           }
         ]
       },
@@ -245,7 +245,7 @@
         "help": [
           {
             "id": "help1",
-            "translate": "Aide"
+            "translate": "Help"
           }
         ]
       }

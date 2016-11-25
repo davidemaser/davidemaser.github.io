@@ -65,23 +65,29 @@ var core = {
             console.log(e);
         }
     },
-    languageManager: function (lng) {
+    languageManager: function (lng,init) {
         lng = $('html').attr('data-language') || lng;
         switch (lng) {
             case "en_EN":
                 var newLang = 'fr_FR';
+                $('.app_lang_toggle').attr('data-set-lang',newLang);
+                init != true ? $('html').attr('data-language',newLang):null;
                 break;
             case "fr_FR":
                 newLang = 'en_EN';
+                $('.app_lang_toggle').attr('data-set-lang',newLang);
+                init != true ? $('html').attr('data-language',newLang):null;
                 break;
         }
         function translatePageItems(obj){
             for(o in obj){
-                console.log(obj[o]);
+                $('[data-lang-id="'+obj[o].objID+'"]').html(obj[o].objTran);
             }
-            //$('[data-lang-id="'+data.node.section[0].actions[i].id+'"]').html(data.node.section[0].actions[i].translate);
         }
         try {
+            if(init == true){
+                newLang = lng;
+            }
             $.ajax({
                 type: app.methods.g,
                 url: 'data/language/' + newLang + '.json',
@@ -626,7 +632,7 @@ var core = {
         $(app.objects.r).animate({
             scrollTop: $(app.objects.e + newNum).offset().top - 60
         }, app.animation.d.min);
-        $('.btn-group.bigboy:not(.helpMePlease)').last().find('ul').append('<li class="divider" data-role="hero"></li><li><a class="removeThisItem" ' + app.handlers.i + '="' + newNum + '" href="javascript:;">Remove</a></li><li class="divider"></li><li><a class="moveUpThisItem" ' + app.handlers.i + '="' + newNum + '" href="javascript:;">Move Up<span class="glyphicon glyphicon-arrow-up"></span></a></li><li><a class="moveDownThisItem" ' + app.handlers.i + '="' + newNum + '" href="javascript:;">Move Down<span class="glyphicon glyphicon-arrow-down"></span></a></li><li class="divider" data-role="hero"></li><li data-role="hero"><a class="addConditions" data-hero="1" data-role="hero" data-lang-id="toggle" data-version="3.2.1">Toggle Conditions</a></li><li data-role="hero"><a class="hideItem" data-hero="1" data-role="hero" data-lang-id="toggle" data-version="3.2.1">Hide Item</a></li>');
+        $('.btn-group.bigboy:not(.helpMePlease)').last().find('ul').append('<li class="divider" data-role="hero"></li><li><a class="removeThisItem" ' + app.handlers.i + '="' + newNum + '" href="javascript:;">Remove</a></li><li class="divider"></li><li><a class="moveUpThisItem" ' + app.handlers.i + '="' + newNum + '" href="javascript:;">Move Up<span class="glyphicon glyphicon-arrow-up"></span></a></li><li><a class="moveDownThisItem" ' + app.handlers.i + '="' + newNum + '" href="javascript:;">Move Down<span class="glyphicon glyphicon-arrow-down"></span></a></li><li class="divider" data-role="hero"></li><li data-role="hero"><a class="addConditions" data-hero="1" data-role="hero" data-lang-id="action17" data-version="3.2.1">Toggle Conditions</a></li><li data-role="hero"><a class="hideItem" data-hero="1" data-role="hero" data-lang-id="action18" data-version="3.2.1">Hide Item</a></li>');
         $(app.objects.e + newNum).find('.mod-radio').find('input').first().prop('checked', true);
         core.scrollState('a');
         core.panelAlert('Item Added', 'good');
@@ -1285,6 +1291,7 @@ $(function () {
     core.initHelp();
     core.getVersion(true);
     core.loadAPIparams();
+    core.languageManager(app.lang,true);
     setInterval("core.getVersion(false)",600000);
     $('.date_obj').datetimepicker({format: 'MM/DD/YYYY HH:mm'});
 
@@ -1298,6 +1305,9 @@ $(function () {
      */
     $(app.objects.bo).on('click','.btnAdd',function () {
         core.addItems();
+    }).on('click','.app_lang_toggle',function(){
+        var lng = $(this).attr('data-set-lang');
+        core.languageManager(lng);
     }).on('click','.overlay_close',function(){
         $(this).parent().parent().hide();
         $(app.objects.r).css('overflow','auto');

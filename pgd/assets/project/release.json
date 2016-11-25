@@ -1,13 +1,13 @@
 {
   "project": {
     "name": "Page Builder",
-    "version": "3.2.1",
+    "version": "4.0",
     "author": "David Maser",
     "licensing": "MIT",
-    "revision": "3",
+    "revision": "8",
     "downloadlink": "https://drive.google.com/file/d/0B4onXKnKkE6AY0JiVlZ3bG9scmM/view?usp=sharing",
     "semantic": {
-      "build": 25,
+      "build": 3,
       "language": [
         "js",
         "jquery",
@@ -303,6 +303,18 @@
           "scoped": true,
           "version": "3.2.0",
           "candidate": "3.2.1",
+          "request": false
+        }
+      },
+      {
+        "line": "multi",
+        "file": "app3.0.js",
+        "structure": "add",
+        "utility": "Add multi language translation feature",
+        "appstatus": {
+          "scoped": true,
+          "version": "3.2.1",
+          "candidate": "4.0",
           "request": false
         }
       }
@@ -867,6 +879,26 @@
           {
             "item": "Add ability to hide a form item",
             "revision": "minor",
+            "impact": "global",
+            "codestatus": "working"
+          }
+        ]
+      },
+      {
+        "version": "4.0",
+        "date": "11/25/2016",
+        "failsafe": "major",
+        "author": "David Maser",
+        "codeblocks": [
+          {
+            "item": "Add multi language translation feature",
+            "revision": "major",
+            "impact": "global",
+            "codestatus": "working"
+          },
+          {
+            "item": "Add translations to seperate JSON config files",
+            "revision": "major",
             "impact": "global",
             "codestatus": "working"
           }
