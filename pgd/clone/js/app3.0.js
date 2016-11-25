@@ -75,6 +75,12 @@ var core = {
                 newLang = 'en_EN';
                 break;
         }
+        function translatePageItems(obj){
+            for(o in obj){
+                console.log(obj[o]);
+            }
+            //$('[data-lang-id="'+data.node.section[0].actions[i].id+'"]').html(data.node.section[0].actions[i].translate);
+        }
         try {
             $.ajax({
                 type: app.methods.g,
@@ -109,11 +115,7 @@ var core = {
                             objTran: data.node.section[3].help[l].translate
                         });
                     }
-                    console.log(lngContainer);
-                },
-                complete:function(){
-                    //console.log(lngContainer);
-                    //$('[data-lang-id="'+data.node.section[0].actions[i].id+'"]').html(data.node.section[0].actions[i].translate);
+                    translatePageItems(lngContainer);
                 }
             })
         } catch (e) {
