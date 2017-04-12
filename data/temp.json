@@ -1,0 +1,164 @@
+{
+  "hero": [
+    {
+      "heroId": "hero-elem0",
+      "active": true,
+      "sticky": false,
+      "showCountdown": false,
+      "popUpLink": false,
+      "date": {
+        "start": "02\/10\/2017 16:00",
+        "end": "02\/14\/2018 10:10",
+        "delay": 0
+      },
+      "title": {
+        "en": "Welcome to the new<br> Altitude Sports website",
+        "fr": "Bienvenue sur le <br>nouveau Altitude Sports",
+        "color": "#fff",
+        "showTitle": true
+      },
+      "text": {
+        "en": "",
+        "fr": "",
+        "showSubTitle": false
+      },
+      "conditions": {
+        "en": "",
+        "fr": ""
+      },
+      "promote": true,
+      "button": {
+        "label": {
+          "en": "Create an account now >",
+          "fr": "CrÃ©ez votre compte maintenant >"
+        },
+        "url": "\/account\/register",
+        "popUpLinkID": "null"
+      },
+      "image": {
+        "url": "\/\/cdn.shopify.com\/s\/files\/1\/1230\/9376\/files\/bg_banner10_desk.jpg?8256465227464640958",
+        "altUrl": ""
+      }
+    },
+    {
+      "heroId": "hero-elem1",
+      "active": true,
+      "sticky": false,
+      "showCountdown": false,
+      "popUpLink": false,
+      "date": {
+        "start": "02\/13\/2017 16:00",
+        "end": "02\/14\/2018 10:10",
+        "delay": 0
+      },
+      "title": {
+        "en": "<img src='\/\/cdn.shopify.com\/s\/files\/1\/1230\/9376\/files\/bg_arcteryx2_logo.png?764228511450971448' style='display: inline'>",
+        "fr": "<img src='\/\/cdn.shopify.com\/s\/files\/1\/1230\/9376\/files\/bg_arcteryx2_logo.png?764228511450971448' style='display: inline'>",
+        "color": "#fff",
+        "showTitle": true
+      },
+      "text": {
+        "en": "",
+        "fr": "",
+        "showSubTitle": false
+      },
+      "conditions": {
+        "en": "",
+        "fr": ""
+      },
+      "promote": true,
+      "button": {
+        "label": {
+          "en": "Discover the spring collection >",
+          "fr": "DÃ©couvrez la collection >"
+        },
+        "url": "\/collections\/all\/brands-arcteryx",
+        "popUpLinkID": "null"
+      },
+      "image": {
+        "url": "\/\/cdn.shopify.com\/s\/files\/1\/1230\/9376\/files\/bg_banner5_desk.jpg?16264712733897721560",
+        "altUrl": "\/\/cdn.shopify.com\/s\/files\/1\/1230\/9376\/files\/bg_bannerarc_mobile.jpg?3691105729444135721"
+      }
+    },
+    {
+      "heroId": "hero-elem2",
+      "active": true,
+      "sticky": false,
+      "showCountdown": false,
+      "popUpLink": false,
+      "date": {
+        "start": "02\/10\/2017 16:30",
+        "end": "02\/14\/2018 10:10",
+        "delay": 0
+      },
+      "title": {
+        "en": "<img src='\/\/cdn.shopify.com\/s\/files\/1\/1230\/9376\/files\/bg_tlh_logo.png?8256465227464640958' style='display: inline'><br>50% to 80% off over 2000 products",
+        "fr": "<img src='\/\/cdn.shopify.com\/s\/files\/1\/1230\/9376\/files\/bg_ldc_logo.png?8256465227464640958' style='display: inline'><br>50% Ã  80% de rabais sur plus de 2000 produits ",
+        "color": "#fff",
+        "showTitle": true
+      },
+      "text": {
+        "en": "",
+        "fr": "",
+        "showSubTitle": false
+      },
+      "conditions": {
+        "en": "",
+        "fr": ""
+      },
+      "promote": true,
+      "button": {
+        "label": {
+          "en": "Shop TheLastHunt.com >",
+          "fr": "Magasinez LaDerniereChasse.com >"
+        },
+        "url": "https:\/\/www.thelasthunt.com\/",
+        "popUpLinkID": "null"
+      },
+      "image": {
+        "url": "\/\/cdn.shopify.com\/s\/files\/1\/1230\/9376\/files\/bg_banner6_desk.jpg?16264712733897721560",
+        "altUrl": ""
+      }
+    },
+    {
+      "heroId": "hero-elem3",
+      "active": true,
+      "sticky": false,
+      "showCountdown": false,
+      "popUpLink": false,
+      "date": {
+        "start": "03\/24\/2017 00:00",
+        "end": "05\/25\/2017 00:00",
+        "delay": 0
+      },
+      "title": {
+        "en": "<img src='\/\/cdn.shopify.com\/s\/files\/1\/1230\/9376\/files\/bg_tnf2_logo.png?8256465227464640958' style='display: inline'>",
+        "fr": "<img src='\/\/cdn.shopify.com\/s\/files\/1\/1230\/9376\/files\/bg_tnf2_logo.png?8256465227464640958' style='display: inline'>",
+        "color": "#fff",
+        "showTitle": true
+      },
+      "text": {
+        "en": "",
+        "fr": "",
+        "showSubTitle": false
+      },
+      "conditions": {
+        "en": "",
+        "fr": ""
+      },
+      "promote": true,
+      "button": {
+        "label": {
+          "en": "Shop the collection >",
+          "fr": "Magasinez la collection >"
+        },
+        "url": "\/collections\/all\/brands-the-north-face",
+        "popUpLinkID": "null"
+      },
+      "image": {
+        "url": "\/\/cdn.shopify.com\/s\/files\/1\/1230\/9376\/files\/bg_banner9_desk.jpg?8256465227464640958",
+        "altUrl": "\/\/cdn.shopify.com\/s\/files\/1\/1230\/9376\/files\/bg_banner9_desk.jpg?8256465227464640958"
+      }
+    }
+  ]
+}
