@@ -44,6 +44,45 @@
           ]
         }
       ]
+    },
+    {
+      "title":{
+        "en":"This is a SECOND title",
+        "fr":"Ceci est un DEUXIEME titre"
+      },
+      "url":{
+        "en":"url_en",
+        "fr":"url_fr"
+      },
+      "target":null,
+      "class":"",
+      "visibile":1,
+      "child":[
+        {
+          "title":{
+            "en":"Child_EN",
+            "fr":"Child_FR"
+          },
+          "url":{
+            "en":"url_EN",
+            "fr":"url_FR"
+          },
+          "target":null,
+          "child":[
+            {
+              "title":{
+                "en":"Grandchild_EN",
+                "fr":"Grandchild_FR"
+              },
+              "url":{
+                "en":"url_EN",
+                "fr":"url_FR"
+              },
+              "target":null
+            }
+          ]
+        }
+      ]
     }
   ]
 }
