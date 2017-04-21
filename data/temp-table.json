@@ -1,0 +1,71 @@
+{
+  "table":
+    {
+      "id": "",
+      "class": "",
+      "style": {
+        "color":"#000",
+        "backgroundColor":"#fff"
+      },
+      "header": {
+        "id": "id",
+        "class": "this is a class",
+        "style": {
+          "color":"#fff",
+          "backgroundColor":"#000"
+        },
+        "rows":[
+          {
+            "class": "hedaer",
+            "style": {
+            },
+            "columns": [
+              {
+                "content":"This is the header"
+              }
+            ]
+          },
+          {
+            "class": "",
+            "style": {
+            },
+            "columns": [
+              {
+                "content":"This is another header row"
+              }
+            ]
+          }
+        ]
+      },
+      "rows": [
+        {
+          "class": "",
+          "style": {
+          },
+          "columns": [
+            {
+              "content": "this is one column"
+            }
+          ]
+        }
+      ],
+      "footer": {
+        "id": "id",
+        "class": "another",
+        "style": {
+        },
+        "rows":[
+          {
+            "class": "one",
+            "style": {
+            },
+            "columns": [
+              {
+                "content":"This is the table footer"
+              }
+            ]
+          }
+        ]
+      }
+    }
+}
