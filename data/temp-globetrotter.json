@@ -52,7 +52,7 @@
               "Toronto":{},
               "Ottawa": {
                 "cityID": "OT13354",
-                "promote": false,
+                "promote": true,
                 "description": "Canada's most beautiful gem",
                 "keywords": [
                   "capital"
@@ -74,15 +74,15 @@
                     "5": [
                       {
                         "id": "",
-                        "name": "",
-                        "address": "",
-                        "postCode": "",
-                        "telephone": "",
+                        "name": "The Royal Prick",
+                        "address": "1456 Laurier",
+                        "postCode": "K12",
+                        "telephone": "613-789-5647",
                         "web": {
                           "email": "",
                           "website": ""
                         },
-                        "description": "",
+                        "description": "Such an awesome place",
                         "images": [
                           {
                             "url": "",
