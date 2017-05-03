@@ -12,11 +12,11 @@
       "country":[
         {
           "id":"CA199044",
-          "title":"",
-          "description":"",
-          "keywords":[],
-          "country":"",
-          "continent":"",
+          "title":"Canada",
+          "description":"Land of the free",
+          "keywords":["nature"],
+          "country":"Canada",
+          "continent":"North America",
           "mapping":{
             "long":"",
             "lat":"",
@@ -45,11 +45,11 @@
           ],
           "cities":[
             {
-              "cityID":"",
+              "cityID":"OT13354",
               "promote":false,
-              "name":"",
-              "description":"",
-              "keywords":[],
+              "name":"Ottawa",
+              "description":"Ottawa's most beautiful gem",
+              "keywords":["capital"],
               "website":"",
               "mapping":{
                 "long":"",
