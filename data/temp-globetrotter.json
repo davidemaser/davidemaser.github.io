@@ -117,6 +117,32 @@
                             "conditions": ""
                           }
                         ],
+                        "policies":{
+                          "cancellation":{
+                            "allowed":true,
+                            "policy":"5 days",
+                            "disclaimer":""
+                          },
+                          "times":{
+                            "checkin":"",
+                            "checkout":""
+                          },
+                          "deposit":{
+                            "required":true,
+                            "amount":{
+                              "type":"percent",
+                              "sum":25
+                            }
+                          },
+                          "smoking":{
+                            "allowed":false,
+                            "fees":"150"
+                          },
+                          "pets":{
+                            "allowed":["dogs","cats"],
+                            "fee":null
+                          }
+                        },
                         "value": 3
                       }
                     ],
@@ -247,15 +273,15 @@
                     "5": [
                       {
                         "id": "",
-                        "name": "",
-                        "address": "",
-                        "postCode": "",
-                        "telephone": "",
+                        "name": "The Shock & Awe",
+                        "address": "123 Pennsylvania",
+                        "postCode": "52154",
+                        "telephone": "185-789-5647",
                         "web": {
                           "email": "",
                           "website": ""
                         },
-                        "description": "",
+                        "description": "Where you can meet criminals AND politicians",
                         "images": [
                           {
                             "url": "",
@@ -290,6 +316,32 @@
                             "conditions": ""
                           }
                         ],
+                        "policies":{
+                          "cancellation":{
+                            "allowed":true,
+                            "policy":"5 days",
+                            "disclaimer":""
+                          },
+                          "times":{
+                            "checkin":"",
+                            "checkout":""
+                          },
+                          "deposit":{
+                            "required":true,
+                            "amount":{
+                              "type":"percent",
+                              "sum":25
+                            }
+                          },
+                          "smoking":{
+                            "allowed":false,
+                            "fees":"150"
+                          },
+                          "pets":{
+                            "allowed":["dogs","cats"],
+                            "fee":null
+                          }
+                        },
                         "value": 3
                       }
                     ],
