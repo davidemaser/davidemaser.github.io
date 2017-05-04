@@ -88,6 +88,10 @@
                             "url": "http://www.planetware.com/photos-large/CAY/caribbean-best-beaches-seven-mile-beach.jpg",
                             "alt": "A beach",
                             "default": true
+                          },
+                          {
+                            "url": "https://media-cdn.tripadvisor.com/media/photo-s/07/9c/8b/8b/hotel-yurbban-trafalgar.jpg",
+                            "alt": "A view of the hotel"
                           }
                         ],
                         "services": [],
