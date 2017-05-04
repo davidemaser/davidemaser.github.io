@@ -27,8 +27,8 @@
         },
         "images": [
           {
-            "url": "http://www.planetware.com/photos-large/CAY/caribbean-best-beaches-seven-mile-beach.jpg",
-            "alt": "A beach",
+            "url": "",
+            "alt": "",
             "default": true
           }
         ],
@@ -85,8 +85,8 @@
                         "description": "Such an awesome place",
                         "images": [
                           {
-                            "url": "",
-                            "alt": "",
+                            "url": "http://www.planetware.com/photos-large/CAY/caribbean-best-beaches-seven-mile-beach.jpg",
+                            "alt": "A beach",
                             "default": true
                           }
                         ],
