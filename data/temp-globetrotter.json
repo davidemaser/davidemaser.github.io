@@ -79,8 +79,8 @@
                         "postCode": "K12",
                         "telephone": "613-789-5647",
                         "web": {
-                          "email": "",
-                          "website": ""
+                          "email": "contact@theroyalprick.ca",
+                          "website": "http://www.theroyalprick.ca"
                         },
                         "description": "Such an awesome place",
                         "images": [
@@ -108,21 +108,43 @@
                         "pricing": [
                           {
                             "roomID": "",
-                            "roomType": "",
-                            "occupancy": "",
+                            "roomType": "Royal Suite",
+                            "occupancy": "6",
                             "bed": [
                               {
                                 "bedType": "King",
-                                "count": 1
+                                "count": 2
+                              },
+                              {
+                                "bedType": "Queen",
+                                "count": 2
                               }
                             ],
-                            "extraAmenities": [],
+                            "extraAmenities": ["Jacuzzi","Steam Shower"],
                             "cost": [
                               {
-                                "dateStart": "",
-                                "dateEnd": "",
-                                "price": "",
-                                "minStay": "",
+                                "dateStart": "01/01/2017",
+                                "dateEnd": "30/03/2017",
+                                "price": "599",
+                                "minStay": "1",
+                                "maxStay": false
+                              },{
+                                "dateStart": "01/04/2017",
+                                "dateEnd": "31/7/2017",
+                                "price": "749",
+                                "minStay": "1",
+                                "maxStay": false
+                              },{
+                                "dateStart": "01/08/2017",
+                                "dateEnd": "15/12/2017",
+                                "price": "649",
+                                "minStay": "1",
+                                "maxStay": false
+                              },{
+                                "dateStart": "16/12/2017",
+                                "dateEnd": "31/12/2017",
+                                "price": "899",
+                                "minStay": "1",
                                 "maxStay": false
                               }
                             ],
@@ -136,14 +158,14 @@
                             "disclaimer":""
                           },
                           "times":{
-                            "checkin":"",
-                            "checkout":""
+                            "checkin":"15:00",
+                            "checkout":"12:00"
                           },
                           "deposit":{
                             "required":true,
                             "amount":{
                               "type":"percent",
-                              "sum":25
+                              "sum":10
                             }
                           },
                           "smoking":{
@@ -155,7 +177,7 @@
                             "fee":null
                           }
                         },
-                        "value": 3
+                        "value": 5
                       }
                     ],
                     "4": [
@@ -178,8 +200,8 @@
                         "postCode": "K3R",
                         "telephone": "613-845-5678",
                         "web": {
-                          "email": "",
-                          "website": "",
+                          "email": "reserve@naeve-cuisine.com",
+                          "website": "http://www.naeve-cuisine.com",
                           "reservation": "url"
                         },
                         "hours": [
@@ -208,11 +230,29 @@
                             "default": true
                           }
                         ],
-                        "services": [],
+                        "services": ["Valet","Take-out"],
                         "menu": "",
                         "promote": false,
                         "value": 3
                       }
+                    ]
+                  }
+                },
+                "activities":{
+                  "sports":{
+                    "hockey":[
+                      {
+                        "name":"",
+                        "address":""
+                      }  
+                    ],
+                    "baseball":[
+                      
+                    ]
+                  },
+                  "arts":{
+                    "type":[
+                      
                     ]
                   }
                 }
@@ -412,6 +452,24 @@
                         "promote": false,
                         "value": 3
                       }
+                    ]
+                  }
+                },
+                "activities":{
+                  "sports":{
+                    "hockey":[
+                      {
+                        "name":"",
+                        "address":""
+                      }
+                    ],
+                    "baseball":[
+
+                    ]
+                  },
+                  "arts":{
+                    "type":[
+
                     ]
                   }
                 }
