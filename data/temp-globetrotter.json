@@ -111,7 +111,7 @@
                                 "dateEnd": "",
                                 "price": "",
                                 "minStay": "",
-                                "maxStat": false
+                                "maxStay": false
                               }
                             ],
                             "conditions": ""
@@ -295,22 +295,22 @@
                         "pricing": [
                           {
                             "roomID": "",
-                            "roomType": "",
-                            "occupancy": "",
+                            "roomType": "Junior Suite",
+                            "occupancy": "4",
                             "bed": [
                               {
                                 "bedType": "King",
-                                "count": 1
+                                "count": 2
                               }
                             ],
-                            "extraAmenities": [],
+                            "extraAmenities": ["mini-bar","46\" LED TV","24H Concierge"],
                             "cost": [
                               {
-                                "dateStart": "",
-                                "dateEnd": "",
-                                "price": "",
-                                "minStay": "",
-                                "maxStat": false
+                                "dateStart": "01/03/2017",
+                                "dateEnd": "01/09/2017",
+                                "price": "459.99",
+                                "minStay": "2",
+                                "maxStay": false
                               }
                             ],
                             "conditions": ""
@@ -323,8 +323,8 @@
                             "disclaimer":""
                           },
                           "times":{
-                            "checkin":"",
-                            "checkout":""
+                            "checkin":"15:00",
+                            "checkout":"12:00"
                           },
                           "deposit":{
                             "required":true,
