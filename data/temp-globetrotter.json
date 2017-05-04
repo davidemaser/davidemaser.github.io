@@ -289,9 +289,9 @@
                             "default": true
                           }
                         ],
-                        "services": [],
+                        "services": ["VIP Parking","Gym Access","24HR Room Service"],
                         "promote": false,
-                        "amenities": [],
+                        "amenities": ["Pool","Full Gym"],
                         "pricing": [
                           {
                             "roomID": "",
