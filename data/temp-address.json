@@ -3,22 +3,22 @@
     "format":"First/Last",
     "sort":"Last",
     "entries":{
-      "a":{
+      "a":[{
         "firstName":"John",
         "lastName":"Applebee",
         "eMail":"john.a@emailer.com",
         "address":{
 
-        }
+        }]
       },
-      "b":{
+      "b":[{
         "firstName":"Erin",
         "lastName":"Brokovich",
         "eMail":"erin.brok@emailer.com",
         "address":{
 
         }
-      }
+      }]
     }
   }
 }
