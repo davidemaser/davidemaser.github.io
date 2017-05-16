@@ -3,22 +3,42 @@
     "format":"First/Last",
     "sort":"Last",
     "entries":{
-      "a":[{
-        "firstName":"John",
-        "lastName":"Applebee",
-        "eMail":"john.a@emailer.com",
-        "address":{
+      "a":[
+        {
+          "firstName":"John",
+          "lastName":"Applebee",
+          "eMail":"john.a@emailer.com",
+          "address":{
 
-        }
-      }],
-      "b":[{
-        "firstName":"Erin",
-        "lastName":"Brokovich",
-        "eMail":"erin.brok@emailer.com",
-        "address":{
+          }
+        },
+        {
+          "firstName":"Philip",
+          "lastName":"Armstrong",
+          "eMail":"john.a@emailer.com",
+          "address":{
 
+          }
         }
-      }]
+      ],
+      "b":[
+        {
+          "firstName":"Erin",
+          "lastName":"Brokovich",
+          "eMail":"erin.brok@emailer.com",
+          "address":{
+
+          }
+        },
+        {
+          "firstName":"Jonathan",
+          "lastName":"Brownstone",
+          "eMail":"erin.brok@emailer.com",
+          "address":{
+
+          }
+        }
+      ]
     }
   }
 }
