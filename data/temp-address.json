@@ -1,0 +1,22 @@
+{
+  "address":{
+    "format":"First/Last",
+    "sort":"Last",
+    "a":{
+      "firstName":"John",
+      "lastName":"Applebee",
+      "eMail":"john.a@emailer.com",
+      "address":{
+
+      }
+    },
+    "b":{
+      "firstName":"Erin",
+      "lastName":"Brokovich",
+      "eMail":"erin.brok@emailer.com",
+      "address":{
+
+      }
+    }
+  }
+}
