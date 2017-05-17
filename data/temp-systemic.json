@@ -2,12 +2,12 @@
   "service":{
     "user":{
       "name":{
-        "first":"",
-        "last":""
+        "first":"David",
+        "last":"Maser"
       },
       "email":{
-        "principal":"",
-        "backup":""
+        "principal":"davidemaser@gmail.com",
+        "backup":"david.maser@barco.com"
       },
       "address":{
         "home":{
@@ -33,35 +33,40 @@
         },
         "other":null
       },
-      "login":"",
-      "password":"",
+      "login":"davidemaser",
+      "password":"123456789",
       "account":{
         "expires":false,
         "type":"admin",
-        "created":"",
-        "department":""
-      }
+        "created":"17/05/2017",
+        "department":"IT"
+      },
+      "sex":"m",
+      "dob":"17/05/1972"
     },
     "messages":{
       "received":[
         {
-          "id":"",
-          "from":"",
-          "date":"",
+          "id":"18845Rf",
+          "from":"timmyb@domain.com",
+          "date":"17/05/1972",
           "priority":"",
           "cc":["name"],
+          "subject":"this is the mail subject",
           "content":"",
           "read":false
         }
       ],
       "sent":[
         {
-          "id":"",
-          "to":"",
-          "date":"",
+          "origin":"18845Rf",
+          "id":"145645Gf",
+          "to":"timmyb@domain.com",
+          "date":"17/05/1972",
           "priority":"",
-          "bcc":["name"],
+          "bcc":[],
           "cc":["name"],
+          "subject":"this is the mail subject",
           "content":"",
           "read":false
         }
@@ -69,26 +74,26 @@
     },
     "tasks":[
       {
-        "title":"",
+        "title":"Do this dude",
         "date":{
-          "created":"",
+          "created":"17/05/2017",
           "started":"",
-          "due":"",
-          "closed":""
+          "due":"24/05/2017",
+          "closed":false
         },
         "status":"",
-        "assigner":"",
-        "followers":["code","code1"],
-        "priority":"",
+        "assigner":"jimmyc",
+        "followers":["johnnyBOOK","roberS"],
+        "priority":"Medium",
         "linked":[
           {
             "taskID":189945,
-            "title":""
+            "title":"Also do this one"
           }
         ],
-        "tags":[],
-        "keywords":[],
-        "content":""
+        "tags":["work","project"],
+        "keywords":["sprin45","assigned"],
+        "content":"This task has to be done when the thing is assigned or else it may have to be reassigned you dig"
       }
     ]
   }
