@@ -64,8 +64,8 @@
           "to":"timmyb@domain.com",
           "date":"17/05/1972",
           "priority":"",
-          "bcc":[],
-          "cc":["name"],
+          "bcc":["roger.mcgilergy","jimmy.harvey"],
+          "cc":["roger.mcgilergy","jimmy.harvey"],
           "subject":"this is the mail subject",
           "content":"",
           "read":false
