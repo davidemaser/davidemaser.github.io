@@ -51,9 +51,29 @@
           "from":"timmyb@domain.com",
           "date":"17/05/1972",
           "priority":"",
-          "cc":["roger.mcgilergy","jimmy.harvey"],
+          "cc":["vor@vor.com","tom.bell@bell.ca","wilma@yahoo.ca"],
           "subject":"this is the mail subject",
-          "content":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris laoreet, ligula vitae tempus facilisis, odio odio consectetur turpis, nec mattis arcu ex a augue. Suspendisse cursus augue vel nunc convallis bibendum. Sed at euismod nisl, vitae facilisis odio. Donec fermentum, lacus non viverra pretium, tellus felis pharetra nunc, at convallis ipsum ipsum vitae nunc. Cras arcu nisi, feugiat ac commodo non, vehicula accumsan nibh. Suspendisse eget nibh ut sapien lobortis dictum. Nulla feugiat quis tellus et tempor. Praesent vestibulum vulputate vestibulum. Curabitur vel arcu mattis, finibus est non, consequat ante. Aenean ullamcorper augue sed odio ultrices fringilla. Maecenas quis lectus dui. Fusce scelerisque eros a lacus tincidunt consequat. Maecenas tincidunt vehicula lectus ac tincidunt.</p><p>Aliquam auctor ligula non felis bibendum, vel porttitor est egestas. Morbi velit ante, placerat nec justo et, tempor mollis arcu. In eget sapien at risus lacinia convallis id sit amet lorem. Fusce convallis libero eget sapien vulputate placerat. Ut molestie nisi tortor, vitae fermentum libero lacinia ac. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus porttitor risus vel mauris vestibulum, eget imperdiet felis aliquet. Fusce vehicula tincidunt mi, id egestas turpis pulvinar ut. Fusce ornare neque felis, non aliquet lacus euismod quis. Nunc vitae massa finibus, elementum ligula et, viverra nibh.</p><p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc ac ligula consequat, imperdiet neque eu, dictum orci. Donec mollis auctor magna non imperdiet. Donec sed sapien odio. Vestibulum venenatis volutpat magna, et venenatis augue dignissim id. Cras finibus blandit tempor. Mauris placerat blandit libero, in condimentum eros bibendum eu. Aenean congue nunc vitae orci vestibulum dapibus.</p><p>Vestibulum ligula metus, luctus eu porttitor eu, sollicitudin non erat. Curabitur ultrices et diam eu efficitur. Nam ut lorem vel nisi luctus ultrices. Ut sapien libero, imperdiet congue magna non, euismod euismod justo. Etiam lacinia nec tellus sed mattis. Nulla mattis eros nisi, ac aliquet nisi malesuada nec. Cras at commodo nibh. Vivamus turpis massa, ultrices at mattis ut, porttitor nec lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce viverra aliquam ante a varius.</p><p>Nunc accumsan dignissim auctor. Sed ac nisi sed lorem cursus hendrerit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce elementum ornare velit, quis vulputate libero vulputate sit amet. Aenean tincidunt nisl a ipsum aliquam cursus. Morbi et fringilla velit, vel sagittis turpis. Integer cursus finibus eros. Nunc at sapien tortor. Praesent ut tristique dui, eget hendrerit odio. Praesent dictum condimentum nisl, sed maximus metus vestibulum ac. Nunc sed convallis nibh, eget viverra metus. In suscipit ipsum quis consequat iaculis. Integer sit amet odio tincidunt, rhoncus enim quis, placerat diam. Aenean tincidunt pharetra mollis. Sed sit amet condimentum massa.</p>",
+          "content":"",
+          "read":false
+        },
+        {
+          "id":"127995Rf",
+          "from":"robert@aol.com",
+          "date":"19/05/1972",
+          "priority":"",
+          "cc":["rob.bool@link.com","jim.commer@wwooo.com"],
+          "subject":"Hi how are you",
+          "content":"",
+          "read":true
+        },
+        {
+          "id":"1s445Rf",
+          "from":"jack.young@gmail.com",
+          "date":"17/05/1972",
+          "priority":"",
+          "cc":["steven.robb@gmail.com","vor@vor.com"],
+          "subject":"RE: Your bill payment",
+          "content":"",
           "read":false
         }
       ],
@@ -64,8 +84,8 @@
           "to":"timmyb@domain.com",
           "date":"17/05/1972",
           "priority":"",
-          "bcc":["roger.mcgilergy","jimmy.harvey"],
-          "cc":["roger.mcgilergy","jimmy.harvey"],
+          "bcc":[],
+          "cc":["name"],
           "subject":"this is the mail subject",
           "content":"",
           "read":false
@@ -87,12 +107,34 @@
         "priority":"Medium",
         "linked":[
           {
+            "taskID":189946,
+            "title":"Also do this one"
+          }
+        ],
+        "tags":["work","project"],
+        "keywords":["sprint45","assigned"],
+        "content":"This task has to be done when the thing is assigned or else it may have to be reassigned you dig"
+      },
+      {
+        "title":"This has to get done",
+        "date":{
+          "created":"10/05/2017",
+          "started":"",
+          "due":"31/05/2017",
+          "closed":false
+        },
+        "status":"",
+        "assigner":"jimmyc",
+        "followers":["johnnyBOOK","roberS"],
+        "priority":"Medium",
+        "linked":[
+          {
             "taskID":189945,
             "title":"Also do this one"
           }
         ],
         "tags":["work","project"],
-        "keywords":["sprin45","assigned"],
+        "keywords":["sprint45","assigned"],
         "content":"This task has to be done when the thing is assigned or else it may have to be reassigned you dig"
       }
     ]
