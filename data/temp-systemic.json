@@ -1,4 +1,11 @@
 {
+  "config":{
+    "tasks":{
+      "priorities":["low","medium","high","urgent"],
+      "status":["created","assigned","in progress","stalled","standby","refused","closed","done","de-scoped","resolved"],
+      "tags":["work","project"]
+    }
+  },
   "service":{
     "user":{
       "name":{
