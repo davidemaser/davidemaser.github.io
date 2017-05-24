@@ -1,0 +1,33 @@
+{
+  "user":[
+    {
+      "username":"davidemaser",
+      "firstName":"David",
+      "lastName":"Maser",
+      "email":"davidemaser@gmail.com",
+      "role":"admin",
+      "department":"Front End Development"
+    },{
+      "username":"johnnyClegg",
+      "firstName":"Johnny",
+      "lastName":"Clegg",
+      "email":"jojoclegg@gmail.com",
+      "role":"user",
+      "department":"Back End Development"
+    },{
+      "username":"jim.hoffa",
+      "firstName":"Jimmy",
+      "lastName":"Hoffa",
+      "email":"underground132@gmail.com",
+      "role":"user",
+      "department":"Gardener"
+    },{
+      "username":"royOrbiSon",
+      "firstName":"Roy",
+      "lastName":"Orbison",
+      "email":"orbi.roy@gmail.com",
+      "role":"invited",
+      "department":"Integrator"
+    }
+  ]
+}
