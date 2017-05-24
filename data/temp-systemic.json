@@ -144,6 +144,20 @@
         "keywords":["sprint45","assigned"],
         "content":"This task has to be done when the thing is assigned or else it may have to be reassigned you dig"
       }
+    ],
+    "reminders":[
+      {
+        "title": "Remember, don't forget",
+        "date": "27/05/2017",
+        "assigner":"David Maser",
+        "priority": "High"
+      },
+      {
+        "title": "Get the car washed",
+        "date": "27/05/2017",
+        "assigner":"Jimbo Laphinstok",
+        "priority": "Low"
+      }
     ]
   }
 }
